@@ -344,13 +344,13 @@ void allowUser_callback(byte* payload, unsigned int length) {
     //strncat(Body, ch, 3);
     //client.publish("HANevse/photonConverted", p);
     int port = (int) strtol(payl, &endchar, 10);
-    //action=1  succesfull start new charge (charger is free and last stoped session > 20 sec ago)
-    //action=2  charger is free, but you allready swiped the card in the last 20 sec (second swipe within 20sec)
-    //action=3  charger is occupied by annother user
-    //action=4  succesful stop this charge session
-    //action=5  you just started a charge on this charger, but have another consecutive RFID read/swipe within 20 seconds
+    //action=1  successfully start new charge (charger is free and last stoped session > 20 sec ago)
+    //action=2  charger is free, but you already swiped the card in the last 20 sec (second swipe within 20sec)
+    //action=3  charger is occupied by another user
+    //action=4  succesful stop of charge session
+    //action=5  you just started a charge at this charger, but had another consecutive RFID swipe within 20 seconds
     //action=6  you are already charging at another charger
-    //action=7  succesfull RFID read, but you are not in the userlist
+    //action=7  succesful RFID read, but you are not in the userlist
     endchar = endchar + 1;
     if (port == 1 + CHARGEROFFSET) 
         port = AUTHENTICATION_CAR1;
@@ -411,18 +411,39 @@ void callback(char* topic, byte* payload, unsigned int length) {
 }
 
 void add_Measurement(float phaseVoltageL1, float phaseVoltageL2, float phaseVoltageL3, float currentL1, float currentL2, float currentL3,  float Power, float Energy, float Frequency, unsigned long Timestamp, int socketId=0, String userId="00") {
-	String socketStr = "";
-	String userStr = "";
-	if(socketId != 0) {
-		socketStr = "%" + String(socketId);
-	}
-	if(userId != "00") {
-		userStr = "%" + userId;
-	}
-	String Body = String(phaseVoltageL1, 2) + "%" + String(phaseVoltageL2, 2) + "%" + String(phaseVoltageL3, 2) + "%" + String(currentL1, 2) + "%" + String(currentL2, 2) + "%" + String(currentL3, 2) + "%" + String(Power, 2) + "%" + String(Energy, 2) + "%" + String(Frequency, 2) + "%" + String(Timestamp) + socketStr + userStr + "%";
+	// String socketStr = "";
+	// String userStr = "";
+	// if(socketId != 0) {
+	// 	socketStr = "%" + String(socketId);
+	// }
+	// if(userId != "00") {
+	// 	userStr = "%" + userId;
+	// }
+	// String Body = String(phaseVoltageL1, 2) + "%" + String(phaseVoltageL2, 2) + "%" + String(phaseVoltageL3, 2) + "%"  + String(currentL1, 2) + "%" + String(currentL2, 2) + "%" + String(currentL3, 2) + "%" + String(Power, 2) + "%" + String(Energy, 2) + "%" + String(Frequency, 2) + "%" + String(Timestamp) + socketStr + userStr + "%";
 	
+    JsonWriterStatic<512> jsonMessage;     
+        {
+		JsonWriterAutoObject obj(&jsonMessage);
+
+		// Add various types of data
+        jsonMessage.insertKeyValue("V1", phaseVoltageL1);
+        jsonMessage.insertKeyValue("V2", phaseVoltageL2);
+        jsonMessage.insertKeyValue("V3", phaseVoltageL3);
+        jsonMessage.insertKeyValue("I1", currentL1);
+        jsonMessage.insertKeyValue("I2", currentL2);
+        jsonMessage.insertKeyValue("I3", currentL3);
+        jsonMessage.insertKeyValue("P", Power);
+        jsonMessage.insertKeyValue("E", Energy);
+        jsonMessage.insertKeyValue("F", Frequency);
+          
+		jsonMessage.insertKeyValue("UserID", userId);
+		jsonMessage.insertKeyValue("SocketID", socketId);
+		jsonMessage.insertKeyValue("Time", Timestamp);
+	    }
+
+
 	for(int i=0; i<3; i++) {
-		if(client.publish("HANevse/photonMeasure", Body, client.QOS2)) {
+		if(client.publish("HANevse/photonMeasure", jsonMessage.getBuffer(), client.QOS2)) {
 			break;
 		}
 	}
