@@ -75,7 +75,7 @@ String UIDtagCharger2="No ID";
 //#define SERVER "80.113.19.23:8080"
 //"hannl-lmrt-particle-api.azurewebsites.net"
 
-//STARTUP(WiFi.selectAntenna(ANT_EXTERNAL)); // selects the u.FL antenna
+STARTUP(WiFi.selectAntenna(ANT_EXTERNAL)); // selects the u.FL antenna //+
 //SYSTEM_THREAD(ENABLED);
 
 //MQTT setting
@@ -119,6 +119,7 @@ struct EMeter {
 // };
 
 EMeter EMeterData[NUMBEROFMETERS];
+//EMeter EMeterData;
 String EVListStr="";
 String currentStr="";
 unsigned int nextTime[2] = {30000,30000};    // Next time to contact the server
@@ -193,10 +194,12 @@ int activeCharger() {
 
 int switchTest(String valueString) {
     if (valueString == "true") {
+        client.disconnect();
         TESTCASE = true;
         return 1;
     }
     if (valueString == "false") {
+        client.disconnect();
         TESTCASE = false;
         return 0;
     }
@@ -269,6 +272,87 @@ String getUserIdAtSocket(int socket) {
         return UIDtagCharger2;
     return "00";
 }
+
+/*
+void newgetMeasure_callback(byte* payload, unsigned int length) {
+    String data;
+    unsigned int from = 0;
+    unsigned int to = 0;
+    
+    char p[length + 1];
+    memcpy(p, payload, length);
+    
+    JsonParser parser1;
+    parser1.clear();
+    parser1.addString(p); 
+
+
+    if (parser1.parse())
+    {
+        parser1.getOuterValueByKey("V", EMeterData.PhaseVoltage);
+        parser1.getOuterValueByKey("I", EMeterData.PhaseCurrent);
+        parser1.getOuterValueByKey("I", EMeterData.PhaseCurrent);
+        
+    }
+
+
+    p[length] = NULL;
+    charToString(p, data);
+    for(int i=0; i<NUMBEROFMETERS; i++) {
+        //Read Phase Voltage
+        for(int j=0; j<3; j++) {
+            while (data[to]!='%') {
+                to++;
+            }
+            EMeterData[i].PhaseVoltage[j] = (data.substring(from, to)).toFloat();
+            to++;
+            from = to;
+        }
+        //Read Phase Current
+        for(int j=0; j<3; j++) {
+            while (data[to]!='%') {
+                to++;
+            }
+            EMeterData[i].PhaseCurrent[j] = (data.substring(from, to)).toFloat();
+            to++;
+            from = to;
+        }
+        //Read Phase Power
+        for(int j=0; j<3; j++) {
+            while (data[to]!='%') {
+                to++;
+            }
+            EMeterData[i].PhasePower[j] = (data.substring(from, to)).toFloat();
+            to++;
+            from = to;
+        }
+        //Read Frequency
+        while (data[to]!='%') {
+            to++;
+        }
+        EMeterData[i].Frequency = (data.substring(from, to)).toFloat();
+        to++;
+        from = to;
+        //Read StartTime
+        while (data[to]!='%') {
+            to++;
+        }
+        EMeterData[i].Time = atol((data.substring(from, to)).c_str());
+        to++;
+        from = to;
+    }
+    if (activeCharger()==1) {
+        maxCurrentC1_test((int)(EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])); //Emeter3, I1
+    }
+    else if (activeCharger()==2) {
+        maxCurrentC2_test((int)(EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])); //Emeter3, I1
+    }
+    else {
+        maxCurrentC1_test((int)((EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])/2)); //Emeter3, I1
+        maxCurrentC2_test((int)((EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])/2)); //Emeter3, I1
+    }
+}
+*/
 
 void getMeasure_callback(byte* payload, unsigned int length) {
     String data;
@@ -364,9 +448,6 @@ void allowUser_callback(byte* payload, unsigned int length) {
         
     memcpy(payl, payload, length);
     payl[length] = NULL;
-    //char* ch = "and";
-    //strncat(Body, ch, 3);
-    //client.publish("HANevse/photonConverted", p);
     int port = (int) strtol(payl, &endchar, 10);
     //action=1  successfully start new charge (charger is free and last stopped session > 20 sec ago)
     //action=2  charger is free, but you already swiped the card in the last 20 sec (second swipe within 20sec)
@@ -375,6 +456,10 @@ void allowUser_callback(byte* payload, unsigned int length) {
     //action=5  you just started a charge at this charger, but had another consecutive RFID swipe within 20 seconds
     //action=6  you are already charging at another charger
     //action=7  succesful RFID read, but you are not in the userlist
+    
+    String topic_str = "HANevse/photonConverted/";
+    topic_str.concat(port);
+
     endchar = endchar + 1;
     if (port == 1 + CHARGEROFFSET) 
         port = AUTHENTICATION_CAR1;
@@ -383,22 +468,23 @@ void allowUser_callback(byte* payload, unsigned int length) {
     else return; //port = EXTRA;
     int retPi = (int) strtol(endchar, &endchar, 10);
     Pianswer = retPi; 
-    if (Pianswer == 0)
-        Pianswer = 9;
+    // if (Pianswer == 0)
+        // Pianswer = 9;
+
     switch(retPi) {
         case 1:
             digitalWrite(port, HIGH);
-            client.publish("HANevse1/photonConverted", "successful start new charge");
+            client.publish(topic_str, "successful start new charge");
             break;
         case 2:
             client.publish("HANevse/photonConverted", "charger is free, but you already swiped the card in the last 20 sec");
             break;
         case 3:
-            client.publish("HANevse1/photonConverted", "charger is occupied by another user");
+            client.publish("HANevse/photonConverted", "charger is occupied by another user");
             break;
         case 4:
             digitalWrite(port, LOW);
-            client.publish("HANevse1/photonConverted", "successful stop charge session");
+            client.publish("HANevse/photonConverted", "successful stop charge session");
             break;
         case 5:
             client.publish("HANevse/photonConverted", "you just started a charge at this charger, but had another consecutive RFID swipe within 20 sec");
@@ -419,15 +505,15 @@ void allowUser_callback(byte* payload, unsigned int length) {
 void callback(char* topic, byte* payload, unsigned int length) {
     test = "99";
 
-	//if (strcmp(topic, "HANevse/EnergyMeter")==0) {
-	//    test = "1";
-	//    getMeasure_callback(payload, length);
-	//}
-    //else
-     if (strcmp(topic, "HANevse1/allowUser")==0)
+	if (strcmp(topic, "HANevse/EnergyMeter")==0) {
+	   test = "1";
+	   getMeasure_callback(payload, length);
+	}
+    else
+     if (strcmp(topic, "HANevse/allowUser")==0)
     {
         allowUser_callback(payload, length);
-        //client.publish("HANevse1/photonConverted", "test photon responds");
+        //client.publish("HANevse/photonConverted", "test photon responds");
     }
     
 	time_t time = Time.now();
@@ -447,19 +533,35 @@ void add_Measurement(float phaseVoltageL1, float phaseVoltageL2, float phaseVolt
 	// }
 	// String Body = String(phaseVoltageL1, 2) + "%" + String(phaseVoltageL2, 2) + "%" + String(phaseVoltageL3, 2) + "%"  + String(currentL1, 2) + "%" + String(currentL2, 2) + "%" + String(currentL3, 2) + "%" + String(Power, 2) + "%" + String(Energy, 2) + "%" + String(Frequency, 2) + "%" + String(Timestamp) + socketStr + userStr + "%";
 	
+    if ((currentL1 > 50.0)||(currentL2 > 50.0)||(currentL3 > 50.0))
+        return;
+    if (((currentL1 < 0.1)&&(currentL2 < 0.1)&&(currentL3 < 0.1))&&((Power > phaseVoltageL1)&&(Power > phaseVoltageL2)&&(Power > phaseVoltageL3) )  )
+        return;
+
+    //This rounds floats to 3 decimal places
+    /// float newvar = (float)(((int)(oldvar * 1000 + .5)) / 1000); 
+    phaseVoltageL1 = (float)(((int)(phaseVoltageL1 * 1000 + .5)) / 1000);
+    phaseVoltageL2 = (float)(((int)(phaseVoltageL2 * 1000 + .5)) / 1000);
+    phaseVoltageL3 = (float)(((int)(phaseVoltageL3 * 1000 + .5)) / 1000);
+    currentL1 = (float)(((int)(currentL1 * 1000 + .5)) / 1000);
+    currentL2 = (float)(((int)(currentL2 * 1000 + .5)) / 1000);
+    currentL3 = (float)(((int)(currentL3 * 1000 + .5)) / 1000);
+    Frequency = (float)(((int)(Frequency * 1000 + .5)) / 1000);
+
+
     JsonWriterStatic<512> jsonMessage;     
         {
 		JsonWriterAutoObject obj(&jsonMessage);
 
-		// Add various types of data
+		// Add various types of data        
         jsonMessage.insertKeyValue("V1", phaseVoltageL1);
         jsonMessage.insertKeyValue("V2", phaseVoltageL2);
         jsonMessage.insertKeyValue("V3", phaseVoltageL3);
         jsonMessage.insertKeyValue("I1", currentL1);
         jsonMessage.insertKeyValue("I2", currentL2);
         jsonMessage.insertKeyValue("I3", currentL3);
-        jsonMessage.insertKeyValue("P", Power);
-        jsonMessage.insertKeyValue("E", Energy);
+        //jsonMessage.insertKeyValue("P", Power);
+        //jsonMessage.insertKeyValue("E", Energy);
         jsonMessage.insertKeyValue("F", Frequency);
           
 		jsonMessage.insertKeyValue("UserID", userId);
@@ -469,7 +571,7 @@ void add_Measurement(float phaseVoltageL1, float phaseVoltageL2, float phaseVolt
 
 
 	for(int i=0; i<3; i++) {
-		if(client.publish("HANevse/photonMeasure", jsonMessage.getBuffer(), client.QOS2)) {
+		if(client.publish("HANevse/photonMeasure", jsonMessage.getBuffer())) {
 			break;
 		}
 	}
@@ -529,17 +631,15 @@ bool readRFIDCard(int Charger) {
 
         //Authorized=testUser(content,Charger);
         UIDtagCharger1=content.substring(1); //?????? why does it start at 1?
-        //publish(const char *topic, const char* payload, EMQTT_QOS qos, uint16_t *messageid = NULL);
 
         {
 		JsonWriterAutoObject obj(&jsonMessage);
 
-		// Add various types of data
-		jsonMessage.insertKeyValue("Charger", Charger);
 		jsonMessage.insertKeyValue("UserId", UIDtagCharger1);
+        jsonMessage.insertKeyValue("Charger", Charger);
 		jsonMessage.insertKeyValue("StartTime", Time.now());
 	    }
-        client.publish("HANevse/updateUser", jsonMessage.getBuffer(), client.QOS2);
+        client.publish("HANevse/updateUser", jsonMessage.getBuffer());
     }
     if(Charger==2+CHARGEROFFSET)
     {
@@ -572,41 +672,32 @@ bool readRFIDCard(int Charger) {
 
         {
 		JsonWriterAutoObject obj(&jsonMessage);
-
-		// Add various types of data
-		jsonMessage.insertKeyValue("Charger", Charger);
+		
 		jsonMessage.insertKeyValue("UserId", UIDtagCharger2);
+        jsonMessage.insertKeyValue("Charger", Charger);
 		jsonMessage.insertKeyValue("StartTime", Time.now());
 	    }
-        client.publish("HANevse/updateUser", jsonMessage.getBuffer(), client.QOS2);
+        client.publish("HANevse/updateUser", jsonMessage.getBuffer());
         
     }
     DEBUGPORT.println("");
-    //// Added part, unknown if it can be interrupted by Pi mqtt response
-    
-    ushort cntr = 0;
-    
-    while(Pianswer < 1)
-    {
-        delay(50);
-        cntr = cntr + 1;
-        if (cntr > 40)
-            break;
-    }        
-    if (Pianswer == 1 || Pianswer ==4 )    
+       
+    delay(500);
+    // This whole function is not interrupted by callback() so Pianswer can't be changed in the meantime
+    //client.publish("HANevse/checkupdateUser", String(Pianswer));  
      return Authorized;
-    else 
-     return false;
 }
 
 void reconnect(void) {
     while (!client.isConnected()) {
         DEBUGPORT.print("MQTT>\tConnecting to MQTT broker...");
-        if (client.connect("EV-Photon-test1")) {
+        if (client.connect("EV-Photon1")) {
             DEBUGPORT.println("MQTT>\tConnected");
             //client.subscribe("HANevse/#", client.QOS2);
-            //client.subscribe("HANevse/EnergyMeter", client.QOS2);
-            client.subscribe("HANevse1/allowUser", client.QOS2);
+            if (TESTCASE){
+            client.subscribe("HANevse/EnergyMeter"); //+
+            }
+            client.subscribe("HANevse/allowUser");
         }
         else {
             DEBUGPORT.println("MQTT>\tConnection failed");
@@ -638,11 +729,11 @@ void setup() {
     digitalWrite(RESET_OLIMEX, HIGH);
     digitalWrite(D7, LOW);
     
-    //initRFID("");
+    initRFID(""); //+
     
-    //Particle.process();
-    //resetOlimex("");
-    //Particle.process();
+    //Particle.process();  
+    //resetOlimex("");  
+    //Particle.process(); 
 
 	Particle.function("switchTest",switchTest);
     Particle.function("maxCurrentC1",maxCurrentC1);
@@ -673,14 +764,14 @@ void loop() {
     
     Particle.process();
     //currentStr = String(Current[0][0],1)+" "+String( Current[0][1],1)+" "+String(Current[0][2],1)+" "+String(Current[1][0],1)+" "+String( Current[1][1],1)+" "+String(Current[1][2],1)+" "+String(Frequency[0],2);
-    currentStr = String(Current[0][0],1)+" "+String( PhaseVoltage[0][1],1)+" "+String(LineVoltage[0][2],1)+" "+String(Power[1][0],1)+" "+String( Energy[1],1)+" "+String(Current[1][2],1)+" "+String(Frequency[0],2);
+//+    currentStr = String(Current[0][0],1)+" "+String( PhaseVoltage[0][1],1)+" "+String(LineVoltage[0][2],1)+" "+String(Power[1][0],1)+" "+String( Energy[1],1)+" "+String(Current[1][2],1)+" "+String(Frequency[0],2);
     //currentStr=String(Current[1][2],1)+" "+currentStr.substring(0, max(200, currentStr.length()))
     //currentStr = String(CurrentList[0],1)+" "+String(CurrentList[1],1)+" "+String(CurrentList[2],1)+" "+String(CurrentList[3],1)+" "+String(CurrentList[4],1)+" "+String(CurrentList[5],1)+" "+String(CurrentList[6],1)+" "+String(CurrentList[7],1)+" "+String(CurrentList[8],1)+" "+String(CurrentList[9],1)+" "+String(CurrentList[10],1)+" "+String(CurrentList[11],1)+" "+String(CurrentList[12],1)+" "+String(CurrentList[13],1)+" "+String(CurrentList[14],1)+" "+String(CurrentList[15],1)+" "+String(CurrentList[16],1)+" "+String(CurrentList[17],1)+" "+String(CurrentList[18],1)+" "+String(CurrentList[19],1);
     if (Particle.connected() == false) {
         Particle.connect();
     }
-    //int Charger =1; 
-    //int Charger = readSerialOlimex()+CHARGEROFFSET;
+    //int Charger =1; //+
+    int Charger = readSerialOlimex()+CHARGEROFFSET; //+
     Particle.process();
     if(counter>10){
 		counter = 0;
@@ -690,25 +781,32 @@ void loop() {
     counter++;
 		
     // store new measurement value if it is received correctly from energymeter (via the Olimex).
-    //if(millis()>nextTime[handledCharger] && (Charger==1+CHARGEROFFSET || Charger==2+CHARGEROFFSET)) 
-    // {
-    //     Particle.process();
-    //     //getUserIdAtSocket(Charger)
-    //     int tempCharger = Charger;
-    //     Charger = handledCharger + 1;
-    //     if(((activeCharger()==Charger) || (activeCharger() == 3)) && (getUserIdAtSocket(Charger)!="00"))
-    //     {
-    //         //getUserIdAtSocket(Charger+CHARGEROFFSET);
-    //         add_Measurement(PhaseVoltage[Charger-1][0], PhaseVoltage[Charger-1][1], PhaseVoltage[Charger-1][2], Current[Charger-1][0], Current[Charger-1][1], Current[Charger-1][2], Power[Charger-1][0]+Power[Charger-1][1]+Power[Charger-1][2], Energy[Charger-1], Frequency[Charger-1], Time.now(), Charger+CHARGEROFFSET, getUserIdAtSocket(Charger+CHARGEROFFSET));
-    //     }
-    //     Charger = tempCharger;
-    //     nextTime[handledCharger] = millis() + 30000; //every 30 sec
-    // }
+    if(millis()>nextTime[handledCharger] && (Charger==1+CHARGEROFFSET || Charger==2+CHARGEROFFSET)) //+ all the if{}
+    {
+        Particle.process();
+        //getUserIdAtSocket(Charger)
+        int tempCharger = Charger;
+        Charger = handledCharger + 1;
+        if(((activeCharger()==Charger) || (activeCharger() == 3)) && (getUserIdAtSocket(Charger)!="00"))
+        {
+            //getUserIdAtSocket(Charger+CHARGEROFFSET);
+            add_Measurement(PhaseVoltage[Charger-1][0], PhaseVoltage[Charger-1][1], PhaseVoltage[Charger-1][2], Current[Charger-1][0], Current[Charger-1][1], Current[Charger-1][2], Power[Charger-1][0]+Power[Charger-1][1]+Power[Charger-1][2], Energy[Charger-1], Frequency[Charger-1], Time.now(), Charger+CHARGEROFFSET, getUserIdAtSocket(Charger+CHARGEROFFSET));
+        }
+        Charger = tempCharger;
+        nextTime[handledCharger] = millis() + 30000; //every 30 sec
+    }
     
 //     run loop very often to check new RFID cards
-//    Particle.process();
-//     bool Authorized_Charger1=readRFIDCard(1+CHARGEROFFSET);
-//     bool Authorized_Charger2=readRFIDCard(2+CHARGEROFFSET);
+    Particle.process(); //+
+    bool Authorized_Charger1=readRFIDCard(1+CHARGEROFFSET); //+
+    delay(5);
+    if (Pianswer == 1 || Pianswer ==4 )    
+        Authorized_Charger1 = TRUE;
+    bool Authorized_Charger2=readRFIDCard(2+CHARGEROFFSET); //+
+    delay(5);
+    if (Pianswer == 1 || Pianswer ==4 )  //+    
+          Authorized_Charger2 = TRUE;     //+
+    
     
     //DEBUGPORT.println(Current[0][0]+ Current[0][1]+ Current[0][2],4);
     //DEBUGPORT.println(String(LatestStartTime[0]+60));
