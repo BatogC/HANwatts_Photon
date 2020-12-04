@@ -70,7 +70,7 @@ unsigned long LatestStartTime[2]={0,0};
 bool handledCharger=0;
 String ShareVar;
 //String Current_Str="0";
-bool TESTCASE=false;
+bool TESTCASE=true;
 
 ushort Pianswer=0;
 
@@ -94,8 +94,8 @@ struct EMeter {
 //     unsigned long StartTime;
 // };
 
-EMeter EMeterData[NUMBEROFMETERS];
-//EMeter EMeterData;
+//EMeter EMeterData[NUMBEROFMETERS];
+EMeter EMeterData;
 String EVListStr="";
 String currentStr="";
 unsigned int nextTime[2] = {30000,30000};    // Next time to contact the server
@@ -249,174 +249,119 @@ String getUserIdAtSocket(int socket) {
     return "00";
 }
 
-/*
-void newgetMeasure_callback(byte* payload, unsigned int length) {
-    String data;
-    unsigned int from = 0;
-    unsigned int to = 0;
-    
-    char p[length + 1];
-    memcpy(p, payload, length);
+
+void getMeasure_callback(byte* payload, unsigned int length) {
+
+    int sockets = 0;
+    //char p[length + 1];
+    //memcpy(p, payload, length);
     
     JsonParser parser1;
     parser1.clear();
-    parser1.addString(p); 
+    parser1.addData( (char*)(payload), length); 
+    parser1.parse();
+
+    parser1.getOuterValueByKey("I1", EMeterData.PhaseCurrent[0]);
+    parser1.getOuterValueByKey("I2", EMeterData.PhaseCurrent[1]);
+    parser1.getOuterValueByKey("I3", EMeterData.PhaseCurrent[2]);
+    parser1.getOuterValueByKey("Sockets", sockets);
 
 
-    if (parser1.parse())
-    {
-        parser1.getOuterValueByKey("V", EMeterData.PhaseVoltage);
-        parser1.getOuterValueByKey("I", EMeterData.PhaseCurrent);
-        parser1.getOuterValueByKey("I", EMeterData.PhaseCurrent);
-        
-    }
-
-
-    p[length] = NULL;
-    charToString(p, data);
-    for(int i=0; i<NUMBEROFMETERS; i++) {
-        //Read Phase Voltage
-        for(int j=0; j<3; j++) {
-            while (data[to]!='%') {
-                to++;
-            }
-            EMeterData[i].PhaseVoltage[j] = (data.substring(from, to)).toFloat();
-            to++;
-            from = to;
-        }
-        //Read Phase Current
-        for(int j=0; j<3; j++) {
-            while (data[to]!='%') {
-                to++;
-            }
-            EMeterData[i].PhaseCurrent[j] = (data.substring(from, to)).toFloat();
-            to++;
-            from = to;
-        }
-        //Read Phase Power
-        for(int j=0; j<3; j++) {
-            while (data[to]!='%') {
-                to++;
-            }
-            EMeterData[i].PhasePower[j] = (data.substring(from, to)).toFloat();
-            to++;
-            from = to;
-        }
-        //Read Frequency
-        while (data[to]!='%') {
-            to++;
-        }
-        EMeterData[i].Frequency = (data.substring(from, to)).toFloat();
-        to++;
-        from = to;
-        //Read StartTime
-        while (data[to]!='%') {
-            to++;
-        }
-        EMeterData[i].Time = atol((data.substring(from, to)).c_str());
-        to++;
-        from = to;
-    }
-    if (activeCharger()==1) {
-        maxCurrentC1_test((int)(EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])); //Emeter3, I1
-    }
-    else if (activeCharger()==2) {
-        maxCurrentC2_test((int)(EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])); //Emeter3, I1
-    }
-    else {
-        maxCurrentC1_test((int)((EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])/2)); //Emeter3, I1
-        maxCurrentC2_test((int)((EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])/2)); //Emeter3, I1
+    if (activeCharger() != 0) {
+        maxCurrentC1_test((int)((EMeterData.PhaseCurrent[0]+EMeterData.PhaseCurrent[1]+EMeterData.PhaseCurrent[2])/sockets)); //Emeter3, I1
+        maxCurrentC2_test((int)((EMeterData.PhaseCurrent[0]+EMeterData.PhaseCurrent[1]+EMeterData.PhaseCurrent[2])/sockets)); //Emeter3, I1
     }
 }
-*/
 
-void getMeasure_callback(byte* payload, unsigned int length) {
-    String data;
-    unsigned int from = 0;
-    unsigned int to = 0;
-    
-    char p[length + 1];
-    memcpy(p, payload, length);
-    
-    p[length] = NULL;
-    charToString(p, data);
-    for(int i=0; i<NUMBEROFMETERS; i++) {
-        //Read Phase Voltage
-        for(int j=0; j<3; j++) {
-            while (data[to]!='%') {
-                to++;
-            }
-            EMeterData[i].PhaseVoltage[j] = (data.substring(from, to)).toFloat();
-            to++;
-            from = to;
-        }
-        //Read Phase Current
-        for(int j=0; j<3; j++) {
-            while (data[to]!='%') {
-                to++;
-            }
-            EMeterData[i].PhaseCurrent[j] = (data.substring(from, to)).toFloat();
-            to++;
-            from = to;
-        }
-        //Read Phase Power
-        for(int j=0; j<3; j++) {
-            while (data[to]!='%') {
-                to++;
-            }
-            EMeterData[i].PhasePower[j] = (data.substring(from, to)).toFloat();
-            to++;
-            from = to;
-        }
-        //Read Frequency
-        while (data[to]!='%') {
-            to++;
-        }
-        EMeterData[i].Frequency = (data.substring(from, to)).toFloat();
-        to++;
-        from = to;
-        //Read StartTime
-        while (data[to]!='%') {
-            to++;
-        }
-        EMeterData[i].Time = atol((data.substring(from, to)).c_str());
-        to++;
-        from = to;
-    }
-    time_t time = Time.now();
-    //DEBUGPORT.println(time);
-    DEBUGPORT.print("MQTT>\tReceive energy meter data from broker at: ");
-    DEBUGPORT.println(Time.format(time, TIME_FORMAT_DEFAULT));
-    
-    //Current_Str = String((int)(EMeterData[2].PhaseCurrent[0]));
-    
-    //Send current to OLIMEX
-    /*
-    if (AUTHENTICATION_CAR1) {
-        if (AUTHENTICATION_CAR2) {
-            maxCurrentC1_test((int)(EMeterData[2].PhaseCurrent[0]/2)); //Emeter3, I1
-            maxCurrentC2_test((int)(EMeterData[2].PhaseCurrent[0]/2)); //Emeter3, I1
-        }
-        else
-            maxCurrentC1_test((int)(EMeterData[2].PhaseCurrent[0])); //Emeter3, I1
-    }
-    else {
-        if (AUTHENTICATION_CAR2) {
-            maxCurrentC2_test((int)(EMeterData[2].PhaseCurrent[0])); //Emeter3, I1
-        }
-    }
-    */
-    if (activeCharger()==1) {
-        maxCurrentC1_test((int)(EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])); //Emeter3, I1
-    }
-    else if (activeCharger()==2) {
-        maxCurrentC2_test((int)(EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])); //Emeter3, I1
-    }
-    else {
-        maxCurrentC1_test((int)((EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])/2)); //Emeter3, I1
-        maxCurrentC2_test((int)((EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])/2)); //Emeter3, I1
-    }
-}
+
+// void old_getMeasure_callback(byte* payload, unsigned int length) {
+//     String data;
+//     unsigned int from = 0;
+//     unsigned int to = 0;
+//    
+//     char p[length + 1];
+//     memcpy(p, payload, length);
+//    
+//     p[length] = NULL;
+//     charToString(p, data);
+//     for(int i=0; i<NUMBEROFMETERS; i++) {
+//         //Read Phase Voltage
+//         for(int j=0; j<3; j++) {
+//             while (data[to]!='%') {
+//                 to++;
+//             }
+//             EMeterData[i].PhaseVoltage[j] = (data.substring(from, to)).toFloat();
+//             to++;
+//             from = to;
+//         }
+//         //Read Phase Current
+//         for(int j=0; j<3; j++) {
+//             while (data[to]!='%') {
+//                 to++;
+//             }
+//             EMeterData[i].PhaseCurrent[j] = (data.substring(from, to)).toFloat();
+//             to++;
+//             from = to;
+//         }
+//         //Read Phase Power
+//         for(int j=0; j<3; j++) {
+//             while (data[to]!='%') {
+//                 to++;
+//             }
+//             EMeterData[i].PhasePower[j] = (data.substring(from, to)).toFloat();
+//             to++;
+//             from = to;
+//         }
+//         //Read Frequency
+//         while (data[to]!='%') {
+//             to++;
+//         }
+//         EMeterData[i].Frequency = (data.substring(from, to)).toFloat();
+//         to++;
+//         from = to;
+//         //Read StartTime
+//         while (data[to]!='%') {
+//             to++;
+//         }
+//         EMeterData[i].Time = atol((data.substring(from, to)).c_str());
+//         to++;
+//         from = to;
+//     }
+//     time_t time = Time.now();
+//     //DEBUGPORT.println(time);
+//     DEBUGPORT.print("MQTT>\tReceive energy meter data from broker at: ");
+//     DEBUGPORT.println(Time.format(time, TIME_FORMAT_DEFAULT));
+//    
+//     //Current_Str = String((int)(EMeterData[2].PhaseCurrent[0]));
+//    
+//     //Send current to OLIMEX
+//     /*
+//     if (AUTHENTICATION_CAR1) {
+//         if (AUTHENTICATION_CAR2) {
+//             maxCurrentC1_test((int)(EMeterData[2].PhaseCurrent[0]/2)); //Emeter3, I1
+//             maxCurrentC2_test((int)(EMeterData[2].PhaseCurrent[0]/2)); //Emeter3, I1
+//         }
+//         else
+//             maxCurrentC1_test((int)(EMeterData[2].PhaseCurrent[0])); //Emeter3, I1
+//     }
+//     else {
+//         if (AUTHENTICATION_CAR2) {
+//             maxCurrentC2_test((int)(EMeterData[2].PhaseCurrent[0])); //Emeter3, I1
+//         }
+//     }
+//     */
+//     if (activeCharger()==1) {
+//         maxCurrentC1_test((int)(EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])); //Emeter3, I1
+//     }
+//     else if (activeCharger()==2) {
+//         maxCurrentC2_test((int)(EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])); //Emeter3, I1
+//     }
+//     else {
+//         maxCurrentC1_test((int)((EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])/2)); //Emeter3, I1
+//         maxCurrentC2_test((int)((EMeterData[2].PhaseCurrent[0]+EMeterData[2].PhaseCurrent[1]+EMeterData[2].PhaseCurrent[2])/2)); //Emeter3, I1
+//     }
+// }
+
 
 void allowUser_callback(byte* payload, unsigned int length) {
     char payl[length+1];
@@ -453,26 +398,26 @@ void allowUser_callback(byte* payload, unsigned int length) {
             client.publish(topic_str, "successful start new charge");
             break;
         case 2:
-            client.publish("HANevse/photonConverted", "charger is free, but you already swiped the card in the last 20 sec");
+            client.publish(topic_str, "charger is free, but you already swiped the card in the last 20 sec");
             break;
         case 3:
-            client.publish("HANevse/photonConverted", "charger is occupied by another user");
+            client.publish(topic_str, "charger is occupied by another user");
             break;
         case 4:
             digitalWrite(port, LOW);
-            client.publish("HANevse/photonConverted", "successful stop charge session");
+            client.publish(topic_str, "successful stop charge session");
             break;
         case 5:
-            client.publish("HANevse/photonConverted", "you just started a charge at this charger, but had another consecutive RFID swipe within 20 sec");
+            client.publish(topic_str, "you just started a charge at this charger, but had another consecutive RFID swipe within 20 sec");
             break;
         case 6:
-            client.publish("HANevse/photonConverted", "you are already charging at another charger");
+            client.publish(topic_str, "you are already charging at another charger");
             break;
         case 7:
-            client.publish("HANevse/photonConverted", "successful RFID read, but you are not in the userlist");
+            client.publish(topic_str, "successful RFID read, but you are not in the userlist");
             break;
         default:
-            client.publish("HANevse/photonConverted", "ERROR: unknown scenario");
+            client.publish(topic_str, "ERROR: unknown scenario");
         
     }
     
@@ -499,15 +444,6 @@ void callback(char* topic, byte* payload, unsigned int length) {
 }
 
 void add_Measurement(float phaseVoltageL1, float phaseVoltageL2, float phaseVoltageL3, float currentL1, float currentL2, float currentL3,  float Power, float Energy, float Frequency, unsigned long Timestamp, int socketId=0, String userId="00") {
-	// String socketStr = "";
-	// String userStr = "";
-	// if(socketId != 0) {
-	// 	socketStr = "%" + String(socketId);
-	// }
-	// if(userId != "00") {
-	// 	userStr = "%" + userId;
-	// }
-	// String Body = String(phaseVoltageL1, 2) + "%" + String(phaseVoltageL2, 2) + "%" + String(phaseVoltageL3, 2) + "%"  + String(currentL1, 2) + "%" + String(currentL2, 2) + "%" + String(currentL3, 2) + "%" + String(Power, 2) + "%" + String(Energy, 2) + "%" + String(Frequency, 2) + "%" + String(Timestamp) + socketStr + userStr + "%";
 	
     if ((currentL1 > 50.0)||(currentL2 > 50.0)||(currentL3 > 50.0))
         return;
@@ -528,7 +464,6 @@ void add_Measurement(float phaseVoltageL1, float phaseVoltageL2, float phaseVolt
     JsonWriterStatic<512> jsonMessage;     
         {
 		JsonWriterAutoObject obj(&jsonMessage);
-
 		// Add various types of data        
         jsonMessage.insertKeyValue("V1", phaseVoltageL1);
         jsonMessage.insertKeyValue("V2", phaseVoltageL2);
@@ -570,7 +505,7 @@ int initRFID(String input) {
     mfrc522_Charger1.PCD_SetAntennaGain(mfrc522_Charger1.RxGain_max);
     mfrc522_Charger2.PCD_SetAntennaGain(mfrc522_Charger2.RxGain_max);
     
-    DEBUGPORT.println("Approximate your card to the reader...");
+    DEBUGPORT.println("Approach your card to the reader...");
     DEBUGPORT.println();    
     return 1;
 }
@@ -606,7 +541,7 @@ bool readRFIDCard(int Charger) {
         JsonWriterStatic<512> jsonMessage;
 
         //Authorized=testUser(content,Charger);
-        UIDtagCharger1=content.substring(1); //?????? why does it start at 1?
+        UIDtagCharger1=content.substring(1); //??? why does it start at 1?
 
         {
 		JsonWriterAutoObject obj(&jsonMessage);
@@ -671,7 +606,7 @@ void reconnect(void) {
             DEBUGPORT.println("MQTT>\tConnected");
             //client.subscribe("HANevse/#", client.QOS2);
             if (TESTCASE){
-            client.subscribe("HANevse/EnergyMeter"); //+
+            client.subscribe("HAN/EnergyMeter"); //+
             }
             client.subscribe("HANevse/allowUser");
         }
@@ -727,7 +662,7 @@ void setup() {
     Particle.variable("Topic", test);
     Particle.process();
 	
-	RGB.control(true);
+	//RGB.control(true);
     Time.zone(1); //Dutch time zone
 }
 
