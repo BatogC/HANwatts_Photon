@@ -6,6 +6,6 @@
         "*.ino": "cpp"
     },
     "particle.targetDevice": "EVtest",
-    "particle.firmwareVersion": "1.5.2",
+    "particle.firmwareVersion": "2.0.1",
     "particle.targetPlatform": "photon"
 }

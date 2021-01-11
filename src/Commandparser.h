@@ -2,6 +2,7 @@
 //#ifndef SETTINGS_H
 //  #include "Settings.h"
 //#endif
+#include "Particle.h"
 
 #define BUFSIZE 350
 #define RSTTIMEOUT 300000
@@ -15,7 +16,7 @@ int bufpos = 0;
 //float SendPrepSeconds = 0;
 //float BroadCastCnt = 0;
 unsigned long lastUpload = 0;
-extern String getHttp(String url);
+//extern String getHttp(String url);
 //float Voltage[2]={1.0 / 0.0, 1.0 / 0.0};
 //float Current[2]={0.1, 0.2}; //float Current[2]={1.0 / 0.0, 1.0 / 0.0};
 //float Power[2]={1.0 / 0.0, 1.0 / 0.0};
@@ -256,14 +257,14 @@ int stringParse(char * buf, int buflen){
 int readSerialOlimex() {
     int Charger;
      char input;
-  if (millis()>(lastUpload+RSTTIMEOUT)){
+  //if (millis()>(lastUpload+RSTTIMEOUT)){
    // softReset();
-  }
+  //}
   for(int k=0;k<10;k++){
   if (Serial1.available()) {
     input = Serial1.read();
-    DEBUGPORT.print(input,HEX);
-    DEBUGPORT.print(" ");
+    //DEBUGPORT.print(input,HEX);
+    //DEBUGPORT.print(" ");
     if (bufpos<BUFSIZE)
     {
         buff[bufpos] = input;
