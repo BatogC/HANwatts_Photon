@@ -1,0 +1,76 @@
+\section{lib/\+Json\+Parser\+Generator\+R\+K/src/\+Json\+Parser\+Generator\+RK.h File Reference}
+\label{_json_parser_generator_r_k_8h}\index{lib/\+Json\+Parser\+Generator\+R\+K/src/\+Json\+Parser\+Generator\+R\+K.\+h@{lib/\+Json\+Parser\+Generator\+R\+K/src/\+Json\+Parser\+Generator\+R\+K.\+h}}
+{\ttfamily \#include \char`\"{}Particle.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+Include dependency graph for Json\+Parser\+Generator\+R\+K.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_json_parser_generator_r_k_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_json_parser_generator_r_k_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}
+\begin{DoxyCompactList}\small\item\em J\+S\+ON token description. \end{DoxyCompactList}\item 
+struct \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parser}
+\begin{DoxyCompactList}\small\item\em J\+S\+ON parser. \end{DoxyCompactList}\item 
+class \textbf{ Json\+Parser\+String}
+\begin{DoxyCompactList}\small\item\em Class used internally for writing to strings. \end{DoxyCompactList}\item 
+class \textbf{ Json\+Buffer}
+\begin{DoxyCompactList}\small\item\em Base class for managing a static or dynamic buffer, used by both \doxyref{Json\+Parser}{p.}{class_json_parser} and \doxyref{Json\+Writer}{p.}{class_json_writer}. \end{DoxyCompactList}\item 
+class \textbf{ Json\+Parser}
+\begin{DoxyCompactList}\small\item\em A\+PI to the \doxyref{Json\+Parser}{p.}{class_json_parser}. \end{DoxyCompactList}\item 
+class \textbf{ Json\+Parser\+Static$<$ B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E, M\+A\+X\+\_\+\+T\+O\+K\+E\+N\+S $>$}
+\begin{DoxyCompactList}\small\item\em Creates a \doxyref{Json\+Parser}{p.}{class_json_parser} with a static buffer. \end{DoxyCompactList}\item 
+class \textbf{ Json\+Reference}
+\begin{DoxyCompactList}\small\item\em This class provides a fluent-\/style A\+PI for easily traversing a tree of J\+S\+ON objects to find a value. \end{DoxyCompactList}\item 
+struct \textbf{ Json\+Writer\+Context}
+\begin{DoxyCompactList}\small\item\em Used internally by \doxyref{Json\+Writer}{p.}{class_json_writer}. \end{DoxyCompactList}\item 
+class \textbf{ Json\+Writer}
+\begin{DoxyCompactList}\small\item\em Class for building a J\+S\+ON string. \end{DoxyCompactList}\item 
+class \textbf{ Json\+Writer\+Static$<$ B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E $>$}
+\begin{DoxyCompactList}\small\item\em Creates a \doxyref{Json\+Writer}{p.}{class_json_writer} with a statically allocated buffer. \end{DoxyCompactList}\item 
+class \textbf{ Json\+Writer\+Auto\+Object}
+\begin{DoxyCompactList}\small\item\em Class for creating a J\+S\+ON object with \doxyref{Json\+Writer}{p.}{class_json_writer}. \end{DoxyCompactList}\item 
+class \textbf{ Json\+Writer\+Auto\+Array}
+\begin{DoxyCompactList}\small\item\em Class for creating a J\+S\+ON array with \doxyref{Json\+Writer}{p.}{class_json_writer}. \end{DoxyCompactList}\item 
+class \textbf{ Json\+Modifier}
+\begin{DoxyCompactList}\small\item\em Class for modifying a J\+S\+ON object in place, without needing to make a copy of it. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ Json\+Parser\+Generator\+RK}
+\end{DoxyCompactItemize}
+\subsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntype\+\_\+t} \{ \newline
+\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED} = 0, 
+\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT} = 1, 
+\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+A\+R\+R\+AY} = 2, 
+\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG} = 3, 
+\newline
+\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE} = 4
+ \}\begin{DoxyCompactList}\small\item\em J\+S\+ON type identifier (object, array, string, primitive) \end{DoxyCompactList}
+\item 
+enum \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmnerr} \{ \textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM} = -\/1, 
+\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL} = -\/2, 
+\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT} = -\/3
+ \}\begin{DoxyCompactList}\small\item\em J\+S\+MN error codes. \end{DoxyCompactList}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+init} (jsmn\+\_\+parser $\ast$parser)
+\begin{DoxyCompactList}\small\item\em Create J\+S\+ON parser over an array of tokens. \end{DoxyCompactList}\item 
+int \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parse} (jsmn\+\_\+parser $\ast$parser, const char $\ast$js, size\+\_\+t len, jsmntok\+\_\+t $\ast$tokens, unsigned int num\+\_\+tokens)
+\begin{DoxyCompactList}\small\item\em Run J\+S\+ON parser. \end{DoxyCompactList}\end{DoxyCompactItemize}

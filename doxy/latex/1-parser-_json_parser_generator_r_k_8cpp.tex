@@ -1,0 +1,248 @@
+\section{lib/\+Json\+Parser\+Generator\+R\+K/examples/1-\/parser/1-\/parser-\/\+Json\+Parser\+Generator\+RK.cpp File Reference}
+\label{1-parser-_json_parser_generator_r_k_8cpp}\index{lib/\+Json\+Parser\+Generator\+R\+K/examples/1-\/parser/1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{lib/\+Json\+Parser\+Generator\+R\+K/examples/1-\/parser/1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
+{\ttfamily \#include \char`\"{}Particle.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Json\+Parser\+Generator\+R\+K.\+h\char`\"{}}\newline
+Include dependency graph for 1-\/parser-\/\+Json\+Parser\+Generator\+RK.cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{1-parser-_json_parser_generator_r_k_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ run\+Test} ()
+\item 
+void \textbf{ setup} ()
+\begin{DoxyCompactList}\small\item\em Inital setup for pin assignments and serial links start. \end{DoxyCompactList}\item 
+void \textbf{ loop} ()
+\begin{DoxyCompactList}\small\item\em Main running function that executes all other functions; runs over 5times/second. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const unsigned long \textbf{ T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS} = 10000
+\item 
+unsigned long \textbf{ last\+Run} = 0
+\item 
+const char $\ast$const \textbf{ test2} = \char`\"{}\{\textbackslash{}\char`\"{}t1\textbackslash{}\char`\"{}\+:\textbackslash{}\char`\"{}abc\textbackslash{}\char`\"{},\textbackslash{}\char`\"{}t2\textbackslash{}\char`\"{}\+:1234,\textbackslash{}\char`\"{}t3\textbackslash{}\char`\"{}\+:1234.\+5,\textbackslash{}\char`\"{}t4\textbackslash{}\char`\"{}\+:true,\textbackslash{}\char`\"{}t5\textbackslash{}\char`\"{}\+:false,\textbackslash{}\char`\"{}t6\textbackslash{}\char`\"{}\+:null, \textbackslash{}\char`\"{}t7\textbackslash{}\char`\"{} \+: \textbackslash{}\char`\"{}\textbackslash{}\textbackslash{}\textbackslash{}\char`\"{}quoted\textbackslash{}\textbackslash{}\textbackslash{}\char`\"{}\textbackslash{}\char`\"{} \} \char`\"{}
+\item 
+\textbf{ Json\+Parser\+Static}$<$ 256, 20 $>$ \textbf{ parser1}
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\label{1-parser-_json_parser_generator_r_k_8cpp_afe461d27b9c48d5921c00d521181f12f}} 
+\index{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}!loop@{loop}}
+\index{loop@{loop}!1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
+\subsubsection{loop()}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main running function that executes all other functions; runs over 5times/second. 
+
+
+
+Definition at line 19 of file 1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References run\+Test().
+
+
+\begin{DoxyCode}
+19             \{
+20     \textcolor{keywordflow}{if} (millis() - lastRun >= TEST_RUN_PERIOD_MS) \{
+21         lastRun = millis();
+22         runTest();
+23     \}
+24 \}
+\end{DoxyCode}
+\mbox{\label{1-parser-_json_parser_generator_r_k_8cpp_a822f652c6fc2f163c182a6e5fe922c23}} 
+\index{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}!run\+Test@{run\+Test}}
+\index{run\+Test@{run\+Test}!1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
+\subsubsection{run\+Test()}
+{\footnotesize\ttfamily void run\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 26 of file 1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Buffer\+::add\+String(), Json\+Buffer\+::clear(), Json\+Parser\+::get\+Outer\+Key\+Value\+By\+Index(), Json\+Parser\+::get\+Outer\+Value\+By\+Key(), String\+::operator!=(), Json\+Parser\+::parse(), parser1, and test2.
+
+
+\begin{DoxyCode}
+26                \{
+27     \textcolor{comment}{// Clear the parser state, add the string test2, and parse it}
+28     parser1.clear();
+29     parser1.addString(test2);
+30     \textcolor{keywordflow}{if} (!parser1.parse()) \{
+31         Serial.println(\textcolor{stringliteral}{"parsing failed test2"});
+32         \textcolor{keywordflow}{return};
+33     \}
+34 
+35     String strValue;
+36     \textcolor{keywordflow}{if} (!parser1.getOuterValueByKey(\textcolor{stringliteral}{"t1"}, strValue)) \{
+37         Serial.println(\textcolor{stringliteral}{"failed to get test2 t1"});
+38         \textcolor{keywordflow}{return};
+39     \}
+40     \textcolor{keywordflow}{if} (strValue != \textcolor{stringliteral}{"abc"}) \{
+41         Serial.printlnf(\textcolor{stringliteral}{"wrong value test2 t1 was %s"}, strValue.c_str());
+42         \textcolor{keywordflow}{return};
+43     \}
+44 
+45     String keyName;
+46     \textcolor{keywordflow}{if} (!parser1.getOuterKeyValueByIndex(0, keyName, strValue)) \{
+47         Serial.println(\textcolor{stringliteral}{"failed to get test2 t1 by index"});
+48         \textcolor{keywordflow}{return};
+49     \}
+50     \textcolor{keywordflow}{if} (keyName != \textcolor{stringliteral}{"t1"}) \{
+51         Serial.printlnf(\textcolor{stringliteral}{"wrong key name test2 t1 was %s by index"}, keyName.c_str());
+52         \textcolor{keywordflow}{return};
+53     \}
+54     \textcolor{keywordflow}{if} (strValue != \textcolor{stringliteral}{"abc"}) \{
+55         Serial.printlnf(\textcolor{stringliteral}{"wrong value test2 t1 was %s by index"}, strValue.c_str());
+56         \textcolor{keywordflow}{return};
+57     \}
+58 
+59     \textcolor{keywordtype}{int} intValue;
+60     \textcolor{keywordflow}{if} (!parser1.getOuterValueByKey(\textcolor{stringliteral}{"t2"}, intValue)) \{
+61         Serial.println(\textcolor{stringliteral}{"failed to get test2 t2"});
+62         \textcolor{keywordflow}{return};
+63     \}
+64     \textcolor{keywordflow}{if} (intValue != 1234) \{
+65         Serial.printlnf(\textcolor{stringliteral}{"wrong value test2 t2 was %d"}, intValue);
+66         \textcolor{keywordflow}{return};
+67     \}
+68     intValue = -1;
+69 
+70     \textcolor{keywordflow}{if} (!parser1.getOuterKeyValueByIndex(1, keyName, intValue)) \{
+71         Serial.println(\textcolor{stringliteral}{"failed to get test2 t2 by index"});
+72         \textcolor{keywordflow}{return};
+73     \}
+74     \textcolor{keywordflow}{if} (keyName != \textcolor{stringliteral}{"t2"}) \{
+75         Serial.printlnf(\textcolor{stringliteral}{"wrong key name test2 t2 was %s by index"}, keyName.c_str());
+76         \textcolor{keywordflow}{return};
+77     \}
+78     \textcolor{keywordflow}{if} (intValue != 1234) \{
+79         Serial.printlnf(\textcolor{stringliteral}{"wrong value test2 t2 was %d by index"}, intValue);
+80         \textcolor{keywordflow}{return};
+81     \}
+82 
+83 
+84     \textcolor{keywordtype}{float} floatValue;
+85     \textcolor{keywordflow}{if} (!parser1.getOuterValueByKey(\textcolor{stringliteral}{"t3"}, floatValue)) \{
+86         Serial.println(\textcolor{stringliteral}{"failed to get test2 t3"});
+87         \textcolor{keywordflow}{return};
+88     \}
+89     \textcolor{keywordflow}{if} (floatValue != 1234.5) \{
+90         Serial.printlnf(\textcolor{stringliteral}{"wrong value test2 t3 was %f"}, floatValue);
+91         \textcolor{keywordflow}{return};
+92     \}
+93 
+94     \textcolor{keywordtype}{bool} boolValue;
+95     \textcolor{keywordflow}{if} (!parser1.getOuterValueByKey(\textcolor{stringliteral}{"t4"}, boolValue)) \{
+96         Serial.println(\textcolor{stringliteral}{"failed to get test2 t4"});
+97         \textcolor{keywordflow}{return};
+98     \}
+99     \textcolor{keywordflow}{if} (boolValue != \textcolor{keyword}{true}) \{
+100         Serial.printlnf(\textcolor{stringliteral}{"wrong value test2 t4 was %d"}, boolValue);
+101         \textcolor{keywordflow}{return};
+102     \}
+103 
+104     \textcolor{keywordflow}{if} (!parser1.getOuterValueByKey(\textcolor{stringliteral}{"t5"}, boolValue)) \{
+105         Serial.println(\textcolor{stringliteral}{"failed to get test2 t5"});
+106         \textcolor{keywordflow}{return};
+107     \}
+108     \textcolor{keywordflow}{if} (boolValue != \textcolor{keyword}{false}) \{
+109         Serial.printlnf(\textcolor{stringliteral}{"wrong value test2 t5 was %d"}, boolValue);
+110         \textcolor{keywordflow}{return};
+111     \}
+112 
+113 
+114     \textcolor{keywordflow}{if} (!parser1.getOuterValueByKey(\textcolor{stringliteral}{"t7"}, strValue)) \{
+115         Serial.println(\textcolor{stringliteral}{"failed to get test2 t7"});
+116         \textcolor{keywordflow}{return};
+117     \}
+118     \textcolor{keywordflow}{if} (strValue != \textcolor{stringliteral}{"\(\backslash\)"quoted\(\backslash\)""}) \{
+119         Serial.printlnf(\textcolor{stringliteral}{"wrong value test2 75 was %s"}, strValue.c_str());
+120         \textcolor{keywordflow}{return};
+121     \}
+122 
+123     Serial.println(\textcolor{stringliteral}{"test passed!"});
+124 \}
+\end{DoxyCode}
+\mbox{\label{1-parser-_json_parser_generator_r_k_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}!setup@{setup}}
+\index{setup@{setup}!1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
+\subsubsection{setup()}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inital setup for pin assignments and serial links start. 
+
+
+
+Definition at line 15 of file 1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+\begin{DoxyCode}
+15              \{
+16     Serial.begin(9600);
+17 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\label{1-parser-_json_parser_generator_r_k_8cpp_a5082951a06f690a0623ea99ed4228392}} 
+\index{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}!last\+Run@{last\+Run}}
+\index{last\+Run@{last\+Run}!1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
+\subsubsection{last\+Run}
+{\footnotesize\ttfamily unsigned long last\+Run = 0}
+
+
+
+Definition at line 6 of file 1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp.
+
+\mbox{\label{1-parser-_json_parser_generator_r_k_8cpp_aa77335196b9c1b8ba3d649f2f381a009}} 
+\index{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}!parser1@{parser1}}
+\index{parser1@{parser1}!1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
+\subsubsection{parser1}
+{\footnotesize\ttfamily \textbf{ Json\+Parser\+Static}$<$256, 20$>$ parser1}
+
+
+
+Definition at line 13 of file 1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+Referenced by run\+Test().
+
+\mbox{\label{1-parser-_json_parser_generator_r_k_8cpp_a27c66a6ddd571e937494116d9918691b}} 
+\index{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}!test2@{test2}}
+\index{test2@{test2}!1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
+\subsubsection{test2}
+{\footnotesize\ttfamily const char$\ast$ const test2 = \char`\"{}\{\textbackslash{}\char`\"{}t1\textbackslash{}\char`\"{}\+:\textbackslash{}\char`\"{}abc\textbackslash{}\char`\"{},\textbackslash{}\char`\"{}t2\textbackslash{}\char`\"{}\+:1234,\textbackslash{}\char`\"{}t3\textbackslash{}\char`\"{}\+:1234.\+5,\textbackslash{}\char`\"{}t4\textbackslash{}\char`\"{}\+:true,\textbackslash{}\char`\"{}t5\textbackslash{}\char`\"{}\+:false,\textbackslash{}\char`\"{}t6\textbackslash{}\char`\"{}\+:null, \textbackslash{}\char`\"{}t7\textbackslash{}\char`\"{} \+: \textbackslash{}\char`\"{}\textbackslash{}\textbackslash{}\textbackslash{}\char`\"{}quoted\textbackslash{}\textbackslash{}\textbackslash{}\char`\"{}\textbackslash{}\char`\"{} \} \char`\"{}}
+
+
+
+Definition at line 10 of file 1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+Referenced by run\+Test().
+
+\mbox{\label{1-parser-_json_parser_generator_r_k_8cpp_a0aa12824a9c1a44e8d9f2499e0ba2698}} 
+\index{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}!T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS@{T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}}
+\index{T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS@{T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}!1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
+\subsubsection{T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}
+{\footnotesize\ttfamily const unsigned long T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS = 10000}
+
+
+
+Definition at line 5 of file 1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp.
+

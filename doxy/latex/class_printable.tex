@@ -1,0 +1,62 @@
+\section{Printable Class Reference}
+\label{class_printable}\index{Printable@{Printable}}
+
+
+The \doxyref{Printable}{p.}{class_printable} class provides a way for new classes to allow themselves to be printed.  
+
+
+
+
+{\ttfamily \#include $<$spark\+\_\+wiring\+\_\+printable.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual size\+\_\+t \textbf{ print\+To} (\textbf{ Print} \&p) const =0
+\item 
+virtual size\+\_\+t \textbf{ print\+To} (\textbf{ Print} \&p) const =0
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} a textual representation of the class to a \doxyref{Print}{p.}{class_print} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \doxyref{Printable}{p.}{class_printable} class provides a way for new classes to allow themselves to be printed. 
+
+The \doxyref{Printable}{p.}{class_printable} class provides a way for new classes to allow themselves to be printed. By deriving from \doxyref{Printable}{p.}{class_printable} and implementing the print\+To method, it will then be possible for users to print out instances of this class by passing them into the usual \doxyref{Print\+::print}{p.}{class_print_acfe80773011eb17dfb52c2fba517a093} and \doxyref{Print\+::println}{p.}{class_print_ad337ce3f7977411b7d34d47a51e5737e} methods.
+
+By deriving from \doxyref{Printable}{p.}{class_printable} and implementing the print\+To method, it will then be possible for users to print out instances of this class by passing them into the usual \doxyref{Print\+::print}{p.}{class_print_acfe80773011eb17dfb52c2fba517a093} and \doxyref{Print\+::println}{p.}{class_print_ad337ce3f7977411b7d34d47a51e5737e} methods. 
+
+Definition at line 40 of file spark\+\_\+wiring\+\_\+printable.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_printable_a2c5776bc55c0a3a5675bba9d4d8e3681}} 
+\index{Printable@{Printable}!print\+To@{print\+To}}
+\index{print\+To@{print\+To}!Printable@{Printable}}
+\subsubsection{print\+To()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual size\+\_\+t Printable\+::print\+To (\begin{DoxyParamCaption}\item[{\textbf{ Print} \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\label{class_printable_a2c5776bc55c0a3a5675bba9d4d8e3681}} 
+\index{Printable@{Printable}!print\+To@{print\+To}}
+\index{print\+To@{print\+To}!Printable@{Printable}}
+\subsubsection{print\+To()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual size\+\_\+t Printable\+::print\+To (\begin{DoxyParamCaption}\item[{\textbf{ Print} \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\doxyref{Print}{p.}{class_print} a textual representation of the class to a \doxyref{Print}{p.}{class_print} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The \doxyref{Print}{p.}{class_print} object to print to \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by Print\+::print(), and String\+::\+String().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Json\+Parser\+Generator\+R\+K/test/gcclib/\textbf{ spark\+\_\+wiring\+\_\+printable.\+h}\end{DoxyCompactItemize}

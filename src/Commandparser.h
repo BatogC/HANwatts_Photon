@@ -44,6 +44,9 @@ int numberOfZeroReadings[2]={0,0};
 //    float Fl[3];
 //};
 
+/*!
+	Function to convert Olimex 4-byte value to float variable
+*/
 float bytesToFloat(unsigned char  b0, unsigned char  b1, unsigned char  b2, unsigned char  b3)
 {
     float output;
@@ -56,6 +59,9 @@ float bytesToFloat(unsigned char  b0, unsigned char  b1, unsigned char  b2, unsi
     return output;
 }
 
+/*!
+	Function to convert an array of Olimex 4-byte values to float variables
+*/
 bool bytesArrToFloatArr(char * Arr, unsigned int ArrLen, float * OutputArr, unsigned int FloatLen)
 {
     //FloatTriplet TriOutput;
@@ -92,6 +98,11 @@ FloatTriplet bytesArrToFloatTriplet(unsigned char * Arr, unsigned int ArrLen)
 
     return TriOutput;
 }
+*/
+
+/*!
+	Function to parse Olimex message into energy measurements
+	Returns the charger socket it received data from.
 */
 int stringParse(char * buf, int buflen){
   String cmdValue;
@@ -253,7 +264,10 @@ int stringParse(char * buf, int buflen){
   return Charger;
 }
 
-
+/*!
+	Function to read from Olimex serial port and run stringParse()
+	Returns the last charger socket it received data from.
+*/
 int readSerialOlimex() {
     int Charger;
      char input;

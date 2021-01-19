@@ -1,0 +1,125 @@
+\section{Json\+Writer\+Auto\+Array Class Reference}
+\label{class_json_writer_auto_array}\index{Json\+Writer\+Auto\+Array@{Json\+Writer\+Auto\+Array}}
+
+
+Class for creating a J\+S\+ON array with \doxyref{Json\+Writer}{p.}{class_json_writer}.  
+
+
+
+
+{\ttfamily \#include $<$Json\+Parser\+Generator\+R\+K.\+h$>$}
+
+
+
+Collaboration diagram for Json\+Writer\+Auto\+Array\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{class_json_writer_auto_array__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Json\+Writer\+Auto\+Array} (\textbf{ Json\+Writer} $\ast$\textbf{ jw})
+\begin{DoxyCompactList}\small\item\em Start a new array. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+Json\+Writer\+Auto\+Array} ()
+\begin{DoxyCompactList}\small\item\em End the array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Json\+Writer} $\ast$ \textbf{ jw}
+\begin{DoxyCompactList}\small\item\em \doxyref{Json\+Writer}{p.}{class_json_writer} to write to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for creating a J\+S\+ON array with \doxyref{Json\+Writer}{p.}{class_json_writer}. 
+
+When you create an object, you must call start\+Array() to start and finish\+Object\+Or\+Array() to complete it.
+
+This class is instantiated on the stack to automatically start and finish for you. 
+
+Definition at line 1285 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_json_writer_auto_array_a6bfd8fc01e5bcdd38cbf4b1c2e91637b}} 
+\index{Json\+Writer\+Auto\+Array@{Json\+Writer\+Auto\+Array}!Json\+Writer\+Auto\+Array@{Json\+Writer\+Auto\+Array}}
+\index{Json\+Writer\+Auto\+Array@{Json\+Writer\+Auto\+Array}!Json\+Writer\+Auto\+Array@{Json\+Writer\+Auto\+Array}}
+\subsubsection{Json\+Writer\+Auto\+Array()}
+{\footnotesize\ttfamily Json\+Writer\+Auto\+Array\+::\+Json\+Writer\+Auto\+Array (\begin{DoxyParamCaption}\item[{\textbf{ Json\+Writer} $\ast$}]{jw }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Start a new array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em jw} & The \doxyref{Json\+Writer}{p.}{class_json_writer} object to insert the array into \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 1292 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References jw, and Json\+Writer\+::start\+Array().
+
+
+\begin{DoxyCode}
+1292                                         : jw(jw) \{
+1293         jw->startArray();
+1294     \}
+\end{DoxyCode}
+\mbox{\label{class_json_writer_auto_array_a2554fc87e46846becf528e878d043bc0}} 
+\index{Json\+Writer\+Auto\+Array@{Json\+Writer\+Auto\+Array}!````~Json\+Writer\+Auto\+Array@{$\sim$\+Json\+Writer\+Auto\+Array}}
+\index{````~Json\+Writer\+Auto\+Array@{$\sim$\+Json\+Writer\+Auto\+Array}!Json\+Writer\+Auto\+Array@{Json\+Writer\+Auto\+Array}}
+\subsubsection{$\sim$\+Json\+Writer\+Auto\+Array()}
+{\footnotesize\ttfamily Json\+Writer\+Auto\+Array\+::$\sim$\+Json\+Writer\+Auto\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+End the array. 
+
+
+
+Definition at line 1299 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References Json\+Writer\+::finish\+Object\+Or\+Array(), and jw.
+
+
+\begin{DoxyCode}
+1299                            \{
+1300         jw->finishObjectOrArray();
+1301     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_json_writer_auto_array_a747001de80facbc7a782a9e14ad2acae}} 
+\index{Json\+Writer\+Auto\+Array@{Json\+Writer\+Auto\+Array}!jw@{jw}}
+\index{jw@{jw}!Json\+Writer\+Auto\+Array@{Json\+Writer\+Auto\+Array}}
+\subsubsection{jw}
+{\footnotesize\ttfamily \textbf{ Json\+Writer}$\ast$ Json\+Writer\+Auto\+Array\+::jw\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\doxyref{Json\+Writer}{p.}{class_json_writer} to write to. 
+
+
+
+Definition at line 1304 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by Json\+Writer\+Auto\+Array(), and $\sim$\+Json\+Writer\+Auto\+Array().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Json\+Parser\+Generator\+R\+K/src/\textbf{ Json\+Parser\+Generator\+R\+K.\+h}\end{DoxyCompactItemize}

@@ -1,0 +1,568 @@
+\section{src/\+Commandparser.h File Reference}
+\label{_commandparser_8h}\index{src/\+Commandparser.\+h@{src/\+Commandparser.\+h}}
+{\ttfamily \#include \char`\"{}Particle.\+h\char`\"{}}\newline
+Include dependency graph for Commandparser.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_commandparser_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{_commandparser_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ B\+U\+F\+S\+I\+ZE}~350
+\item 
+\#define \textbf{ R\+S\+T\+T\+I\+M\+E\+O\+UT}~300000
+\item 
+\#define \textbf{ D\+E\+B\+U\+G\+P\+O\+RT}~Serial
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ Send} (\textbf{ String} \textbf{ test})
+\item 
+float \textbf{ bytes\+To\+Float} (unsigned char b0, unsigned char b1, unsigned char b2, unsigned char b3)
+\item 
+bool \textbf{ bytes\+Arr\+To\+Float\+Arr} (char $\ast$Arr, unsigned int Arr\+Len, float $\ast$Output\+Arr, unsigned int Float\+Len)
+\item 
+int \textbf{ string\+Parse} (char $\ast$buf, int buflen)
+\item 
+int \textbf{ read\+Serial\+Olimex} ()
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+bool \textbf{ readnext\+Line} = false
+\item 
+char \textbf{ buff} [\textbf{ B\+U\+F\+S\+I\+ZE}]
+\item 
+int \textbf{ bufpos} = 0
+\item 
+unsigned long \textbf{ last\+Upload} = 0
+\item 
+float \textbf{ Current} [2][3] =\{\{0,0,0\},\{0,0,0\}\}
+\item 
+float \textbf{ Power} [2][3] =\{\{0,0,0\},\{0,0,0\}\}
+\item 
+float \textbf{ Phase\+Voltage} [2][3] =\{\{0,0,0\},\{0,0,0\}\}
+\item 
+float \textbf{ Line\+Voltage} [2][3] =\{\{0,0,0\},\{0,0,0\}\}
+\item 
+float \textbf{ Energy} [2] =\{0,0\}
+\item 
+float \textbf{ Frequency} [2] =\{0,0\}
+\item 
+float \textbf{ Current\+List} [20]
+\item 
+int \textbf{ number\+Of\+Zero\+Readings} [2] =\{0,0\}
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{_commandparser_8h_aeca034f67218340ecb2261a22c2f3dcd}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!B\+U\+F\+S\+I\+ZE@{B\+U\+F\+S\+I\+ZE}}
+\index{B\+U\+F\+S\+I\+ZE@{B\+U\+F\+S\+I\+ZE}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{B\+U\+F\+S\+I\+ZE}
+{\footnotesize\ttfamily \#define B\+U\+F\+S\+I\+ZE~350}
+
+
+
+Definition at line 7 of file Commandparser.\+h.
+
+\mbox{\label{_commandparser_8h_acbc24b500df51b97ae92c398a78f2257}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!D\+E\+B\+U\+G\+P\+O\+RT@{D\+E\+B\+U\+G\+P\+O\+RT}}
+\index{D\+E\+B\+U\+G\+P\+O\+RT@{D\+E\+B\+U\+G\+P\+O\+RT}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{D\+E\+B\+U\+G\+P\+O\+RT}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+P\+O\+RT~Serial}
+
+
+
+Definition at line 9 of file Commandparser.\+h.
+
+\mbox{\label{_commandparser_8h_ae6f3a1996e8ab3a0b1f9a5354e41db0f}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!R\+S\+T\+T\+I\+M\+E\+O\+UT@{R\+S\+T\+T\+I\+M\+E\+O\+UT}}
+\index{R\+S\+T\+T\+I\+M\+E\+O\+UT@{R\+S\+T\+T\+I\+M\+E\+O\+UT}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{R\+S\+T\+T\+I\+M\+E\+O\+UT}
+{\footnotesize\ttfamily \#define R\+S\+T\+T\+I\+M\+E\+O\+UT~300000}
+
+
+
+Definition at line 8 of file Commandparser.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\label{_commandparser_8h_a7c2ba5e288dc8fd5bc2a455f375a223a}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!bytes\+Arr\+To\+Float\+Arr@{bytes\+Arr\+To\+Float\+Arr}}
+\index{bytes\+Arr\+To\+Float\+Arr@{bytes\+Arr\+To\+Float\+Arr}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{bytes\+Arr\+To\+Float\+Arr()}
+{\footnotesize\ttfamily bool bytes\+Arr\+To\+Float\+Arr (\begin{DoxyParamCaption}\item[{char $\ast$}]{Arr,  }\item[{unsigned int}]{Arr\+Len,  }\item[{float $\ast$}]{Output\+Arr,  }\item[{unsigned int}]{Float\+Len }\end{DoxyParamCaption})}
+
+Function to convert an array of Olimex 4-\/byte values to float variables 
+
+Definition at line 65 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+
+\begin{DoxyCode}
+66 \{
+67     \textcolor{comment}{//FloatTriplet TriOutput;}
+68     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; (i<FloatLen) && (4*i+3 < ArrLen); i++)
+69     \{
+70         \textcolor{keywordtype}{float} output;
+71 
+72         *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)(&output) + 3) = (\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char}) Arr[4*i+0];
+73         *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)(&output) + 2) = Arr[4*i+1];
+74         *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)(&output) + 1) = Arr[4*i+2];
+75         *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)(&output) + 0) = Arr[4*i+3];
+76         
+77         OutputArr[i] = output;
+78     \}
+79 
+80     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+81 \}
+\end{DoxyCode}
+\mbox{\label{_commandparser_8h_a358a8d73afde3c6af9f2fbef0c156cf0}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!bytes\+To\+Float@{bytes\+To\+Float}}
+\index{bytes\+To\+Float@{bytes\+To\+Float}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{bytes\+To\+Float()}
+{\footnotesize\ttfamily float bytes\+To\+Float (\begin{DoxyParamCaption}\item[{unsigned char}]{b0,  }\item[{unsigned char}]{b1,  }\item[{unsigned char}]{b2,  }\item[{unsigned char}]{b3 }\end{DoxyParamCaption})}
+
+Function to convert Olimex 4-\/byte value to float variable 
+
+Definition at line 50 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+
+\begin{DoxyCode}
+51 \{
+52     \textcolor{keywordtype}{float} output;
+53 
+54     *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)(&output) + 3) = b0;
+55     *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)(&output) + 2) = b1;
+56     *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)(&output) + 1) = b2;
+57     *((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)(&output) + 0) = b3;
+58 
+59     \textcolor{keywordflow}{return} output;
+60 \}
+\end{DoxyCode}
+\mbox{\label{_commandparser_8h_a37df00aa4f5618514442945d509f5029}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!read\+Serial\+Olimex@{read\+Serial\+Olimex}}
+\index{read\+Serial\+Olimex@{read\+Serial\+Olimex}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{read\+Serial\+Olimex()}
+{\footnotesize\ttfamily int read\+Serial\+Olimex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to read from Olimex serial port and run \doxyref{string\+Parse()}{p.}{_commandparser_8h_a5f5ebe01157b79c2f4383d42a3787168} Returns the last charger socket it received data from. 
+
+Definition at line 271 of file Commandparser.\+h.
+
+
+
+References buff, bufpos, and string\+Parse().
+
+
+
+Referenced by loop().
+
+
+\begin{DoxyCode}
+271                        \{
+272     \textcolor{keywordtype}{int} Charger;
+273      \textcolor{keywordtype}{char} input;
+274   \textcolor{comment}{//if (millis()>(lastUpload+RSTTIMEOUT))\{}
+275    \textcolor{comment}{// softReset();}
+276   \textcolor{comment}{//\}}
+277   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0;k<10;k++)\{
+278   \textcolor{keywordflow}{if} (Serial1.available()) \{
+279     input = Serial1.read();
+280     \textcolor{comment}{//DEBUGPORT.print(input,HEX);}
+281     \textcolor{comment}{//DEBUGPORT.print(" ");}
+282     \textcolor{keywordflow}{if} (bufpos<BUFSIZE)
+283     \{
+284         buff[bufpos] = input;
+285         bufpos++;    
+286     \}
+287     \textcolor{keywordflow}{else}
+288     \{
+289         bufpos=0;
+290         DEBUGPORT.print(\textcolor{stringliteral}{"loopread>\(\backslash\)tSerial Read Error!"});
+291     \}
+292     \textcolor{keywordflow}{if} (input == \textcolor{charliteral}{'\(\backslash\)n'}) \{ \textcolor{comment}{// we hebben een regel binnen, tot aan \(\backslash\)n   //  0x0A}
+293       Charger = stringParse(buff, bufpos);
+294       \textcolor{comment}{//Maak de buffer leeg}
+295       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<BUFSIZE; i++)
+296       \{ buff[i] = 0;\}
+297       bufpos = 0;
+298     \}
+299   \}
+300 \}
+301 \textcolor{keywordflow}{return} Charger;
+302 \}
+\end{DoxyCode}
+\mbox{\label{_commandparser_8h_a068724586d37805bff056bcc3c6f02bf}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!Send@{Send}}
+\index{Send@{Send}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{Send()}
+{\footnotesize\ttfamily void Send (\begin{DoxyParamCaption}\item[{\textbf{ String}}]{test }\end{DoxyParamCaption})}
+
+\mbox{\label{_commandparser_8h_a5f5ebe01157b79c2f4383d42a3787168}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!string\+Parse@{string\+Parse}}
+\index{string\+Parse@{string\+Parse}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{string\+Parse()}
+{\footnotesize\ttfamily int string\+Parse (\begin{DoxyParamCaption}\item[{char $\ast$}]{buf,  }\item[{int}]{buflen }\end{DoxyParamCaption})}
+
+Function to parse Olimex message into energy measurements Returns the charger socket it received data from. 
+
+Definition at line 107 of file Commandparser.\+h.
+
+
+
+References bytes\+Arr\+To\+Float\+Arr(), bytes\+To\+Float(), Current, Current\+List, Energy, Frequency, Line\+Voltage, number\+Of\+Zero\+Readings, Phase\+Voltage, and Power.
+
+
+
+Referenced by read\+Serial\+Olimex().
+
+
+\begin{DoxyCode}
+107                                        \{
+108   String cmdValue;
+109   \textcolor{keywordtype}{int} Charger=0;
+110   \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<buflen; i++)\{
+111     \textcolor{keywordflow}{if}(buf[i]==0x0F && i+2>=buflen) \textcolor{comment}{//error check?}
+112     \{
+113       DEBUGPORT.println(\textcolor{stringliteral}{"E"});
+114     \}
+115     \textcolor{keywordflow}{if}((buf[i]==0x0F || buf[i]==0x0E) && i+2<buflen) \textcolor{comment}{//we detect a command-character and the next two
+       characters exists}
+116     \{
+117       \textcolor{keywordflow}{if} (buf[i]==0x0F)
+118       \{
+119         Charger=1;  
+120       \}
+121       \textcolor{keywordflow}{else}
+122       \{
+123         Charger=2;
+124       \}
+125       DEBUGPORT.print(\textcolor{stringliteral}{"Charger "}+String(Charger)+\textcolor{stringliteral}{": "});
+126       String measurements;
+127       \textcolor{keywordflow}{switch} (buf[i+1])
+128       \{
+129         \textcolor{keywordflow}{case} 1:
+130           \textcolor{comment}{//Phase Voltage}
+131           \textcolor{keywordflow}{if}(buflen>4)
+132           \{
+133               \textcolor{comment}{//Voltage[Charger-1] = bytesToFloat(buf[i+2], buf[i+3], buf[i+4], buf[i+5]);}
+134               \textcolor{keywordtype}{float} VoltageArr[3];
+135               \textcolor{keywordflow}{if}(bytesArrToFloatArr(&buf[i+2], 12, VoltageArr,3))
+136               \{
+137                 \textcolor{comment}{//Current[Charger-1] = (CurrentArr[0]+CurrentArr[1]+CurrentArr[2])/3;  }
+138                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<3;i++)
+139                 \{
+140                     PhaseVoltage[Charger-1][i]=VoltageArr[i];
+141                 \}
+142                 \textcolor{comment}{//Voltage[Charger-1] = \{VoltageArr[0],VoltageArr[1],VoltageArr[2]\};}
+143               \}
+144               DEBUGPORT.print(\textcolor{stringliteral}{"Voltage: "}+String(PhaseVoltage[Charger-1][0],4)+\textcolor{stringliteral}{" "}+
+      String(PhaseVoltage[Charger-1][1],4)+\textcolor{stringliteral}{" "}+String(PhaseVoltage[Charger-1][2],4));
+145           \}
+146           \textcolor{keywordflow}{else}
+147           \{
+148               DEBUGPORT.print(\textcolor{stringliteral}{"did not receive enough voltage data"});
+149           \}
+150           \textcolor{keywordflow}{break};
+151         \textcolor{keywordflow}{case} 2:
+152           \textcolor{comment}{//Current}
+153           \textcolor{keywordflow}{if}(buflen>12) \textcolor{comment}{//(buflen>4)}
+154           \{
+155               \textcolor{comment}{//Current[Charger-1] = bytesToFloat(buf[i+2], buf[i+3], buf[i+4], buf[i+5]);}
+156               \textcolor{keywordtype}{float} CurrentArr[3];
+157               \textcolor{keywordflow}{if}(bytesArrToFloatArr(&buf[i+2], 12, Current[Charger-1],3))
+158               \{
+159                 \textcolor{comment}{//Current[Charger-1] = (CurrentArr[0]+CurrentArr[1]+CurrentArr[2])/3;  }
+160                 \textcolor{comment}{//Current[Charger-1] = \{CurrentArr[0],CurrentArr[1],CurrentArr[2]\}}
+161               \}
+162               DEBUGPORT.print(\textcolor{stringliteral}{"Current: "});
+163               DEBUGPORT.print(Current[Charger-1][0],4);DEBUGPORT.print(\textcolor{stringliteral}{" "});
+164               DEBUGPORT.print(Current[Charger-1][1],4);DEBUGPORT.print(\textcolor{stringliteral}{" "});
+165               DEBUGPORT.println(Current[Charger-1][2],4);
+166               \textcolor{keywordflow}{if}((Current[Charger-1][0]+Current[Charger-1][1]+Current[Charger-1][2])<1)
+167               \{
+168                 numberOfZeroReadings[Charger-1]++;
+169               \}
+170               \textcolor{keywordflow}{else}
+171               \{
+172                   numberOfZeroReadings[Charger-1]=0;
+173               \}
+174               \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=18;i>=0;i--)
+175               \{
+176                    CurrentList[i+1]= CurrentList[i];
+177               \}
+178               CurrentList[0]=(Current[0][0]+Current[0][1]+Current[0][2]);\textcolor{comment}{//numberOfZeroReadings[0];}
+179               CurrentList[1]=numberOfZeroReadings[0];
+180               CurrentList[2]=Current[0][2];
+181           \}
+182           \textcolor{keywordflow}{else}
+183           \{
+184               DEBUGPORT.print(\textcolor{stringliteral}{"did not receive enough current data"});
+185           \}
+186           \textcolor{keywordflow}{break};  
+187         \textcolor{keywordflow}{case} 3:
+188           \textcolor{comment}{//Frequency}
+189           \textcolor{keywordflow}{if}(buflen>4)
+190           \{
+191               Frequency[0] = bytesToFloat(buf[i+2], buf[i+3], buf[i+4], buf[i+5]);
+192               Frequency[1]=Frequency[0];
+193               DEBUGPORT.print(\textcolor{stringliteral}{"Frequency: "});
+194               DEBUGPORT.print(Frequency[Charger-1],4);
+195           \}
+196           \textcolor{keywordflow}{else}
+197           \{
+198               DEBUGPORT.print(\textcolor{stringliteral}{"did not receive enough frequency data"});
+199           \}
+200           \textcolor{keywordflow}{break};
+201         \textcolor{keywordflow}{case} 4:
+202           \textcolor{comment}{//Power}
+203           \textcolor{keywordflow}{if}(buflen>4)
+204           \{
+205               \textcolor{comment}{//Power[Charger-1] = bytesToFloat(buf[i+2], buf[i+3], buf[i+4], buf[i+5]);}
+206               \textcolor{keywordtype}{float} PowerArr[3];
+207               \textcolor{keywordflow}{if}(bytesArrToFloatArr(&buf[i+2], 12, Power[Charger-1],3))
+208               \{
+209                 \textcolor{comment}{//Power[Charger-1] = \{PowerArr[0],PowerArr[1],PowerArr[2]\}}
+210               \}
+211               DEBUGPORT.print(\textcolor{stringliteral}{"Power: "}+String(Power[Charger-1][0],4)+\textcolor{stringliteral}{" "}+String(
+      Power[Charger-1][1],4)+\textcolor{stringliteral}{" "}+String(Power[Charger-1][2],4));              
+212               \textcolor{comment}{//DEBUGPORT.print("Power: ");}
+213               \textcolor{comment}{//DEBUGPORT.print(Power[Charger-1],4);}
+214           \}
+215           \textcolor{keywordflow}{else}
+216           \{
+217               DEBUGPORT.print(\textcolor{stringliteral}{"did not receive enough power data"});
+218           \}
+219           \textcolor{keywordflow}{break};
+220         \textcolor{keywordflow}{case} 5:
+221           \textcolor{comment}{//Energy}
+222           \textcolor{keywordflow}{if}(buflen>4)
+223           \{
+224               Energy[Charger-1] = bytesToFloat(buf[i+2], buf[i+3], buf[i+4], buf[i+5]);
+225               DEBUGPORT.print(\textcolor{stringliteral}{"Energy: "});
+226               DEBUGPORT.print(Energy[Charger-1],4);
+227           \}
+228           \textcolor{keywordflow}{else}
+229           \{
+230               DEBUGPORT.print(\textcolor{stringliteral}{"did not receive enough energy data"});
+231           \}
+232           \textcolor{keywordflow}{break};
+233         \textcolor{keywordflow}{case} 6:
+234           \textcolor{comment}{//Line Voltage}
+235           \textcolor{keywordflow}{if}(buflen>4)
+236           \{
+237               \textcolor{comment}{//Voltage[Charger-1] = bytesToFloat(buf[i+2], buf[i+3], buf[i+4], buf[i+5]);}
+238               \textcolor{keywordtype}{float} VoltageArr[3];
+239               \textcolor{keywordflow}{if}(bytesArrToFloatArr(&buf[i+2], 12, VoltageArr,3))
+240               \{
+241                 \textcolor{comment}{//Current[Charger-1] = (CurrentArr[0]+CurrentArr[1]+CurrentArr[2])/3;  }
+242                 \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0;i<3;i++)
+243                 \{
+244                     LineVoltage[Charger-1][i]=VoltageArr[i];
+245                 \}
+246                 \textcolor{comment}{//Voltage[Charger-1] = \{VoltageArr[0],VoltageArr[1],VoltageArr[2]\};}
+247               \}
+248               DEBUGPORT.print(\textcolor{stringliteral}{"Voltage: "}+String(LineVoltage[Charger-1][0],4)+\textcolor{stringliteral}{" "}+
+      String(LineVoltage[Charger-1][1],4)+\textcolor{stringliteral}{" "}+String(LineVoltage[Charger-1][2],4));
+249           \}
+250           \textcolor{keywordflow}{else}
+251           \{
+252               DEBUGPORT.print(\textcolor{stringliteral}{"did not receive enough voltage data"});
+253           \}
+254           \textcolor{keywordflow}{break};     
+255           \textcolor{keywordflow}{break};
+256         \textcolor{keywordflow}{default}:
+257           \textcolor{keywordflow}{break};
+258       \}
+259     \}
+260   \}
+261   \textcolor{comment}{//Test only}
+262   \textcolor{comment}{//Current[0][0] = 3.0;}
+263   \textcolor{comment}{//Current[1][0] = 4.0;}
+264   \textcolor{keywordflow}{return} Charger;
+265 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\label{_commandparser_8h_aade3a58aeb7b5fe4c36ef119e7027a5f}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!buff@{buff}}
+\index{buff@{buff}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{buff}
+{\footnotesize\ttfamily char buff[\textbf{ B\+U\+F\+S\+I\+ZE}]}
+
+
+
+Definition at line 14 of file Commandparser.\+h.
+
+
+
+Referenced by read\+Serial\+Olimex().
+
+\mbox{\label{_commandparser_8h_a9ae77be080d462d041a52c377da64482}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!bufpos@{bufpos}}
+\index{bufpos@{bufpos}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{bufpos}
+{\footnotesize\ttfamily int bufpos = 0}
+
+
+
+Definition at line 15 of file Commandparser.\+h.
+
+
+
+Referenced by read\+Serial\+Olimex().
+
+\mbox{\label{_commandparser_8h_ac7a5502c6bab0b1b7f3e1bd58546eb1e}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!Current@{Current}}
+\index{Current@{Current}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{Current}
+{\footnotesize\ttfamily float Current[2][3] =\{\{0,0,0\},\{0,0,0\}\}}
+
+
+
+Definition at line 30 of file Commandparser.\+h.
+
+
+
+Referenced by active\+Charger(), and string\+Parse().
+
+\mbox{\label{_commandparser_8h_acd950d6d9d76947b74823343a5f4a25d}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!Current\+List@{Current\+List}}
+\index{Current\+List@{Current\+List}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{Current\+List}
+{\footnotesize\ttfamily float Current\+List[20]}
+
+
+
+Definition at line 36 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{_commandparser_8h_aee63a73e17fd417c7562f2e5d7c81cb8}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!Energy@{Energy}}
+\index{Energy@{Energy}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{Energy}
+{\footnotesize\ttfamily float Energy[2] =\{0,0\}}
+
+
+
+Definition at line 34 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{_commandparser_8h_ad8ee7ca82dcb110d2d5e32d73116b001}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!Frequency@{Frequency}}
+\index{Frequency@{Frequency}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{Frequency}
+{\footnotesize\ttfamily float Frequency[2] =\{0,0\}}
+
+
+
+Definition at line 35 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{_commandparser_8h_afbaeb9d17372ebc40b405fb8ce34dbbf}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!last\+Upload@{last\+Upload}}
+\index{last\+Upload@{last\+Upload}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{last\+Upload}
+{\footnotesize\ttfamily unsigned long last\+Upload = 0}
+
+
+
+Definition at line 18 of file Commandparser.\+h.
+
+\mbox{\label{_commandparser_8h_a97cf7b62d84c77183146053465157cdc}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!Line\+Voltage@{Line\+Voltage}}
+\index{Line\+Voltage@{Line\+Voltage}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{Line\+Voltage}
+{\footnotesize\ttfamily float Line\+Voltage[2][3] =\{\{0,0,0\},\{0,0,0\}\}}
+
+
+
+Definition at line 33 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{_commandparser_8h_ab804d1dfcf90d1a4adf1b6417583e014}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!number\+Of\+Zero\+Readings@{number\+Of\+Zero\+Readings}}
+\index{number\+Of\+Zero\+Readings@{number\+Of\+Zero\+Readings}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{number\+Of\+Zero\+Readings}
+{\footnotesize\ttfamily int number\+Of\+Zero\+Readings[2] =\{0,0\}}
+
+
+
+Definition at line 37 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{_commandparser_8h_a5455bcadf3414330eeedd39d97e8aee2}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!Phase\+Voltage@{Phase\+Voltage}}
+\index{Phase\+Voltage@{Phase\+Voltage}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{Phase\+Voltage}
+{\footnotesize\ttfamily float Phase\+Voltage[2][3] =\{\{0,0,0\},\{0,0,0\}\}}
+
+
+
+Definition at line 32 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{_commandparser_8h_ae0a1c20c390eb592307c92aa588bd232}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!Power@{Power}}
+\index{Power@{Power}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{Power}
+{\footnotesize\ttfamily float Power[2][3] =\{\{0,0,0\},\{0,0,0\}\}}
+
+
+
+Definition at line 31 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{_commandparser_8h_a985b9d8e8f815d1ff6aca787d5782a94}} 
+\index{Commandparser.\+h@{Commandparser.\+h}!readnext\+Line@{readnext\+Line}}
+\index{readnext\+Line@{readnext\+Line}!Commandparser.\+h@{Commandparser.\+h}}
+\subsubsection{readnext\+Line}
+{\footnotesize\ttfamily bool readnext\+Line = false}
+
+
+
+Definition at line 13 of file Commandparser.\+h.
+

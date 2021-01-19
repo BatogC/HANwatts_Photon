@@ -1,0 +1,457 @@
+\section{lib/\+Json\+Parser\+Generator\+R\+K/test/gcclib/spark\+\_\+wiring\+\_\+string.cpp File Reference}
+\label{spark__wiring__string_8cpp}\index{lib/\+Json\+Parser\+Generator\+R\+K/test/gcclib/spark\+\_\+wiring\+\_\+string.\+cpp@{lib/\+Json\+Parser\+Generator\+R\+K/test/gcclib/spark\+\_\+wiring\+\_\+string.\+cpp}}
+
+
+Copyright (c) 2013-\/2015 Particle Industries, Inc. All rights reserved. ...mostly rewritten by Paul Stoffregen... Copyright (c) 2009-\/10 Hernando Barragan. All rights reserved. Copyright 2011, Paul Stoffregen, {\tt paul@pjrc.\+com}.  
+
+
+{\ttfamily \#include \char`\"{}spark\+\_\+wiring\+\_\+string.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$limits.\+h$>$}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}string\+\_\+convert.\+h\char`\"{}}\newline
+Include dependency graph for spark\+\_\+wiring\+\_\+string.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{spark__wiring__string_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ String\+Printable\+Helper}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ dtoa} (double val, unsigned char prec, char $\ast$sout)
+\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, const \textbf{ String} \&rhs)
+\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, const char $\ast$cstr)
+\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, char c)
+\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, unsigned char num)
+\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, int num)
+\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, unsigned int num)
+\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, long num)
+\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, unsigned long num)
+\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, float num)
+\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, double num)
+\item 
+std\+::ostream \& \textbf{ operator$<$$<$} (std\+::ostream \&os, const \textbf{ String} \&value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Copyright (c) 2013-\/2015 Particle Industries, Inc. All rights reserved. ...mostly rewritten by Paul Stoffregen... Copyright (c) 2009-\/10 Hernando Barragan. All rights reserved. Copyright 2011, Paul Stoffregen, {\tt paul@pjrc.\+com}. 
+
+\begin{DoxyAuthor}{Author}
+Mohit Bhoite 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+V1.\+0.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+13-\/\+March-\/2013 This library is free software; you can redistribute it and/or modify it under the terms of the G\+NU Lesser General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+\end{DoxyDate}
+This library is distributed in the hope that it will be useful, but W\+I\+T\+H\+O\+UT A\+NY W\+A\+R\+R\+A\+N\+TY; without even the implied warranty of M\+E\+R\+C\+H\+A\+N\+T\+A\+B\+I\+L\+I\+TY or F\+I\+T\+N\+E\+SS F\+OR A P\+A\+R\+T\+I\+C\+U\+L\+AR P\+U\+R\+P\+O\+SE. See the G\+NU Lesser General Public License for more details.
+
+You should have received a copy of the G\+NU Lesser General Public License along with this library; if not, see {\tt http\+://www.\+gnu.\+org/licenses/}. 
+
+\subsection{Function Documentation}
+\mbox{\label{spark__wiring__string_8cpp_a143de626f1916d247d677e6dc395bd5c}} 
+\index{spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}!dtoa@{dtoa}}
+\index{dtoa@{dtoa}!spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}}
+\subsubsection{dtoa()}
+{\footnotesize\ttfamily void dtoa (\begin{DoxyParamCaption}\item[{double}]{val,  }\item[{unsigned char}]{prec,  }\item[{char $\ast$}]{sout }\end{DoxyParamCaption})}
+
+
+
+Definition at line 39 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References ultoa().
+
+
+
+Referenced by String\+::concat(), and String\+::\+String().
+
+
+\begin{DoxyCode}
+39                                                        \{
+40     \textcolor{keywordtype}{bool} negative = val<0;
+41     \textcolor{keywordflow}{if} (negative) \{
+42         val = -val;
+43         *sout++ = \textcolor{charliteral}{'-'};
+44     \}
+45     \textcolor{keywordtype}{long} scale = 1;
+46     \textcolor{keywordflow}{for} (uint8\_t i=0; i<prec; i++)
+47         scale *= 10;
+48     val *= scale;   \textcolor{comment}{// capture all the significant digits}
+49     uint64\_t fixed = uint64\_t(val);
+50     \textcolor{keywordflow}{if} ((val-fixed)>=0.5)    \textcolor{comment}{// round last digit}
+51         fixed++;
+52 
+53     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} first = (\textcolor{keywordtype}{unsigned} long)(fixed / scale);
+54     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} second = (\textcolor{keywordtype}{unsigned} long)(fixed % scale);
+55 
+56     ultoa(first, sout, 10, 1);
+57     \textcolor{keywordflow}{if} (prec) \{
+58         sout += strlen(sout);
+59         *sout++ = \textcolor{charliteral}{'.'};
+60         ultoa(second, sout, 10, prec);
+61     \}
+62 \}
+\end{DoxyCode}
+\mbox{\label{spark__wiring__string_8cpp_a2fb327465c18d4346465237d8a38938c}} 
+\index{spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em rhs} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 359 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References String\+::buffer, String\+::concat(), String\+::invalidate(), and String\+::len.
+
+
+\begin{DoxyCode}
+360 \{
+361     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+362     \textcolor{keywordflow}{if} (!a.concat(rhs.buffer, rhs.len)) a.invalidate();
+363     \textcolor{keywordflow}{return} a;
+364 \}
+\end{DoxyCode}
+\mbox{\label{spark__wiring__string_8cpp_aa0fe70fca3cf4c9c3c1e77d2465a9bd9}} 
+\index{spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{const char $\ast$}]{cstr }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em cstr} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 366 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References String\+::concat(), and String\+::invalidate().
+
+
+\begin{DoxyCode}
+367 \{
+368     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+369     \textcolor{keywordflow}{if} (!cstr || !a.concat(cstr, strlen(cstr))) a.invalidate();
+370     \textcolor{keywordflow}{return} a;
+371 \}
+\end{DoxyCode}
+\mbox{\label{spark__wiring__string_8cpp_a15c2c0bbe928e2bbf5278c8537bcfda4}} 
+\index{spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em c} & The character to append\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 373 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References String\+::concat(), and String\+::invalidate().
+
+
+\begin{DoxyCode}
+374 \{
+375     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+376     \textcolor{keywordflow}{if} (!a.concat(c)) a.invalidate();
+377     \textcolor{keywordflow}{return} a;
+378 \}
+\end{DoxyCode}
+\mbox{\label{spark__wiring__string_8cpp_a8b0c50963eaaf2366de418e1fba34cf1}} 
+\index{spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{unsigned char}]{num }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 380 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References String\+::concat(), and String\+::invalidate().
+
+
+\begin{DoxyCode}
+381 \{
+382     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+383     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+384     \textcolor{keywordflow}{return} a;
+385 \}
+\end{DoxyCode}
+\mbox{\label{spark__wiring__string_8cpp_a0c7b23137b894e0e6d7607d8386a9285}} 
+\index{spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 387 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References String\+::concat(), and String\+::invalidate().
+
+
+\begin{DoxyCode}
+388 \{
+389     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+390     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+391     \textcolor{keywordflow}{return} a;
+392 \}
+\end{DoxyCode}
+\mbox{\label{spark__wiring__string_8cpp_a20c7726a6ea2c053044c19f40e5c91aa}} 
+\index{spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{unsigned int}]{num }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 394 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References String\+::concat(), and String\+::invalidate().
+
+
+\begin{DoxyCode}
+395 \{
+396     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+397     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+398     \textcolor{keywordflow}{return} a;
+399 \}
+\end{DoxyCode}
+\mbox{\label{spark__wiring__string_8cpp_a50aa43ee66fafd4a7e03c453a62aaac1}} 
+\index{spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{long}]{num }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 401 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References String\+::concat(), and String\+::invalidate().
+
+
+\begin{DoxyCode}
+402 \{
+403     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+404     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+405     \textcolor{keywordflow}{return} a;
+406 \}
+\end{DoxyCode}
+\mbox{\label{spark__wiring__string_8cpp_a61625af689cfcbe9206851903b1144a2}} 
+\index{spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{unsigned long}]{num }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 408 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References String\+::concat(), and String\+::invalidate().
+
+
+\begin{DoxyCode}
+409 \{
+410     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+411     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+412     \textcolor{keywordflow}{return} a;
+413 \}
+\end{DoxyCode}
+\mbox{\label{spark__wiring__string_8cpp_a9a2cbb5207527b7dabf2ea13c48f9833}} 
+\index{spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{float}]{num }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 415 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References String\+::concat(), and String\+::invalidate().
+
+
+\begin{DoxyCode}
+416 \{
+417     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+418     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+419     \textcolor{keywordflow}{return} a;
+420 \}
+\end{DoxyCode}
+\mbox{\label{spark__wiring__string_8cpp_ad7f8cc6402796f520aa6ddc33953f7fc}} 
+\index{spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}!operator+@{operator+}}
+\index{operator+@{operator+}!spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}}
+\subsubsection{operator+()\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{double}]{num }\end{DoxyParamCaption})}
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 422 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References String\+::concat(), and String\+::invalidate().
+
+
+\begin{DoxyCode}
+423 \{
+424     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+425     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+426     \textcolor{keywordflow}{return} a;
+427 \}
+\end{DoxyCode}
+\mbox{\label{spark__wiring__string_8cpp_a75a6c2170b59dd7dc4b91f73f77d8e00}} 
+\index{spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!spark\+\_\+wiring\+\_\+string.\+cpp@{spark\+\_\+wiring\+\_\+string.\+cpp}}
+\subsubsection{operator$<$$<$()}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \textbf{ String} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 807 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References String\+::c\+\_\+str().
+
+
+\begin{DoxyCode}
+807                                                                 \{
+808     os << \textcolor{charliteral}{'"'} << value.c_str() << \textcolor{charliteral}{'"'};
+809     \textcolor{keywordflow}{return} os;
+810 \}
+\end{DoxyCode}

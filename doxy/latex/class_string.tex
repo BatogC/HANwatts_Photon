@@ -1,0 +1,3652 @@
+\section{String Class Reference}
+\label{class_string}\index{String@{String}}
+
+
+Wiring \doxyref{String}{p.}{class_string}\+: A class to hold and manipulate a dynamically allocated string.  
+
+
+
+
+{\ttfamily \#include $<$spark\+\_\+wiring\+\_\+string.\+h$>$}
+
+
+
+Inheritance diagram for String\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_string__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ String} (const char $\ast$cstr=\char`\"{}\char`\"{})
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{String}{p.}{class_string} object from a c-\/string (null-\/terminated) \end{DoxyCompactList}\item 
+\textbf{ String} (const char $\ast$cstr, unsigned int \textbf{ length})
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{String}{p.}{class_string} object from a pointer and length. \end{DoxyCompactList}\item 
+\textbf{ String} (const \textbf{ String} \&str)
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{String}{p.}{class_string} object as a copy of another string. \end{DoxyCompactList}\item 
+\textbf{ String} (const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$pstr)
+\item 
+\textbf{ String} (const \textbf{ Printable} \&printable)
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{String}{p.}{class_string} object from any \doxyref{Printable}{p.}{class_printable} object. \end{DoxyCompactList}\item 
+\textbf{ String} (char c)
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{String}{p.}{class_string} containing a single character. \end{DoxyCompactList}\item 
+\textbf{ String} (unsigned char b, unsigned char base=10)
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{String}{p.}{class_string} from a unsigned char (uint8\+\_\+t) value, expressed as a number. \end{DoxyCompactList}\item 
+\textbf{ String} (int value, unsigned char base=10)
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{String}{p.}{class_string} from a int (32 bit signed integer) value, expressed as a number. \end{DoxyCompactList}\item 
+\textbf{ String} (unsigned int value, unsigned char base=10)
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{String}{p.}{class_string} from a unsigned int (32 bit unsigned integer) value, expressed as a number. \end{DoxyCompactList}\item 
+\textbf{ String} (long value, unsigned char base=10)
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{String}{p.}{class_string} from a long (32 bit signed integer) value, expressed as a number. \end{DoxyCompactList}\item 
+\textbf{ String} (unsigned long value, unsigned char base=10)
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{String}{p.}{class_string} from a unsigned long (32 bit unsigned integer) value, expressed as a number. \end{DoxyCompactList}\item 
+\textbf{ String} (float value, int decimal\+Places=6)
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{String}{p.}{class_string} from a float (32 bit single precision floating point) value, expressed as a number. \end{DoxyCompactList}\item 
+\textbf{ String} (double value, int decimal\+Places=6)
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{String}{p.}{class_string} from a double (64 bit double precision floating point) value, expressed as a number. \end{DoxyCompactList}\item 
+\textbf{ $\sim$\+String} (void)
+\begin{DoxyCompactList}\small\item\em Destructor. Also deletes the underlying dynamically allocated string. \end{DoxyCompactList}\item 
+unsigned char \textbf{ reserve} (unsigned int size)
+\begin{DoxyCompactList}\small\item\em Reserves a buffer of size. \end{DoxyCompactList}\item 
+unsigned int \textbf{ length} (void) const
+\begin{DoxyCompactList}\small\item\em Returns the length of the string in bytes. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ operator=} (const \textbf{ String} \&rhs)
+\begin{DoxyCompactList}\small\item\em Assigns this string to have a copy of \doxyref{String}{p.}{class_string} rhs. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ operator=} (const char $\ast$cstr)
+\begin{DoxyCompactList}\small\item\em Assigns this string to have a copy of c-\/string (null-\/terminated) cstr. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ operator=} (const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$pstr)
+\item 
+\textbf{ operator const char $\ast$} () const
+\begin{DoxyCompactList}\small\item\em Returns the contents this \doxyref{String}{p.}{class_string} as a c-\/string (null-\/terminated) \end{DoxyCompactList}\item 
+unsigned char \textbf{ concat} (const \textbf{ String} \&str)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) a \doxyref{String}{p.}{class_string} object to the end of this \doxyref{String}{p.}{class_string}, modifying this string in place. \end{DoxyCompactList}\item 
+unsigned char \textbf{ concat} (const char $\ast$cstr)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) a c-\/string (null-\/terminated) to the end of this \doxyref{String}{p.}{class_string}, modifying this string in place. \end{DoxyCompactList}\item 
+unsigned char \textbf{ concat} (const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$str)
+\item 
+unsigned char \textbf{ concat} (char c)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) a single character to the end of this \doxyref{String}{p.}{class_string}, modifying this string in place. \end{DoxyCompactList}\item 
+unsigned char \textbf{ concat} (unsigned char c)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the byte value c to the end of this \doxyref{String}{p.}{class_string} as a decimal number 0 -\/ 255, modifying this string in place. \end{DoxyCompactList}\item 
+unsigned char \textbf{ concat} (int num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the integer value num to the end of this \doxyref{String}{p.}{class_string} as a signed decimal number (base 10), modifying this string in place. \end{DoxyCompactList}\item 
+unsigned char \textbf{ concat} (unsigned int num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the unsigned integer value num to the end of this \doxyref{String}{p.}{class_string} as a unsigned decimal number (base 10), modifying this string in place. \end{DoxyCompactList}\item 
+unsigned char \textbf{ concat} (long num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the long integer value num to the end of this \doxyref{String}{p.}{class_string} as a signed decimal number (base 10), modifying this string in place. \end{DoxyCompactList}\item 
+unsigned char \textbf{ concat} (unsigned long num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the unsigned long value num to the end of this \doxyref{String}{p.}{class_string} as a unsigned decimal number (base 10), modifying this string in place. \end{DoxyCompactList}\item 
+unsigned char \textbf{ concat} (float num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the float n to the end of this \doxyref{String}{p.}{class_string} as a decimal number (base 10), modifying this string in place. \end{DoxyCompactList}\item 
+unsigned char \textbf{ concat} (double num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the double precision float n to the end of this \doxyref{String}{p.}{class_string} as a decimal number (base 10), modifying this string in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ operator+=} (const \textbf{ String} \&rhs)
+\begin{DoxyCompactList}\small\item\em Appends (concatenate) a \doxyref{String}{p.}{class_string} object to the end of this \doxyref{String}{p.}{class_string}, modifying this string in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ operator+=} (const char $\ast$cstr)
+\begin{DoxyCompactList}\small\item\em Appends (concatenate) a c-\/string (null-\/terminated) to the end of this \doxyref{String}{p.}{class_string}, modifying this string in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ operator+=} (char c)
+\begin{DoxyCompactList}\small\item\em Appends (concatenate) a single character to the end of this \doxyref{String}{p.}{class_string}, modifying this string in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ operator+=} (unsigned char num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the byte value num to the end of this \doxyref{String}{p.}{class_string} as a decimal number 0 -\/ 255, modifying this string in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ operator+=} (int num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the integer value num to the end of this \doxyref{String}{p.}{class_string} as a signed decimal number (base 10), modifying this string in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ operator+=} (unsigned int num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the unsigned integer value num to the end of this \doxyref{String}{p.}{class_string} as a unsigned decimal number (base 10), modifying this string in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ operator+=} (long num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the long integer value num to the end of this \doxyref{String}{p.}{class_string} as a signed decimal number (base 10), modifying this string in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ operator+=} (unsigned long num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the unsigned long value num to the end of this \doxyref{String}{p.}{class_string} as a unsigned decimal number (base 10), modifying this string in place. \end{DoxyCompactList}\item 
+\textbf{ operator String\+If\+Helper\+Type} () const
+\item 
+int \textbf{ compare\+To} (const \textbf{ String} \&s) const
+\begin{DoxyCompactList}\small\item\em Compares this string to another string using strcmp (case-\/sensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ equals} (const \textbf{ String} \&s) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string is equal to another string (case-\/sensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ equals} (const char $\ast$cstr) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string equal to another string (case-\/sensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ operator==} (const \textbf{ String} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string is equal to another string (case-\/sensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ operator==} (const char $\ast$cstr) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string equal to another string (case-\/sensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ operator!=} (const \textbf{ String} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string is greater than to another string (case-\/sensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ operator!=} (const char $\ast$cstr) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string not equal to another string (case-\/sensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ operator$<$} (const \textbf{ String} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string is less than to another string (case-\/sensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ operator$>$} (const \textbf{ String} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string is greater than to another string (case-\/sensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ operator$<$=} (const \textbf{ String} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string is less than or equal to another string (case-\/sensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ operator$>$=} (const \textbf{ String} \&rhs) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string is greater than or equal to another string (case-\/sensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ equals\+Ignore\+Case} (const \textbf{ String} \&s) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string equals another string (case-\/insensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ starts\+With} (const \textbf{ String} \&prefix) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string starts with prefix (case-\/sensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ starts\+With} (const \textbf{ String} \&prefix, unsigned int offset) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string contains prefix at specified offset (case-\/sensitive) \end{DoxyCompactList}\item 
+unsigned char \textbf{ ends\+With} (const \textbf{ String} \&suffix) const
+\begin{DoxyCompactList}\small\item\em Returns true if this string ends with suffix (case-\/sensitive) \end{DoxyCompactList}\item 
+char \textbf{ char\+At} (unsigned int index) const
+\begin{DoxyCompactList}\small\item\em Gets the character at offset index. \end{DoxyCompactList}\item 
+void \textbf{ set\+Char\+At} (unsigned int index, char c)
+\begin{DoxyCompactList}\small\item\em Set the character at offset index. \end{DoxyCompactList}\item 
+char \textbf{ operator[$\,$]} (unsigned int index) const
+\begin{DoxyCompactList}\small\item\em Gets the character at offset index. \end{DoxyCompactList}\item 
+char \& \textbf{ operator[$\,$]} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Set the character at offset index. \end{DoxyCompactList}\item 
+void \textbf{ get\+Bytes} (unsigned char $\ast$buf, unsigned int bufsize, unsigned int index=0) const
+\begin{DoxyCompactList}\small\item\em Copy the data out of this \doxyref{String}{p.}{class_string} into another buffer. \end{DoxyCompactList}\item 
+void \textbf{ to\+Char\+Array} (char $\ast$buf, unsigned int bufsize, unsigned int index=0) const
+\begin{DoxyCompactList}\small\item\em Copy the data out of this \doxyref{String}{p.}{class_string} into another buffer. \end{DoxyCompactList}\item 
+const char $\ast$ \textbf{ c\+\_\+str} () const
+\begin{DoxyCompactList}\small\item\em Returns a c-\/string (null-\/terminated) \end{DoxyCompactList}\item 
+int \textbf{ index\+Of} (char ch) const
+\begin{DoxyCompactList}\small\item\em Search this string for a given character. \end{DoxyCompactList}\item 
+int \textbf{ index\+Of} (char ch, unsigned int from\+Index) const
+\begin{DoxyCompactList}\small\item\em Search this string for a given character starting at an offset. \end{DoxyCompactList}\item 
+int \textbf{ index\+Of} (const \textbf{ String} \&str) const
+\begin{DoxyCompactList}\small\item\em Search this string for a given \doxyref{String}{p.}{class_string}. \end{DoxyCompactList}\item 
+int \textbf{ index\+Of} (const \textbf{ String} \&str, unsigned int from\+Index) const
+\begin{DoxyCompactList}\small\item\em Search this string for a given \doxyref{String}{p.}{class_string} starting at an offset. \end{DoxyCompactList}\item 
+int \textbf{ last\+Index\+Of} (char ch) const
+\begin{DoxyCompactList}\small\item\em Search this string for a given character, starting at the end. \end{DoxyCompactList}\item 
+int \textbf{ last\+Index\+Of} (char ch, unsigned int from\+Index) const
+\begin{DoxyCompactList}\small\item\em Search this string for a given character, starting at the from\+Index and going toward the beginning. \end{DoxyCompactList}\item 
+int \textbf{ last\+Index\+Of} (const \textbf{ String} \&str) const
+\begin{DoxyCompactList}\small\item\em Search this string for a last occurrence of str. \end{DoxyCompactList}\item 
+int \textbf{ last\+Index\+Of} (const \textbf{ String} \&str, unsigned int from\+Index) const
+\begin{DoxyCompactList}\small\item\em Search this string for a last occurrence of str starting at from\+Index. \end{DoxyCompactList}\item 
+\textbf{ String} \textbf{ substring} (unsigned int begin\+Index) const
+\begin{DoxyCompactList}\small\item\em Returns a \doxyref{String}{p.}{class_string} object with a copy of the characters starting at begin\+Index through the end of the string. \end{DoxyCompactList}\item 
+\textbf{ String} \textbf{ substring} (unsigned int begin\+Index, unsigned int end\+Index) const
+\begin{DoxyCompactList}\small\item\em Returns a \doxyref{String}{p.}{class_string} object with a copy of the characters in the specified range. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ replace} (char find, char replace)
+\begin{DoxyCompactList}\small\item\em Replaces every occurrence of a character in the string with another character, modifying it in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ replace} (const \textbf{ String} \&find, const \textbf{ String} \&replace)
+\begin{DoxyCompactList}\small\item\em Replaces every occurrence of a \doxyref{String}{p.}{class_string} with another \doxyref{String}{p.}{class_string}, modifying it in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ remove} (unsigned int index)
+\begin{DoxyCompactList}\small\item\em Removes characters from the \doxyref{String}{p.}{class_string}, modifying it in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ remove} (unsigned int index, unsigned int count)
+\begin{DoxyCompactList}\small\item\em Removes characters from the \doxyref{String}{p.}{class_string}, modifying it in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ to\+Lower\+Case} (void)
+\begin{DoxyCompactList}\small\item\em Converts this \doxyref{String}{p.}{class_string} to lower case, modifying it in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ to\+Upper\+Case} (void)
+\begin{DoxyCompactList}\small\item\em Converts this \doxyref{String}{p.}{class_string} to upper case, modifying it in place. \end{DoxyCompactList}\item 
+\textbf{ String} \& \textbf{ trim} (void)
+\begin{DoxyCompactList}\small\item\em Removes leading an trailing white spaces from this string, modifying it in place. \end{DoxyCompactList}\item 
+long \textbf{ to\+Int} (void) const
+\begin{DoxyCompactList}\small\item\em Converts this string to a signed integer (32-\/bit) \end{DoxyCompactList}\item 
+float \textbf{ to\+Float} (void) const
+\begin{DoxyCompactList}\small\item\em Converts this string to a float (single precision floating point value) \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \textbf{ String} \textbf{ format} (const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Uses sprintf-\/style formatting to build a \doxyref{String}{p.}{class_string} object [static]. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ init} (void)
+\item 
+void \textbf{ invalidate} (void)
+\item 
+unsigned char \textbf{ change\+Buffer} (unsigned int max\+Str\+Len)
+\item 
+unsigned char \textbf{ concat} (const char $\ast$cstr, unsigned int \textbf{ length})
+\item 
+\textbf{ String} \& \textbf{ copy} (const char $\ast$cstr, unsigned int \textbf{ length})
+\item 
+\textbf{ String} \& \textbf{ copy} (const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$pstr, unsigned int \textbf{ length})
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \textbf{ buffer}
+\begin{DoxyCompactList}\small\item\em The buffer containing the data. It is always null-\/terminated. \end{DoxyCompactList}\item 
+unsigned int \textbf{ capacity}
+\begin{DoxyCompactList}\small\item\em The capacity of the buffer. The longest string is one byte less than this. \end{DoxyCompactList}\item 
+unsigned int \textbf{ len}
+\begin{DoxyCompactList}\small\item\em The \doxyref{String}{p.}{class_string} length (not counting the null terminator). \end{DoxyCompactList}\item 
+unsigned char \textbf{ flags}
+\begin{DoxyCompactList}\small\item\em Unused, for future features. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+typedef void(String\+::$\ast$ \textbf{ String\+If\+Helper\+Type}) () const
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ String\+If\+Helper} () const
+\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ String\+Printable\+Helper}
+\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, const \textbf{ String} \&rhs)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) a \doxyref{String}{p.}{class_string} to the end of lhs. \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, const char $\ast$cstr)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) a c-\/string (null-\/terminated) to the end of lhs. \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, char c)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the character c the end of lhs a. \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, unsigned char num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the unsigned char num to the end of lhs as a decimal number (base 10) \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, int num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the signed int num to the end of lhs as a decimal number (base 10) \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, unsigned int num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the unsigned int num to the end of lhs as a decimal number (base 10) \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, long num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the long integer num to the end of lhs as a decimal number (base 10) \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, unsigned long num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the unsigned long integer to the end of lhs as a decimal number (base 10) \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, float num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the float num to the end of lhs as a decimal number (base 10) \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} \& \textbf{ operator+} (const \textbf{ String\+Sum\+Helper} \&lhs, double num)
+\begin{DoxyCompactList}\small\item\em Append (concatenate) the double precision float num to the end of lhs as a decimal number (base 10) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Wiring \doxyref{String}{p.}{class_string}\+: A class to hold and manipulate a dynamically allocated string. 
+
+Definition at line 54 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\label{class_string_a2f31c4cd9dab650141b50a8350a1ffd4}} 
+\index{String@{String}!String\+If\+Helper\+Type@{String\+If\+Helper\+Type}}
+\index{String\+If\+Helper\+Type@{String\+If\+Helper\+Type}!String@{String}}
+\subsubsection{String\+If\+Helper\+Type}
+{\footnotesize\ttfamily typedef void(String\+::$\ast$ String\+::\+String\+If\+Helper\+Type) () const\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 59 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_string_a9c6238ddd5e2dca198ead5227fc7b858}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [1/13]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr = {\ttfamily \char`\"{}\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxyref{String}{p.}{class_string} object from a c-\/string (null-\/terminated) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cstr} & The string to copy, optional. If not specified, starts with an empty string \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 69 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References copy(), and init().
+
+
+
+Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
+
+
+\begin{DoxyCode}
+70 \{
+71     init();
+72     \textcolor{keywordflow}{if} (cstr) copy(cstr, strlen(cstr));
+73 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a20cfefac6f5b37f40dcb35826b563a5a}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [2/13]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxyref{String}{p.}{class_string} object from a pointer and length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cstr} & Pointer to a bytes, typically A\+S\+C\+II or U\+T\+F-\/8. Does not need to be null-\/terminated.\\
+\hline
+{\em length} & Length in bytes of the string. \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_string_a5774bcd4a4c232a8aec5a3ec6d01a157}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [3/13]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{str }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxyref{String}{p.}{class_string} object as a copy of another string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to copy. Changes made to str in the future won\textquotesingle{}t be reflected in this copy. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 75 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), and operator=().
+
+
+
+Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
+
+
+\begin{DoxyCode}
+76 \{
+77     init();
+78     *\textcolor{keyword}{this} = value;
+79 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a8c89c89e3cb69407bf55443c3d9dce0c}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [4/13]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$}]{pstr }\end{DoxyParamCaption})}
+
+\mbox{\label{class_string_ad61d0ac2a1ff6e81fc7da8097be3c4dd}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [5/13]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{const \textbf{ Printable} \&}]{printable }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxyref{String}{p.}{class_string} object from any \doxyref{Printable}{p.}{class_printable} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em printable} & The \doxyref{Printable}{p.}{class_printable} object. The to\+Print() method will be called on it to print to this \doxyref{String}{p.}{class_string} the textual representation of the object.\\
+\hline
+\end{DoxyParams}
+For example, I\+P\+Address is printable, so you can pass an I\+P\+Address to this constructor and this string will contain a textual representation of the I\+P\+Address (dotted quad). 
+
+Definition at line 780 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), Printable\+::print\+To(), and String\+Printable\+Helper\+::\+String\+Printable\+Helper().
+
+
+\begin{DoxyCode}
+781 \{
+782     init();
+783     StringPrintableHelper help(*\textcolor{keyword}{this});
+784     printable.printTo(help);
+785 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a1fdfe981d2c5e0075c1669dd94553082}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [6/13]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a \doxyref{String}{p.}{class_string} containing a single character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The character to set the \doxyref{String}{p.}{class_string} to \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 94 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), and operator=().
+
+
+
+Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
+
+
+\begin{DoxyCode}
+95 \{
+96     init();
+97     \textcolor{keywordtype}{char} buf[2];
+98     buf[0] = c;
+99     buf[1] = 0;
+100     *\textcolor{keyword}{this} = buf;
+101 \}
+\end{DoxyCode}
+\mbox{\label{class_string_adb05525482f5991815322239e5504539}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [7/13]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{unsigned char}]{b,  }\item[{unsigned char}]{base = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a \doxyref{String}{p.}{class_string} from a unsigned char (uint8\+\_\+t) value, expressed as a number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em b} & The value.\\
+\hline
+{\em base} & The number base, default is 10 (decimal). Other values include 8 (octal) and 16 (hexadecimal). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 103 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), operator=(), and utoa().
+
+
+
+Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
+
+
+\begin{DoxyCode}
+104 \{
+105     init();
+106     \textcolor{keywordtype}{char} buf[9];
+107     utoa(value, buf, base);
+108     *\textcolor{keyword}{this} = buf;
+109 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a5528e1c6d322a9ee21f155c291ea67d1}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [8/13]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{unsigned char}]{base = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a \doxyref{String}{p.}{class_string} from a int (32 bit signed integer) value, expressed as a number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value.\\
+\hline
+{\em base} & The number base, default is 10 (decimal). Other values include 8 (octal) and 16 (hexadecimal). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 111 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), itoa(), and operator=().
+
+
+
+Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
+
+
+\begin{DoxyCode}
+112 \{
+113     init();
+114     \textcolor{keywordtype}{char} buf[34];
+115     itoa(value, buf, base);
+116     *\textcolor{keyword}{this} = buf;
+117 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a53134e2b38eb0d114f886e807a3753ae}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [9/13]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{unsigned int}]{value,  }\item[{unsigned char}]{base = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a \doxyref{String}{p.}{class_string} from a unsigned int (32 bit unsigned integer) value, expressed as a number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value.\\
+\hline
+{\em base} & The number base, default is 10 (decimal). Other values include 8 (octal) and 16 (hexadecimal). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 119 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), operator=(), and utoa().
+
+
+
+Referenced by max\+Current\+C1\+\_\+test(), max\+Current\+C2\+\_\+test(), and String\+Sum\+Helper\+::\+String\+Sum\+Helper().
+
+
+\begin{DoxyCode}
+120 \{
+121     init();
+122     \textcolor{keywordtype}{char} buf[33];
+123     utoa(value, buf, base);
+124     *\textcolor{keyword}{this} = buf;
+125 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a868687056546919b7109c0801d75ec83}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [10/13]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{long}]{value,  }\item[{unsigned char}]{base = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a \doxyref{String}{p.}{class_string} from a long (32 bit signed integer) value, expressed as a number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value.\\
+\hline
+{\em base} & The number base, default is 10 (decimal). Other values include 8 (octal) and 16 (hexadecimal). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 127 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), ltoa(), and operator=().
+
+
+
+Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
+
+
+\begin{DoxyCode}
+128 \{
+129     init();
+130     \textcolor{keywordtype}{char} buf[34];
+131     ltoa(value, buf, base);
+132     *\textcolor{keyword}{this} = buf;
+133 \}
+\end{DoxyCode}
+\mbox{\label{class_string_abdad234c756b44cce55c75db24fddecf}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [11/13]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{unsigned long}]{value,  }\item[{unsigned char}]{base = {\ttfamily 10} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a \doxyref{String}{p.}{class_string} from a unsigned long (32 bit unsigned integer) value, expressed as a number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value.\\
+\hline
+{\em base} & The number base, default is 10 (decimal). Other values include 8 (octal) and 16 (hexadecimal). \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 135 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), operator=(), and ultoa().
+
+
+
+Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
+
+
+\begin{DoxyCode}
+136 \{
+137     init();
+138     \textcolor{keywordtype}{char} buf[33];
+139     ultoa(value, buf, base);
+140     *\textcolor{keyword}{this} = buf;
+141 \}
+\end{DoxyCode}
+\mbox{\label{class_string_adef4f199739444a78803c4043ad3e228}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [12/13]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{float}]{value,  }\item[{int}]{decimal\+Places = {\ttfamily 6} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a \doxyref{String}{p.}{class_string} from a float (32 bit single precision floating point) value, expressed as a number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value.\\
+\hline
+{\em decimal\+Places} & The number of decimal places to show. Default = 6. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 143 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References dtoa(), init(), and operator=().
+
+
+\begin{DoxyCode}
+144 \{
+145     init();
+146     \textcolor{keywordtype}{char} buf[33];
+147     dtoa(value, decimalPlaces, buf);
+148         *\textcolor{keyword}{this} = buf;
+149 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a46e13b4608fbe763b4fc5bf22362078e}} 
+\index{String@{String}!String@{String}}
+\index{String@{String}!String@{String}}
+\subsubsection{String()\hspace{0.1cm}{\footnotesize\ttfamily [13/13]}}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{int}]{decimal\+Places = {\ttfamily 6} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Construct a \doxyref{String}{p.}{class_string} from a double (64 bit double precision floating point) value, expressed as a number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value.\\
+\hline
+{\em decimal\+Places} & The number of decimal places to show. Default = 6. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 151 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References dtoa(), init(), and operator=().
+
+
+\begin{DoxyCode}
+152 \{
+153     init();
+154     \textcolor{keywordtype}{char} buf[33];
+155     dtoa(value, decimalPlaces, buf);
+156         *\textcolor{keyword}{this} = buf;
+157 \}
+\end{DoxyCode}
+\mbox{\label{class_string_ab4027f1abc8f8c0134f6098126de71e5}} 
+\index{String@{String}!````~String@{$\sim$\+String}}
+\index{````~String@{$\sim$\+String}!String@{String}}
+\subsubsection{$\sim$\+String()}
+{\footnotesize\ttfamily String\+::$\sim$\+String (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Destructor. Also deletes the underlying dynamically allocated string. 
+
+
+
+Definition at line 158 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer.
+
+
+\begin{DoxyCode}
+159 \{
+160     free(buffer);
+161 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_string_a0274f3e61533d15086816fb7f47ccb54}} 
+\index{String@{String}!c\+\_\+str@{c\+\_\+str}}
+\index{c\+\_\+str@{c\+\_\+str}!String@{String}}
+\subsubsection{c\+\_\+str()}
+{\footnotesize\ttfamily const char$\ast$ String\+::c\+\_\+str (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns a c-\/string (null-\/terminated) 
+
+This allows the \doxyref{String}{p.}{class_string} object to be passed to anything that requires a c-\/string. See also operator const char $\ast$.
+
+One place where you need to explicitly use \doxyref{c\+\_\+str()}{p.}{class_string_a0274f3e61533d15086816fb7f47ccb54} or cast is when passing a \doxyref{String}{p.}{class_string} as a variable argument to sprintf\+:
+
+
+\begin{DoxyCode}
+String str;
+snprintf(buf, \textcolor{keyword}{sizeof}(buf), \textcolor{stringliteral}{"string=%s"}, str.c_str());
+\end{DoxyCode}
+
+
+If you leave off the \doxyref{c\+\_\+str()}{p.}{class_string_a0274f3e61533d15086816fb7f47ccb54} the value won\textquotesingle{}t be printed as string. This also applies to things that use sprintf internally, like Log\+:
+
+
+\begin{DoxyCode}
+Log.info(\textcolor{stringliteral}{"string=%s"}, str.c_str());
+\end{DoxyCode}
+
+
+This method returns a pointer to the internal buffer. If the underlying string is reallocated because the string is appended to, this pointer will be invalid. 
+
+Definition at line 819 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References buffer.
+
+
+
+Referenced by Json\+Writer\+::insert\+Value(), main(), operator const char $\ast$(), and operator$<$$<$().
+
+
+\begin{DoxyCode}
+819 \{ \textcolor{keywordflow}{return} buffer; \}
+\end{DoxyCode}
+\mbox{\label{class_string_aea30ddc42b0dd5434d23606c39580e5d}} 
+\index{String@{String}!change\+Buffer@{change\+Buffer}}
+\index{change\+Buffer@{change\+Buffer}!String@{String}}
+\subsubsection{change\+Buffer()}
+{\footnotesize\ttfamily unsigned char String\+::change\+Buffer (\begin{DoxyParamCaption}\item[{unsigned int}]{max\+Str\+Len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 192 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and capacity.
+
+
+
+Referenced by replace(), and reserve().
+
+
+\begin{DoxyCode}
+193 \{
+194     \textcolor{keywordtype}{char} *newbuffer = (\textcolor{keywordtype}{char} *)realloc(buffer, maxStrLen + 1);
+195     \textcolor{keywordflow}{if} (newbuffer) \{
+196         buffer = newbuffer;
+197         capacity = maxStrLen;
+198         \textcolor{keywordflow}{return} 1;
+199     \}
+200     \textcolor{keywordflow}{return} 0;
+201 \}
+\end{DoxyCode}
+\mbox{\label{class_string_aee512943b0a68596e1f946fcfda757af}} 
+\index{String@{String}!char\+At@{char\+At}}
+\index{char\+At@{char\+At}!String@{String}}
+\subsubsection{char\+At()}
+{\footnotesize\ttfamily char String\+::char\+At (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Gets the character at offset index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index to set (0 = first character)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The character is 0 if the index is larger than the length of the string. 
+\end{DoxyReturn}
+
+
+Definition at line 509 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References operator[$\,$]().
+
+
+\begin{DoxyCode}
+510 \{
+511     \textcolor{keywordflow}{return} operator[](loc);
+512 \}
+\end{DoxyCode}
+\mbox{\label{class_string_ab95c64acc3d5105efdc9709a4cc31e76}} 
+\index{String@{String}!compare\+To@{compare\+To}}
+\index{compare\+To@{compare\+To}!String@{String}}
+\subsubsection{compare\+To()}
+{\footnotesize\ttfamily int String\+::compare\+To (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Compares this string to another string using strcmp (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+$<$ 0 if s is less than this, == 0 is s equals this, or $>$ 0 if s is greater than this
+\end{DoxyReturn}
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 432 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by equals(), operator$<$(), operator$<$=(), operator$>$(), and operator$>$=().
+
+
+\begin{DoxyCode}
+433 \{
+434     \textcolor{keywordflow}{if} (!buffer || !s.buffer) \{
+435         \textcolor{keywordflow}{if} (s.buffer && s.len > 0) \textcolor{keywordflow}{return} 0 - *(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)s.buffer;
+436         if (buffer && len > 0) \textcolor{keywordflow}{return} *(\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)buffer;
+437         \textcolor{keywordflow}{return} 0;
+438     \}
+439     \textcolor{keywordflow}{return} strcmp(buffer, s.buffer);
+440 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a63f64f8a3da37d4570ce7b2ceec5bd2b}} 
+\index{String@{String}!concat@{concat}}
+\index{concat@{concat}!String@{String}}
+\subsubsection{concat()\hspace{0.1cm}{\footnotesize\ttfamily [1/12]}}
+{\footnotesize\ttfamily unsigned char String\+::concat (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{str }\end{DoxyParamCaption})}
+
+
+
+Append (concatenate) a \doxyref{String}{p.}{class_string} object to the end of this \doxyref{String}{p.}{class_string}, modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to copy from. It is not modified.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the append succeeded or false if there was not enough memory or the parameter was invalid. 
+\end{DoxyReturn}
+
+
+Definition at line 276 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, concat(), and len.
+
+
+
+Referenced by operator+=().
+
+
+\begin{DoxyCode}
+277 \{
+278     \textcolor{keywordflow}{return} concat(s.buffer, s.len);
+279 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a5477edc378d55f57bb6572217e562c7a}} 
+\index{String@{String}!concat@{concat}}
+\index{concat@{concat}!String@{String}}
+\subsubsection{concat()\hspace{0.1cm}{\footnotesize\ttfamily [2/12]}}
+{\footnotesize\ttfamily unsigned char String\+::concat (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr }\end{DoxyParamCaption})}
+
+
+
+Append (concatenate) a c-\/string (null-\/terminated) to the end of this \doxyref{String}{p.}{class_string}, modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cstr} & The string to copy from. It is not modified.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the append succeeded or false if there was not enough memory or the parameter was invalid. 
+\end{DoxyReturn}
+
+
+Definition at line 292 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat().
+
+
+
+Referenced by operator+=().
+
+
+\begin{DoxyCode}
+293 \{
+294     \textcolor{keywordflow}{if} (!cstr) \textcolor{keywordflow}{return} 0;
+295     \textcolor{keywordflow}{return} concat(cstr, strlen(cstr));
+296 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a09dd174078f7d0b1552b249949cfd96c}} 
+\index{String@{String}!concat@{concat}}
+\index{concat@{concat}!String@{String}}
+\subsubsection{concat()\hspace{0.1cm}{\footnotesize\ttfamily [3/12]}}
+{\footnotesize\ttfamily unsigned char String\+::concat (\begin{DoxyParamCaption}\item[{const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$}]{str }\end{DoxyParamCaption})}
+
+\mbox{\label{class_string_a5f3e286a1a7b65a154e3e3dd19d4b707}} 
+\index{String@{String}!concat@{concat}}
+\index{concat@{concat}!String@{String}}
+\subsubsection{concat()\hspace{0.1cm}{\footnotesize\ttfamily [4/12]}}
+{\footnotesize\ttfamily unsigned char String\+::concat (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Append (concatenate) a single character to the end of this \doxyref{String}{p.}{class_string}, modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The character to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the append succeeded or false if there was not enough memory. 
+\end{DoxyReturn}
+
+
+Definition at line 298 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat().
+
+
+
+Referenced by Json\+Parser\+String\+::append(), operator+(), operator+=(), and String\+Printable\+Helper\+::write().
+
+
+\begin{DoxyCode}
+299 \{
+300     \textcolor{keywordtype}{char} buf[2];
+301     buf[0] = c;
+302     buf[1] = 0;
+303     \textcolor{keywordflow}{return} concat(buf, 1);
+304 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a1c02b2de34a3245d16c5430951789f7d}} 
+\index{String@{String}!concat@{concat}}
+\index{concat@{concat}!String@{String}}
+\subsubsection{concat()\hspace{0.1cm}{\footnotesize\ttfamily [5/12]}}
+{\footnotesize\ttfamily unsigned char String\+::concat (\begin{DoxyParamCaption}\item[{unsigned char}]{c }\end{DoxyParamCaption})}
+
+
+
+Append (concatenate) the byte value c to the end of this \doxyref{String}{p.}{class_string} as a decimal number 0 -\/ 255, modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the append succeeded or false if there was not enough memory. 
+\end{DoxyReturn}
+
+
+Definition at line 306 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), and itoa().
+
+
+
+Referenced by operator+(), and operator+=().
+
+
+\begin{DoxyCode}
+307 \{
+308     \textcolor{keywordtype}{char} buf[4];
+309     itoa(num, buf, 10);
+310     \textcolor{keywordflow}{return} concat(buf, strlen(buf));
+311 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a6d437a7312b591848b5457705fee5549}} 
+\index{String@{String}!concat@{concat}}
+\index{concat@{concat}!String@{String}}
+\subsubsection{concat()\hspace{0.1cm}{\footnotesize\ttfamily [6/12]}}
+{\footnotesize\ttfamily unsigned char String\+::concat (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})}
+
+
+
+Append (concatenate) the integer value num to the end of this \doxyref{String}{p.}{class_string} as a signed decimal number (base 10), modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the append succeeded or false if there was not enough memory. 
+\end{DoxyReturn}
+
+
+Definition at line 313 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), and itoa().
+
+
+
+Referenced by allow\+User\+\_\+callback(), max\+Current\+C1\+\_\+test(), max\+Current\+C2\+\_\+test(), operator+(), and operator+=().
+
+
+\begin{DoxyCode}
+314 \{
+315     \textcolor{keywordtype}{char} buf[7];
+316     itoa(num, buf, 10);
+317     \textcolor{keywordflow}{return} concat(buf, strlen(buf));
+318 \}
+\end{DoxyCode}
+\mbox{\label{class_string_af9c20f944d8a4687808017388047d155}} 
+\index{String@{String}!concat@{concat}}
+\index{concat@{concat}!String@{String}}
+\subsubsection{concat()\hspace{0.1cm}{\footnotesize\ttfamily [7/12]}}
+{\footnotesize\ttfamily unsigned char String\+::concat (\begin{DoxyParamCaption}\item[{unsigned int}]{num }\end{DoxyParamCaption})}
+
+
+
+Append (concatenate) the unsigned integer value num to the end of this \doxyref{String}{p.}{class_string} as a unsigned decimal number (base 10), modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the append succeeded or false if there was not enough memory. 
+\end{DoxyReturn}
+
+
+Definition at line 320 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), and utoa().
+
+
+
+Referenced by operator+(), and operator+=().
+
+
+\begin{DoxyCode}
+321 \{
+322     \textcolor{keywordtype}{char} buf[6];
+323     utoa(num, buf, 10);
+324     \textcolor{keywordflow}{return} concat(buf, strlen(buf));
+325 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a92a456f8679a19d2221ec43841238ead}} 
+\index{String@{String}!concat@{concat}}
+\index{concat@{concat}!String@{String}}
+\subsubsection{concat()\hspace{0.1cm}{\footnotesize\ttfamily [8/12]}}
+{\footnotesize\ttfamily unsigned char String\+::concat (\begin{DoxyParamCaption}\item[{long}]{num }\end{DoxyParamCaption})}
+
+
+
+Append (concatenate) the long integer value num to the end of this \doxyref{String}{p.}{class_string} as a signed decimal number (base 10), modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the append succeeded or false if there was not enough memory. 
+\end{DoxyReturn}
+
+
+Definition at line 327 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), and ltoa().
+
+
+
+Referenced by operator+(), and operator+=().
+
+
+\begin{DoxyCode}
+328 \{
+329     \textcolor{keywordtype}{char} buf[12];
+330     ltoa(num, buf, 10);
+331     \textcolor{keywordflow}{return} concat(buf, strlen(buf));
+332 \}
+\end{DoxyCode}
+\mbox{\label{class_string_ad502777b7549182fe9b1a14879acf307}} 
+\index{String@{String}!concat@{concat}}
+\index{concat@{concat}!String@{String}}
+\subsubsection{concat()\hspace{0.1cm}{\footnotesize\ttfamily [9/12]}}
+{\footnotesize\ttfamily unsigned char String\+::concat (\begin{DoxyParamCaption}\item[{unsigned long}]{num }\end{DoxyParamCaption})}
+
+
+
+Append (concatenate) the unsigned long value num to the end of this \doxyref{String}{p.}{class_string} as a unsigned decimal number (base 10), modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the append succeeded or false if there was not enough memory. 
+\end{DoxyReturn}
+
+
+Definition at line 334 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), D\+EC, and ultoa().
+
+
+
+Referenced by operator+(), and operator+=().
+
+
+\begin{DoxyCode}
+335 \{
+336     \textcolor{keywordtype}{char} buf[11];
+337     ultoa(num, buf, DEC);
+338     \textcolor{keywordflow}{return} concat(buf, strlen(buf));
+339 \}
+\end{DoxyCode}
+\mbox{\label{class_string_af6029b556adb9a23d82d1f276ce4f8ee}} 
+\index{String@{String}!concat@{concat}}
+\index{concat@{concat}!String@{String}}
+\subsubsection{concat()\hspace{0.1cm}{\footnotesize\ttfamily [10/12]}}
+{\footnotesize\ttfamily unsigned char String\+::concat (\begin{DoxyParamCaption}\item[{float}]{num }\end{DoxyParamCaption})}
+
+
+
+Append (concatenate) the float n to the end of this \doxyref{String}{p.}{class_string} as a decimal number (base 10), modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the append succeeded or false if there was not enough memory. 
+\end{DoxyReturn}
+
+
+Definition at line 341 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), and dtoa().
+
+
+
+Referenced by operator+().
+
+
+\begin{DoxyCode}
+342 \{
+343     \textcolor{keywordtype}{char} buf[20];
+344     dtoa(num, 6, buf);
+345     \textcolor{keywordflow}{return} concat(buf, strlen(buf));
+346 \}
+\end{DoxyCode}
+\mbox{\label{class_string_ab1e52143c6057122a71db07ed1c7fb0e}} 
+\index{String@{String}!concat@{concat}}
+\index{concat@{concat}!String@{String}}
+\subsubsection{concat()\hspace{0.1cm}{\footnotesize\ttfamily [11/12]}}
+{\footnotesize\ttfamily unsigned char String\+::concat (\begin{DoxyParamCaption}\item[{double}]{num }\end{DoxyParamCaption})}
+
+
+
+Append (concatenate) the double precision float n to the end of this \doxyref{String}{p.}{class_string} as a decimal number (base 10), modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the append succeeded or false if there was not enough memory. 
+\end{DoxyReturn}
+
+
+Definition at line 348 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), and dtoa().
+
+
+
+Referenced by operator+().
+
+
+\begin{DoxyCode}
+349 \{
+350     \textcolor{keywordtype}{char} buf[20];
+351     dtoa(num, 6, buf);
+352     \textcolor{keywordflow}{return} concat(buf, strlen(buf));
+353 \}
+\end{DoxyCode}
+\mbox{\label{class_string_aba57d3370c8e6abc90b359d62ecb6be6}} 
+\index{String@{String}!concat@{concat}}
+\index{concat@{concat}!String@{String}}
+\subsubsection{concat()\hspace{0.1cm}{\footnotesize\ttfamily [12/12]}}
+{\footnotesize\ttfamily unsigned char String\+::concat (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 281 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, len, and reserve().
+
+
+
+Referenced by concat(), operator+(), and String\+Printable\+Helper\+::write().
+
+
+\begin{DoxyCode}
+282 \{
+283     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} newlen = len + length;
+284     \textcolor{keywordflow}{if} (!cstr) \textcolor{keywordflow}{return} 0;
+285     \textcolor{keywordflow}{if} (length == 0) \textcolor{keywordflow}{return} 1;
+286     \textcolor{keywordflow}{if} (!reserve(newlen)) \textcolor{keywordflow}{return} 0;
+287     strcpy(buffer + len, cstr);
+288     len = newlen;
+289     \textcolor{keywordflow}{return} 1;
+290 \}
+\end{DoxyCode}
+\mbox{\label{class_string_af425a88dd132c147a97d8eca4df2be35}} 
+\index{String@{String}!copy@{copy}}
+\index{copy@{copy}!String@{String}}
+\subsubsection{copy()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \textbf{ String} \& String\+::copy (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 207 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, invalidate(), len, and reserve().
+
+
+
+Referenced by operator=(), and String().
+
+
+\begin{DoxyCode}
+208 \{
+209     \textcolor{keywordflow}{if} (!reserve(length)) \{
+210         invalidate();
+211         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+212     \}
+213     len = length;
+214     strcpy(buffer, cstr);
+215     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+216 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a8d349a2f3cf3c8cde32f8665660aec20}} 
+\index{String@{String}!copy@{copy}}
+\index{copy@{copy}!String@{String}}
+\subsubsection{copy()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ String}\& String\+::copy (\begin{DoxyParamCaption}\item[{const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$}]{pstr,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_string_af96a205cd68121b2fbdf01f5e9b9bb31}} 
+\index{String@{String}!ends\+With@{ends\+With}}
+\index{ends\+With@{ends\+With}!String@{String}}
+\subsubsection{ends\+With()}
+{\footnotesize\ttfamily unsigned char String\+::ends\+With (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{suffix }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this string ends with suffix (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em suffix} & the string containing the suffix to test\\
+\hline
+\end{DoxyParams}
+Uses the C standard library function strcmp which is case-\/sensitive and may not work properly with U\+T\+F-\/8 characters. 
+
+Definition at line 499 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+\begin{DoxyCode}
+500 \{
+501     \textcolor{keywordflow}{if} ( len < s2.len || !buffer || !s2.buffer) \textcolor{keywordflow}{return} 0;
+502     \textcolor{keywordflow}{return} strcmp(&buffer[len - s2.len], s2.buffer) == 0;
+503 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a1f8b83b7dfd47de4062abc3d57e4c351}} 
+\index{String@{String}!equals@{equals}}
+\index{equals@{equals}!String@{String}}
+\subsubsection{equals()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned char String\+::equals (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this string is equal to another string (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the other string is equal to this string.
+\end{DoxyReturn}
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 442 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References compare\+To(), and len.
+
+
+
+Referenced by operator!=(), and operator==().
+
+
+\begin{DoxyCode}
+443 \{
+444     \textcolor{keywordflow}{return} (len == s2.len && compareTo(s2) == 0);
+445 \}
+\end{DoxyCode}
+\mbox{\label{class_string_add7c8de5fdbebf0fba593d97535228c2}} 
+\index{String@{String}!equals@{equals}}
+\index{equals@{equals}!String@{String}}
+\subsubsection{equals()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned char String\+::equals (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this string equal to another string (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cstr} & the c-\/string (null-\/terminated) to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the other string is equal to this string.
+\end{DoxyReturn}
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 447 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by operator!=(), and operator==().
+
+
+\begin{DoxyCode}
+448 \{
+449     \textcolor{keywordflow}{if} (len == 0) \textcolor{keywordflow}{return} (cstr == NULL || *cstr == 0);
+450     \textcolor{keywordflow}{if} (cstr == NULL) \textcolor{keywordflow}{return} buffer[0] == 0;
+451     \textcolor{keywordflow}{return} strcmp(buffer, cstr) == 0;
+452 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a3b8832687edda189ae43632d70157b94}} 
+\index{String@{String}!equals\+Ignore\+Case@{equals\+Ignore\+Case}}
+\index{equals\+Ignore\+Case@{equals\+Ignore\+Case}!String@{String}}
+\subsubsection{equals\+Ignore\+Case()}
+{\footnotesize\ttfamily unsigned char String\+::equals\+Ignore\+Case (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{s }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this string equals another string (case-\/insensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & the string to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if equal, false if not
+\end{DoxyReturn}
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 474 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+\begin{DoxyCode}
+475 \{
+476     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == &s2) \textcolor{keywordflow}{return} 1;
+477     \textcolor{keywordflow}{if} (len != s2.len) \textcolor{keywordflow}{return} 0;
+478     \textcolor{keywordflow}{if} (len == 0) \textcolor{keywordflow}{return} 1;
+479     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *p1 = buffer;
+480     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *p2 = s2.buffer;
+481     \textcolor{keywordflow}{while} (*p1) \{
+482         \textcolor{keywordflow}{if} (tolower(*p1++) != tolower(*p2++)) \textcolor{keywordflow}{return} 0;
+483     \}
+484     \textcolor{keywordflow}{return} 1;
+485 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a0d717afd6f0ea29cc70175886b56fbd8}} 
+\index{String@{String}!format@{format}}
+\index{format@{format}!String@{String}}
+\subsubsection{format()}
+{\footnotesize\ttfamily \textbf{ String} String\+::format (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Uses sprintf-\/style formatting to build a \doxyref{String}{p.}{class_string} object [static]. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & The formatting string\\
+\hline
+{\em ...} & Variable arguments corresponding to the formatting string\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Returns a \doxyref{String}{p.}{class_string} object formatted as specified 
+\end{DoxyReturn}
+
+
+Definition at line 787 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, len, and reserve().
+
+
+\begin{DoxyCode}
+788 \{
+789     va\_list marker;
+790     va\_start(marker, fmt);
+791     \textcolor{keyword}{const} \textcolor{keywordtype}{int} bufsize = 5;
+792     \textcolor{keywordtype}{char} test[bufsize];
+793     \textcolor{keywordtype}{size\_t} n = vsnprintf(test, bufsize, fmt, marker);
+794     va\_end(marker);
+795 
+796     String result;
+797     result.reserve(n);  \textcolor{comment}{// internally adds +1 for null terminator}
+798     \textcolor{keywordflow}{if} (result.buffer) \{
+799         va\_start(marker, fmt);
+800         n = vsnprintf(result.buffer, n+1, fmt, marker);
+801         va\_end(marker);
+802         result.len = n;
+803     \}
+804     \textcolor{keywordflow}{return} result;
+805 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a507250e2de463e60e8df8fb5089f8dae}} 
+\index{String@{String}!get\+Bytes@{get\+Bytes}}
+\index{get\+Bytes@{get\+Bytes}!String@{String}}
+\subsubsection{get\+Bytes()}
+{\footnotesize\ttfamily void String\+::get\+Bytes (\begin{DoxyParamCaption}\item[{unsigned char $\ast$}]{buf,  }\item[{unsigned int}]{bufsize,  }\item[{unsigned int}]{index = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Copy the data out of this \doxyref{String}{p.}{class_string} into another buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & The buffer to copy into\\
+\hline
+{\em bufsize} & The size of the buffer. The buffer will contain a null-\/terminted string so the maximum string length is bufsize -\/ 1.\\
+\hline
+{\em index} & The index to start copying from (0 = first character). Optional. Default is from 0, the start of the string.\\
+\hline
+\end{DoxyParams}
+If bufsize is smaller than the string the string will be truncated and still null-\/terminated. If the string is truncated and U\+T\+F-\/8, it may break a multi-\/byte character sequence in the middle, resulting in invalid U\+T\+F-\/8. 
+
+Definition at line 535 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by to\+Char\+Array().
+
+
+\begin{DoxyCode}
+536 \{
+537     \textcolor{keywordflow}{if} (!bufsize || !buf) \textcolor{keywordflow}{return};
+538     \textcolor{keywordflow}{if} (index >= len) \{
+539         buf[0] = 0;
+540         \textcolor{keywordflow}{return};
+541     \}
+542     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n = bufsize - 1;
+543     \textcolor{keywordflow}{if} (n > len - index) n = len - index;
+544     strncpy((\textcolor{keywordtype}{char} *)buf, buffer + index, n);
+545     buf[n] = 0;
+546 \}
+\end{DoxyCode}
+\mbox{\label{class_string_aaf945bda436edaba02fccffbdf3936c1}} 
+\index{String@{String}!index\+Of@{index\+Of}}
+\index{index\+Of@{index\+Of}!String@{String}}
+\subsubsection{index\+Of()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily int String\+::index\+Of (\begin{DoxyParamCaption}\item[{char}]{ch }\end{DoxyParamCaption}) const}
+
+
+
+Search this string for a given character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & The A\+S\+C\+II character to search for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of the character or -\/1 if not found. 0 = the first character.
+\end{DoxyReturn}
+This uses the C standard library function strchr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. 
+
+Definition at line 552 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References index\+Of().
+
+
+\begin{DoxyCode}
+553 \{
+554     \textcolor{keywordflow}{return} indexOf(c, 0);
+555 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a0a9cb3d76e6e9b7cd1d8666cc84149ea}} 
+\index{String@{String}!index\+Of@{index\+Of}}
+\index{index\+Of@{index\+Of}!String@{String}}
+\subsubsection{index\+Of()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily int String\+::index\+Of (\begin{DoxyParamCaption}\item[{char}]{ch,  }\item[{unsigned int}]{from\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Search this string for a given character starting at an offset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & The A\+S\+C\+II character to t search for\\
+\hline
+{\em from\+Index} & The index to start from (0 = first character)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of the character or -\/1 if not found. 0 = the first character.
+\end{DoxyReturn}
+This uses the C standard library function strchr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. 
+
+Definition at line 557 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by index\+Of().
+
+
+\begin{DoxyCode}
+558 \{
+559     \textcolor{keywordflow}{if} (fromIndex >= len) \textcolor{keywordflow}{return} -1;
+560     \textcolor{keyword}{const} \textcolor{keywordtype}{char}* temp = strchr(buffer + fromIndex, ch);
+561     \textcolor{keywordflow}{if} (temp == NULL) \textcolor{keywordflow}{return} -1;
+562     \textcolor{keywordflow}{return} temp - buffer;
+563 \}
+\end{DoxyCode}
+\mbox{\label{class_string_ab2fac51c5e56215d0b92a70cce39d966}} 
+\index{String@{String}!index\+Of@{index\+Of}}
+\index{index\+Of@{index\+Of}!String@{String}}
+\subsubsection{index\+Of()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily int String\+::index\+Of (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{str }\end{DoxyParamCaption}) const}
+
+
+
+Search this string for a given \doxyref{String}{p.}{class_string}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to search for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of the string or -\/1 if not found. 0 = the first character.
+\end{DoxyReturn}
+This uses the C standard library function strstr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. It is case-\/sensitive. 
+
+Definition at line 565 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References index\+Of().
+
+
+\begin{DoxyCode}
+566 \{
+567     \textcolor{keywordflow}{return} indexOf(s2, 0);
+568 \}
+\end{DoxyCode}
+\mbox{\label{class_string_aecbe2471a60329e53d31bd85c24c38a9}} 
+\index{String@{String}!index\+Of@{index\+Of}}
+\index{index\+Of@{index\+Of}!String@{String}}
+\subsubsection{index\+Of()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily int String\+::index\+Of (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{str,  }\item[{unsigned int}]{from\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Search this string for a given \doxyref{String}{p.}{class_string} starting at an offset. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to search for\\
+\hline
+{\em from\+Index} & The index to start from (0 = first character)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of the string or -\/1 if not found. 0 = the first character.
+\end{DoxyReturn}
+This uses the C standard library function strstr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. It is case-\/sensitive. 
+
+Definition at line 570 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by index\+Of().
+
+
+\begin{DoxyCode}
+571 \{
+572     \textcolor{keywordflow}{if} (fromIndex >= len) \textcolor{keywordflow}{return} -1;
+573     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *found = strstr(buffer + fromIndex, s2.buffer);
+574     \textcolor{keywordflow}{if} (found == NULL) \textcolor{keywordflow}{return} -1;
+575     \textcolor{keywordflow}{return} found - buffer;
+576 \}
+\end{DoxyCode}
+\mbox{\label{class_string_af597f6dc5a6a96d14d5409b48254b8fb}} 
+\index{String@{String}!init@{init}}
+\index{init@{init}!String@{String}}
+\subsubsection{init()}
+{\footnotesize\ttfamily void String\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 167 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, capacity, flags, and len.
+
+
+
+Referenced by String().
+
+
+\begin{DoxyCode}
+168 \{
+169     buffer = NULL;
+170     capacity = 0;
+171     len = 0;
+172     flags = 0;
+173 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a9bee9137075d66b2af742969cb7549d9}} 
+\index{String@{String}!invalidate@{invalidate}}
+\index{invalidate@{invalidate}!String@{String}}
+\subsubsection{invalidate()}
+{\footnotesize\ttfamily void String\+::invalidate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 175 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, capacity, and len.
+
+
+
+Referenced by copy(), operator+(), and operator=().
+
+
+\begin{DoxyCode}
+176 \{
+177     \textcolor{keywordflow}{if} (buffer) free(buffer);
+178     buffer = NULL;
+179     capacity = len = 0;
+180 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a63a465c7d1e67129b04cf4693b756e5b}} 
+\index{String@{String}!last\+Index\+Of@{last\+Index\+Of}}
+\index{last\+Index\+Of@{last\+Index\+Of}!String@{String}}
+\subsubsection{last\+Index\+Of()\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily int String\+::last\+Index\+Of (\begin{DoxyParamCaption}\item[{char}]{ch }\end{DoxyParamCaption}) const}
+
+
+
+Search this string for a given character, starting at the end. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & The A\+S\+C\+II character to search for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of the character or -\/1 if not found. 0 = the first character.
+\end{DoxyReturn}
+This uses the C standard library function strrchr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. 
+
+Definition at line 578 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References last\+Index\+Of(), and len.
+
+
+\begin{DoxyCode}
+579 \{
+580     \textcolor{keywordflow}{return} lastIndexOf(theChar, len - 1);
+581 \}
+\end{DoxyCode}
+\mbox{\label{class_string_af9b32bb5cf68844c04792b4368f69883}} 
+\index{String@{String}!last\+Index\+Of@{last\+Index\+Of}}
+\index{last\+Index\+Of@{last\+Index\+Of}!String@{String}}
+\subsubsection{last\+Index\+Of()\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily int String\+::last\+Index\+Of (\begin{DoxyParamCaption}\item[{char}]{ch,  }\item[{unsigned int}]{from\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Search this string for a given character, starting at the from\+Index and going toward the beginning. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & The A\+S\+C\+II character to search for\\
+\hline
+{\em from\+Index} & The index to start from (0 = first character)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of the character or -\/1 if not found. 0 = the first character.
+\end{DoxyReturn}
+This uses the C standard library function strrchr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. 
+
+Definition at line 583 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by last\+Index\+Of().
+
+
+\begin{DoxyCode}
+584 \{
+585     \textcolor{keywordflow}{if} (fromIndex >= len) \textcolor{keywordflow}{return} -1;
+586     \textcolor{keywordtype}{char} tempchar = buffer[fromIndex + 1];
+587     buffer[fromIndex + 1] = \textcolor{charliteral}{'\(\backslash\)0'};
+588     \textcolor{keywordtype}{char}* temp = strrchr( buffer, ch );
+589     buffer[fromIndex + 1] = tempchar;
+590     \textcolor{keywordflow}{if} (temp == NULL) \textcolor{keywordflow}{return} -1;
+591     \textcolor{keywordflow}{return} temp - buffer;
+592 \}
+\end{DoxyCode}
+\mbox{\label{class_string_aa696010f90d06e0caceeb847ab3ce689}} 
+\index{String@{String}!last\+Index\+Of@{last\+Index\+Of}}
+\index{last\+Index\+Of@{last\+Index\+Of}!String@{String}}
+\subsubsection{last\+Index\+Of()\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily int String\+::last\+Index\+Of (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{str }\end{DoxyParamCaption}) const}
+
+
+
+Search this string for a last occurrence of str. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to search for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of the start of the string or -\/1 if not found. 0 = the first character.
+\end{DoxyReturn}
+This uses the C standard library function strstr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. It is case-\/sensitive. 
+
+Definition at line 594 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References last\+Index\+Of(), and len.
+
+
+\begin{DoxyCode}
+595 \{
+596     \textcolor{keywordflow}{return} lastIndexOf(s2, len - s2.len);
+597 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a08e7c60202cc42fe4731b52c0c5cd80f}} 
+\index{String@{String}!last\+Index\+Of@{last\+Index\+Of}}
+\index{last\+Index\+Of@{last\+Index\+Of}!String@{String}}
+\subsubsection{last\+Index\+Of()\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily int String\+::last\+Index\+Of (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{str,  }\item[{unsigned int}]{from\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Search this string for a last occurrence of str starting at from\+Index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & The string to search for\\
+\hline
+{\em from\+Index} & The index to start from (0 = first character)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+index of the start of the string or -\/1 if not found. 0 = the first character.
+\end{DoxyReturn}
+This uses the C standard library function strstr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. It is case-\/sensitive. 
+
+Definition at line 599 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by last\+Index\+Of(), and replace().
+
+
+\begin{DoxyCode}
+600 \{
+601     \textcolor{keywordflow}{if} (s2.len == 0 || len == 0 || s2.len > len) \textcolor{keywordflow}{return} -1;
+602     \textcolor{keywordflow}{if} (fromIndex >= len) fromIndex = len - 1;
+603     \textcolor{keywordtype}{int} found = -1;
+604     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} *p = buffer; p <= buffer + fromIndex; p++) \{
+605         p = strstr(p, s2.buffer);
+606         \textcolor{keywordflow}{if} (!p) \textcolor{keywordflow}{break};
+607         \textcolor{keywordflow}{if} ((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int})(p - buffer) <= fromIndex) found = p - buffer;
+608     \}
+609     \textcolor{keywordflow}{return} found;
+610 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a21691d4bac5ec852977018fef6fb9c8a}} 
+\index{String@{String}!length@{length}}
+\index{length@{length}!String@{String}}
+\subsubsection{length()}
+{\footnotesize\ttfamily unsigned int String\+::length (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the length of the string in bytes. 
+
+Note that for U\+T\+F-\/8 strings, this is the number of bytes, not characters. 
+
+Definition at line 208 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References len.
+
+
+
+Referenced by String\+Printable\+Helper\+::write().
+
+
+\begin{DoxyCode}
+208 \{\textcolor{keywordflow}{return} len;\}
+\end{DoxyCode}
+\mbox{\label{class_string_a9a12caedc885ac44c86d104a8cb60f82}} 
+\index{String@{String}!operator const char $\ast$@{operator const char $\ast$}}
+\index{operator const char $\ast$@{operator const char $\ast$}!String@{String}}
+\subsubsection{operator const char $\ast$()}
+{\footnotesize\ttfamily String\+::operator const char $\ast$ (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the contents this \doxyref{String}{p.}{class_string} as a c-\/string (null-\/terminated) 
+
+See also \doxyref{c\+\_\+str()}{p.}{class_string_a0274f3e61533d15086816fb7f47ccb54} which is another way to do this. 
+
+Definition at line 241 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References c\+\_\+str().
+
+
+\begin{DoxyCode}
+241 \{ \textcolor{keywordflow}{return} c_str(); \}
+\end{DoxyCode}
+\mbox{\label{class_string_aa15ca61ec96c4068e07c23fea25625fa}} 
+\index{String@{String}!operator String\+If\+Helper\+Type@{operator String\+If\+Helper\+Type}}
+\index{operator String\+If\+Helper\+Type@{operator String\+If\+Helper\+Type}!String@{String}}
+\subsubsection{operator String\+If\+Helper\+Type()}
+{\footnotesize\ttfamily String\+::operator \textbf{ String\+If\+Helper\+Type} (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 536 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References buffer, and String\+If\+Helper().
+
+
+\begin{DoxyCode}
+536 \{ \textcolor{keywordflow}{return} buffer ? &String::StringIfHelper : 0; \}
+\end{DoxyCode}
+\mbox{\label{class_string_a4eda494a17ada57b9e8975c5b44b5227}} 
+\index{String@{String}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!String@{String}}
+\subsubsection{operator"!=()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned char String\+::operator!= (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this string is greater than to another string (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & the string to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the other string is greater than this string.
+\end{DoxyReturn}
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 610 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References equals().
+
+
+\begin{DoxyCode}
+610 \{\textcolor{keywordflow}{return} !equals(rhs);\}
+\end{DoxyCode}
+\mbox{\label{class_string_aa3bec091af9c137939b348138ae06e93}} 
+\index{String@{String}!operator"!=@{operator"!=}}
+\index{operator"!=@{operator"!=}!String@{String}}
+\subsubsection{operator"!=()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned char String\+::operator!= (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this string not equal to another string (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cstr} & the c-\/string (null-\/terminated) to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the other string is not equal to this string.
+\end{DoxyReturn}
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 622 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References equals().
+
+
+
+Referenced by run\+Test().
+
+
+\begin{DoxyCode}
+622 \{\textcolor{keywordflow}{return} !equals(cstr);\}
+\end{DoxyCode}
+\mbox{\label{class_string_a5a3f29c49cc46fb598fc41767a83dabc}} 
+\index{String@{String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!String@{String}}
+\subsubsection{operator+=()\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily \textbf{ String}\& String\+::operator+= (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Appends (concatenate) a \doxyref{String}{p.}{class_string} object to the end of this \doxyref{String}{p.}{class_string}, modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The string to copy from. It is not modified.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This string to you can chain operations together. If there was not enough memory or other error occurs, this \doxyref{String}{p.}{class_string} will be left unmodified. 
+\end{DoxyReturn}
+
+
+Definition at line 352 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References concat().
+
+
+\begin{DoxyCode}
+352 \{concat(rhs); \textcolor{keywordflow}{return} (*\textcolor{keyword}{this});\}
+\end{DoxyCode}
+\mbox{\label{class_string_ab41e81fc0c337cab456509994d12f097}} 
+\index{String@{String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!String@{String}}
+\subsubsection{operator+=()\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily \textbf{ String}\& String\+::operator+= (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Appends (concatenate) a c-\/string (null-\/terminated) to the end of this \doxyref{String}{p.}{class_string}, modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cstr} & The string to copy from. It is not modified.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This string to you can chain operations together. If there was not enough memory or other error occurs, this \doxyref{String}{p.}{class_string} will be left unmodified. 
+\end{DoxyReturn}
+
+
+Definition at line 362 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References concat().
+
+
+\begin{DoxyCode}
+362 \{concat(cstr); \textcolor{keywordflow}{return} (*\textcolor{keyword}{this});\}
+\end{DoxyCode}
+\mbox{\label{class_string_aea2e862c41c9995a7cb2201cd92c2851}} 
+\index{String@{String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!String@{String}}
+\subsubsection{operator+=()\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily \textbf{ String}\& String\+::operator+= (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Appends (concatenate) a single character to the end of this \doxyref{String}{p.}{class_string}, modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The character to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This string to you can chain operations together. If there was not enough memory or other error occurs, this \doxyref{String}{p.}{class_string} will be left unmodified. 
+\end{DoxyReturn}
+
+
+Definition at line 372 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References concat().
+
+
+\begin{DoxyCode}
+372 \{concat(c); \textcolor{keywordflow}{return} (*\textcolor{keyword}{this});\}
+\end{DoxyCode}
+\mbox{\label{class_string_a26be7d08426b6cf307f1eb2e9bff095a}} 
+\index{String@{String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!String@{String}}
+\subsubsection{operator+=()\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily \textbf{ String}\& String\+::operator+= (\begin{DoxyParamCaption}\item[{unsigned char}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append (concatenate) the byte value num to the end of this \doxyref{String}{p.}{class_string} as a decimal number 0 -\/ 255, modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This string to you can chain operations together. If there was not enough memory or other error occurs, this \doxyref{String}{p.}{class_string} will be left unmodified. 
+\end{DoxyReturn}
+
+
+Definition at line 382 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References concat().
+
+
+\begin{DoxyCode}
+382 \{concat(num); \textcolor{keywordflow}{return} (*\textcolor{keyword}{this});\}
+\end{DoxyCode}
+\mbox{\label{class_string_acc979c8832f66d8d953aaa7d81d305c1}} 
+\index{String@{String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!String@{String}}
+\subsubsection{operator+=()\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily \textbf{ String}\& String\+::operator+= (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append (concatenate) the integer value num to the end of this \doxyref{String}{p.}{class_string} as a signed decimal number (base 10), modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This string to you can chain operations together. If there was not enough memory or other error occurs, this \doxyref{String}{p.}{class_string} will be left unmodified. 
+\end{DoxyReturn}
+
+
+Definition at line 392 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References concat().
+
+
+\begin{DoxyCode}
+392 \{concat(num); \textcolor{keywordflow}{return} (*\textcolor{keyword}{this});\}
+\end{DoxyCode}
+\mbox{\label{class_string_aca854f6e679697e98e940b8d2b51956e}} 
+\index{String@{String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!String@{String}}
+\subsubsection{operator+=()\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily \textbf{ String}\& String\+::operator+= (\begin{DoxyParamCaption}\item[{unsigned int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append (concatenate) the unsigned integer value num to the end of this \doxyref{String}{p.}{class_string} as a unsigned decimal number (base 10), modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This string to you can chain operations together. If there was not enough memory or other error occurs, this \doxyref{String}{p.}{class_string} will be left unmodified. 
+\end{DoxyReturn}
+
+
+Definition at line 402 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References concat().
+
+
+\begin{DoxyCode}
+402 \{concat(num); \textcolor{keywordflow}{return} (*\textcolor{keyword}{this});\}
+\end{DoxyCode}
+\mbox{\label{class_string_a2638de5d162cb9395bd2837458cef124}} 
+\index{String@{String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!String@{String}}
+\subsubsection{operator+=()\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily \textbf{ String}\& String\+::operator+= (\begin{DoxyParamCaption}\item[{long}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append (concatenate) the long integer value num to the end of this \doxyref{String}{p.}{class_string} as a signed decimal number (base 10), modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This string to you can chain operations together. If there was not enough memory or other error occurs, this \doxyref{String}{p.}{class_string} will be left unmodified. 
+\end{DoxyReturn}
+
+
+Definition at line 412 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References concat().
+
+
+\begin{DoxyCode}
+412 \{concat(num); \textcolor{keywordflow}{return} (*\textcolor{keyword}{this});\}
+\end{DoxyCode}
+\mbox{\label{class_string_aeaf915e3c8fa71652b2fae59f201a5a2}} 
+\index{String@{String}!operator+=@{operator+=}}
+\index{operator+=@{operator+=}!String@{String}}
+\subsubsection{operator+=()\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily \textbf{ String}\& String\+::operator+= (\begin{DoxyParamCaption}\item[{unsigned long}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append (concatenate) the unsigned long value num to the end of this \doxyref{String}{p.}{class_string} as a unsigned decimal number (base 10), modifying this string in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+This string to you can chain operations together. If there was not enough memory or other error occurs, this \doxyref{String}{p.}{class_string} will be left unmodified. 
+\end{DoxyReturn}
+
+
+Definition at line 422 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References concat().
+
+
+\begin{DoxyCode}
+422 \{concat(num); \textcolor{keywordflow}{return} (*\textcolor{keyword}{this});\}
+\end{DoxyCode}
+\mbox{\label{class_string_ae536c93957c3e2369a94bbdf99037681}} 
+\index{String@{String}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!String@{String}}
+\subsubsection{operator$<$()}
+{\footnotesize\ttfamily unsigned char String\+::operator$<$ (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this string is less than to another string (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & the string to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the other string is less than this string.
+\end{DoxyReturn}
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 454 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References compare\+To().
+
+
+\begin{DoxyCode}
+455 \{
+456     \textcolor{keywordflow}{return} compareTo(rhs) < 0;
+457 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a111fa1bc3ab1c20223cc8940cd122278}} 
+\index{String@{String}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!String@{String}}
+\subsubsection{operator$<$=()}
+{\footnotesize\ttfamily unsigned char String\+::operator$<$= (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this string is less than or equal to another string (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & the string to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the other string is less than or equal to this string.
+\end{DoxyReturn}
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 464 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References compare\+To().
+
+
+\begin{DoxyCode}
+465 \{
+466     \textcolor{keywordflow}{return} compareTo(rhs) <= 0;
+467 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a70b3aba8ac7a57e3bb48a52a5d64a88b}} 
+\index{String@{String}!operator=@{operator=}}
+\index{operator=@{operator=}!String@{String}}
+\subsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily \textbf{ String} \& String\+::operator= (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption})}
+
+
+
+Assigns this string to have a copy of \doxyref{String}{p.}{class_string} rhs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & The string to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 240 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, copy(), invalidate(), and len.
+
+
+
+Referenced by String().
+
+
+\begin{DoxyCode}
+241 \{
+242     \textcolor{keywordflow}{if} (\textcolor{keyword}{this} == &rhs) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+243 
+244     \textcolor{keywordflow}{if} (rhs.buffer) copy(rhs.buffer, rhs.len);
+245     \textcolor{keywordflow}{else} invalidate();
+246 
+247     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+248 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a0138caa55ac6d8b5bcd1fa7bb484a831}} 
+\index{String@{String}!operator=@{operator=}}
+\index{operator=@{operator=}!String@{String}}
+\subsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily \textbf{ String} \& String\+::operator= (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr }\end{DoxyParamCaption})}
+
+
+
+Assigns this string to have a copy of c-\/string (null-\/terminated) cstr. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cstr} & The string to copy from. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 264 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References copy(), and invalidate().
+
+
+
+Referenced by allow\+User\+\_\+callback(), callback(), char\+To\+String(), Json\+Parser\+::get\+Token\+Json\+String(), Json\+Parser\+::get\+Token\+Value(), M\+Q\+T\+T\+::initialize(), loop(), M\+Q\+T\+T\+::set\+Broker(), String(), and substring().
+
+
+\begin{DoxyCode}
+265 \{
+266     \textcolor{keywordflow}{if} (cstr) copy(cstr, strlen(cstr));
+267     \textcolor{keywordflow}{else} invalidate();
+268 
+269     \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+270 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a965951ee729f850adb40d3c0997922bb}} 
+\index{String@{String}!operator=@{operator=}}
+\index{operator=@{operator=}!String@{String}}
+\subsubsection{operator=()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily \textbf{ String}\& String\+::operator= (\begin{DoxyParamCaption}\item[{const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$}]{pstr }\end{DoxyParamCaption})}
+
+\mbox{\label{class_string_a21388f8d52ccecd225db7d6724d3e38f}} 
+\index{String@{String}!operator==@{operator==}}
+\index{operator==@{operator==}!String@{String}}
+\subsubsection{operator==()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned char String\+::operator== (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this string is equal to another string (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & the string to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the other string is equal to this string.
+\end{DoxyReturn}
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 585 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References equals().
+
+
+\begin{DoxyCode}
+585 \{\textcolor{keywordflow}{return} equals(rhs);\}
+\end{DoxyCode}
+\mbox{\label{class_string_ad453b9631caf5d0164ae493bf1aa9680}} 
+\index{String@{String}!operator==@{operator==}}
+\index{operator==@{operator==}!String@{String}}
+\subsubsection{operator==()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned char String\+::operator== (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns true if this string equal to another string (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cstr} & the c-\/string (null-\/terminated) to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the other string is equal to this string.
+\end{DoxyReturn}
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 597 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References equals().
+
+
+
+Referenced by Json\+Parser\+::get\+Value\+Token\+By\+Key(), main(), and switch\+Test().
+
+
+\begin{DoxyCode}
+597 \{\textcolor{keywordflow}{return} equals(cstr);\}
+\end{DoxyCode}
+\mbox{\label{class_string_a25bbbdda663b6b0eb3ed3458e80fc66e}} 
+\index{String@{String}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!String@{String}}
+\subsubsection{operator$>$()}
+{\footnotesize\ttfamily unsigned char String\+::operator$>$ (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this string is greater than to another string (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & the string to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the other string is greater than this string.
+\end{DoxyReturn}
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 459 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References compare\+To().
+
+
+\begin{DoxyCode}
+460 \{
+461     \textcolor{keywordflow}{return} compareTo(rhs) > 0;
+462 \}
+\end{DoxyCode}
+\mbox{\label{class_string_ad55ec344221bba8a7447226bde7b00dc}} 
+\index{String@{String}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!String@{String}}
+\subsubsection{operator$>$=()}
+{\footnotesize\ttfamily unsigned char String\+::operator$>$= (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this string is greater than or equal to another string (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em rhs} & the string to compare to\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the other string is greater than or equal to this string.
+\end{DoxyReturn}
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 469 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References compare\+To().
+
+
+\begin{DoxyCode}
+470 \{
+471     \textcolor{keywordflow}{return} compareTo(rhs) >= 0;
+472 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a277d6b29f7f152a03c81700b12e43e55}} 
+\index{String@{String}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!String@{String}}
+\subsubsection{operator[]()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily char String\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Gets the character at offset index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index to set (0 = first character)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The character is 0 if the index is larger than the length of the string. 
+\end{DoxyReturn}
+
+
+Definition at line 529 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by char\+At().
+
+
+\begin{DoxyCode}
+530 \{
+531     \textcolor{keywordflow}{if} (index >= len || !buffer) \textcolor{keywordflow}{return} 0;
+532     \textcolor{keywordflow}{return} buffer[index];
+533 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a92a0681d0031d7e99c12c245cc22367e}} 
+\index{String@{String}!operator[]@{operator[]}}
+\index{operator[]@{operator[]}!String@{String}}
+\subsubsection{operator[]()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily char \& String\+::operator[$\,$] (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
+
+
+
+Set the character at offset index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index to set (0 = first character)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A reference to set.
+\end{DoxyReturn}
+If index is greater than the length of the string, a dummy reference is returned instead. This allows operation to execute without error, but also discards the change. In other words, you cannot use this to append to the string, only modify an existing character. 
+
+Definition at line 519 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+\begin{DoxyCode}
+520 \{
+521     \textcolor{keyword}{static} \textcolor{keywordtype}{char} dummy\_writable\_char;
+522     \textcolor{keywordflow}{if} (index >= len || !buffer) \{
+523         dummy\_writable\_char = 0;
+524         \textcolor{keywordflow}{return} dummy\_writable\_char;
+525     \}
+526     \textcolor{keywordflow}{return} buffer[index];
+527 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a01ab28577facf21ffc183a59983b259e}} 
+\index{String@{String}!remove@{remove}}
+\index{remove@{remove}!String@{String}}
+\subsubsection{remove()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \textbf{ String} \& String\+::remove (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
+
+
+
+Removes characters from the \doxyref{String}{p.}{class_string}, modifying it in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index to start removing from, inclusive. 0 = first character of the string through the end of the string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this \doxyref{String}{p.}{class_string}, so you can chain multiple operations 
+\end{DoxyReturn}
+
+
+Definition at line 691 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References len, and remove().
+
+
+\begin{DoxyCode}
+691                                         \{
+692         \textcolor{keywordtype}{int} count = len - index;
+693         \textcolor{keywordflow}{return} \textcolor{keyword}{remove}(index, count);
+694 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a0c7e2c4875de0d99ad462aeac6da7ef9}} 
+\index{String@{String}!remove@{remove}}
+\index{remove@{remove}!String@{String}}
+\subsubsection{remove()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ String} \& String\+::remove (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{unsigned int}]{count }\end{DoxyParamCaption})}
+
+
+
+Removes characters from the \doxyref{String}{p.}{class_string}, modifying it in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Index to start removing from, inclusive. 0 = first character of the string.\\
+\hline
+{\em count} & Number of characters to remove. Typically 1 (remove one character) or more. Removes to the end of the string if count is larger than the size of the string.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this \doxyref{String}{p.}{class_string}, so you can chain multiple operations 
+\end{DoxyReturn}
+
+
+Definition at line 696 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by remove().
+
+
+\begin{DoxyCode}
+696                                                             \{
+697     \textcolor{keywordflow}{if} (index >= len) \{ \textcolor{keywordflow}{return} *\textcolor{keyword}{this}; \}
+698     \textcolor{keywordflow}{if} (count <= 0) \{ \textcolor{keywordflow}{return} *\textcolor{keyword}{this}; \}
+699     \textcolor{keywordflow}{if} (index + count > len) \{ count = len - index; \}
+700     \textcolor{keywordtype}{char} *writeTo = buffer + index;
+701     len = len - count;
+702     strncpy(writeTo, buffer + index + count,len - index);
+703     buffer[len] = 0;
+704         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+705 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a06f5fff85fe14f6369811383d915ca1a}} 
+\index{String@{String}!replace@{replace}}
+\index{replace@{replace}!String@{String}}
+\subsubsection{replace()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \textbf{ String} \& String\+::replace (\begin{DoxyParamCaption}\item[{char}]{find,  }\item[{char}]{replace }\end{DoxyParamCaption})}
+
+
+
+Replaces every occurrence of a character in the string with another character, modifying it in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em find} & the character to look for\\
+\hline
+{\em replace} & the character to replace it with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this \doxyref{String}{p.}{class_string}, so you can chain multiple operations 
+\end{DoxyReturn}
+
+
+Definition at line 638 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer.
+
+
+\begin{DoxyCode}
+639 \{
+640     \textcolor{keywordflow}{if} (buffer)
+641             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} *p = buffer; *p; p++) \{
+642                     \textcolor{keywordflow}{if} (*p == find) *p = replace;
+643             \}
+644         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+645 \}
+\end{DoxyCode}
+\mbox{\label{class_string_ad87b4e7c4d06d6fee95c5caa21b6ca83}} 
+\index{String@{String}!replace@{replace}}
+\index{replace@{replace}!String@{String}}
+\subsubsection{replace()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ String} \& String\+::replace (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{find,  }\item[{const \textbf{ String} \&}]{replace }\end{DoxyParamCaption})}
+
+
+
+Replaces every occurrence of a \doxyref{String}{p.}{class_string} with another \doxyref{String}{p.}{class_string}, modifying it in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em find} & the string to look for (case-\/sensitive)\\
+\hline
+{\em replace} & the string to replace it with\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+this \doxyref{String}{p.}{class_string}, so you can chain multiple operations 
+\end{DoxyReturn}
+
+
+Definition at line 647 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, capacity, change\+Buffer(), last\+Index\+Of(), and len.
+
+
+\begin{DoxyCode}
+648 \{
+649     \textcolor{keywordflow}{if} (len == 0 || find.len == 0) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+650     \textcolor{keywordtype}{int} diff = replace.len - find.len;
+651     \textcolor{keywordtype}{char} *readFrom = buffer;
+652     \textcolor{keywordtype}{char} *foundAt;
+653     \textcolor{keywordflow}{if} (diff == 0) \{
+654         \textcolor{keywordflow}{while} ((foundAt = strstr(readFrom, find.buffer)) != NULL) \{
+655             memcpy(foundAt, replace.buffer, replace.len);
+656             readFrom = foundAt + replace.len;
+657         \}
+658     \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (diff < 0) \{
+659         \textcolor{keywordtype}{char} *writeTo = buffer;
+660         \textcolor{keywordflow}{while} ((foundAt = strstr(readFrom, find.buffer)) != NULL) \{
+661             \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} n = foundAt - readFrom;
+662             memcpy(writeTo, readFrom, n);
+663             writeTo += n;
+664             memcpy(writeTo, replace.buffer, replace.len);
+665             writeTo += replace.len;
+666             readFrom = foundAt + find.len;
+667             len += diff;
+668         \}
+669         strcpy(writeTo, readFrom);
+670     \} \textcolor{keywordflow}{else} \{
+671         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} size = len; \textcolor{comment}{// compute size needed for result}
+672         \textcolor{keywordflow}{while} ((foundAt = strstr(readFrom, find.buffer)) != NULL) \{
+673             readFrom = foundAt + find.len;
+674             size += diff;
+675         \}
+676         \textcolor{keywordflow}{if} (size == len) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};;
+677         \textcolor{keywordflow}{if} (size > capacity && !changeBuffer(size)) \textcolor{keywordflow}{return} *\textcolor{keyword}{this}; \textcolor{comment}{// XXX: tell user!}
+678         \textcolor{keywordtype}{int} index = len - 1;
+679         \textcolor{keywordflow}{while} (index >= 0 && (index = lastIndexOf(find, index)) >= 0) \{
+680             readFrom = buffer + index + find.len;
+681             memmove(readFrom + diff, readFrom, len - (readFrom - buffer));
+682             len += diff;
+683             buffer[len] = 0;
+684             memcpy(buffer + index, replace.buffer, replace.len);
+685             index--;
+686         \}
+687     \}
+688         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+689 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a138edcc762cb87649d81757d1e4ab419}} 
+\index{String@{String}!reserve@{reserve}}
+\index{reserve@{reserve}!String@{String}}
+\subsubsection{reserve()}
+{\footnotesize\ttfamily unsigned char String\+::reserve (\begin{DoxyParamCaption}\item[{unsigned int}]{size }\end{DoxyParamCaption})}
+
+
+
+Reserves a buffer of size. 
+
+This can improve the efficiency if you know approximately how big your string will be. Otherwise, the string is made larger in increments, which is much less efficient.
+
+If, for example you reserve 100 bytes in a new empty string, the length will still be 0 until you append characters to it. It just will be able to append 100 bytes until it has to expand the internal dynamically allocated buffer. 
+
+Definition at line 182 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, capacity, change\+Buffer(), and len.
+
+
+
+Referenced by concat(), copy(), format(), Json\+Parser\+::get\+Token\+Json\+String(), Json\+Parser\+::get\+Token\+Value(), and String\+Printable\+Helper\+::\+String\+Printable\+Helper().
+
+
+\begin{DoxyCode}
+183 \{
+184     \textcolor{keywordflow}{if} (buffer && capacity >= size) \textcolor{keywordflow}{return} 1;
+185     \textcolor{keywordflow}{if} (changeBuffer(size)) \{
+186         \textcolor{keywordflow}{if} (len == 0) buffer[0] = 0;
+187         \textcolor{keywordflow}{return} 1;
+188     \}
+189     \textcolor{keywordflow}{return} 0;
+190 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a000b7c7b89bbd326a9b966a79bc838e8}} 
+\index{String@{String}!set\+Char\+At@{set\+Char\+At}}
+\index{set\+Char\+At@{set\+Char\+At}!String@{String}}
+\subsubsection{set\+Char\+At()}
+{\footnotesize\ttfamily void String\+::set\+Char\+At (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Set the character at offset index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index to set (0 = first character)\\
+\hline
+{\em c} & The value to set the character to.\\
+\hline
+\end{DoxyParams}
+If index is greater than the length of the string, nothing is done. In other words, you cannot use this to append to the string, only modify an existing character. 
+
+Definition at line 514 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+\begin{DoxyCode}
+515 \{
+516     \textcolor{keywordflow}{if} (loc < len) buffer[loc] = c;
+517 \}
+\end{DoxyCode}
+\mbox{\label{class_string_aa63267cdf821b619ffb0a103510ae6ff}} 
+\index{String@{String}!starts\+With@{starts\+With}}
+\index{starts\+With@{starts\+With}!String@{String}}
+\subsubsection{starts\+With()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily unsigned char String\+::starts\+With (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{prefix }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this string starts with prefix (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prefix} & the string containing the string to test against\\
+\hline
+\end{DoxyParams}
+Uses the C standard library function strcmp which is case-\/sensitive and may not work properly with U\+T\+F-\/8 characters. 
+
+Definition at line 487 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References len, and starts\+With().
+
+
+\begin{DoxyCode}
+488 \{
+489     \textcolor{keywordflow}{if} (len < s2.len) \textcolor{keywordflow}{return} 0;
+490     \textcolor{keywordflow}{return} startsWith(s2, 0);
+491 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a2ea4d98b45263f59c9eb1f842b04b3af}} 
+\index{String@{String}!starts\+With@{starts\+With}}
+\index{starts\+With@{starts\+With}!String@{String}}
+\subsubsection{starts\+With()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily unsigned char String\+::starts\+With (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{prefix,  }\item[{unsigned int}]{offset }\end{DoxyParamCaption}) const}
+
+
+
+Returns true if this string contains prefix at specified offset (case-\/sensitive) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em prefix} & the string containing the string to test against\\
+\hline
+{\em offset} & the offset to check at (0 = first characters)\\
+\hline
+\end{DoxyParams}
+Uses the C standard library function strcmp which is case-\/sensitive and may not work properly with U\+T\+F-\/8 characters. 
+
+Definition at line 493 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by starts\+With().
+
+
+\begin{DoxyCode}
+494 \{
+495     \textcolor{keywordflow}{if} (offset > len - s2.len || !buffer || !s2.buffer) \textcolor{keywordflow}{return} 0;
+496     \textcolor{keywordflow}{return} strncmp( &buffer[offset], s2.buffer, s2.len ) == 0;
+497 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a7587eade7e0df22dca2c424df32198de}} 
+\index{String@{String}!String\+If\+Helper@{String\+If\+Helper}}
+\index{String\+If\+Helper@{String\+If\+Helper}!String@{String}}
+\subsubsection{String\+If\+Helper()}
+{\footnotesize\ttfamily void String\+::\+String\+If\+Helper (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [private]}}
+
+
+
+Definition at line 60 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+Referenced by operator String\+If\+Helper\+Type().
+
+
+\begin{DoxyCode}
+60 \{\}
+\end{DoxyCode}
+\mbox{\label{class_string_a36b10b81c1556de6e5c63fd060347f30}} 
+\index{String@{String}!substring@{substring}}
+\index{substring@{substring}!String@{String}}
+\subsubsection{substring()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \textbf{ String} String\+::substring (\begin{DoxyParamCaption}\item[{unsigned int}]{begin\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Returns a \doxyref{String}{p.}{class_string} object with a copy of the characters starting at begin\+Index through the end of the string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin\+Index} & The index to start copying from, inclusive (0 = first byte, 1 = second byte, ...)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of the specified substring
+\end{DoxyReturn}
+Note\+: If the \doxyref{String}{p.}{class_string} contains U\+T\+F-\/8 characters, begin\+Index and end\+Index are in bytes, not characters! It does not prevent splitting a U\+T\+F-\/8 multi-\/byte sequence. 
+
+Definition at line 612 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References len, and substring().
+
+
+
+Referenced by read\+R\+F\+I\+D\+Card().
+
+
+\begin{DoxyCode}
+613 \{
+614     \textcolor{keywordflow}{return} substring(left, len);
+615 \}
+\end{DoxyCode}
+\mbox{\label{class_string_ad04cc1c85089951dc3a182b4397a9f40}} 
+\index{String@{String}!substring@{substring}}
+\index{substring@{substring}!String@{String}}
+\subsubsection{substring()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \textbf{ String} String\+::substring (\begin{DoxyParamCaption}\item[{unsigned int}]{begin\+Index,  }\item[{unsigned int}]{end\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Returns a \doxyref{String}{p.}{class_string} object with a copy of the characters in the specified range. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em begin\+Index} & The index to start copying from, inclusive (0 = first byte, 1 = second byte, ...)\\
+\hline
+{\em end\+Index} & The index to stop at, exclusive. The last character copied is the one before this one.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A copy of the specified substring
+\end{DoxyReturn}
+Note\+: If the \doxyref{String}{p.}{class_string} contains U\+T\+F-\/8 characters, begin\+Index and end\+Index are in bytes, not characters! It does not prevent splitting a U\+T\+F-\/8 multi-\/byte sequence. 
+
+Definition at line 617 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, len, and operator=().
+
+
+
+Referenced by substring().
+
+
+\begin{DoxyCode}
+618 \{
+619     \textcolor{keywordflow}{if} (left > right) \{
+620         \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} temp = right;
+621         right = left;
+622         left = temp;
+623     \}
+624     String out;
+625     \textcolor{keywordflow}{if} (left > len) \textcolor{keywordflow}{return} out;
+626     \textcolor{keywordflow}{if} (right > len) right = len;
+627     \textcolor{keywordtype}{char} temp = buffer[right];  \textcolor{comment}{// save the replaced character}
+628     buffer[right] = \textcolor{charliteral}{'\(\backslash\)0'};
+629     out = buffer + left;  \textcolor{comment}{// pointer arithmetic}
+630     buffer[right] = temp;  \textcolor{comment}{//restore character}
+631     \textcolor{keywordflow}{return} out;
+632 \}
+\end{DoxyCode}
+\mbox{\label{class_string_ac090329c1967d6265d63cc0a5b850e23}} 
+\index{String@{String}!to\+Char\+Array@{to\+Char\+Array}}
+\index{to\+Char\+Array@{to\+Char\+Array}!String@{String}}
+\subsubsection{to\+Char\+Array()}
+{\footnotesize\ttfamily void String\+::to\+Char\+Array (\begin{DoxyParamCaption}\item[{char $\ast$}]{buf,  }\item[{unsigned int}]{bufsize,  }\item[{unsigned int}]{index = {\ttfamily 0} }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Copy the data out of this \doxyref{String}{p.}{class_string} into another buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & The buffer to copy into\\
+\hline
+{\em bufsize} & The size of the buffer. The buffer will contain a null-\/terminted string so the maximum string length is bufsize -\/ 1.\\
+\hline
+{\em index} & The index to start copying from (0 = first character). Optional. Default is from 0, the start of the string.\\
+\hline
+\end{DoxyParams}
+If bufsize is smaller than the string the string will be truncated and still null-\/terminated. If the string is truncated and U\+T\+F-\/8, it may break a multi-\/byte character sequence in the middle, resulting in invalid U\+T\+F-\/8. 
+
+Definition at line 792 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References get\+Bytes().
+
+
+\begin{DoxyCode}
+793         \{getBytes((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} *)buf, bufsize, index);\}
+\end{DoxyCode}
+\mbox{\label{class_string_ac501497ce1ba7679e80152eaa71c9986}} 
+\index{String@{String}!to\+Float@{to\+Float}}
+\index{to\+Float@{to\+Float}!String@{String}}
+\subsubsection{to\+Float()}
+{\footnotesize\ttfamily float String\+::to\+Float (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Converts this string to a float (single precision floating point value) 
+
+\begin{DoxyReturn}{Returns}
+a float value or 0.\+0 if a parsing error occurs (not a float). 
+\end{DoxyReturn}
+
+
+Definition at line 751 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer.
+
+
+\begin{DoxyCode}
+752 \{
+753     \textcolor{keywordflow}{if} (buffer) \textcolor{keywordflow}{return} float(atof(buffer));
+754     \textcolor{keywordflow}{return} 0;
+755 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a2dc5a9a787f8ff266d1130594ec65237}} 
+\index{String@{String}!to\+Int@{to\+Int}}
+\index{to\+Int@{to\+Int}!String@{String}}
+\subsubsection{to\+Int()}
+{\footnotesize\ttfamily long String\+::to\+Int (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption}) const}
+
+
+
+Converts this string to a signed integer (32-\/bit) 
+
+\begin{DoxyReturn}{Returns}
+An integer value or 0 if a parsing error occurs (not an integer). 
+\end{DoxyReturn}
+
+
+Definition at line 744 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer.
+
+
+
+Referenced by max\+Current\+C1(), and max\+Current\+C2().
+
+
+\begin{DoxyCode}
+745 \{
+746     \textcolor{keywordflow}{if} (buffer) \textcolor{keywordflow}{return} atol(buffer);
+747     \textcolor{keywordflow}{return} 0;
+748 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a9754260e421ad64409d2fe5817dc243f}} 
+\index{String@{String}!to\+Lower\+Case@{to\+Lower\+Case}}
+\index{to\+Lower\+Case@{to\+Lower\+Case}!String@{String}}
+\subsubsection{to\+Lower\+Case()}
+{\footnotesize\ttfamily \textbf{ String} \& String\+::to\+Lower\+Case (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Converts this \doxyref{String}{p.}{class_string} to lower case, modifying it in place. 
+
+\begin{DoxyReturn}{Returns}
+this \doxyref{String}{p.}{class_string}, so you can chain multiple operations
+\end{DoxyReturn}
+This is done using the C standard library function tolower() on each character. It only works with 7-\/bit A\+S\+C\+II characters and will corrupt U\+T\+F-\/8 data. 
+
+Definition at line 707 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer.
+
+
+\begin{DoxyCode}
+708 \{
+709     \textcolor{keywordflow}{if} (buffer) \{
+710             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} *p = buffer; *p; p++) \{
+711                     *p = tolower(*p);
+712             \}
+713         \}
+714         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+715 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a5384fd869d047a68429cbcc6d26d94fa}} 
+\index{String@{String}!to\+Upper\+Case@{to\+Upper\+Case}}
+\index{to\+Upper\+Case@{to\+Upper\+Case}!String@{String}}
+\subsubsection{to\+Upper\+Case()}
+{\footnotesize\ttfamily \textbf{ String} \& String\+::to\+Upper\+Case (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Converts this \doxyref{String}{p.}{class_string} to upper case, modifying it in place. 
+
+\begin{DoxyReturn}{Returns}
+this \doxyref{String}{p.}{class_string}, so you can chain multiple operations
+\end{DoxyReturn}
+This is done using the C standard library function toupper() on each character. It only works with 7-\/bit A\+S\+C\+II characters and will corrupt U\+T\+F-\/8 data. 
+
+Definition at line 717 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer.
+
+
+\begin{DoxyCode}
+718 \{
+719     \textcolor{keywordflow}{if} (buffer) \{
+720             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{char} *p = buffer; *p; p++) \{
+721                     *p = toupper(*p);
+722             \}
+723         \}
+724         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+725 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a7b9ef1226bef45dac72045042afc16e8}} 
+\index{String@{String}!trim@{trim}}
+\index{trim@{trim}!String@{String}}
+\subsubsection{trim()}
+{\footnotesize\ttfamily \textbf{ String} \& String\+::trim (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Removes leading an trailing white spaces from this string, modifying it in place. 
+
+\begin{DoxyReturn}{Returns}
+this \doxyref{String}{p.}{class_string}, so you can chain multiple operations
+\end{DoxyReturn}
+Whitespace is determined by the C standard library function isspace(). 
+
+Definition at line 727 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+\begin{DoxyCode}
+728 \{
+729     \textcolor{keywordflow}{if} (!buffer || len == 0) \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+730     \textcolor{keywordtype}{char} *begin = buffer;
+731     \textcolor{keywordflow}{while} (isspace(*begin)) begin++;
+732     \textcolor{keywordtype}{char} *end = buffer + len - 1;
+733     \textcolor{keywordflow}{while} (isspace(*end) && end >= begin) end--;
+734     len = end + 1 - begin;
+735     \textcolor{keywordflow}{if} (begin > buffer) memcpy(buffer, begin, len);
+736     buffer[len] = 0;
+737         \textcolor{keywordflow}{return} *\textcolor{keyword}{this};
+738 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\label{class_string_a2fb327465c18d4346465237d8a38938c}} 
+\index{String@{String}!operator+@{operator+}}
+\index{operator+@{operator+}!String@{String}}
+\subsubsection{operator+\hspace{0.1cm}{\footnotesize\ttfamily [1/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{const \textbf{ String} \&}]{rhs }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Append (concatenate) a \doxyref{String}{p.}{class_string} to the end of lhs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em rhs} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 359 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+\begin{DoxyCode}
+360 \{
+361     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+362     \textcolor{keywordflow}{if} (!a.concat(rhs.buffer, rhs.len)) a.invalidate();
+363     \textcolor{keywordflow}{return} a;
+364 \}
+\end{DoxyCode}
+\mbox{\label{class_string_aa0fe70fca3cf4c9c3c1e77d2465a9bd9}} 
+\index{String@{String}!operator+@{operator+}}
+\index{operator+@{operator+}!String@{String}}
+\subsubsection{operator+\hspace{0.1cm}{\footnotesize\ttfamily [2/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{const char $\ast$}]{cstr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Append (concatenate) a c-\/string (null-\/terminated) to the end of lhs. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em cstr} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 366 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+\begin{DoxyCode}
+367 \{
+368     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+369     \textcolor{keywordflow}{if} (!cstr || !a.concat(cstr, strlen(cstr))) a.invalidate();
+370     \textcolor{keywordflow}{return} a;
+371 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a15c2c0bbe928e2bbf5278c8537bcfda4}} 
+\index{String@{String}!operator+@{operator+}}
+\index{operator+@{operator+}!String@{String}}
+\subsubsection{operator+\hspace{0.1cm}{\footnotesize\ttfamily [3/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Append (concatenate) the character c the end of lhs a. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em c} & The character to append\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 373 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+\begin{DoxyCode}
+374 \{
+375     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+376     \textcolor{keywordflow}{if} (!a.concat(c)) a.invalidate();
+377     \textcolor{keywordflow}{return} a;
+378 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a8b0c50963eaaf2366de418e1fba34cf1}} 
+\index{String@{String}!operator+@{operator+}}
+\index{operator+@{operator+}!String@{String}}
+\subsubsection{operator+\hspace{0.1cm}{\footnotesize\ttfamily [4/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{unsigned char}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Append (concatenate) the unsigned char num to the end of lhs as a decimal number (base 10) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 380 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+\begin{DoxyCode}
+381 \{
+382     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+383     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+384     \textcolor{keywordflow}{return} a;
+385 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a0c7b23137b894e0e6d7607d8386a9285}} 
+\index{String@{String}!operator+@{operator+}}
+\index{operator+@{operator+}!String@{String}}
+\subsubsection{operator+\hspace{0.1cm}{\footnotesize\ttfamily [5/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Append (concatenate) the signed int num to the end of lhs as a decimal number (base 10) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 387 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+\begin{DoxyCode}
+388 \{
+389     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+390     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+391     \textcolor{keywordflow}{return} a;
+392 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a20c7726a6ea2c053044c19f40e5c91aa}} 
+\index{String@{String}!operator+@{operator+}}
+\index{operator+@{operator+}!String@{String}}
+\subsubsection{operator+\hspace{0.1cm}{\footnotesize\ttfamily [6/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{unsigned int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Append (concatenate) the unsigned int num to the end of lhs as a decimal number (base 10) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 394 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+\begin{DoxyCode}
+395 \{
+396     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+397     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+398     \textcolor{keywordflow}{return} a;
+399 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a50aa43ee66fafd4a7e03c453a62aaac1}} 
+\index{String@{String}!operator+@{operator+}}
+\index{operator+@{operator+}!String@{String}}
+\subsubsection{operator+\hspace{0.1cm}{\footnotesize\ttfamily [7/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{long}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Append (concatenate) the long integer num to the end of lhs as a decimal number (base 10) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 401 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+\begin{DoxyCode}
+402 \{
+403     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+404     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+405     \textcolor{keywordflow}{return} a;
+406 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a61625af689cfcbe9206851903b1144a2}} 
+\index{String@{String}!operator+@{operator+}}
+\index{operator+@{operator+}!String@{String}}
+\subsubsection{operator+\hspace{0.1cm}{\footnotesize\ttfamily [8/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{unsigned long}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Append (concatenate) the unsigned long integer to the end of lhs as a decimal number (base 10) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 408 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+\begin{DoxyCode}
+409 \{
+410     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+411     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+412     \textcolor{keywordflow}{return} a;
+413 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a9a2cbb5207527b7dabf2ea13c48f9833}} 
+\index{String@{String}!operator+@{operator+}}
+\index{operator+@{operator+}!String@{String}}
+\subsubsection{operator+\hspace{0.1cm}{\footnotesize\ttfamily [9/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{float}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Append (concatenate) the float num to the end of lhs as a decimal number (base 10) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 415 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+\begin{DoxyCode}
+416 \{
+417     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+418     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+419     \textcolor{keywordflow}{return} a;
+420 \}
+\end{DoxyCode}
+\mbox{\label{class_string_ad7f8cc6402796f520aa6ddc33953f7fc}} 
+\index{String@{String}!operator+@{operator+}}
+\index{operator+@{operator+}!String@{String}}
+\subsubsection{operator+\hspace{0.1cm}{\footnotesize\ttfamily [10/10]}}
+{\footnotesize\ttfamily \textbf{ String\+Sum\+Helper}\& operator+ (\begin{DoxyParamCaption}\item[{const \textbf{ String\+Sum\+Helper} \&}]{lhs,  }\item[{double}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Append (concatenate) the double precision float num to the end of lhs as a decimal number (base 10) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em lhs} & The string to append to. \doxyref{String}{p.}{class_string} lhs is not modified.\\
+\hline
+{\em num} & The value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the combined string 
+\end{DoxyReturn}
+
+
+Definition at line 422 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+\begin{DoxyCode}
+423 \{
+424     StringSumHelper &a = \textcolor{keyword}{const\_cast<}StringSumHelper&\textcolor{keyword}{>}(lhs);
+425     \textcolor{keywordflow}{if} (!a.concat(num)) a.invalidate();
+426     \textcolor{keywordflow}{return} a;
+427 \}
+\end{DoxyCode}
+\mbox{\label{class_string_a5e68bdc5e2e049ec2703293759e6049a}} 
+\index{String@{String}!String\+Printable\+Helper@{String\+Printable\+Helper}}
+\index{String\+Printable\+Helper@{String\+Printable\+Helper}!String@{String}}
+\subsubsection{String\+Printable\+Helper}
+{\footnotesize\ttfamily friend class \textbf{ String\+Printable\+Helper}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 1078 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_string_a7892a52a08b6671add931f85a19c1d46}} 
+\index{String@{String}!buffer@{buffer}}
+\index{buffer@{buffer}!String@{String}}
+\subsubsection{buffer}
+{\footnotesize\ttfamily char$\ast$ String\+::buffer\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The buffer containing the data. It is always null-\/terminated. 
+
+
+
+Definition at line 1058 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+Referenced by c\+\_\+str(), change\+Buffer(), compare\+To(), concat(), copy(), ends\+With(), equals(), equals\+Ignore\+Case(), format(), get\+Bytes(), index\+Of(), init(), invalidate(), last\+Index\+Of(), operator String\+If\+Helper\+Type(), operator+(), operator=(), operator[$\,$](), remove(), replace(), reserve(), set\+Char\+At(), starts\+With(), substring(), to\+Float(), to\+Int(), to\+Lower\+Case(), to\+Upper\+Case(), trim(), and $\sim$\+String().
+
+\mbox{\label{class_string_af78d6ba64d194d5571319316ee2c41d4}} 
+\index{String@{String}!capacity@{capacity}}
+\index{capacity@{capacity}!String@{String}}
+\subsubsection{capacity}
+{\footnotesize\ttfamily unsigned int String\+::capacity\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The capacity of the buffer. The longest string is one byte less than this. 
+
+
+
+Definition at line 1059 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+Referenced by change\+Buffer(), init(), invalidate(), replace(), and reserve().
+
+\mbox{\label{class_string_a46d9dadfcefa61aa12563806c477657b}} 
+\index{String@{String}!flags@{flags}}
+\index{flags@{flags}!String@{String}}
+\subsubsection{flags}
+{\footnotesize\ttfamily unsigned char String\+::flags\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Unused, for future features. 
+
+
+
+Definition at line 1061 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+Referenced by init().
+
+\mbox{\label{class_string_add7c3370b556b8fd8c669b8c6b40043a}} 
+\index{String@{String}!len@{len}}
+\index{len@{len}!String@{String}}
+\subsubsection{len}
+{\footnotesize\ttfamily unsigned int String\+::len\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The \doxyref{String}{p.}{class_string} length (not counting the null terminator). 
+
+
+
+Definition at line 1060 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+Referenced by compare\+To(), concat(), copy(), ends\+With(), equals(), equals\+Ignore\+Case(), format(), get\+Bytes(), index\+Of(), init(), invalidate(), last\+Index\+Of(), length(), operator+(), operator=(), operator[$\,$](), remove(), replace(), reserve(), set\+Char\+At(), starts\+With(), substring(), and trim().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Json\+Parser\+Generator\+R\+K/docs/src/\textbf{ spark\+\_\+wiring\+\_\+string.\+h}\item 
+lib/\+Json\+Parser\+Generator\+R\+K/test/gcclib/\textbf{ spark\+\_\+wiring\+\_\+string.\+cpp}\end{DoxyCompactItemize}

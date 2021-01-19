@@ -23,9 +23,12 @@ void callback(char* topic, byte* payload, unsigned int length);
 void charToString(const char in[], String &out);
 void getMeasure_callback(byte* payload, unsigned int length);
 
+//! var to hold swiped RFID tag at first socket
 String UIDtagCharger1="No ID";
+//! var to hold swiped RFID tag at second socket
 String UIDtagCharger2="No ID";
 
+//! 
 #define CHARGEROFFSET 0 //use 0 for socket 1&2, or 2 for socket 3&4, etc.
 #define DEBUGPORT Serial
 #define SIZEOFUSERLIST 2

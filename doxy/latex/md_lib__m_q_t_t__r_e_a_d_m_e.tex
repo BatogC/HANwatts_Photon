@@ -1,0 +1,121 @@
+{\tt M\+Q\+TT} publish/subscribe library for Photon, Spark Core version 0.\+4.\+28.
+
+\subsection*{Source Code}
+
+This lightweight library source code are only 2 files. firmware -\/$>$ \doxyref{M\+Q\+T\+T.\+cpp}{p.}{_m_q_t_t_8cpp}, M\+Q\+T\+T.\+h.
+
+Application can use Q\+O\+S0,1,2 and retain flag when send a publish message.
+
+\subsection*{Example}
+
+Some sample sketches for Spark Core and Photon included(firmware/examples/).
+\begin{DoxyItemize}
+\item mqtttest.\+ino \+: simple pub/sub sample.
+\item mqttqostest.\+ino \+: Qo\+S1, Qo\+S2 publish and callback sample.
+\end{DoxyItemize}
+
+\subsection*{developer examples}
+
+some applications use \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} with Photon. here are developer\textquotesingle{}s reference examples.
+\begin{DoxyItemize}
+\item {\tt Spark Core / Photon and Cloud\+M\+Q\+TT}
+\item {\tt M\+Q\+TT Publish-\/\+Subscribe Using Rpi, E\+SP and Photon}
+\item {\tt Particle Photon on Watson IoT}
+\item {\tt Connecting IoT devices to the Watson Conversation Car-\/\+Dashboard app}
+\item {\tt Thing\+Speak M\+Q\+TT A\+PI}
+\item {\tt H\+OW TO C\+O\+N\+N\+E\+CT A P\+A\+R\+T\+I\+C\+LE P\+H\+O\+T\+ON TO T\+HE L\+O\+S\+A\+NT I\+OT P\+L\+A\+T\+F\+O\+RM}
+\item {\tt How I Hacked my Humidor with Losant and a Particle Photon}
+\item {\tt A\+R\+T\+IK as M\+Q\+TT Message Broker}
+\item {\tt Particle and Ubidots using M\+Q\+TT}
+\item {\tt U\+S\+I\+NG T\+W\+I\+L\+IO S\+Y\+NC W\+I\+TH M\+Q\+TT ON A P\+A\+R\+T\+I\+C\+LE P\+H\+O\+T\+ON}
+\end{DoxyItemize}
+
+\#\# sample source 
+\begin{DoxyCode}
+#include "application.h"
+#include "MQTT.h"
+
+void callback(char* topic, byte* payload, unsigned int length);
+MQTT client("iot.eclipse.org", 1883, callback);
+
+// recieve message
+void callback(char* topic, byte* payload, unsigned int length) \{
+    char p[length + 1];
+    memcpy(p, payload, length);
+    p[length] = NULL;
+
+    if (!strcmp(p, "RED"))
+        RGB.color(255, 0, 0);
+    else if (!strcmp(p, "GREEN"))
+        RGB.color(0, 255, 0);
+    else if (!strcmp(p, "BLUE"))
+        RGB.color(0, 0, 255);
+    else
+        RGB.color(255, 255, 255);
+    delay(1000);
+\}
+
+
+void setup() \{
+    RGB.control(true);
+
+    // connect to the server(unique id by Time.now())
+    client.connect("sparkclient\_" + String(Time.now()));
+
+    // publish/subscribe
+    if (client.isConnected()) \{
+        client.publish("outTopic/message","hello world");
+        client.subscribe("inTopic/message");
+    \}
+\}
+
+void loop() \{
+    if (client.isConnected())
+        client.loop();
+\}
+\end{DoxyCode}
+ \subsection*{F\+AQ}
+
+\subsubsection*{Can\textquotesingle{}t connect/publish/subscribe to the \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} server?}
+
+
+\begin{DoxyItemize}
+\item Check your \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} server and port(default 1883) is really working with the mosquitto\+\_\+pub/sub command. And maybe your \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} server can\textquotesingle{}t connect from Internet because of firewall. Check your network environments.
+\item Check your subscribe/publish topic name is really matched.
+\item Perhaps device firmware network stack is failed. check your firmware version and bugs.
+\item If you use M\+Q\+T\+T-\/\+T\+LS, check your RooT CA pem file, client key, certifications is okay or not.
+\item Several \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} server will disconnect to the 1st connection when you use the same user\+\_\+id. When the application call the connect method, use different user\+\_\+id in every devices in connect method\textquotesingle{}s 2nd argument. Use M\+AC address as a user\+\_\+id will be better. 
+\begin{DoxyPre}
+   // device.1
+   client.connect("spark-client", "user\_1", "password1");
+   // other devices...
+   client.connect("spark-client", "user\_others", "password1");
+\end{DoxyPre}
+
+\end{DoxyItemize}
+
+\subsubsection*{I want to change \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} keep alive timeout.}
+
+\doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} keepalive timeout is defined \char`\"{}\+M\+Q\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+E\+P\+A\+L\+I\+V\+E 15\char`\"{}(15 sec) in header file. You can change the keepalive timeout in constructor. 
+\begin{DoxyPre}
+    \doxyref{MQTT}{p.}{class_m_q_t_t} client("server\_name", 1883, callback); // default: send keepalive packet to \doxyref{MQTT}{p.}{class_m_q_t_t} server in every 15sec.
+    \doxyref{MQTT}{p.}{class_m_q_t_t} client("server\_name", 1883, 30, callback); // keepliave timeout is 30sec.
+\end{DoxyPre}
+
+
+\subsubsection*{Want to use over the 255 message size.}
+
+In this library, max \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} message size is defined \char`\"{}\+M\+Q\+T\+T\+\_\+\+M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E 255\char`\"{} in header file. But If you want to use over 255bytes, use the constructor 4th argument. 
+\begin{DoxyPre}
+    \doxyref{MQTT}{p.}{class_m_q_t_t} client("server\_name", 1883, callback); // default 255bytes
+    \doxyref{MQTT}{p.}{class_m_q_t_t} client("server\_name", 1883, MQTT\_DEFAULT\_KEEPALIVE, callback, 512); // max 512bytes
+\end{DoxyPre}
+
+
+\subsubsection*{Can I use on old firmware?}
+
+No, use default latest firmware. I test this library on default latest firmware or latest pre-\/release version. If you really want to use old firmware(I think don\textquotesingle{}t need that case), maybe it can\textquotesingle{}t work well and it is out of my assumption.
+
+\subsubsection*{Bug or Problem?}
+
+First of all, check the {\tt Particle community site. But still your problem will not clear, please send a bug-\/fixed diff and Pull request or problem details to issue. Pull Request If you have a bug or feature, please send a pull request. Thanks for all developer\textquotesingle{}s pull request! }

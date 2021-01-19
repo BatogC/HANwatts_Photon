@@ -1,0 +1,547 @@
+\section{Json\+Reference Class Reference}
+\label{class_json_reference}\index{Json\+Reference@{Json\+Reference}}
+
+
+This class provides a fluent-\/style A\+PI for easily traversing a tree of J\+S\+ON objects to find a value.  
+
+
+
+
+{\ttfamily \#include $<$Json\+Parser\+Generator\+R\+K.\+h$>$}
+
+
+
+Collaboration diagram for Json\+Reference\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_reference__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Json\+Reference} (const \textbf{ Json\+Parser} $\ast$\textbf{ parser})
+\begin{DoxyCompactList}\small\item\em Constructs an object. Normally you use the \doxyref{Json\+Parser}{p.}{class_json_parser} get\+Reference() method to get one of these instead of constructing one. \end{DoxyCompactList}\item 
+virtual \textbf{ $\sim$\+Json\+Reference} ()
+\begin{DoxyCompactList}\small\item\em Destructor. This does not affect the lifecycle of the \doxyref{Json\+Parser}{p.}{class_json_parser}. \end{DoxyCompactList}\item 
+\textbf{ Json\+Reference} (const \textbf{ Json\+Parser} $\ast$\textbf{ parser}, const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\textbf{ token})
+\begin{DoxyCompactList}\small\item\em Constructs are \doxyref{Json\+Reference}{p.}{class_json_reference} for a specific token within a \doxyref{Json\+Parser}{p.}{class_json_parser}. \end{DoxyCompactList}\item 
+\textbf{ Json\+Reference} \textbf{ key} (const char $\ast$name) const
+\begin{DoxyCompactList}\small\item\em For \doxyref{Json\+Reference}{p.}{class_json_reference} that refers to a J\+S\+ON object, gets a new \doxyref{Json\+Reference}{p.}{class_json_reference} to a value with the specified key name. \end{DoxyCompactList}\item 
+\textbf{ Json\+Reference} \textbf{ index} (size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em For a \doxyref{Json\+Reference}{p.}{class_json_reference} that refers to a J\+S\+ON array, gets a new \doxyref{Json\+Reference}{p.}{class_json_reference} to a value in the array by index. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ size} () const
+\begin{DoxyCompactList}\small\item\em For a \doxyref{Json\+Reference}{p.}{class_json_reference} that refers to a J\+S\+ON array, gets the size of the array. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\bool \textbf{ value} (T \&result) const
+\begin{DoxyCompactList}\small\item\em Get a value of the specified type for a given value for a specified key, or index for an array. \end{DoxyCompactList}\item 
+bool \textbf{ value\+Bool} (bool default\+Value=false) const
+\begin{DoxyCompactList}\small\item\em Returns a boolean (bool) value for an object value for key, or array index. \end{DoxyCompactList}\item 
+int \textbf{ value\+Int} (int default\+Value=0) const
+\begin{DoxyCompactList}\small\item\em Returns a integer (int) value for an object value for key, or array index. \end{DoxyCompactList}\item 
+unsigned long \textbf{ value\+Unsigned\+Long} (unsigned long default\+Value=0) const
+\begin{DoxyCompactList}\small\item\em Returns a unsigned long integer for an object value for key, or array index. \end{DoxyCompactList}\item 
+float \textbf{ value\+Float} (float default\+Value=0.\+0) const
+\begin{DoxyCompactList}\small\item\em Returns a float value for an object value for key, or array index. \end{DoxyCompactList}\item 
+double \textbf{ value\+Double} (double default\+Value=0.\+0) const
+\begin{DoxyCompactList}\small\item\em Returns a double value for an object value for key, or array index. \end{DoxyCompactList}\item 
+\textbf{ String} \textbf{ value\+String} () const
+\begin{DoxyCompactList}\small\item\em Returns a \doxyref{String}{p.}{class_string} value for an object value for key, or array index. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const \textbf{ Json\+Parser} $\ast$ \textbf{ parser}
+\item 
+const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$ \textbf{ token}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class provides a fluent-\/style A\+PI for easily traversing a tree of J\+S\+ON objects to find a value. 
+
+Definition at line 788 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_json_reference_aa4d71b4a5c47270192b92b23b20ca149}} 
+\index{Json\+Reference@{Json\+Reference}!Json\+Reference@{Json\+Reference}}
+\index{Json\+Reference@{Json\+Reference}!Json\+Reference@{Json\+Reference}}
+\subsubsection{Json\+Reference()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Json\+Reference\+::\+Json\+Reference (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser} $\ast$}]{parser }\end{DoxyParamCaption})}
+
+
+
+Constructs an object. Normally you use the \doxyref{Json\+Parser}{p.}{class_json_parser} get\+Reference() method to get one of these instead of constructing one. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parser} & The \doxyref{Json\+Parser}{p.}{class_json_parser} object you\textquotesingle{}re traversing \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 546 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References parser, and token.
+
+
+
+Referenced by Json\+Parser\+::get\+Reference(), index(), and key().
+
+
+\begin{DoxyCode}
+546                                                      : parser(parser), token(0) \{
+547 
+548 \}
+\end{DoxyCode}
+\mbox{\label{class_json_reference_a4aca0aedf85a69c53d3af71baaee5030}} 
+\index{Json\+Reference@{Json\+Reference}!````~Json\+Reference@{$\sim$\+Json\+Reference}}
+\index{````~Json\+Reference@{$\sim$\+Json\+Reference}!Json\+Reference@{Json\+Reference}}
+\subsubsection{$\sim$\+Json\+Reference()}
+{\footnotesize\ttfamily Json\+Reference\+::$\sim$\+Json\+Reference (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destructor. This does not affect the lifecycle of the \doxyref{Json\+Parser}{p.}{class_json_parser}. 
+
+
+
+Definition at line 550 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+\begin{DoxyCode}
+550                               \{
+551 \}
+\end{DoxyCode}
+\mbox{\label{class_json_reference_a9b1d0b53240a31cd66918b76ffbfac61}} 
+\index{Json\+Reference@{Json\+Reference}!Json\+Reference@{Json\+Reference}}
+\index{Json\+Reference@{Json\+Reference}!Json\+Reference@{Json\+Reference}}
+\subsubsection{Json\+Reference()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Json\+Reference\+::\+Json\+Reference (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser} $\ast$}]{parser,  }\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token }\end{DoxyParamCaption})}
+
+
+
+Constructs are \doxyref{Json\+Reference}{p.}{class_json_reference} for a specific token within a \doxyref{Json\+Parser}{p.}{class_json_parser}. 
+
+
+
+Definition at line 553 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References parser, and token.
+
+
+
+Referenced by Json\+Parser\+::get\+Reference(), index(), and key().
+
+
+\begin{DoxyCode}
+553                                                                                                   : 
+      parser(parser), token(token) \{
+554 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_json_reference_aecf18512e22e7efeba7572072576e09e}} 
+\index{Json\+Reference@{Json\+Reference}!index@{index}}
+\index{index@{index}!Json\+Reference@{Json\+Reference}}
+\subsubsection{index()}
+{\footnotesize\ttfamily \textbf{ Json\+Reference} Json\+Reference\+::index (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+
+
+For a \doxyref{Json\+Reference}{p.}{class_json_reference} that refers to a J\+S\+ON array, gets a new \doxyref{Json\+Reference}{p.}{class_json_reference} to a value in the array by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & The index to retrieve (0 = first item, 1 = second item, ...).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxyref{Json\+Reference}{p.}{class_json_reference} to the value for this index. 
+\end{DoxyReturn}
+
+
+Definition at line 567 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+::get\+Value\+Token\+By\+Index(), Json\+Reference(), parser, and token.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+567                                                      \{
+568     \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *newToken;
+569 
+570     \textcolor{keywordflow}{if} (token && parser->getValueTokenByIndex(token, index, newToken)) \{
+571         \textcolor{keywordflow}{return} JsonReference(parser, newToken);
+572     \}
+573     \textcolor{keywordflow}{else} \{
+574         \textcolor{keywordflow}{return} JsonReference(parser);
+575     \}
+576 \}
+\end{DoxyCode}
+\mbox{\label{class_json_reference_abb7263eb5a84a137f0ed45631993d171}} 
+\index{Json\+Reference@{Json\+Reference}!key@{key}}
+\index{key@{key}!Json\+Reference@{Json\+Reference}}
+\subsubsection{key()}
+{\footnotesize\ttfamily \textbf{ Json\+Reference} Json\+Reference\+::key (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name }\end{DoxyParamCaption}) const}
+
+
+
+For \doxyref{Json\+Reference}{p.}{class_json_reference} that refers to a J\+S\+ON object, gets a new \doxyref{Json\+Reference}{p.}{class_json_reference} to a value with the specified key name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & of the key to look for.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A \doxyref{Json\+Reference}{p.}{class_json_reference} to the value for this key. 
+\end{DoxyReturn}
+
+
+Definition at line 556 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+::get\+Value\+Token\+By\+Key(), Json\+Reference(), parser, and token.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+556                                                        \{
+557     \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *newToken;
+558 
+559     \textcolor{keywordflow}{if} (token && parser->getValueTokenByKey(token, name, newToken)) \{
+560         \textcolor{keywordflow}{return} JsonReference(parser, newToken);
+561     \}
+562     \textcolor{keywordflow}{else} \{
+563         \textcolor{keywordflow}{return} JsonReference(parser);
+564     \}
+565 \}
+\end{DoxyCode}
+\mbox{\label{class_json_reference_a9a196b64764b2943c425cee334f0b999}} 
+\index{Json\+Reference@{Json\+Reference}!size@{size}}
+\index{size@{size}!Json\+Reference@{Json\+Reference}}
+\subsubsection{size()}
+{\footnotesize\ttfamily size\+\_\+t Json\+Reference\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+For a \doxyref{Json\+Reference}{p.}{class_json_reference} that refers to a J\+S\+ON array, gets the size of the array. 
+
+\begin{DoxyReturn}{Returns}
+0 = an empty array, 1 = one element, ... 
+\end{DoxyReturn}
+
+
+Definition at line 578 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+::get\+Array\+Size(), parser, and token.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+578                                  \{
+579     \textcolor{keywordflow}{if} (token) \{
+580         \textcolor{keywordflow}{return} parser->getArraySize(token);
+581     \}
+582     \textcolor{keywordflow}{else} \{
+583         \textcolor{keywordflow}{return} 0;
+584     \}
+585 \}
+\end{DoxyCode}
+\mbox{\label{class_json_reference_a9eb0bbb4ed98e7ebceeb41c757e0f15b}} 
+\index{Json\+Reference@{Json\+Reference}!value@{value}}
+\index{value@{value}!Json\+Reference@{Json\+Reference}}
+\subsubsection{value()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool Json\+Reference\+::value (\begin{DoxyParamCaption}\item[{T \&}]{result }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get a value of the specified type for a given value for a specified key, or index for an array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em result} & Filled in with the value. The value can be of type\+: bool, int, unsigned long, float, double, \doxyref{String}{p.}{class_string}, or (char $\ast$, size\+\_\+t\&).\\
+\hline
+\end{DoxyParams}
+There are also type-\/specific versions like value\+Bool that return the value, instead of having to pass an object to hold the value, as in this call. 
+
+Definition at line 843 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References parser, and token.
+
+
+
+Referenced by value\+Bool(), value\+Double(), value\+Float(), value\+Int(), value\+String(), and value\+Unsigned\+Long().
+
+
+\begin{DoxyCode}
+843                                 \{
+844         \textcolor{keywordflow}{if} (token && parser->getTokenValue(token, result)) \{
+845             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+846         \}
+847         \textcolor{keywordflow}{else} \{
+848             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+849         \}
+850     \}
+\end{DoxyCode}
+\mbox{\label{class_json_reference_a45d8e15942d4f3cf79e6e7d0c9218acf}} 
+\index{Json\+Reference@{Json\+Reference}!value\+Bool@{value\+Bool}}
+\index{value\+Bool@{value\+Bool}!Json\+Reference@{Json\+Reference}}
+\subsubsection{value\+Bool()}
+{\footnotesize\ttfamily bool Json\+Reference\+::value\+Bool (\begin{DoxyParamCaption}\item[{bool}]{default\+Value = {\ttfamily false} }\end{DoxyParamCaption}) const}
+
+
+
+Returns a boolean (bool) value for an object value for key, or array index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\+Value} & Optional value to use if the key or array index is not found. Default\+: false. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 587 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References value().
+
+
+\begin{DoxyCode}
+587                                                \{
+588     (void) value(result);
+589     \textcolor{keywordflow}{return} result;
+590 \}
+\end{DoxyCode}
+\mbox{\label{class_json_reference_a670c3313ff8bc1399ce0a6efdad3b0db}} 
+\index{Json\+Reference@{Json\+Reference}!value\+Double@{value\+Double}}
+\index{value\+Double@{value\+Double}!Json\+Reference@{Json\+Reference}}
+\subsubsection{value\+Double()}
+{\footnotesize\ttfamily double Json\+Reference\+::value\+Double (\begin{DoxyParamCaption}\item[{double}]{default\+Value = {\ttfamily 0.0} }\end{DoxyParamCaption}) const}
+
+
+
+Returns a double value for an object value for key, or array index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\+Value} & Optional value to use if the key or array index is not found. Default\+: 0.\+0. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 607 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References value().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+607                                                      \{
+608     (void) value(result);
+609     \textcolor{keywordflow}{return} result;
+610 \}
+\end{DoxyCode}
+\mbox{\label{class_json_reference_afa346d628f8ecb4ad2b7a67c7634a85c}} 
+\index{Json\+Reference@{Json\+Reference}!value\+Float@{value\+Float}}
+\index{value\+Float@{value\+Float}!Json\+Reference@{Json\+Reference}}
+\subsubsection{value\+Float()}
+{\footnotesize\ttfamily float Json\+Reference\+::value\+Float (\begin{DoxyParamCaption}\item[{float}]{default\+Value = {\ttfamily 0.0} }\end{DoxyParamCaption}) const}
+
+
+
+Returns a float value for an object value for key, or array index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\+Value} & Optional value to use if the key or array index is not found. Default\+: 0.\+0. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 602 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References value().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+602                                                   \{
+603     (void) value(result);
+604     \textcolor{keywordflow}{return} result;
+605 \}
+\end{DoxyCode}
+\mbox{\label{class_json_reference_afcf4b05a4b789ca1ea938a1adb33cafa}} 
+\index{Json\+Reference@{Json\+Reference}!value\+Int@{value\+Int}}
+\index{value\+Int@{value\+Int}!Json\+Reference@{Json\+Reference}}
+\subsubsection{value\+Int()}
+{\footnotesize\ttfamily int Json\+Reference\+::value\+Int (\begin{DoxyParamCaption}\item[{int}]{default\+Value = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Returns a integer (int) value for an object value for key, or array index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\+Value} & Optional value to use if the key or array index is not found. Default\+: 0. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 592 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References value().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+592                                             \{
+593     (void) value(result);
+594     \textcolor{keywordflow}{return} result;
+595 \}
+\end{DoxyCode}
+\mbox{\label{class_json_reference_ab9dfec23570193b9ab1d16b07fba6022}} 
+\index{Json\+Reference@{Json\+Reference}!value\+String@{value\+String}}
+\index{value\+String@{value\+String}!Json\+Reference@{Json\+Reference}}
+\subsubsection{value\+String()}
+{\footnotesize\ttfamily \textbf{ String} Json\+Reference\+::value\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Returns a \doxyref{String}{p.}{class_string} value for an object value for key, or array index. 
+
+\begin{DoxyReturn}{Returns}
+The string value, or an empty string if the key or array index is not found. 
+\end{DoxyReturn}
+
+
+Definition at line 612 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References value().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+612                                         \{
+613     String result;
+614 
+615     (void) value(result);
+616     \textcolor{keywordflow}{return} result;
+617 \}
+\end{DoxyCode}
+\mbox{\label{class_json_reference_a081b56c80097d802911610fb17253211}} 
+\index{Json\+Reference@{Json\+Reference}!value\+Unsigned\+Long@{value\+Unsigned\+Long}}
+\index{value\+Unsigned\+Long@{value\+Unsigned\+Long}!Json\+Reference@{Json\+Reference}}
+\subsubsection{value\+Unsigned\+Long()}
+{\footnotesize\ttfamily unsigned long Json\+Reference\+::value\+Unsigned\+Long (\begin{DoxyParamCaption}\item[{unsigned long}]{default\+Value = {\ttfamily 0} }\end{DoxyParamCaption}) const}
+
+
+
+Returns a unsigned long integer for an object value for key, or array index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em default\+Value} & Optional value to use if the key or array index is not found. Default\+: 0. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 597 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References value().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+597                                                                          \{
+598     (void) value(result);
+599     \textcolor{keywordflow}{return} result;
+600 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_json_reference_a37fb436fae63e7e452fc2325eddf3e8b}} 
+\index{Json\+Reference@{Json\+Reference}!parser@{parser}}
+\index{parser@{parser}!Json\+Reference@{Json\+Reference}}
+\subsubsection{parser}
+{\footnotesize\ttfamily const \textbf{ Json\+Parser}$\ast$ Json\+Reference\+::parser\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 895 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by index(), Json\+Reference(), key(), size(), and value().
+
+\mbox{\label{class_json_reference_a895a16fb8f781504fe39efd194ed5232}} 
+\index{Json\+Reference@{Json\+Reference}!token@{token}}
+\index{token@{token}!Json\+Reference@{Json\+Reference}}
+\subsubsection{token}
+{\footnotesize\ttfamily const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}$\ast$ Json\+Reference\+::token\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 896 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by index(), Json\+Reference(), key(), size(), and value().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Json\+Parser\+Generator\+R\+K/src/\textbf{ Json\+Parser\+Generator\+R\+K.\+h}\item 
+lib/\+Json\+Parser\+Generator\+R\+K/src/\textbf{ Json\+Parser\+Generator\+R\+K.\+cpp}\end{DoxyCompactItemize}

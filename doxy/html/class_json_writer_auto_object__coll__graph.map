@@ -1,0 +1,5 @@
+<map id="JsonWriterAutoObject" name="JsonWriterAutoObject">
+<area shape="rect" id="node2" href="$class_json_writer.html" title="Class for building a JSON string. " alt="" coords="71,95,156,121"/>
+<area shape="rect" id="node3" href="$class_json_buffer.html" title="Base class for managing a static or dynamic buffer, used by both JsonParser and JsonWriter. " alt="" coords="5,5,91,32"/>
+<area shape="rect" id="node4" href="$struct_json_writer_context.html" title="Used internally by JsonWriter. " alt="" coords="115,5,245,32"/>
+</map>

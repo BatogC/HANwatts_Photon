@@ -1,0 +1,295 @@
+\section{Stream Class Reference}
+\label{class_stream}\index{Stream@{Stream}}
+
+
+{\ttfamily \#include $<$Particle.\+h$>$}
+
+
+
+Inheritance diagram for Stream\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{class_stream__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Stream\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=128pt]{class_stream__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ available} ()
+\item 
+int \textbf{ read} ()
+\item 
+virtual int \textbf{ available} ()=0
+\item 
+virtual int \textbf{ read} ()=0
+\item 
+virtual int \textbf{ peek} ()=0
+\item 
+virtual void \textbf{ flush} ()=0
+\item 
+\textbf{ Stream} ()
+\item 
+void \textbf{ set\+Timeout} (\textbf{ system\+\_\+tick\+\_\+t} timeout)
+\item 
+bool \textbf{ find} (char $\ast$target)
+\item 
+bool \textbf{ find} (char $\ast$target, size\+\_\+t length)
+\item 
+bool \textbf{ find\+Until} (char $\ast$target, char $\ast$terminator)
+\item 
+bool \textbf{ find\+Until} (char $\ast$target, size\+\_\+t target\+Len, char $\ast$terminate, size\+\_\+t term\+Len)
+\item 
+long \textbf{ parse\+Int} ()
+\item 
+float \textbf{ parse\+Float} ()
+\item 
+size\+\_\+t \textbf{ read\+Bytes} (char $\ast$buffer, size\+\_\+t length)
+\item 
+size\+\_\+t \textbf{ read\+Bytes\+Until} (char terminator, char $\ast$buffer, size\+\_\+t length)
+\item 
+\textbf{ String} \textbf{ read\+String} ()
+\item 
+\textbf{ String} \textbf{ read\+String\+Until} (char terminator)
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ timed\+Read} ()
+\item 
+int \textbf{ timed\+Peek} ()
+\item 
+int \textbf{ peek\+Next\+Digit} ()
+\item 
+long \textbf{ parse\+Int} (char skip\+Char)
+\item 
+float \textbf{ parse\+Float} (char skip\+Char)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ system\+\_\+tick\+\_\+t} \textbf{ \+\_\+timeout}
+\item 
+\textbf{ system\+\_\+tick\+\_\+t} \textbf{ \+\_\+start\+Millis}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 15 of file Particle.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_stream_a8c3f05bd00361ec92627fa41f330a39b}} 
+\index{Stream@{Stream}!Stream@{Stream}}
+\index{Stream@{Stream}!Stream@{Stream}}
+\subsubsection{Stream()}
+{\footnotesize\ttfamily Stream\+::\+Stream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 59 of file spark\+\_\+wiring\+\_\+stream.\+h.
+
+
+
+References \+\_\+timeout.
+
+
+\begin{DoxyCode}
+59 \{_timeout=1000;\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_stream_a747aa1d8db334a7b735a48dbc135478c}} 
+\index{Stream@{Stream}!available@{available}}
+\index{available@{available}!Stream@{Stream}}
+\subsubsection{available()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Stream\+::available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 17 of file Particle.\+h.
+
+
+\begin{DoxyCode}
+17 \{ \textcolor{keywordflow}{return} 0; \}
+\end{DoxyCode}
+\mbox{\label{class_stream_a9c98a763395005c08ce95afb2f06c7b1}} 
+\index{Stream@{Stream}!available@{available}}
+\index{available@{available}!Stream@{Stream}}
+\subsubsection{available()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual int Stream\+::available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\label{class_stream_a4bab30ccd324efd461dee46a2339f673}} 
+\index{Stream@{Stream}!find@{find}}
+\index{find@{find}!Stream@{Stream}}
+\subsubsection{find()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Stream\+::find (\begin{DoxyParamCaption}\item[{char $\ast$}]{target }\end{DoxyParamCaption})}
+
+\mbox{\label{class_stream_ad851401f2318cdb1de05707e021b81d9}} 
+\index{Stream@{Stream}!find@{find}}
+\index{find@{find}!Stream@{Stream}}
+\subsubsection{find()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Stream\+::find (\begin{DoxyParamCaption}\item[{char $\ast$}]{target,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+\mbox{\label{class_stream_ad1f5f6600832396fb38a897baf4de35b}} 
+\index{Stream@{Stream}!find\+Until@{find\+Until}}
+\index{find\+Until@{find\+Until}!Stream@{Stream}}
+\subsubsection{find\+Until()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily bool Stream\+::find\+Until (\begin{DoxyParamCaption}\item[{char $\ast$}]{target,  }\item[{char $\ast$}]{terminator }\end{DoxyParamCaption})}
+
+\mbox{\label{class_stream_a3a9497de614792103ab8cb4759e01a69}} 
+\index{Stream@{Stream}!find\+Until@{find\+Until}}
+\index{find\+Until@{find\+Until}!Stream@{Stream}}
+\subsubsection{find\+Until()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily bool Stream\+::find\+Until (\begin{DoxyParamCaption}\item[{char $\ast$}]{target,  }\item[{size\+\_\+t}]{target\+Len,  }\item[{char $\ast$}]{terminate,  }\item[{size\+\_\+t}]{term\+Len }\end{DoxyParamCaption})}
+
+\mbox{\label{class_stream_aa3ef2c34f152a0b2ea8de9139b9461da}} 
+\index{Stream@{Stream}!flush@{flush}}
+\index{flush@{flush}!Stream@{Stream}}
+\subsubsection{flush()}
+{\footnotesize\ttfamily virtual void Stream\+::flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\label{class_stream_a5e5a0cc11eb586d89dcb7fa8e53a87e8}} 
+\index{Stream@{Stream}!parse\+Float@{parse\+Float}}
+\index{parse\+Float@{parse\+Float}!Stream@{Stream}}
+\subsubsection{parse\+Float()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily float Stream\+::parse\+Float (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_stream_a14a98cdbb166008f25dd044d836b1864}} 
+\index{Stream@{Stream}!parse\+Float@{parse\+Float}}
+\index{parse\+Float@{parse\+Float}!Stream@{Stream}}
+\subsubsection{parse\+Float()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily float Stream\+::parse\+Float (\begin{DoxyParamCaption}\item[{char}]{skip\+Char }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_stream_a497ffcbcb4d5bb889a8fde487bcc1b98}} 
+\index{Stream@{Stream}!parse\+Int@{parse\+Int}}
+\index{parse\+Int@{parse\+Int}!Stream@{Stream}}
+\subsubsection{parse\+Int()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily long Stream\+::parse\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_stream_a4578615defade6c4ce7daeb6578bb62d}} 
+\index{Stream@{Stream}!parse\+Int@{parse\+Int}}
+\index{parse\+Int@{parse\+Int}!Stream@{Stream}}
+\subsubsection{parse\+Int()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily long Stream\+::parse\+Int (\begin{DoxyParamCaption}\item[{char}]{skip\+Char }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_stream_a30c3c212ec6ea67277a708c5ea2501a5}} 
+\index{Stream@{Stream}!peek@{peek}}
+\index{peek@{peek}!Stream@{Stream}}
+\subsubsection{peek()}
+{\footnotesize\ttfamily virtual int Stream\+::peek (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\label{class_stream_ab31c533ddc422c8d8df07986e5920534}} 
+\index{Stream@{Stream}!peek\+Next\+Digit@{peek\+Next\+Digit}}
+\index{peek\+Next\+Digit@{peek\+Next\+Digit}!Stream@{Stream}}
+\subsubsection{peek\+Next\+Digit()}
+{\footnotesize\ttfamily int Stream\+::peek\+Next\+Digit (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_stream_a654017caec3e3feeba5feb346d83c7bb}} 
+\index{Stream@{Stream}!read@{read}}
+\index{read@{read}!Stream@{Stream}}
+\subsubsection{read()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Stream\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 18 of file Particle.\+h.
+
+
+\begin{DoxyCode}
+18 \{ \textcolor{keywordflow}{return} 0; \}
+\end{DoxyCode}
+\mbox{\label{class_stream_aea5dee9fcb038148515b7c9212d38dc0}} 
+\index{Stream@{Stream}!read@{read}}
+\index{read@{read}!Stream@{Stream}}
+\subsubsection{read()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual int Stream\+::read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\label{class_stream_a45fd1336a323ea83b16e8507055f44ea}} 
+\index{Stream@{Stream}!read\+Bytes@{read\+Bytes}}
+\index{read\+Bytes@{read\+Bytes}!Stream@{Stream}}
+\subsubsection{read\+Bytes()}
+{\footnotesize\ttfamily size\+\_\+t Stream\+::read\+Bytes (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+\mbox{\label{class_stream_af84672a4fb2620466958d3118d4fea00}} 
+\index{Stream@{Stream}!read\+Bytes\+Until@{read\+Bytes\+Until}}
+\index{read\+Bytes\+Until@{read\+Bytes\+Until}!Stream@{Stream}}
+\subsubsection{read\+Bytes\+Until()}
+{\footnotesize\ttfamily size\+\_\+t Stream\+::read\+Bytes\+Until (\begin{DoxyParamCaption}\item[{char}]{terminator,  }\item[{char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{length }\end{DoxyParamCaption})}
+
+\mbox{\label{class_stream_a1c60bdda2b65d78e5a1362d51b856c5a}} 
+\index{Stream@{Stream}!read\+String@{read\+String}}
+\index{read\+String@{read\+String}!Stream@{Stream}}
+\subsubsection{read\+String()}
+{\footnotesize\ttfamily \textbf{ String} Stream\+::read\+String (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_stream_a6a409da87c552909260d8cc428c5ca70}} 
+\index{Stream@{Stream}!read\+String\+Until@{read\+String\+Until}}
+\index{read\+String\+Until@{read\+String\+Until}!Stream@{Stream}}
+\subsubsection{read\+String\+Until()}
+{\footnotesize\ttfamily \textbf{ String} Stream\+::read\+String\+Until (\begin{DoxyParamCaption}\item[{char}]{terminator }\end{DoxyParamCaption})}
+
+\mbox{\label{class_stream_abaa50647d6dbb3baf7697a2691a06177}} 
+\index{Stream@{Stream}!set\+Timeout@{set\+Timeout}}
+\index{set\+Timeout@{set\+Timeout}!Stream@{Stream}}
+\subsubsection{set\+Timeout()}
+{\footnotesize\ttfamily void Stream\+::set\+Timeout (\begin{DoxyParamCaption}\item[{\textbf{ system\+\_\+tick\+\_\+t}}]{timeout }\end{DoxyParamCaption})}
+
+\mbox{\label{class_stream_ae326bf60a3c5276836526710871046fe}} 
+\index{Stream@{Stream}!timed\+Peek@{timed\+Peek}}
+\index{timed\+Peek@{timed\+Peek}!Stream@{Stream}}
+\subsubsection{timed\+Peek()}
+{\footnotesize\ttfamily int Stream\+::timed\+Peek (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_stream_a416a0ada5ed3c9d27f1e72c7d73f0aa1}} 
+\index{Stream@{Stream}!timed\+Read@{timed\+Read}}
+\index{timed\+Read@{timed\+Read}!Stream@{Stream}}
+\subsubsection{timed\+Read()}
+{\footnotesize\ttfamily int Stream\+::timed\+Read (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_stream_abbead2dae5b725a965860b65fb7f6b34}} 
+\index{Stream@{Stream}!\+\_\+start\+Millis@{\+\_\+start\+Millis}}
+\index{\+\_\+start\+Millis@{\+\_\+start\+Millis}!Stream@{Stream}}
+\subsubsection{\+\_\+start\+Millis}
+{\footnotesize\ttfamily \textbf{ system\+\_\+tick\+\_\+t} Stream\+::\+\_\+start\+Millis\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 48 of file spark\+\_\+wiring\+\_\+stream.\+h.
+
+\mbox{\label{class_stream_ae1fc2b43124fc405406ce18b7e22d48c}} 
+\index{Stream@{Stream}!\+\_\+timeout@{\+\_\+timeout}}
+\index{\+\_\+timeout@{\+\_\+timeout}!Stream@{Stream}}
+\subsubsection{\+\_\+timeout}
+{\footnotesize\ttfamily \textbf{ system\+\_\+tick\+\_\+t} Stream\+::\+\_\+timeout\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 47 of file spark\+\_\+wiring\+\_\+stream.\+h.
+
+
+
+Referenced by Stream().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Json\+Parser\+Generator\+R\+K/test/gcclib/\textbf{ Particle.\+h}\item 
+lib/\+Json\+Parser\+Generator\+R\+K/test/gcclib/\textbf{ spark\+\_\+wiring\+\_\+stream.\+h}\end{DoxyCompactItemize}

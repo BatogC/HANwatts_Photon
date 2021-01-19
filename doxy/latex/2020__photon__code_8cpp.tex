@@ -1,0 +1,1908 @@
+\section{src/2020\+\_\+photon\+\_\+code.cpp File Reference}
+\label{2020__photon__code_8cpp}\index{src/2020\+\_\+photon\+\_\+code.\+cpp@{src/2020\+\_\+photon\+\_\+code.\+cpp}}
+{\ttfamily \#include \char`\"{}Particle.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$M\+Q\+T\+T.\+h$>$}\newline
+{\ttfamily \#include $<$M\+F\+R\+C522.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}Commandparser.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$Json\+Parser\+Generator\+R\+K.\+h$>$}\newline
+Include dependency graph for 2020\+\_\+photon\+\_\+code.cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{2020__photon__code_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \textbf{ C\+H\+A\+R\+G\+E\+R\+O\+F\+F\+S\+ET}~0
+\begin{DoxyCompactList}\small\item\em constant that sets for which Photon this program is intended \end{DoxyCompactList}\item 
+\#define \textbf{ D\+E\+B\+U\+G\+P\+O\+RT}~Serial
+\item 
+\#define \textbf{ S\+I\+Z\+E\+O\+F\+U\+S\+E\+R\+L\+I\+ST}~2
+\item 
+\#define \textbf{ S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R1}~A1
+\item 
+\#define \textbf{ S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R2}~A2
+\item 
+\#define \textbf{ R\+S\+T\+\_\+\+P\+IN}~A0
+\item 
+\#define \textbf{ E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+1}~D0
+\item 
+\#define \textbf{ E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+2}~D1
+\item 
+\#define \textbf{ E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+3}~D3
+\item 
+\#define \textbf{ W\+A\+K\+E\+U\+P\+\_\+\+O\+L\+I\+M\+EX}~D2
+\item 
+\#define \textbf{ R\+E\+S\+E\+T\+\_\+\+O\+L\+I\+M\+EX}~D4
+\item 
+\#define \textbf{ P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+1}~A6
+\item 
+\#define \textbf{ P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+2}~A7
+\item 
+\#define \textbf{ A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R1}~D5
+\item 
+\#define \textbf{ A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R2}~D6
+\item 
+\#define \textbf{ E\+X\+T\+RA}~D7
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ reset\+Olimex} (\textbf{ String} input)
+\begin{DoxyCompactList}\small\item\em Sends reset signal to EV charger controller. \end{DoxyCompactList}\item 
+int \textbf{ Wifi\+Signal} (\textbf{ String} input)
+\begin{DoxyCompactList}\small\item\em Return wifi strength. \end{DoxyCompactList}\item 
+int \textbf{ reset\+Particle} (\textbf{ String} input)
+\begin{DoxyCompactList}\small\item\em Resets Photon. \end{DoxyCompactList}\item 
+int \textbf{ prog\+Mode\+Olmx} (\textbf{ String} input)
+\begin{DoxyCompactList}\small\item\em Sets Olimex into programming mode. \end{DoxyCompactList}\item 
+void \textbf{ blink\+R\+F\+I\+Dled} (int charger, int action)
+\begin{DoxyCompactList}\small\item\em unused function to blink the Photon L\+ED \end{DoxyCompactList}\item 
+int \textbf{ active\+Charger} ()
+\begin{DoxyCompactList}\small\item\em Return 1 if socket 1 is used, 2 if socket 2 is used, and 3 if both are in use. \end{DoxyCompactList}\item 
+int \textbf{ switch\+Test} (\textbf{ String} value\+String)
+\begin{DoxyCompactList}\small\item\em Switches between renewable mode (-\/input \char`\"{}true\char`\"{}) and manual setpoint mode. \end{DoxyCompactList}\item 
+int \textbf{ max\+Current\+C1} (\textbf{ String} set\+Point\+Str)
+\begin{DoxyCompactList}\small\item\em Sets max Current output at socket 1 in manual mode. \end{DoxyCompactList}\item 
+int \textbf{ max\+Current\+C2} (\textbf{ String} set\+Point\+Str)
+\begin{DoxyCompactList}\small\item\em Sets max Current output at socket 2 in manual mode. \end{DoxyCompactList}\item 
+int \textbf{ max\+Current\+C1\+\_\+test} (unsigned int set\+Point)
+\begin{DoxyCompactList}\small\item\em Sets max Current output at socket 1/3 in renewable mode and publishes new setpoint at \char`\"{}\+H\+A\+Nevse/photon\+Max\+C1\char`\"{} or C3. \end{DoxyCompactList}\item 
+int \textbf{ max\+Current\+C2\+\_\+test} (unsigned int set\+Point)
+\begin{DoxyCompactList}\small\item\em Sets max Current output at socket 2/4 in renewable mode and publishes new setpoint at \char`\"{}\+H\+A\+Nevse/photon\+Max\+C2\char`\"{} or C4. \end{DoxyCompactList}\item 
+\textbf{ String} \textbf{ get\+User\+Id\+At\+Socket} (int socket)
+\begin{DoxyCompactList}\small\item\em Returns R\+F\+ID tag at the asked socket. \end{DoxyCompactList}\item 
+void \textbf{ allow\+User\+\_\+callback} (byte $\ast$payload, unsigned int length)
+\begin{DoxyCompactList}\small\item\em Callback function to process and execute approval or denial to charge from Pi, then \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} publish reason to website G\+UI. \end{DoxyCompactList}\item 
+int \textbf{ init\+R\+F\+ID} (\textbf{ String} input)
+\begin{DoxyCompactList}\small\item\em Initialises R\+F\+ID reader. \end{DoxyCompactList}\item 
+bool \textbf{ read\+R\+F\+I\+D\+Card} (int Charger)
+\begin{DoxyCompactList}\small\item\em Checks and reads R\+F\+ID tag at the asked socket, then \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} publishes it for Pi. \end{DoxyCompactList}\item 
+void \textbf{ setup} ()
+\begin{DoxyCompactList}\small\item\em Inital setup for pin assignments and serial links start. \end{DoxyCompactList}\item 
+void \textbf{ loop} ()
+\begin{DoxyCompactList}\small\item\em Main running function that executes all other functions; runs over 5times/second. \end{DoxyCompactList}\item 
+int \textbf{ read\+Serial\+Olimex} ()
+\item 
+void \textbf{ reconnect} (void)
+\begin{DoxyCompactList}\small\item\em Function to reconnect to \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} server if not connected and subscribe to needed topics. \end{DoxyCompactList}\item 
+void \textbf{ callback} (char $\ast$topic, byte $\ast$payload, unsigned int length)
+\begin{DoxyCompactList}\small\item\em Main function for \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} client to check for new messages and execute callback functions. \end{DoxyCompactList}\item 
+void \textbf{ char\+To\+String} (const char in[$\,$], \textbf{ String} \&out)
+\begin{DoxyCompactList}\small\item\em Deprecated function to convert char to \doxyref{String}{p.}{class_string} -\/ the \doxyref{String}{p.}{class_string} class already has one. \end{DoxyCompactList}\item 
+void \textbf{ get\+Measure\+\_\+callback} (byte $\ast$payload, unsigned int length)
+\begin{DoxyCompactList}\small\item\em Callback function to automatically set max Currents from \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} message if in renewable mode. \end{DoxyCompactList}\item 
+\textbf{ S\+T\+A\+R\+T\+UP} (Wi\+Fi.\+select\+Antenna(A\+N\+T\+\_\+\+E\+X\+T\+E\+R\+N\+AL))
+\item 
+void \textbf{ add\+\_\+\+Measurement} (float phase\+Voltage\+L1, float phase\+Voltage\+L2, float phase\+Voltage\+L3, float current\+L1, float current\+L2, float current\+L3, float \textbf{ Frequency}, unsigned long Timestamp, int socket\+Id=0, \textbf{ String} user\+Id=\char`\"{}00\char`\"{})
+\begin{DoxyCompactList}\small\item\em Function ran for each socket every 30s in main loop to send measurements through \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+float \textbf{ Current} [2][3]
+\item 
+float \textbf{ Power} [2][3]
+\item 
+float \textbf{ Phase\+Voltage} [2][3]
+\item 
+float \textbf{ Line\+Voltage} [2][3]
+\item 
+float \textbf{ Energy} [2]
+\item 
+float \textbf{ Frequency} [2]
+\item 
+float \textbf{ Current\+List} [20]
+\item 
+int \textbf{ number\+Of\+Zero\+Readings} [2]
+\item 
+\textbf{ String} \textbf{ U\+I\+Dtag\+Charger1} =\char`\"{}No ID\char`\"{}
+\begin{DoxyCompactList}\small\item\em var to hold swiped R\+F\+ID tag at first socket \end{DoxyCompactList}\item 
+\textbf{ String} \textbf{ U\+I\+Dtag\+Charger2} =\char`\"{}No ID\char`\"{}
+\begin{DoxyCompactList}\small\item\em var to hold swiped R\+F\+ID tag at second socket \end{DoxyCompactList}\item 
+\textbf{ M\+Q\+TT} \textbf{ client} (\char`\"{}broker.\+hivemq.\+com\char`\"{}, 1883, M\+Q\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+E\+P\+A\+L\+I\+VE, \textbf{ callback}, 512)
+\begin{DoxyCompactList}\small\item\em \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} client details; do not set last number to over 512! \end{DoxyCompactList}\item 
+\textbf{ String} \textbf{ test} = \char`\"{}0\char`\"{}
+\item 
+int \textbf{ counter} =1
+\item 
+\textbf{ M\+F\+R\+C522} \textbf{ mfrc522\+\_\+\+Charger1} (\textbf{ S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R1}, \textbf{ R\+S\+T\+\_\+\+P\+IN})
+\item 
+\textbf{ M\+F\+R\+C522} \textbf{ mfrc522\+\_\+\+Charger2} (\textbf{ S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R2}, \textbf{ R\+S\+T\+\_\+\+P\+IN})
+\item 
+unsigned long \textbf{ Latest\+Start\+Time} [2] =\{0,0\}
+\begin{DoxyCompactList}\small\item\em Holds latest start of new charge if charger is in use. \end{DoxyCompactList}\item 
+bool \textbf{ handled\+Charger} =0
+\begin{DoxyCompactList}\small\item\em Holds last handled socket (0 for first socket) \end{DoxyCompactList}\item 
+\textbf{ String} \textbf{ Share\+Var}
+\item 
+bool \textbf{ T\+E\+S\+T\+C\+A\+SE} = false
+\begin{DoxyCompactList}\small\item\em var that holds the charging mode (T\+R\+UE = renewable) \end{DoxyCompactList}\item 
+ushort \textbf{ Pianswer} =0
+\begin{DoxyCompactList}\small\item\em var that holds answer from Pi but is unused now \end{DoxyCompactList}\item 
+\textbf{ String} \textbf{ current\+Str} =\char`\"{}\char`\"{}
+\item 
+unsigned int \textbf{ next\+Time} [2] = \{30000,30000\}
+\begin{DoxyCompactList}\small\item\em Next timestamp to publish measurements in ms. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\label{2020__photon__code_8cpp_ad9c4f7d10f64d91b939705d74023b303}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R1@{A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R1}}
+\index{A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R1@{A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R1}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R1}
+{\footnotesize\ttfamily \#define A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R1~D5}
+
+
+
+Definition at line 76 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_a2a2d5c06c6e46098cf951476de493799}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R2@{A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R2}}
+\index{A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R2@{A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R2}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R2}
+{\footnotesize\ttfamily \#define A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R2~D6}
+
+
+
+Definition at line 77 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_aff16429df21a43a886f66fdbc1e850a1}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!C\+H\+A\+R\+G\+E\+R\+O\+F\+F\+S\+ET@{C\+H\+A\+R\+G\+E\+R\+O\+F\+F\+S\+ET}}
+\index{C\+H\+A\+R\+G\+E\+R\+O\+F\+F\+S\+ET@{C\+H\+A\+R\+G\+E\+R\+O\+F\+F\+S\+ET}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{C\+H\+A\+R\+G\+E\+R\+O\+F\+F\+S\+ET}
+{\footnotesize\ttfamily \#define C\+H\+A\+R\+G\+E\+R\+O\+F\+F\+S\+ET~0}
+
+
+
+constant that sets for which Photon this program is intended 
+
+For Photon 1 set it to 0, for Photon 2 set to 2. Any more and program would need to be edited. 
+
+Definition at line 59 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_acbc24b500df51b97ae92c398a78f2257}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!D\+E\+B\+U\+G\+P\+O\+RT@{D\+E\+B\+U\+G\+P\+O\+RT}}
+\index{D\+E\+B\+U\+G\+P\+O\+RT@{D\+E\+B\+U\+G\+P\+O\+RT}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{D\+E\+B\+U\+G\+P\+O\+RT}
+{\footnotesize\ttfamily \#define D\+E\+B\+U\+G\+P\+O\+RT~Serial}
+
+
+
+Definition at line 60 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_af4d98da13b92f926914c4a759759b393}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!E\+X\+T\+RA@{E\+X\+T\+RA}}
+\index{E\+X\+T\+RA@{E\+X\+T\+RA}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{E\+X\+T\+RA}
+{\footnotesize\ttfamily \#define E\+X\+T\+RA~D7}
+
+
+
+Definition at line 78 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_a7466c8664394caedeaf8797c447f296a}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+1@{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+1}}
+\index{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+1@{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+1}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+1}
+{\footnotesize\ttfamily \#define E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+1~D0}
+
+
+
+Definition at line 69 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_a9ef1c29e6e7bcbc882a9516aa991450c}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+2@{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+2}}
+\index{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+2@{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+2}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+2}
+{\footnotesize\ttfamily \#define E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+2~D1}
+
+
+
+Definition at line 70 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_a43dce6a6e56f62f028f06dffd7731dbd}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+3@{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+3}}
+\index{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+3@{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+3}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+3}
+{\footnotesize\ttfamily \#define E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+3~D3}
+
+
+
+Definition at line 71 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_a17398a9ea4c977d65d45016629ac4b62}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+1@{P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+1}}
+\index{P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+1@{P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+1}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+1}
+{\footnotesize\ttfamily \#define P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+1~A6}
+
+
+
+Definition at line 74 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_a5f0a51ff733ab3850f902312bc66e821}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+2@{P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+2}}
+\index{P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+2@{P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+2}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+2}
+{\footnotesize\ttfamily \#define P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+2~A7}
+
+
+
+Definition at line 75 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_ac12b65d6887bad87a0b5a519bba88dbe}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!R\+E\+S\+E\+T\+\_\+\+O\+L\+I\+M\+EX@{R\+E\+S\+E\+T\+\_\+\+O\+L\+I\+M\+EX}}
+\index{R\+E\+S\+E\+T\+\_\+\+O\+L\+I\+M\+EX@{R\+E\+S\+E\+T\+\_\+\+O\+L\+I\+M\+EX}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{R\+E\+S\+E\+T\+\_\+\+O\+L\+I\+M\+EX}
+{\footnotesize\ttfamily \#define R\+E\+S\+E\+T\+\_\+\+O\+L\+I\+M\+EX~D4}
+
+
+
+Definition at line 73 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_a36932b0e869e0114f32e255f61306d6b}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!R\+S\+T\+\_\+\+P\+IN@{R\+S\+T\+\_\+\+P\+IN}}
+\index{R\+S\+T\+\_\+\+P\+IN@{R\+S\+T\+\_\+\+P\+IN}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{R\+S\+T\+\_\+\+P\+IN}
+{\footnotesize\ttfamily \#define R\+S\+T\+\_\+\+P\+IN~A0}
+
+
+
+Definition at line 67 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_aa62b9ad8e9fe9cb8780b8f27c509baaf}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!S\+I\+Z\+E\+O\+F\+U\+S\+E\+R\+L\+I\+ST@{S\+I\+Z\+E\+O\+F\+U\+S\+E\+R\+L\+I\+ST}}
+\index{S\+I\+Z\+E\+O\+F\+U\+S\+E\+R\+L\+I\+ST@{S\+I\+Z\+E\+O\+F\+U\+S\+E\+R\+L\+I\+ST}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{S\+I\+Z\+E\+O\+F\+U\+S\+E\+R\+L\+I\+ST}
+{\footnotesize\ttfamily \#define S\+I\+Z\+E\+O\+F\+U\+S\+E\+R\+L\+I\+ST~2}
+
+
+
+Definition at line 61 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_a1e87c855c31041a5f4bca41f110ecb23}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R1@{S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R1}}
+\index{S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R1@{S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R1}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R1}
+{\footnotesize\ttfamily \#define S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R1~A1}
+
+
+
+Definition at line 65 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_a5cb1ec604593003ff86b9e36162aeb1a}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R2@{S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R2}}
+\index{S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R2@{S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R2}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R2}
+{\footnotesize\ttfamily \#define S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R2~A2}
+
+
+
+Definition at line 66 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_a67e476f839a040379490a06939ebac31}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!W\+A\+K\+E\+U\+P\+\_\+\+O\+L\+I\+M\+EX@{W\+A\+K\+E\+U\+P\+\_\+\+O\+L\+I\+M\+EX}}
+\index{W\+A\+K\+E\+U\+P\+\_\+\+O\+L\+I\+M\+EX@{W\+A\+K\+E\+U\+P\+\_\+\+O\+L\+I\+M\+EX}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{W\+A\+K\+E\+U\+P\+\_\+\+O\+L\+I\+M\+EX}
+{\footnotesize\ttfamily \#define W\+A\+K\+E\+U\+P\+\_\+\+O\+L\+I\+M\+EX~D2}
+
+
+
+Definition at line 72 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\mbox{\label{2020__photon__code_8cpp_a18aecc3313a2e8b7a2a4d49759585f63}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!active\+Charger@{active\+Charger}}
+\index{active\+Charger@{active\+Charger}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{active\+Charger()}
+{\footnotesize\ttfamily int active\+Charger (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Return 1 if socket 1 is used, 2 if socket 2 is used, and 3 if both are in use. 
+
+
+
+Definition at line 195 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References Current.
+
+
+\begin{DoxyCode}
+195                     \{
+196     \textcolor{keywordtype}{int} number = 0;
+197     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<3; i++) \{
+198         \textcolor{keywordflow}{if} (Current[0][i] != 0.0) \{
+199             number += 1;
+200             \textcolor{keywordflow}{break};
+201         \}
+202     \}
+203     
+204     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<3; i++) \{
+205         \textcolor{keywordflow}{if} (Current[1][i] != 0.0) \{
+206             number += 2;
+207             \textcolor{keywordflow}{break};
+208         \}
+209     \}
+210     
+211     \textcolor{keywordflow}{return} number;
+212 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_aee241410f32d11f903417e0eb68d4bec}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!add\+\_\+\+Measurement@{add\+\_\+\+Measurement}}
+\index{add\+\_\+\+Measurement@{add\+\_\+\+Measurement}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{add\+\_\+\+Measurement()}
+{\footnotesize\ttfamily void add\+\_\+\+Measurement (\begin{DoxyParamCaption}\item[{float}]{phase\+Voltage\+L1,  }\item[{float}]{phase\+Voltage\+L2,  }\item[{float}]{phase\+Voltage\+L3,  }\item[{float}]{current\+L1,  }\item[{float}]{current\+L2,  }\item[{float}]{current\+L3,  }\item[{float}]{Frequency,  }\item[{unsigned long}]{Timestamp,  }\item[{int}]{socket\+Id = {\ttfamily 0},  }\item[{\textbf{ String}}]{user\+Id = {\ttfamily \char`\"{}00\char`\"{}} }\end{DoxyParamCaption})}
+
+
+
+Function ran for each socket every 30s in main loop to send measurements through \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t}. 
+
+
+
+Definition at line 510 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+\begin{DoxyCode}
+510                                                                                                            
+                                                                                                                  
+         \{
+511     
+512     \textcolor{comment}{//< Filter to skip if current values are impossibly high or under 0.1A}
+513     \textcolor{comment}{//if ((currentL1 > 50.0)||(currentL2 > 50.0)||(currentL3 > 50.0)) }
+514     \textcolor{comment}{//    return;}
+515     \textcolor{comment}{//if ((currentL1 < 0.1)&&(currentL2 < 0.1)&&(currentL3 < 0.1) )}
+516     \textcolor{comment}{//    return;}
+517 
+518     \textcolor{comment}{//This rounds floats to 3 decimal places}
+519     \textcolor{comment}{// float newvar = (float)(((int)(oldvar * 1000 + .5)) / 1000); }
+520     
+521     \textcolor{comment}{// phaseVoltageL1 = (float)(((int)(phaseVoltageL1 * 1000 + .5)) / 1000);}
+522     \textcolor{comment}{// phaseVoltageL2 = (float)(((int)(phaseVoltageL2 * 1000 + .5)) / 1000);}
+523     \textcolor{comment}{// phaseVoltageL3 = (float)(((int)(phaseVoltageL3 * 1000 + .5)) / 1000);}
+524     \textcolor{comment}{// currentL1 = (float)(((int)(currentL1 * 1000 + .5)) / 1000);}
+525     \textcolor{comment}{// currentL2 = (float)(((int)(currentL2 * 1000 + .5)) / 1000);}
+526     \textcolor{comment}{// currentL3 = (float)(((int)(currentL3 * 1000 + .5)) / 1000);}
+527     \textcolor{comment}{// Frequency = (float)(((int)(Frequency * 1000 + .5)) / 1000);}
+528 
+529 
+530     JsonWriterStatic<512> jsonMessage;     
+531         \{
+532         JsonWriterAutoObject obj(&jsonMessage);
+533         \textcolor{comment}{// Add various types of data        }
+534         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"V1"}, phaseVoltageL1);
+535         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"V2"}, phaseVoltageL2);
+536         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"V3"}, phaseVoltageL3);
+537         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"I1"}, currentL1);
+538         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"I2"}, currentL2);
+539         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"I3"}, currentL3);
+540         \textcolor{comment}{//jsonMessage.insertKeyValue("P", Power);}
+541         \textcolor{comment}{//jsonMessage.insertKeyValue("E", Energy);}
+542         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"F"}, Frequency);
+543           
+544         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"UserID"}, userId);
+545         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"SocketID"}, socketId);
+546         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"Time"}, Timestamp);
+547         \}
+548 
+549 
+550     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i=0; i<3; i++) \{
+551         \textcolor{keywordflow}{if}(client.publish(\textcolor{stringliteral}{"HANevse/photonMeasure"}, jsonMessage.getBuffer())) \{
+552             \textcolor{keywordflow}{break};
+553         \}
+554     \}
+555 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_a3019b040c98717baa7b6048ac7a35dd7}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!allow\+User\+\_\+callback@{allow\+User\+\_\+callback}}
+\index{allow\+User\+\_\+callback@{allow\+User\+\_\+callback}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{allow\+User\+\_\+callback()}
+{\footnotesize\ttfamily void allow\+User\+\_\+callback (\begin{DoxyParamCaption}\item[{byte $\ast$}]{payload,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})}
+
+
+
+Callback function to process and execute approval or denial to charge from Pi, then \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} publish reason to website G\+UI. 
+
+
+
+Definition at line 438 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References client, String\+::concat(), String\+::operator=(), Pianswer, U\+I\+Dtag\+Charger1, and U\+I\+Dtag\+Charger2.
+
+
+\begin{DoxyCode}
+438                                                             \{
+439     \textcolor{keywordtype}{char} payl[length+1];
+440     \textcolor{keywordtype}{char} *endchar;
+441         
+442     memcpy(payl, payload, length);
+443     payl[length] = NULL;
+444     \textcolor{keywordtype}{int} port = (int) strtol(payl, &endchar, 10);
+445     \textcolor{comment}{//action=1  successfully start new charge (charger is free and last stopped session > 20 sec ago)}
+446     \textcolor{comment}{//action=2  charger is free, but you already swiped the card in the last 20 sec (second swipe within
+       20sec)}
+447     \textcolor{comment}{//action=3  charger is occupied by another user}
+448     \textcolor{comment}{//action=4  succesful stop of charge session}
+449     \textcolor{comment}{//action=5  you just started a charge at this charger, but had another consecutive RFID swipe within 20
+       seconds}
+450     \textcolor{comment}{//action=6  you are already charging at another charger}
+451     \textcolor{comment}{//action=7  succesful RFID read, but you are not in the userlist}
+452     \textcolor{keywordtype}{int} socketNr = port - 1 - CHARGEROFFSET;
+453     
+454     String topic\_str = \textcolor{stringliteral}{"HANevse/photonConverted/"};
+455     topic\_str.concat(port);
+456 
+457     endchar = endchar + 1;
+458     \textcolor{keywordflow}{if} (port == (1 + CHARGEROFFSET))
+459         port = AUTHENTICATION_CAR1;
+460     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (port == (2 + CHARGEROFFSET))
+461         port = AUTHENTICATION_CAR2;
+462     \textcolor{keywordflow}{else}
+463         \textcolor{keywordflow}{return}; \textcolor{comment}{//port = EXTRA;}
+464         
+465     \textcolor{keywordtype}{int} retPi = (int) strtol(endchar, &endchar, 10);
+466     Pianswer = retPi; 
+467     \textcolor{comment}{// if (Pianswer == 0)}
+468         \textcolor{comment}{// Pianswer = 9;}
+469 
+470     \textcolor{keywordflow}{switch}(retPi) \{
+471         \textcolor{keywordflow}{case} 1:
+472             digitalWrite(port, HIGH);
+473             LatestStartTime[socketNr] = Time.now();
+474             client.publish(topic\_str, \textcolor{stringliteral}{"successful start new charge"});
+475             \textcolor{keywordflow}{break};
+476         \textcolor{keywordflow}{case} 2:
+477             client.publish(topic\_str, \textcolor{stringliteral}{"charger is free, but card was swiped in the last 20 sec"});
+478             \textcolor{keywordflow}{break};
+479         \textcolor{keywordflow}{case} 3:
+480             client.publish(topic\_str, \textcolor{stringliteral}{"charger is occupied by another user"});
+481             \textcolor{keywordflow}{break};
+482         \textcolor{keywordflow}{case} 4:
+483             digitalWrite(port, LOW);
+484             \textcolor{keywordflow}{if} (socketNr == 0)
+485                 UIDtagCharger1=\textcolor{stringliteral}{"No ID"};
+486             \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (socketNr == 1)
+487                 UIDtagCharger2=\textcolor{stringliteral}{"No ID"};
+488             client.publish(topic\_str, \textcolor{stringliteral}{"successful stop charge session"});
+489             \textcolor{keywordflow}{break};
+490         \textcolor{keywordflow}{case} 5:
+491             client.publish(topic\_str, \textcolor{stringliteral}{"consecutive RFID swipe within 20s of new charge start"});
+492             \textcolor{keywordflow}{break};
+493         \textcolor{keywordflow}{case} 6:
+494             client.publish(topic\_str, \textcolor{stringliteral}{"you are already charging at another charger"});
+495             \textcolor{keywordflow}{break};
+496         \textcolor{keywordflow}{case} 7:
+497             client.publish(topic\_str, \textcolor{stringliteral}{"you are in the userlist, but not verified by admin"});
+498             \textcolor{keywordflow}{break};
+499         \textcolor{keywordflow}{case} 8:
+500             client.publish(topic\_str, \textcolor{stringliteral}{"successful RFID read, but you are not in the userlist"});
+501             \textcolor{keywordflow}{break};
+502         \textcolor{keywordflow}{default}:
+503             client.publish(topic\_str, \textcolor{stringliteral}{"ERROR: unknown scenario"});
+504         
+505     \}
+506     
+507 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_acd7da18abdd273f892ec13cb726810b6}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!blink\+R\+F\+I\+Dled@{blink\+R\+F\+I\+Dled}}
+\index{blink\+R\+F\+I\+Dled@{blink\+R\+F\+I\+Dled}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{blink\+R\+F\+I\+Dled()}
+{\footnotesize\ttfamily void blink\+R\+F\+I\+Dled (\begin{DoxyParamCaption}\item[{int}]{charger,  }\item[{int}]{action }\end{DoxyParamCaption})}
+
+
+
+unused function to blink the Photon L\+ED 
+
+
+
+Definition at line 179 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+\begin{DoxyCode}
+179                                           \{
+180     \textcolor{comment}{//action=1  succesfull start new charge (charger is free and last stoped session > 20 sec ago)}
+181     \textcolor{comment}{//action=2  charger is free, but you allready swiped the card in the last 20 sec (second swipe within
+       20sec)}
+182     \textcolor{comment}{//action=3  charger is occupied by annother user}
+183     \textcolor{comment}{//action=4  succesful stop this charge session}
+184     \textcolor{comment}{//action=5  you just started a charge on this charger, but have another consecutive RFID read/swipe
+       within 20 seconds}
+185     \textcolor{comment}{//action=6  you are already charging at another charger}
+186     \textcolor{comment}{//action=7  succesfull RFID read, but you are not in the userlist}
+187     
+188     digitalWrite(D7,HIGH);
+189     delay(100);
+190     digitalWrite(D7,LOW);
+191     \textcolor{keywordflow}{return};
+192 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_ac3a129f66dc859e2b7279565f4e1de78}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!callback@{callback}}
+\index{callback@{callback}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{callback()}
+{\footnotesize\ttfamily void callback (\begin{DoxyParamCaption}\item[{char $\ast$}]{topic,  }\item[{byte $\ast$}]{payload,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})}
+
+
+
+Main function for \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} client to check for new messages and execute callback functions. 
+
+
+
+Definition at line 671 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References max\+Current\+C1(), max\+Current\+C2(), String\+::operator=(), reset\+Olimex(), reset\+Particle(), switch\+Test(), test, and T\+E\+S\+T\+C\+A\+SE.
+
+
+\begin{DoxyCode}
+671                                                                \{
+672     test = \textcolor{stringliteral}{"99"};
+673     time\_t time = Time.now();
+674     \textcolor{comment}{//DEBUGPORT.println(time);}
+675     DEBUGPORT.print(\textcolor{stringliteral}{"MQTT>\(\backslash\)tCallback function is called at: "});
+676     DEBUGPORT.println(Time.format(time, TIME\_FORMAT\_DEFAULT));
+677 
+678     \textcolor{keywordflow}{if} (CHARGEROFFSET==0) \{
+679          \textcolor{keywordflow}{if} (strcmp(topic, \textcolor{stringliteral}{"HANevse/allowUser"})==0)
+680         \{
+681             allowUser_callback(payload, length);
+682             \textcolor{comment}{//client.publish("HANevse/photonConverted", "test photon responds");}
+683         \}
+684         \textcolor{keywordflow}{else}
+685          \textcolor{keywordflow}{if} ( (strcmp(topic, \textcolor{stringliteral}{"HANevse/energyMeter"})==0) && TESTCASE )
+686         \{
+687             getMeasure_callback(payload, length);
+688             \textcolor{comment}{//client.publish("HANevse/photonTest", "test photon responds");}
+689         \}
+690         \textcolor{keywordflow}{else}
+691          \textcolor{keywordflow}{if} (strcmp(topic, \textcolor{stringliteral}{"HANevse/resetOlimex"})==0)
+692         \{
+693             \textcolor{keywordtype}{char} payl[length+1];
+694             memcpy(payl, payload, length);
+695             payl[length] = NULL;
+696             resetOlimex(payl);
+697         \}
+698         \textcolor{keywordflow}{else}
+699          \textcolor{keywordflow}{if} (strcmp(topic, \textcolor{stringliteral}{"HANevse/resetPhoton"})==0)
+700         \{
+701             resetParticle(\textcolor{stringliteral}{"1"});
+702         \}
+703         \textcolor{keywordflow}{else}
+704          \textcolor{keywordflow}{if} (strcmp(topic, \textcolor{stringliteral}{"HANevse/switchTest1"})==0)
+705         \{
+706             \textcolor{keywordtype}{char} payl[length+1];
+707             memcpy(payl, payload, length);
+708             payl[length] = NULL;
+709             switchTest(payl);
+710         \}
+711         \textcolor{keywordflow}{else}
+712          \textcolor{keywordflow}{if} ((strcmp(topic, \textcolor{stringliteral}{"HANevse/maxC1"})==0)  && !TESTCASE )
+713         \{
+714             \textcolor{keywordtype}{char} payl[length+1];
+715             memcpy(payl, payload, length);
+716             payl[length] = NULL;
+717             maxCurrentC1(payl);
+718             \textcolor{comment}{//client.publish("HANevse/photonTest", "test photon responds");}
+719         \}
+720         \textcolor{keywordflow}{else}
+721          \textcolor{keywordflow}{if} ((strcmp(topic, \textcolor{stringliteral}{"HANevse/maxC2"})==0) && !TESTCASE )
+722         \{
+723             \textcolor{keywordtype}{char} payl[length+1];
+724             memcpy(payl, payload, length);
+725             payl[length] = NULL;
+726             maxCurrentC2(payl);
+727             \textcolor{comment}{//client.publish("HANevse/photonTest", "test photon responds");}
+728         \}
+729     \}
+730     \textcolor{keywordflow}{else} \{
+731          \textcolor{keywordflow}{if} (strcmp(topic, \textcolor{stringliteral}{"HANevse/allowUser"})==0)
+732         \{
+733             allowUser_callback(payload, length);
+734             \textcolor{comment}{//client.publish("HANevse/photonConverted", "test photon responds");}
+735         \}
+736         \textcolor{keywordflow}{else}
+737          \textcolor{keywordflow}{if} ( (strcmp(topic, \textcolor{stringliteral}{"HANevse/energyMeter"})==0) && TESTCASE )
+738         \{
+739             getMeasure_callback(payload, length);
+740             \textcolor{comment}{//client.publish("HANevse/photonTest", "test photon responds");}
+741         \}
+742         \textcolor{keywordflow}{else}
+743          \textcolor{keywordflow}{if} (strcmp(topic, \textcolor{stringliteral}{"HANevse/resetOlimex"})==0)
+744         \{
+745             \textcolor{keywordtype}{char} payl[length+1];
+746             memcpy(payl, payload, length);
+747             payl[length] = NULL;
+748             resetOlimex(payl);
+749         \}
+750         \textcolor{keywordflow}{else}
+751          \textcolor{keywordflow}{if} (strcmp(topic, \textcolor{stringliteral}{"HANevse/resetPhoton"})==0)
+752         \{
+753             resetParticle(\textcolor{stringliteral}{"1"});
+754         \}
+755         \textcolor{keywordflow}{else}
+756          \textcolor{keywordflow}{if} (strcmp(topic, \textcolor{stringliteral}{"HANevse/switchTest2"})==0)
+757         \{
+758             \textcolor{keywordtype}{char} payl[length+1];
+759             memcpy(payl, payload, length);
+760             payl[length] = NULL;
+761             switchTest(payl);
+762         \}
+763         \textcolor{keywordflow}{else}
+764          \textcolor{keywordflow}{if} ((strcmp(topic, \textcolor{stringliteral}{"HANevse/maxC3"})==0)  && !TESTCASE )
+765         \{
+766             \textcolor{keywordtype}{char} payl[length+1];
+767             memcpy(payl, payload, length);
+768             payl[length] = NULL;
+769             maxCurrentC1(payl);
+770             \textcolor{comment}{//client.publish("HANevse/photonTest", "test photon responds");}
+771         \}
+772         \textcolor{keywordflow}{else}
+773          \textcolor{keywordflow}{if} ((strcmp(topic, \textcolor{stringliteral}{"HANevse/maxC4"})==0) && !TESTCASE )
+774         \{
+775             \textcolor{keywordtype}{char} payl[length+1];
+776             memcpy(payl, payload, length);
+777             payl[length] = NULL;
+778             maxCurrentC2(payl);
+779             \textcolor{comment}{//client.publish("HANevse/photonTest", "test photon responds");}
+780         \}
+781     \}
+782 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_a4c5d5ea4f6d4b65954431d96e299d9bf}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!char\+To\+String@{char\+To\+String}}
+\index{char\+To\+String@{char\+To\+String}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{char\+To\+String()}
+{\footnotesize\ttfamily void char\+To\+String (\begin{DoxyParamCaption}\item[{const char}]{in[$\,$],  }\item[{\textbf{ String} \&}]{out }\end{DoxyParamCaption})}
+
+
+
+Deprecated function to convert char to \doxyref{String}{p.}{class_string} -\/ the \doxyref{String}{p.}{class_string} class already has one. 
+
+
+
+Definition at line 140 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References String\+::operator=().
+
+
+\begin{DoxyCode}
+140                                                 \{
+141     byte index = 0;
+142     \textcolor{keyword}{const} \textcolor{keywordtype}{char} *pointer = in;
+143     out = \textcolor{stringliteral}{""};
+144 
+145     \textcolor{keywordflow}{while} (*pointer++) \{
+146       out.concat(in[index++]);
+147       \}
+148 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_a63ba3c80c4eecc57f8ee73e2045b372f}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!get\+Measure\+\_\+callback@{get\+Measure\+\_\+callback}}
+\index{get\+Measure\+\_\+callback@{get\+Measure\+\_\+callback}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{get\+Measure\+\_\+callback()}
+{\footnotesize\ttfamily void get\+Measure\+\_\+callback (\begin{DoxyParamCaption}\item[{byte $\ast$}]{payload,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})}
+
+
+
+Callback function to automatically set max Currents from \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} message if in renewable mode. 
+
+
+
+Definition at line 316 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References Json\+Buffer\+::clear(), max\+Current\+C1\+\_\+test(), max\+Current\+C2\+\_\+test(), and Json\+Parser\+::parse().
+
+
+\begin{DoxyCode}
+316                                                              \{
+317 
+318     \textcolor{comment}{//int sockets = 1;}
+319     \textcolor{comment}{//char p[length + 1];}
+320     \textcolor{comment}{//memcpy(p, payload, length);}
+321     
+322     \textcolor{comment}{//int setPoint =  (String(p)).toInt();}
+323     
+324     \textcolor{keywordtype}{int} setP = 0;
+325     
+326     JsonParser parser1;
+327     parser1.clear();
+328     parser1.addData( (\textcolor{keywordtype}{char}*)(payload), length); 
+329     parser1.parse();
+330 
+331 \textcolor{comment}{//    parser1.getOuterValueByKey("I1", EMeterData.PhaseCurrent[0]);}
+332 \textcolor{comment}{//    parser1.getOuterValueByKey("I2", EMeterData.PhaseCurrent[1]);}
+333 \textcolor{comment}{//    parser1.getOuterValueByKey("I3", EMeterData.PhaseCurrent[2]);}
+334 \textcolor{comment}{//    parser1.getOuterValueByKey("Sockets", sockets);}
+335 
+336     parser1.getOuterValueByKey(\textcolor{stringliteral}{"setPoint"}, setP);
+337     
+338     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} setPoint = setP;
+339     \textcolor{comment}{//client.publish("HANevse/photonMax", String(setPoint));}
+340     \textcolor{comment}{// if (activeCharger() != 0)}
+341     \textcolor{comment}{// \{}
+342       maxCurrentC1_test(setPoint); \textcolor{comment}{//Emeter3, I1}
+343       delay(10);
+344       maxCurrentC2_test(setPoint); \textcolor{comment}{//Emeter3, I1}
+345     \textcolor{comment}{// \}}
+346 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_a9e8e91d801c5f9812d2862fcc94153b3}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!get\+User\+Id\+At\+Socket@{get\+User\+Id\+At\+Socket}}
+\index{get\+User\+Id\+At\+Socket@{get\+User\+Id\+At\+Socket}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{get\+User\+Id\+At\+Socket()}
+{\footnotesize\ttfamily \textbf{ String} get\+User\+Id\+At\+Socket (\begin{DoxyParamCaption}\item[{int}]{socket }\end{DoxyParamCaption})}
+
+
+
+Returns R\+F\+ID tag at the asked socket. 
+
+
+
+Definition at line 307 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References U\+I\+Dtag\+Charger1, and U\+I\+Dtag\+Charger2.
+
+
+\begin{DoxyCode}
+307                                      \{
+308     \textcolor{keywordflow}{if} (socket == 1+CHARGEROFFSET)
+309         \textcolor{keywordflow}{return} UIDtagCharger1;
+310     \textcolor{keywordflow}{if} (socket == 2+CHARGEROFFSET)
+311         \textcolor{keywordflow}{return} UIDtagCharger2;
+312     \textcolor{keywordflow}{return} \textcolor{stringliteral}{"00"};
+313 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_abc7cbbf081849eefdbf3b2a2a5b63151}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!init\+R\+F\+ID@{init\+R\+F\+ID}}
+\index{init\+R\+F\+ID@{init\+R\+F\+ID}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{init\+R\+F\+I\+D()}
+{\footnotesize\ttfamily int init\+R\+F\+ID (\begin{DoxyParamCaption}\item[{\textbf{ String}}]{input }\end{DoxyParamCaption})}
+
+
+
+Initialises R\+F\+ID reader. 
+
+
+
+Definition at line 558 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+Referenced by setup().
+
+
+\begin{DoxyCode}
+558                            \{
+559     \textcolor{comment}{//additional config for debugging RFID readers}
+560     pinMode(SS_PIN_CHARGER1, OUTPUT);
+561     digitalWrite(SS_PIN_CHARGER1, HIGH);
+562     pinMode(SS_PIN_CHARGER2, OUTPUT);
+563     digitalWrite(SS_PIN_CHARGER2, HIGH);
+564   
+565     SPI.begin(D0);      \textcolor{comment}{// Initiate  SPI bus}
+566     \textcolor{comment}{//Particle.process();}
+567     delay(50);
+568     mfrc522_Charger1.PCD_Init();   \textcolor{comment}{// Initiate MFRC522}
+569     delay(500);
+570     mfrc522_Charger2.PCD_Init();   \textcolor{comment}{// Initiate MFRC522}
+571     \textcolor{comment}{//mfrc522\_Charger1.PCD\_SetAntennaGain(mfrc522.RxGain\_max);}
+572     mfrc522_Charger1.PCD_SetAntennaGain(mfrc522_Charger1.RxGain_max);
+573     mfrc522_Charger2.PCD_SetAntennaGain(mfrc522_Charger2.RxGain_max);
+574     
+575     DEBUGPORT.println(\textcolor{stringliteral}{"Approach your card to the reader..."});
+576     DEBUGPORT.println();    
+577     \textcolor{keywordflow}{return} 1;
+578 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_afe461d27b9c48d5921c00d521181f12f}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!loop@{loop}}
+\index{loop@{loop}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{loop()}
+{\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Main running function that executes all other functions; runs over 5times/second. 
+
+
+
+Definition at line 879 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References client, handled\+Charger, Latest\+Start\+Time, String\+::operator=(), read\+R\+F\+I\+D\+Card(), read\+Serial\+Olimex(), reconnect(), U\+I\+Dtag\+Charger1, and U\+I\+Dtag\+Charger2.
+
+
+\begin{DoxyCode}
+879             \{
+880     \textcolor{comment}{//Check the connection to the Particle server}
+881     \textcolor{keywordflow}{if} (Particle.connected() == \textcolor{keyword}{false}) \{
+882         Particle.connect();
+883     \}
+884     \textcolor{comment}{//Check the connection to the MQTT broker and let client take care of messages in buffers}
+885     \textcolor{keywordflow}{if} (client.isConnected()) \{
+886         client.loop();
+887     \}
+888     \textcolor{keywordflow}{else} reconnect();
+889     
+890     Particle.process();
+891     \textcolor{comment}{//currentStr = String(Current[0][0],1)+" "+String( Current[0][1],1)+" "+String(Current[0][2],1)+"
+       "+String(Current[1][0],1)+" "+String( Current[1][1],1)+" "+String(Current[1][2],1)+" "+String(Frequency[0],2);}
+892 \textcolor{comment}{//+    currentStr = String(Current[0][0],1)+" "+String( PhaseVoltage[0][1],1)+"
+       "+String(LineVoltage[0][2],1)+" "+String(Power[1][0],1)+" "+String( Energy[1],1)+" "+String(Current[1][2],1)+"
+       "+String(Frequency[0],2);}
+893     \textcolor{comment}{//currentStr=String(Current[1][2],1)+" "+currentStr.substring(0, max(200, currentStr.length()))}
+894     \textcolor{comment}{//currentStr = String(CurrentList[0],1)+" "+String(CurrentList[1],1)+" "+String(CurrentList[2],1)+"
+       "+String(CurrentList[3],1)+" "+String(CurrentList[4],1)+" "+String(CurrentList[5],1)+"
+       "+String(CurrentList[6],1)+" "+String(CurrentList[7],1)+" "+String(CurrentList[8],1)+" "+String(CurrentList[9],1)+"
+       "+String(CurrentList[10],1)+" "+String(CurrentList[11],1)+" "+String(CurrentList[12],1)+" "+String(CurrentList[13],1)+"
+       "+String(CurrentList[14],1)+" "+String(CurrentList[15],1)+" "+String(CurrentList[16],1)+"
+       "+String(CurrentList[17],1)+" "+String(CurrentList[18],1)+" "+String(CurrentList[19],1);}
+895     
+896     \textcolor{comment}{//int Charger =1; //+}
+897     
+898     \textcolor{comment}{//Read measurements from Olimex and save for which socket}
+899     \textcolor{keywordtype}{int} Charger = readSerialOlimex() + CHARGEROFFSET; \textcolor{comment}{//+}
+900     Particle.process();
+901     \textcolor{comment}{// !!!! This runs multiple times a second for some reason (serial) }
+902     \textcolor{comment}{// if(counter>10)\{}
+903     \textcolor{comment}{//  counter = 0;}
+904     \textcolor{comment}{// !!!! DEBUGPORT.println("LatestStartTime>\(\backslash\)t"+String(LatestStartTime[0])+",
+       "+String(LatestStartTime[1]));}
+905     \textcolor{comment}{//  DEBUGPORT.println(String(Current[1][0]+ Current[1][1]+ Current[1][2]));}
+906     \textcolor{comment}{// \}}
+907     \textcolor{comment}{// counter++;}
+908 
+909     \textcolor{comment}{// store new measurement value if it is received correctly from energymeter (via the Olimex).}
+910     \textcolor{keywordflow}{if}(millis()>nextTime[handledCharger] && (Charger==1+CHARGEROFFSET || Charger==2+
+      CHARGEROFFSET)) \textcolor{comment}{//+ all the if\{\}}
+911     \{
+912         Particle.process();
+913         \textcolor{comment}{//getUserIdAtSocket(Charger)}
+914         \textcolor{keywordtype}{int} tempCharger = Charger;
+915         Charger = handledCharger + 1;
+916         \textcolor{comment}{//if(((activeCharger()==Charger) || (activeCharger() == 3)) && (getUserIdAtSocket(Charger)!="00"))}
+917         \textcolor{comment}{//\{}
+918             \textcolor{comment}{//getUserIdAtSocket(Charger+CHARGEROFFSET);}
+919             add_Measurement(PhaseVoltage[Charger-1][0], PhaseVoltage[Charger-1][1], 
+      PhaseVoltage[Charger-1][2], Current[Charger-1][0], Current[Charger-1][1], 
+      Current[Charger-1][2], \textcolor{comment}{/*Power[Charger-1][0]+Power[Charger-1][1]+Power[Charger-1][2], Energy[Charger-1],*/} 
+      Frequency[Charger-1], Time.now(), Charger+CHARGEROFFSET, getUserIdAtSocket(Charger+CHARGEROFFSET));
+920         \textcolor{comment}{//\}}
+921         Charger = tempCharger;
+922         nextTime[handledCharger] = millis() + 30000; \textcolor{comment}{//every 30 sec}
+923     \}
+924     
+925 \textcolor{comment}{//     run loop very often to check new RFID cards}
+926     Particle.process(); \textcolor{comment}{//+}
+927     \textcolor{keywordtype}{bool} Authorized\_Charger1=readRFIDCard(1+CHARGEROFFSET); \textcolor{comment}{//+}
+928     delay(5);
+929     \textcolor{comment}{//if (Pianswer == 1 || Pianswer ==4 )    }
+930     \textcolor{comment}{//    Authorized\_Charger1 = TRUE;}
+931     \textcolor{keywordtype}{bool} Authorized\_Charger2=readRFIDCard(2+CHARGEROFFSET); \textcolor{comment}{//+}
+932     \textcolor{comment}{//delay(5);}
+933     \textcolor{comment}{//if (Pianswer == 1 || Pianswer ==4 )  //+    }
+934     \textcolor{comment}{//      Authorized\_Charger2 = TRUE;     //+}
+935     
+936     
+937     \textcolor{comment}{//DEBUGPORT.println(Current[0][0]+ Current[0][1]+ Current[0][2],4);}
+938     \textcolor{comment}{//DEBUGPORT.println(String(LatestStartTime[0]+60));}
+939     \textcolor{comment}{//DEBUGPORT.println(String(Time.now()));}
+940     \textcolor{comment}{//DEBUGPORT.println((LatestStartTime[0] + 60 < Time.now()),DEC);}
+941     \textcolor{comment}{//if ((LatestStartTime[0] + 60 < Time.now()) && (Current[0][0]+ Current[0][1]+ Current[0][2]) < 1)}
+942     \textcolor{comment}{//if (((numberOfZeroReadings[0]>10 && (LatestStartTime[0] + 60 < Time.now()))||
+       ((Time.now()<LatestStartTime[0] + 70)&&(LatestStartTime[0] + 60 < Time.now()))) && (Current[0][0]+ Current[0][1]+ Current[0][2]) <
+       1)}
+943     
+944     \textcolor{comment}{// if 10+ Zero current readings have been taken or last start of new charge was over 1min ago and total
+       Current is under 1A for first socket stop charge and reset StartTIme var}
+945     \textcolor{keywordflow}{if}( ((numberOfZeroReadings[0]>10)||(LatestStartTime[0] + 70 > Time.now()) )&& (
+      LatestStartTime[0] + 60 < Time.now()) && (Current[0][0]+ Current[0][1]+ Current[0][2]) < 1)
+946     \{   
+947         \textcolor{comment}{//timeout with current almost zero}
+948         DEBUGPORT.println(\textcolor{stringliteral}{"Timeout charger"}+String(CHARGEROFFSET+1));
+949         digitalWrite(AUTHENTICATION_CAR1,LOW);
+950         LatestStartTime[0]=2147483548;
+951     \}
+952     \textcolor{comment}{//DEBUGPORT.println(Current[1][0]+ Current[1][1]+ Current[1][2],4);}
+953     \textcolor{comment}{//DEBUGPORT.println(String(LatestStartTime[1]+60));}
+954     \textcolor{comment}{//DEBUGPORT.println(String(Time.now()));}
+955     \textcolor{comment}{//DEBUGPORT.println((LatestStartTime[1] + 60 < Time.now()),DEC);}
+956     
+957     \textcolor{comment}{// if 10+ Zero current readings have been taken or last start of new charge was over 1min ago and total
+       Current is under 1A for second socket stop charge and reset StartTIme var}
+958     \textcolor{keywordflow}{if}( ((numberOfZeroReadings[1]>10)||(LatestStartTime[1] + 70 > Time.now()) )&& (
+      LatestStartTime[1] + 60 < Time.now()) && (Current[1][0]+ Current[1][1]+ Current[1][2]) < 1)
+959     \{
+960         \textcolor{comment}{//timeout with current almost zero}
+961         DEBUGPORT.println(\textcolor{stringliteral}{"Timeout charger"}+String(CHARGEROFFSET+2));
+962         digitalWrite(AUTHENTICATION_CAR2,LOW);
+963         \textcolor{comment}{//digitalWrite(D7,LOW);}
+964         LatestStartTime[1]=2147483548;
+965     \}
+966     delay(100);
+967 
+968 
+969     \textcolor{comment}{//Reset the UIDtag if there is no car charging and last wsipe was over 1min ago at first socket}
+970     \textcolor{keywordflow}{if} ((activeCharger()!=1)&&(activeCharger()!=3)&&(UIDtagCharger1!=\textcolor{stringliteral}{"No ID"})&& (
+      LatestStartTime[0] + 60 < Time.now()) )\{
+971         
+972         JsonWriterStatic<512> jsonMessage;
+973 
+974         \{
+975         JsonWriterAutoObject obj(&jsonMessage);
+976         
+977         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"UserId"}, UIDtagCharger1);
+978         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"Charger"}, (1 + CHARGEROFFSET));
+979         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"StartTime"}, Time.now());
+980         \}
+981         client.publish(\textcolor{stringliteral}{"HANevse/updateUser"}, jsonMessage.getBuffer());
+982 
+983         UIDtagCharger1=\textcolor{stringliteral}{"No ID"};
+984     \}
+985 
+986         
+987     \textcolor{keywordflow}{if} ((activeCharger()!=2)&&(activeCharger()!=3)&&(UIDtagCharger2!=\textcolor{stringliteral}{"No ID"})&& (
+      LatestStartTime[1] + 60 < Time.now()) )\{
+988         
+989         JsonWriterStatic<512> jsonMessage;
+990 
+991         \{
+992         JsonWriterAutoObject obj(&jsonMessage);
+993         
+994         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"UserId"}, UIDtagCharger2);
+995         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"Charger"}, (2 + CHARGEROFFSET));
+996         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"StartTime"}, Time.now());
+997         \}
+998         client.publish(\textcolor{stringliteral}{"HANevse/updateUser"}, jsonMessage.getBuffer());
+999 
+1000         UIDtagCharger2=\textcolor{stringliteral}{"No ID"};
+1001     \}
+1002             
+1003     handledCharger = !handledCharger;
+1004 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_aa95a87dbf10d08c2472e2060115a786d}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!max\+Current\+C1@{max\+Current\+C1}}
+\index{max\+Current\+C1@{max\+Current\+C1}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{max\+Current\+C1()}
+{\footnotesize\ttfamily int max\+Current\+C1 (\begin{DoxyParamCaption}\item[{\textbf{ String}}]{set\+Point\+Str }\end{DoxyParamCaption})}
+
+
+
+Sets max Current output at socket 1 in manual mode. 
+
+
+
+Definition at line 229 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References T\+E\+S\+T\+C\+A\+SE, and String\+::to\+Int().
+
+
+
+Referenced by callback(), and switch\+Test().
+
+
+\begin{DoxyCode}
+229                                      \{
+230     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} setPoint = setPointStr.toInt();
+231     \textcolor{keywordflow}{if} (setPoint < 7)
+232         setPoint = 6;
+233     byte olimexMessage[4] = \{0xFE,1,setPoint,0xFF\};
+234     \textcolor{keywordflow}{if} (!TESTCASE) \{
+235         Serial1.write(olimexMessage,4);
+236         DEBUGPORT.println(\textcolor{stringliteral}{"maxCurrentC"}+String(CHARGEROFFSET+1)+\textcolor{stringliteral}{">\(\backslash\)tNew setpoint set at "}+
+      String(setPoint)+\textcolor{stringliteral}{" Amps."});
+237         \textcolor{keywordflow}{return} 0;
+238     \}
+239     \textcolor{keywordflow}{return} 1;
+240 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_acb83be59c559528f5aff6a05e307aba0}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!max\+Current\+C1\+\_\+test@{max\+Current\+C1\+\_\+test}}
+\index{max\+Current\+C1\+\_\+test@{max\+Current\+C1\+\_\+test}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{max\+Current\+C1\+\_\+test()}
+{\footnotesize\ttfamily int max\+Current\+C1\+\_\+test (\begin{DoxyParamCaption}\item[{unsigned int}]{set\+Point }\end{DoxyParamCaption})}
+
+
+
+Sets max Current output at socket 1/3 in renewable mode and publishes new setpoint at \char`\"{}\+H\+A\+Nevse/photon\+Max\+C1\char`\"{} or C3. 
+
+
+
+Definition at line 257 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References client, String\+::concat(), String\+::\+String(), and T\+E\+S\+T\+C\+A\+SE.
+
+
+
+Referenced by get\+Measure\+\_\+callback().
+
+
+\begin{DoxyCode}
+257                                              \{
+258     \textcolor{keywordflow}{if} (setPoint < 7)
+259         setPoint = 6;
+260     byte olimexMessage[4] = \{0xFE, 1, setPoint, 0xFF\};
+261     \textcolor{keywordflow}{if} (TESTCASE) \{
+262         Serial1.write(olimexMessage,4);
+263         DEBUGPORT.println(\textcolor{stringliteral}{"maxCurrentC"}+String(CHARGEROFFSET+1)+\textcolor{stringliteral}{">\(\backslash\)tNew setpoint set at "}+
+      String(setPoint)+\textcolor{stringliteral}{" Amps."});
+264         String topic\_str = \textcolor{stringliteral}{"HANevse/photonMaxC"};
+265         topic\_str.concat(CHARGEROFFSET+1);
+266         client.publish(topic\_str, String(setPoint)); 
+267         \textcolor{keywordflow}{return} 0;
+268     \}
+269     \textcolor{keywordflow}{return} 1;
+270 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_a33435c28a8a11141750280aec8f15cbd}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!max\+Current\+C2@{max\+Current\+C2}}
+\index{max\+Current\+C2@{max\+Current\+C2}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{max\+Current\+C2()}
+{\footnotesize\ttfamily int max\+Current\+C2 (\begin{DoxyParamCaption}\item[{\textbf{ String}}]{set\+Point\+Str }\end{DoxyParamCaption})}
+
+
+
+Sets max Current output at socket 2 in manual mode. 
+
+
+
+Definition at line 243 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References T\+E\+S\+T\+C\+A\+SE, and String\+::to\+Int().
+
+
+
+Referenced by callback(), and switch\+Test().
+
+
+\begin{DoxyCode}
+243                                      \{
+244     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{int} setPoint = setPointStr.toInt();
+245     \textcolor{keywordflow}{if} (setPoint < 7)
+246         setPoint = 6;
+247     byte olimexMessage[4] = \{0xFE, 2, setPoint, 0xFF\};
+248     \textcolor{keywordflow}{if} (!TESTCASE) \{
+249         Serial1.write(olimexMessage,4);
+250         DEBUGPORT.println(\textcolor{stringliteral}{"maxCurrentC"}+String(CHARGEROFFSET+2)+\textcolor{stringliteral}{">\(\backslash\)tNew setpoint set at "}+
+      String(setPoint)+\textcolor{stringliteral}{" Amps."});
+251         \textcolor{keywordflow}{return} 0;
+252     \}
+253     \textcolor{keywordflow}{return} 1;
+254 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_aec0df453c6114acf2314a61fa0879eb7}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!max\+Current\+C2\+\_\+test@{max\+Current\+C2\+\_\+test}}
+\index{max\+Current\+C2\+\_\+test@{max\+Current\+C2\+\_\+test}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{max\+Current\+C2\+\_\+test()}
+{\footnotesize\ttfamily int max\+Current\+C2\+\_\+test (\begin{DoxyParamCaption}\item[{unsigned int}]{set\+Point }\end{DoxyParamCaption})}
+
+
+
+Sets max Current output at socket 2/4 in renewable mode and publishes new setpoint at \char`\"{}\+H\+A\+Nevse/photon\+Max\+C2\char`\"{} or C4. 
+
+
+
+Definition at line 273 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References client, String\+::concat(), String\+::\+String(), and T\+E\+S\+T\+C\+A\+SE.
+
+
+
+Referenced by get\+Measure\+\_\+callback().
+
+
+\begin{DoxyCode}
+273                                              \{
+274     \textcolor{keywordflow}{if} (setPoint < 7)
+275         setPoint = 6;
+276     byte olimexMessage[4] = \{0xFE,2,setPoint,0xFF\};
+277     \textcolor{keywordflow}{if} (TESTCASE) \{
+278         Serial1.write(olimexMessage,4);
+279         DEBUGPORT.println(\textcolor{stringliteral}{"maxCurrentC"}+String(CHARGEROFFSET+2)+\textcolor{stringliteral}{">\(\backslash\)tNew setpoint set at "}+
+      String(setPoint)+\textcolor{stringliteral}{" Amps."});
+280         String topic\_str = \textcolor{stringliteral}{"HANevse/photonMaxC"};
+281         topic\_str.concat(CHARGEROFFSET+2);
+282         client.publish(topic\_str, String(setPoint)); 
+283         \textcolor{keywordflow}{return} 0;
+284     \}
+285     \textcolor{keywordflow}{return} 1;
+286 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_ad7dc0d6376ca803542168e9adc0dec79}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!prog\+Mode\+Olmx@{prog\+Mode\+Olmx}}
+\index{prog\+Mode\+Olmx@{prog\+Mode\+Olmx}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{prog\+Mode\+Olmx()}
+{\footnotesize\ttfamily int prog\+Mode\+Olmx (\begin{DoxyParamCaption}\item[{\textbf{ String}}]{input }\end{DoxyParamCaption})}
+
+
+
+Sets Olimex into programming mode. 
+
+
+
+Definition at line 169 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References reset\+Olimex().
+
+
+\begin{DoxyCode}
+169                                \{
+170     digitalWrite(WAKEUP_OLIMEX, HIGH);
+171     delay(500);
+172     resetOlimex(\textcolor{stringliteral}{""});
+173     delay(500);
+174     digitalWrite(WAKEUP_OLIMEX, LOW);
+175     \textcolor{keywordflow}{return} 1;
+176 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_a1b9d7ee6530be2853b10dee40dc3c02c}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!read\+R\+F\+I\+D\+Card@{read\+R\+F\+I\+D\+Card}}
+\index{read\+R\+F\+I\+D\+Card@{read\+R\+F\+I\+D\+Card}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{read\+R\+F\+I\+D\+Card()}
+{\footnotesize\ttfamily bool read\+R\+F\+I\+D\+Card (\begin{DoxyParamCaption}\item[{int}]{Charger }\end{DoxyParamCaption})}
+
+
+
+Checks and reads R\+F\+ID tag at the asked socket, then \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} publishes it for Pi. 
+
+
+
+Definition at line 581 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References Pianswer, String\+::substring(), U\+I\+Dtag\+Charger1, and U\+I\+Dtag\+Charger2.
+
+
+
+Referenced by loop().
+
+
+\begin{DoxyCode}
+581                                \{
+582    \textcolor{comment}{// DEBUGPORT.print("readCard>\(\backslash\)t");}
+583     \textcolor{keywordtype}{bool} Authorized = \textcolor{keyword}{true};
+584     Pianswer = 0;
+585     \textcolor{keywordflow}{if}(Charger==1+CHARGEROFFSET)
+586     \{
+587       \textcolor{comment}{// Look for new cards}
+588         \textcolor{keywordflow}{if} ( ! mfrc522_Charger1.PICC_IsNewCardPresent()) 
+589         \{
+590             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+591         \}
+592         \textcolor{comment}{// Select one of the cards}
+593         \textcolor{keywordflow}{if} ( ! mfrc522_Charger1.PICC_ReadCardSerial()) 
+594         \{
+595             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+596         \}
+597   
+598         \textcolor{comment}{//Show UID on serial monitor}
+599         DEBUGPORT.print(\textcolor{stringliteral}{"readCard>\(\backslash\)tUID tag on charger1:"});
+600         String content = \textcolor{stringliteral}{""};        
+601         \textcolor{comment}{//byte letter;}
+602         \textcolor{keywordflow}{for} (byte i = 0; i < mfrc522_Charger1.uid.size; i++) 
+603         \{
+604             DEBUGPORT.print(mfrc522_Charger1.uid.uidByte[i] < 0x10 ? \textcolor{stringliteral}{" 0"} : \textcolor{stringliteral}{" "});
+605             DEBUGPORT.print(mfrc522_Charger1.uid.uidByte[i], HEX);
+606             content.concat(String(mfrc522_Charger1.uid.uidByte[i] < 0x10 ? \textcolor{stringliteral}{" 0"} : \textcolor{stringliteral}{" "}));
+607             content.concat(String(mfrc522_Charger1.uid.uidByte[i], HEX));
+608         \}
+609         JsonWriterStatic<512> jsonMessage;
+610 
+611         \textcolor{comment}{//Authorized=testUser(content,Charger);}
+612         UIDtagCharger1=content.substring(1); \textcolor{comment}{//??? why does it start at 1?}
+613 
+614         \{
+615         JsonWriterAutoObject obj(&jsonMessage);
+616 
+617         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"UserId"}, UIDtagCharger1);
+618         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"Charger"}, Charger);
+619         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"StartTime"}, Time.now());
+620         \}
+621         client.publish(\textcolor{stringliteral}{"HANevse/updateUser"}, jsonMessage.getBuffer());
+622     \}
+623     \textcolor{keywordflow}{if}(Charger==2+CHARGEROFFSET)
+624     \{
+625     
+626         \textcolor{comment}{// Look for new cards}
+627         \textcolor{keywordflow}{if} ( ! mfrc522_Charger2.PICC_IsNewCardPresent()) 
+628         \{
+629             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+630         \}
+631         \textcolor{comment}{// Select one of the cards}
+632         \textcolor{keywordflow}{if} ( ! mfrc522_Charger2.PICC_ReadCardSerial()) 
+633         \{
+634             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+635         \}
+636         \textcolor{comment}{//DEBUGPORT.println("Read something on charger2");}
+637         \textcolor{comment}{//Show UID on serial monitor}
+638         DEBUGPORT.print(\textcolor{stringliteral}{"readCard>\(\backslash\)tUID tag on charger2:"});
+639         String content = \textcolor{stringliteral}{""};        
+640         \textcolor{comment}{//byte letter;}
+641         \textcolor{keywordflow}{for} (byte i = 0; i < mfrc522_Charger2.uid.size; i++) 
+642         \{
+643             DEBUGPORT.print(mfrc522_Charger2.uid.uidByte[i] < 0x10 ? \textcolor{stringliteral}{" 0"} : \textcolor{stringliteral}{" "});
+644             DEBUGPORT.print(mfrc522_Charger2.uid.uidByte[i], HEX);
+645             content.concat(String(mfrc522_Charger2.uid.uidByte[i] < 0x10 ? \textcolor{stringliteral}{" 0"} : \textcolor{stringliteral}{" "}));
+646             content.concat(String(mfrc522_Charger2.uid.uidByte[i], HEX));
+647         \}
+648         \textcolor{comment}{//Authorized=testUser(content,Charger);}
+649         UIDtagCharger2=content.substring(1);
+650         JsonWriterStatic<512> jsonMessage;
+651 
+652         \{
+653         JsonWriterAutoObject obj(&jsonMessage);
+654         
+655         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"UserId"}, UIDtagCharger2);
+656         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"Charger"}, Charger);
+657         jsonMessage.insertKeyValue(\textcolor{stringliteral}{"StartTime"}, Time.now());
+658         \}
+659         client.publish(\textcolor{stringliteral}{"HANevse/updateUser"}, jsonMessage.getBuffer());
+660         
+661     \}
+662     DEBUGPORT.println(\textcolor{stringliteral}{""});
+663        
+664     delay(500);
+665     \textcolor{comment}{// This whole function is not interrupted by callback() so Pianswer can't be changed in the meantime}
+666     \textcolor{comment}{//client.publish("HANevse/checkupdateUser", String(Pianswer));  }
+667      \textcolor{keywordflow}{return} Authorized;
+668 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_a37df00aa4f5618514442945d509f5029}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!read\+Serial\+Olimex@{read\+Serial\+Olimex}}
+\index{read\+Serial\+Olimex@{read\+Serial\+Olimex}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{read\+Serial\+Olimex()}
+{\footnotesize\ttfamily int read\+Serial\+Olimex (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Function to read from Olimex serial port and run \doxyref{string\+Parse()}{p.}{_commandparser_8h_a5f5ebe01157b79c2f4383d42a3787168} Returns the last charger socket it received data from. 
+
+Definition at line 271 of file Commandparser.\+h.
+
+
+
+References buff, bufpos, and string\+Parse().
+
+
+
+Referenced by loop().
+
+
+\begin{DoxyCode}
+271                        \{
+272     \textcolor{keywordtype}{int} Charger;
+273      \textcolor{keywordtype}{char} input;
+274   \textcolor{comment}{//if (millis()>(lastUpload+RSTTIMEOUT))\{}
+275    \textcolor{comment}{// softReset();}
+276   \textcolor{comment}{//\}}
+277   \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} k=0;k<10;k++)\{
+278   \textcolor{keywordflow}{if} (Serial1.available()) \{
+279     input = Serial1.read();
+280     \textcolor{comment}{//DEBUGPORT.print(input,HEX);}
+281     \textcolor{comment}{//DEBUGPORT.print(" ");}
+282     \textcolor{keywordflow}{if} (bufpos<BUFSIZE)
+283     \{
+284         buff[bufpos] = input;
+285         bufpos++;    
+286     \}
+287     \textcolor{keywordflow}{else}
+288     \{
+289         bufpos=0;
+290         DEBUGPORT.print(\textcolor{stringliteral}{"loopread>\(\backslash\)tSerial Read Error!"});
+291     \}
+292     \textcolor{keywordflow}{if} (input == \textcolor{charliteral}{'\(\backslash\)n'}) \{ \textcolor{comment}{// we hebben een regel binnen, tot aan \(\backslash\)n   //  0x0A}
+293       Charger = stringParse(buff, bufpos);
+294       \textcolor{comment}{//Maak de buffer leeg}
+295       \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<BUFSIZE; i++)
+296       \{ buff[i] = 0;\}
+297       bufpos = 0;
+298     \}
+299   \}
+300 \}
+301 \textcolor{keywordflow}{return} Charger;
+302 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_a3b8259e6f263afa75396d3f65d194a92}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!reconnect@{reconnect}}
+\index{reconnect@{reconnect}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{reconnect()}
+{\footnotesize\ttfamily void reconnect (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Function to reconnect to \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} server if not connected and subscribe to needed topics. 
+
+
+
+Definition at line 785 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References client.
+
+
+
+Referenced by loop().
+
+
+\begin{DoxyCode}
+785                      \{
+786     \textcolor{keywordflow}{while} (!client.isConnected()) \{
+787         DEBUGPORT.print(\textcolor{stringliteral}{"MQTT>\(\backslash\)tConnecting to MQTT broker..."});
+788         \textcolor{keywordflow}{if} (CHARGEROFFSET==0) \{
+789             \textcolor{keywordflow}{if} (client.connect(\textcolor{stringliteral}{"EV-Photon1"})) \{
+790                 DEBUGPORT.println(\textcolor{stringliteral}{"MQTT>\(\backslash\)tConnected"});
+791                 \textcolor{comment}{//client.subscribe("HANevse/#", client.QOS2);}
+792                 client.subscribe(\textcolor{stringliteral}{"HANevse/energyMeter"}); \textcolor{comment}{//+}
+793                 client.subscribe(\textcolor{stringliteral}{"HANevse/allowUser"});
+794                 
+795                 client.subscribe(\textcolor{stringliteral}{"HANevse/resetOlimex"});
+796                 client.subscribe(\textcolor{stringliteral}{"HANevse/resetPhoton"});
+797                 client.subscribe(\textcolor{stringliteral}{"HANevse/switchTest1"});
+798                 client.subscribe(\textcolor{stringliteral}{"HANevse/maxC1"});
+799                 client.subscribe(\textcolor{stringliteral}{"HANevse/maxC2"});
+800             \}
+801             \textcolor{keywordflow}{else} \{
+802                 DEBUGPORT.println(\textcolor{stringliteral}{"MQTT>\(\backslash\)tConnection failed"});
+803                 DEBUGPORT.println(\textcolor{stringliteral}{"MQTT>\(\backslash\)tRetrying..."});
+804                 delay(10000);
+805             \}
+806         \}
+807         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (CHARGEROFFSET==2)\{
+808             \textcolor{keywordflow}{if} (client.connect(\textcolor{stringliteral}{"EV-Photon2"})) \{
+809                 DEBUGPORT.println(\textcolor{stringliteral}{"MQTT>\(\backslash\)tConnected"});
+810                 \textcolor{comment}{//client.subscribe("HANevse/#", client.QOS2);}
+811                 client.subscribe(\textcolor{stringliteral}{"HANevse/energyMeter"}); \textcolor{comment}{//+}
+812                 client.subscribe(\textcolor{stringliteral}{"HANevse/allowUser"});
+813                 
+814                 client.subscribe(\textcolor{stringliteral}{"HANevse/resetOlimex"});
+815                 client.subscribe(\textcolor{stringliteral}{"HANevse/resetPhoton"});
+816                  client.subscribe(\textcolor{stringliteral}{"HANevse/maxC3"});
+817                  client.subscribe(\textcolor{stringliteral}{"HANevse/maxC4"});
+818                  client.subscribe(\textcolor{stringliteral}{"HANevse/switchTest2"});
+819             \}
+820             \textcolor{keywordflow}{else} \{
+821                 DEBUGPORT.println(\textcolor{stringliteral}{"MQTT>\(\backslash\)tConnection failed"});
+822                 DEBUGPORT.println(\textcolor{stringliteral}{"MQTT>\(\backslash\)tRetrying..."});
+823                 delay(10000);
+824             \}
+825         \}
+826     \}
+827 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_aea090791790fbe9e0f56d324c8eefa80}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!reset\+Olimex@{reset\+Olimex}}
+\index{reset\+Olimex@{reset\+Olimex}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{reset\+Olimex()}
+{\footnotesize\ttfamily int reset\+Olimex (\begin{DoxyParamCaption}\item[{\textbf{ String}}]{input }\end{DoxyParamCaption})}
+
+
+
+Sends reset signal to EV charger controller. 
+
+
+
+Definition at line 151 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+Referenced by callback(), and prog\+Mode\+Olmx().
+
+
+\begin{DoxyCode}
+151                               \{
+152     digitalWrite(RESET_OLIMEX, LOW);
+153     delay(500);
+154     digitalWrite(RESET_OLIMEX, HIGH);
+155     \textcolor{keywordflow}{return} 1;
+156 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_ad62b79073819df234fbe97fd477a2c83}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!reset\+Particle@{reset\+Particle}}
+\index{reset\+Particle@{reset\+Particle}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{reset\+Particle()}
+{\footnotesize\ttfamily int reset\+Particle (\begin{DoxyParamCaption}\item[{\textbf{ String}}]{input }\end{DoxyParamCaption})}
+
+
+
+Resets Photon. 
+
+
+
+Definition at line 164 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+Referenced by callback().
+
+
+\begin{DoxyCode}
+164                                 \{
+165     System.reset();
+166 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!setup@{setup}}
+\index{setup@{setup}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{setup()}
+{\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Inital setup for pin assignments and serial links start. 
+
+
+
+Definition at line 830 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References init\+R\+F\+I\+D().
+
+
+\begin{DoxyCode}
+830              \{
+831     DEBUGPORT.begin(115200); 
+832     Serial1.begin(9600);
+833     \textcolor{comment}{//DEBUGPORT.println(Voltage,5);}
+834     \textcolor{comment}{//DEBUGPORT.println(String(Voltage,5));}
+835     
+836     waitUntil(Particle.connected);
+837     
+838     pinMode(AUTHENTICATION_CAR1, OUTPUT); \textcolor{comment}{//pinMode(D1, OUTPUT); //Charger1\_Authorized}
+839     pinMode(AUTHENTICATION_CAR2, OUTPUT); \textcolor{comment}{//pinMode(D2, OUTPUT); //Charger2\_Authorized}
+840     pinMode(PILOT_FEEDBACK_CAR_1,INPUT);
+841     pinMode(PILOT_FEEDBACK_CAR_2,INPUT);
+842     pinMode(WAKEUP_OLIMEX, OUTPUT);
+843     pinMode(RESET_OLIMEX, OUTPUT);
+844     pinMode(D7, OUTPUT);
+845     
+846     digitalWrite(AUTHENTICATION_CAR1, LOW); \textcolor{comment}{//digitalWrite(D1,LOW);}
+847     digitalWrite(AUTHENTICATION_CAR2, LOW);\textcolor{comment}{//digitalWrite(D2,LOW);}
+848     digitalWrite(WAKEUP_OLIMEX, LOW);
+849     digitalWrite(RESET_OLIMEX, HIGH);
+850     digitalWrite(D7, LOW);
+851     
+852     initRFID(\textcolor{stringliteral}{""}); \textcolor{comment}{//+}
+853     
+854     \textcolor{comment}{//Particle.process();  }
+855     \textcolor{comment}{//resetOlimex("");  }
+856     \textcolor{comment}{//Particle.process(); }
+857 
+858     Particle.function(\textcolor{stringliteral}{"switchTest"},switchTest);
+859     Particle.function(\textcolor{stringliteral}{"maxCurrentC1"},maxCurrentC1);
+860     Particle.function(\textcolor{stringliteral}{"maxCurrentC2"},maxCurrentC2);
+861     Particle.function(\textcolor{stringliteral}{"resetOlimex"},resetOlimex);
+862     Particle.function(\textcolor{stringliteral}{"progModeOlmx"},progModeOlmx);
+863     Particle.function(\textcolor{stringliteral}{"resetParticl"},resetParticle);
+864     \textcolor{comment}{//Particle.function("AuthPinsHigh",AuthPinsHigh);}
+865     \textcolor{comment}{//Particle.function("AuthPinsLow",AuthPinsLow);}
+866     Particle.function(\textcolor{stringliteral}{"WifiSignal"},WifiSignal);
+867     Particle.function(\textcolor{stringliteral}{"initRFID"},initRFID);
+868     Particle.variable(\textcolor{stringliteral}{"currentStr"},currentStr);
+869     Particle.variable(\textcolor{stringliteral}{"ShareVar"},ShareVar);
+870     \textcolor{comment}{//Particle.variable("Current", Current\_Str);}
+871     Particle.variable(\textcolor{stringliteral}{"Topic"}, test);
+872     Particle.process();
+873     
+874     \textcolor{comment}{//RGB.control(true);}
+875     Time.zone(1); \textcolor{comment}{//Dutch time zone}
+876 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_ad474dc90a6ac368a5be5a4e0d333c8b1}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!S\+T\+A\+R\+T\+UP@{S\+T\+A\+R\+T\+UP}}
+\index{S\+T\+A\+R\+T\+UP@{S\+T\+A\+R\+T\+UP}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{S\+T\+A\+R\+T\+U\+P()}
+{\footnotesize\ttfamily S\+T\+A\+R\+T\+UP (\begin{DoxyParamCaption}\item[{Wi\+Fi.}]{select\+AntennaA\+N\+T\+\_\+\+E\+X\+T\+E\+R\+N\+AL }\end{DoxyParamCaption})}
+
+\mbox{\label{2020__photon__code_8cpp_ad0790b5517da1ecc7d9b128f1c5876a5}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!switch\+Test@{switch\+Test}}
+\index{switch\+Test@{switch\+Test}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{switch\+Test()}
+{\footnotesize\ttfamily int switch\+Test (\begin{DoxyParamCaption}\item[{\textbf{ String}}]{value\+String }\end{DoxyParamCaption})}
+
+
+
+Switches between renewable mode (-\/input \char`\"{}true\char`\"{}) and manual setpoint mode. 
+
+
+
+Definition at line 215 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+References max\+Current\+C1(), max\+Current\+C2(), String\+::operator==(), and T\+E\+S\+T\+C\+A\+SE.
+
+
+
+Referenced by callback().
+
+
+\begin{DoxyCode}
+215                                    \{
+216     \textcolor{keywordflow}{if} (valueString == \textcolor{stringliteral}{"true"}) \{
+217         TESTCASE = \textcolor{keyword}{true};
+218         \textcolor{keywordflow}{return} 1;
+219     \}
+220     \textcolor{keywordflow}{if} (valueString == \textcolor{stringliteral}{"false"}) \{
+221         TESTCASE = \textcolor{keyword}{false};
+222         maxCurrentC1(\textcolor{stringliteral}{"32"});
+223         maxCurrentC2(\textcolor{stringliteral}{"32"});
+224         \textcolor{keywordflow}{return} 0;
+225     \}
+226 \}
+\end{DoxyCode}
+\mbox{\label{2020__photon__code_8cpp_adc2cf5dea5b7775d53532f2ccfa10f4c}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Wifi\+Signal@{Wifi\+Signal}}
+\index{Wifi\+Signal@{Wifi\+Signal}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{Wifi\+Signal()}
+{\footnotesize\ttfamily int Wifi\+Signal (\begin{DoxyParamCaption}\item[{\textbf{ String}}]{input }\end{DoxyParamCaption})}
+
+
+
+Return wifi strength. 
+
+
+
+Definition at line 159 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+\begin{DoxyCode}
+159                              \{
+160     \textcolor{keywordflow}{return} WiFi.RSSI();
+161 \}
+\end{DoxyCode}
+
+
+\subsection{Variable Documentation}
+\mbox{\label{2020__photon__code_8cpp_adb31c248dea8d23a099aa0dad886c3a5}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!client@{client}}
+\index{client@{client}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{client}
+{\footnotesize\ttfamily \textbf{ M\+Q\+TT} client(\char`\"{}broker.\+hivemq.\+com\char`\"{}, 1883, M\+Q\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+E\+P\+A\+L\+I\+VE, \textbf{ callback}, 512)}
+
+
+
+\doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} client details; do not set last number to over 512! 
+
+
+
+Referenced by allow\+User\+\_\+callback(), loop(), max\+Current\+C1\+\_\+test(), max\+Current\+C2\+\_\+test(), and reconnect().
+
+\mbox{\label{2020__photon__code_8cpp_a617a47c70795bcff659815ad0efd2266}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!counter@{counter}}
+\index{counter@{counter}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{counter}
+{\footnotesize\ttfamily int counter =1}
+
+
+
+Definition at line 96 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_ac7a5502c6bab0b1b7f3e1bd58546eb1e}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Current@{Current}}
+\index{Current@{Current}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{Current}
+{\footnotesize\ttfamily float Current[2][3]}
+
+
+
+Definition at line 30 of file Commandparser.\+h.
+
+
+
+Referenced by active\+Charger(), and string\+Parse().
+
+\mbox{\label{2020__photon__code_8cpp_acd950d6d9d76947b74823343a5f4a25d}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Current\+List@{Current\+List}}
+\index{Current\+List@{Current\+List}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{Current\+List}
+{\footnotesize\ttfamily float Current\+List[20]}
+
+
+
+Definition at line 36 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{2020__photon__code_8cpp_a3cc9a3f799bf2e4bf1b63ee7367911cb}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!current\+Str@{current\+Str}}
+\index{current\+Str@{current\+Str}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{current\+Str}
+{\footnotesize\ttfamily \textbf{ String} current\+Str =\char`\"{}\char`\"{}}
+
+
+
+Definition at line 135 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_aee63a73e17fd417c7562f2e5d7c81cb8}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Energy@{Energy}}
+\index{Energy@{Energy}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{Energy}
+{\footnotesize\ttfamily float Energy[2]}
+
+
+
+Definition at line 34 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{2020__photon__code_8cpp_ad8ee7ca82dcb110d2d5e32d73116b001}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Frequency@{Frequency}}
+\index{Frequency@{Frequency}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{Frequency}
+{\footnotesize\ttfamily float Frequency[2]}
+
+
+
+Definition at line 35 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{2020__photon__code_8cpp_a9e450e39c6f4d83b30ab1c7baf55b308}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!handled\+Charger@{handled\+Charger}}
+\index{handled\+Charger@{handled\+Charger}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{handled\+Charger}
+{\footnotesize\ttfamily bool handled\+Charger =0}
+
+
+
+Holds last handled socket (0 for first socket) 
+
+
+
+Definition at line 102 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+Referenced by loop().
+
+\mbox{\label{2020__photon__code_8cpp_ad9f162f714be8b69815d0a235c95c099}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Latest\+Start\+Time@{Latest\+Start\+Time}}
+\index{Latest\+Start\+Time@{Latest\+Start\+Time}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{Latest\+Start\+Time}
+{\footnotesize\ttfamily unsigned long Latest\+Start\+Time[2] =\{0,0\}}
+
+
+
+Holds latest start of new charge if charger is in use. 
+
+
+
+Definition at line 100 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+Referenced by loop().
+
+\mbox{\label{2020__photon__code_8cpp_a97cf7b62d84c77183146053465157cdc}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Line\+Voltage@{Line\+Voltage}}
+\index{Line\+Voltage@{Line\+Voltage}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{Line\+Voltage}
+{\footnotesize\ttfamily float Line\+Voltage[2][3]}
+
+
+
+Definition at line 33 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{2020__photon__code_8cpp_a1777032818666232368a054cc7cc76f8}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!mfrc522\+\_\+\+Charger1@{mfrc522\+\_\+\+Charger1}}
+\index{mfrc522\+\_\+\+Charger1@{mfrc522\+\_\+\+Charger1}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{mfrc522\+\_\+\+Charger1}
+{\footnotesize\ttfamily \textbf{ M\+F\+R\+C522} mfrc522\+\_\+\+Charger1(\textbf{ S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R1}, \textbf{ R\+S\+T\+\_\+\+P\+IN})}
+
+\mbox{\label{2020__photon__code_8cpp_a3dfbf949915a0daa4ff676106f605085}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!mfrc522\+\_\+\+Charger2@{mfrc522\+\_\+\+Charger2}}
+\index{mfrc522\+\_\+\+Charger2@{mfrc522\+\_\+\+Charger2}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{mfrc522\+\_\+\+Charger2}
+{\footnotesize\ttfamily \textbf{ M\+F\+R\+C522} mfrc522\+\_\+\+Charger2(\textbf{ S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R2}, \textbf{ R\+S\+T\+\_\+\+P\+IN})}
+
+\mbox{\label{2020__photon__code_8cpp_a4e589466e8ba636e450e90122ed59185}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!next\+Time@{next\+Time}}
+\index{next\+Time@{next\+Time}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{next\+Time}
+{\footnotesize\ttfamily unsigned int next\+Time[2] = \{30000,30000\}}
+
+
+
+Next timestamp to publish measurements in ms. 
+
+
+
+Definition at line 137 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_ab804d1dfcf90d1a4adf1b6417583e014}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!number\+Of\+Zero\+Readings@{number\+Of\+Zero\+Readings}}
+\index{number\+Of\+Zero\+Readings@{number\+Of\+Zero\+Readings}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{number\+Of\+Zero\+Readings}
+{\footnotesize\ttfamily int number\+Of\+Zero\+Readings[2]}
+
+
+
+Definition at line 37 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{2020__photon__code_8cpp_a5455bcadf3414330eeedd39d97e8aee2}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Phase\+Voltage@{Phase\+Voltage}}
+\index{Phase\+Voltage@{Phase\+Voltage}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{Phase\+Voltage}
+{\footnotesize\ttfamily float Phase\+Voltage[2][3]}
+
+
+
+Definition at line 32 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{2020__photon__code_8cpp_a0cb29d1e3bc87d74d13737e494738243}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Pianswer@{Pianswer}}
+\index{Pianswer@{Pianswer}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{Pianswer}
+{\footnotesize\ttfamily ushort Pianswer =0}
+
+
+
+var that holds answer from Pi but is unused now 
+
+
+
+Definition at line 110 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+Referenced by allow\+User\+\_\+callback(), and read\+R\+F\+I\+D\+Card().
+
+\mbox{\label{2020__photon__code_8cpp_ae0a1c20c390eb592307c92aa588bd232}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Power@{Power}}
+\index{Power@{Power}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{Power}
+{\footnotesize\ttfamily float Power[2][3]}
+
+
+
+Definition at line 31 of file Commandparser.\+h.
+
+
+
+Referenced by string\+Parse().
+
+\mbox{\label{2020__photon__code_8cpp_abc87df2ac47aa12b30692fd38255d367}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Share\+Var@{Share\+Var}}
+\index{Share\+Var@{Share\+Var}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{Share\+Var}
+{\footnotesize\ttfamily \textbf{ String} Share\+Var}
+
+
+
+Definition at line 103 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+\mbox{\label{2020__photon__code_8cpp_a3f4173fd4828d1d948935a30e1841263}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!test@{test}}
+\index{test@{test}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{test}
+{\footnotesize\ttfamily \textbf{ String} test = \char`\"{}0\char`\"{}}
+
+
+
+Definition at line 93 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+Referenced by callback().
+
+\mbox{\label{2020__photon__code_8cpp_a570e0c09591b015ae3748de87e467b9f}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!T\+E\+S\+T\+C\+A\+SE@{T\+E\+S\+T\+C\+A\+SE}}
+\index{T\+E\+S\+T\+C\+A\+SE@{T\+E\+S\+T\+C\+A\+SE}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{T\+E\+S\+T\+C\+A\+SE}
+{\footnotesize\ttfamily bool T\+E\+S\+T\+C\+A\+SE = false}
+
+
+
+var that holds the charging mode (T\+R\+UE = renewable) 
+
+
+
+Definition at line 107 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+Referenced by callback(), max\+Current\+C1(), max\+Current\+C1\+\_\+test(), max\+Current\+C2(), max\+Current\+C2\+\_\+test(), and switch\+Test().
+
+\mbox{\label{2020__photon__code_8cpp_ad7696488afa62029edaf7487c0c32979}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!U\+I\+Dtag\+Charger1@{U\+I\+Dtag\+Charger1}}
+\index{U\+I\+Dtag\+Charger1@{U\+I\+Dtag\+Charger1}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{U\+I\+Dtag\+Charger1}
+{\footnotesize\ttfamily \textbf{ String} U\+I\+Dtag\+Charger1 =\char`\"{}No ID\char`\"{}}
+
+
+
+var to hold swiped R\+F\+ID tag at first socket 
+
+
+
+Definition at line 51 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+Referenced by allow\+User\+\_\+callback(), get\+User\+Id\+At\+Socket(), loop(), and read\+R\+F\+I\+D\+Card().
+
+\mbox{\label{2020__photon__code_8cpp_ae42c45149b41b8f8cee744bb45a607ea}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!U\+I\+Dtag\+Charger2@{U\+I\+Dtag\+Charger2}}
+\index{U\+I\+Dtag\+Charger2@{U\+I\+Dtag\+Charger2}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{U\+I\+Dtag\+Charger2}
+{\footnotesize\ttfamily \textbf{ String} U\+I\+Dtag\+Charger2 =\char`\"{}No ID\char`\"{}}
+
+
+
+var to hold swiped R\+F\+ID tag at second socket 
+
+
+
+Definition at line 53 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+Referenced by allow\+User\+\_\+callback(), get\+User\+Id\+At\+Socket(), loop(), and read\+R\+F\+I\+D\+Card().
+

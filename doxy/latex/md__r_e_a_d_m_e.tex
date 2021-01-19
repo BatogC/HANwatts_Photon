@@ -1,0 +1,36 @@
+The Particle Photon subsystem software named 2020\+\_\+photon\+\_\+code\+: The entire \textquotesingle{}2020\+\_\+photon\+\_\+code\textquotesingle{} folder is a Visual Studio project that uses the Particle Workbench and dependencies to program the Photons (remotely). \subsection*{Welcome to the project!}
+
+\paragraph*{{\ttfamily /src} folder\+:}
+
+This is the source folder that contains the firmware files for the project. It should {\itshape not} be renamed. Anything that is in this folder when you compile your project will be sent to the Particle compile service and compiled into a firmware binary for the Particle device that you have targeted. The project is set up for Photon v2.\+0.\+1.
+
+The main files are included in the {\ttfamily src} folder. The dependencies are specified in the {\ttfamily project.\+properties} file referenced below.
+
+\paragraph*{{\ttfamily .ino} file\+:}
+
+This file is the firmware that will run as the primary application on the Particle device. It contains a {\ttfamily \doxyref{setup()}{p.}{1-parser-_json_parser_generator_r_k_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} and {\ttfamily \doxyref{loop()}{p.}{1-parser-_json_parser_generator_r_k_8cpp_afe461d27b9c48d5921c00d521181f12f}} function, and is written in C++.
+
+\paragraph*{{\ttfamily project.\+properties} file\+:}
+
+This is the file that specifies the name and version number of the libraries that the project depends on. Dependencies are added automatically to the {\ttfamily project.\+properties} file when you add a library to a project using the {\ttfamily particle library add} command in the C\+LI or add a library in the Desktop I\+DE.
+
+\subsection*{Adding additional files to the project}
+
+\paragraph*{Projects with multiple sources}
+
+If you would like add additional files to your application, they should be added to the {\ttfamily /src} folder. All files in the {\ttfamily /src} folder will be sent to the Particle Cloud to produce a compiled binary.
+
+\paragraph*{Projects with external libraries}
+
+If the project includes a library that has not been registered in the Particle libraries system, you should create a new folder named {\ttfamily /lib/$<$libraryname$>$/src} under {\ttfamily /$<$project dir$>$} and add the {\ttfamily .h}, {\ttfamily .cpp} \& {\ttfamily library.\+properties} files for your library there.
+
+\subsection*{Compiling the project}
+
+When you\textquotesingle{}re ready to compile the project, make sure you have the correct Particle device target selected and run {\ttfamily particle compile $<$platform$>$} in the C\+LI or click the Compile button in the Desktop I\+DE. The following files in the project folder will be sent to the compile service\+:
+
+
+\begin{DoxyItemize}
+\item Everything in the {\ttfamily /src} folder, including your {\ttfamily .ino} application file
+\item The {\ttfamily project.\+properties} file for your project
+\item Any libraries stored under {\ttfamily lib/$<$libraryname$>$/src} 
+\end{DoxyItemize}

@@ -1,0 +1,350 @@
+There are a number of J\+S\+ON parsers and generators for Particle products including the popular {\tt Spark\+Json} library and {\tt J\+S\+M\+N\+Spark}.
+
+I created yet another library because I wanted something lightweight. Spark\+Json creates piles of objects that are copies of the original data during parsing. {\tt J\+S\+MN} is very lightweight, but is kind of a pain to use.
+
+What I did was wrap J\+S\+MN with an easier to use C++ A\+PI, along with adding easy value accessors.
+
+I also added a J\+S\+ON generator that\textquotesingle{}s nearly as efficient as using sprintf, but much easier to use. It takes care of escaping quotes and special characters, and converts U\+T\+F-\/8 to J\+S\+ON U\+T\+F-\/16 entities.
+
+The parser and generator are separated internally so if you only need one or the other the linker will remove the unnecessary code automatically to save space.
+
+The {\tt full A\+PI documentation can be found here}.
+
+\subsection*{J\+S\+ON Parser}
+
+The parser can be used in many situations, but it\textquotesingle{}s particularly well-\/suited for handing responses from webhooks, including multi-\/part responses.
+
+The parser can be used in two different ways\+: static allocation, where almost all of the memory location is done in advance, or dynamically.
+
+To do it dynamically, just construct the {\tt Json\+Parser} object as a global or local variable\+:
+
+
+\begin{DoxyCode}
+JsonParser parser;
+\end{DoxyCode}
+
+
+To do it statically, you need to guess the maximum size of the data you want to receive and the maximum number of tokens it will have. Each object is one token, plus two tokens for each key/value pair. Each array is one token, plus one token for each value in the array.
+
+This {\tt Json\+Parser\+Static} example creates a static parser to parse up to 1024 bytes of data and 50 tokens\+:
+
+
+\begin{DoxyCode}
+JsonParserStatic<1024, 50> parser;
+\end{DoxyCode}
+
+
+You then typically add the data to parse using the {\tt add\+Data} or {\tt add\+String} method. If you\textquotesingle{}re getting the data from a subscribe handler, you\textquotesingle{}ll probably use add\+String.
+
+
+\begin{DoxyCode}
+parser.addString(data);
+\end{DoxyCode}
+
+
+If you have a pointer and length, the add\+Data method can be used instead.
+
+Then, once all of the data has been added, call {\tt parse}. This is handy for webhooks where you may get a multipart response. Example 3 demonstrates this\+:
+
+
+\begin{DoxyCode}
+void subscriptionHandler(const char *event, const char *data) \{
+    int responseIndex = 0;
+
+    const char *slashOffset = strrchr(event, '/');
+    if (slashOffset) \{
+        responseIndex = atoi(slashOffset + 1);
+    \}
+
+    if (responseIndex == 0) \{
+        jsonParser.clear();
+    \}
+    jsonParser.addString(data);
+
+    if (jsonParser.parse()) \{
+        // Looks valid (we received all parts)
+
+        // This printing thing is just for testing purposes, you should use the commands to
+        // process data
+        printJson(jsonParser);
+    \}
+\}
+\end{DoxyCode}
+
+
+Say you have this object\+:
+
+
+\begin{DoxyCode}
+\{
+  "t1":"abc",
+  "t2":1234,
+  "t3":1234.5,
+  "t4":true,
+  "t5":false,
+  "t6":null,
+  "t7":"\(\backslash\)"quoted\(\backslash\)""
+\}
+\end{DoxyCode}
+
+
+You could read the value of t1 by using {\tt get\+Outer\+Value\+By\+Key} and this code\+:
+
+
+\begin{DoxyCode}
+String strValue;
+parser1.getOuterValueByKey("t1", strValue);
+\end{DoxyCode}
+
+
+This also works for other data types\+:
+
+
+\begin{DoxyCode}
+int intValue;
+parser1.getOuterValueByKey("t2", intValue)
+
+float floatValue;
+parser1.getOuterValueByKey("t3", floatValue);
+
+bool boolValue;
+parser1.getOuterValueByKey("t4", boolValue);
+\end{DoxyCode}
+
+
+There\textquotesingle{}s also a fluent-\/style A\+PI that can make reading complex J\+S\+ON easier. For example, given this fragment of J\+S\+ON\+:
+
+
+\begin{DoxyCode}
+\{
+    "response": \{
+        "version": "0.1",
+        "termsofService": "http://www.wunderground.com/weather/api/d/terms.html",
+        "features": \{
+            "forecast": 1
+        \}
+    \},
+    "forecast": \{
+        "txt\_forecast": \{
+            "date": "12:25 PM EST",
+            "forecastday": \{
+                "period": 7,
+                "icon": "nt\_partlycloudy",
+                "icon\_url": "http://icons.wxug.com/i/c/k/nt\_partlycloudy.gif",
+                "title": "Saturday Night",
+                "fcttext": "Partly cloudy early with increasing clouds overnight. Low 29F. Winds NW at 15
+       to 25 mph.",
+                "fcttext\_metric": "Partly cloudy early with increasing clouds overnight. Low -2C. Winds NW
+       at 25 to 40 km/h.",
+                "pop": "20"
+            \}
+        \},
+\end{DoxyCode}
+
+
+
+\begin{DoxyCode}
+String s = parser.getReference().key("response").key("version").valueString();
+// s == "0.1"
+
+s = parser.getReference().key("forecast").key("txt\_forecast").key("date").valueString();
+// s = "12:25 PM EST"
+
+int value =
+       parser.getReference().key("forecast").key("txt\_forecast").key("forecastday").key("period").valueInt();
+// value == 7
+\end{DoxyCode}
+
+
+If you have a complicated J\+S\+ON file to decode, using the {\tt J\+S\+ON Parser Tool} makes it easy. You paste in your J\+S\+ON and it formats it nicely. Click on a row and will generate the fluent accessor to get that value!
+
+\subsection*{J\+S\+ON Generator}
+
+The J\+S\+ON Generator is used to build valid J\+S\+ON strings. While you can build J\+S\+ON using sprintf, the J\+S\+ON generator is able to double-\/quote escape strings, and escape double quotes within strings. It can also generate correct J\+S\+ON unicode characters.
+
+The most common use is to construct a static buffer to hold the J\+S\+ON data for Particle.\+publish. Since this data is limited to 256 bytes, this is a reasonable approach using {\tt Json\+Writer\+Static}\+:
+
+
+\begin{DoxyCode}
+JsonWriterStatic<256> jw;
+\end{DoxyCode}
+
+
+You can also dynamically allocate a buffer using the plain {\tt Json\+Writer}.
+
+The \doxyref{Json\+Writer}{p.}{class_json_writer} handles nested objects and arrays, but does so without creating temporary copies of the objects. Because of this, it\textquotesingle{}s necessary to use start\+Object(), start\+Array(), and finish\+Object\+Or\+Array() so the objects are balanced properly.
+
+To make this easier, the {\tt Json\+Writer\+Auto\+Object} can be instantiated on the stack. When the object goes out of scope, it will automatically close the object. You use it like this\+:
+
+
+\begin{DoxyCode}
+\{
+    JsonWriterAutoObject obj(&jw);
+
+    // Add various types of data
+    jw.insertKeyValue("a", true);
+    jw.insertKeyValue("b", 1234);
+    jw.insertKeyValue("c", "test");
+\}
+\end{DoxyCode}
+
+
+This will output the J\+S\+ON data\+:
+
+
+\begin{DoxyCode}
+\{\(\backslash\)"a\(\backslash\)":true,\(\backslash\)"b\(\backslash\)":1234,\(\backslash\)"c\(\backslash\)":\(\backslash\)"test\(\backslash\)"\}
+\end{DoxyCode}
+
+
+If you are sending float or double values you may want to limit the number of decimal places to send. This is done using {\tt set\+Float\+Places}.
+
+\subsection*{\doxyref{Json\+Modifier}{p.}{class_json_modifier}}
+
+The \doxyref{Json\+Modifier}{p.}{class_json_modifier} class (added in version 0.\+1.\+0) makes it possible to modify an existing object that has been parsed with \doxyref{Json\+Parser}{p.}{class_json_parser}.
+
+You will typically process a J\+S\+ON object using a {\ttfamily \doxyref{Json\+Parser}{p.}{class_json_parser}} object, {\ttfamily add\+String()} or {\ttfamily add\+Data()} method, then {\ttfamily parse()}.
+
+Assuming your {\ttfamily \doxyref{Json\+Parser}{p.}{class_json_parser}} is in the variable {\ttfamily jp} you then construct a temporary modifier object on the stack like this\+:
+
+
+\begin{DoxyCode}
+JsonModifier mod(jp);
+\end{DoxyCode}
+
+
+The most common thing to do is have a J\+S\+ON object and you want to update the value, or insert the value if it does not exist\+:
+
+
+\begin{DoxyCode}
+mod.insertOrUpdateKeyValue(jp.getOuterObject(), "a", (int)1);
+\end{DoxyCode}
+
+
+If the input J\+S\+ON was empty, it would then be\+:
+
+
+\begin{DoxyCode}
+\{"a":1\}
+\end{DoxyCode}
+
+
+You can add int, long, float, double, bool, and const char $\ast$ objects this way.
+
+
+\begin{DoxyCode}
+mod.insertOrUpdateKeyValue(jp.getOuterObject(), "b", "testing");
+\end{DoxyCode}
+
+
+This would change the object to\+:
+
+
+\begin{DoxyCode}
+\{"a":1,"b":"testing"\}
+\end{DoxyCode}
+
+
+Updating an object will remove it from its current location and add it at the end of the object.
+
+Another common function is {\ttfamily append\+Array\+Value()} which appends to an array.
+
+You can also use {\ttfamily remove\+Key\+Value()} and {\ttfamily remove\+Array\+Index()} to remove keys or array entries.
+
+\subsection*{Examples}
+
+There are three Particle devices examples.
+
+\subsubsection*{1 -\/ Parser}
+
+The parser example is a standalone test of parsing some J\+S\+ON data. The data is built into the code, so just just run it and monitor the serial output to make sure the test passes.
+
+It also demonstrates how to read simple values out of the J\+S\+ON data.
+
+\subsubsection*{2 -\/ Generator}
+
+The generator example is a standalone test of generating some J\+S\+ON data. The data is built into the code, so just just run it and monitor the serial output to make sure the test passes.
+
+It also demonstrates how to write J\+S\+ON data.
+
+\subsubsection*{3 -\/ Subscription}
+
+This example creates a subscription on the event json\+Parser\+Test, so you can send it J\+S\+ON data, and it will parse and print it to the debuggging serial. For example, if you published these three events\+:
+
+
+\begin{DoxyCode}
+particle publish jsonParserTest '\{"a":1234\}' --private
+particle publish jsonParserTest '\{"a":1234,"b":"test"\}' --private
+particle publish jsonParserTest '\{"a":1234,"b":"test":"c":[1,2,3]\}' --private
+\end{DoxyCode}
+
+
+You\textquotesingle{}d get these three objects printed to debugging serial.
+
+
+\begin{DoxyCode}
+\{
+  "a":1234
+\}
+\{
+  "a":1234,
+  "b":"test"
+\}
+\{
+  "a":1234,
+  "b":"test",
+  "c":  [
+    1,
+    2,
+    3
+  ]
+
+\}
+\end{DoxyCode}
+
+
+It also demonstrates how to handle multi-\/part webhook responses.
+
+\subsection*{Test code}
+
+The github repository also has code in the test directory. It can run an automated test of several sample data files to verify operation. It\textquotesingle{}s run by doing something like\+:
+
+
+\begin{DoxyCode}
+cd test
+make
+\end{DoxyCode}
+
+
+On Linux only, if you have valgrind installed, it can also do a build with valgrind checking to check for memory leaks and buffer overruns. It\textquotesingle{}s run by doing\+:
+
+
+\begin{DoxyCode}
+cd test
+make check
+\end{DoxyCode}
+
+
+The test code is also a reference of various ways you can call the A\+PI.
+
+\subsection*{Version History}
+
+\subsubsection*{0.\+1.\+3 (2020-\/09-\/22)}
+
+
+\begin{DoxyItemize}
+\item Added \doxyref{Json\+Writer}{p.}{class_json_writer} methods insert\+Key\+Array() and insert\+Key\+Vector() to make it easier to add arrays.
+\item Added \doxyref{Json\+Writer}{p.}{class_json_writer} methods insert\+Array() and insert\+Vector() to make it easier to add arrays.
+\end{DoxyItemize}
+
+\subsubsection*{0.\+1.\+1 (2020-\/05-\/14)}
+
+Fixed a bug where calling parse() on an empty buffer returns true. It should return false. See issue \#7.
+
+\subsubsection*{0.\+1.\+0 (2019-\/09-\/18)}
+
+Added support for \doxyref{Json\+Modifier}{p.}{class_json_modifier}, a class to modify an existing J\+S\+ON object in place, without making a copy of it.
+
+\subsubsection*{0.\+0.\+7 (2019-\/08-\/30)}
+
+Fixed a bug in the 3-\/subscription example. The check for the part number should use strrchr, not strchr, because it needs to find the last slash before the part number for webhook multi-\/part responses. 

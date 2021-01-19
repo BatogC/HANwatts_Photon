@@ -1,0 +1,1518 @@
+\section{Print Class Reference}
+\label{class_print}\index{Print@{Print}}
+
+
+Class for printing to a stream or file.  
+
+
+
+
+{\ttfamily \#include $<$spark\+\_\+wiring\+\_\+print.\+h$>$}
+
+
+
+Inheritance diagram for Print\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{class_print__inherit__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Print} ()
+\item 
+virtual \textbf{ $\sim$\+Print} ()
+\item 
+int \textbf{ get\+Write\+Error} ()
+\item 
+void \textbf{ clear\+Write\+Error} ()
+\item 
+virtual size\+\_\+t \textbf{ write} (uint8\+\_\+t)=0
+\item 
+size\+\_\+t \textbf{ write} (const char $\ast$str)
+\item 
+virtual size\+\_\+t \textbf{ write} (const uint8\+\_\+t $\ast$buffer, size\+\_\+t size)
+\item 
+size\+\_\+t \textbf{ print} (const char[$\,$])
+\item 
+size\+\_\+t \textbf{ print} (char)
+\item 
+size\+\_\+t \textbf{ print} (unsigned char, int=\textbf{ D\+EC})
+\item 
+size\+\_\+t \textbf{ print} (int, int=\textbf{ D\+EC})
+\item 
+size\+\_\+t \textbf{ print} (unsigned int, int=\textbf{ D\+EC})
+\item 
+size\+\_\+t \textbf{ print} (long, int=\textbf{ D\+EC})
+\item 
+size\+\_\+t \textbf{ print} (unsigned long, int=\textbf{ D\+EC})
+\item 
+size\+\_\+t \textbf{ print} (double, int=2)
+\item 
+size\+\_\+t \textbf{ print} (const \textbf{ Printable} \&)
+\item 
+size\+\_\+t \textbf{ println} (const char[$\,$])
+\item 
+size\+\_\+t \textbf{ println} (char)
+\item 
+size\+\_\+t \textbf{ println} (unsigned char, int=\textbf{ D\+EC})
+\item 
+size\+\_\+t \textbf{ println} (int, int=\textbf{ D\+EC})
+\item 
+size\+\_\+t \textbf{ println} (unsigned int, int=\textbf{ D\+EC})
+\item 
+size\+\_\+t \textbf{ println} (long, int=\textbf{ D\+EC})
+\item 
+size\+\_\+t \textbf{ println} (unsigned long, int=\textbf{ D\+EC})
+\item 
+size\+\_\+t \textbf{ println} (double, int=2)
+\item 
+size\+\_\+t \textbf{ println} (const \textbf{ Printable} \&)
+\item 
+size\+\_\+t \textbf{ println} (void)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\size\+\_\+t \textbf{ printf} (const char $\ast$format, Args... args)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\size\+\_\+t \textbf{ printlnf} (const char $\ast$format, Args... args)
+\item 
+\textbf{ Print} ()
+\item 
+virtual \textbf{ $\sim$\+Print} ()
+\item 
+int \textbf{ get\+Write\+Error} ()
+\begin{DoxyCompactList}\small\item\em Return the last error code. 0 means no error. \end{DoxyCompactList}\item 
+void \textbf{ clear\+Write\+Error} ()
+\begin{DoxyCompactList}\small\item\em Clear the last error code to 0. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \textbf{ write} (uint8\+\_\+t c)=0
+\begin{DoxyCompactList}\small\item\em Write a single byte to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ write} (const char $\ast$str)
+\begin{DoxyCompactList}\small\item\em Write a null-\/terminated c-\/string the stream or file. \end{DoxyCompactList}\item 
+virtual size\+\_\+t \textbf{ write} (const uint8\+\_\+t $\ast$buffer, size\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Write a bytes specified by a buffer and length to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ print} (const char[$\,$])
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} a null-\/terminated array of char variables (a c-\/string) to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ print} (char)
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} a single character to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ print} (unsigned char value, int base=\textbf{ D\+EC})
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} an unsigned char (byte value, 8 bits) in the specified base to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ print} (int value, int base=\textbf{ D\+EC})
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} an int (32 bit integer) the specified base to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ print} (unsigned int value, int base=\textbf{ D\+EC})
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} an unsigned int (32 bit unsigned integer) the specified base to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ print} (long value, int base=\textbf{ D\+EC})
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} a long (32 bit integer) the specified base to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ print} (unsigned long value, int base=\textbf{ D\+EC})
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} a unsigned long (32 bit unsigned integer) the specified base to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ print} (double value, int dec=2)
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} a double floating point value to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ print} (const \textbf{ Printable} \&)
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} an object derived from \doxyref{Printable}{p.}{class_printable} to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ print} (const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$)
+\item 
+size\+\_\+t \textbf{ println} (const char[$\,$])
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} a null-\/terminated array of char variables (a c-\/string) plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ println} (char value)
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} a single character plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ println} (unsigned char value, int base=\textbf{ D\+EC})
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} an unsigned char (byte value. 8 bits) in the specified base plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ println} (int value, int base=\textbf{ D\+EC})
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} an int (32 bit integer) the specified base to plus a C\+R\+LF end-\/of-\/line terminator the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ println} (unsigned int value, int base=\textbf{ D\+EC})
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} an unsigned int (32 bit unsigned integer) the specified base plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ println} (long value, int base=\textbf{ D\+EC})
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} a long (32 bit signed integer) the specified base plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ println} (unsigned long value, int base=\textbf{ D\+EC})
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} a unsigned long (32 bit unsigned integer) the specified base plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ println} (double value, int dec=2)
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} a double floating point value plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ println} (const \textbf{ Printable} \&)
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} an object derived from \doxyref{Printable}{p.}{class_printable} plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ println} (void)
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} a C\+R\+LF end-\/of-\/line terminator to the stream or file. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ println} (const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$)
+\item 
+{\footnotesize template$<$typename... Args$>$ }\\size\+\_\+t \textbf{ printf} (const char $\ast$format, Args... args)
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} using printf-\/style formatting to the stream or file. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename... Args$>$ }\\size\+\_\+t \textbf{ printlnf} (const char $\ast$format, Args... args)
+\begin{DoxyCompactList}\small\item\em \doxyref{Print}{p.}{class_print} using printf-\/style formatting plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \textbf{ set\+Write\+Error} (int err=1)
+\item 
+size\+\_\+t \textbf{ printf\+\_\+impl} (bool newline, const char $\ast$format,...)
+\item 
+void \textbf{ set\+Write\+Error} (int err=1)
+\item 
+size\+\_\+t \textbf{ printf\+\_\+impl} (bool newline, const char $\ast$format,...)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \textbf{ print\+Number} (unsigned long, uint8\+\_\+t)
+\item 
+size\+\_\+t \textbf{ print\+Float} (double, uint8\+\_\+t)
+\item 
+size\+\_\+t \textbf{ print\+Number} (unsigned long, uint8\+\_\+t)
+\item 
+size\+\_\+t \textbf{ print\+Float} (double, uint8\+\_\+t)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+int \textbf{ write\+\_\+error}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class for printing to a stream or file. 
+
+Various classes include serial, T\+CP network streams, and files inherit from this and can use these methods. 
+
+Definition at line 44 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_print_a1b9fe938883bb7b4bce8fba012dab112}} 
+\index{Print@{Print}!Print@{Print}}
+\index{Print@{Print}!Print@{Print}}
+\subsubsection{Print()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Print\+::\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 55 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+
+References write\+\_\+error.
+
+
+\begin{DoxyCode}
+55 : write_error(0) \{\}
+\end{DoxyCode}
+\mbox{\label{class_print_abc6ea5fd3d477d9465a57421ccd00ba4}} 
+\index{Print@{Print}!````~Print@{$\sim$\+Print}}
+\index{````~Print@{$\sim$\+Print}!Print@{Print}}
+\subsubsection{$\sim$\+Print()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual Print\+::$\sim$\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 56 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+\begin{DoxyCode}
+56 \{\}
+\end{DoxyCode}
+\mbox{\label{class_print_a1b9fe938883bb7b4bce8fba012dab112}} 
+\index{Print@{Print}!Print@{Print}}
+\index{Print@{Print}!Print@{Print}}
+\subsubsection{Print()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Print\+::\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 64 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+\begin{DoxyCode}
+64 : write_error(0) \{\}
+\end{DoxyCode}
+\mbox{\label{class_print_abc6ea5fd3d477d9465a57421ccd00ba4}} 
+\index{Print@{Print}!````~Print@{$\sim$\+Print}}
+\index{````~Print@{$\sim$\+Print}!Print@{Print}}
+\subsubsection{$\sim$\+Print()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual Print\+::$\sim$\+Print (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
+
+
+Definition at line 66 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+\begin{DoxyCode}
+66 \{\}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_print_aec9ecf84cc6d9087a650def3cefc459e}} 
+\index{Print@{Print}!clear\+Write\+Error@{clear\+Write\+Error}}
+\index{clear\+Write\+Error@{clear\+Write\+Error}!Print@{Print}}
+\subsubsection{clear\+Write\+Error()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Print\+::clear\+Write\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 59 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+
+References set\+Write\+Error().
+
+
+\begin{DoxyCode}
+59 \{ setWriteError(0); \}
+\end{DoxyCode}
+\mbox{\label{class_print_aec9ecf84cc6d9087a650def3cefc459e}} 
+\index{Print@{Print}!clear\+Write\+Error@{clear\+Write\+Error}}
+\index{clear\+Write\+Error@{clear\+Write\+Error}!Print@{Print}}
+\subsubsection{clear\+Write\+Error()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Print\+::clear\+Write\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Clear the last error code to 0. 
+
+
+
+Definition at line 76 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+\begin{DoxyCode}
+76 \{ setWriteError(0); \}
+\end{DoxyCode}
+\mbox{\label{class_print_a88a4a829fb5d589efb43955ad0cbddcc}} 
+\index{Print@{Print}!get\+Write\+Error@{get\+Write\+Error}}
+\index{get\+Write\+Error@{get\+Write\+Error}!Print@{Print}}
+\subsubsection{get\+Write\+Error()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily int Print\+::get\+Write\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 58 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+
+References write\+\_\+error.
+
+
+\begin{DoxyCode}
+58 \{ \textcolor{keywordflow}{return} write_error; \}
+\end{DoxyCode}
+\mbox{\label{class_print_a88a4a829fb5d589efb43955ad0cbddcc}} 
+\index{Print@{Print}!get\+Write\+Error@{get\+Write\+Error}}
+\index{get\+Write\+Error@{get\+Write\+Error}!Print@{Print}}
+\subsubsection{get\+Write\+Error()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily int Print\+::get\+Write\+Error (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the last error code. 0 means no error. 
+
+
+
+Definition at line 71 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+\begin{DoxyCode}
+71 \{ \textcolor{keywordflow}{return} write_error; \}
+\end{DoxyCode}
+\mbox{\label{class_print_acfe80773011eb17dfb52c2fba517a093}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [1/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{const char}]{str[$\,$] }\end{DoxyParamCaption})}
+
+
+
+Definition at line 53 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References write().
+
+
+
+Referenced by printf\+\_\+impl(), print\+Float(), and println().
+
+
+\begin{DoxyCode}
+54 \{
+55   \textcolor{keywordflow}{return} write(str);
+56 \}
+\end{DoxyCode}
+\mbox{\label{class_print_a1e411d07a8ffec5faf7ce485bac0f029}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [2/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 58 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References write().
+
+
+
+Referenced by print(), print\+Float(), and println().
+
+
+\begin{DoxyCode}
+59 \{
+60   \textcolor{keywordflow}{return} write(c);
+61 \}
+\end{DoxyCode}
+\mbox{\label{class_print_a97bd44df9222fa4a51a1266fab8d3bc1}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [3/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{unsigned char}]{b,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 63 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print().
+
+
+
+Referenced by println().
+
+
+\begin{DoxyCode}
+64 \{
+65   \textcolor{keywordflow}{return} print((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}) b, base);
+66 \}
+\end{DoxyCode}
+\mbox{\label{class_print_a32cb3cf32d701c797b2b2d1080052dfe}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [4/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{int}]{n,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 68 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print().
+
+
+
+Referenced by print\+Float(), and println().
+
+
+\begin{DoxyCode}
+69 \{
+70   \textcolor{keywordflow}{return} print((\textcolor{keywordtype}{long}) n, base);
+71 \}
+\end{DoxyCode}
+\mbox{\label{class_print_a87275de35583868a370f43ce1c887750}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [5/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{unsigned int}]{n,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 73 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print().
+
+
+
+Referenced by println().
+
+
+\begin{DoxyCode}
+74 \{
+75   \textcolor{keywordflow}{return} print((\textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long}) n, base);
+76 \}
+\end{DoxyCode}
+\mbox{\label{class_print_ab1fb2a2384c7b9f628943f5046e7d1c1}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [6/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{long}]{n,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 78 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print(), print\+Number(), and write().
+
+
+
+Referenced by print(), and println().
+
+
+\begin{DoxyCode}
+79 \{
+80   \textcolor{keywordflow}{if} (base == 0) \{
+81     \textcolor{keywordflow}{return} write(n);
+82   \} \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (base == 10) \{
+83     \textcolor{keywordflow}{if} (n < 0) \{
+84       \textcolor{keywordtype}{int} t = print(\textcolor{charliteral}{'-'});
+85       n = -n;
+86       \textcolor{keywordflow}{return} printNumber(n, 10) + t;
+87     \}
+88     \textcolor{keywordflow}{return} printNumber(n, 10);
+89   \} \textcolor{keywordflow}{else} \{
+90     \textcolor{keywordflow}{return} printNumber(n, base);
+91   \}
+92 \}
+\end{DoxyCode}
+\mbox{\label{class_print_a26a40be7a557c0bc391a15dce9f06954}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [7/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{unsigned long}]{n,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 94 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print\+Number(), and write().
+
+
+
+Referenced by print(), print\+Float(), and println().
+
+
+\begin{DoxyCode}
+95 \{
+96   \textcolor{keywordflow}{if} (base == 0) \textcolor{keywordflow}{return} write(n);
+97   \textcolor{keywordflow}{else} \textcolor{keywordflow}{return} printNumber(n, base);
+98 \}
+\end{DoxyCode}
+\mbox{\label{class_print_ae8b4c025786c820afe0a90aeea01c9c5}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [8/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{double}]{n,  }\item[{int}]{digits = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 100 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print\+Float().
+
+
+
+Referenced by println().
+
+
+\begin{DoxyCode}
+101 \{
+102   \textcolor{keywordflow}{return} printFloat(n, digits);
+103 \}
+\end{DoxyCode}
+\mbox{\label{class_print_a901b0f06ae34aab31b8fbb4298f0596e}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [9/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{const \textbf{ Printable} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 105 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References Printable\+::print\+To().
+
+
+
+Referenced by println().
+
+
+\begin{DoxyCode}
+106  \{
+107    \textcolor{keywordflow}{return} x.printTo(*\textcolor{keyword}{this});
+108  \}
+\end{DoxyCode}
+\mbox{\label{class_print_acfe80773011eb17dfb52c2fba517a093}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [10/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{const char}]{[$\,$] }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} a null-\/terminated array of char variables (a c-\/string) to the stream or file. 
+
+\mbox{\label{class_print_a1e411d07a8ffec5faf7ce485bac0f029}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [11/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{char}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} a single character to the stream or file. 
+
+\mbox{\label{class_print_ae35481e77567618140cd58d8b96d3747}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [12/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{unsigned char}]{value,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} an unsigned char (byte value, 8 bits) in the specified base to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to print. \\
+\hline
+{\em base} & The base to print. Default is D\+EC (decimal). Other values are H\+EX (hexadecimal), O\+CT (octal), and B\+IN (binary). \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_print_aa28ddbde83b14df73b41c919ecc4478f}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [13/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} an int (32 bit integer) the specified base to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to print. \\
+\hline
+{\em base} & The base to print. Default is D\+EC (decimal). Other values are H\+EX (hexadecimal), O\+CT (octal), and B\+IN (binary). \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_print_afcd7d3a184df961a502643e4fb638c52}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [14/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{unsigned int}]{value,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} an unsigned int (32 bit unsigned integer) the specified base to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to print. \\
+\hline
+{\em base} & The base to print. Default is D\+EC (decimal). Other values are H\+EX (hexadecimal), O\+CT (octal), and B\+IN (binary). \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_print_a0c663ac015ebc037ea044ba2e2cf2947}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [15/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{long}]{value,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} a long (32 bit integer) the specified base to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to print. \\
+\hline
+{\em base} & The base to print. Default is D\+EC (decimal). Other values are H\+EX (hexadecimal), O\+CT (octal), and B\+IN (binary). \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_print_acb8c6dcd4339b024436002aa9a6f4be2}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [16/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{unsigned long}]{value,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} a unsigned long (32 bit unsigned integer) the specified base to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to print. \\
+\hline
+{\em base} & The base to print. Default is D\+EC (decimal). Other values are H\+EX (hexadecimal), O\+CT (octal), and B\+IN (binary). \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_print_ad89472bdb6539423a42d350beec02ff4}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [17/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{int}]{dec = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} a double floating point value to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to print. \\
+\hline
+{\em dec} & The number of decimal places to include for the fractional part. Default\+: 2 \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_print_a901b0f06ae34aab31b8fbb4298f0596e}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [18/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{const \textbf{ Printable} \&}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} an object derived from \doxyref{Printable}{p.}{class_printable} to the stream or file. 
+
+\mbox{\label{class_print_aa4158dd94bc1741f92d99c427261d7c0}} 
+\index{Print@{Print}!print@{print}}
+\index{print@{print}!Print@{Print}}
+\subsubsection{print()\hspace{0.1cm}{\footnotesize\ttfamily [19/19]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print (\begin{DoxyParamCaption}\item[{const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_print_a08a461c9fee5fd8f5795d6e9f61e3d5b}} 
+\index{Print@{Print}!printf@{printf}}
+\index{printf@{printf}!Print@{Print}}
+\subsubsection{printf()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+size\+\_\+t Print\+::printf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{Args...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 90 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+
+References printf\+\_\+impl().
+
+
+\begin{DoxyCode}
+91     \{
+92         \textcolor{keywordflow}{return} this->printf_impl(\textcolor{keyword}{false}, format, args...);
+93     \}
+\end{DoxyCode}
+\mbox{\label{class_print_a08a461c9fee5fd8f5795d6e9f61e3d5b}} 
+\index{Print@{Print}!printf@{printf}}
+\index{printf@{printf}!Print@{Print}}
+\subsubsection{printf()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+size\+\_\+t Print\+::printf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{Args...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxyref{Print}{p.}{class_print} using printf-\/style formatting to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & printf-\/style formatting string\\
+\hline
+{\em args} & variable arguments \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 256 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+\begin{DoxyCode}
+257     \{
+258         \textcolor{keywordflow}{return} this->printf_impl(\textcolor{keyword}{false}, format, args...);
+259     \}
+\end{DoxyCode}
+\mbox{\label{class_print_af887fd768601c2ee2b18d1deb20b151d}} 
+\index{Print@{Print}!printf\+\_\+impl@{printf\+\_\+impl}}
+\index{printf\+\_\+impl@{printf\+\_\+impl}!Print@{Print}}
+\subsubsection{printf\+\_\+impl()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::printf\+\_\+impl (\begin{DoxyParamCaption}\item[{bool}]{newline,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 246 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print(), and println().
+
+
+
+Referenced by printf(), and printlnf().
+
+
+\begin{DoxyCode}
+247 \{
+248     \textcolor{keyword}{const} \textcolor{keywordtype}{int} bufsize = 20;
+249     \textcolor{keywordtype}{char} test[bufsize];
+250     va\_list marker;
+251     va\_start(marker, format);
+252     \textcolor{keywordtype}{size\_t} n = vsnprintf(test, bufsize, format, marker);
+253     va\_end(marker);
+254 
+255     \textcolor{keywordflow}{if} (n<bufsize)
+256     \{
+257         n = print(test);
+258     \}
+259     \textcolor{keywordflow}{else}
+260     \{
+261         \textcolor{keywordtype}{char} bigger[n+1];
+262         va\_start(marker, format);
+263         n = vsnprintf(bigger, n+1, format, marker);
+264         va\_end(marker);
+265         n = print(bigger);
+266     \}
+267     \textcolor{keywordflow}{if} (newline)
+268         n += println();
+269     \textcolor{keywordflow}{return} n;
+270 \}
+\end{DoxyCode}
+\mbox{\label{class_print_af887fd768601c2ee2b18d1deb20b151d}} 
+\index{Print@{Print}!printf\+\_\+impl@{printf\+\_\+impl}}
+\index{printf\+\_\+impl@{printf\+\_\+impl}!Print@{Print}}
+\subsubsection{printf\+\_\+impl()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::printf\+\_\+impl (\begin{DoxyParamCaption}\item[{bool}]{newline,  }\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\label{class_print_a449fd5f2ab1fb43c3e3b10f53d18b1e8}} 
+\index{Print@{Print}!print\+Float@{print\+Float}}
+\index{print\+Float@{print\+Float}!Print@{Print}}
+\subsubsection{print\+Float()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print\+Float (\begin{DoxyParamCaption}\item[{double}]{number,  }\item[{uint8\+\_\+t}]{digits }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 201 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print().
+
+
+
+Referenced by print().
+
+
+\begin{DoxyCode}
+202 \{
+203   \textcolor{keywordtype}{size\_t} n = 0;
+204 
+205   \textcolor{keywordflow}{if} (isnan(number)) \textcolor{keywordflow}{return} print(\textcolor{stringliteral}{"nan"});
+206   \textcolor{keywordflow}{if} (isinf(number)) \textcolor{keywordflow}{return} print(\textcolor{stringliteral}{"inf"});
+207   \textcolor{keywordflow}{if} (number > 4294967040.0) \textcolor{keywordflow}{return} print (\textcolor{stringliteral}{"ovf"});  \textcolor{comment}{// constant determined empirically}
+208   \textcolor{keywordflow}{if} (number <-4294967040.0) \textcolor{keywordflow}{return} print (\textcolor{stringliteral}{"ovf"});  \textcolor{comment}{// constant determined empirically}
+209 
+210   \textcolor{comment}{// Handle negative numbers}
+211   \textcolor{keywordflow}{if} (number < 0.0)
+212   \{
+213      n += print(\textcolor{charliteral}{'-'});
+214      number = -number;
+215   \}
+216 
+217   \textcolor{comment}{// Round correctly so that print(1.999, 2) prints as "2.00"}
+218   \textcolor{keywordtype}{double} rounding = 0.5;
+219   \textcolor{keywordflow}{for} (uint8\_t i=0; i<digits; ++i)
+220     rounding /= 10.0;
+221 
+222   number += rounding;
+223 
+224   \textcolor{comment}{// Extract the integer part of the number and print it}
+225   \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} int\_part = (\textcolor{keywordtype}{unsigned} long)number;
+226   \textcolor{keywordtype}{double} remainder = number - (double)int\_part;
+227   n += print(int\_part);
+228 
+229   \textcolor{comment}{// Print the decimal point, but only if there are digits beyond}
+230   \textcolor{keywordflow}{if} (digits > 0) \{
+231     n += print(\textcolor{stringliteral}{"."});
+232   \}
+233 
+234   \textcolor{comment}{// Extract digits from the remainder one at a time}
+235   \textcolor{keywordflow}{while} (digits-- > 0)
+236   \{
+237     remainder *= 10.0;
+238     \textcolor{keywordtype}{int} toPrint = int(remainder);
+239     n += print(toPrint);
+240     remainder -= toPrint;
+241   \}
+242 
+243   \textcolor{keywordflow}{return} n;
+244 \}
+\end{DoxyCode}
+\mbox{\label{class_print_a449fd5f2ab1fb43c3e3b10f53d18b1e8}} 
+\index{Print@{Print}!print\+Float@{print\+Float}}
+\index{print\+Float@{print\+Float}!Print@{Print}}
+\subsubsection{print\+Float()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print\+Float (\begin{DoxyParamCaption}\item[{double}]{,  }\item[{uint8\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_print_ad337ce3f7977411b7d34d47a51e5737e}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [1/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{const char}]{c[$\,$] }\end{DoxyParamCaption})}
+
+
+
+Definition at line 117 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print(), and println().
+
+
+\begin{DoxyCode}
+118 \{
+119   \textcolor{keywordtype}{size\_t} n = print(c);
+120   n += println();
+121   \textcolor{keywordflow}{return} n;
+122 \}
+\end{DoxyCode}
+\mbox{\label{class_print_a554896a71162f967b5794401239d7a01}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [2/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})}
+
+
+
+Definition at line 124 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print(), and println().
+
+
+\begin{DoxyCode}
+125 \{
+126   \textcolor{keywordtype}{size\_t} n = print(c);
+127   n += println();
+128   \textcolor{keywordflow}{return} n;
+129 \}
+\end{DoxyCode}
+\mbox{\label{class_print_ac9afe80f50f0118d735295aec7727e50}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [3/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{unsigned char}]{b,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 131 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print(), and println().
+
+
+\begin{DoxyCode}
+132 \{
+133   \textcolor{keywordtype}{size\_t} n = print(b, base);
+134   n += println();
+135   \textcolor{keywordflow}{return} n;
+136 \}
+\end{DoxyCode}
+\mbox{\label{class_print_a738c88471cfb8eac7c8a804699971413}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [4/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{int}]{num,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 138 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print(), and println().
+
+
+\begin{DoxyCode}
+139 \{
+140   \textcolor{keywordtype}{size\_t} n = print(num, base);
+141   n += println();
+142   \textcolor{keywordflow}{return} n;
+143 \}
+\end{DoxyCode}
+\mbox{\label{class_print_ac87eed1fcb78641169ba2244278c899e}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [5/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{unsigned int}]{num,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 145 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print(), and println().
+
+
+\begin{DoxyCode}
+146 \{
+147   \textcolor{keywordtype}{size\_t} n = print(num, base);
+148   n += println();
+149   \textcolor{keywordflow}{return} n;
+150 \}
+\end{DoxyCode}
+\mbox{\label{class_print_a833fbec3ceba92e3ec95f51e026e4569}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [6/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{long}]{num,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 152 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print(), and println().
+
+
+\begin{DoxyCode}
+153 \{
+154   \textcolor{keywordtype}{size\_t} n = print(num, base);
+155   n += println();
+156   \textcolor{keywordflow}{return} n;
+157 \}
+\end{DoxyCode}
+\mbox{\label{class_print_aebee3c33ee5d8f10b6f378d5273742d0}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [7/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{unsigned long}]{num,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 159 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print(), and println().
+
+
+\begin{DoxyCode}
+160 \{
+161   \textcolor{keywordtype}{size\_t} n = print(num, base);
+162   n += println();
+163   \textcolor{keywordflow}{return} n;
+164 \}
+\end{DoxyCode}
+\mbox{\label{class_print_a56e976b079361b6021ef7c2bedb397a2}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [8/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{double}]{num,  }\item[{int}]{digits = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+
+
+Definition at line 166 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print(), and println().
+
+
+\begin{DoxyCode}
+167 \{
+168   \textcolor{keywordtype}{size\_t} n = print(num, digits);
+169   n += println();
+170   \textcolor{keywordflow}{return} n;
+171 \}
+\end{DoxyCode}
+\mbox{\label{class_print_a20f9e104153b62e720c9b4c348b44f00}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [9/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{const \textbf{ Printable} \&}]{x }\end{DoxyParamCaption})}
+
+
+
+Definition at line 173 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print(), and println().
+
+
+\begin{DoxyCode}
+174  \{
+175    \textcolor{keywordtype}{size\_t} n = print(x);
+176    n += println();
+177    \textcolor{keywordflow}{return} n;
+178  \}
+\end{DoxyCode}
+\mbox{\label{class_print_a169b128f9e22f0c15883768f580541a2}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [10/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Definition at line 110 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References print().
+
+
+
+Referenced by printf\+\_\+impl(), and println().
+
+
+\begin{DoxyCode}
+111 \{
+112   \textcolor{keywordtype}{size\_t} n = print(\textcolor{charliteral}{'\(\backslash\)r'});
+113   n += print(\textcolor{charliteral}{'\(\backslash\)n'});
+114   \textcolor{keywordflow}{return} n;
+115 \}
+\end{DoxyCode}
+\mbox{\label{class_print_ad337ce3f7977411b7d34d47a51e5737e}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [11/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{const char}]{[$\,$] }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} a null-\/terminated array of char variables (a c-\/string) plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. 
+
+\mbox{\label{class_print_a80fdd92db4b396062586bcb3e08d3835}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [12/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{char}]{value }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} a single character plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. 
+
+\mbox{\label{class_print_a000b3fd5b723cb6c7db0d3231a9ef2f8}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [13/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{unsigned char}]{value,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} an unsigned char (byte value. 8 bits) in the specified base plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to print. \\
+\hline
+{\em base} & The base to print. Default is D\+EC (decimal). Other values are H\+EX (hexadecimal), O\+CT (octal), and B\+IN (binary). \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_print_a82aa91bbd859f28a0a3b4869e5bfcadd}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [14/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{int}]{value,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} an int (32 bit integer) the specified base to plus a C\+R\+LF end-\/of-\/line terminator the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to print \\
+\hline
+{\em base} & The base to print. Default is D\+EC (decimal). Other values are H\+EX (hexadecimal), O\+CT (octal), and B\+IN (binary). \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_print_a2608232c1f10f654111ff447de16d60b}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [15/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{unsigned int}]{value,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} an unsigned int (32 bit unsigned integer) the specified base plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to print \\
+\hline
+{\em base} & The base to print. Default is D\+EC (decimal). Other values are H\+EX (hexadecimal), O\+CT (octal), and B\+IN (binary). \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_print_a82bbe59b28440c29e55ff3597eb45376}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [16/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{long}]{value,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} a long (32 bit signed integer) the specified base plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to print \\
+\hline
+{\em base} & The base to print. Default is D\+EC (decimal). Other values are H\+EX (hexadecimal), O\+CT (octal), and B\+IN (binary). \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_print_afa936d7e8dd329d9162f2cd28f42681e}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [17/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{unsigned long}]{value,  }\item[{int}]{base = {\ttfamily \textbf{ D\+EC}} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} a unsigned long (32 bit unsigned integer) the specified base plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to print. \\
+\hline
+{\em base} & The base to print. Default is D\+EC (decimal). Other values are H\+EX (hexadecimal), O\+CT (octal), and B\+IN (binary). \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_print_a178b90baf9f74f0945f5c64aafec59ea}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [18/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{double}]{value,  }\item[{int}]{dec = {\ttfamily 2} }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} a double floating point value plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & The value to print. \\
+\hline
+{\em dec} & The number of decimal places to include for the fractional part. Default\+: 2 \\
+\hline
+\end{DoxyParams}
+\mbox{\label{class_print_a20f9e104153b62e720c9b4c348b44f00}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [19/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{const \textbf{ Printable} \&}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} an object derived from \doxyref{Printable}{p.}{class_printable} plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. 
+
+\mbox{\label{class_print_a169b128f9e22f0c15883768f580541a2}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [20/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxyref{Print}{p.}{class_print} a C\+R\+LF end-\/of-\/line terminator to the stream or file. 
+
+\mbox{\label{class_print_a4fd286b325d3b1a786cfa35072a8ef52}} 
+\index{Print@{Print}!println@{println}}
+\index{println@{println}!Print@{Print}}
+\subsubsection{println()\hspace{0.1cm}{\footnotesize\ttfamily [21/21]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::println (\begin{DoxyParamCaption}\item[{const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$}]{ }\end{DoxyParamCaption})}
+
+\mbox{\label{class_print_afa41aa5211c54b7b4d79b9286880c337}} 
+\index{Print@{Print}!printlnf@{printlnf}}
+\index{printlnf@{printlnf}!Print@{Print}}
+\subsubsection{printlnf()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+size\+\_\+t Print\+::printlnf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{Args...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 96 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+
+References printf\+\_\+impl().
+
+
+\begin{DoxyCode}
+97     \{
+98         \textcolor{keywordflow}{return} this->printf_impl(\textcolor{keyword}{true}, format, args...);
+99     \}
+\end{DoxyCode}
+\mbox{\label{class_print_afa41aa5211c54b7b4d79b9286880c337}} 
+\index{Print@{Print}!printlnf@{printlnf}}
+\index{printlnf@{printlnf}!Print@{Print}}
+\subsubsection{printlnf()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename... Args$>$ \\
+size\+\_\+t Print\+::printlnf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{Args...}]{args }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+\doxyref{Print}{p.}{class_print} using printf-\/style formatting plus a C\+R\+LF end-\/of-\/line terminator to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em format} & printf-\/style formatting string\\
+\hline
+{\em args} & variable arguments \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 269 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+\begin{DoxyCode}
+270     \{
+271         \textcolor{keywordflow}{return} this->printf_impl(\textcolor{keyword}{true}, format, args...);
+272     \}
+\end{DoxyCode}
+\mbox{\label{class_print_abe7ee1c0946399820a61e1ec39419ee2}} 
+\index{Print@{Print}!print\+Number@{print\+Number}}
+\index{print\+Number@{print\+Number}!Print@{Print}}
+\subsubsection{print\+Number()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print\+Number (\begin{DoxyParamCaption}\item[{unsigned long}]{n,  }\item[{uint8\+\_\+t}]{base }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 182 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References write().
+
+
+
+Referenced by print().
+
+
+\begin{DoxyCode}
+182                                                        \{
+183   \textcolor{keywordtype}{char} buf[8 * \textcolor{keyword}{sizeof}(long) + 1]; \textcolor{comment}{// Assumes 8-bit chars plus zero byte.}
+184   \textcolor{keywordtype}{char} *str = &buf[\textcolor{keyword}{sizeof}(buf) - 1];
+185 
+186   *str = \textcolor{charliteral}{'\(\backslash\)0'};
+187 
+188   \textcolor{comment}{// prevent crash if called with base == 1}
+189   \textcolor{keywordflow}{if} (base < 2) base = 10;
+190 
+191   \textcolor{keywordflow}{do} \{
+192     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{long} m = n;
+193     n /= base;
+194     \textcolor{keywordtype}{char} c = m - base * n;
+195     *--str = c < 10 ? c + \textcolor{charliteral}{'0'} : c + \textcolor{charliteral}{'A'} - 10;
+196   \} \textcolor{keywordflow}{while}(n);
+197 
+198   \textcolor{keywordflow}{return} write(str);
+199 \}
+\end{DoxyCode}
+\mbox{\label{class_print_abe7ee1c0946399820a61e1ec39419ee2}} 
+\index{Print@{Print}!print\+Number@{print\+Number}}
+\index{print\+Number@{print\+Number}!Print@{Print}}
+\subsubsection{print\+Number()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::print\+Number (\begin{DoxyParamCaption}\item[{unsigned}]{long,  }\item[{uint8\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\label{class_print_a46656410e23c0ec14d7a01b38b3b6f00}} 
+\index{Print@{Print}!set\+Write\+Error@{set\+Write\+Error}}
+\index{set\+Write\+Error@{set\+Write\+Error}!Print@{Print}}
+\subsubsection{set\+Write\+Error()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Print\+::set\+Write\+Error (\begin{DoxyParamCaption}\item[{int}]{err = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 51 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+
+References write\+\_\+error.
+
+
+
+Referenced by clear\+Write\+Error().
+
+
+\begin{DoxyCode}
+51 \{ write_error = err; \}
+\end{DoxyCode}
+\mbox{\label{class_print_a46656410e23c0ec14d7a01b38b3b6f00}} 
+\index{Print@{Print}!set\+Write\+Error@{set\+Write\+Error}}
+\index{set\+Write\+Error@{set\+Write\+Error}!Print@{Print}}
+\subsubsection{set\+Write\+Error()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Print\+::set\+Write\+Error (\begin{DoxyParamCaption}\item[{int}]{err = {\ttfamily 1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 58 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+\begin{DoxyCode}
+58 \{ write_error = err; \}
+\end{DoxyCode}
+\mbox{\label{class_print_a5be30d49adae2406a270c29ba9a3e0a3}} 
+\index{Print@{Print}!write@{write}}
+\index{write@{write}!Print@{Print}}
+\subsubsection{write()\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily virtual size\+\_\+t Print\+::write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Implemented in \textbf{ String\+Printable\+Helper} \doxyref{}{p.}{class_string_printable_helper_adc5aab11289f917cefa1225b59afde2a}.
+
+
+
+Referenced by print(), and write().
+
+\mbox{\label{class_print_a5b40e0e9cab1f2fe5bb0cb22ffe5adda}} 
+\index{Print@{Print}!write@{write}}
+\index{write@{write}!Print@{Print}}
+\subsubsection{write()\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::write (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Definition at line 62 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+
+References write().
+
+
+
+Referenced by print(), and print\+Number().
+
+
+\begin{DoxyCode}
+62                                   \{
+63       \textcolor{keywordflow}{if} (str == NULL) \textcolor{keywordflow}{return} 0;
+64       \textcolor{keywordflow}{return} write((\textcolor{keyword}{const} uint8\_t *)str, strlen(str));
+65     \}
+\end{DoxyCode}
+\mbox{\label{class_print_ad98d820df11e2697be1e4b1ea30b4a23}} 
+\index{Print@{Print}!write@{write}}
+\index{write@{write}!Print@{Print}}
+\subsubsection{write()\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::write (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Reimplemented in \textbf{ String\+Printable\+Helper} \doxyref{}{p.}{class_string_printable_helper_a8098bfb565b518cec0cf9e6fbc68eed8}.
+
+
+
+Definition at line 37 of file spark\+\_\+wiring\+\_\+print.\+cpp.
+
+
+
+References write().
+
+
+
+Referenced by write().
+
+
+\begin{DoxyCode}
+38 \{
+39   \textcolor{keywordtype}{size\_t} n = 0;
+40   \textcolor{keywordflow}{while} (size--) \{
+41      \textcolor{keywordtype}{int} chunk = write(*buffer++);
+42      \textcolor{keywordflow}{if} (chunk>=0)
+43          n += chunk;
+44      \textcolor{keywordflow}{else} \{
+45          \textcolor{keywordflow}{if} (n==0)
+46              n = chunk;
+47          \textcolor{keywordflow}{break};
+48      \}
+49   \}
+50   \textcolor{keywordflow}{return} n;
+51 \}
+\end{DoxyCode}
+\mbox{\label{class_print_ab9195b97274029f693aaddce6c7a0021}} 
+\index{Print@{Print}!write@{write}}
+\index{write@{write}!Print@{Print}}
+\subsubsection{write()\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily virtual size\+\_\+t Print\+::write (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Write a single byte to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The byte to write. All values 0 -\/ 255 are allowed. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \textbf{ String\+Printable\+Helper} \doxyref{}{p.}{class_string_printable_helper_adc5aab11289f917cefa1225b59afde2a}.
+
+\mbox{\label{class_print_a5b40e0e9cab1f2fe5bb0cb22ffe5adda}} 
+\index{Print@{Print}!write@{write}}
+\index{write@{write}!Print@{Print}}
+\subsubsection{write()\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily size\+\_\+t Print\+::write (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Write a null-\/terminated c-\/string the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & point to a null-\/terminated c-\/string. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 90 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+\begin{DoxyCode}
+90                                   \{
+91       \textcolor{keywordflow}{if} (str == NULL) \textcolor{keywordflow}{return} 0;
+92       \textcolor{keywordflow}{return} write((\textcolor{keyword}{const} uint8\_t *)str, strlen(str));
+93     \}
+\end{DoxyCode}
+\mbox{\label{class_print_a88864e109589a5be9b0f5ba1327f8421}} 
+\index{Print@{Print}!write@{write}}
+\index{write@{write}!Print@{Print}}
+\subsubsection{write()\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily virtual size\+\_\+t Print\+::write (\begin{DoxyParamCaption}\item[{const uint8\+\_\+t $\ast$}]{buffer,  }\item[{size\+\_\+t}]{size }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Write a bytes specified by a buffer and length to the stream or file. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buffer} & pointer to the buffer. The data does not need to be null-\/terminated. \\
+\hline
+{\em size} & size in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Reimplemented in \textbf{ String\+Printable\+Helper} \doxyref{}{p.}{class_string_printable_helper_a8098bfb565b518cec0cf9e6fbc68eed8}.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_print_ae922182b62afa3b8434397b7a54e70c4}} 
+\index{Print@{Print}!write\+\_\+error@{write\+\_\+error}}
+\index{write\+\_\+error@{write\+\_\+error}!Print@{Print}}
+\subsubsection{write\+\_\+error}
+{\footnotesize\ttfamily int Print\+::write\+\_\+error\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Definition at line 47 of file spark\+\_\+wiring\+\_\+print.\+h.
+
+
+
+Referenced by get\+Write\+Error(), Print(), and set\+Write\+Error().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Json\+Parser\+Generator\+R\+K/test/gcclib/\textbf{ spark\+\_\+wiring\+\_\+print.\+h}\item 
+lib/\+Json\+Parser\+Generator\+R\+K/test/gcclib/\textbf{ spark\+\_\+wiring\+\_\+print.\+cpp}\end{DoxyCompactItemize}

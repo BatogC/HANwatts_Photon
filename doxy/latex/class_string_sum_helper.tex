@@ -1,0 +1,304 @@
+\section{String\+Sum\+Helper Class Reference}
+\label{class_string_sum_helper}\index{String\+Sum\+Helper@{String\+Sum\+Helper}}
+
+
+Class used when appending mutiple \doxyref{String}{p.}{class_string} and other values using +.  
+
+
+
+
+{\ttfamily \#include $<$spark\+\_\+wiring\+\_\+string.\+h$>$}
+
+
+
+Inheritance diagram for String\+Sum\+Helper\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_string_sum_helper__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for String\+Sum\+Helper\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=171pt]{class_string_sum_helper__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ String\+Sum\+Helper} (const \textbf{ String} \&s)
+\begin{DoxyCompactList}\small\item\em Append a \doxyref{String}{p.}{class_string} object. \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} (const char $\ast$p)
+\begin{DoxyCompactList}\small\item\em Append a const char $\ast$ (c-\/string, null terminated) \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} (char c)
+\begin{DoxyCompactList}\small\item\em Append a single character. \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} (unsigned char num)
+\begin{DoxyCompactList}\small\item\em Append a byte as a decimal number 0 -\/ 255. \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} (int num)
+\begin{DoxyCompactList}\small\item\em Append a 32-\/bit signed integer as a decimal number. \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} (unsigned int num)
+\begin{DoxyCompactList}\small\item\em Append a 32-\/bit unsigned integer as a decimal number. \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} (long num)
+\begin{DoxyCompactList}\small\item\em Append a 32-\/bit long integer as a decimal number. \end{DoxyCompactList}\item 
+\textbf{ String\+Sum\+Helper} (unsigned long num)
+\begin{DoxyCompactList}\small\item\em Append a 32-\/bit unsigned long as a decimal number. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class used when appending mutiple \doxyref{String}{p.}{class_string} and other values using +. 
+
+Definition at line 1085 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_string_sum_helper_ae7676b662b830bbc8731f8b72f9413bb}} 
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\subsubsection{String\+Sum\+Helper()\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily String\+Sum\+Helper\+::\+String\+Sum\+Helper (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append a \doxyref{String}{p.}{class_string} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em s} & The string to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{String\+Sum\+Helper}{p.}{class_string_sum_helper} object that encapsulates a copy of that string for appending to another string. 
+\end{DoxyReturn}
+
+
+Definition at line 1095 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References String\+::\+String().
+
+
+\begin{DoxyCode}
+1095 : String(s) \{\}
+\end{DoxyCode}
+\mbox{\label{class_string_sum_helper_a73893e195336a0bcea77b16f4b35b422}} 
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\subsubsection{String\+Sum\+Helper()\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily String\+Sum\+Helper\+::\+String\+Sum\+Helper (\begin{DoxyParamCaption}\item[{const char $\ast$}]{p }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append a const char $\ast$ (c-\/string, null terminated) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The string to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{String\+Sum\+Helper}{p.}{class_string_sum_helper} object that encapsulates a copy of that string for appending to another string. 
+\end{DoxyReturn}
+
+
+Definition at line 1104 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References String\+::\+String().
+
+
+\begin{DoxyCode}
+1104 : String(p) \{\}
+\end{DoxyCode}
+\mbox{\label{class_string_sum_helper_a529d5741ae2d4afeaa3068bff4f3b599}} 
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\subsubsection{String\+Sum\+Helper()\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily String\+Sum\+Helper\+::\+String\+Sum\+Helper (\begin{DoxyParamCaption}\item[{char}]{c }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append a single character. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em c} & The character to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{String\+Sum\+Helper}{p.}{class_string_sum_helper} object that encapsulates a copy of that character for appending to another string. 
+\end{DoxyReturn}
+
+
+Definition at line 1113 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References String\+::\+String().
+
+
+\begin{DoxyCode}
+1113 : String(c) \{\}
+\end{DoxyCode}
+\mbox{\label{class_string_sum_helper_ac8f1e6c222659795a6aca08ad0872bec}} 
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\subsubsection{String\+Sum\+Helper()\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily String\+Sum\+Helper\+::\+String\+Sum\+Helper (\begin{DoxyParamCaption}\item[{unsigned char}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append a byte as a decimal number 0 -\/ 255. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The byte value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{String\+Sum\+Helper}{p.}{class_string_sum_helper} object that encapsulates the textual representation of the number for appending to another string. 
+\end{DoxyReturn}
+
+
+Definition at line 1122 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References String\+::\+String().
+
+
+\begin{DoxyCode}
+1122 : String(num) \{\}
+\end{DoxyCode}
+\mbox{\label{class_string_sum_helper_acb28b89b1f39f1140ab097439c967e22}} 
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\subsubsection{String\+Sum\+Helper()\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily String\+Sum\+Helper\+::\+String\+Sum\+Helper (\begin{DoxyParamCaption}\item[{int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append a 32-\/bit signed integer as a decimal number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The byte value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{String\+Sum\+Helper}{p.}{class_string_sum_helper} object that encapsulates the textual representation of the number for appending to another string. 
+\end{DoxyReturn}
+
+
+Definition at line 1131 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References String\+::\+String().
+
+
+\begin{DoxyCode}
+1131 : String(num) \{\}
+\end{DoxyCode}
+\mbox{\label{class_string_sum_helper_a13f4d006d1f67d0d2556152f4d16e4e9}} 
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\subsubsection{String\+Sum\+Helper()\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily String\+Sum\+Helper\+::\+String\+Sum\+Helper (\begin{DoxyParamCaption}\item[{unsigned int}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append a 32-\/bit unsigned integer as a decimal number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The byte value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{String\+Sum\+Helper}{p.}{class_string_sum_helper} object that encapsulates the textual representation of the number for appending to another string. 
+\end{DoxyReturn}
+
+
+Definition at line 1140 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References String\+::\+String().
+
+
+\begin{DoxyCode}
+1140 : String(num) \{\}
+\end{DoxyCode}
+\mbox{\label{class_string_sum_helper_a6fefb0b3145abdc5632134a41770eaf7}} 
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\subsubsection{String\+Sum\+Helper()\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily String\+Sum\+Helper\+::\+String\+Sum\+Helper (\begin{DoxyParamCaption}\item[{long}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append a 32-\/bit long integer as a decimal number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The byte value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{String\+Sum\+Helper}{p.}{class_string_sum_helper} object that encapsulates the textual representation of the number for appending to another string. 
+\end{DoxyReturn}
+
+
+Definition at line 1149 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References String\+::\+String().
+
+
+\begin{DoxyCode}
+1149 : String(num) \{\}
+\end{DoxyCode}
+\mbox{\label{class_string_sum_helper_ad05bd49f0b730d78d0a5dcf1b8c512eb}} 
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\index{String\+Sum\+Helper@{String\+Sum\+Helper}!String\+Sum\+Helper@{String\+Sum\+Helper}}
+\subsubsection{String\+Sum\+Helper()\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily String\+Sum\+Helper\+::\+String\+Sum\+Helper (\begin{DoxyParamCaption}\item[{unsigned long}]{num }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Append a 32-\/bit unsigned long as a decimal number. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num} & The byte value to append.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\doxyref{String\+Sum\+Helper}{p.}{class_string_sum_helper} object that encapsulates the textual representation of the number for appending to another string. 
+\end{DoxyReturn}
+
+
+Definition at line 1158 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+References String\+::\+String().
+
+
+\begin{DoxyCode}
+1158 : String(num) \{\}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Json\+Parser\+Generator\+R\+K/docs/src/\textbf{ spark\+\_\+wiring\+\_\+string.\+h}\end{DoxyCompactItemize}

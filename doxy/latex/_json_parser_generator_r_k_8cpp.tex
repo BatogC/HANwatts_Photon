@@ -1,0 +1,31 @@
+\section{lib/\+Json\+Parser\+Generator\+R\+K/src/\+Json\+Parser\+Generator\+RK.cpp File Reference}
+\label{_json_parser_generator_r_k_8cpp}\index{lib/\+Json\+Parser\+Generator\+R\+K/src/\+Json\+Parser\+Generator\+R\+K.\+cpp@{lib/\+Json\+Parser\+Generator\+R\+K/src/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
+{\ttfamily \#include \char`\"{}Particle.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Json\+Parser\+Generator\+R\+K.\+h\char`\"{}}\newline
+Include dependency graph for Json\+Parser\+Generator\+R\+K.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_json_parser_generator_r_k_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \textbf{ Json\+Parser\+Generator\+RK}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+static jsmntok\+\_\+t $\ast$ \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+alloc\+\_\+token} (jsmn\+\_\+parser $\ast$parser, jsmntok\+\_\+t $\ast$tokens, size\+\_\+t num\+\_\+tokens)
+\item 
+static void \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+fill\+\_\+token} (jsmntok\+\_\+t $\ast$token, jsmntype\+\_\+t type, int start, int end)
+\item 
+static int \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parse\+\_\+primitive} (jsmn\+\_\+parser $\ast$parser, const char $\ast$js, size\+\_\+t len, jsmntok\+\_\+t $\ast$tokens, size\+\_\+t num\+\_\+tokens)
+\item 
+static int \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parse\+\_\+string} (jsmn\+\_\+parser $\ast$parser, const char $\ast$js, size\+\_\+t len, jsmntok\+\_\+t $\ast$tokens, size\+\_\+t num\+\_\+tokens)
+\item 
+int \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parse} (jsmn\+\_\+parser $\ast$parser, const char $\ast$js, size\+\_\+t len, jsmntok\+\_\+t $\ast$tokens, unsigned int num\+\_\+tokens)
+\begin{DoxyCompactList}\small\item\em Run J\+S\+ON parser. \end{DoxyCompactList}\item 
+void \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+init} (jsmn\+\_\+parser $\ast$parser)
+\begin{DoxyCompactList}\small\item\em Create J\+S\+ON parser over an array of tokens. \end{DoxyCompactList}\end{DoxyCompactItemize}

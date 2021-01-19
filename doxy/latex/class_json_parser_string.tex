@@ -1,0 +1,323 @@
+\section{Json\+Parser\+String Class Reference}
+\label{class_json_parser_string}\index{Json\+Parser\+String@{Json\+Parser\+String}}
+
+
+Class used internally for writing to strings.  
+
+
+
+
+{\ttfamily \#include $<$Json\+Parser\+Generator\+R\+K.\+h$>$}
+
+
+
+Collaboration diagram for Json\+Parser\+String\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=172pt]{class_json_parser_string__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Json\+Parser\+String} (\textbf{ String} $\ast$\textbf{ str})
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{Json\+Parser\+String}{p.}{class_json_parser_string} wrapping a Wiring \doxyref{String}{p.}{class_string}. \end{DoxyCompactList}\item 
+\textbf{ Json\+Parser\+String} (char $\ast$\textbf{ buf}, size\+\_\+t \textbf{ buf\+Len})
+\begin{DoxyCompactList}\small\item\em Construct a \doxyref{Json\+Parser\+String}{p.}{class_json_parser_string} wrapping a buffer and length. \end{DoxyCompactList}\item 
+void \textbf{ append} (char ch)
+\begin{DoxyCompactList}\small\item\em Append a single char to the underlying string. \end{DoxyCompactList}\item 
+void \textbf{ append} (const char $\ast$\textbf{ str}, size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Append a buffer and length to the underlying string. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ get\+Length} () const
+\begin{DoxyCompactList}\small\item\em Get the length of the string. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ String} $\ast$ \textbf{ str}
+\begin{DoxyCompactList}\small\item\em When writing to a \doxyref{String}{p.}{class_string}, the \doxyref{String}{p.}{class_string} object. \end{DoxyCompactList}\item 
+char $\ast$ \textbf{ buf}
+\begin{DoxyCompactList}\small\item\em When writing to a buffer, the pointer to the buffer. Not used for \doxyref{String}{p.}{class_string}. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ buf\+Len}
+\begin{DoxyCompactList}\small\item\em When writing to a buffer, the length of the buffer in bytes. Not used for \doxyref{String}{p.}{class_string}. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ length}
+\begin{DoxyCompactList}\small\item\em The current offset being written to. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class used internally for writing to strings. 
+
+This is a wrapper around either \doxyref{String}{p.}{class_string} (the Wiring version) or a buffer and length. This allows writing to a static buffer with no dynamic memory allocation at all.
+
+One of the things about \doxyref{String}{p.}{class_string} is that while you can pre-\/allocate reserve space for data, you can\textquotesingle{}t get access to the internal length field, so you can\textquotesingle{}t write to raw bytes then resize it to the correct size. This wrapper is that allows appending to either a \doxyref{String}{p.}{class_string} or buffer to get around this limitation of \doxyref{String}{p.}{class_string}.
+
+You can also use it for sizing only by passing N\+U\+LL for buf. 
+
+Definition at line 92 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_json_parser_string_a3942a87b6920b08e38ce01b4d4a41fc4}} 
+\index{Json\+Parser\+String@{Json\+Parser\+String}!Json\+Parser\+String@{Json\+Parser\+String}}
+\index{Json\+Parser\+String@{Json\+Parser\+String}!Json\+Parser\+String@{Json\+Parser\+String}}
+\subsubsection{Json\+Parser\+String()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Json\+Parser\+String\+::\+Json\+Parser\+String (\begin{DoxyParamCaption}\item[{\textbf{ String} $\ast$}]{str }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxyref{Json\+Parser\+String}{p.}{class_json_parser_string} wrapping a Wiring \doxyref{String}{p.}{class_string}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & A pointer Wiring \doxyref{String}{p.}{class_string} object to write to. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 623 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References buf, buf\+Len, length, and str.
+
+
+
+Referenced by Json\+Parser\+::get\+Token\+Json\+String(), and Json\+Parser\+::get\+Token\+Value().
+
+
+\begin{DoxyCode}
+623                                               : str(str), buf(0), bufLen(0), 
+      length(0)\{
+624 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_string_ae0f9e3309682685ed259ad1370eb448f}} 
+\index{Json\+Parser\+String@{Json\+Parser\+String}!Json\+Parser\+String@{Json\+Parser\+String}}
+\index{Json\+Parser\+String@{Json\+Parser\+String}!Json\+Parser\+String@{Json\+Parser\+String}}
+\subsubsection{Json\+Parser\+String()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Json\+Parser\+String\+::\+Json\+Parser\+String (\begin{DoxyParamCaption}\item[{char $\ast$}]{buf,  }\item[{size\+\_\+t}]{buf\+Len }\end{DoxyParamCaption})}
+
+
+
+Construct a \doxyref{Json\+Parser\+String}{p.}{class_json_parser_string} wrapping a buffer and length. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & A pointer to a buffer\\
+\hline
+{\em buf\+Len} & The length of the buffer in bytes \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 626 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References buf, buf\+Len, length, and str.
+
+
+
+Referenced by Json\+Parser\+::get\+Token\+Json\+String(), and Json\+Parser\+::get\+Token\+Value().
+
+
+\begin{DoxyCode}
+626                                                            : str(0), buf(buf), 
+      bufLen(bufLen), length(0)\{
+627     \textcolor{keywordflow}{if} (buf && bufLen) \{
+628         memset(buf, 0, bufLen);
+629     \}
+630 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_json_parser_string_a7a8f809096c291c4cd7717df4a6534cf}} 
+\index{Json\+Parser\+String@{Json\+Parser\+String}!append@{append}}
+\index{append@{append}!Json\+Parser\+String@{Json\+Parser\+String}}
+\subsubsection{append()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily void Json\+Parser\+String\+::append (\begin{DoxyParamCaption}\item[{char}]{ch }\end{DoxyParamCaption})}
+
+
+
+Append a single char to the underlying string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em ch} & The char to append. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 632 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References buf, buf\+Len, String\+::concat(), length, and str.
+
+
+
+Referenced by append(), Json\+Parser\+::append\+Utf8(), and Json\+Parser\+::get\+Token\+Value().
+
+
+\begin{DoxyCode}
+632                                      \{
+633     \textcolor{keywordflow}{if} (str) \{
+634         str->concat(ch);
+635         length++;
+636     \}
+637     \textcolor{keywordflow}{else} \{
+638         \textcolor{keywordflow}{if} (buf && length < (bufLen - 1)) \{
+639             buf[length] = ch;
+640         \}
+641         length++;
+642     \}
+643 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_string_a28e2858fe1481e20fa8bc40054378c9f}} 
+\index{Json\+Parser\+String@{Json\+Parser\+String}!append@{append}}
+\index{append@{append}!Json\+Parser\+String@{Json\+Parser\+String}}
+\subsubsection{append()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily void Json\+Parser\+String\+::append (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+
+
+Append a buffer and length to the underlying string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & A pointer to the character to add. Does not need to be null-\/terminated.\\
+\hline
+{\em len} & Length of the string to append in bytes. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 645 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References append().
+
+
+
+Referenced by Json\+Parser\+::get\+Token\+Json\+String().
+
+
+\begin{DoxyCode}
+645                                                          \{
+646     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} ii = 0; ii < len; ii++) \{
+647         append(str[ii]);
+648     \}
+649 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_string_a3a495e1fb69d2900fda8b0556c93e51c}} 
+\index{Json\+Parser\+String@{Json\+Parser\+String}!get\+Length@{get\+Length}}
+\index{get\+Length@{get\+Length}!Json\+Parser\+String@{Json\+Parser\+String}}
+\subsubsection{get\+Length()}
+{\footnotesize\ttfamily size\+\_\+t Json\+Parser\+String\+::get\+Length (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the length of the string. 
+
+\begin{DoxyReturn}{Returns}
+The string length in bytes. If the string contains U\+T\+F-\/8 characters, it will be the number of bytes, not characters.
+\end{DoxyReturn}
+For buffer and buf\+Lenb, the maximum string length will be buf\+Len -\/ 1 to leave room for the null terminator. 
+
+Definition at line 134 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References length.
+
+
+
+Referenced by Json\+Parser\+::get\+Token\+Json\+String(), and Json\+Parser\+::get\+Token\+Value().
+
+
+\begin{DoxyCode}
+134 \{ \textcolor{keywordflow}{return} length; \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_json_parser_string_a3ffd87df1aff38ff4142fad32e1e3de0}} 
+\index{Json\+Parser\+String@{Json\+Parser\+String}!buf@{buf}}
+\index{buf@{buf}!Json\+Parser\+String@{Json\+Parser\+String}}
+\subsubsection{buf}
+{\footnotesize\ttfamily char$\ast$ Json\+Parser\+String\+::buf\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+When writing to a buffer, the pointer to the buffer. Not used for \doxyref{String}{p.}{class_string}. 
+
+
+
+Definition at line 138 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by append(), and Json\+Parser\+String().
+
+\mbox{\label{class_json_parser_string_a376957bb37fc229f44d0d85ce74adb4a}} 
+\index{Json\+Parser\+String@{Json\+Parser\+String}!buf\+Len@{buf\+Len}}
+\index{buf\+Len@{buf\+Len}!Json\+Parser\+String@{Json\+Parser\+String}}
+\subsubsection{buf\+Len}
+{\footnotesize\ttfamily size\+\_\+t Json\+Parser\+String\+::buf\+Len\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+When writing to a buffer, the length of the buffer in bytes. Not used for \doxyref{String}{p.}{class_string}. 
+
+
+
+Definition at line 139 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by append(), and Json\+Parser\+String().
+
+\mbox{\label{class_json_parser_string_a2b3a350599c49f6e7e368fc8b508cf6f}} 
+\index{Json\+Parser\+String@{Json\+Parser\+String}!length@{length}}
+\index{length@{length}!Json\+Parser\+String@{Json\+Parser\+String}}
+\subsubsection{length}
+{\footnotesize\ttfamily size\+\_\+t Json\+Parser\+String\+::length\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The current offset being written to. 
+
+
+
+Definition at line 140 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by append(), get\+Length(), and Json\+Parser\+String().
+
+\mbox{\label{class_json_parser_string_ac98659ff5a56537979b6c60d28648224}} 
+\index{Json\+Parser\+String@{Json\+Parser\+String}!str@{str}}
+\index{str@{str}!Json\+Parser\+String@{Json\+Parser\+String}}
+\subsubsection{str}
+{\footnotesize\ttfamily \textbf{ String}$\ast$ Json\+Parser\+String\+::str\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+When writing to a \doxyref{String}{p.}{class_string}, the \doxyref{String}{p.}{class_string} object. 
+
+
+
+Definition at line 137 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by append(), and Json\+Parser\+String().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Json\+Parser\+Generator\+R\+K/src/\textbf{ Json\+Parser\+Generator\+R\+K.\+h}\item 
+lib/\+Json\+Parser\+Generator\+R\+K/src/\textbf{ Json\+Parser\+Generator\+R\+K.\+cpp}\end{DoxyCompactItemize}

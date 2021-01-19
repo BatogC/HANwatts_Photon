@@ -1,0 +1,698 @@
+\section{Json\+Modifier Class Reference}
+\label{class_json_modifier}\index{Json\+Modifier@{Json\+Modifier}}
+
+
+Class for modifying a J\+S\+ON object in place, without needing to make a copy of it.  
+
+
+
+
+{\ttfamily \#include $<$Json\+Parser\+Generator\+R\+K.\+h$>$}
+
+
+
+Inheritance diagram for Json\+Modifier\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=152pt]{class_json_modifier__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Json\+Modifier\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_modifier__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Json\+Modifier} (\textbf{ Json\+Parser} \&\textbf{ jp})
+\item 
+virtual \textbf{ $\sim$\+Json\+Modifier} ()
+\item 
+{\footnotesize template$<$class T $>$ }\\void \textbf{ insert\+Or\+Update\+Key\+Value} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$container, const char $\ast$key, T value)
+\begin{DoxyCompactList}\small\item\em Inserts or updates a key/value pair into an object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \textbf{ append\+Array\+Value} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$array\+Token, T value)
+\begin{DoxyCompactList}\small\item\em Appends a value to an array. \end{DoxyCompactList}\item 
+bool \textbf{ remove\+Key\+Value} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$container, const char $\ast$key)
+\begin{DoxyCompactList}\small\item\em Removes a key and value from an object. \end{DoxyCompactList}\item 
+bool \textbf{ remove\+Array\+Index} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$container, size\+\_\+t index)
+\begin{DoxyCompactList}\small\item\em Removes an entry from an array. \end{DoxyCompactList}\item 
+bool \textbf{ start\+Modify} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$token)
+\begin{DoxyCompactList}\small\item\em Low level function to modify a token in place. \end{DoxyCompactList}\item 
+bool \textbf{ start\+Append} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$array\+Or\+Object\+Token)
+\begin{DoxyCompactList}\small\item\em Low level function to append to an object or array. \end{DoxyCompactList}\item 
+void \textbf{ finish} ()
+\begin{DoxyCompactList}\small\item\em Finish modifying the object. \end{DoxyCompactList}\item 
+\textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} \textbf{ token\+With\+Quotes} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$tok) const
+\begin{DoxyCompactList}\small\item\em Return a copy of tok, but moving so start and end include the double quotes for strings. \end{DoxyCompactList}\item 
+int \textbf{ find\+Left\+Comma} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$tok) const
+\begin{DoxyCompactList}\small\item\em Find the offset of the comma to the left of the token, or -\/1 if there isn\textquotesingle{}t one. \end{DoxyCompactList}\item 
+int \textbf{ find\+Right\+Comma} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$tok) const
+\begin{DoxyCompactList}\small\item\em Find the offset of the comma to the left of the token, or -\/1 if there isn\textquotesingle{}t one. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Json\+Parser} \& \textbf{ jp}
+\begin{DoxyCompactList}\small\item\em The \doxyref{Json\+Parser}{p.}{class_json_parser} object passed to the constructor. \end{DoxyCompactList}\item 
+int \textbf{ start} = -\/1
+\begin{DoxyCompactList}\small\item\em Start offset in the buffer. Set to -\/1 when \doxyref{start\+Modify()}{p.}{class_json_modifier_aa53d66feb3cd13165f3a2eac012a123b} or \doxyref{start\+Append()}{p.}{class_json_modifier_ab5bf356377a71120588413a4be998607} is not in progress. \end{DoxyCompactList}\item 
+int \textbf{ orig\+After} = 0
+\begin{DoxyCompactList}\small\item\em Number of bytes after the insertion position, saved at save\+Loc when start is in progress. \end{DoxyCompactList}\item 
+int \textbf{ save\+Loc} = 0
+\begin{DoxyCompactList}\small\item\em Location where data is temporarily saved until \doxyref{finish()}{p.}{class_json_modifier_ae531232fa98f72eea8ea6ba07c065497} is called. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Class for modifying a J\+S\+ON object in place, without needing to make a copy of it. 
+
+Make sure the underlying \doxyref{Json\+Parser}{p.}{class_json_parser} is big enough to hold the modified object. If you use Json\+Parser\+Static$<$$>$ make sure you have enough bytes and tokens.
+
+The most commonly used method is \doxyref{insert\+Or\+Update\+Key\+Value()}{p.}{class_json_modifier_acca6028c0ec31489950f43e86c574229}. This inserts or updates a key in an array. Another is \doxyref{append\+Array\+Value()}{p.}{class_json_modifier_ac492f5945ef4e4bc003fea5af5b9c504} which appends a value to an array. Both methods are templated so you can use them with any valid type supported by \doxyref{insert\+Value()}{p.}{class_json_writer_ac58734c238ba7be066838591b0cc7743} in \doxyref{Json\+Writer}{p.}{class_json_writer}\+: bool, int, float, double, const char $\ast$.
+
+This class is a subclass of \doxyref{Json\+Writer}{p.}{class_json_writer}, so you can also use the low-\/level functions and \doxyref{Json\+Writer}{p.}{class_json_writer} methods to do unusual object manipulations.
+
+You can also use \doxyref{remove\+Key\+Value()}{p.}{class_json_modifier_aadf76d2cef6b1a6ffe7868031cfb0e11} and \doxyref{remove\+Array\+Index()}{p.}{class_json_modifier_aba45c4fe467fa70b837f190986cf190b} to remove keys or array entries. 
+
+Definition at line 1323 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_json_modifier_ac3d52284d9348720d59273bbbe228edf}} 
+\index{Json\+Modifier@{Json\+Modifier}!Json\+Modifier@{Json\+Modifier}}
+\index{Json\+Modifier@{Json\+Modifier}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{Json\+Modifier()}
+{\footnotesize\ttfamily Json\+Modifier\+::\+Json\+Modifier (\begin{DoxyParamCaption}\item[{\textbf{ Json\+Parser} \&}]{jp }\end{DoxyParamCaption})}
+
+
+
+Definition at line 881 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References jp.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+881                                          : jp(jp) \{
+882 
+883 \}
+\end{DoxyCode}
+\mbox{\label{class_json_modifier_a68e9b6a5b88ad4316fd1cb443cc0b11e}} 
+\index{Json\+Modifier@{Json\+Modifier}!````~Json\+Modifier@{$\sim$\+Json\+Modifier}}
+\index{````~Json\+Modifier@{$\sim$\+Json\+Modifier}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{$\sim$\+Json\+Modifier()}
+{\footnotesize\ttfamily Json\+Modifier\+::$\sim$\+Json\+Modifier (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Definition at line 885 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+\begin{DoxyCode}
+885                             \{
+886 
+887 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_json_modifier_ac492f5945ef4e4bc003fea5af5b9c504}} 
+\index{Json\+Modifier@{Json\+Modifier}!append\+Array\+Value@{append\+Array\+Value}}
+\index{append\+Array\+Value@{append\+Array\+Value}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{append\+Array\+Value()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Json\+Modifier\+::append\+Array\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{array\+Token,  }\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Appends a value to an array. 
+
+Uses templates so you can pass any type object that\textquotesingle{}s supported by \doxyref{insert\+Value()}{p.}{class_json_writer_ac58734c238ba7be066838591b0cc7743} overloads, for example\+: bool, int, float, double, const char $\ast$.
+
+To modify the outermost array, use jp.\+get\+Outer\+Array() for the array\+Token. You can also modify arrays in an object using get\+Value\+Token\+By\+Key().
+
+Note\+: This method call jp.\+parse() so any jsmntok\+\_\+t may be changed by this method. If you\textquotesingle{}ve fetched one, such as by using get\+Value\+Token\+By\+Key() be sure to fetch it again to be safe. 
+
+Definition at line 1363 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References finish(), and start\+Append().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+1363                                                                                      \{
+1364         startAppend(arrayToken);
+1365         insertArrayValue(value);
+1366         finish();
+1367     \}
+\end{DoxyCode}
+\mbox{\label{class_json_modifier_a5b67ce1041b0e40e467639de1eeeca1e}} 
+\index{Json\+Modifier@{Json\+Modifier}!find\+Left\+Comma@{find\+Left\+Comma}}
+\index{find\+Left\+Comma@{find\+Left\+Comma}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{find\+Left\+Comma()}
+{\footnotesize\ttfamily int Json\+Modifier\+::find\+Left\+Comma (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{tok }\end{DoxyParamCaption}) const}
+
+
+
+Find the offset of the comma to the left of the token, or -\/1 if there isn\textquotesingle{}t one. 
+
+Used internally, you probably won\textquotesingle{}t need to use this. 
+
+Definition at line 1058 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Buffer\+::get\+Buffer(), jp, Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start, and token\+With\+Quotes().
+
+
+
+Referenced by main(), remove\+Array\+Index(), and remove\+Key\+Value().
+
+
+\begin{DoxyCode}
+1058                                                                                \{
+1059 
+1060     JsonParserGeneratorRK::jsmntok_t expandedToken = tokenWithQuotes(tok);
+1061 
+1062     \textcolor{keywordtype}{int} ii = expandedToken.start - 1;
+1063     \textcolor{keywordflow}{while}(ii >= 0 && jp.getBuffer()[ii] == \textcolor{charliteral}{' '}) \{
+1064         \textcolor{comment}{// Whitespace}
+1065         ii--;
+1066     \}
+1067     \textcolor{comment}{// printf("after whitespace check ii=%d c=%c\(\backslash\)n", ii, jp.getBuffer()[ii]);}
+1068 
+1069     \textcolor{keywordflow}{if} (ii < 0 || jp.getBuffer()[ii] != \textcolor{charliteral}{','}) \{
+1070         \textcolor{keywordflow}{return} -1;
+1071     \}
+1072 
+1073 
+1074     \textcolor{keywordflow}{return} ii;
+1075 \}
+\end{DoxyCode}
+\mbox{\label{class_json_modifier_a24fac4c2257f932aff41792214de35ca}} 
+\index{Json\+Modifier@{Json\+Modifier}!find\+Right\+Comma@{find\+Right\+Comma}}
+\index{find\+Right\+Comma@{find\+Right\+Comma}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{find\+Right\+Comma()}
+{\footnotesize\ttfamily int Json\+Modifier\+::find\+Right\+Comma (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{tok }\end{DoxyParamCaption}) const}
+
+
+
+Find the offset of the comma to the left of the token, or -\/1 if there isn\textquotesingle{}t one. 
+
+Used internally, you probably won\textquotesingle{}t need to use this. 
+
+Definition at line 1077 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, Json\+Buffer\+::get\+Buffer(), Json\+Buffer\+::get\+Offset(), jp, and token\+With\+Quotes().
+
+
+
+Referenced by main(), remove\+Array\+Index(), and remove\+Key\+Value().
+
+
+\begin{DoxyCode}
+1077                                                                                 \{
+1078     JsonParserGeneratorRK::jsmntok_t expandedToken = tokenWithQuotes(tok);
+1079 
+1080     \textcolor{keywordtype}{int} ii = expandedToken.end;
+1081     \textcolor{keywordflow}{while}(ii < jp.getOffset() && jp.getBuffer()[ii] == \textcolor{charliteral}{' '}) \{
+1082         \textcolor{comment}{// Whitespace}
+1083         ii++;
+1084     \}
+1085 
+1086     \textcolor{keywordflow}{if} (ii < 0 || jp.getBuffer()[ii] != \textcolor{charliteral}{','}) \{
+1087         \textcolor{keywordflow}{return} -1;
+1088     \}
+1089 
+1090     \textcolor{keywordflow}{return} ii;
+1091 \}
+\end{DoxyCode}
+\mbox{\label{class_json_modifier_ae531232fa98f72eea8ea6ba07c065497}} 
+\index{Json\+Modifier@{Json\+Modifier}!finish@{finish}}
+\index{finish@{finish}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{finish()}
+{\footnotesize\ttfamily void Json\+Modifier\+::finish (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Finish modifying the object. 
+
+Finish must be called after start\+Modify or start\+Append otherwise the object will be corrupted.
+
+Note\+: This method call jp.\+parse() so any jsmntok\+\_\+t may be changed by this method. If you\textquotesingle{}ve fetched one, such as by using get\+Value\+Token\+By\+Key() be sure to fetch it again to be safe.
+
+The high level function like insert\+Or\+Update\+Key\+Value, append\+Array\+Value, remove\+Key\+Value, and remove\+Array\+Index internally call finish so you should not call it again with those methods. 
+
+Definition at line 1033 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Buffer\+::get\+Buffer(), Json\+Buffer\+::get\+Offset(), jp, orig\+After, Json\+Parser\+::parse(), save\+Loc, Json\+Buffer\+::set\+Offset(), and start.
+
+
+
+Referenced by append\+Array\+Value(), insert\+Or\+Update\+Key\+Value(), and main().
+
+
+\begin{DoxyCode}
+1033                           \{
+1034     \textcolor{keywordflow}{if} (start == -1) \{
+1035         \textcolor{keywordflow}{return};
+1036     \}
+1037     \textcolor{comment}{//printf("finishing offset=%d\(\backslash\)n", getOffset());}
+1038 
+1039     \textcolor{keywordflow}{if} (origAfter > 0) \{
+1040         memmove(jp.getBuffer() + start + getOffset(), jp.getBuffer() + saveLoc, 
+      origAfter);
+1041     \}
+1042     jp.setOffset(start + getOffset() + origAfter);
+1043     jp.parse();
+1044     start = -1;
+1045 \}
+\end{DoxyCode}
+\mbox{\label{class_json_modifier_acca6028c0ec31489950f43e86c574229}} 
+\index{Json\+Modifier@{Json\+Modifier}!insert\+Or\+Update\+Key\+Value@{insert\+Or\+Update\+Key\+Value}}
+\index{insert\+Or\+Update\+Key\+Value@{insert\+Or\+Update\+Key\+Value}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{insert\+Or\+Update\+Key\+Value()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+void Json\+Modifier\+::insert\+Or\+Update\+Key\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{container,  }\item[{const char $\ast$}]{key,  }\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Inserts or updates a key/value pair into an object. 
+
+Uses templates so you can pass any type object that\textquotesingle{}s supported by \doxyref{insert\+Value()}{p.}{class_json_writer_ac58734c238ba7be066838591b0cc7743} overloads, for example\+: bool, int, float, double, const char $\ast$.
+
+To modify the outermost object, use jp.\+get\+Outer\+Object() for the container.
+
+Note\+: This method call jp.\+parse() so any jsmntok\+\_\+t may be changed by this method. If you\textquotesingle{}ve fetched one, such as by using get\+Value\+Token\+By\+Key() be sure to fetch it again to be safe. 
+
+Definition at line 1340 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References finish(), remove\+Key\+Value(), and start\+Append().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+1340                                                                                                            
+      \{
+1341         \textcolor{comment}{// Remove existing item (ignore failure, as the key might not exist)}
+1342         removeKeyValue(container, key);
+1343 
+1344         \textcolor{comment}{// Create a new key/value pair}
+1345         startAppend(container);
+1346         insertKeyValue(key, value);
+1347         finish();
+1348     \}
+\end{DoxyCode}
+\mbox{\label{class_json_modifier_aba45c4fe467fa70b837f190986cf190b}} 
+\index{Json\+Modifier@{Json\+Modifier}!remove\+Array\+Index@{remove\+Array\+Index}}
+\index{remove\+Array\+Index@{remove\+Array\+Index}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{remove\+Array\+Index()}
+{\footnotesize\ttfamily bool Json\+Modifier\+::remove\+Array\+Index (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{container,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption})}
+
+
+
+Removes an entry from an array. 
+
+Note\+: This method call jp.\+parse() so any jsmntok\+\_\+t may be changed by this method. If you\textquotesingle{}ve fetched one, such as by using get\+Value\+Token\+By\+Key() be sure to fetch it again to be safe. 
+
+Definition at line 944 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, find\+Left\+Comma(), find\+Right\+Comma(), Json\+Buffer\+::get\+Buffer(), Json\+Buffer\+::get\+Offset(), Json\+Parser\+::get\+Token\+By\+Index(), jp, orig\+After, Json\+Parser\+::parse(), Json\+Buffer\+::set\+Offset(), Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start, and token\+With\+Quotes().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+944                                                                                                  \{
+945 
+946     \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *tok = jp.getTokenByIndex(container, index);
+947     \textcolor{keywordflow}{if} (!tok) \{
+948         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+949     \}
+950 
+951     \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t expandedToken = tokenWithQuotes(tok);
+952 
+953     \textcolor{keywordtype}{int} left = findLeftComma(tok);
+954     \textcolor{keywordtype}{int} right = findRightComma(tok);
+955 
+956     \textcolor{keywordflow}{if} (left >= 0 && right >= 0) \{
+957         \textcolor{comment}{// Commas on both sides, just remove the one on the right}
+958         left = expandedToken.start;
+959     \}
+960     \textcolor{keywordflow}{else}
+961     \textcolor{keywordflow}{if} (left >= 0) \{
+962         \textcolor{comment}{// Only comma on left, removing the last item so remove the comma}
+963         right = expandedToken.end;
+964     \}
+965     \textcolor{keywordflow}{else}
+966     \textcolor{keywordflow}{if} (right >= 0) \{
+967         \textcolor{comment}{// Only comma on the right, removing the first item so remove the comma}
+968         right++;
+969         left = expandedToken.start;
+970     \}
+971     \textcolor{keywordflow}{else} \{
+972         \textcolor{comment}{// Single item, leaving array empty afterwards (both < 0), no commads}
+973         left = expandedToken.start;
+974         right = expandedToken.end;
+975     \}
+976 
+977     origAfter = jp.getOffset() - right;
+978 
+979     \textcolor{keywordflow}{if} (origAfter > 0) \{
+980         memmove(jp.getBuffer() + left, jp.getBuffer() + right, origAfter);
+981     \}
+982 
+983     jp.setOffset(left + origAfter);
+984     jp.parse();
+985 
+986     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+987 \}
+\end{DoxyCode}
+\mbox{\label{class_json_modifier_aadf76d2cef6b1a6ffe7868031cfb0e11}} 
+\index{Json\+Modifier@{Json\+Modifier}!remove\+Key\+Value@{remove\+Key\+Value}}
+\index{remove\+Key\+Value@{remove\+Key\+Value}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{remove\+Key\+Value()}
+{\footnotesize\ttfamily bool Json\+Modifier\+::remove\+Key\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{container,  }\item[{const char $\ast$}]{key }\end{DoxyParamCaption})}
+
+
+
+Removes a key and value from an object. 
+
+Note\+: This method call jp.\+parse() so any jsmntok\+\_\+t may be changed by this method. If you\textquotesingle{}ve fetched one, such as by using get\+Value\+Token\+By\+Key() be sure to fetch it again to be safe. 
+
+Definition at line 890 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, find\+Left\+Comma(), find\+Right\+Comma(), Json\+Buffer\+::get\+Buffer(), Json\+Buffer\+::get\+Offset(), Json\+Parser\+::get\+Value\+Token\+By\+Key(), jp, orig\+After, Json\+Parser\+::parse(), Json\+Buffer\+::set\+Offset(), Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start, and token\+With\+Quotes().
+
+
+
+Referenced by insert\+Or\+Update\+Key\+Value(), and main().
+
+
+\begin{DoxyCode}
+890                                                                                                   \{
+891 
+892 
+893     \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *keyToken, *valueToken;
+894 
+895     \textcolor{keywordtype}{bool} bResult = jp.getValueTokenByKey(container, key, valueToken);
+896     \textcolor{keywordflow}{if} (!bResult) \{
+897         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+898     \}
+899 
+900     \textcolor{comment}{// The key token always proceeds the value token}
+901     keyToken = &valueToken[-1];
+902 
+903     \textcolor{comment}{// Include the double quotes}
+904     \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t expandedKeyToken = tokenWithQuotes(keyToken);
+905     \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t expandedValueToken = tokenWithQuotes(valueToken);
+906 
+907     \textcolor{keywordtype}{int} left = findLeftComma(keyToken);
+908     \textcolor{keywordtype}{int} right = findRightComma(valueToken);
+909 
+910     \textcolor{keywordflow}{if} (left >= 0 && right >= 0) \{
+911         \textcolor{comment}{// Commas on both sides, just remove the one on the right}
+912         left = expandedKeyToken.start;
+913         right++;
+914     \}
+915     \textcolor{keywordflow}{else}
+916     \textcolor{keywordflow}{if} (left >= 0) \{
+917         \textcolor{comment}{// Only comma on left, removing the last item so remove the comma}
+918         right = expandedValueToken.end;
+919     \}
+920     \textcolor{keywordflow}{else}
+921     \textcolor{keywordflow}{if} (right >= 0) \{
+922         \textcolor{comment}{// Only comma on the right, removing the first item so remove the comma}
+923         right++;
+924         left = expandedKeyToken.start;
+925     \}
+926     \textcolor{keywordflow}{else} \{
+927         \textcolor{comment}{// Single item, leaving array empty afterwards (both < 0), no commads}
+928         left = expandedKeyToken.start;
+929         right = expandedValueToken.end;
+930     \}
+931 
+932     origAfter = jp.getOffset() - right;
+933 
+934     \textcolor{keywordflow}{if} (origAfter > 0) \{
+935         memmove(jp.getBuffer() + left, jp.getBuffer() + right, origAfter);
+936     \}
+937 
+938     jp.setOffset(left + origAfter);
+939     jp.parse();
+940 
+941     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+942 \}
+\end{DoxyCode}
+\mbox{\label{class_json_modifier_ab5bf356377a71120588413a4be998607}} 
+\index{Json\+Modifier@{Json\+Modifier}!start\+Append@{start\+Append}}
+\index{start\+Append@{start\+Append}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{start\+Append()}
+{\footnotesize\ttfamily bool Json\+Modifier\+::start\+Append (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{array\+Or\+Object\+Token }\end{DoxyParamCaption})}
+
+
+
+Low level function to append to an object or array. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Or\+Object\+Token} & the jsmntok\+\_\+t to append to. This must be an object or array token.\\
+\hline
+\end{DoxyParams}
+You must call \doxyref{finish()}{p.}{class_json_modifier_ae531232fa98f72eea8ea6ba07c065497} after modification is done to restore the object to a valid state. 
+
+Definition at line 1009 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, Json\+Buffer\+::get\+Buffer(), Json\+Buffer\+::get\+Buffer\+Len(), Json\+Buffer\+::get\+Offset(), Json\+Writer\+::init(), jp, orig\+After, save\+Loc, Json\+Buffer\+::set\+Buffer(), Json\+Writer\+::set\+Is\+First(), Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::size, and start.
+
+
+
+Referenced by append\+Array\+Value(), insert\+Or\+Update\+Key\+Value(), and main().
+
+
+\begin{DoxyCode}
+1009                                                                                        \{
+1010     \textcolor{keywordflow}{if} (start != -1) \{
+1011         \textcolor{comment}{// Modification or insertion already in progress}
+1012         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+1013     \}
+1014 
+1015     start = arrayOrObjectToken->end - 1; \textcolor{comment}{// Before the closing ] or \}}
+1016     origAfter = jp.getOffset() - start;
+1017     saveLoc = jp.getBufferLen() - origAfter;
+1018 
+1019     \textcolor{keywordflow}{if} (origAfter > 0) \{
+1020         memmove(jp.getBuffer() + saveLoc, jp.getBuffer() + start, origAfter);
+1021     \}
+1022 
+1023     setBuffer(jp.getBuffer() + start, saveLoc - start);
+1024     init();
+1025 
+1026     \textcolor{comment}{// If array is not empty, add a separator}
+1027     setIsFirst(arrayOrObjectToken->size == 0);
+1028 
+1029     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1030 \}
+\end{DoxyCode}
+\mbox{\label{class_json_modifier_aa53d66feb3cd13165f3a2eac012a123b}} 
+\index{Json\+Modifier@{Json\+Modifier}!start\+Modify@{start\+Modify}}
+\index{start\+Modify@{start\+Modify}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{start\+Modify()}
+{\footnotesize\ttfamily bool Json\+Modifier\+::start\+Modify (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token }\end{DoxyParamCaption})}
+
+
+
+Low level function to modify a token in place. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & the jsmntok\+\_\+t to modify\\
+\hline
+\end{DoxyParams}
+You must call \doxyref{finish()}{p.}{class_json_modifier_ae531232fa98f72eea8ea6ba07c065497} after modification is done to restore the object to a valid state!
+
+Note\+: \doxyref{insert\+Or\+Update\+Key\+Value()}{p.}{class_json_modifier_acca6028c0ec31489950f43e86c574229} does not use this. Instead it removes then appends the new value. The reason is that start\+Modify does not work if you change the type of the data to or from a string. This is tricky to deal with correctly, so it\textquotesingle{}s easier to just remove and add the item again. 
+
+Definition at line 988 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, Json\+Buffer\+::get\+Buffer(), Json\+Buffer\+::get\+Buffer\+Len(), Json\+Buffer\+::get\+Offset(), Json\+Writer\+::init(), jp, orig\+After, save\+Loc, Json\+Buffer\+::set\+Buffer(), Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start, and start.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+988                                                                           \{
+989     \textcolor{keywordflow}{if} (start != -1) \{
+990         \textcolor{comment}{// Modification or insertion already in progress}
+991         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+992     \}
+993     start = token->start;
+994     origAfter = jp.getOffset() - token->end;
+995     saveLoc = jp.getBufferLen() - origAfter;
+996 
+997     \textcolor{comment}{//printf("start=%d origAfter=%d saveLoc=%d bufferSize=%d\(\backslash\)n", start, origAfter, saveLoc, saveLoc -
+       start);}
+998 
+999     \textcolor{keywordflow}{if} (origAfter > 0) \{
+1000         memmove(jp.getBuffer() + saveLoc, jp.getBuffer() + token->end, origAfter);
+1001     \}
+1002 
+1003     setBuffer(jp.getBuffer() + start, saveLoc - start);
+1004     init();
+1005 
+1006     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+1007 \}
+\end{DoxyCode}
+\mbox{\label{class_json_modifier_a5e685480ff2e978480cdc215b340e3a7}} 
+\index{Json\+Modifier@{Json\+Modifier}!token\+With\+Quotes@{token\+With\+Quotes}}
+\index{token\+With\+Quotes@{token\+With\+Quotes}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{token\+With\+Quotes()}
+{\footnotesize\ttfamily \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} Json\+Modifier\+::token\+With\+Quotes (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{tok }\end{DoxyParamCaption}) const}
+
+
+
+Return a copy of tok, but moving so start and end include the double quotes for strings. 
+
+Used internally, you probably won\textquotesingle{}t need to use this. 
+
+Definition at line 1048 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG, Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start, and Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::type.
+
+
+
+Referenced by find\+Left\+Comma(), find\+Right\+Comma(), remove\+Array\+Index(), and remove\+Key\+Value().
+
+
+\begin{DoxyCode}
+1048                                                                                                            
+       \{
+1049     JsonParserGeneratorRK::jsmntok_t expandedToken = *tok;
+1050 
+1051     \textcolor{keywordflow}{if} (tok->type == JsonParserGeneratorRK::JSMN_STRING) \{
+1052         expandedToken.start--;
+1053         expandedToken.end++;
+1054     \}
+1055     \textcolor{keywordflow}{return} expandedToken;
+1056 \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_json_modifier_ab78d43036cea562e37640ae12e20b706}} 
+\index{Json\+Modifier@{Json\+Modifier}!jp@{jp}}
+\index{jp@{jp}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{jp}
+{\footnotesize\ttfamily \textbf{ Json\+Parser}\& Json\+Modifier\+::jp\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The \doxyref{Json\+Parser}{p.}{class_json_parser} object passed to the constructor. 
+
+
+
+Definition at line 1447 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by find\+Left\+Comma(), find\+Right\+Comma(), finish(), Json\+Modifier(), remove\+Array\+Index(), remove\+Key\+Value(), start\+Append(), and start\+Modify().
+
+\mbox{\label{class_json_modifier_aec8c0683c15ad68dc1cb8180321bf902}} 
+\index{Json\+Modifier@{Json\+Modifier}!orig\+After@{orig\+After}}
+\index{orig\+After@{orig\+After}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{orig\+After}
+{\footnotesize\ttfamily int Json\+Modifier\+::orig\+After = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of bytes after the insertion position, saved at save\+Loc when start is in progress. 
+
+
+
+Definition at line 1449 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by finish(), remove\+Array\+Index(), remove\+Key\+Value(), start\+Append(), and start\+Modify().
+
+\mbox{\label{class_json_modifier_a7ea53418d660ce7cdec0964cca76015b}} 
+\index{Json\+Modifier@{Json\+Modifier}!save\+Loc@{save\+Loc}}
+\index{save\+Loc@{save\+Loc}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{save\+Loc}
+{\footnotesize\ttfamily int Json\+Modifier\+::save\+Loc = 0\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Location where data is temporarily saved until \doxyref{finish()}{p.}{class_json_modifier_ae531232fa98f72eea8ea6ba07c065497} is called. 
+
+
+
+Definition at line 1450 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by finish(), start\+Append(), and start\+Modify().
+
+\mbox{\label{class_json_modifier_abd83b67763dc4ce55562bbdd5cea1e20}} 
+\index{Json\+Modifier@{Json\+Modifier}!start@{start}}
+\index{start@{start}!Json\+Modifier@{Json\+Modifier}}
+\subsubsection{start}
+{\footnotesize\ttfamily int Json\+Modifier\+::start = -\/1\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Start offset in the buffer. Set to -\/1 when \doxyref{start\+Modify()}{p.}{class_json_modifier_aa53d66feb3cd13165f3a2eac012a123b} or \doxyref{start\+Append()}{p.}{class_json_modifier_ab5bf356377a71120588413a4be998607} is not in progress. 
+
+
+
+Definition at line 1448 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by finish(), start\+Append(), and start\+Modify().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Json\+Parser\+Generator\+R\+K/src/\textbf{ Json\+Parser\+Generator\+R\+K.\+h}\item 
+lib/\+Json\+Parser\+Generator\+R\+K/src/\textbf{ Json\+Parser\+Generator\+R\+K.\+cpp}\end{DoxyCompactItemize}

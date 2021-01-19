@@ -1,0 +1,1848 @@
+\section{Json\+Parser Class Reference}
+\label{class_json_parser}\index{Json\+Parser@{Json\+Parser}}
+
+
+A\+PI to the \doxyref{Json\+Parser}{p.}{class_json_parser}.  
+
+
+
+
+{\ttfamily \#include $<$Json\+Parser\+Generator\+R\+K.\+h$>$}
+
+
+
+Inheritance diagram for Json\+Parser\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{class_json_parser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for Json\+Parser\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{class_json_parser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Json\+Parser} ()
+\begin{DoxyCompactList}\small\item\em Construct a parser object. \end{DoxyCompactList}\item 
+virtual \textbf{ $\sim$\+Json\+Parser} ()
+\begin{DoxyCompactList}\small\item\em Destroy a parser object. \end{DoxyCompactList}\item 
+\textbf{ Json\+Parser} (char $\ast$\textbf{ buffer}, size\+\_\+t \textbf{ buffer\+Len}, \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\textbf{ tokens}, size\+\_\+t \textbf{ max\+Tokens})
+\begin{DoxyCompactList}\small\item\em Static buffers constructor. \end{DoxyCompactList}\item 
+bool \textbf{ allocate\+Tokens} (size\+\_\+t \textbf{ max\+Tokens})
+\begin{DoxyCompactList}\small\item\em Preallocates a specific number of tokens. \end{DoxyCompactList}\item 
+bool \textbf{ parse} ()
+\begin{DoxyCompactList}\small\item\em Parses the data you have added using \doxyref{add\+Data()}{p.}{class_json_buffer_a760cb5be42ed2d2ca9306b1109e76af3} or \doxyref{add\+String()}{p.}{class_json_buffer_a61bf30ac6e1bd460f1e809d02a7d5ba4}. \end{DoxyCompactList}\item 
+\textbf{ Json\+Reference} \textbf{ get\+Reference} () const
+\begin{DoxyCompactList}\small\item\em Get a \doxyref{Json\+Reference}{p.}{class_json_reference} object. This is used for fluent-\/style access to the data. \end{DoxyCompactList}\item 
+const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$ \textbf{ get\+Outer\+Object} () const
+\begin{DoxyCompactList}\small\item\em Gets the outer J\+S\+ON object token. \end{DoxyCompactList}\item 
+const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$ \textbf{ get\+Outer\+Array} () const
+\begin{DoxyCompactList}\small\item\em Gets the outer J\+S\+ON array token. \end{DoxyCompactList}\item 
+const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$ \textbf{ get\+Outer\+Token} () const
+\begin{DoxyCompactList}\small\item\em Gets the outer J\+S\+ON object or array token. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ get\+Array\+Size} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$array\+Container) const
+\begin{DoxyCompactList}\small\item\em Given a token for an J\+S\+ON array in array\+Container, gets the number of elements in the array. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\bool \textbf{ get\+Value\+By\+Key} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$container, const char $\ast$name, T \&result) const
+\begin{DoxyCompactList}\small\item\em Given an object token in container, gets the value with the specified key name. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\bool \textbf{ get\+Outer\+Value\+By\+Key} (const char $\ast$name, T \&result) const
+\begin{DoxyCompactList}\small\item\em Gets the value with the specified key name out of the outer object. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\bool \textbf{ get\+Key\+Value\+By\+Index} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$container, size\+\_\+t index, \textbf{ String} \&key, T \&result) const
+\begin{DoxyCompactList}\small\item\em Gets the key/value pair of an object by index. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\bool \textbf{ get\+Outer\+Key\+Value\+By\+Index} (size\+\_\+t index, \textbf{ String} \&key, T \&result) const
+\begin{DoxyCompactList}\small\item\em Gets the key/value pair of the outer object by index (0 = first, 1 = second, ...) \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\bool \textbf{ get\+Value\+By\+Index} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$array\+Container, size\+\_\+t index, T \&result) const
+\begin{DoxyCompactList}\small\item\em Given an array token in array\+Container, gets the value with the specified index. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\bool \textbf{ get\+Value\+By\+Col\+Row} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$array\+Container, size\+\_\+t col, size\+\_\+t row, T \&result) const
+\begin{DoxyCompactList}\small\item\em This method is used to extract data from a 2-\/dimensional J\+S\+ON array, an array of arrays of values. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Value\+Token\+By\+Key} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$container, const char $\ast$key, const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\&value) const
+\begin{DoxyCompactList}\small\item\em Given an object token in container, gets the token value with the specified key name. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Value\+Token\+By\+Index} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$container, size\+\_\+t desired\+Index, const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\&value) const
+\begin{DoxyCompactList}\small\item\em Given an array token in container, gets the token value with the specified index. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Value\+Token\+By\+Col\+Row} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$container, size\+\_\+t col, size\+\_\+t row, const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\&value) const
+\begin{DoxyCompactList}\small\item\em This method is used to extract data from a 2-\/dimensional J\+S\+ON array, an array of arrays of values. \end{DoxyCompactList}\item 
+const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$ \textbf{ get\+Token\+By\+Index} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$container, size\+\_\+t desired\+Index) const
+\begin{DoxyCompactList}\small\item\em Given a containing object, finds the nth token in the object. Internal use only. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Key\+Value\+Token\+By\+Index} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$container, const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\&key, const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\&value, size\+\_\+t index) const
+\begin{DoxyCompactList}\small\item\em Given a J\+S\+ON object in container, gets the key/value pair specified by index. Internal use only. \end{DoxyCompactList}\item 
+bool \textbf{ skip\+Object} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$container, const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\&obj) const
+\begin{DoxyCompactList}\small\item\em Used internally to skip over the token in obj. \end{DoxyCompactList}\item 
+void \textbf{ copy\+Token\+Value} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$token, char $\ast$dst, size\+\_\+t dst\+Len) const
+\begin{DoxyCompactList}\small\item\em Copies the value of the token into a buffer, making it a null-\/terminated cstring. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Token\+Value} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$token, bool \&result) const
+\begin{DoxyCompactList}\small\item\em Gets a bool (boolean) value. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Token\+Value} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$token, int \&result) const
+\begin{DoxyCompactList}\small\item\em Gets an integer value. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Token\+Value} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$token, unsigned long \&result) const
+\begin{DoxyCompactList}\small\item\em Gets an unsigned long value. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Token\+Value} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$token, float \&result) const
+\begin{DoxyCompactList}\small\item\em Gets a float (single precision floating point) value. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Token\+Value} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$token, double \&result) const
+\begin{DoxyCompactList}\small\item\em Gets a double (double precision floating point) value. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Token\+Value} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$token, \textbf{ String} \&result) const
+\begin{DoxyCompactList}\small\item\em Gets a \doxyref{String}{p.}{class_string} value into a Wiring \doxyref{String}{p.}{class_string} object. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Token\+Value} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$token, char $\ast$str, size\+\_\+t \&str\+Len) const
+\begin{DoxyCompactList}\small\item\em Gets a string as a c-\/string into the specified buffer. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Token\+Value} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$token, \textbf{ Json\+Parser\+String} \&str) const
+\begin{DoxyCompactList}\small\item\em Gets a string as a \doxyref{Json\+Parser\+String}{p.}{class_json_parser_string} object. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Token\+Json\+String} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$token, \textbf{ String} \&result) const
+\begin{DoxyCompactList}\small\item\em Converts a token (object, array, string, or primitive) back into J\+S\+ON in a Wiring \doxyref{String}{p.}{class_string}. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Token\+Json\+String} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$token, char $\ast$str, size\+\_\+t \&str\+Len) const
+\begin{DoxyCompactList}\small\item\em Converts a token (object, array, string, or primitive) back into J\+S\+ON in a buffer. \end{DoxyCompactList}\item 
+bool \textbf{ get\+Token\+Json\+String} (const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$token, \textbf{ Json\+Parser\+String} \&str) const
+\begin{DoxyCompactList}\small\item\em Gets a token as a J\+S\+ON string. \end{DoxyCompactList}\item 
+\textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$ \textbf{ get\+Tokens} ()
+\begin{DoxyCompactList}\small\item\em Used internally in the test suite for printing the token list. \end{DoxyCompactList}\item 
+\textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$ \textbf{ get\+Tokens\+End} ()
+\begin{DoxyCompactList}\small\item\em Used internally in the test suite for printing the token list. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ get\+Max\+Tokens} () const
+\begin{DoxyCompactList}\small\item\em Used internally in the test suite for printing the token list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \textbf{ append\+Utf8} (uint16\+\_\+t unicode, \textbf{ Json\+Parser\+String} \&str)
+\begin{DoxyCompactList}\small\item\em Given a Unicode U\+T\+F-\/16 code point, converts it to U\+T\+F-\/8 and appends it to str. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$ \textbf{ tokens}
+\begin{DoxyCompactList}\small\item\em Array of tokens after parsing. \end{DoxyCompactList}\item 
+\textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$ \textbf{ tokens\+End}
+\begin{DoxyCompactList}\small\item\em Pointer into tokens, points after last used token. \end{DoxyCompactList}\item 
+size\+\_\+t \textbf{ max\+Tokens}
+\begin{DoxyCompactList}\small\item\em Number of tokens that can be stored in tokens. \end{DoxyCompactList}\item 
+\textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parser} \textbf{ parser}
+\begin{DoxyCompactList}\small\item\em The J\+S\+MN parser object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+class \textbf{ Json\+Modifier}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A\+PI to the \doxyref{Json\+Parser}{p.}{class_json_parser}. 
+
+This is a memory-\/efficient J\+S\+ON parser based on jsmn. It only keeps one copy of the data in raw format and an array of tokens. You make calls to read values out. 
+
+Definition at line 262 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\label{class_json_parser_af21abdfb0ceac731e44d897a0285f5d4}} 
+\index{Json\+Parser@{Json\+Parser}!Json\+Parser@{Json\+Parser}}
+\index{Json\+Parser@{Json\+Parser}!Json\+Parser@{Json\+Parser}}
+\subsubsection{Json\+Parser()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily Json\+Parser\+::\+Json\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Construct a parser object. 
+
+This version dynamically allocates the buffer and token storage. If you want to minimize memory allocations you can pass in a static buffer and array of tokens to use instead. 
+
+Definition at line 80 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Buffer\+::\+Json\+Buffer(), max\+Tokens, tokens, and tokens\+End.
+
+
+\begin{DoxyCode}
+80                        : JsonBuffer(), tokens(0), tokensEnd(0), maxTokens(0) \{
+81 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a7c0393b54c37f9ff30b6bb59f0ba92ce}} 
+\index{Json\+Parser@{Json\+Parser}!````~Json\+Parser@{$\sim$\+Json\+Parser}}
+\index{````~Json\+Parser@{$\sim$\+Json\+Parser}!Json\+Parser@{Json\+Parser}}
+\subsubsection{$\sim$\+Json\+Parser()}
+{\footnotesize\ttfamily Json\+Parser\+::$\sim$\+Json\+Parser (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Destroy a parser object. 
+
+If the buffer was allocated dynamically it will be deleted. If you passed in a static buffer the static buffer is not deleted. 
+
+Definition at line 89 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Buffer\+::static\+Buffers, and tokens.
+
+
+\begin{DoxyCode}
+89                         \{
+90     \textcolor{keywordflow}{if} (!staticBuffers && tokens) \{
+91         free(tokens);
+92     \}
+93 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a394f8fa82e72240ce4ad6e6ca25700b6}} 
+\index{Json\+Parser@{Json\+Parser}!Json\+Parser@{Json\+Parser}}
+\index{Json\+Parser@{Json\+Parser}!Json\+Parser@{Json\+Parser}}
+\subsubsection{Json\+Parser()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily Json\+Parser\+::\+Json\+Parser (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{buffer\+Len,  }\item[{\textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{tokens,  }\item[{size\+\_\+t}]{max\+Tokens }\end{DoxyParamCaption})}
+
+
+
+Static buffers constructor. 
+
+
+
+Definition at line 83 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Buffer\+::\+Json\+Buffer(), max\+Tokens, and tokens.
+
+
+\begin{DoxyCode}
+83                                                                                                            
+          :
+84         JsonBuffer(buffer, bufferLen), tokens(tokens), maxTokens(maxTokens) \{
+85 
+86 \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\mbox{\label{class_json_parser_a1731e3265d6b2f89587638dcd6d7ff34}} 
+\index{Json\+Parser@{Json\+Parser}!allocate\+Tokens@{allocate\+Tokens}}
+\index{allocate\+Tokens@{allocate\+Tokens}!Json\+Parser@{Json\+Parser}}
+\subsubsection{allocate\+Tokens()}
+{\footnotesize\ttfamily bool Json\+Parser\+::allocate\+Tokens (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{max\+Tokens }\end{DoxyParamCaption})}
+
+
+
+Preallocates a specific number of tokens. 
+
+Optional\+: You should set this larger than the expected number of tokens for efficiency, but if you are not using the static allocator it will resize the token storage space if it\textquotesingle{}s too small. 
+
+Definition at line 95 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Buffer\+::buffer, max\+Tokens, Json\+Buffer\+::static\+Buffers, and tokens.
+
+
+\begin{DoxyCode}
+95                                                 \{
+96     \textcolor{keywordflow}{if} (!staticBuffers) \{
+97         JsonParserGeneratorRK::jsmntok_t *newTokens;
+98         \textcolor{keywordflow}{if} (tokens) \{
+99             newTokens = (JsonParserGeneratorRK::jsmntok_t *)realloc(buffer, \textcolor{keyword}{sizeof}(
+      JsonParserGeneratorRK::jsmntok_t) * maxTokens);
+100         \}
+101         \textcolor{keywordflow}{else} \{
+102             newTokens = (JsonParserGeneratorRK::jsmntok_t *)malloc(\textcolor{keyword}{sizeof}(
+      JsonParserGeneratorRK::jsmntok_t) * maxTokens);
+103         \}
+104         \textcolor{keywordflow}{if} (newTokens) \{
+105             tokens = newTokens;
+106             this->maxTokens = maxTokens;
+107             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+108         \}
+109         \textcolor{keywordflow}{else} \{
+110             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+111         \}
+112     \}
+113     \textcolor{keywordflow}{else} \{
+114         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+115     \}
+116 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a498dcdec7949c88dfc454d052e25ff69}} 
+\index{Json\+Parser@{Json\+Parser}!append\+Utf8@{append\+Utf8}}
+\index{append\+Utf8@{append\+Utf8}!Json\+Parser@{Json\+Parser}}
+\subsubsection{append\+Utf8()}
+{\footnotesize\ttfamily void Json\+Parser\+::append\+Utf8 (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{unicode,  }\item[{\textbf{ Json\+Parser\+String} \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Given a Unicode U\+T\+F-\/16 code point, converts it to U\+T\+F-\/8 and appends it to str. 
+
+
+
+Definition at line 509 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+String\+::append().
+
+
+
+Referenced by get\+Token\+Value().
+
+
+\begin{DoxyCode}
+509                                                                    \{
+510 
+511     \textcolor{keywordtype}{unsigned} \textcolor{keywordtype}{char} value;
+512 
+513     \textcolor{keywordflow}{if} (unicode <= 0x007f) \{
+514         \textcolor{comment}{// 0x00000000 - 0x0000007F:}
+515         str.append((\textcolor{keywordtype}{char})unicode);
+516     \}
+517     \textcolor{keywordflow}{else}
+518     \textcolor{keywordflow}{if} (unicode <= 0x7ff) \{
+519         \textcolor{comment}{// 0x00000080 - 0x000007FF:}
+520         \textcolor{comment}{// 110xxxxx 10xxxxxx}
+521 
+522         value = (0b11000000 | ((unicode >> 6) & 0b11111));
+523         str.append((\textcolor{keywordtype}{char})value);
+524 
+525         value = (0b10000000 | (unicode & 0b111111));
+526         str.append((\textcolor{keywordtype}{char})value);
+527     \}
+528     \textcolor{keywordflow}{else} \{
+529         \textcolor{comment}{// 0x00000800 - 0x0000FFFF:}
+530         \textcolor{comment}{// 1110xxxx 10xxxxxx 10xxxxxx}
+531         value = 0b11100000 | ((unicode >> 12) & 0b1111);
+532         str.append((\textcolor{keywordtype}{char})value);
+533 
+534         value = 0b10000000 | ((unicode >> 6) & 0b111111);
+535         str.append((\textcolor{keywordtype}{char})value);
+536 
+537         value = 0b10000000 | (unicode & 0b111111);
+538         str.append((\textcolor{keywordtype}{char})value);
+539     \}
+540 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_ab7f8a2873dd3a2935cf0a22133a5378f}} 
+\index{Json\+Parser@{Json\+Parser}!copy\+Token\+Value@{copy\+Token\+Value}}
+\index{copy\+Token\+Value@{copy\+Token\+Value}!Json\+Parser@{Json\+Parser}}
+\subsubsection{copy\+Token\+Value()}
+{\footnotesize\ttfamily void Json\+Parser\+::copy\+Token\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token,  }\item[{char $\ast$}]{dst,  }\item[{size\+\_\+t}]{dst\+Len }\end{DoxyParamCaption}) const}
+
+
+
+Copies the value of the token into a buffer, making it a null-\/terminated cstring. 
+
+If the string is longer than dst\+Len -\/ 1 bytes, it will be truncated and the result will still be a valid cstring.
+
+This is used internally because the token data is not null-\/terminated, and doing things like sscanf or strtoul on it can read past the end of the buffer. This assures that only null-\/terminated data is passed to these functions. 
+
+Definition at line 327 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Buffer\+::buffer, Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, and Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start.
+
+
+
+Referenced by get\+Token\+Value().
+
+
+\begin{DoxyCode}
+327                                                                                                            
+      \{
+328 
+329     \textcolor{keywordtype}{int} ii;
+330     \textcolor{keywordflow}{for}(ii = 0; ii < (token->end - token->start) && ii < ((\textcolor{keywordtype}{int})dstLen - 1); ii++) \{
+331         dst[ii] = buffer[token->start + ii];
+332     \}
+333     dst[ii] = 0;
+334 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_aeb46af21c13fa2396e065543bd8db265}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Array\+Size@{get\+Array\+Size}}
+\index{get\+Array\+Size@{get\+Array\+Size}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Array\+Size()}
+{\footnotesize\ttfamily size\+\_\+t Json\+Parser\+::get\+Array\+Size (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{array\+Container }\end{DoxyParamCaption}) const}
+
+
+
+Given a token for an J\+S\+ON array in array\+Container, gets the number of elements in the array. 
+
+0 = no elements, 1 = one element, ...
+
+The index values for \doxyref{get\+Value\+By\+Index()}{p.}{class_json_parser_a53bd8a6ebb0d9b246b876653e792368f}, etc. are 0-\/based, so the last index you pass in is less than \doxyref{get\+Array\+Size()}{p.}{class_json_parser_aeb46af21c13fa2396e065543bd8db265}. 
+
+Definition at line 315 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, skip\+Object(), and tokens\+End.
+
+
+
+Referenced by main(), and Json\+Reference\+::size().
+
+
+\begin{DoxyCode}
+315                                                                                           \{
+316     \textcolor{keywordtype}{size\_t} index = 0;
+317     \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *token = arrayContainer + 1;
+318 
+319     \textcolor{keywordflow}{while}(token < tokensEnd && token->end < arrayContainer->end) \{
+320         index++;
+321         skipObject(arrayContainer, token);
+322     \}
+323 
+324     \textcolor{keywordflow}{return} index;
+325 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a5759f53499dcb4418e07e9c5e1a42442}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Key\+Value\+By\+Index@{get\+Key\+Value\+By\+Index}}
+\index{get\+Key\+Value\+By\+Index@{get\+Key\+Value\+By\+Index}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Key\+Value\+By\+Index()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool Json\+Parser\+::get\+Key\+Value\+By\+Index (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{container,  }\item[{size\+\_\+t}]{index,  }\item[{\textbf{ String} \&}]{key,  }\item[{T \&}]{result }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the key/value pair of an object by index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em container} & The object to look in (see get\+Outer\+Key\+Value\+By\+Index if you want to the outermost object you parsed)\\
+\hline
+{\em index} & 0 = first, 1 = second, ...\\
+\hline
+{\em key} & Filled in with the name of the key\\
+\hline
+{\em result} & Filled in with the value. The value can be of type\+: bool, int, unsigned long, float, double, \doxyref{String}{p.}{class_string}, or (char $\ast$, size\+\_\+t\&).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the call succeeded or false if it failed.
+\end{DoxyReturn}
+Normally you get a value in an object by its key, but if you want to iterate all of the keys you can use this method. Call it until it returns false.
+
+This should only be used for things like string, numbers, booleans, etc.. If you want to get a J\+S\+ON array or object within an object, use \doxyref{get\+Value\+Token\+By\+Key()}{p.}{class_json_parser_a39d613e94d0d6beafe908159f86bc067} instead. 
+
+Definition at line 425 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References get\+Key\+Value\+Token\+By\+Index(), and get\+Token\+Value().
+
+
+\begin{DoxyCode}
+425                                                                                                            
+                    \{
+426         \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *keyToken;
+427         \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *valueToken;
+428 
+429         \textcolor{keywordflow}{if} (getKeyValueTokenByIndex(container, keyToken, valueToken, index)) \{
+430             getTokenValue(keyToken, key);
+431             \textcolor{keywordflow}{return} getTokenValue(valueToken, result);
+432         \}
+433         \textcolor{keywordflow}{else} \{
+434             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+435         \}
+436     \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a946929ab0c54eed7e7c8697e9304d553}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Key\+Value\+Token\+By\+Index@{get\+Key\+Value\+Token\+By\+Index}}
+\index{get\+Key\+Value\+Token\+By\+Index@{get\+Key\+Value\+Token\+By\+Index}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Key\+Value\+Token\+By\+Index()}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Key\+Value\+Token\+By\+Index (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{container,  }\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\&}]{key,  }\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\&}]{value,  }\item[{size\+\_\+t}]{index }\end{DoxyParamCaption}) const}
+
+
+
+Given a J\+S\+ON object in container, gets the key/value pair specified by index. Internal use only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em container} & The array token to look in.\\
+\hline
+{\em key} & Filled in with the key token for nth key value pair.\\
+\hline
+{\em value} & Filled in with the value token for then nth key value pair.\\
+\hline
+{\em index} & The index to retrieve (0 = first, 1 = second, ...).\\
+\hline
+\end{DoxyParams}
+This is a low-\/level function; you will typically use \doxyref{get\+Value\+By\+Index()}{p.}{class_json_parser_a53bd8a6ebb0d9b246b876653e792368f} or \doxyref{get\+Value\+By\+Key()}{p.}{class_json_parser_a13abcdcb2341f65ac358bb4d81007d06} instead. 
+
+Definition at line 250 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, skip\+Object(), and tokens\+End.
+
+
+
+Referenced by get\+Key\+Value\+By\+Index(), get\+Value\+Token\+By\+Key(), main(), and print\+Json\+Inner().
+
+
+\begin{DoxyCode}
+250                                                                                                            
+                                                                                                        \{
+251 
+252     \textcolor{keywordtype}{size\_t} index = 0;
+253     \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *token = container + 1;
+254 
+255     \textcolor{keywordflow}{while}(token < tokensEnd && token->end < container->end) \{
+256         \textcolor{keywordflow}{if} (desiredIndex == index) \{
+257             key = token;
+258             \textcolor{keywordflow}{if} (skipObject(container, token)) \{
+259                 value = token;
+260                 \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+261             \}
+262         \}
+263         index++;
+264         skipObject(container, token);
+265         skipObject(container, token);
+266     \}
+267 
+268     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+269 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a39e91342fbbb72d6fb304dd2f2e7f505}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Max\+Tokens@{get\+Max\+Tokens}}
+\index{get\+Max\+Tokens@{get\+Max\+Tokens}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Max\+Tokens()}
+{\footnotesize\ttfamily size\+\_\+t Json\+Parser\+::get\+Max\+Tokens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used internally in the test suite for printing the token list. 
+
+
+
+Definition at line 743 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References max\+Tokens.
+
+
+\begin{DoxyCode}
+743 \{ \textcolor{keywordflow}{return} maxTokens; \};
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a91ffa7e1c4d2fbc2524533d65c31b605}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Outer\+Array@{get\+Outer\+Array}}
+\index{get\+Outer\+Array@{get\+Outer\+Array}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Outer\+Array()}
+{\footnotesize\ttfamily const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$ Json\+Parser\+::get\+Outer\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the outer J\+S\+ON array token. 
+
+Sometimes the J\+S\+ON will contain an array of values (or objects) instead of starting with an object. This gets the outermost array.
+
+A token (\doxyref{Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}{p.}{struct_json_parser_generator_r_k_1_1jsmntok__t}) identifies a particular piece of data in the J\+S\+ON data, such as an object, array, or element within an object or array, such as a string, integer, boolean, etc.. 
+
+Definition at line 192 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+A\+R\+R\+AY, tokens, tokens\+End, and Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::type.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+192                                                                       \{
+193     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *token = tokens; token < 
+      tokensEnd; token++) \{
+194         \textcolor{keywordflow}{if} (token->type == JsonParserGeneratorRK::JSMN_ARRAY) \{
+195             \textcolor{keywordflow}{return} token;
+196         \}
+197     \}
+198     \textcolor{keywordflow}{return} 0;
+199 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a4718893bc6350e129a9acbf6cb5a47ad}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Outer\+Key\+Value\+By\+Index@{get\+Outer\+Key\+Value\+By\+Index}}
+\index{get\+Outer\+Key\+Value\+By\+Index@{get\+Outer\+Key\+Value\+By\+Index}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Outer\+Key\+Value\+By\+Index()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool Json\+Parser\+::get\+Outer\+Key\+Value\+By\+Index (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{index,  }\item[{\textbf{ String} \&}]{key,  }\item[{T \&}]{result }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the key/value pair of the outer object by index (0 = first, 1 = second, ...) 
+
+Normally you get a value in an object by its key, but if you want to iterate all of the keys you can use this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & 0 = first, 1 = second, ...\\
+\hline
+{\em key} & Filled in with the name of the key\\
+\hline
+{\em result} & Filled in with the value. The value can be of type\+: bool, int, unsigned long, float, double, \doxyref{String}{p.}{class_string}, or (char $\ast$, size\+\_\+t\&).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the call succeeded or false if it failed.
+\end{DoxyReturn}
+This should only be used for things like string, numbers, booleans, etc.. If you want to get a J\+S\+ON array or object within an object, use \doxyref{get\+Value\+Token\+By\+Key()}{p.}{class_json_parser_a39d613e94d0d6beafe908159f86bc067} instead. 
+
+Definition at line 457 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References get\+Outer\+Object().
+
+
+
+Referenced by run\+Test().
+
+
+\begin{DoxyCode}
+457                                                                              \{
+458         \textcolor{keywordflow}{return} getKeyValueByIndex(getOuterObject(), index, key, result);
+459     \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a4e694318a7c823d4cca3a5be49907df7}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Outer\+Object@{get\+Outer\+Object}}
+\index{get\+Outer\+Object@{get\+Outer\+Object}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Outer\+Object()}
+{\footnotesize\ttfamily const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$ Json\+Parser\+::get\+Outer\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the outer J\+S\+ON object token. 
+
+Typically J\+S\+ON will contain an object that contains values and possibly other objects. This method gets the token for the outer object.
+
+A token (\doxyref{Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}{p.}{struct_json_parser_generator_r_k_1_1jsmntok__t}) identifies a particular piece of data in the J\+S\+ON data, such as an object, array, or element within an object or array, such as a string, integer, boolean, etc.. 
+
+Definition at line 218 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT, tokens, tokens\+End, and Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::type.
+
+
+
+Referenced by get\+Outer\+Key\+Value\+By\+Index(), get\+Outer\+Value\+By\+Key(), and main().
+
+
+\begin{DoxyCode}
+218                                                                        \{
+219     \textcolor{keywordflow}{if} (tokens < tokensEnd && tokens[0].type == 
+      JsonParserGeneratorRK::JSMN_OBJECT) \{
+220         \textcolor{keywordflow}{return} &tokens[0];
+221     \}
+222     \textcolor{keywordflow}{else} \{
+223         \textcolor{keywordflow}{return} 0;
+224     \}
+225 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a3c28b01c0e1fc3c7677e07e1739ea288}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Outer\+Token@{get\+Outer\+Token}}
+\index{get\+Outer\+Token@{get\+Outer\+Token}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Outer\+Token()}
+{\footnotesize\ttfamily const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$ Json\+Parser\+::get\+Outer\+Token (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Gets the outer J\+S\+ON object or array token. 
+
+A token (\doxyref{Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}{p.}{struct_json_parser_generator_r_k_1_1jsmntok__t}) identifies a particular piece of data in the J\+S\+ON data, such as an object, array, or element within an object or array, such as a string, integer, boolean, etc.. 
+
+Definition at line 227 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+A\+R\+R\+AY, Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT, tokens, tokens\+End, and Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::type.
+
+
+
+Referenced by main(), and print\+Json().
+
+
+\begin{DoxyCode}
+227                                                                       \{
+228     \textcolor{keywordflow}{for}(\textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *token = tokens; token < 
+      tokensEnd; token++) \{
+229         \textcolor{keywordflow}{if} (token->type == JsonParserGeneratorRK::JSMN_OBJECT || token->type == 
+      JsonParserGeneratorRK::JSMN_ARRAY) \{
+230             \textcolor{keywordflow}{return} token;
+231         \}
+232     \}
+233     \textcolor{keywordflow}{return} 0;
+234 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a38858994342cd2735b716b117bf8afdf}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Outer\+Value\+By\+Key@{get\+Outer\+Value\+By\+Key}}
+\index{get\+Outer\+Value\+By\+Key@{get\+Outer\+Value\+By\+Key}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Outer\+Value\+By\+Key()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool Json\+Parser\+::get\+Outer\+Value\+By\+Key (\begin{DoxyParamCaption}\item[{const char $\ast$}]{name,  }\item[{T \&}]{result }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Gets the value with the specified key name out of the outer object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em name} & The name of the key to retrieve\\
+\hline
+{\em result} & The returned data.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the data was retrieved successfully, false if not (key not present or incompatible data type).
+\end{DoxyReturn}
+The outer object must be a J\+S\+ON object, not an array.
+
+This should only be used for things like string, numbers, booleans, etc.. If you want to get a J\+S\+ON array or object within an object, use \doxyref{get\+Value\+Token\+By\+Key()}{p.}{class_json_parser_a39d613e94d0d6beafe908159f86bc067} instead. 
+
+Definition at line 393 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References get\+Outer\+Object(), and get\+Value\+Token\+By\+Key().
+
+
+
+Referenced by main(), and run\+Test().
+
+
+\begin{DoxyCode}
+393                                                                \{
+394         \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *value;
+395 
+396         \textcolor{keywordflow}{if} (getValueTokenByKey(getOuterObject(), name, value)) \{
+397             \textcolor{keywordflow}{return} getTokenValue(value, result);
+398         \}
+399         \textcolor{keywordflow}{else} \{
+400             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+401         \}
+402     \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a27f639337cff7b364edb05c01f098786}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Reference@{get\+Reference}}
+\index{get\+Reference@{get\+Reference}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Reference()}
+{\footnotesize\ttfamily \textbf{ Json\+Reference} Json\+Parser\+::get\+Reference (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const}
+
+
+
+Get a \doxyref{Json\+Reference}{p.}{class_json_reference} object. This is used for fluent-\/style access to the data. 
+
+
+
+Definition at line 182 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Reference\+::\+Json\+Reference(), tokens, and tokens\+End.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+182                                              \{
+183 
+184     \textcolor{keywordflow}{if} (tokens < tokensEnd) \{
+185         \textcolor{keywordflow}{return} JsonReference(\textcolor{keyword}{this}, &tokens[0]);
+186     \}
+187     \textcolor{keywordflow}{else} \{
+188         \textcolor{keywordflow}{return} JsonReference(\textcolor{keyword}{this});
+189     \}
+190 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a588d9c4fcfe9179db67ca42f5ba5229d}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Token\+By\+Index@{get\+Token\+By\+Index}}
+\index{get\+Token\+By\+Index@{get\+Token\+By\+Index}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Token\+By\+Index()}
+{\footnotesize\ttfamily const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$ Json\+Parser\+::get\+Token\+By\+Index (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{container,  }\item[{size\+\_\+t}]{desired\+Index }\end{DoxyParamCaption}) const}
+
+
+
+Given a containing object, finds the nth token in the object. Internal use only. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em container} & The array token to look in.\\
+\hline
+{\em desired\+Index} & The index to retrieve (0 = first, 1 = second, ...).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The token
+\end{DoxyReturn}
+This is used internally. It should not be used to get the nth array value, use get\+Value\+Token\+By\+Index instead. 
+
+Definition at line 201 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, skip\+Object(), and tokens\+End.
+
+
+
+Referenced by main(), and Json\+Modifier\+::remove\+Array\+Index().
+
+
+\begin{DoxyCode}
+201                                                                                                            
+                                       \{
+202 
+203     \textcolor{keywordtype}{size\_t} index = 0;
+204     \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *token = container + 1;
+205 
+206     \textcolor{keywordflow}{while}(token < tokensEnd && token->end < container->end) \{
+207         \textcolor{keywordflow}{if} (desiredIndex == index) \{
+208             \textcolor{keywordflow}{return} token;
+209         \}
+210         index++;
+211         skipObject(container, token);
+212     \}
+213 
+214     \textcolor{keywordflow}{return} 0;
+215 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a334ccfff663a5d3155a799049896d55c}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Token\+Json\+String@{get\+Token\+Json\+String}}
+\index{get\+Token\+Json\+String@{get\+Token\+Json\+String}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Token\+Json\+String()\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Token\+Json\+String (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token,  }\item[{\textbf{ String} \&}]{result }\end{DoxyParamCaption}) const}
+
+
+
+Converts a token (object, array, string, or primitive) back into J\+S\+ON in a Wiring \doxyref{String}{p.}{class_string}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The token to convert back to a string\\
+\hline
+{\em result} & Filled in with the string. Any previous contents in the string are cleared first. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 487 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, get\+Token\+Json\+String(), Json\+Parser\+String\+::\+Json\+Parser\+String(), String\+::operator=(), String\+::reserve(), and Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+487                                                                                                      \{
+488     result = \textcolor{stringliteral}{""};
+489     result.reserve(token->end - token->start + 3);
+490 
+491     JsonParserString strWrapper(&result);
+492     \textcolor{keywordflow}{return} getTokenJsonString(token, strWrapper);
+493 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_af235693afede52de81794e3773e5cff4}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Token\+Json\+String@{get\+Token\+Json\+String}}
+\index{get\+Token\+Json\+String@{get\+Token\+Json\+String}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Token\+Json\+String()\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Token\+Json\+String (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token,  }\item[{char $\ast$}]{str,  }\item[{size\+\_\+t \&}]{str\+Len }\end{DoxyParamCaption}) const}
+
+
+
+Converts a token (object, array, string, or primitive) back into J\+S\+ON in a buffer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The token to convert back to a string\\
+\hline
+{\em str} & The buffer to be written to\\
+\hline
+{\em str\+Len} & The length of the buffer on entry, set to the number of bytes written on exit. \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 495 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+String\+::get\+Length(), get\+Token\+Json\+String(), and Json\+Parser\+String\+::\+Json\+Parser\+String().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+495                                                                                                            
+           \{
+496     JsonParserString strWrapper(str, bufLen);
+497     \textcolor{keywordtype}{bool} result = getTokenJsonString(token, strWrapper);
+498     bufLen = strWrapper.getLength() + 1;
+499     \textcolor{keywordflow}{return} result;
+500 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a4c6d9fc64d49d057dd2b7b3ea63a7d8c}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Token\+Json\+String@{get\+Token\+Json\+String}}
+\index{get\+Token\+Json\+String@{get\+Token\+Json\+String}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Token\+Json\+String()\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Token\+Json\+String (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token,  }\item[{\textbf{ Json\+Parser\+String} \&}]{str }\end{DoxyParamCaption}) const}
+
+
+
+Gets a token as a J\+S\+ON string. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em token} & The token to convert back to a string\\
+\hline
+{\em str} & The \doxyref{Json\+Parser\+String}{p.}{class_json_parser_string} object to write to\\
+\hline
+\end{DoxyParams}
+This overload is typically used internally, normally you\textquotesingle{}d use the version that takes a \doxyref{String}{p.}{class_string}\& or char $\ast$, size\+\_\+t. 
+
+Definition at line 502 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+String\+::append(), Json\+Buffer\+::buffer, Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, and Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start.
+
+
+
+Referenced by get\+Token\+Json\+String().
+
+
+\begin{DoxyCode}
+502                                                                                                            
+       \{
+503     str.append(&buffer[token->start], token->end - token->start);
+504     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+505 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a1cdeae1e2cf1b45cde47ca8a8f9a84c9}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Tokens@{get\+Tokens}}
+\index{get\+Tokens@{get\+Tokens}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Tokens()}
+{\footnotesize\ttfamily \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}$\ast$ Json\+Parser\+::get\+Tokens (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used internally in the test suite for printing the token list. 
+
+
+
+Definition at line 733 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References tokens.
+
+
+
+Referenced by print\+Tokens().
+
+
+\begin{DoxyCode}
+733 \{ \textcolor{keywordflow}{return} tokens; \};
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a8e0503af76c2bc9b8d2231dddb8b1cb3}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Tokens\+End@{get\+Tokens\+End}}
+\index{get\+Tokens\+End@{get\+Tokens\+End}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Tokens\+End()}
+{\footnotesize\ttfamily \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}$\ast$ Json\+Parser\+::get\+Tokens\+End (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Used internally in the test suite for printing the token list. 
+
+
+
+Definition at line 738 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References tokens\+End.
+
+
+
+Referenced by print\+Tokens().
+
+
+\begin{DoxyCode}
+738 \{ \textcolor{keywordflow}{return} tokensEnd; \};
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a5f9e5c2453307a99a54fcf26fbd68dd4}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Token\+Value@{get\+Token\+Value}}
+\index{get\+Token\+Value@{get\+Token\+Value}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Token\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [1/8]}}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Token\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token,  }\item[{bool \&}]{result }\end{DoxyParamCaption}) const}
+
+
+
+Gets a bool (boolean) value. 
+
+Normally you\textquotesingle{}d use \doxyref{get\+Value\+By\+Key()}{p.}{class_json_parser_a13abcdcb2341f65ac358bb4d81007d06}, \doxyref{get\+Value\+By\+Index()}{p.}{class_json_parser_a53bd8a6ebb0d9b246b876653e792368f} or \doxyref{get\+Value\+By\+Col\+Row()}{p.}{class_json_parser_af1f4a3a65b5cc9cd19b129c410aa78e0} which will automatically use this when the result parameter is a bool variable. 
+
+Definition at line 338 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Buffer\+::buffer, Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, and Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start.
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+338                                                                                               \{
+339     \textcolor{keywordflow}{if} (token->end > token->start) \{
+340         \textcolor{keywordflow}{switch}(buffer[token->start]) \{
+341         \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}: \textcolor{comment}{// should be this}
+342         \textcolor{keywordflow}{case} \textcolor{charliteral}{'T'}:
+343         \textcolor{keywordflow}{case} \textcolor{charliteral}{'y'}:
+344         \textcolor{keywordflow}{case} \textcolor{charliteral}{'Y'}:
+345         \textcolor{keywordflow}{case} \textcolor{charliteral}{'1'}:
+346             result = \textcolor{keyword}{true};
+347             \textcolor{keywordflow}{break};
+348 
+349         \textcolor{keywordflow}{default}:
+350             result = \textcolor{keyword}{false};
+351             \textcolor{keywordflow}{break};
+352         \}
+353         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+354     \}
+355     \textcolor{keywordflow}{else} \{
+356         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+357     \}
+358 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a875e5b4b01c9cd597e09b13e59fe6252}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Token\+Value@{get\+Token\+Value}}
+\index{get\+Token\+Value@{get\+Token\+Value}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Token\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [2/8]}}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Token\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token,  }\item[{int \&}]{result }\end{DoxyParamCaption}) const}
+
+
+
+Gets an integer value. 
+
+Normally you\textquotesingle{}d use \doxyref{get\+Value\+By\+Key()}{p.}{class_json_parser_a13abcdcb2341f65ac358bb4d81007d06}, \doxyref{get\+Value\+By\+Index()}{p.}{class_json_parser_a53bd8a6ebb0d9b246b876653e792368f} or \doxyref{get\+Value\+By\+Col\+Row()}{p.}{class_json_parser_af1f4a3a65b5cc9cd19b129c410aa78e0} which will automatically use this when the result parameter is an int variable. 
+
+Definition at line 360 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References copy\+Token\+Value().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+360                                                                                              \{
+361     \textcolor{comment}{// Copy data here, because tokens are not null terminated}
+362     \textcolor{keywordtype}{char} tmp[16];
+363     copyTokenValue(token, tmp, \textcolor{keyword}{sizeof}(tmp));
+364 
+365     \textcolor{keywordflow}{if} (sscanf(tmp, \textcolor{stringliteral}{"%d"}, &result) == 1) \{
+366         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+367     \}
+368     \textcolor{keywordflow}{else} \{
+369         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+370     \}
+371 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_ad6289b63a2281dc516e4a81aa3660ac7}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Token\+Value@{get\+Token\+Value}}
+\index{get\+Token\+Value@{get\+Token\+Value}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Token\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [3/8]}}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Token\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token,  }\item[{unsigned long \&}]{result }\end{DoxyParamCaption}) const}
+
+
+
+Gets an unsigned long value. 
+
+Normally you\textquotesingle{}d use \doxyref{get\+Value\+By\+Key()}{p.}{class_json_parser_a13abcdcb2341f65ac358bb4d81007d06}, \doxyref{get\+Value\+By\+Index()}{p.}{class_json_parser_a53bd8a6ebb0d9b246b876653e792368f} or \doxyref{get\+Value\+By\+Col\+Row()}{p.}{class_json_parser_af1f4a3a65b5cc9cd19b129c410aa78e0} which will automatically use this when the result parameter is an unsigned long variable. 
+
+Definition at line 373 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References copy\+Token\+Value().
+
+
+\begin{DoxyCode}
+373                                                                                                        \{
+374     \textcolor{comment}{// Copy data here, because tokens are not null terminated}
+375     \textcolor{keywordtype}{char} tmp[16];
+376     copyTokenValue(token, tmp, \textcolor{keyword}{sizeof}(tmp));
+377 
+378     \textcolor{keywordflow}{if} (sscanf(tmp, \textcolor{stringliteral}{"%lu"}, &result) == 1) \{
+379         \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+380     \}
+381     \textcolor{keywordflow}{else} \{
+382         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+383     \}
+384 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a37a6ad66b9697ceb6b789b4c9abaa3ab}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Token\+Value@{get\+Token\+Value}}
+\index{get\+Token\+Value@{get\+Token\+Value}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Token\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [4/8]}}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Token\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token,  }\item[{float \&}]{result }\end{DoxyParamCaption}) const}
+
+
+
+Gets a float (single precision floating point) value. 
+
+Normally you\textquotesingle{}d use \doxyref{get\+Value\+By\+Key()}{p.}{class_json_parser_a13abcdcb2341f65ac358bb4d81007d06}, \doxyref{get\+Value\+By\+Index()}{p.}{class_json_parser_a53bd8a6ebb0d9b246b876653e792368f} or \doxyref{get\+Value\+By\+Col\+Row()}{p.}{class_json_parser_af1f4a3a65b5cc9cd19b129c410aa78e0} which will automatically use this when the result parameter is a float variable. 
+
+Definition at line 388 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References copy\+Token\+Value().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+388                                                                                                \{
+389     \textcolor{comment}{// Copy data here, because tokens are not null terminated}
+390     \textcolor{keywordtype}{char} tmp[16];
+391     copyTokenValue(token, tmp, \textcolor{keyword}{sizeof}(tmp));
+392 
+393     result = strtof(tmp, 0);
+394     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+395 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_af378b1400c3f091ae6ba67dc588ca863}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Token\+Value@{get\+Token\+Value}}
+\index{get\+Token\+Value@{get\+Token\+Value}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Token\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [5/8]}}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Token\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token,  }\item[{double \&}]{result }\end{DoxyParamCaption}) const}
+
+
+
+Gets a double (double precision floating point) value. 
+
+Normally you\textquotesingle{}d use \doxyref{get\+Value\+By\+Key()}{p.}{class_json_parser_a13abcdcb2341f65ac358bb4d81007d06}, \doxyref{get\+Value\+By\+Index()}{p.}{class_json_parser_a53bd8a6ebb0d9b246b876653e792368f} or \doxyref{get\+Value\+By\+Col\+Row()}{p.}{class_json_parser_af1f4a3a65b5cc9cd19b129c410aa78e0} which will automatically use this when the result parameter is a double variable. 
+
+Definition at line 397 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References copy\+Token\+Value().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+397                                                                                                 \{
+398     \textcolor{comment}{// Copy data here, because tokens are not null terminated}
+399     \textcolor{keywordtype}{char} tmp[16];
+400     copyTokenValue(token, tmp, \textcolor{keyword}{sizeof}(tmp));
+401 
+402     result = strtod(tmp, 0);
+403     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+404 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a44cff567586e80ba63d39324e5929672}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Token\+Value@{get\+Token\+Value}}
+\index{get\+Token\+Value@{get\+Token\+Value}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Token\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [6/8]}}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Token\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token,  }\item[{\textbf{ String} \&}]{result }\end{DoxyParamCaption}) const}
+
+
+
+Gets a \doxyref{String}{p.}{class_string} value into a Wiring \doxyref{String}{p.}{class_string} object. 
+
+This will automatically decode Unicode character escapes in the data and the returned \doxyref{String}{p.}{class_string} will contain U\+T\+F-\/8.
+
+Normally you\textquotesingle{}d use \doxyref{get\+Value\+By\+Key()}{p.}{class_json_parser_a13abcdcb2341f65ac358bb4d81007d06}, \doxyref{get\+Value\+By\+Index()}{p.}{class_json_parser_a53bd8a6ebb0d9b246b876653e792368f} or \doxyref{get\+Value\+By\+Col\+Row()}{p.}{class_json_parser_af1f4a3a65b5cc9cd19b129c410aa78e0} which will automatically use this when the result parameter is a \doxyref{String}{p.}{class_string} variable. 
+
+Definition at line 408 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, get\+Token\+Value(), Json\+Parser\+String\+::\+Json\+Parser\+String(), String\+::operator=(), String\+::reserve(), and Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start.
+
+
+
+Referenced by get\+Key\+Value\+By\+Index(), get\+Value\+Token\+By\+Key(), main(), and print\+Json\+Inner().
+
+
+\begin{DoxyCode}
+408                                                                                                 \{
+409 
+410     result = \textcolor{stringliteral}{""};
+411     result.reserve(token->end - token->start + 1);
+412 
+413     JsonParserString strWrapper(&result);
+414     \textcolor{keywordflow}{return} getTokenValue(token, strWrapper);
+415 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_aa5c0b33d4ddeae1e0d605e166a2a772c}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Token\+Value@{get\+Token\+Value}}
+\index{get\+Token\+Value@{get\+Token\+Value}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Token\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [7/8]}}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Token\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token,  }\item[{char $\ast$}]{str,  }\item[{size\+\_\+t \&}]{str\+Len }\end{DoxyParamCaption}) const}
+
+
+
+Gets a string as a c-\/string into the specified buffer. 
+
+If the token specifies too large of a string it will be truncated. This will automatically decode Unicode character escapes in the data and the returned string will contain U\+T\+F-\/8. 
+
+Definition at line 417 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+String\+::get\+Length(), get\+Token\+Value(), and Json\+Parser\+String\+::\+Json\+Parser\+String().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+417                                                                                                            
+      \{
+418     JsonParserString strWrapper(str, bufLen);
+419     \textcolor{keywordtype}{bool} result = getTokenValue(token, strWrapper);
+420     bufLen = strWrapper.getLength() + 1;
+421     \textcolor{keywordflow}{return} result;
+422 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a6942f718b6b73d2ff1611f55aec8569c}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Token\+Value@{get\+Token\+Value}}
+\index{get\+Token\+Value@{get\+Token\+Value}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Token\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [8/8]}}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Token\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{token,  }\item[{\textbf{ Json\+Parser\+String} \&}]{str }\end{DoxyParamCaption}) const}
+
+
+
+Gets a string as a \doxyref{Json\+Parser\+String}{p.}{class_json_parser_string} object. 
+
+This is used internally by \doxyref{get\+Token\+Value()}{p.}{class_json_parser_a5f9e5c2453307a99a54fcf26fbd68dd4} overloads that take a \doxyref{String}{p.}{class_string} or buffer and length; you will normally not need to use this directly.
+
+This will automatically decode Unicode character escapes in the data and the returned string will contain U\+T\+F-\/8. 
+
+Definition at line 425 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+String\+::append(), append\+Utf8(), Json\+Buffer\+::buffer, Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, and Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start.
+
+
+
+Referenced by get\+Token\+Value().
+
+
+\begin{DoxyCode}
+425                                                                                                        \{
+426 
+427     \textcolor{keywordtype}{int} unicode;
+428     \textcolor{keywordtype}{bool} escape = \textcolor{keyword}{false};
+429 
+430     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} ii = token->start; ii < token->end; ii++) \{
+431         \textcolor{keywordflow}{if} (escape) \{
+432             escape = \textcolor{keyword}{false};
+433             \textcolor{keywordflow}{switch}(buffer[ii]) \{
+434             \textcolor{keywordflow}{case} \textcolor{charliteral}{'b'}:
+435                 str.append(\textcolor{charliteral}{'\(\backslash\)b'});
+436                 \textcolor{keywordflow}{break};
+437 
+438             \textcolor{keywordflow}{case} \textcolor{charliteral}{'f'}:
+439                 str.append(\textcolor{charliteral}{'\(\backslash\)f'});
+440                 \textcolor{keywordflow}{break};
+441 
+442             \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}:
+443                 str.append(\textcolor{charliteral}{'\(\backslash\)n'});
+444                 \textcolor{keywordflow}{break};
+445 
+446             \textcolor{keywordflow}{case} \textcolor{charliteral}{'r'}:
+447                 str.append(\textcolor{charliteral}{'\(\backslash\)r'});
+448                 \textcolor{keywordflow}{break};
+449 
+450             \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}:
+451                 str.append(\textcolor{charliteral}{'\(\backslash\)t'});
+452                 \textcolor{keywordflow}{break};
+453 
+454             \textcolor{keywordflow}{case} \textcolor{charliteral}{'u'}:
+455                 \textcolor{keywordflow}{if} ((ii + 4) < token->end) \{
+456                     \textcolor{comment}{// Copy data here because buffer is not null terminated and this could}
+457                     \textcolor{comment}{// read past the end otherwise}
+458                     \textcolor{keywordtype}{char} tmp[5];
+459                     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} jj = 0; jj < 4; jj++) \{
+460                         tmp[jj] = buffer[ii + jj + 1];
+461                     \}
+462                     tmp[4] = 0;
+463                     \textcolor{keywordflow}{if} (sscanf(tmp, \textcolor{stringliteral}{"%04x"}, &unicode) == 1) \{
+464                         appendUtf8((uint16\_t)unicode, str);
+465                         ii += 5; \textcolor{comment}{// also increments in loop}
+466                     \}
+467                 \}
+468                 \textcolor{keywordflow}{break};
+469 
+470             \textcolor{keywordflow}{default}:
+471                 str.append(buffer[ii]);
+472                 \textcolor{keywordflow}{break};
+473             \}
+474         \}
+475         \textcolor{keywordflow}{else}
+476         \textcolor{keywordflow}{if} (buffer[ii] == \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}) \{
+477             escape = \textcolor{keyword}{true};
+478         \}
+479         \textcolor{keywordflow}{else} \{
+480             str.append(buffer[ii]);
+481         \}
+482     \}
+483 
+484     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+485 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_af1f4a3a65b5cc9cd19b129c410aa78e0}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Value\+By\+Col\+Row@{get\+Value\+By\+Col\+Row}}
+\index{get\+Value\+By\+Col\+Row@{get\+Value\+By\+Col\+Row}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Value\+By\+Col\+Row()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool Json\+Parser\+::get\+Value\+By\+Col\+Row (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{array\+Container,  }\item[{size\+\_\+t}]{col,  }\item[{size\+\_\+t}]{row,  }\item[{T \&}]{result }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+This method is used to extract data from a 2-\/dimensional J\+S\+ON array, an array of arrays of values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Container} & A token for an array containing another array\\
+\hline
+{\em col} & The column (outer array index, 0 = first column, 1 = second column, ...)\\
+\hline
+{\em row} & The row (inner array index, 0 = first row, 1 = second row, ...)\\
+\hline
+{\em result} & Filled in with the value. The value can be of type\+: bool, int, unsigned long, float, double, \doxyref{String}{p.}{class_string}, or (char $\ast$, size\+\_\+t\&).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the call succeeded or false if it failed. You can call this repeatedly until it returns false to iterate the array.
+\end{DoxyReturn}
+This should only be used for things like string, numbers, booleans, etc.. If you want to get a J\+S\+ON array or object within a two-\/dimensional array, use \doxyref{get\+Value\+Token\+By\+Col\+Row()}{p.}{class_json_parser_a4fc494206dd45eba5959ffc2df444a21} instead. 
+
+Definition at line 509 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References get\+Value\+Token\+By\+Col\+Row().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+509                                                                                                            
+                    \{
+510         \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *value;
+511 
+512         \textcolor{keywordflow}{if} (getValueTokenByColRow(arrayContainer, col, row, value)) \{
+513             \textcolor{keywordflow}{return} getTokenValue(value, result);
+514         \}
+515         \textcolor{keywordflow}{else} \{
+516             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+517         \}
+518     \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a53bd8a6ebb0d9b246b876653e792368f}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Value\+By\+Index@{get\+Value\+By\+Index}}
+\index{get\+Value\+By\+Index@{get\+Value\+By\+Index}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Value\+By\+Index()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool Json\+Parser\+::get\+Value\+By\+Index (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{array\+Container,  }\item[{size\+\_\+t}]{index,  }\item[{T \&}]{result }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Given an array token in array\+Container, gets the value with the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em array\+Container} & A token for an array\\
+\hline
+{\em index} & The index in the array. 0 = first item, 1 = second item, ...\\
+\hline
+{\em result} & Filled in with the value. The value can be of type\+: bool, int, unsigned long, float, double, \doxyref{String}{p.}{class_string}, or (char $\ast$, size\+\_\+t\&).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the call succeeded or false if it failed. You can call this repeatedly until it returns false to iterate the array.
+\end{DoxyReturn}
+This should only be used for things like string, numbers, booleans, etc.. If you want to get a J\+S\+ON array or object within an array, use \doxyref{get\+Value\+Token\+By\+Index()}{p.}{class_json_parser_a680846b3e3e3e1d40c27bbb71e080048} instead. 
+
+Definition at line 479 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References get\+Value\+Token\+By\+Index().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+479                                                                                                            
+         \{
+480         \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *value;
+481 
+482         \textcolor{keywordflow}{if} (getValueTokenByIndex(arrayContainer, index, value)) \{
+483             \textcolor{keywordflow}{return} getTokenValue(value, result);
+484         \}
+485         \textcolor{keywordflow}{else} \{
+486             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+487         \}
+488     \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a13abcdcb2341f65ac358bb4d81007d06}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Value\+By\+Key@{get\+Value\+By\+Key}}
+\index{get\+Value\+By\+Key@{get\+Value\+By\+Key}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Value\+By\+Key()}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+bool Json\+Parser\+::get\+Value\+By\+Key (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{container,  }\item[{const char $\ast$}]{name,  }\item[{T \&}]{result }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Given an object token in container, gets the value with the specified key name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em container} & The token for the object to obtain the data from.\\
+\hline
+{\em name} & The name of the key to retrieve\\
+\hline
+{\em result} & The returned data. The value can be of type\+: bool, int, unsigned long, float, double, \doxyref{String}{p.}{class_string}, or (char $\ast$, size\+\_\+t\&).\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the data was retrieved successfully, false if not (key not present or incompatible data type).
+\end{DoxyReturn}
+This should only be used for things like string, numbers, booleans, etc.. If you want to get a J\+S\+ON array or object within an object, use \doxyref{get\+Value\+Token\+By\+Key()}{p.}{class_json_parser_a39d613e94d0d6beafe908159f86bc067} instead. 
+
+Definition at line 367 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+References get\+Value\+Token\+By\+Key().
+
+
+
+Referenced by main().
+
+
+\begin{DoxyCode}
+367                                                                                                            
+      \{
+368         \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *value;
+369 
+370         \textcolor{keywordflow}{if} (getValueTokenByKey(container, name, value)) \{
+371             \textcolor{keywordflow}{return} getTokenValue(value, result);
+372         \}
+373         \textcolor{keywordflow}{else} \{
+374             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+375         \}
+376     \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a4fc494206dd45eba5959ffc2df444a21}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Value\+Token\+By\+Col\+Row@{get\+Value\+Token\+By\+Col\+Row}}
+\index{get\+Value\+Token\+By\+Col\+Row@{get\+Value\+Token\+By\+Col\+Row}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Value\+Token\+By\+Col\+Row()}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Value\+Token\+By\+Col\+Row (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{container,  }\item[{size\+\_\+t}]{col,  }\item[{size\+\_\+t}]{row,  }\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\&}]{value }\end{DoxyParamCaption}) const}
+
+
+
+This method is used to extract data from a 2-\/dimensional J\+S\+ON array, an array of arrays of values. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em container} & A token for an array containing another array\\
+\hline
+{\em col} & The column (outer array index, 0 = first column, 1 = second column, ...)\\
+\hline
+{\em row} & The row (inner array index, 0 = first row, 1 = second row, ...)\\
+\hline
+{\em value} & Filled in with the token for the value for key.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the index row and column are valid or false if either is out of range.
+\end{DoxyReturn}
+This can be used for 2-\/dimensional arrays whose values are arrays or objects, to get the token for the container. It can also be used for values, but normally you\textquotesingle{}d use \doxyref{get\+Value\+By\+Col\+Row()}{p.}{class_json_parser_af1f4a3a65b5cc9cd19b129c410aa78e0} instead, which is generally more convenient. 
+
+Definition at line 301 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References get\+Value\+Token\+By\+Index().
+
+
+
+Referenced by get\+Value\+By\+Col\+Row().
+
+
+\begin{DoxyCode}
+301                                                                                                            
+                                                             \{
+302 
+303     \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *columnContainer;
+304 
+305     \textcolor{keywordflow}{if} (getValueTokenByIndex(container, col, columnContainer)) \{
+306         \textcolor{keywordflow}{return} getValueTokenByIndex(columnContainer, row, value);
+307     \}
+308     \textcolor{keywordflow}{else} \{
+309         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+310     \}
+311 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a680846b3e3e3e1d40c27bbb71e080048}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Value\+Token\+By\+Index@{get\+Value\+Token\+By\+Index}}
+\index{get\+Value\+Token\+By\+Index@{get\+Value\+Token\+By\+Index}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Value\+Token\+By\+Index()}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Value\+Token\+By\+Index (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{container,  }\item[{size\+\_\+t}]{desired\+Index,  }\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\&}]{value }\end{DoxyParamCaption}) const}
+
+
+
+Given an array token in container, gets the token value with the specified index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em container} & The array token to look in.\\
+\hline
+{\em desired\+Index} & The index to retrieve (0 = first, 1 = second, ...).\\
+\hline
+{\em value} & Filled in with the token for the value for key.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the index is valid or false if the index exceeds the size of the array.
+\end{DoxyReturn}
+This can be used for arrays whose values are arrays or objects, to get the token for the container. It can also be used for values, but normally you\textquotesingle{}d use \doxyref{get\+Value\+By\+Index()}{p.}{class_json_parser_a53bd8a6ebb0d9b246b876653e792368f} instead, which is generally more convenient. 
+
+Definition at line 285 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, skip\+Object(), and tokens\+End.
+
+
+
+Referenced by get\+Value\+By\+Index(), get\+Value\+Token\+By\+Col\+Row(), Json\+Reference\+::index(), main(), and print\+Json\+Inner().
+
+
+\begin{DoxyCode}
+285                                                                                                            
+                                                         \{
+286     \textcolor{keywordtype}{size\_t} index = 0;
+287     \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *token = container + 1;
+288 
+289     \textcolor{keywordflow}{while}(token < tokensEnd && token->end < container->end) \{
+290         \textcolor{keywordflow}{if} (desiredIndex == index) \{
+291             value = token;
+292             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+293         \}
+294         index++;
+295         skipObject(container, token);
+296     \}
+297 
+298     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+299 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a39d613e94d0d6beafe908159f86bc067}} 
+\index{Json\+Parser@{Json\+Parser}!get\+Value\+Token\+By\+Key@{get\+Value\+Token\+By\+Key}}
+\index{get\+Value\+Token\+By\+Key@{get\+Value\+Token\+By\+Key}!Json\+Parser@{Json\+Parser}}
+\subsubsection{get\+Value\+Token\+By\+Key()}
+{\footnotesize\ttfamily bool Json\+Parser\+::get\+Value\+Token\+By\+Key (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{container,  }\item[{const char $\ast$}]{key,  }\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\&}]{value }\end{DoxyParamCaption}) const}
+
+
+
+Given an object token in container, gets the token value with the specified key name. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em container} & The object token to look in.\\
+\hline
+{\em key} & The key to look for.\\
+\hline
+{\em value} & Filled in with the token for the value for key.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the key is found or false if not.
+\end{DoxyReturn}
+This can be used for objects whose keys are arrays or objects, to get the token for the container. It can also be used for values, but normally you\textquotesingle{}d use \doxyref{get\+Value\+By\+Key()}{p.}{class_json_parser_a13abcdcb2341f65ac358bb4d81007d06} instead, which is generally more convenient. 
+
+Definition at line 272 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References get\+Key\+Value\+Token\+By\+Index(), get\+Token\+Value(), and String\+::operator==().
+
+
+
+Referenced by get\+Outer\+Value\+By\+Key(), get\+Value\+By\+Key(), Json\+Reference\+::key(), main(), and Json\+Modifier\+::remove\+Key\+Value().
+
+
+\begin{DoxyCode}
+272                                                                                                            
+                                                    \{
+273 
+274     \textcolor{keyword}{const} JsonParserGeneratorRK::jsmntok_t *key;
+275     String keyName;
+276 
+277     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} ii = 0; getKeyValueTokenByIndex(container, key, value, ii); ii++) \{
+278         \textcolor{keywordflow}{if} (getTokenValue(key, keyName) && keyName == name) \{
+279             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+280         \}
+281     \}
+282     \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+283 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_ad528213e8600cbad4d85910b62fc033a}} 
+\index{Json\+Parser@{Json\+Parser}!parse@{parse}}
+\index{parse@{parse}!Json\+Parser@{Json\+Parser}}
+\subsubsection{parse()}
+{\footnotesize\ttfamily bool Json\+Parser\+::parse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Parses the data you have added using \doxyref{add\+Data()}{p.}{class_json_buffer_a760cb5be42ed2d2ca9306b1109e76af3} or \doxyref{add\+String()}{p.}{class_json_buffer_a61bf30ac6e1bd460f1e809d02a7d5ba4}. 
+
+When parsing data split into multiple chunks as a webhook response you can call \doxyref{add\+String()}{p.}{class_json_buffer_a61bf30ac6e1bd460f1e809d02a7d5ba4} in your webhook subscription handler and call parse after each chunk. Only on the last chunk will parse return true, and you\textquotesingle{}ll know the entire reponse has been received. 
+
+Definition at line 118 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Buffer\+::buffer, Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM, Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+init(), Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parse(), max\+Tokens, Json\+Buffer\+::offset, parser, Json\+Buffer\+::static\+Buffers, tokens, and tokens\+End.
+
+
+
+Referenced by Json\+Modifier\+::finish(), get\+Measure\+\_\+callback(), main(), Json\+Modifier\+::remove\+Array\+Index(), Json\+Modifier\+::remove\+Key\+Value(), run\+Test(), and subscription\+Handler().
+
+
+\begin{DoxyCode}
+118                        \{
+119     \textcolor{keywordflow}{if} (offset == 0) \{
+120         \textcolor{comment}{// If addString or addData is not called, or called with an empty string,}
+121         \textcolor{comment}{// do not return true, see issue #7.}
+122         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+123     \}
+124 
+125     \textcolor{keywordflow}{if} (tokens) \{
+126         \textcolor{comment}{// Try to use the existing token buffer if possible}
+127         JsonParserGeneratorRK::jsmn_init(&parser);
+128         \textcolor{keywordtype}{int} result = JsonParserGeneratorRK::jsmn_parse(&parser, buffer, offset, 
+      tokens, maxTokens);
+129         \textcolor{keywordflow}{if} (result == JsonParserGeneratorRK::JSMN_ERROR_NOMEM) \{
+130             \textcolor{keywordflow}{if} (staticBuffers) \{
+131                 \textcolor{comment}{// If using static buffers and there is not enough space, fail}
+132                 \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+133             \}
+134             free(tokens);
+135             tokens = 0;
+136             maxTokens = 0;
+137         \}
+138         \textcolor{keywordflow}{else}
+139         \textcolor{keywordflow}{if} (result < 0) \{
+140             \textcolor{comment}{// Failed to parse: JSMN\_ERROR\_INVAL or JSMN\_ERROR\_PART}
+141             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+142         \}
+143         \textcolor{keywordflow}{else} \{
+144             tokensEnd = &tokens[result];
+145             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+146         \}
+147     \}
+148 
+149     \textcolor{comment}{// Pass 1: determine now many tokens we need}
+150     JsonParserGeneratorRK::jsmn_init(&parser);
+151     \textcolor{keywordtype}{int} result = JsonParserGeneratorRK::jsmn_parse(&parser, buffer, offset, 0, 0);
+152     \textcolor{keywordflow}{if} (result < 0) \{
+153         \textcolor{comment}{// Failed to parse: JSMN\_ERROR\_INVAL or JSMN\_ERROR\_PART}
+154         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+155     \}
+156 
+157     \textcolor{comment}{// If we get here, tokens will always be == 0; it would have been freed if it was}
+158     \textcolor{comment}{// too small, and this code is never executed for staticBuffers == true}
+159 
+160     maxTokens = (size\_t) result;
+161     \textcolor{keywordflow}{if} (maxTokens > 0) \{
+162         tokens = (JsonParserGeneratorRK::jsmntok_t *)malloc(\textcolor{keyword}{sizeof}(
+      JsonParserGeneratorRK::jsmntok_t) * maxTokens);
+163 
+164         JsonParserGeneratorRK::jsmn_init(&parser);
+165         \textcolor{keywordtype}{int} result = JsonParserGeneratorRK::jsmn_parse(&parser, buffer, offset, 
+      tokens, maxTokens);
+166 
+167         tokensEnd = &tokens[result];
+168     \}
+169     \textcolor{keywordflow}{else} \{
+170         tokensEnd = tokens;
+171     \}
+172 
+173     \textcolor{comment}{/*}
+174 \textcolor{comment}{    for(const JsonParserGeneratorRK::jsmntok\_t *token = tokens; token < tokensEnd; token++) \{}
+175 \textcolor{comment}{        printf("%d, %d, %d, %d\(\backslash\)n", token->type, token->start, token->end, token->size);}
+176 \textcolor{comment}{    \}}
+177 \textcolor{comment}{    */}
+178 
+179     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+180 \}
+\end{DoxyCode}
+\mbox{\label{class_json_parser_a182ab93b3639f0a99f37f9101eb48361}} 
+\index{Json\+Parser@{Json\+Parser}!skip\+Object@{skip\+Object}}
+\index{skip\+Object@{skip\+Object}!Json\+Parser@{Json\+Parser}}
+\subsubsection{skip\+Object()}
+{\footnotesize\ttfamily bool Json\+Parser\+::skip\+Object (\begin{DoxyParamCaption}\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$}]{container,  }\item[{const \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t} $\ast$\&}]{obj }\end{DoxyParamCaption}) const}
+
+
+
+Used internally to skip over the token in obj. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em container} & The array token to look in.\\
+\hline
+{\em obj} & Object within the token, updated to the next object if true is returned\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if there was a next object, false if not.
+\end{DoxyReturn}
+For simple primitives and strings, this is equivalent to obj++. For objects and arrays, however, this skips over the entire object or array, including any nested objects within them. 
+
+Definition at line 237 of file Json\+Parser\+Generator\+R\+K.\+cpp.
+
+
+
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, and tokens\+End.
+
+
+
+Referenced by get\+Array\+Size(), get\+Key\+Value\+Token\+By\+Index(), get\+Token\+By\+Index(), and get\+Value\+Token\+By\+Index().
+
+
+\begin{DoxyCode}
+237                                                                                                            
+                        \{
+238     \textcolor{keywordtype}{int} curObjectEnd = obj->end;
+239 
+240     \textcolor{keywordflow}{while}(++obj < tokensEnd && obj->end < container->end && obj->end <= curObjectEnd) \{
+241     \}
+242 
+243     \textcolor{keywordflow}{if} (obj >= tokensEnd || obj->end > container->end) \{
+244         \textcolor{comment}{// No object after index}
+245         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+246     \}
+247     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+248 \}
+\end{DoxyCode}
+
+
+\subsection{Friends And Related Function Documentation}
+\mbox{\label{class_json_parser_a26df0cdb3650a4a46921ba1793ecfd03}} 
+\index{Json\+Parser@{Json\+Parser}!Json\+Modifier@{Json\+Modifier}}
+\index{Json\+Modifier@{Json\+Modifier}!Json\+Parser@{Json\+Parser}}
+\subsubsection{Json\+Modifier}
+{\footnotesize\ttfamily friend class \textbf{ Json\+Modifier}\hspace{0.3cm}{\ttfamily [friend]}}
+
+
+
+Definition at line 756 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\label{class_json_parser_a0dfa97de05bac37c5be2e1ee9747b8a2}} 
+\index{Json\+Parser@{Json\+Parser}!max\+Tokens@{max\+Tokens}}
+\index{max\+Tokens@{max\+Tokens}!Json\+Parser@{Json\+Parser}}
+\subsubsection{max\+Tokens}
+{\footnotesize\ttfamily size\+\_\+t Json\+Parser\+::max\+Tokens\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Number of tokens that can be stored in tokens. 
+
+
+
+Definition at line 753 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by allocate\+Tokens(), get\+Max\+Tokens(), Json\+Parser(), and parse().
+
+\mbox{\label{class_json_parser_ad8d3dc7a971bd6c8e578518ba6c874f9}} 
+\index{Json\+Parser@{Json\+Parser}!parser@{parser}}
+\index{parser@{parser}!Json\+Parser@{Json\+Parser}}
+\subsubsection{parser}
+{\footnotesize\ttfamily \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parser} Json\+Parser\+::parser\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+The J\+S\+MN parser object. 
+
+
+
+Definition at line 754 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by parse().
+
+\mbox{\label{class_json_parser_af2a9bba1dc92b0c38d0cab6fdad76216}} 
+\index{Json\+Parser@{Json\+Parser}!tokens@{tokens}}
+\index{tokens@{tokens}!Json\+Parser@{Json\+Parser}}
+\subsubsection{tokens}
+{\footnotesize\ttfamily \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}$\ast$ Json\+Parser\+::tokens\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Array of tokens after parsing. 
+
+
+
+Definition at line 751 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by allocate\+Tokens(), get\+Outer\+Array(), get\+Outer\+Object(), get\+Outer\+Token(), get\+Reference(), get\+Tokens(), Json\+Parser(), parse(), and $\sim$\+Json\+Parser().
+
+\mbox{\label{class_json_parser_a6b8c13ce885f8bc7470248d0dc56f157}} 
+\index{Json\+Parser@{Json\+Parser}!tokens\+End@{tokens\+End}}
+\index{tokens\+End@{tokens\+End}!Json\+Parser@{Json\+Parser}}
+\subsubsection{tokens\+End}
+{\footnotesize\ttfamily \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}$\ast$ Json\+Parser\+::tokens\+End\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Pointer into tokens, points after last used token. 
+
+
+
+Definition at line 752 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by get\+Array\+Size(), get\+Key\+Value\+Token\+By\+Index(), get\+Outer\+Array(), get\+Outer\+Object(), get\+Outer\+Token(), get\+Reference(), get\+Token\+By\+Index(), get\+Tokens\+End(), get\+Value\+Token\+By\+Index(), Json\+Parser(), parse(), and skip\+Object().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Json\+Parser\+Generator\+R\+K/src/\textbf{ Json\+Parser\+Generator\+R\+K.\+h}\item 
+lib/\+Json\+Parser\+Generator\+R\+K/src/\textbf{ Json\+Parser\+Generator\+R\+K.\+cpp}\end{DoxyCompactItemize}
