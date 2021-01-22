@@ -23,6 +23,5 @@ var searchData=
   ['ip',['ip',['../class_m_q_t_t.html#a70618323bb75b467ed054dd191397b37',1,'MQTT']]],
   ['isconnected',['isConnected',['../class_m_q_t_t.html#a57a5231fd3205682c56de70e57dd9d62',1,'MQTT']]],
   ['isfirst',['isFirst',['../struct_json_writer_context.html#a533afb7eeecfe191549f1db1f596633d',1,'JsonWriterContext']]],
-  ['istruncated',['isTruncated',['../class_json_writer.html#a815f77b2db3315bfd40dfb61f68b0ed4',1,'JsonWriter']]],
-  ['itoa',['itoa',['../helpers_8cpp.html#ab42640268f26e065efd044cfe80591bd',1,'itoa(int value, char *str, int base):&#160;helpers.cpp'],['../string__convert_8h.html#ad3218503767e4c54f14bfab8de4c1303',1,'itoa(int a, char *buffer, int radix):&#160;helpers.cpp']]]
+  ['istruncated',['isTruncated',['../class_json_writer.html#a815f77b2db3315bfd40dfb61f68b0ed4',1,'JsonWriter']]]
 ];

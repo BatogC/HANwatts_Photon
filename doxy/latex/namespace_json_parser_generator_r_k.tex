@@ -1,67 +1,67 @@
-\section{Json\+Parser\+Generator\+RK Namespace Reference}
+\hypertarget{namespace_json_parser_generator_r_k}{}\section{Json\+Parser\+Generator\+RK Namespace Reference}
 \label{namespace_json_parser_generator_r_k}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \textbf{ jsmn\+\_\+parser}
+struct \hyperlink{struct_json_parser_generator_r_k_1_1jsmn__parser}{jsmn\+\_\+parser}
 \begin{DoxyCompactList}\small\item\em J\+S\+ON parser. \end{DoxyCompactList}\item 
-struct \textbf{ jsmntok\+\_\+t}
+struct \hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{jsmntok\+\_\+t}
 \begin{DoxyCompactList}\small\item\em J\+S\+ON token description. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \textbf{ jsmntype\+\_\+t} \{ \newline
-\textbf{ J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED} = 0, 
-\textbf{ J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT} = 1, 
-\textbf{ J\+S\+M\+N\+\_\+\+A\+R\+R\+AY} = 2, 
-\textbf{ J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG} = 3, 
+enum \hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3}{jsmntype\+\_\+t} \{ \newline
+\hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3af38a3f5a9af2aaf83f0fd6b38e6d80c5}{J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED} = 0, 
+\hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a821e92d4b14438ba747826d5b889fe48}{J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT} = 1, 
+\hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a4f5a3b6dbf7ce0e6419264e11a7848c0}{J\+S\+M\+N\+\_\+\+A\+R\+R\+AY} = 2, 
+\hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a672e86ca38a72245272a29ecdbe74a1a}{J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG} = 3, 
 \newline
-\textbf{ J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE} = 4
+\hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3af36fefddaeac9a91bc69c938c8924568}{J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE} = 4
  \}\begin{DoxyCompactList}\small\item\em J\+S\+ON type identifier (object, array, string, primitive) \end{DoxyCompactList}
 \item 
-enum \textbf{ jsmnerr} \{ \textbf{ J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM} = -\/1, 
-\textbf{ J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL} = -\/2, 
-\textbf{ J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT} = -\/3
+enum \hyperlink{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edf}{jsmnerr} \{ \hyperlink{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfa629aaaf36d145f6b4968cb4a9ac9e2b1}{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM} = -\/1, 
+\hyperlink{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfa266cf322392ed180b57e6cd7ed6b77a6}{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL} = -\/2, 
+\hyperlink{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfafa021fb93449c243135e6158e1effa25}{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT} = -\/3
  \}\begin{DoxyCompactList}\small\item\em J\+S\+MN error codes. \end{DoxyCompactList}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \textbf{ jsmn\+\_\+init} (\textbf{ jsmn\+\_\+parser} $\ast$parser)
+void \hyperlink{namespace_json_parser_generator_r_k_adb1f5ae92d1df7b0b95f5caefbe0d55b}{jsmn\+\_\+init} (\hyperlink{struct_json_parser_generator_r_k_1_1jsmn__parser}{jsmn\+\_\+parser} $\ast$parser)
 \begin{DoxyCompactList}\small\item\em Create J\+S\+ON parser over an array of tokens. \end{DoxyCompactList}\item 
-int \textbf{ jsmn\+\_\+parse} (\textbf{ jsmn\+\_\+parser} $\ast$parser, const char $\ast$js, size\+\_\+t len, \textbf{ jsmntok\+\_\+t} $\ast$tokens, unsigned int num\+\_\+tokens)
+int \hyperlink{namespace_json_parser_generator_r_k_acb71a39877526380a034824e99e59b75}{jsmn\+\_\+parse} (\hyperlink{struct_json_parser_generator_r_k_1_1jsmn__parser}{jsmn\+\_\+parser} $\ast$parser, const char $\ast$js, size\+\_\+t len, \hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{jsmntok\+\_\+t} $\ast$tokens, unsigned int num\+\_\+tokens)
 \begin{DoxyCompactList}\small\item\em Run J\+S\+ON parser. \end{DoxyCompactList}\item 
-static \textbf{ jsmntok\+\_\+t} $\ast$ \textbf{ jsmn\+\_\+alloc\+\_\+token} (\textbf{ jsmn\+\_\+parser} $\ast$parser, \textbf{ jsmntok\+\_\+t} $\ast$tokens, size\+\_\+t num\+\_\+tokens)
+static \hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{jsmntok\+\_\+t} $\ast$ \hyperlink{namespace_json_parser_generator_r_k_a5b9c58cf485e408ef0b95c201674a1bc}{jsmn\+\_\+alloc\+\_\+token} (\hyperlink{struct_json_parser_generator_r_k_1_1jsmn__parser}{jsmn\+\_\+parser} $\ast$parser, \hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{jsmntok\+\_\+t} $\ast$tokens, size\+\_\+t num\+\_\+tokens)
 \item 
-static void \textbf{ jsmn\+\_\+fill\+\_\+token} (\textbf{ jsmntok\+\_\+t} $\ast$token, \textbf{ jsmntype\+\_\+t} type, int start, int end)
+static void \hyperlink{namespace_json_parser_generator_r_k_a2b59144adb776aecb8bf1ad705aad7f5}{jsmn\+\_\+fill\+\_\+token} (\hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{jsmntok\+\_\+t} $\ast$token, \hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3}{jsmntype\+\_\+t} type, int start, int end)
 \item 
-static int \textbf{ jsmn\+\_\+parse\+\_\+primitive} (\textbf{ jsmn\+\_\+parser} $\ast$parser, const char $\ast$js, size\+\_\+t len, \textbf{ jsmntok\+\_\+t} $\ast$tokens, size\+\_\+t num\+\_\+tokens)
+static int \hyperlink{namespace_json_parser_generator_r_k_aee5a37badfbb7bed92ca662a733fde8f}{jsmn\+\_\+parse\+\_\+primitive} (\hyperlink{struct_json_parser_generator_r_k_1_1jsmn__parser}{jsmn\+\_\+parser} $\ast$parser, const char $\ast$js, size\+\_\+t len, \hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{jsmntok\+\_\+t} $\ast$tokens, size\+\_\+t num\+\_\+tokens)
 \item 
-static int \textbf{ jsmn\+\_\+parse\+\_\+string} (\textbf{ jsmn\+\_\+parser} $\ast$parser, const char $\ast$js, size\+\_\+t len, \textbf{ jsmntok\+\_\+t} $\ast$tokens, size\+\_\+t num\+\_\+tokens)
+static int \hyperlink{namespace_json_parser_generator_r_k_a474570d80c95ff3722ae1e8e989c5999}{jsmn\+\_\+parse\+\_\+string} (\hyperlink{struct_json_parser_generator_r_k_1_1jsmn__parser}{jsmn\+\_\+parser} $\ast$parser, const char $\ast$js, size\+\_\+t len, \hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{jsmntok\+\_\+t} $\ast$tokens, size\+\_\+t num\+\_\+tokens)
 \end{DoxyCompactItemize}
 
 
 \subsection{Enumeration Type Documentation}
-\mbox{\label{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edf}} 
+\mbox{\Hypertarget{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edf}\label{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edf}} 
 \index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!jsmnerr@{jsmnerr}}
 \index{jsmnerr@{jsmnerr}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}
-\subsubsection{jsmnerr}
-{\footnotesize\ttfamily enum \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmnerr}}
+\subsubsection{\texorpdfstring{jsmnerr}{jsmnerr}}
+{\footnotesize\ttfamily enum \hyperlink{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edf}{Json\+Parser\+Generator\+R\+K\+::jsmnerr}}
 
 
 
 J\+S\+MN error codes. 
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM@{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM@{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM}}}\mbox{\label{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfa629aaaf36d145f6b4968cb4a9ac9e2b1}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM@{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM@{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM}}}\mbox{\Hypertarget{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfa629aaaf36d145f6b4968cb4a9ac9e2b1}\label{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfa629aaaf36d145f6b4968cb4a9ac9e2b1}} 
 J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM&Not enough tokens were provided. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL@{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL@{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL}}}\mbox{\label{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfa266cf322392ed180b57e6cd7ed6b77a6}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL@{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL@{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL}}}\mbox{\Hypertarget{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfa266cf322392ed180b57e6cd7ed6b77a6}\label{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfa266cf322392ed180b57e6cd7ed6b77a6}} 
 J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL&Invalid character inside J\+S\+ON string. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT@{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT@{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT}}}\mbox{\label{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfafa021fb93449c243135e6158e1effa25}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT@{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT@{J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT}}}\mbox{\Hypertarget{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfafa021fb93449c243135e6158e1effa25}\label{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfafa021fb93449c243135e6158e1effa25}} 
 J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT&The string is not a full J\+S\+ON packet, more bytes expected. \\
 \hline
 
@@ -70,42 +70,34 @@ J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT&The string is not a full J\+S\+O
 
 Definition at line 30 of file Json\+Parser\+Generator\+R\+K.\+h.
 
-
-\begin{DoxyCode}
-30                  \{
-31         JSMN_ERROR_NOMEM = -1,  
-32         JSMN_ERROR_INVAL = -2,  
-33         JSMN_ERROR_PART = -3    
-34     \};
-\end{DoxyCode}
-\mbox{\label{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3}} 
+\mbox{\Hypertarget{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3}\label{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3}} 
 \index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!jsmntype\+\_\+t@{jsmntype\+\_\+t}}
 \index{jsmntype\+\_\+t@{jsmntype\+\_\+t}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}
-\subsubsection{jsmntype\+\_\+t}
-{\footnotesize\ttfamily enum \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntype\+\_\+t}}
+\subsubsection{\texorpdfstring{jsmntype\+\_\+t}{jsmntype\_t}}
+{\footnotesize\ttfamily enum \hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3}{Json\+Parser\+Generator\+R\+K\+::jsmntype\+\_\+t}}
 
 
 
 J\+S\+ON type identifier (object, array, string, primitive) 
 
 \begin{DoxyEnumFields}{Enumerator}
-\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED@{J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED@{J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED}}}\mbox{\label{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3af38a3f5a9af2aaf83f0fd6b38e6d80c5}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED@{J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED@{J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED}}}\mbox{\Hypertarget{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3af38a3f5a9af2aaf83f0fd6b38e6d80c5}\label{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3af38a3f5a9af2aaf83f0fd6b38e6d80c5}} 
 J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED&undefined J\+S\+ON type \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT@{J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT@{J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT}}}\mbox{\label{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a821e92d4b14438ba747826d5b889fe48}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT@{J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT@{J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT}}}\mbox{\Hypertarget{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a821e92d4b14438ba747826d5b889fe48}\label{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a821e92d4b14438ba747826d5b889fe48}} 
 J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT&J\+S\+ON object. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+A\+R\+R\+AY@{J\+S\+M\+N\+\_\+\+A\+R\+R\+AY}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+A\+R\+R\+AY@{J\+S\+M\+N\+\_\+\+A\+R\+R\+AY}}}\mbox{\label{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a4f5a3b6dbf7ce0e6419264e11a7848c0}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+A\+R\+R\+AY@{J\+S\+M\+N\+\_\+\+A\+R\+R\+AY}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+A\+R\+R\+AY@{J\+S\+M\+N\+\_\+\+A\+R\+R\+AY}}}\mbox{\Hypertarget{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a4f5a3b6dbf7ce0e6419264e11a7848c0}\label{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a4f5a3b6dbf7ce0e6419264e11a7848c0}} 
 J\+S\+M\+N\+\_\+\+A\+R\+R\+AY&J\+S\+ON array. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG@{J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG@{J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG}}}\mbox{\label{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a672e86ca38a72245272a29ecdbe74a1a}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG@{J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG@{J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG}}}\mbox{\Hypertarget{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a672e86ca38a72245272a29ecdbe74a1a}\label{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a672e86ca38a72245272a29ecdbe74a1a}} 
 J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG&J\+S\+ON string. \\
 \hline
 
-\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE@{J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE@{J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE}}}\mbox{\label{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3af36fefddaeac9a91bc69c938c8924568}} 
+\raisebox{\heightof{T}}[0pt][0pt]{\index{J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE@{J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}\index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE@{J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE}}}\mbox{\Hypertarget{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3af36fefddaeac9a91bc69c938c8924568}\label{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3af36fefddaeac9a91bc69c938c8924568}} 
 J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE&J\+S\+ON primitive (number, true, false, or null) \\
 \hline
 
@@ -115,23 +107,13 @@ J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE&J\+S\+ON primitive (number, true, fals
 Definition at line 19 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 
-\begin{DoxyCode}
-19                  \{
-20         JSMN_UNDEFINED = 0, 
-21         JSMN_OBJECT = 1,    
-22         JSMN_ARRAY = 2,     
-23         JSMN_STRING = 3,    
-24         JSMN_PRIMITIVE = 4  
-25     \} jsmntype_t;
-\end{DoxyCode}
-
 
 \subsection{Function Documentation}
-\mbox{\label{namespace_json_parser_generator_r_k_a5b9c58cf485e408ef0b95c201674a1bc}} 
+\mbox{\Hypertarget{namespace_json_parser_generator_r_k_a5b9c58cf485e408ef0b95c201674a1bc}\label{namespace_json_parser_generator_r_k_a5b9c58cf485e408ef0b95c201674a1bc}} 
 \index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!jsmn\+\_\+alloc\+\_\+token@{jsmn\+\_\+alloc\+\_\+token}}
 \index{jsmn\+\_\+alloc\+\_\+token@{jsmn\+\_\+alloc\+\_\+token}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}
-\subsubsection{jsmn\+\_\+alloc\+\_\+token()}
-{\footnotesize\ttfamily static \textbf{ jsmntok\+\_\+t}$\ast$ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+alloc\+\_\+token (\begin{DoxyParamCaption}\item[{\textbf{ jsmn\+\_\+parser} $\ast$}]{parser,  }\item[{\textbf{ jsmntok\+\_\+t} $\ast$}]{tokens,  }\item[{size\+\_\+t}]{num\+\_\+tokens }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\subsubsection{\texorpdfstring{jsmn\+\_\+alloc\+\_\+token()}{jsmn\_alloc\_token()}}
+{\footnotesize\ttfamily static \hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{jsmntok\+\_\+t}$\ast$ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+alloc\+\_\+token (\begin{DoxyParamCaption}\item[{\hyperlink{struct_json_parser_generator_r_k_1_1jsmn__parser}{jsmn\+\_\+parser} $\ast$}]{parser,  }\item[{\hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{jsmntok\+\_\+t} $\ast$}]{tokens,  }\item[{size\+\_\+t}]{num\+\_\+tokens }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 Allocates a fresh unused token from the token pull. 
 
@@ -145,27 +127,11 @@ References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, Json\+Parser\
 
 Referenced by jsmn\+\_\+parse(), jsmn\+\_\+parse\+\_\+primitive(), and jsmn\+\_\+parse\+\_\+string().
 
-
-\begin{DoxyCode}
-1103                                               \{
-1104     jsmntok\_t *tok;
-1105     \textcolor{keywordflow}{if} (parser->toknext >= num\_tokens) \{
-1106         \textcolor{keywordflow}{return} NULL;
-1107     \}
-1108     tok = &tokens[parser->toknext++];
-1109     tok->start = tok->end = -1;
-1110     tok->size = 0;
-1111 \textcolor{preprocessor}{#ifdef JSMN\_PARENT\_LINKS}
-1112     tok->parent = -1;
-1113 \textcolor{preprocessor}{#endif}
-1114     \textcolor{keywordflow}{return} tok;
-1115 \}
-\end{DoxyCode}
-\mbox{\label{namespace_json_parser_generator_r_k_a2b59144adb776aecb8bf1ad705aad7f5}} 
+\mbox{\Hypertarget{namespace_json_parser_generator_r_k_a2b59144adb776aecb8bf1ad705aad7f5}\label{namespace_json_parser_generator_r_k_a2b59144adb776aecb8bf1ad705aad7f5}} 
 \index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!jsmn\+\_\+fill\+\_\+token@{jsmn\+\_\+fill\+\_\+token}}
 \index{jsmn\+\_\+fill\+\_\+token@{jsmn\+\_\+fill\+\_\+token}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}
-\subsubsection{jsmn\+\_\+fill\+\_\+token()}
-{\footnotesize\ttfamily static void Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+fill\+\_\+token (\begin{DoxyParamCaption}\item[{\textbf{ jsmntok\+\_\+t} $\ast$}]{token,  }\item[{\textbf{ jsmntype\+\_\+t}}]{type,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\subsubsection{\texorpdfstring{jsmn\+\_\+fill\+\_\+token()}{jsmn\_fill\_token()}}
+{\footnotesize\ttfamily static void Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+fill\+\_\+token (\begin{DoxyParamCaption}\item[{\hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{jsmntok\+\_\+t} $\ast$}]{token,  }\item[{\hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3}{jsmntype\+\_\+t}}]{type,  }\item[{int}]{start,  }\item[{int}]{end }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 Fills token type and boundaries. 
 
@@ -179,20 +145,11 @@ References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, Json\+Parser\
 
 Referenced by jsmn\+\_\+parse\+\_\+primitive(), and jsmn\+\_\+parse\+\_\+string().
 
-
-\begin{DoxyCode}
-1121                                                 \{
-1122     token->type = type;
-1123     token->start = start;
-1124     token->end = end;
-1125     token->size = 0;
-1126 \}
-\end{DoxyCode}
-\mbox{\label{namespace_json_parser_generator_r_k_adb1f5ae92d1df7b0b95f5caefbe0d55b}} 
+\mbox{\Hypertarget{namespace_json_parser_generator_r_k_adb1f5ae92d1df7b0b95f5caefbe0d55b}\label{namespace_json_parser_generator_r_k_adb1f5ae92d1df7b0b95f5caefbe0d55b}} 
 \index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!jsmn\+\_\+init@{jsmn\+\_\+init}}
 \index{jsmn\+\_\+init@{jsmn\+\_\+init}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}
-\subsubsection{jsmn\+\_\+init()}
-{\footnotesize\ttfamily void Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+init (\begin{DoxyParamCaption}\item[{\textbf{ jsmn\+\_\+parser} $\ast$}]{parser }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{jsmn\+\_\+init()}{jsmn\_init()}}
+{\footnotesize\ttfamily void Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+init (\begin{DoxyParamCaption}\item[{\hyperlink{struct_json_parser_generator_r_k_1_1jsmn__parser}{jsmn\+\_\+parser} $\ast$}]{parser }\end{DoxyParamCaption})}
 
 
 
@@ -210,19 +167,11 @@ References Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parser\+::pos, Json\+Parse
 
 Referenced by Json\+Parser\+::parse().
 
-
-\begin{DoxyCode}
-1405                                     \{
-1406     parser->pos = 0;
-1407     parser->toknext = 0;
-1408     parser->toksuper = -1;
-1409 \}
-\end{DoxyCode}
-\mbox{\label{namespace_json_parser_generator_r_k_acb71a39877526380a034824e99e59b75}} 
+\mbox{\Hypertarget{namespace_json_parser_generator_r_k_acb71a39877526380a034824e99e59b75}\label{namespace_json_parser_generator_r_k_acb71a39877526380a034824e99e59b75}} 
 \index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!jsmn\+\_\+parse@{jsmn\+\_\+parse}}
 \index{jsmn\+\_\+parse@{jsmn\+\_\+parse}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}
-\subsubsection{jsmn\+\_\+parse()}
-{\footnotesize\ttfamily int Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parse (\begin{DoxyParamCaption}\item[{\textbf{ jsmn\+\_\+parser} $\ast$}]{parser,  }\item[{const char $\ast$}]{js,  }\item[{size\+\_\+t}]{len,  }\item[{\textbf{ jsmntok\+\_\+t} $\ast$}]{tokens,  }\item[{unsigned int}]{num\+\_\+tokens }\end{DoxyParamCaption})}
+\subsubsection{\texorpdfstring{jsmn\+\_\+parse()}{jsmn\_parse()}}
+{\footnotesize\ttfamily int Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parse (\begin{DoxyParamCaption}\item[{\hyperlink{struct_json_parser_generator_r_k_1_1jsmn__parser}{jsmn\+\_\+parser} $\ast$}]{parser,  }\item[{const char $\ast$}]{js,  }\item[{size\+\_\+t}]{len,  }\item[{\hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{jsmntok\+\_\+t} $\ast$}]{tokens,  }\item[{unsigned int}]{num\+\_\+tokens }\end{DoxyParamCaption})}
 
 
 
@@ -242,167 +191,11 @@ References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, jsmn\+\_\+all
 
 Referenced by Json\+Parser\+::parse().
 
-
-\begin{DoxyCode}
-1248                                                     \{
-1249     \textcolor{keywordtype}{int} r;
-1250     \textcolor{keywordtype}{int} i;
-1251     jsmntok\_t *token;
-1252     \textcolor{keywordtype}{int} count = parser->toknext;
-1253 
-1254     \textcolor{keywordflow}{for} (; parser->pos < len && js[parser->pos] != \textcolor{charliteral}{'\(\backslash\)0'}; parser->pos++) \{
-1255         \textcolor{keywordtype}{char} c;
-1256         jsmntype_t type;
-1257 
-1258         c = js[parser->pos];
-1259         \textcolor{keywordflow}{switch} (c) \{
-1260             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\{'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'['}:
-1261                 count++;
-1262                 \textcolor{keywordflow}{if} (tokens == NULL) \{
-1263                     \textcolor{keywordflow}{break};
-1264                 \}
-1265                 token = jsmn_alloc_token(parser, tokens, num\_tokens);
-1266                 \textcolor{keywordflow}{if} (token == NULL)
-1267                     \textcolor{keywordflow}{return} JSMN_ERROR_NOMEM;
-1268                 \textcolor{keywordflow}{if} (parser->toksuper != -1) \{
-1269                     tokens[parser->toksuper].size++;
-1270 \textcolor{preprocessor}{#ifdef JSMN\_PARENT\_LINKS}
-1271                     token->parent = parser->toksuper;
-1272 \textcolor{preprocessor}{#endif}
-1273                 \}
-1274                 token->type = (c == \textcolor{charliteral}{'\{'} ? JSMN_OBJECT : JSMN_ARRAY);
-1275                 token->start = parser->pos;
-1276                 parser->toksuper = parser->toknext - 1;
-1277                 \textcolor{keywordflow}{break};
-1278             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\}'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{']'}:
-1279                 \textcolor{keywordflow}{if} (tokens == NULL)
-1280                     \textcolor{keywordflow}{break};
-1281                 type = (c == \textcolor{charliteral}{'\}'} ? JSMN_OBJECT : JSMN_ARRAY);
-1282 \textcolor{preprocessor}{#ifdef JSMN\_PARENT\_LINKS}
-1283                 \textcolor{keywordflow}{if} (parser->toknext < 1) \{
-1284                     \textcolor{keywordflow}{return} JSMN_ERROR_INVAL;
-1285                 \}
-1286                 token = &tokens[parser->toknext - 1];
-1287                 \textcolor{keywordflow}{for} (;;) \{
-1288                     \textcolor{keywordflow}{if} (token->start != -1 && token->end == -1) \{
-1289                         \textcolor{keywordflow}{if} (token->type != type) \{
-1290                             \textcolor{keywordflow}{return} JSMN_ERROR_INVAL;
-1291                         \}
-1292                         token->end = parser->pos + 1;
-1293                         parser->toksuper = token->parent;
-1294                         \textcolor{keywordflow}{break};
-1295                     \}
-1296                     \textcolor{keywordflow}{if} (token->parent == -1) \{
-1297                         \textcolor{keywordflow}{if}(token->type != type || parser->toksuper == -1) \{
-1298                             \textcolor{keywordflow}{return} JSMN_ERROR_INVAL;
-1299                         \}
-1300                         \textcolor{keywordflow}{break};
-1301                     \}
-1302                     token = &tokens[token->parent];
-1303                 \}
-1304 \textcolor{preprocessor}{#else}
-1305                 \textcolor{keywordflow}{for} (i = parser->toknext - 1; i >= 0; i--) \{
-1306                     token = &tokens[i];
-1307                     \textcolor{keywordflow}{if} (token->start != -1 && token->end == -1) \{
-1308                         \textcolor{keywordflow}{if} (token->type != type) \{
-1309                             \textcolor{keywordflow}{return} JSMN_ERROR_INVAL;
-1310                         \}
-1311                         parser->toksuper = -1;
-1312                         token->end = parser->pos + 1;
-1313                         \textcolor{keywordflow}{break};
-1314                     \}
-1315                 \}
-1316                 \textcolor{comment}{/* Error if unmatched closing bracket */}
-1317                 \textcolor{keywordflow}{if} (i == -1) \textcolor{keywordflow}{return} JSMN_ERROR_INVAL;
-1318                 \textcolor{keywordflow}{for} (; i >= 0; i--) \{
-1319                     token = &tokens[i];
-1320                     \textcolor{keywordflow}{if} (token->start != -1 && token->end == -1) \{
-1321                         parser->toksuper = i;
-1322                         \textcolor{keywordflow}{break};
-1323                     \}
-1324                 \}
-1325 \textcolor{preprocessor}{#endif}
-1326                 \textcolor{keywordflow}{break};
-1327             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)"'}:
-1328                 r = jsmn_parse_string(parser, js, len, tokens, num\_tokens);
-1329                 \textcolor{keywordflow}{if} (r < 0) \textcolor{keywordflow}{return} r;
-1330                 count++;
-1331                 \textcolor{keywordflow}{if} (parser->toksuper != -1 && tokens != NULL)
-1332                     tokens[parser->toksuper].size++;
-1333                 \textcolor{keywordflow}{break};
-1334             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)t'} : \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)r'} : \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)n'} : \textcolor{keywordflow}{case} \textcolor{charliteral}{' '}:
-1335                 \textcolor{keywordflow}{break};
-1336             \textcolor{keywordflow}{case} \textcolor{charliteral}{':'}:
-1337                 parser->toksuper = parser->toknext - 1;
-1338                 \textcolor{keywordflow}{break};
-1339             \textcolor{keywordflow}{case} \textcolor{charliteral}{','}:
-1340                 \textcolor{keywordflow}{if} (tokens != NULL && parser->toksuper != -1 &&
-1341                         tokens[parser->toksuper].type != JSMN_ARRAY &&
-1342                         tokens[parser->toksuper].type != JSMN_OBJECT) \{
-1343 \textcolor{preprocessor}{#ifdef JSMN\_PARENT\_LINKS}
-1344                     parser->toksuper = tokens[parser->toksuper].parent;
-1345 \textcolor{preprocessor}{#else}
-1346                     \textcolor{keywordflow}{for} (i = parser->toknext - 1; i >= 0; i--) \{
-1347                         \textcolor{keywordflow}{if} (tokens[i].type == JSMN_ARRAY || tokens[i].type == 
-      JSMN_OBJECT) \{
-1348                             \textcolor{keywordflow}{if} (tokens[i].start != -1 && tokens[i].end == -1) \{
-1349                                 parser->toksuper = i;
-1350                                 \textcolor{keywordflow}{break};
-1351                             \}
-1352                         \}
-1353                     \}
-1354 \textcolor{preprocessor}{#endif}
-1355                 \}
-1356                 \textcolor{keywordflow}{break};
-1357 \textcolor{preprocessor}{#ifdef JSMN\_STRICT}
-1358             \textcolor{comment}{/* In strict mode primitives are: numbers and booleans */}
-1359             \textcolor{keywordflow}{case} \textcolor{charliteral}{'-'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'0'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'1'} : \textcolor{keywordflow}{case} \textcolor{charliteral}{'2'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'3'} : \textcolor{keywordflow}{case} \textcolor{charliteral}{'4'}:
-1360             \textcolor{keywordflow}{case} \textcolor{charliteral}{'5'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'6'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'7'} : \textcolor{keywordflow}{case} \textcolor{charliteral}{'8'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'9'}:
-1361             \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'f'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'} :
-1362                 \textcolor{comment}{/* And they must not be keys of the object */}
-1363                 \textcolor{keywordflow}{if} (tokens != NULL && parser->toksuper != -1) \{
-1364                     jsmntok\_t *t = &tokens[parser->toksuper];
-1365                     \textcolor{keywordflow}{if} (t->type == JSMN_OBJECT ||
-1366                             (t->type == JSMN_STRING && t->size != 0)) \{
-1367                         \textcolor{keywordflow}{return} JSMN_ERROR_INVAL;
-1368                     \}
-1369                 \}
-1370 \textcolor{preprocessor}{#else}
-1371             \textcolor{comment}{/* In non-strict mode every unquoted value is a primitive */}
-1372             \textcolor{keywordflow}{default}:
-1373 \textcolor{preprocessor}{#endif}
-1374                 r = jsmn_parse_primitive(parser, js, len, tokens, num\_tokens);
-1375                 \textcolor{keywordflow}{if} (r < 0) \textcolor{keywordflow}{return} r;
-1376                 count++;
-1377                 \textcolor{keywordflow}{if} (parser->toksuper != -1 && tokens != NULL)
-1378                     tokens[parser->toksuper].size++;
-1379                 \textcolor{keywordflow}{break};
-1380 
-1381 \textcolor{preprocessor}{#ifdef JSMN\_STRICT}
-1382             \textcolor{comment}{/* Unexpected char in strict mode */}
-1383             \textcolor{keywordflow}{default}:
-1384                 \textcolor{keywordflow}{return} JSMN_ERROR_INVAL;
-1385 \textcolor{preprocessor}{#endif}
-1386         \}
-1387     \}
-1388 
-1389     \textcolor{keywordflow}{if} (tokens != NULL) \{
-1390         \textcolor{keywordflow}{for} (i = parser->toknext - 1; i >= 0; i--) \{
-1391             \textcolor{comment}{/* Unmatched opened object or array */}
-1392             \textcolor{keywordflow}{if} (tokens[i].start != -1 && tokens[i].end == -1) \{
-1393                 \textcolor{keywordflow}{return} JSMN_ERROR_PART;
-1394             \}
-1395         \}
-1396     \}
-1397 
-1398     \textcolor{keywordflow}{return} count;
-1399 \}
-\end{DoxyCode}
-\mbox{\label{namespace_json_parser_generator_r_k_aee5a37badfbb7bed92ca662a733fde8f}} 
+\mbox{\Hypertarget{namespace_json_parser_generator_r_k_aee5a37badfbb7bed92ca662a733fde8f}\label{namespace_json_parser_generator_r_k_aee5a37badfbb7bed92ca662a733fde8f}} 
 \index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!jsmn\+\_\+parse\+\_\+primitive@{jsmn\+\_\+parse\+\_\+primitive}}
 \index{jsmn\+\_\+parse\+\_\+primitive@{jsmn\+\_\+parse\+\_\+primitive}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}
-\subsubsection{jsmn\+\_\+parse\+\_\+primitive()}
-{\footnotesize\ttfamily static int Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parse\+\_\+primitive (\begin{DoxyParamCaption}\item[{\textbf{ jsmn\+\_\+parser} $\ast$}]{parser,  }\item[{const char $\ast$}]{js,  }\item[{size\+\_\+t}]{len,  }\item[{\textbf{ jsmntok\+\_\+t} $\ast$}]{tokens,  }\item[{size\+\_\+t}]{num\+\_\+tokens }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\subsubsection{\texorpdfstring{jsmn\+\_\+parse\+\_\+primitive()}{jsmn\_parse\_primitive()}}
+{\footnotesize\ttfamily static int Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parse\+\_\+primitive (\begin{DoxyParamCaption}\item[{\hyperlink{struct_json_parser_generator_r_k_1_1jsmn__parser}{jsmn\+\_\+parser} $\ast$}]{parser,  }\item[{const char $\ast$}]{js,  }\item[{size\+\_\+t}]{len,  }\item[{\hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{jsmntok\+\_\+t} $\ast$}]{tokens,  }\item[{size\+\_\+t}]{num\+\_\+tokens }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 Fills next available token with J\+S\+ON primitive. 
 
@@ -416,58 +209,11 @@ References jsmn\+\_\+alloc\+\_\+token(), J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+
 
 Referenced by jsmn\+\_\+parse().
 
-
-\begin{DoxyCode}
-1132                                                           \{
-1133     jsmntok\_t *token;
-1134     \textcolor{keywordtype}{int} start;
-1135 
-1136     start = parser->pos;
-1137 
-1138     \textcolor{keywordflow}{for} (; parser->pos < len && js[parser->pos] != \textcolor{charliteral}{'\(\backslash\)0'}; parser->pos++) \{
-1139         \textcolor{keywordflow}{switch} (js[parser->pos]) \{
-1140 \textcolor{preprocessor}{#ifndef JSMN\_STRICT}
-1141             \textcolor{comment}{/* In strict mode primitive must be followed by "," or "\}" or "]" */}
-1142             \textcolor{keywordflow}{case} \textcolor{charliteral}{':'}:
-1143 \textcolor{preprocessor}{#endif}
-1144             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)t'} : \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)r'} : \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)n'} : \textcolor{keywordflow}{case} \textcolor{charliteral}{' '} :
-1145             \textcolor{keywordflow}{case} \textcolor{charliteral}{','}  : \textcolor{keywordflow}{case} \textcolor{charliteral}{']'}  : \textcolor{keywordflow}{case} \textcolor{charliteral}{'\}'} :
-1146                 \textcolor{keywordflow}{goto} found;
-1147         \}
-1148         \textcolor{keywordflow}{if} (js[parser->pos] < 32 || js[parser->pos] >= 127) \{
-1149             parser->pos = start;
-1150             \textcolor{keywordflow}{return} JSMN_ERROR_INVAL;
-1151         \}
-1152     \}
-1153 \textcolor{preprocessor}{#ifdef JSMN\_STRICT}
-1154     \textcolor{comment}{/* In strict mode primitive must be followed by a comma/object/array */}
-1155     parser->pos = start;
-1156     \textcolor{keywordflow}{return} JSMN_ERROR_PART;
-1157 \textcolor{preprocessor}{#endif}
-1158 
-1159 found:
-1160     \textcolor{keywordflow}{if} (tokens == NULL) \{
-1161         parser->pos--;
-1162         \textcolor{keywordflow}{return} 0;
-1163     \}
-1164     token = jsmn_alloc_token(parser, tokens, num\_tokens);
-1165     \textcolor{keywordflow}{if} (token == NULL) \{
-1166         parser->pos = start;
-1167         \textcolor{keywordflow}{return} JSMN_ERROR_NOMEM;
-1168     \}
-1169     jsmn_fill_token(token, JSMN_PRIMITIVE, start, parser->pos);
-1170 \textcolor{preprocessor}{#ifdef JSMN\_PARENT\_LINKS}
-1171     token->parent = parser->toksuper;
-1172 \textcolor{preprocessor}{#endif}
-1173     parser->pos--;
-1174     \textcolor{keywordflow}{return} 0;
-1175 \}
-\end{DoxyCode}
-\mbox{\label{namespace_json_parser_generator_r_k_a474570d80c95ff3722ae1e8e989c5999}} 
+\mbox{\Hypertarget{namespace_json_parser_generator_r_k_a474570d80c95ff3722ae1e8e989c5999}\label{namespace_json_parser_generator_r_k_a474570d80c95ff3722ae1e8e989c5999}} 
 \index{Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}!jsmn\+\_\+parse\+\_\+string@{jsmn\+\_\+parse\+\_\+string}}
 \index{jsmn\+\_\+parse\+\_\+string@{jsmn\+\_\+parse\+\_\+string}!Json\+Parser\+Generator\+RK@{Json\+Parser\+Generator\+RK}}
-\subsubsection{jsmn\+\_\+parse\+\_\+string()}
-{\footnotesize\ttfamily static int Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parse\+\_\+string (\begin{DoxyParamCaption}\item[{\textbf{ jsmn\+\_\+parser} $\ast$}]{parser,  }\item[{const char $\ast$}]{js,  }\item[{size\+\_\+t}]{len,  }\item[{\textbf{ jsmntok\+\_\+t} $\ast$}]{tokens,  }\item[{size\+\_\+t}]{num\+\_\+tokens }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\subsubsection{\texorpdfstring{jsmn\+\_\+parse\+\_\+string()}{jsmn\_parse\_string()}}
+{\footnotesize\ttfamily static int Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parse\+\_\+string (\begin{DoxyParamCaption}\item[{\hyperlink{struct_json_parser_generator_r_k_1_1jsmn__parser}{jsmn\+\_\+parser} $\ast$}]{parser,  }\item[{const char $\ast$}]{js,  }\item[{size\+\_\+t}]{len,  }\item[{\hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{jsmntok\+\_\+t} $\ast$}]{tokens,  }\item[{size\+\_\+t}]{num\+\_\+tokens }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 Fills next token with J\+S\+ON string. 
 
@@ -481,68 +227,3 @@ References jsmn\+\_\+alloc\+\_\+token(), J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+
 
 Referenced by jsmn\+\_\+parse().
 
-
-\begin{DoxyCode}
-1181                                                           \{
-1182     jsmntok\_t *token;
-1183 
-1184     \textcolor{keywordtype}{int} start = parser->pos;
-1185 
-1186     parser->pos++;
-1187 
-1188     \textcolor{comment}{/* Skip starting quote */}
-1189     \textcolor{keywordflow}{for} (; parser->pos < len && js[parser->pos] != \textcolor{charliteral}{'\(\backslash\)0'}; parser->pos++) \{
-1190         \textcolor{keywordtype}{char} c = js[parser->pos];
-1191 
-1192         \textcolor{comment}{/* Quote: end of string */}
-1193         \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'\(\backslash\)"'}) \{
-1194             \textcolor{keywordflow}{if} (tokens == NULL) \{
-1195                 \textcolor{keywordflow}{return} 0;
-1196             \}
-1197             token = jsmn_alloc_token(parser, tokens, num\_tokens);
-1198             \textcolor{keywordflow}{if} (token == NULL) \{
-1199                 parser->pos = start;
-1200                 \textcolor{keywordflow}{return} JSMN_ERROR_NOMEM;
-1201             \}
-1202             jsmn_fill_token(token, JSMN_STRING, start+1, parser->pos);
-1203 \textcolor{preprocessor}{#ifdef JSMN\_PARENT\_LINKS}
-1204             token->parent = parser->toksuper;
-1205 \textcolor{preprocessor}{#endif}
-1206             \textcolor{keywordflow}{return} 0;
-1207         \}
-1208 
-1209         \textcolor{comment}{/* Backslash: Quoted symbol expected */}
-1210         \textcolor{keywordflow}{if} (c == \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'} && parser->pos + 1 < len) \{
-1211             \textcolor{keywordtype}{int} i;
-1212             parser->pos++;
-1213             \textcolor{keywordflow}{switch} (js[parser->pos]) \{
-1214                 \textcolor{comment}{/* Allowed escaped symbols */}
-1215                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)"'}: \textcolor{keywordflow}{case} \textcolor{charliteral}{'/'} : \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'} : \textcolor{keywordflow}{case} \textcolor{charliteral}{'b'} :
-1216                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'f'} : \textcolor{keywordflow}{case} \textcolor{charliteral}{'r'} : \textcolor{keywordflow}{case} \textcolor{charliteral}{'n'}  : \textcolor{keywordflow}{case} \textcolor{charliteral}{'t'} :
-1217                     \textcolor{keywordflow}{break};
-1218                 \textcolor{comment}{/* Allows escaped symbol \(\backslash\)uXXXX */}
-1219                 \textcolor{keywordflow}{case} \textcolor{charliteral}{'u'}:
-1220                     parser->pos++;
-1221                     \textcolor{keywordflow}{for}(i = 0; i < 4 && parser->pos < len && js[parser->pos] != \textcolor{charliteral}{'\(\backslash\)0'}; i++) \{
-1222                         \textcolor{comment}{/* If it isn't a hex character we have an error */}
-1223                         \textcolor{keywordflow}{if}(!((js[parser->pos] >= 48 && js[parser->pos] <= 57) || \textcolor{comment}{/* 0-9 */}
-1224                                     (js[parser->pos] >= 65 && js[parser->pos] <= 70) || \textcolor{comment}{/* A-F */}
-1225                                     (js[parser->pos] >= 97 && js[parser->pos] <= 102))) \{ \textcolor{comment}{/* a-f */}
-1226                             parser->pos = start;
-1227                             \textcolor{keywordflow}{return} JSMN_ERROR_INVAL;
-1228                         \}
-1229                         parser->pos++;
-1230                     \}
-1231                     parser->pos--;
-1232                     \textcolor{keywordflow}{break};
-1233                 \textcolor{comment}{/* Unexpected symbol */}
-1234                 \textcolor{keywordflow}{default}:
-1235                     parser->pos = start;
-1236                     \textcolor{keywordflow}{return} JSMN_ERROR_INVAL;
-1237             \}
-1238         \}
-1239     \}
-1240     parser->pos = start;
-1241     \textcolor{keywordflow}{return} JSMN_ERROR_PART;
-1242 \}
-\end{DoxyCode}

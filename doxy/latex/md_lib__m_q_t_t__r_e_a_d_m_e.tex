@@ -1,8 +1,8 @@
-{\tt M\+Q\+TT} publish/subscribe library for Photon, Spark Core version 0.\+4.\+28.
+\href{http://mqtt.org/}{\tt M\+Q\+TT} publish/subscribe library for Photon, Spark Core version 0.\+4.\+28.
 
 \subsection*{Source Code}
 
-This lightweight library source code are only 2 files. firmware -\/$>$ \doxyref{M\+Q\+T\+T.\+cpp}{p.}{_m_q_t_t_8cpp}, M\+Q\+T\+T.\+h.
+This lightweight library source code are only 2 files. firmware -\/$>$ \hyperlink{_m_q_t_t_8cpp}{M\+Q\+T\+T.\+cpp}, M\+Q\+T\+T.\+h.
 
 Application can use Q\+O\+S0,1,2 and retain flag when send a publish message.
 
@@ -16,18 +16,18 @@ Some sample sketches for Spark Core and Photon included(firmware/examples/).
 
 \subsection*{developer examples}
 
-some applications use \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} with Photon. here are developer\textquotesingle{}s reference examples.
+some applications use \hyperlink{class_m_q_t_t}{M\+Q\+TT} with Photon. here are developer\textquotesingle{}s reference examples.
 \begin{DoxyItemize}
-\item {\tt Spark Core / Photon and Cloud\+M\+Q\+TT}
-\item {\tt M\+Q\+TT Publish-\/\+Subscribe Using Rpi, E\+SP and Photon}
-\item {\tt Particle Photon on Watson IoT}
-\item {\tt Connecting IoT devices to the Watson Conversation Car-\/\+Dashboard app}
-\item {\tt Thing\+Speak M\+Q\+TT A\+PI}
-\item {\tt H\+OW TO C\+O\+N\+N\+E\+CT A P\+A\+R\+T\+I\+C\+LE P\+H\+O\+T\+ON TO T\+HE L\+O\+S\+A\+NT I\+OT P\+L\+A\+T\+F\+O\+RM}
-\item {\tt How I Hacked my Humidor with Losant and a Particle Photon}
-\item {\tt A\+R\+T\+IK as M\+Q\+TT Message Broker}
-\item {\tt Particle and Ubidots using M\+Q\+TT}
-\item {\tt U\+S\+I\+NG T\+W\+I\+L\+IO S\+Y\+NC W\+I\+TH M\+Q\+TT ON A P\+A\+R\+T\+I\+C\+LE P\+H\+O\+T\+ON}
+\item \href{http://www.instructables.com/id/Spark-Core-Photon-and-CloudMQTT/}{\tt Spark Core / Photon and Cloud\+M\+Q\+TT}
+\item \href{https://www.hackster.io/anasdalintakam/mqtt-publish-subscribe-using-rpi-esp-and-photon-864fe9#toc--particle-photon-as-mqtt-client-2}{\tt M\+Q\+TT Publish-\/\+Subscribe Using Rpi, E\+SP and Photon}
+\item \href{http://www.kevinhoyt.com/2016/04/27/particle-photon-on-watson-iot/}{\tt Particle Photon on Watson IoT}
+\item \href{https://developer.ibm.com/recipes/tutorials/connecting-a-iot-device-of-the-watson-conversation-cardashboard-app/}{\tt Connecting IoT devices to the Watson Conversation Car-\/\+Dashboard app}
+\item \href{https://jp.mathworks.com/help/thingspeak/mqtt-api.html}{\tt Thing\+Speak M\+Q\+TT A\+PI}
+\item \href{https://www.losant.com/blog/how-to-connect-a-particle-photon-to-the-losant-iot-platform}{\tt H\+OW TO C\+O\+N\+N\+E\+CT A P\+A\+R\+T\+I\+C\+LE P\+H\+O\+T\+ON TO T\+HE L\+O\+S\+A\+NT I\+OT P\+L\+A\+T\+F\+O\+RM}
+\item \href{https://medium.com/@stevecaldwell/how-i-hacked-my-humidor-with-losant-and-a-particle-photon-84342744755b#.b68apdmo1}{\tt How I Hacked my Humidor with Losant and a Particle Photon}
+\item \href{https://developer.artik.io/documentation/advanced-concepts/mqtt/color-mqtt.html}{\tt A\+R\+T\+IK as M\+Q\+TT Message Broker}
+\item \href{https://ubidots.com/docs/devices/particleMQTT.html}{\tt Particle and Ubidots using M\+Q\+TT}
+\item \href{https://www.twilio.com/docs/quickstart/sync-iot/mqtt-particle-photon-sync-iot}{\tt U\+S\+I\+NG T\+W\+I\+L\+IO S\+Y\+NC W\+I\+TH M\+Q\+TT ON A P\+A\+R\+T\+I\+C\+LE P\+H\+O\+T\+ON}
 \end{DoxyItemize}
 
 \#\# sample source 
@@ -76,15 +76,15 @@ void loop() \{
 \end{DoxyCode}
  \subsection*{F\+AQ}
 
-\subsubsection*{Can\textquotesingle{}t connect/publish/subscribe to the \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} server?}
+\subsubsection*{Can\textquotesingle{}t connect/publish/subscribe to the \hyperlink{class_m_q_t_t}{M\+Q\+TT} server?}
 
 
 \begin{DoxyItemize}
-\item Check your \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} server and port(default 1883) is really working with the mosquitto\+\_\+pub/sub command. And maybe your \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} server can\textquotesingle{}t connect from Internet because of firewall. Check your network environments.
+\item Check your \hyperlink{class_m_q_t_t}{M\+Q\+TT} server and port(default 1883) is really working with the mosquitto\+\_\+pub/sub command. And maybe your \hyperlink{class_m_q_t_t}{M\+Q\+TT} server can\textquotesingle{}t connect from Internet because of firewall. Check your network environments.
 \item Check your subscribe/publish topic name is really matched.
 \item Perhaps device firmware network stack is failed. check your firmware version and bugs.
 \item If you use M\+Q\+T\+T-\/\+T\+LS, check your RooT CA pem file, client key, certifications is okay or not.
-\item Several \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} server will disconnect to the 1st connection when you use the same user\+\_\+id. When the application call the connect method, use different user\+\_\+id in every devices in connect method\textquotesingle{}s 2nd argument. Use M\+AC address as a user\+\_\+id will be better. 
+\item Several \hyperlink{class_m_q_t_t}{M\+Q\+TT} server will disconnect to the 1st connection when you use the same user\+\_\+id. When the application call the connect method, use different user\+\_\+id in every devices in connect method\textquotesingle{}s 2nd argument. Use M\+AC address as a user\+\_\+id will be better. 
 \begin{DoxyPre}
    // device.1
    client.connect("spark-client", "user\_1", "password1");
@@ -94,21 +94,21 @@ void loop() \{
 
 \end{DoxyItemize}
 
-\subsubsection*{I want to change \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} keep alive timeout.}
+\subsubsection*{I want to change \hyperlink{class_m_q_t_t}{M\+Q\+TT} keep alive timeout.}
 
-\doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} keepalive timeout is defined \char`\"{}\+M\+Q\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+E\+P\+A\+L\+I\+V\+E 15\char`\"{}(15 sec) in header file. You can change the keepalive timeout in constructor. 
+\hyperlink{class_m_q_t_t}{M\+Q\+TT} keepalive timeout is defined \char`\"{}\+M\+Q\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+E\+P\+A\+L\+I\+V\+E 15\char`\"{}(15 sec) in header file. You can change the keepalive timeout in constructor. 
 \begin{DoxyPre}
-    \doxyref{MQTT}{p.}{class_m_q_t_t} client("server\_name", 1883, callback); // default: send keepalive packet to \doxyref{MQTT}{p.}{class_m_q_t_t} server in every 15sec.
-    \doxyref{MQTT}{p.}{class_m_q_t_t} client("server\_name", 1883, 30, callback); // keepliave timeout is 30sec.
+    \hyperlink{class_m_q_t_t}{MQTT} client("server\_name", 1883, callback); // default: send keepalive packet to \hyperlink{class_m_q_t_t}{MQTT} server in every 15sec.
+    \hyperlink{class_m_q_t_t}{MQTT} client("server\_name", 1883, 30, callback); // keepliave timeout is 30sec.
 \end{DoxyPre}
 
 
 \subsubsection*{Want to use over the 255 message size.}
 
-In this library, max \doxyref{M\+Q\+TT}{p.}{class_m_q_t_t} message size is defined \char`\"{}\+M\+Q\+T\+T\+\_\+\+M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E 255\char`\"{} in header file. But If you want to use over 255bytes, use the constructor 4th argument. 
+In this library, max \hyperlink{class_m_q_t_t}{M\+Q\+TT} message size is defined \char`\"{}\+M\+Q\+T\+T\+\_\+\+M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+Z\+E 255\char`\"{} in header file. But If you want to use over 255bytes, use the constructor 4th argument. 
 \begin{DoxyPre}
-    \doxyref{MQTT}{p.}{class_m_q_t_t} client("server\_name", 1883, callback); // default 255bytes
-    \doxyref{MQTT}{p.}{class_m_q_t_t} client("server\_name", 1883, MQTT\_DEFAULT\_KEEPALIVE, callback, 512); // max 512bytes
+    \hyperlink{class_m_q_t_t}{MQTT} client("server\_name", 1883, callback); // default 255bytes
+    \hyperlink{class_m_q_t_t}{MQTT} client("server\_name", 1883, MQTT\_DEFAULT\_KEEPALIVE, callback, 512); // max 512bytes
 \end{DoxyPre}
 
 
@@ -118,4 +118,4 @@ No, use default latest firmware. I test this library on default latest firmware 
 
 \subsubsection*{Bug or Problem?}
 
-First of all, check the {\tt Particle community site. But still your problem will not clear, please send a bug-\/fixed diff and Pull request or problem details to issue. Pull Request If you have a bug or feature, please send a pull request. Thanks for all developer\textquotesingle{}s pull request! }
+First of all, check the \href{https://community.particle.io/}{\tt Particle community site. But still your problem will not clear, please send a bug-\/fixed diff and Pull request or problem details to issue. Pull Request If you have a bug or feature, please send a pull request. Thanks for all developer\textquotesingle{}s pull request! }

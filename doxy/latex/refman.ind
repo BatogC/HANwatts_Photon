@@ -1,0 +1,1431 @@
+\begin{theindex}
+
+  \item {\+\_\+assert\+Json\+Parser\+Buffer}
+    \subitem {Json\+Test.\+cpp}, \hyperpage{206}
+  \item {\+\_\+assert\+Json\+Writer\+Buffer}
+    \subitem {Json\+Test.\+cpp}, \hyperpage{206}
+  \item {\+\_\+chip\+Select\+Pin}
+    \subitem {M\+F\+R\+C522}, \hyperpage{127}
+  \item {\+\_\+client}
+    \subitem {M\+Q\+TT}, \hyperpage{142}
+  \item {\+\_\+reset\+Power\+Down\+Pin}
+    \subitem {M\+F\+R\+C522}, \hyperpage{127}
+  \item {$\sim$\+Json\+Buffer}
+    \subitem {Json\+Buffer}, \hyperpage{32}
+  \item {$\sim$\+Json\+Modifier}
+    \subitem {Json\+Modifier}, \hyperpage{39}
+  \item {$\sim$\+Json\+Parser}
+    \subitem {Json\+Parser}, \hyperpage{47}
+  \item {$\sim$\+Json\+Reference}
+    \subitem {Json\+Reference}, \hyperpage{73}
+  \item {$\sim$\+Json\+Writer}
+    \subitem {Json\+Writer}, \hyperpage{81}
+  \item {$\sim$\+Json\+Writer\+Auto\+Array}
+    \subitem {Json\+Writer\+Auto\+Array}, \hyperpage{95}
+  \item {$\sim$\+Json\+Writer\+Auto\+Object}
+    \subitem {Json\+Writer\+Auto\+Object}, \hyperpage{97}
+  \item {$\sim$\+M\+Q\+TT}
+    \subitem {M\+Q\+TT}, \hyperpage{134}
+  \item {$\sim$\+String}
+    \subitem {String}, \hyperpage{154}
+  \item {1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}
+    \subitem {last\+Run}, \hyperpage{196}
+    \subitem {loop}, \hyperpage{195}
+    \subitem {parser1}, \hyperpage{196}
+    \subitem {run\+Test}, \hyperpage{196}
+    \subitem {setup}, \hyperpage{196}
+    \subitem {T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}, 
+		\hyperpage{197}
+    \subitem {test2}, \hyperpage{196}
+  \item {2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}
+    \subitem {last\+Run}, \hyperpage{198}
+    \subitem {loop}, \hyperpage{198}
+    \subitem {run\+Test}, \hyperpage{198}
+    \subitem {setup}, \hyperpage{198}
+    \subitem {T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}, 
+		\hyperpage{198}
+  \item {2020\+\_\+photon\+\_\+code.\+cpp}
+    \subitem {A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R1}, 
+		\hyperpage{220}
+    \subitem {A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R2}, 
+		\hyperpage{220}
+    \subitem {active\+Charger}, \hyperpage{223}
+    \subitem {add\+\_\+\+Measurement}, \hyperpage{223}
+    \subitem {allow\+User\+\_\+callback}, \hyperpage{223}
+    \subitem {blink\+R\+F\+I\+Dled}, \hyperpage{224}
+    \subitem {C\+H\+A\+R\+G\+E\+R\+O\+F\+F\+S\+ET}, \hyperpage{220}
+    \subitem {callback}, \hyperpage{224}
+    \subitem {char\+To\+String}, \hyperpage{224}
+    \subitem {client}, \hyperpage{229}
+    \subitem {counter}, \hyperpage{229}
+    \subitem {Current}, \hyperpage{229}
+    \subitem {Current\+List}, \hyperpage{230}
+    \subitem {current\+Str}, \hyperpage{230}
+    \subitem {D\+E\+B\+U\+G\+P\+O\+RT}, \hyperpage{221}
+    \subitem {E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+1}, 
+		\hyperpage{221}
+    \subitem {E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+2}, 
+		\hyperpage{221}
+    \subitem {E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+3}, 
+		\hyperpage{221}
+    \subitem {E\+X\+T\+RA}, \hyperpage{221}
+    \subitem {Energy}, \hyperpage{230}
+    \subitem {Frequency}, \hyperpage{230}
+    \subitem {get\+Measure\+\_\+callback}, \hyperpage{224}
+    \subitem {get\+User\+Id\+At\+Socket}, \hyperpage{225}
+    \subitem {handled\+Charger}, \hyperpage{230}
+    \subitem {init\+R\+F\+ID}, \hyperpage{225}
+    \subitem {Latest\+Start\+Time}, \hyperpage{231}
+    \subitem {Line\+Voltage}, \hyperpage{231}
+    \subitem {loop}, \hyperpage{225}
+    \subitem {max\+Current\+C1}, \hyperpage{225}
+    \subitem {max\+Current\+C1\+\_\+test}, \hyperpage{226}
+    \subitem {max\+Current\+C2}, \hyperpage{226}
+    \subitem {max\+Current\+C2\+\_\+test}, \hyperpage{226}
+    \subitem {mfrc522\+\_\+\+Charger1}, \hyperpage{231}
+    \subitem {mfrc522\+\_\+\+Charger2}, \hyperpage{231}
+    \subitem {next\+Time}, \hyperpage{231}
+    \subitem {number\+Of\+Zero\+Readings}, \hyperpage{232}
+    \subitem {P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+1}, 
+		\hyperpage{221}
+    \subitem {P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+2}, 
+		\hyperpage{222}
+    \subitem {Phase\+Voltage}, \hyperpage{232}
+    \subitem {Pianswer}, \hyperpage{232}
+    \subitem {Power}, \hyperpage{232}
+    \subitem {prog\+Mode\+Olmx}, \hyperpage{227}
+    \subitem {R\+E\+S\+E\+T\+\_\+\+O\+L\+I\+M\+EX}, \hyperpage{222}
+    \subitem {R\+S\+T\+\_\+\+P\+IN}, \hyperpage{222}
+    \subitem {read\+R\+F\+I\+D\+Card}, \hyperpage{227}
+    \subitem {read\+Serial\+Olimex}, \hyperpage{227}
+    \subitem {reconnect}, \hyperpage{227}
+    \subitem {reset\+Olimex}, \hyperpage{228}
+    \subitem {reset\+Particle}, \hyperpage{228}
+    \subitem {S\+I\+Z\+E\+O\+F\+U\+S\+E\+R\+L\+I\+ST}, \hyperpage{222}
+    \subitem {S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R1}, 
+		\hyperpage{222}
+    \subitem {S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R2}, 
+		\hyperpage{222}
+    \subitem {S\+T\+A\+R\+T\+UP}, \hyperpage{228}
+    \subitem {setup}, \hyperpage{228}
+    \subitem {Share\+Var}, \hyperpage{232}
+    \subitem {switch\+Test}, \hyperpage{229}
+    \subitem {T\+E\+S\+T\+C\+A\+SE}, \hyperpage{233}
+    \subitem {test}, \hyperpage{233}
+    \subitem {U\+I\+Dtag\+Charger1}, \hyperpage{233}
+    \subitem {U\+I\+Dtag\+Charger2}, \hyperpage{233}
+    \subitem {W\+A\+K\+E\+U\+P\+\_\+\+O\+L\+I\+M\+EX}, \hyperpage{223}
+    \subitem {Wifi\+Signal}, \hyperpage{229}
+  \item {3-\/subscription-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}
+    \subitem {json\+Parser}, \hyperpage{201}
+    \subitem {loop}, \hyperpage{200}
+    \subitem {print\+Indent}, \hyperpage{200}
+    \subitem {print\+Json}, \hyperpage{200}
+    \subitem {print\+Json\+Inner}, \hyperpage{200}
+    \subitem {print\+String}, \hyperpage{200}
+    \subitem {setup}, \hyperpage{201}
+    \subitem {subscription\+Handler}, \hyperpage{201}
+
+  \indexspace
+
+  \item {A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R1}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{220}
+  \item {A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R2}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{220}
+  \item {active\+Charger}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{223}
+  \item {add\+\_\+\+Measurement}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{223}
+  \item {add\+Data}
+    \subitem {Json\+Buffer}, \hyperpage{32}
+  \item {add\+Qos\+Callback}
+    \subitem {M\+Q\+TT}, \hyperpage{134}
+  \item {add\+String}
+    \subitem {Json\+Buffer}, \hyperpage{33}
+  \item {allocate}
+    \subitem {Json\+Buffer}, \hyperpage{33}
+  \item {allocate\+Tokens}
+    \subitem {Json\+Parser}, \hyperpage{48}
+  \item {allow\+User\+\_\+callback}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{223}
+  \item {append}
+    \subitem {Json\+Parser\+String}, \hyperpage{69}
+  \item {append\+Array\+Value}
+    \subitem {Json\+Modifier}, \hyperpage{39}
+  \item {append\+Utf8}
+    \subitem {Json\+Parser}, \hyperpage{48}
+  \item {assert\+Json\+Parser\+Buffer}
+    \subitem {Json\+Test.\+cpp}, \hyperpage{205}
+  \item {assert\+Json\+Writer\+Buffer}
+    \subitem {Json\+Test.\+cpp}, \hyperpage{205}
+
+  \indexspace
+
+  \item {B\+U\+F\+S\+I\+ZE}
+    \subitem {Commandparser.\+h}, \hyperpage{235}
+  \item {blink\+R\+F\+I\+Dled}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{224}
+  \item {buf}
+    \subitem {Json\+Parser\+String}, \hyperpage{70}
+  \item {buf\+Len}
+    \subitem {Json\+Parser\+String}, \hyperpage{70}
+  \item {buff}
+    \subitem {Commandparser.\+h}, \hyperpage{237}
+  \item {buffer}
+    \subitem {Json\+Buffer}, \hyperpage{36}
+    \subitem {M\+Q\+TT}, \hyperpage{142}
+    \subitem {String}, \hyperpage{186}
+  \item {buffer\+Len}
+    \subitem {Json\+Buffer}, \hyperpage{36}
+  \item {bufpos}
+    \subitem {Commandparser.\+h}, \hyperpage{237}
+  \item {bytes\+Arr\+To\+Float\+Arr}
+    \subitem {Commandparser.\+h}, \hyperpage{235}
+  \item {bytes\+To\+Float}
+    \subitem {Commandparser.\+h}, \hyperpage{236}
+
+  \indexspace
+
+  \item {c\+\_\+str}
+    \subitem {String}, \hyperpage{154}
+  \item {C\+H\+A\+R\+G\+E\+R\+O\+F\+F\+S\+ET}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{220}
+  \item {callback}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{224}
+    \subitem {M\+Q\+TT}, \hyperpage{142}
+  \item {capacity}
+    \subitem {String}, \hyperpage{186}
+  \item {change\+Buffer}
+    \subitem {String}, \hyperpage{155}
+  \item {char\+At}
+    \subitem {String}, \hyperpage{155}
+  \item {char\+To\+String}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{224}
+  \item {clear}
+    \subitem {Json\+Buffer}, \hyperpage{34}
+    \subitem {M\+Q\+TT}, \hyperpage{134}
+  \item {client}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{229}
+  \item {Commandparser.\+h}
+    \subitem {B\+U\+F\+S\+I\+ZE}, \hyperpage{235}
+    \subitem {buff}, \hyperpage{237}
+    \subitem {bufpos}, \hyperpage{237}
+    \subitem {bytes\+Arr\+To\+Float\+Arr}, \hyperpage{235}
+    \subitem {bytes\+To\+Float}, \hyperpage{236}
+    \subitem {Current}, \hyperpage{237}
+    \subitem {Current\+List}, \hyperpage{237}
+    \subitem {D\+E\+B\+U\+G\+P\+O\+RT}, \hyperpage{235}
+    \subitem {Energy}, \hyperpage{238}
+    \subitem {Frequency}, \hyperpage{238}
+    \subitem {last\+Upload}, \hyperpage{238}
+    \subitem {Line\+Voltage}, \hyperpage{238}
+    \subitem {number\+Of\+Zero\+Readings}, \hyperpage{238}
+    \subitem {Phase\+Voltage}, \hyperpage{239}
+    \subitem {Power}, \hyperpage{239}
+    \subitem {R\+S\+T\+T\+I\+M\+E\+O\+UT}, \hyperpage{235}
+    \subitem {read\+Serial\+Olimex}, \hyperpage{236}
+    \subitem {readnext\+Line}, \hyperpage{239}
+    \subitem {Send}, \hyperpage{236}
+    \subitem {string\+Parse}, \hyperpage{236}
+  \item {compare\+To}
+    \subitem {String}, \hyperpage{155}
+  \item {concat}
+    \subitem {String}, \hyperpage{156--160}
+  \item {connect}
+    \subitem {M\+Q\+TT}, \hyperpage{135}
+  \item {context}
+    \subitem {Json\+Writer}, \hyperpage{92}
+  \item {context\+Index}
+    \subitem {Json\+Writer}, \hyperpage{92}
+  \item {copy}
+    \subitem {String}, \hyperpage{160}
+  \item {copy\+Token\+Value}
+    \subitem {Json\+Parser}, \hyperpage{49}
+  \item {counter}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{229}
+  \item {Current}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{229}
+    \subitem {Commandparser.\+h}, \hyperpage{237}
+  \item {Current\+List}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{230}
+    \subitem {Commandparser.\+h}, \hyperpage{237}
+  \item {current\+Str}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{230}
+
+  \indexspace
+
+  \item {D\+E\+B\+U\+G\+P\+O\+RT}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{221}
+    \subitem {Commandparser.\+h}, \hyperpage{235}
+  \item {D\+U\+P\+\_\+\+F\+L\+A\+G\+\_\+\+O\+F\+F\+\_\+\+M\+A\+SK}
+    \subitem {M\+Q\+T\+T.\+cpp}, \hyperpage{212}
+  \item {D\+U\+P\+\_\+\+F\+L\+A\+G\+\_\+\+O\+N\+\_\+\+M\+A\+SK}
+    \subitem {M\+Q\+T\+T.\+cpp}, \hyperpage{212}
+  \item {debug\+\_\+print}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{214}
+  \item {disconnect}
+    \subitem {M\+Q\+TT}, \hyperpage{135}
+  \item {domain}
+    \subitem {M\+Q\+TT}, \hyperpage{143}
+
+  \indexspace
+
+  \item {E\+M\+Q\+T\+T\+\_\+\+C\+O\+N\+N\+A\+C\+K\+\_\+\+R\+E\+S\+P\+O\+N\+SE}
+    \subitem {M\+Q\+TT}, \hyperpage{131}
+  \item {E\+M\+Q\+T\+T\+\_\+\+Q\+OS}
+    \subitem {M\+Q\+TT}, \hyperpage{131}
+  \item {E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+1}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{221}
+  \item {E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+2}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{221}
+  \item {E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+3}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{221}
+  \item {E\+X\+T\+RA}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{221}
+  \item {end}
+    \subitem {Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}, 
+		\hyperpage{29}
+  \item {ends\+With}
+    \subitem {String}, \hyperpage{160}
+  \item {Energy}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{230}
+    \subitem {Commandparser.\+h}, \hyperpage{238}
+  \item {equals}
+    \subitem {String}, \hyperpage{161}
+  \item {equals\+Ignore\+Case}
+    \subitem {String}, \hyperpage{161}
+
+  \indexspace
+
+  \item {F}
+    \subitem {spark\+\_\+wiring\+\_\+string.\+h}, \hyperpage{194}
+  \item {F\+I\+F\+O\+\_\+\+S\+I\+ZE}
+    \subitem {M\+F\+R\+C522}, \hyperpage{128}
+  \item {find\+Left\+Comma}
+    \subitem {Json\+Modifier}, \hyperpage{39}
+  \item {find\+Right\+Comma}
+    \subitem {Json\+Modifier}, \hyperpage{40}
+  \item {finish}
+    \subitem {Json\+Modifier}, \hyperpage{40}
+  \item {finish\+Object\+Or\+Array}
+    \subitem {Json\+Writer}, \hyperpage{82}
+  \item {flags}
+    \subitem {String}, \hyperpage{187}
+  \item {float\+Places}
+    \subitem {Json\+Writer}, \hyperpage{92}
+  \item {format}
+    \subitem {String}, \hyperpage{162}
+  \item {Frequency}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{230}
+    \subitem {Commandparser.\+h}, \hyperpage{238}
+
+  \indexspace
+
+  \item {get\+Array\+Size}
+    \subitem {Json\+Parser}, \hyperpage{49}
+  \item {get\+Buffer}
+    \subitem {Json\+Buffer}, \hyperpage{34}
+  \item {get\+Buffer\+Len}
+    \subitem {Json\+Buffer}, \hyperpage{34}
+  \item {get\+Bytes}
+    \subitem {String}, \hyperpage{162}
+  \item {get\+Key\+Value\+By\+Index}
+    \subitem {Json\+Parser}, \hyperpage{49}
+  \item {get\+Key\+Value\+Token\+By\+Index}
+    \subitem {Json\+Parser}, \hyperpage{50}
+  \item {get\+Length}
+    \subitem {Json\+Parser\+String}, \hyperpage{69}
+  \item {get\+Max\+Tokens}
+    \subitem {Json\+Parser}, \hyperpage{50}
+  \item {get\+Measure\+\_\+callback}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{224}
+  \item {get\+Offset}
+    \subitem {Json\+Buffer}, \hyperpage{34}
+  \item {get\+Outer\+Array}
+    \subitem {Json\+Parser}, \hyperpage{51}
+  \item {get\+Outer\+Key\+Value\+By\+Index}
+    \subitem {Json\+Parser}, \hyperpage{51}
+  \item {get\+Outer\+Object}
+    \subitem {Json\+Parser}, \hyperpage{52}
+  \item {get\+Outer\+Token}
+    \subitem {Json\+Parser}, \hyperpage{52}
+  \item {get\+Outer\+Value\+By\+Key}
+    \subitem {Json\+Parser}, \hyperpage{52}
+  \item {get\+Reference}
+    \subitem {Json\+Parser}, \hyperpage{53}
+  \item {Get\+Status\+Code\+Name}
+    \subitem {M\+F\+R\+C522}, \hyperpage{108}
+  \item {get\+Token\+By\+Index}
+    \subitem {Json\+Parser}, \hyperpage{53}
+  \item {get\+Token\+Json\+String}
+    \subitem {Json\+Parser}, \hyperpage{54}
+  \item {get\+Token\+Value}
+    \subitem {Json\+Parser}, \hyperpage{55--58}
+  \item {get\+Tokens}
+    \subitem {Json\+Parser}, \hyperpage{55}
+  \item {get\+Tokens\+End}
+    \subitem {Json\+Parser}, \hyperpage{55}
+  \item {get\+User\+Id\+At\+Socket}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{225}
+  \item {get\+Value\+By\+Col\+Row}
+    \subitem {Json\+Parser}, \hyperpage{58}
+  \item {get\+Value\+By\+Index}
+    \subitem {Json\+Parser}, \hyperpage{59}
+  \item {get\+Value\+By\+Key}
+    \subitem {Json\+Parser}, \hyperpage{59}
+  \item {get\+Value\+Token\+By\+Col\+Row}
+    \subitem {Json\+Parser}, \hyperpage{60}
+  \item {get\+Value\+Token\+By\+Index}
+    \subitem {Json\+Parser}, \hyperpage{60}
+  \item {get\+Value\+Token\+By\+Key}
+    \subitem {Json\+Parser}, \hyperpage{61}
+
+  \indexspace
+
+  \item {handled\+Charger}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{230}
+
+  \indexspace
+
+  \item {index}
+    \subitem {Json\+Reference}, \hyperpage{73}
+  \item {index\+Of}
+    \subitem {String}, \hyperpage{163, 164}
+  \item {init}
+    \subitem {Json\+Writer}, \hyperpage{82}
+    \subitem {String}, \hyperpage{164}
+  \item {init\+R\+F\+ID}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{225}
+  \item {initialize}
+    \subitem {M\+Q\+TT}, \hyperpage{136}
+  \item {insert\+Array}
+    \subitem {Json\+Writer}, \hyperpage{82}
+  \item {insert\+Array\+Value}
+    \subitem {Json\+Writer}, \hyperpage{83}
+  \item {insert\+Char}
+    \subitem {Json\+Writer}, \hyperpage{83}
+  \item {insert\+Check\+Separator}
+    \subitem {Json\+Writer}, \hyperpage{83}
+  \item {insert\+Key\+Array}
+    \subitem {Json\+Writer}, \hyperpage{84}
+  \item {insert\+Key\+Object}
+    \subitem {Json\+Writer}, \hyperpage{85}
+  \item {insert\+Key\+Value}
+    \subitem {Json\+Writer}, \hyperpage{85}
+  \item {insert\+Key\+Vector}
+    \subitem {Json\+Writer}, \hyperpage{85}
+  \item {insert\+Or\+Update\+Key\+Value}
+    \subitem {Json\+Modifier}, \hyperpage{40}
+  \item {insert\+String}
+    \subitem {Json\+Writer}, \hyperpage{86}
+  \item {insert\+Value}
+    \subitem {Json\+Writer}, \hyperpage{86--89}
+  \item {insert\+Vector}
+    \subitem {Json\+Writer}, \hyperpage{89}
+  \item {insertsprintf}
+    \subitem {Json\+Writer}, \hyperpage{86}
+  \item {insertvsprintf}
+    \subitem {Json\+Writer}, \hyperpage{90}
+  \item {invalidate}
+    \subitem {String}, \hyperpage{164}
+  \item {ip}
+    \subitem {M\+Q\+TT}, \hyperpage{143}
+  \item {is\+Connected}
+    \subitem {M\+Q\+TT}, \hyperpage{136}
+  \item {is\+First}
+    \subitem {Json\+Writer\+Context}, \hyperpage{98}
+  \item {is\+Truncated}
+    \subitem {Json\+Writer}, \hyperpage{90}
+
+  \indexspace
+
+  \item {jp}
+    \subitem {Json\+Modifier}, \hyperpage{43}
+  \item {jsmn\+\_\+alloc\+\_\+token}
+    \subitem {Json\+Parser\+Generator\+RK}, \hyperpage{24}
+  \item {jsmn\+\_\+fill\+\_\+token}
+    \subitem {Json\+Parser\+Generator\+RK}, \hyperpage{24}
+  \item {jsmn\+\_\+init}
+    \subitem {Json\+Parser\+Generator\+RK}, \hyperpage{25}
+  \item {jsmn\+\_\+parse}
+    \subitem {Json\+Parser\+Generator\+RK}, \hyperpage{25}
+  \item {jsmn\+\_\+parse\+\_\+primitive}
+    \subitem {Json\+Parser\+Generator\+RK}, \hyperpage{25}
+  \item {jsmn\+\_\+parse\+\_\+string}
+    \subitem {Json\+Parser\+Generator\+RK}, \hyperpage{26}
+  \item {jsmnerr}
+    \subitem {Json\+Parser\+Generator\+RK}, \hyperpage{23}
+  \item {jsmntype\+\_\+t}
+    \subitem {Json\+Parser\+Generator\+RK}, \hyperpage{24}
+  \item {Json\+Buffer}, \hyperpage{30}
+    \subitem {$\sim$\+Json\+Buffer}, \hyperpage{32}
+    \subitem {add\+Data}, \hyperpage{32}
+    \subitem {add\+String}, \hyperpage{33}
+    \subitem {allocate}, \hyperpage{33}
+    \subitem {buffer}, \hyperpage{36}
+    \subitem {buffer\+Len}, \hyperpage{36}
+    \subitem {clear}, \hyperpage{34}
+    \subitem {get\+Buffer}, \hyperpage{34}
+    \subitem {get\+Buffer\+Len}, \hyperpage{34}
+    \subitem {get\+Offset}, \hyperpage{34}
+    \subitem {Json\+Buffer}, \hyperpage{31, 32}
+    \subitem {null\+Terminate}, \hyperpage{35}
+    \subitem {offset}, \hyperpage{36}
+    \subitem {set\+Buffer}, \hyperpage{35}
+    \subitem {set\+Offset}, \hyperpage{35}
+    \subitem {static\+Buffers}, \hyperpage{36}
+  \item {Json\+Modifier}, \hyperpage{37}
+    \subitem {$\sim$\+Json\+Modifier}, \hyperpage{39}
+    \subitem {append\+Array\+Value}, \hyperpage{39}
+    \subitem {find\+Left\+Comma}, \hyperpage{39}
+    \subitem {find\+Right\+Comma}, \hyperpage{40}
+    \subitem {finish}, \hyperpage{40}
+    \subitem {insert\+Or\+Update\+Key\+Value}, \hyperpage{40}
+    \subitem {jp}, \hyperpage{43}
+    \subitem {Json\+Modifier}, \hyperpage{39}
+    \subitem {Json\+Parser}, \hyperpage{63}
+    \subitem {orig\+After}, \hyperpage{43}
+    \subitem {remove\+Array\+Index}, \hyperpage{41}
+    \subitem {remove\+Key\+Value}, \hyperpage{41}
+    \subitem {save\+Loc}, \hyperpage{43}
+    \subitem {start}, \hyperpage{43}
+    \subitem {start\+Append}, \hyperpage{41}
+    \subitem {start\+Modify}, \hyperpage{42}
+    \subitem {token\+With\+Quotes}, \hyperpage{42}
+  \item {Json\+Parser}, \hyperpage{44}
+    \subitem {$\sim$\+Json\+Parser}, \hyperpage{47}
+    \subitem {allocate\+Tokens}, \hyperpage{48}
+    \subitem {append\+Utf8}, \hyperpage{48}
+    \subitem {copy\+Token\+Value}, \hyperpage{49}
+    \subitem {get\+Array\+Size}, \hyperpage{49}
+    \subitem {get\+Key\+Value\+By\+Index}, \hyperpage{49}
+    \subitem {get\+Key\+Value\+Token\+By\+Index}, \hyperpage{50}
+    \subitem {get\+Max\+Tokens}, \hyperpage{50}
+    \subitem {get\+Outer\+Array}, \hyperpage{51}
+    \subitem {get\+Outer\+Key\+Value\+By\+Index}, \hyperpage{51}
+    \subitem {get\+Outer\+Object}, \hyperpage{52}
+    \subitem {get\+Outer\+Token}, \hyperpage{52}
+    \subitem {get\+Outer\+Value\+By\+Key}, \hyperpage{52}
+    \subitem {get\+Reference}, \hyperpage{53}
+    \subitem {get\+Token\+By\+Index}, \hyperpage{53}
+    \subitem {get\+Token\+Json\+String}, \hyperpage{54}
+    \subitem {get\+Token\+Value}, \hyperpage{55--58}
+    \subitem {get\+Tokens}, \hyperpage{55}
+    \subitem {get\+Tokens\+End}, \hyperpage{55}
+    \subitem {get\+Value\+By\+Col\+Row}, \hyperpage{58}
+    \subitem {get\+Value\+By\+Index}, \hyperpage{59}
+    \subitem {get\+Value\+By\+Key}, \hyperpage{59}
+    \subitem {get\+Value\+Token\+By\+Col\+Row}, \hyperpage{60}
+    \subitem {get\+Value\+Token\+By\+Index}, \hyperpage{60}
+    \subitem {get\+Value\+Token\+By\+Key}, \hyperpage{61}
+    \subitem {Json\+Modifier}, \hyperpage{63}
+    \subitem {Json\+Parser}, \hyperpage{47, 48}
+    \subitem {max\+Tokens}, \hyperpage{63}
+    \subitem {parse}, \hyperpage{62}
+    \subitem {parser}, \hyperpage{63}
+    \subitem {skip\+Object}, \hyperpage{62}
+    \subitem {tokens}, \hyperpage{63}
+    \subitem {tokens\+End}, \hyperpage{63}
+  \item {json\+Parser}
+    \subitem {3-\/subscription-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{201}
+  \item {Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parser}, 
+		\hyperpage{27}
+    \subitem {pos}, \hyperpage{27}
+    \subitem {toknext}, \hyperpage{28}
+    \subitem {toksuper}, \hyperpage{28}
+  \item {Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}, 
+		\hyperpage{28}
+    \subitem {end}, \hyperpage{29}
+    \subitem {size}, \hyperpage{29}
+    \subitem {start}, \hyperpage{29}
+    \subitem {type}, \hyperpage{30}
+  \item {Json\+Parser\+Generator\+RK}, \hyperpage{23}
+    \subitem {jsmn\+\_\+alloc\+\_\+token}, \hyperpage{24}
+    \subitem {jsmn\+\_\+fill\+\_\+token}, \hyperpage{24}
+    \subitem {jsmn\+\_\+init}, \hyperpage{25}
+    \subitem {jsmn\+\_\+parse}, \hyperpage{25}
+    \subitem {jsmn\+\_\+parse\+\_\+primitive}, \hyperpage{25}
+    \subitem {jsmn\+\_\+parse\+\_\+string}, \hyperpage{26}
+    \subitem {jsmnerr}, \hyperpage{23}
+    \subitem {jsmntype\+\_\+t}, \hyperpage{24}
+  \item {Json\+Parser\+Static}
+    \subitem {Json\+Parser\+Static}, \hyperpage{66}
+    \subitem {static\+Buffer}, \hyperpage{66}
+    \subitem {static\+Tokens}, \hyperpage{66}
+  \item {Json\+Parser\+Static$<$ B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E, M\+A\+X\+\_\+\+T\+O\+K\+E\+N\+S $>$}, 
+		\hyperpage{64}
+  \item {Json\+Parser\+String}, \hyperpage{67}
+    \subitem {append}, \hyperpage{69}
+    \subitem {buf}, \hyperpage{70}
+    \subitem {buf\+Len}, \hyperpage{70}
+    \subitem {get\+Length}, \hyperpage{69}
+    \subitem {Json\+Parser\+String}, \hyperpage{68}
+    \subitem {length}, \hyperpage{70}
+    \subitem {str}, \hyperpage{71}
+  \item {Json\+Reference}, \hyperpage{71}
+    \subitem {$\sim$\+Json\+Reference}, \hyperpage{73}
+    \subitem {index}, \hyperpage{73}
+    \subitem {Json\+Reference}, \hyperpage{72, 73}
+    \subitem {key}, \hyperpage{74}
+    \subitem {parser}, \hyperpage{78}
+    \subitem {size}, \hyperpage{74}
+    \subitem {token}, \hyperpage{78}
+    \subitem {value}, \hyperpage{74}
+    \subitem {value\+Bool}, \hyperpage{76}
+    \subitem {value\+Double}, \hyperpage{76}
+    \subitem {value\+Float}, \hyperpage{76}
+    \subitem {value\+Int}, \hyperpage{77}
+    \subitem {value\+String}, \hyperpage{77}
+    \subitem {value\+Unsigned\+Long}, \hyperpage{77}
+  \item {Json\+Test.\+cpp}
+    \subitem {\+\_\+assert\+Json\+Parser\+Buffer}, \hyperpage{206}
+    \subitem {\+\_\+assert\+Json\+Writer\+Buffer}, \hyperpage{206}
+    \subitem {assert\+Json\+Parser\+Buffer}, \hyperpage{205}
+    \subitem {assert\+Json\+Writer\+Buffer}, \hyperpage{205}
+    \subitem {main}, \hyperpage{206}
+    \subitem {print\+Indent}, \hyperpage{206}
+    \subitem {print\+Json}, \hyperpage{207}
+    \subitem {print\+Json\+Inner}, \hyperpage{207}
+    \subitem {print\+String}, \hyperpage{207}
+    \subitem {print\+Token}, \hyperpage{207}
+    \subitem {print\+Tokens}, \hyperpage{208}
+    \subitem {read\+Test\+Data}, \hyperpage{208}
+  \item {Json\+Writer}, \hyperpage{78}
+    \subitem {$\sim$\+Json\+Writer}, \hyperpage{81}
+    \subitem {context}, \hyperpage{92}
+    \subitem {context\+Index}, \hyperpage{92}
+    \subitem {finish\+Object\+Or\+Array}, \hyperpage{82}
+    \subitem {float\+Places}, \hyperpage{92}
+    \subitem {init}, \hyperpage{82}
+    \subitem {insert\+Array}, \hyperpage{82}
+    \subitem {insert\+Array\+Value}, \hyperpage{83}
+    \subitem {insert\+Char}, \hyperpage{83}
+    \subitem {insert\+Check\+Separator}, \hyperpage{83}
+    \subitem {insert\+Key\+Array}, \hyperpage{84}
+    \subitem {insert\+Key\+Object}, \hyperpage{85}
+    \subitem {insert\+Key\+Value}, \hyperpage{85}
+    \subitem {insert\+Key\+Vector}, \hyperpage{85}
+    \subitem {insert\+String}, \hyperpage{86}
+    \subitem {insert\+Value}, \hyperpage{86--89}
+    \subitem {insert\+Vector}, \hyperpage{89}
+    \subitem {insertsprintf}, \hyperpage{86}
+    \subitem {insertvsprintf}, \hyperpage{90}
+    \subitem {is\+Truncated}, \hyperpage{90}
+    \subitem {Json\+Writer}, \hyperpage{81}
+    \subitem {M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT}, 
+		\hyperpage{93}
+    \subitem {set\+Float\+Places}, \hyperpage{90}
+    \subitem {set\+Is\+First}, \hyperpage{91}
+    \subitem {start\+Array}, \hyperpage{91}
+    \subitem {start\+Object}, \hyperpage{91}
+    \subitem {start\+Object\+Or\+Array}, \hyperpage{91}
+    \subitem {truncated}, \hyperpage{93}
+  \item {Json\+Writer\+Auto\+Array}, \hyperpage{94}
+    \subitem {$\sim$\+Json\+Writer\+Auto\+Array}, \hyperpage{95}
+    \subitem {Json\+Writer\+Auto\+Array}, \hyperpage{95}
+    \subitem {jw}, \hyperpage{95}
+  \item {Json\+Writer\+Auto\+Object}, \hyperpage{96}
+    \subitem {$\sim$\+Json\+Writer\+Auto\+Object}, \hyperpage{97}
+    \subitem {Json\+Writer\+Auto\+Object}, \hyperpage{97}
+    \subitem {jw}, \hyperpage{97}
+  \item {Json\+Writer\+Context}, \hyperpage{98}
+    \subitem {is\+First}, \hyperpage{98}
+    \subitem {terminator}, \hyperpage{98}
+  \item {Json\+Writer\+Static}
+    \subitem {Json\+Writer\+Static}, \hyperpage{100}
+    \subitem {static\+Buffer}, \hyperpage{100}
+  \item {Json\+Writer\+Static$<$ B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E $>$}, 
+		\hyperpage{99}
+  \item {jw}
+    \subitem {Json\+Writer\+Auto\+Array}, \hyperpage{95}
+    \subitem {Json\+Writer\+Auto\+Object}, \hyperpage{97}
+
+  \indexspace
+
+  \item {keepalive}
+    \subitem {M\+Q\+TT}, \hyperpage{143}
+  \item {key}
+    \subitem {Json\+Reference}, \hyperpage{74}
+  \item {key\+Byte}
+    \subitem {M\+F\+R\+C522\+::\+M\+I\+F\+A\+R\+E\+\_\+\+Key}, 
+		\hyperpage{128}
+
+  \indexspace
+
+  \item {L\+O\+G\+G\+I\+NG}
+    \subitem {M\+Q\+T\+T.\+cpp}, \hyperpage{212}
+  \item {last\+In\+Activity}
+    \subitem {M\+Q\+TT}, \hyperpage{143}
+  \item {last\+Index\+Of}
+    \subitem {String}, \hyperpage{164, 165}
+  \item {last\+Out\+Activity}
+    \subitem {M\+Q\+TT}, \hyperpage{143}
+  \item {last\+Run}
+    \subitem {1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{196}
+    \subitem {2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{198}
+  \item {last\+Upload}
+    \subitem {Commandparser.\+h}, \hyperpage{238}
+  \item {Latest\+Start\+Time}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{231}
+  \item {len}
+    \subitem {String}, \hyperpage{187}
+  \item {length}
+    \subitem {Json\+Parser\+String}, \hyperpage{70}
+    \subitem {String}, \hyperpage{166}
+  \item {lib/\+Json\+Parser\+Generator\+R\+K/\+R\+E\+A\+D\+M\+E.\+md}, 
+		\hyperpage{202}
+  \item {lib/\+Json\+Parser\+Generator\+R\+K/docs/src/spark\+\_\+wiring\+\_\+string.\+h}, 
+		\hyperpage{193}
+  \item {lib/\+Json\+Parser\+Generator\+R\+K/examples/1-\/parser/1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{195}
+  \item {lib/\+Json\+Parser\+Generator\+R\+K/examples/2-\/generator/2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{197}
+  \item {lib/\+Json\+Parser\+Generator\+R\+K/examples/3-\/subscription/3-\/subscription-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{199}
+  \item {lib/\+Json\+Parser\+Generator\+R\+K/src/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{202}
+  \item {lib/\+Json\+Parser\+Generator\+R\+K/src/\+Json\+Parser\+Generator\+R\+K.\+h}, 
+		\hyperpage{203}
+  \item {lib/\+Json\+Parser\+Generator\+R\+K/test/\+Json\+Test.\+cpp}, 
+		\hyperpage{204}
+  \item {lib/\+M\+F\+R\+C522/\+R\+E\+A\+D\+M\+E.\+md}, \hyperpage{202}
+  \item {lib/\+M\+F\+R\+C522/src/\+M\+F\+R\+C522.\+cpp}, 
+		\hyperpage{208}
+  \item {lib/\+M\+F\+R\+C522/src/\+M\+F\+R\+C522.\+h}, \hyperpage{209}
+  \item {lib/\+M\+F\+R\+C522/src/\+M\+F\+R\+C522/\+M\+F\+R\+C522.\+h}, 
+		\hyperpage{209}
+  \item {lib/\+M\+Q\+T\+T/\+R\+E\+A\+D\+M\+E.\+md}, \hyperpage{202}
+  \item {lib/\+M\+Q\+T\+T/src/\+M\+Q\+T\+T.\+cpp}, \hyperpage{211}
+  \item {lib/\+M\+Q\+T\+T/src/\+M\+Q\+T\+T.\+h}, \hyperpage{213}
+  \item {lib/\+M\+Q\+T\+T/src/\+M\+Q\+T\+T/\+M\+Q\+T\+T.\+h}, 
+		\hyperpage{213}
+  \item {Line\+Voltage}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{231}
+    \subitem {Commandparser.\+h}, \hyperpage{238}
+  \item {loop}
+    \subitem {1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{195}
+    \subitem {2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{198}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{225}
+    \subitem {3-\/subscription-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{200}
+    \subitem {M\+Q\+TT}, \hyperpage{136}
+
+  \indexspace
+
+  \item {M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT}
+    \subitem {Json\+Writer}, \hyperpage{93}
+  \item {M\+F\+R\+C522}, \hyperpage{101}
+    \subitem {\+\_\+chip\+Select\+Pin}, \hyperpage{127}
+    \subitem {\+\_\+reset\+Power\+Down\+Pin}, \hyperpage{127}
+    \subitem {F\+I\+F\+O\+\_\+\+S\+I\+ZE}, \hyperpage{128}
+    \subitem {Get\+Status\+Code\+Name}, \hyperpage{108}
+    \subitem {M\+F\+R\+C522}, \hyperpage{108}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Decrement}, \hyperpage{109}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Get\+Value}, \hyperpage{109}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Increment}, \hyperpage{109}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Misc}, \hyperpage{104}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Open\+Uid\+Backdoor}, 
+		\hyperpage{110}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Read}, \hyperpage{110}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Restore}, \hyperpage{111}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Set\+Access\+Bits}, 
+		\hyperpage{112}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Set\+Uid}, \hyperpage{112}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Set\+Value}, \hyperpage{112}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Transfer}, \hyperpage{113}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Two\+Step\+Helper}, 
+		\hyperpage{113}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Ultralight\+\_\+\+Write}, 
+		\hyperpage{114}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Unbrick\+Uid\+Sector}, 
+		\hyperpage{114}
+    \subitem {M\+I\+F\+A\+R\+E\+\_\+\+Write}, \hyperpage{114}
+    \subitem {P\+C\+D\+\_\+\+Antenna\+Off}, \hyperpage{115}
+    \subitem {P\+C\+D\+\_\+\+Antenna\+On}, \hyperpage{115}
+    \subitem {P\+C\+D\+\_\+\+Authenticate}, \hyperpage{115}
+    \subitem {P\+C\+D\+\_\+\+Calculate\+C\+RC}, \hyperpage{116}
+    \subitem {P\+C\+D\+\_\+\+Clear\+Register\+Bit\+Mask}, 
+		\hyperpage{117}
+    \subitem {P\+C\+D\+\_\+\+Command}, \hyperpage{104}
+    \subitem {P\+C\+D\+\_\+\+Communicate\+With\+P\+I\+CC}, 
+		\hyperpage{117}
+    \subitem {P\+C\+D\+\_\+\+Get\+Antenna\+Gain}, \hyperpage{118}
+    \subitem {P\+C\+D\+\_\+\+Init}, \hyperpage{118}
+    \subitem {P\+C\+D\+\_\+\+M\+I\+F\+A\+R\+E\+\_\+\+Transceive}, 
+		\hyperpage{118}
+    \subitem {P\+C\+D\+\_\+\+Read\+Register}, \hyperpage{119}
+    \subitem {P\+C\+D\+\_\+\+Register}, \hyperpage{104}
+    \subitem {P\+C\+D\+\_\+\+Reset}, \hyperpage{119}
+    \subitem {P\+C\+D\+\_\+\+Rx\+Gain}, \hyperpage{106}
+    \subitem {P\+C\+D\+\_\+\+Set\+Antenna\+Gain}, \hyperpage{120}
+    \subitem {P\+C\+D\+\_\+\+Set\+Register\+Bit\+Mask}, \hyperpage{120}
+    \subitem {P\+C\+D\+\_\+\+Stop\+Crypto1}, \hyperpage{120}
+    \subitem {P\+C\+D\+\_\+\+Transceive\+Data}, \hyperpage{120}
+    \subitem {P\+C\+D\+\_\+\+Write\+Register}, \hyperpage{121}
+    \subitem {P\+I\+C\+C\+\_\+\+Command}, \hyperpage{106}
+    \subitem {P\+I\+C\+C\+\_\+\+Dump\+Mifare\+Classic\+Sector\+To\+Serial}, 
+		\hyperpage{122}
+    \subitem {P\+I\+C\+C\+\_\+\+Dump\+Mifare\+Classic\+To\+Serial}, 
+		\hyperpage{122}
+    \subitem {P\+I\+C\+C\+\_\+\+Dump\+Mifare\+Ultralight\+To\+Serial}, 
+		\hyperpage{123}
+    \subitem {P\+I\+C\+C\+\_\+\+Dump\+To\+Serial}, \hyperpage{123}
+    \subitem {P\+I\+C\+C\+\_\+\+Get\+Type}, \hyperpage{123}
+    \subitem {P\+I\+C\+C\+\_\+\+Get\+Type\+Name}, \hyperpage{124}
+    \subitem {P\+I\+C\+C\+\_\+\+HaltA}, \hyperpage{124}
+    \subitem {P\+I\+C\+C\+\_\+\+Is\+New\+Card\+Present}, 
+		\hyperpage{124}
+    \subitem {P\+I\+C\+C\+\_\+\+R\+E\+Q\+A\+\_\+or\+\_\+\+W\+U\+PA}, 
+		\hyperpage{125}
+    \subitem {P\+I\+C\+C\+\_\+\+Read\+Card\+Serial}, \hyperpage{124}
+    \subitem {P\+I\+C\+C\+\_\+\+RequestA}, \hyperpage{125}
+    \subitem {P\+I\+C\+C\+\_\+\+Select}, \hyperpage{126}
+    \subitem {P\+I\+C\+C\+\_\+\+Type}, \hyperpage{107}
+    \subitem {P\+I\+C\+C\+\_\+\+WakeupA}, \hyperpage{126}
+    \subitem {set\+Bit\+Mask}, \hyperpage{127}
+    \subitem {set\+S\+P\+I\+Config}, \hyperpage{127}
+    \subitem {Status\+Code}, \hyperpage{107}
+    \subitem {uid}, \hyperpage{128}
+  \item {M\+F\+R\+C522.\+h}
+    \subitem {word}, \hyperpage{210}
+  \item {M\+F\+R\+C522\+::\+M\+I\+F\+A\+R\+E\+\_\+\+Key}, 
+		\hyperpage{128}
+    \subitem {key\+Byte}, \hyperpage{128}
+  \item {M\+F\+R\+C522\+::\+Uid}, \hyperpage{192}
+    \subitem {sak}, \hyperpage{192}
+    \subitem {size}, \hyperpage{192}
+    \subitem {uid\+Byte}, \hyperpage{192}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Decrement}
+    \subitem {M\+F\+R\+C522}, \hyperpage{109}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Get\+Value}
+    \subitem {M\+F\+R\+C522}, \hyperpage{109}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Increment}
+    \subitem {M\+F\+R\+C522}, \hyperpage{109}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Misc}
+    \subitem {M\+F\+R\+C522}, \hyperpage{104}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Open\+Uid\+Backdoor}
+    \subitem {M\+F\+R\+C522}, \hyperpage{110}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Read}
+    \subitem {M\+F\+R\+C522}, \hyperpage{110}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Restore}
+    \subitem {M\+F\+R\+C522}, \hyperpage{111}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Set\+Access\+Bits}
+    \subitem {M\+F\+R\+C522}, \hyperpage{112}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Set\+Uid}
+    \subitem {M\+F\+R\+C522}, \hyperpage{112}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Set\+Value}
+    \subitem {M\+F\+R\+C522}, \hyperpage{112}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Transfer}
+    \subitem {M\+F\+R\+C522}, \hyperpage{113}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Two\+Step\+Helper}
+    \subitem {M\+F\+R\+C522}, \hyperpage{113}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Ultralight\+\_\+\+Write}
+    \subitem {M\+F\+R\+C522}, \hyperpage{114}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Unbrick\+Uid\+Sector}
+    \subitem {M\+F\+R\+C522}, \hyperpage{114}
+  \item {M\+I\+F\+A\+R\+E\+\_\+\+Write}
+    \subitem {M\+F\+R\+C522}, \hyperpage{114}
+  \item {M\+Q\+T\+T.\+cpp}
+    \subitem {D\+U\+P\+\_\+\+F\+L\+A\+G\+\_\+\+O\+F\+F\+\_\+\+M\+A\+SK}, 
+		\hyperpage{212}
+    \subitem {D\+U\+P\+\_\+\+F\+L\+A\+G\+\_\+\+O\+N\+\_\+\+M\+A\+SK}, 
+		\hyperpage{212}
+    \subitem {L\+O\+G\+G\+I\+NG}, \hyperpage{212}
+    \subitem {M\+Q\+T\+T\+Q\+O\+S0\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+M\+A\+SK}, 
+		\hyperpage{212}
+    \subitem {M\+Q\+T\+T\+Q\+O\+S1\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+M\+A\+SK}, 
+		\hyperpage{212}
+    \subitem {M\+Q\+T\+T\+Q\+O\+S2\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+M\+A\+SK}, 
+		\hyperpage{213}
+  \item {M\+Q\+T\+T.\+h}
+    \subitem {debug\+\_\+print}, \hyperpage{214}
+    \subitem {M\+Q\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+E\+P\+A\+L\+I\+VE}, 
+		\hyperpage{214}
+    \subitem {M\+Q\+T\+T\+\_\+\+M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+ZE}, 
+		\hyperpage{215}
+    \subitem {M\+Q\+T\+T\+C\+O\+N\+N\+A\+CK}, \hyperpage{215}
+    \subitem {M\+Q\+T\+T\+C\+O\+N\+N\+E\+CT}, \hyperpage{215}
+    \subitem {M\+Q\+T\+T\+D\+I\+S\+C\+O\+N\+N\+E\+CT}, \hyperpage{215}
+    \subitem {M\+Q\+T\+T\+P\+I\+N\+G\+R\+E\+SP}, \hyperpage{215}
+    \subitem {M\+Q\+T\+T\+P\+I\+N\+G\+R\+EQ}, \hyperpage{215}
+    \subitem {M\+Q\+T\+T\+P\+R\+O\+T\+O\+C\+O\+L\+V\+E\+R\+S\+I\+ON}, 
+		\hyperpage{216}
+    \subitem {M\+Q\+T\+T\+P\+U\+B\+A\+CK}, \hyperpage{216}
+    \subitem {M\+Q\+T\+T\+P\+U\+B\+C\+O\+MP}, \hyperpage{216}
+    \subitem {M\+Q\+T\+T\+P\+U\+B\+L\+I\+SH}, \hyperpage{216}
+    \subitem {M\+Q\+T\+T\+P\+U\+B\+R\+EC}, \hyperpage{216}
+    \subitem {M\+Q\+T\+T\+P\+U\+B\+R\+EL}, \hyperpage{216}
+    \subitem {M\+Q\+T\+T\+Reserved}, \hyperpage{217}
+    \subitem {M\+Q\+T\+T\+S\+U\+B\+A\+CK}, \hyperpage{217}
+    \subitem {M\+Q\+T\+T\+S\+U\+B\+S\+C\+R\+I\+BE}, \hyperpage{217}
+    \subitem {M\+Q\+T\+T\+U\+N\+S\+U\+B\+A\+CK}, \hyperpage{217}
+    \subitem {M\+Q\+T\+T\+U\+N\+S\+U\+B\+S\+C\+R\+I\+BE}, 
+		\hyperpage{217}
+  \item {M\+Q\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+E\+P\+A\+L\+I\+VE}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{214}
+  \item {M\+Q\+T\+T\+\_\+\+M\+A\+X\+\_\+\+P\+A\+C\+K\+E\+T\+\_\+\+S\+I\+ZE}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{215}
+  \item {M\+Q\+T\+T\+\_\+\+V\+E\+R\+S\+I\+ON}
+    \subitem {M\+Q\+TT}, \hyperpage{132}
+  \item {M\+Q\+T\+T\+C\+O\+N\+N\+A\+CK}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{215}
+  \item {M\+Q\+T\+T\+C\+O\+N\+N\+E\+CT}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{215}
+  \item {M\+Q\+T\+T\+D\+I\+S\+C\+O\+N\+N\+E\+CT}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{215}
+  \item {M\+Q\+T\+T\+P\+I\+N\+G\+R\+E\+SP}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{215}
+  \item {M\+Q\+T\+T\+P\+I\+N\+G\+R\+EQ}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{215}
+  \item {M\+Q\+T\+T\+P\+R\+O\+T\+O\+C\+O\+L\+V\+E\+R\+S\+I\+ON}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{216}
+  \item {M\+Q\+T\+T\+P\+U\+B\+A\+CK}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{216}
+  \item {M\+Q\+T\+T\+P\+U\+B\+C\+O\+MP}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{216}
+  \item {M\+Q\+T\+T\+P\+U\+B\+L\+I\+SH}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{216}
+  \item {M\+Q\+T\+T\+P\+U\+B\+R\+EC}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{216}
+  \item {M\+Q\+T\+T\+P\+U\+B\+R\+EL}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{216}
+  \item {M\+Q\+T\+T\+Q\+O\+S0\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+M\+A\+SK}
+    \subitem {M\+Q\+T\+T.\+cpp}, \hyperpage{212}
+  \item {M\+Q\+T\+T\+Q\+O\+S1\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+M\+A\+SK}
+    \subitem {M\+Q\+T\+T.\+cpp}, \hyperpage{212}
+  \item {M\+Q\+T\+T\+Q\+O\+S2\+\_\+\+H\+E\+A\+D\+E\+R\+\_\+\+M\+A\+SK}
+    \subitem {M\+Q\+T\+T.\+cpp}, \hyperpage{213}
+  \item {M\+Q\+T\+T\+Reserved}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{217}
+  \item {M\+Q\+T\+T\+S\+U\+B\+A\+CK}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{217}
+  \item {M\+Q\+T\+T\+S\+U\+B\+S\+C\+R\+I\+BE}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{217}
+  \item {M\+Q\+T\+T\+U\+N\+S\+U\+B\+A\+CK}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{217}
+  \item {M\+Q\+T\+T\+U\+N\+S\+U\+B\+S\+C\+R\+I\+BE}
+    \subitem {M\+Q\+T\+T.\+h}, \hyperpage{217}
+  \item {M\+Q\+TT}, \hyperpage{129}
+    \subitem {\+\_\+client}, \hyperpage{142}
+    \subitem {$\sim$\+M\+Q\+TT}, \hyperpage{134}
+    \subitem {add\+Qos\+Callback}, \hyperpage{134}
+    \subitem {buffer}, \hyperpage{142}
+    \subitem {callback}, \hyperpage{142}
+    \subitem {clear}, \hyperpage{134}
+    \subitem {connect}, \hyperpage{135}
+    \subitem {disconnect}, \hyperpage{135}
+    \subitem {domain}, \hyperpage{143}
+    \subitem {E\+M\+Q\+T\+T\+\_\+\+C\+O\+N\+N\+A\+C\+K\+\_\+\+R\+E\+S\+P\+O\+N\+SE}, 
+		\hyperpage{131}
+    \subitem {E\+M\+Q\+T\+T\+\_\+\+Q\+OS}, \hyperpage{131}
+    \subitem {initialize}, \hyperpage{136}
+    \subitem {ip}, \hyperpage{143}
+    \subitem {is\+Connected}, \hyperpage{136}
+    \subitem {keepalive}, \hyperpage{143}
+    \subitem {last\+In\+Activity}, \hyperpage{143}
+    \subitem {last\+Out\+Activity}, \hyperpage{143}
+    \subitem {loop}, \hyperpage{136}
+    \subitem {M\+Q\+T\+T\+\_\+\+V\+E\+R\+S\+I\+ON}, \hyperpage{132}
+    \subitem {M\+Q\+TT}, \hyperpage{132--134}
+    \subitem {maxpacketsize}, \hyperpage{144}
+    \subitem {next\+Msg\+Id}, \hyperpage{144}
+    \subitem {ping\+Outstanding}, \hyperpage{144}
+    \subitem {port}, \hyperpage{144}
+    \subitem {publish}, \hyperpage{136--139}
+    \subitem {publish\+Complete}, \hyperpage{139}
+    \subitem {publish\+Release}, \hyperpage{139}
+    \subitem {qoscallback}, \hyperpage{144}
+    \subitem {read\+Byte}, \hyperpage{140}
+    \subitem {read\+Packet}, \hyperpage{140}
+    \subitem {set\+Broker}, \hyperpage{140}
+    \subitem {subscribe}, \hyperpage{141}
+    \subitem {unsubscribe}, \hyperpage{141}
+    \subitem {write}, \hyperpage{141}
+    \subitem {write\+String}, \hyperpage{142}
+  \item {main}
+    \subitem {Json\+Test.\+cpp}, \hyperpage{206}
+  \item {max\+Current\+C1}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{225}
+  \item {max\+Current\+C1\+\_\+test}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{226}
+  \item {max\+Current\+C2}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{226}
+  \item {max\+Current\+C2\+\_\+test}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{226}
+  \item {max\+Tokens}
+    \subitem {Json\+Parser}, \hyperpage{63}
+  \item {maxpacketsize}
+    \subitem {M\+Q\+TT}, \hyperpage{144}
+  \item {mfrc522\+\_\+\+Charger1}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{231}
+  \item {mfrc522\+\_\+\+Charger2}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{231}
+
+  \indexspace
+
+  \item {next\+Msg\+Id}
+    \subitem {M\+Q\+TT}, \hyperpage{144}
+  \item {next\+Time}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{231}
+  \item {null\+Terminate}
+    \subitem {Json\+Buffer}, \hyperpage{35}
+  \item {number\+Of\+Zero\+Readings}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{232}
+    \subitem {Commandparser.\+h}, \hyperpage{238}
+
+  \indexspace
+
+  \item {offset}
+    \subitem {Json\+Buffer}, \hyperpage{36}
+  \item {operator const char $\ast$}
+    \subitem {String}, \hyperpage{166}
+  \item {operator String\+If\+Helper\+Type}
+    \subitem {String}, \hyperpage{166}
+  \item {operator!=}
+    \subitem {String}, \hyperpage{167, 168}
+  \item {operator$<$}
+    \subitem {String}, \hyperpage{172}
+  \item {operator$<$$<$}
+    \subitem {spark\+\_\+wiring\+\_\+string.\+h}, \hyperpage{194}
+  \item {operator$<$=}
+    \subitem {String}, \hyperpage{172}
+  \item {operator$>$}
+    \subitem {String}, \hyperpage{174}
+  \item {operator$>$=}
+    \subitem {String}, \hyperpage{176}
+  \item {operator+}
+    \subitem {String}, \hyperpage{182--186}
+  \item {operator+=}
+    \subitem {String}, \hyperpage{168--171}
+  \item {operator=}
+    \subitem {String}, \hyperpage{173}
+  \item {operator==}
+    \subitem {String}, \hyperpage{173, 174}
+  \item {operator[]}
+    \subitem {String}, \hyperpage{176}
+  \item {orig\+After}
+    \subitem {Json\+Modifier}, \hyperpage{43}
+
+  \indexspace
+
+  \item {P\+C\+D\+\_\+\+Antenna\+Off}
+    \subitem {M\+F\+R\+C522}, \hyperpage{115}
+  \item {P\+C\+D\+\_\+\+Antenna\+On}
+    \subitem {M\+F\+R\+C522}, \hyperpage{115}
+  \item {P\+C\+D\+\_\+\+Authenticate}
+    \subitem {M\+F\+R\+C522}, \hyperpage{115}
+  \item {P\+C\+D\+\_\+\+Calculate\+C\+RC}
+    \subitem {M\+F\+R\+C522}, \hyperpage{116}
+  \item {P\+C\+D\+\_\+\+Clear\+Register\+Bit\+Mask}
+    \subitem {M\+F\+R\+C522}, \hyperpage{117}
+  \item {P\+C\+D\+\_\+\+Command}
+    \subitem {M\+F\+R\+C522}, \hyperpage{104}
+  \item {P\+C\+D\+\_\+\+Communicate\+With\+P\+I\+CC}
+    \subitem {M\+F\+R\+C522}, \hyperpage{117}
+  \item {P\+C\+D\+\_\+\+Get\+Antenna\+Gain}
+    \subitem {M\+F\+R\+C522}, \hyperpage{118}
+  \item {P\+C\+D\+\_\+\+Init}
+    \subitem {M\+F\+R\+C522}, \hyperpage{118}
+  \item {P\+C\+D\+\_\+\+M\+I\+F\+A\+R\+E\+\_\+\+Transceive}
+    \subitem {M\+F\+R\+C522}, \hyperpage{118}
+  \item {P\+C\+D\+\_\+\+Read\+Register}
+    \subitem {M\+F\+R\+C522}, \hyperpage{119}
+  \item {P\+C\+D\+\_\+\+Register}
+    \subitem {M\+F\+R\+C522}, \hyperpage{104}
+  \item {P\+C\+D\+\_\+\+Reset}
+    \subitem {M\+F\+R\+C522}, \hyperpage{119}
+  \item {P\+C\+D\+\_\+\+Rx\+Gain}
+    \subitem {M\+F\+R\+C522}, \hyperpage{106}
+  \item {P\+C\+D\+\_\+\+Set\+Antenna\+Gain}
+    \subitem {M\+F\+R\+C522}, \hyperpage{120}
+  \item {P\+C\+D\+\_\+\+Set\+Register\+Bit\+Mask}
+    \subitem {M\+F\+R\+C522}, \hyperpage{120}
+  \item {P\+C\+D\+\_\+\+Stop\+Crypto1}
+    \subitem {M\+F\+R\+C522}, \hyperpage{120}
+  \item {P\+C\+D\+\_\+\+Transceive\+Data}
+    \subitem {M\+F\+R\+C522}, \hyperpage{120}
+  \item {P\+C\+D\+\_\+\+Write\+Register}
+    \subitem {M\+F\+R\+C522}, \hyperpage{121}
+  \item {P\+I\+C\+C\+\_\+\+Command}
+    \subitem {M\+F\+R\+C522}, \hyperpage{106}
+  \item {P\+I\+C\+C\+\_\+\+Dump\+Mifare\+Classic\+Sector\+To\+Serial}
+    \subitem {M\+F\+R\+C522}, \hyperpage{122}
+  \item {P\+I\+C\+C\+\_\+\+Dump\+Mifare\+Classic\+To\+Serial}
+    \subitem {M\+F\+R\+C522}, \hyperpage{122}
+  \item {P\+I\+C\+C\+\_\+\+Dump\+Mifare\+Ultralight\+To\+Serial}
+    \subitem {M\+F\+R\+C522}, \hyperpage{123}
+  \item {P\+I\+C\+C\+\_\+\+Dump\+To\+Serial}
+    \subitem {M\+F\+R\+C522}, \hyperpage{123}
+  \item {P\+I\+C\+C\+\_\+\+Get\+Type}
+    \subitem {M\+F\+R\+C522}, \hyperpage{123}
+  \item {P\+I\+C\+C\+\_\+\+Get\+Type\+Name}
+    \subitem {M\+F\+R\+C522}, \hyperpage{124}
+  \item {P\+I\+C\+C\+\_\+\+HaltA}
+    \subitem {M\+F\+R\+C522}, \hyperpage{124}
+  \item {P\+I\+C\+C\+\_\+\+Is\+New\+Card\+Present}
+    \subitem {M\+F\+R\+C522}, \hyperpage{124}
+  \item {P\+I\+C\+C\+\_\+\+R\+E\+Q\+A\+\_\+or\+\_\+\+W\+U\+PA}
+    \subitem {M\+F\+R\+C522}, \hyperpage{125}
+  \item {P\+I\+C\+C\+\_\+\+Read\+Card\+Serial}
+    \subitem {M\+F\+R\+C522}, \hyperpage{124}
+  \item {P\+I\+C\+C\+\_\+\+RequestA}
+    \subitem {M\+F\+R\+C522}, \hyperpage{125}
+  \item {P\+I\+C\+C\+\_\+\+Select}
+    \subitem {M\+F\+R\+C522}, \hyperpage{126}
+  \item {P\+I\+C\+C\+\_\+\+Type}
+    \subitem {M\+F\+R\+C522}, \hyperpage{107}
+  \item {P\+I\+C\+C\+\_\+\+WakeupA}
+    \subitem {M\+F\+R\+C522}, \hyperpage{126}
+  \item {P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+1}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{221}
+  \item {P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+2}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{222}
+  \item {parse}
+    \subitem {Json\+Parser}, \hyperpage{62}
+  \item {parser}
+    \subitem {Json\+Parser}, \hyperpage{63}
+    \subitem {Json\+Reference}, \hyperpage{78}
+  \item {parser1}
+    \subitem {1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{196}
+  \item {Phase\+Voltage}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{232}
+    \subitem {Commandparser.\+h}, \hyperpage{239}
+  \item {Pianswer}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{232}
+  \item {ping\+Outstanding}
+    \subitem {M\+Q\+TT}, \hyperpage{144}
+  \item {port}
+    \subitem {M\+Q\+TT}, \hyperpage{144}
+  \item {pos}
+    \subitem {Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parser}, 
+		\hyperpage{27}
+  \item {Power}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{232}
+    \subitem {Commandparser.\+h}, \hyperpage{239}
+  \item {print\+Indent}
+    \subitem {3-\/subscription-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{200}
+    \subitem {Json\+Test.\+cpp}, \hyperpage{206}
+  \item {print\+Json}
+    \subitem {3-\/subscription-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{200}
+    \subitem {Json\+Test.\+cpp}, \hyperpage{207}
+  \item {print\+Json\+Inner}
+    \subitem {3-\/subscription-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{200}
+    \subitem {Json\+Test.\+cpp}, \hyperpage{207}
+  \item {print\+String}
+    \subitem {3-\/subscription-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{200}
+    \subitem {Json\+Test.\+cpp}, \hyperpage{207}
+  \item {print\+Token}
+    \subitem {Json\+Test.\+cpp}, \hyperpage{207}
+  \item {print\+Tokens}
+    \subitem {Json\+Test.\+cpp}, \hyperpage{208}
+  \item {prog\+Mode\+Olmx}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{227}
+  \item {publish}
+    \subitem {M\+Q\+TT}, \hyperpage{136--139}
+  \item {publish\+Complete}
+    \subitem {M\+Q\+TT}, \hyperpage{139}
+  \item {publish\+Release}
+    \subitem {M\+Q\+TT}, \hyperpage{139}
+
+  \indexspace
+
+  \item {qoscallback}
+    \subitem {M\+Q\+TT}, \hyperpage{144}
+
+  \indexspace
+
+  \item {R\+E\+A\+D\+M\+E.\+md}, \hyperpage{202}
+  \item {R\+E\+S\+E\+T\+\_\+\+O\+L\+I\+M\+EX}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{222}
+  \item {R\+S\+T\+\_\+\+P\+IN}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{222}
+  \item {R\+S\+T\+T\+I\+M\+E\+O\+UT}
+    \subitem {Commandparser.\+h}, \hyperpage{235}
+  \item {read\+Byte}
+    \subitem {M\+Q\+TT}, \hyperpage{140}
+  \item {read\+Packet}
+    \subitem {M\+Q\+TT}, \hyperpage{140}
+  \item {read\+R\+F\+I\+D\+Card}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{227}
+  \item {read\+Serial\+Olimex}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{227}
+    \subitem {Commandparser.\+h}, \hyperpage{236}
+  \item {read\+Test\+Data}
+    \subitem {Json\+Test.\+cpp}, \hyperpage{208}
+  \item {readnext\+Line}
+    \subitem {Commandparser.\+h}, \hyperpage{239}
+  \item {reconnect}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{227}
+  \item {remove}
+    \subitem {String}, \hyperpage{177}
+  \item {remove\+Array\+Index}
+    \subitem {Json\+Modifier}, \hyperpage{41}
+  \item {remove\+Key\+Value}
+    \subitem {Json\+Modifier}, \hyperpage{41}
+  \item {replace}
+    \subitem {String}, \hyperpage{178}
+  \item {reserve}
+    \subitem {String}, \hyperpage{178}
+  \item {reset\+Olimex}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{228}
+  \item {reset\+Particle}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{228}
+  \item {run\+Test}
+    \subitem {1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{196}
+    \subitem {2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{198}
+
+  \indexspace
+
+  \item {S\+I\+Z\+E\+O\+F\+U\+S\+E\+R\+L\+I\+ST}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{222}
+  \item {S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R1}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{222}
+  \item {S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R2}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{222}
+  \item {S\+T\+A\+R\+T\+UP}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{228}
+  \item {sak}
+    \subitem {M\+F\+R\+C522\+::\+Uid}, \hyperpage{192}
+  \item {save\+Loc}
+    \subitem {Json\+Modifier}, \hyperpage{43}
+  \item {Send}
+    \subitem {Commandparser.\+h}, \hyperpage{236}
+  \item {set\+Bit\+Mask}
+    \subitem {M\+F\+R\+C522}, \hyperpage{127}
+  \item {set\+Broker}
+    \subitem {M\+Q\+TT}, \hyperpage{140}
+  \item {set\+Buffer}
+    \subitem {Json\+Buffer}, \hyperpage{35}
+  \item {set\+Char\+At}
+    \subitem {String}, \hyperpage{179}
+  \item {set\+Float\+Places}
+    \subitem {Json\+Writer}, \hyperpage{90}
+  \item {set\+Is\+First}
+    \subitem {Json\+Writer}, \hyperpage{91}
+  \item {set\+Offset}
+    \subitem {Json\+Buffer}, \hyperpage{35}
+  \item {set\+S\+P\+I\+Config}
+    \subitem {M\+F\+R\+C522}, \hyperpage{127}
+  \item {setup}
+    \subitem {1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{196}
+    \subitem {2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{198}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{228}
+    \subitem {3-\/subscription-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{201}
+  \item {Share\+Var}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{232}
+  \item {size}
+    \subitem {Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}, 
+		\hyperpage{29}
+    \subitem {Json\+Reference}, \hyperpage{74}
+    \subitem {M\+F\+R\+C522\+::\+Uid}, \hyperpage{192}
+  \item {skip\+Object}
+    \subitem {Json\+Parser}, \hyperpage{62}
+  \item {spark\+\_\+wiring\+\_\+string.\+h}
+    \subitem {F}, \hyperpage{194}
+    \subitem {operator$<$$<$}, \hyperpage{194}
+  \item {src/2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{218}
+  \item {src/\+Commandparser.\+h}, \hyperpage{234}
+  \item {start}
+    \subitem {Json\+Modifier}, \hyperpage{43}
+    \subitem {Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}, 
+		\hyperpage{29}
+  \item {start\+Append}
+    \subitem {Json\+Modifier}, \hyperpage{41}
+  \item {start\+Array}
+    \subitem {Json\+Writer}, \hyperpage{91}
+  \item {start\+Modify}
+    \subitem {Json\+Modifier}, \hyperpage{42}
+  \item {start\+Object}
+    \subitem {Json\+Writer}, \hyperpage{91}
+  \item {start\+Object\+Or\+Array}
+    \subitem {Json\+Writer}, \hyperpage{91}
+  \item {starts\+With}
+    \subitem {String}, \hyperpage{179}
+  \item {static\+Buffer}
+    \subitem {Json\+Parser\+Static}, \hyperpage{66}
+    \subitem {Json\+Writer\+Static}, \hyperpage{100}
+  \item {static\+Buffers}
+    \subitem {Json\+Buffer}, \hyperpage{36}
+  \item {static\+Tokens}
+    \subitem {Json\+Parser\+Static}, \hyperpage{66}
+  \item {Status\+Code}
+    \subitem {M\+F\+R\+C522}, \hyperpage{107}
+  \item {str}
+    \subitem {Json\+Parser\+String}, \hyperpage{71}
+  \item {String}, \hyperpage{145}
+    \subitem {$\sim$\+String}, \hyperpage{154}
+    \subitem {buffer}, \hyperpage{186}
+    \subitem {c\+\_\+str}, \hyperpage{154}
+    \subitem {capacity}, \hyperpage{186}
+    \subitem {change\+Buffer}, \hyperpage{155}
+    \subitem {char\+At}, \hyperpage{155}
+    \subitem {compare\+To}, \hyperpage{155}
+    \subitem {concat}, \hyperpage{156--160}
+    \subitem {copy}, \hyperpage{160}
+    \subitem {ends\+With}, \hyperpage{160}
+    \subitem {equals}, \hyperpage{161}
+    \subitem {equals\+Ignore\+Case}, \hyperpage{161}
+    \subitem {flags}, \hyperpage{187}
+    \subitem {format}, \hyperpage{162}
+    \subitem {get\+Bytes}, \hyperpage{162}
+    \subitem {index\+Of}, \hyperpage{163, 164}
+    \subitem {init}, \hyperpage{164}
+    \subitem {invalidate}, \hyperpage{164}
+    \subitem {last\+Index\+Of}, \hyperpage{164, 165}
+    \subitem {len}, \hyperpage{187}
+    \subitem {length}, \hyperpage{166}
+    \subitem {operator const char $\ast$}, \hyperpage{166}
+    \subitem {operator String\+If\+Helper\+Type}, \hyperpage{166}
+    \subitem {operator!=}, \hyperpage{167, 168}
+    \subitem {operator$<$}, \hyperpage{172}
+    \subitem {operator$<$=}, \hyperpage{172}
+    \subitem {operator$>$}, \hyperpage{174}
+    \subitem {operator$>$=}, \hyperpage{176}
+    \subitem {operator+}, \hyperpage{182--186}
+    \subitem {operator+=}, \hyperpage{168--171}
+    \subitem {operator=}, \hyperpage{173}
+    \subitem {operator==}, \hyperpage{173, 174}
+    \subitem {operator[]}, \hyperpage{176}
+    \subitem {remove}, \hyperpage{177}
+    \subitem {replace}, \hyperpage{178}
+    \subitem {reserve}, \hyperpage{178}
+    \subitem {set\+Char\+At}, \hyperpage{179}
+    \subitem {starts\+With}, \hyperpage{179}
+    \subitem {String}, \hyperpage{150--154}
+    \subitem {String\+If\+Helper}, \hyperpage{180}
+    \subitem {String\+If\+Helper\+Type}, \hyperpage{150}
+    \subitem {String\+Printable\+Helper}, \hyperpage{186}
+    \subitem {substring}, \hyperpage{180}
+    \subitem {to\+Char\+Array}, \hyperpage{181}
+    \subitem {to\+Float}, \hyperpage{181}
+    \subitem {to\+Int}, \hyperpage{181}
+    \subitem {to\+Lower\+Case}, \hyperpage{181}
+    \subitem {to\+Upper\+Case}, \hyperpage{182}
+    \subitem {trim}, \hyperpage{182}
+  \item {String\+If\+Helper}
+    \subitem {String}, \hyperpage{180}
+  \item {String\+If\+Helper\+Type}
+    \subitem {String}, \hyperpage{150}
+  \item {string\+Parse}
+    \subitem {Commandparser.\+h}, \hyperpage{236}
+  \item {String\+Printable\+Helper}
+    \subitem {String}, \hyperpage{186}
+  \item {String\+Sum\+Helper}, \hyperpage{187}
+    \subitem {String\+Sum\+Helper}, \hyperpage{188--191}
+  \item {subscribe}
+    \subitem {M\+Q\+TT}, \hyperpage{141}
+  \item {subscription\+Handler}
+    \subitem {3-\/subscription-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{201}
+  \item {substring}
+    \subitem {String}, \hyperpage{180}
+  \item {switch\+Test}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{229}
+
+  \indexspace
+
+  \item {T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}
+    \subitem {1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{197}
+    \subitem {2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{198}
+  \item {T\+E\+S\+T\+C\+A\+SE}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{233}
+  \item {terminator}
+    \subitem {Json\+Writer\+Context}, \hyperpage{98}
+  \item {test}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{233}
+  \item {test2}
+    \subitem {1-\/parser-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}, 
+		\hyperpage{196}
+  \item {to\+Char\+Array}
+    \subitem {String}, \hyperpage{181}
+  \item {to\+Float}
+    \subitem {String}, \hyperpage{181}
+  \item {to\+Int}
+    \subitem {String}, \hyperpage{181}
+  \item {to\+Lower\+Case}
+    \subitem {String}, \hyperpage{181}
+  \item {to\+Upper\+Case}
+    \subitem {String}, \hyperpage{182}
+  \item {token}
+    \subitem {Json\+Reference}, \hyperpage{78}
+  \item {token\+With\+Quotes}
+    \subitem {Json\+Modifier}, \hyperpage{42}
+  \item {tokens}
+    \subitem {Json\+Parser}, \hyperpage{63}
+  \item {tokens\+End}
+    \subitem {Json\+Parser}, \hyperpage{63}
+  \item {toknext}
+    \subitem {Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parser}, 
+		\hyperpage{28}
+  \item {toksuper}
+    \subitem {Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parser}, 
+		\hyperpage{28}
+  \item {trim}
+    \subitem {String}, \hyperpage{182}
+  \item {truncated}
+    \subitem {Json\+Writer}, \hyperpage{93}
+  \item {type}
+    \subitem {Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}, 
+		\hyperpage{30}
+
+  \indexspace
+
+  \item {U\+I\+Dtag\+Charger1}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{233}
+  \item {U\+I\+Dtag\+Charger2}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{233}
+  \item {uid}
+    \subitem {M\+F\+R\+C522}, \hyperpage{128}
+  \item {uid\+Byte}
+    \subitem {M\+F\+R\+C522\+::\+Uid}, \hyperpage{192}
+  \item {unsubscribe}
+    \subitem {M\+Q\+TT}, \hyperpage{141}
+
+  \indexspace
+
+  \item {value}
+    \subitem {Json\+Reference}, \hyperpage{74}
+  \item {value\+Bool}
+    \subitem {Json\+Reference}, \hyperpage{76}
+  \item {value\+Double}
+    \subitem {Json\+Reference}, \hyperpage{76}
+  \item {value\+Float}
+    \subitem {Json\+Reference}, \hyperpage{76}
+  \item {value\+Int}
+    \subitem {Json\+Reference}, \hyperpage{77}
+  \item {value\+String}
+    \subitem {Json\+Reference}, \hyperpage{77}
+  \item {value\+Unsigned\+Long}
+    \subitem {Json\+Reference}, \hyperpage{77}
+
+  \indexspace
+
+  \item {W\+A\+K\+E\+U\+P\+\_\+\+O\+L\+I\+M\+EX}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{223}
+  \item {Wifi\+Signal}
+    \subitem {2020\+\_\+photon\+\_\+code.\+cpp}, \hyperpage{229}
+  \item {word}
+    \subitem {M\+F\+R\+C522.\+h}, \hyperpage{210}
+  \item {write}
+    \subitem {M\+Q\+TT}, \hyperpage{141}
+  \item {write\+String}
+    \subitem {M\+Q\+TT}, \hyperpage{142}
+
+\end{theindex}

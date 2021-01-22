@@ -1,4 +1,4 @@
-\section{Json\+Writer Class Reference}
+\hypertarget{class_json_writer}{}\section{Json\+Writer Class Reference}
 \label{class_json_writer}\index{Json\+Writer@{Json\+Writer}}
 
 
@@ -11,7 +11,8 @@ Class for building a J\+S\+ON string.
 
 
 
-Inheritance diagram for Json\+Writer\+:\nopagebreak
+Inheritance diagram for Json\+Writer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -20,7 +21,8 @@ Inheritance diagram for Json\+Writer\+:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for Json\+Writer\+:\nopagebreak
+Collaboration diagram for Json\+Writer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,87 +32,87 @@ Collaboration diagram for Json\+Writer\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Json\+Writer} ()
-\begin{DoxyCompactList}\small\item\em Construct a \doxyref{Json\+Writer}{p.}{class_json_writer} with a dynamically allocated buffer. \end{DoxyCompactList}\item 
-virtual \textbf{ $\sim$\+Json\+Writer} ()
+\hyperlink{class_json_writer_ac236bb60b9ae908fd178baff276df0c8}{Json\+Writer} ()
+\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{class_json_writer}{Json\+Writer} with a dynamically allocated buffer. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_json_writer_ac6555dd3dfadc937848046a58bd5f974}{$\sim$\+Json\+Writer} ()
 \begin{DoxyCompactList}\small\item\em Destroy the object. If the buffer was dynamically allocated it will be freed. \end{DoxyCompactList}\item 
-\textbf{ Json\+Writer} (char $\ast$\textbf{ buffer}, size\+\_\+t \textbf{ buffer\+Len})
-\begin{DoxyCompactList}\small\item\em Construct a \doxyref{Json\+Writer}{p.}{class_json_writer} to write to a static buffer. \end{DoxyCompactList}\item 
-void \textbf{ init} ()
+\hyperlink{class_json_writer_ae97b42591255aece772a046eb098fd77}{Json\+Writer} (char $\ast$\hyperlink{class_json_buffer_aaee27fe51d12d68bd6031df3bc78b6b5}{buffer}, size\+\_\+t \hyperlink{class_json_buffer_af06130f43f71623ea6afe049c846e52b}{buffer\+Len})
+\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{class_json_writer}{Json\+Writer} to write to a static buffer. \end{DoxyCompactList}\item 
+void \hyperlink{class_json_writer_ad7dea044e659a5e1d368ff4628e9eea6}{init} ()
 \begin{DoxyCompactList}\small\item\em Reset the writer, clearing all data. \end{DoxyCompactList}\item 
-bool \textbf{ start\+Object} ()
-\begin{DoxyCompactList}\small\item\em Start a new J\+S\+ON object. Make sure you finish it with \doxyref{finish\+Object\+Or\+Array()}{p.}{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0} \end{DoxyCompactList}\item 
-bool \textbf{ start\+Array} ()
-\begin{DoxyCompactList}\small\item\em Start a new J\+S\+ON array. Make sure you finish it with \doxyref{finish\+Object\+Or\+Array()}{p.}{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0} \end{DoxyCompactList}\item 
-void \textbf{ finish\+Object\+Or\+Array} ()
-\begin{DoxyCompactList}\small\item\em Finsh an object or array started with \doxyref{start\+Object()}{p.}{class_json_writer_a43d1a78bf211a2f12cfe9253462717ae} or \doxyref{start\+Array()}{p.}{class_json_writer_a7ccfcbf66a8ed9a2728e6f6ae4b705ec} \end{DoxyCompactList}\item 
-void \textbf{ insert\+Value} (bool value)
+bool \hyperlink{class_json_writer_a43d1a78bf211a2f12cfe9253462717ae}{start\+Object} ()
+\begin{DoxyCompactList}\small\item\em Start a new J\+S\+ON object. Make sure you finish it with \hyperlink{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}{finish\+Object\+Or\+Array()} \end{DoxyCompactList}\item 
+bool \hyperlink{class_json_writer_a7ccfcbf66a8ed9a2728e6f6ae4b705ec}{start\+Array} ()
+\begin{DoxyCompactList}\small\item\em Start a new J\+S\+ON array. Make sure you finish it with \hyperlink{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}{finish\+Object\+Or\+Array()} \end{DoxyCompactList}\item 
+void \hyperlink{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}{finish\+Object\+Or\+Array} ()
+\begin{DoxyCompactList}\small\item\em Finsh an object or array started with \hyperlink{class_json_writer_a43d1a78bf211a2f12cfe9253462717ae}{start\+Object()} or \hyperlink{class_json_writer_a7ccfcbf66a8ed9a2728e6f6ae4b705ec}{start\+Array()} \end{DoxyCompactList}\item 
+void \hyperlink{class_json_writer_ac58734c238ba7be066838591b0cc7743}{insert\+Value} (bool value)
 \begin{DoxyCompactList}\small\item\em Inserts a boolean value (\char`\"{}true\char`\"{} or \char`\"{}false\char`\"{}). \end{DoxyCompactList}\item 
-void \textbf{ insert\+Value} (int value)
+void \hyperlink{class_json_writer_a69da120fb595f2820dd73f0c9339e093}{insert\+Value} (int value)
 \begin{DoxyCompactList}\small\item\em Inserts an integer value. \end{DoxyCompactList}\item 
-void \textbf{ insert\+Value} (unsigned int value)
+void \hyperlink{class_json_writer_a296c63529260115c9fa0aced54960903}{insert\+Value} (unsigned int value)
 \begin{DoxyCompactList}\small\item\em Inserts an unsigned integer value. \end{DoxyCompactList}\item 
-void \textbf{ insert\+Value} (long value)
+void \hyperlink{class_json_writer_a069e3c244a8a320eaa9dd5625874d98e}{insert\+Value} (long value)
 \begin{DoxyCompactList}\small\item\em Inserts a long integer value. \end{DoxyCompactList}\item 
-void \textbf{ insert\+Value} (unsigned long value)
+void \hyperlink{class_json_writer_a69d2d9ed9023105c3f84ce645919502b}{insert\+Value} (unsigned long value)
 \begin{DoxyCompactList}\small\item\em Inserts an unsigned long integer value. \end{DoxyCompactList}\item 
-void \textbf{ insert\+Value} (float value)
+void \hyperlink{class_json_writer_a5651b6c191da0397dab40c5ad51af1ec}{insert\+Value} (float value)
 \begin{DoxyCompactList}\small\item\em Inserts a floating point value. \end{DoxyCompactList}\item 
-void \textbf{ insert\+Value} (double value)
+void \hyperlink{class_json_writer_a5ccac7627d96f545498118340f7e5f75}{insert\+Value} (double value)
 \begin{DoxyCompactList}\small\item\em Inserts a floating point double value. \end{DoxyCompactList}\item 
-void \textbf{ insert\+Value} (const char $\ast$value)
+void \hyperlink{class_json_writer_aeac7ad2b336bb15c05a6094a59a42126}{insert\+Value} (const char $\ast$value)
 \begin{DoxyCompactList}\small\item\em Inserts a quoted string value. This escapes special characters and encodes utf-\/8. \end{DoxyCompactList}\item 
-void \textbf{ insert\+Value} (const \textbf{ String} \&value)
+void \hyperlink{class_json_writer_a6f8a280756ada908ab7e643f6dd1faa9}{insert\+Value} (const \hyperlink{class_string}{String} \&value)
 \begin{DoxyCompactList}\small\item\em Inserts a quoted string value. \end{DoxyCompactList}\item 
-void \textbf{ insert\+Key\+Object} (const char $\ast$key)
-\begin{DoxyCompactList}\small\item\em Inserts a new key and empty object. You must close the object using \doxyref{finish\+Object\+Or\+Array()}{p.}{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}! \end{DoxyCompactList}\item 
-void \textbf{ insert\+Key\+Array} (const char $\ast$key)
-\begin{DoxyCompactList}\small\item\em Inserts a new key and empty array. You must close the object using \doxyref{finish\+Object\+Or\+Array()}{p.}{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}! \end{DoxyCompactList}\item 
-{\footnotesize template$<$class T $>$ }\\void \textbf{ insert\+Key\+Value} (const char $\ast$key, T value)
+void \hyperlink{class_json_writer_a338c3e07d0a6a2334da66684c8ae02a3}{insert\+Key\+Object} (const char $\ast$key)
+\begin{DoxyCompactList}\small\item\em Inserts a new key and empty object. You must close the object using \hyperlink{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}{finish\+Object\+Or\+Array()}! \end{DoxyCompactList}\item 
+void \hyperlink{class_json_writer_ab051477eb92a5c565ea943b8d15e1779}{insert\+Key\+Array} (const char $\ast$key)
+\begin{DoxyCompactList}\small\item\em Inserts a new key and empty array. You must close the object using \hyperlink{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}{finish\+Object\+Or\+Array()}! \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value} (const char $\ast$key, T value)
 \begin{DoxyCompactList}\small\item\em Inserts a key/value pair into an object. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class T $>$ }\\void \textbf{ insert\+Array\+Value} (T value)
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value} (T value)
 \begin{DoxyCompactList}\small\item\em Inserts a value into an array. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class T $>$ }\\void \textbf{ insert\+Array} (T $\ast$p\+Array, size\+\_\+t num\+Elem)
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{class_json_writer_a25d0c8b482f4a9a9dac6c0f339b3595f}{insert\+Array} (T $\ast$p\+Array, size\+\_\+t num\+Elem)
 \begin{DoxyCompactList}\small\item\em Inserts an array of values into an array. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class T $>$ }\\void \textbf{ insert\+Key\+Array} (const char $\ast$key, T $\ast$p\+Array, size\+\_\+t num\+Elem)
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{class_json_writer_a8e0dbff82335aab801d541583fe6c48c}{insert\+Key\+Array} (const char $\ast$key, T $\ast$p\+Array, size\+\_\+t num\+Elem)
 \begin{DoxyCompactList}\small\item\em Inserts a new key and vector of values. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class T $>$ }\\void \textbf{ insert\+Vector} (std\+::vector$<$ T $>$ vec)
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{class_json_writer_a6c1f223b7ef6538ef9135fe0a8b66aab}{insert\+Vector} (std\+::vector$<$ T $>$ vec)
 \begin{DoxyCompactList}\small\item\em Inserts an array of values into an array. \end{DoxyCompactList}\item 
-{\footnotesize template$<$class T $>$ }\\void \textbf{ insert\+Key\+Vector} (const char $\ast$key, std\+::vector$<$ T $>$ vec)
+{\footnotesize template$<$class T $>$ }\\void \hyperlink{class_json_writer_a14774145a0fa9b1328c1797f76316d82}{insert\+Key\+Vector} (const char $\ast$key, std\+::vector$<$ T $>$ vec)
 \begin{DoxyCompactList}\small\item\em Inserts a new key and vector of values. \end{DoxyCompactList}\item 
-bool \textbf{ is\+Truncated} () const
+bool \hyperlink{class_json_writer_a815f77b2db3315bfd40dfb61f68b0ed4}{is\+Truncated} () const
 \item 
-void \textbf{ set\+Float\+Places} (int \textbf{ float\+Places})
+void \hyperlink{class_json_writer_aecd4d984a49fe59b0c4d892fe6d1e791}{set\+Float\+Places} (int \hyperlink{class_json_writer_ab0c979f74ad01b6e9970ffed5b39cb29}{float\+Places})
 \begin{DoxyCompactList}\small\item\em Sets the number of digits for formatting float and double values. \end{DoxyCompactList}\item 
-void \textbf{ insert\+Check\+Separator} ()
+void \hyperlink{class_json_writer_ab773cf0a021f402f2cef3c14694f18da}{insert\+Check\+Separator} ()
 \begin{DoxyCompactList}\small\item\em Check to see if a separator needs to be inserted. Used internally. \end{DoxyCompactList}\item 
-bool \textbf{ start\+Object\+Or\+Array} (char start\+Char, char end\+Char)
+bool \hyperlink{class_json_writer_a468e6c475bec83a7ec8cd7048cdbb31b}{start\+Object\+Or\+Array} (char start\+Char, char end\+Char)
 \begin{DoxyCompactList}\small\item\em Used internally to start an object or array. \end{DoxyCompactList}\item 
-void \textbf{ insert\+Char} (char ch)
+void \hyperlink{class_json_writer_ad286fab5e961490da5e17816f277f23c}{insert\+Char} (char ch)
 \begin{DoxyCompactList}\small\item\em Used internally to insert a character. \end{DoxyCompactList}\item 
-void \textbf{ insert\+String} (const char $\ast$s, bool quoted=false)
+void \hyperlink{class_json_writer_acf5ad9145b651c78873a71abbe372c9b}{insert\+String} (const char $\ast$s, bool quoted=false)
 \begin{DoxyCompactList}\small\item\em Used internally to insert a string, quoted or not. \end{DoxyCompactList}\item 
-void \textbf{ insertsprintf} (const char $\ast$fmt,...)
+void \hyperlink{class_json_writer_a8a584941a871018cd09315276b8bf7ca}{insertsprintf} (const char $\ast$fmt,...)
 \begin{DoxyCompactList}\small\item\em Used internally to insert using snprintf formatting. \end{DoxyCompactList}\item 
-void \textbf{ insertvsprintf} (const char $\ast$fmt, va\+\_\+list ap)
+void \hyperlink{class_json_writer_ab737d9527845638e08bd71034d419e49}{insertvsprintf} (const char $\ast$fmt, va\+\_\+list ap)
 \begin{DoxyCompactList}\small\item\em Used internally to insert using snprintf formatting with a va\+\_\+list. \end{DoxyCompactList}\item 
-void \textbf{ set\+Is\+First} (bool is\+First=true)
+void \hyperlink{class_json_writer_afc30ff673c866c7a2366a8c064b5a565}{set\+Is\+First} (bool is\+First=true)
 \begin{DoxyCompactList}\small\item\em Used internally to set the current is\+First flag in the context. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-static const size\+\_\+t \textbf{ M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT} = 9
+static const size\+\_\+t \hyperlink{class_json_writer_a7d1daa126e962c611373f65d1e83e4ee}{M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT} = 9
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-size\+\_\+t \textbf{ context\+Index}
+size\+\_\+t \hyperlink{class_json_writer_a28554227000e3a49b446e5db77f0505e}{context\+Index}
 \begin{DoxyCompactList}\small\item\em Index into the context for the current level of nesting. \end{DoxyCompactList}\item 
-\textbf{ Json\+Writer\+Context} \textbf{ context} [\textbf{ M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT}]
+\hyperlink{struct_json_writer_context}{Json\+Writer\+Context} \hyperlink{class_json_writer_a2311bf4f11136f55acd23fb13b4b1344}{context} \mbox{[}\hyperlink{class_json_writer_a7d1daa126e962c611373f65d1e83e4ee}{M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT}\mbox{]}
 \begin{DoxyCompactList}\small\item\em Structure for managing nested objects. \end{DoxyCompactList}\item 
-bool \textbf{ truncated}
+bool \hyperlink{class_json_writer_a30b9462bee5d300841630e64b660fe43}{truncated}
 \begin{DoxyCompactList}\small\item\em true if data was added that didn\textquotesingle{}t fit and was truncated \end{DoxyCompactList}\item 
-int \textbf{ float\+Places}
+int \hyperlink{class_json_writer_ab0c979f74ad01b6e9970ffed5b39cb29}{float\+Places}
 \begin{DoxyCompactList}\small\item\em default number of places to display for floating point numbers (default is -\/1, the default for sprintf) \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -122,19 +124,19 @@ Definition at line 910 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_json_writer_ac236bb60b9ae908fd178baff276df0c8}} 
+\mbox{\Hypertarget{class_json_writer_ac236bb60b9ae908fd178baff276df0c8}\label{class_json_writer_ac236bb60b9ae908fd178baff276df0c8}} 
 \index{Json\+Writer@{Json\+Writer}!Json\+Writer@{Json\+Writer}}
 \index{Json\+Writer@{Json\+Writer}!Json\+Writer@{Json\+Writer}}
-\subsubsection{Json\+Writer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{Json\+Writer()}{JsonWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Json\+Writer\+::\+Json\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Construct a \doxyref{Json\+Writer}{p.}{class_json_writer} with a dynamically allocated buffer. 
+Construct a \hyperlink{class_json_writer}{Json\+Writer} with a dynamically allocated buffer. 
 
-The buffer will be resized as necessary but you can improve efficiency by using the \doxyref{allocate()}{p.}{class_json_buffer_a1eb9d0cae3ef9a9ac56b8580bc70fe2e} method of \doxyref{Json\+Buffer}{p.}{class_json_buffer} to pre-\/allocate space rather than have to incrementally make it bigger as it\textquotesingle{}s written to.
+The buffer will be resized as necessary but you can improve efficiency by using the \hyperlink{class_json_buffer_a1eb9d0cae3ef9a9ac56b8580bc70fe2e}{allocate()} method of \hyperlink{class_json_buffer}{Json\+Buffer} to pre-\/allocate space rather than have to incrementally make it bigger as it\textquotesingle{}s written to.
 
-Use \doxyref{get\+Buffer()}{p.}{class_json_buffer_af8ca5014e0275487273f94c6b9223acf} to get the pointer to the buffer and \doxyref{get\+Offset()}{p.}{class_json_buffer_adedc049fc02ef5bad2b3f8e7a1ba17b6} to get the buffer pointer and size. The buffer is not null-\/terminated! 
+Use \hyperlink{class_json_buffer_af8ca5014e0275487273f94c6b9223acf}{get\+Buffer()} to get the pointer to the buffer and \hyperlink{class_json_buffer_adedc049fc02ef5bad2b3f8e7a1ba17b6}{get\+Offset()} to get the buffer pointer and size. The buffer is not null-\/terminated! 
 
 Definition at line 655 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
@@ -142,16 +144,10 @@ Definition at line 655 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 References float\+Places, init(), and Json\+Buffer\+::\+Json\+Buffer().
 
-
-\begin{DoxyCode}
-655                        : JsonBuffer(), floatPlaces(-1) \{
-656     init();
-657 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_ac6555dd3dfadc937848046a58bd5f974}} 
+\mbox{\Hypertarget{class_json_writer_ac6555dd3dfadc937848046a58bd5f974}\label{class_json_writer_ac6555dd3dfadc937848046a58bd5f974}} 
 \index{Json\+Writer@{Json\+Writer}!````~Json\+Writer@{$\sim$\+Json\+Writer}}
 \index{````~Json\+Writer@{$\sim$\+Json\+Writer}!Json\+Writer@{Json\+Writer}}
-\subsubsection{$\sim$\+Json\+Writer()}
+\subsubsection{\texorpdfstring{$\sim$\+Json\+Writer()}{~JsonWriter()}}
 {\footnotesize\ttfamily Json\+Writer\+::$\sim$\+Json\+Writer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -162,21 +158,15 @@ If the buffer was passed in using the buffer, buffer\+Len constructor the buffer
 
 Definition at line 659 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
-
-\begin{DoxyCode}
-659                         \{
-660 
-661 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_ae97b42591255aece772a046eb098fd77}} 
+\mbox{\Hypertarget{class_json_writer_ae97b42591255aece772a046eb098fd77}\label{class_json_writer_ae97b42591255aece772a046eb098fd77}} 
 \index{Json\+Writer@{Json\+Writer}!Json\+Writer@{Json\+Writer}}
 \index{Json\+Writer@{Json\+Writer}!Json\+Writer@{Json\+Writer}}
-\subsubsection{Json\+Writer()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{Json\+Writer()}{JsonWriter()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Json\+Writer\+::\+Json\+Writer (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{buffer\+Len }\end{DoxyParamCaption})}
 
 
 
-Construct a \doxyref{Json\+Writer}{p.}{class_json_writer} to write to a static buffer. 
+Construct a \hyperlink{class_json_writer}{Json\+Writer} to write to a static buffer. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -198,24 +188,17 @@ References float\+Places, init(), and Json\+Buffer\+::\+Json\+Buffer().
 Referenced by main().
 
 
-\begin{DoxyCode}
-663                                                      : JsonBuffer(buffer, 
-      bufferLen), floatPlaces(-1) \{
-664     init();
-665 \}
-\end{DoxyCode}
-
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}} 
+\mbox{\Hypertarget{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}\label{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}} 
 \index{Json\+Writer@{Json\+Writer}!finish\+Object\+Or\+Array@{finish\+Object\+Or\+Array}}
 \index{finish\+Object\+Or\+Array@{finish\+Object\+Or\+Array}!Json\+Writer@{Json\+Writer}}
-\subsubsection{finish\+Object\+Or\+Array()}
+\subsubsection{\texorpdfstring{finish\+Object\+Or\+Array()}{finishObjectOrArray()}}
 {\footnotesize\ttfamily void Json\+Writer\+::finish\+Object\+Or\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Finsh an object or array started with \doxyref{start\+Object()}{p.}{class_json_writer_a43d1a78bf211a2f12cfe9253462717ae} or \doxyref{start\+Array()}{p.}{class_json_writer_a7ccfcbf66a8ed9a2728e6f6ae4b705ec} 
+Finsh an object or array started with \hyperlink{class_json_writer_a43d1a78bf211a2f12cfe9253462717ae}{start\+Object()} or \hyperlink{class_json_writer_a7ccfcbf66a8ed9a2728e6f6ae4b705ec}{start\+Array()} 
 
 
 
@@ -229,35 +212,17 @@ References Json\+Buffer\+::buffer, Json\+Buffer\+::buffer\+Len, context, context
 
 Referenced by insert\+Key\+Array(), insert\+Key\+Vector(), main(), Json\+Writer\+Auto\+Array\+::$\sim$\+Json\+Writer\+Auto\+Array(), and Json\+Writer\+Auto\+Object\+::$\sim$\+Json\+Writer\+Auto\+Object().
 
-
-\begin{DoxyCode}
-695                                      \{
-696     \textcolor{keywordflow}{if} (contextIndex > 0) \{
-697         \textcolor{keywordflow}{if} (context[contextIndex].terminator != 0) \{
-698             insertChar(context[contextIndex].terminator);
-699         \}
-700         contextIndex--;
-701     \}
-702     \textcolor{comment}{// Make sure buffer is null terminated}
-703     \textcolor{keywordflow}{if} (offset < bufferLen) \{
-704         buffer[offset] = 0;
-705     \}
-706     \textcolor{keywordflow}{else} \{
-707         buffer[bufferLen - 1] = 0;
-708     \}
-709 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_ad7dea044e659a5e1d368ff4628e9eea6}} 
+\mbox{\Hypertarget{class_json_writer_ad7dea044e659a5e1d368ff4628e9eea6}\label{class_json_writer_ad7dea044e659a5e1d368ff4628e9eea6}} 
 \index{Json\+Writer@{Json\+Writer}!init@{init}}
 \index{init@{init}!Json\+Writer@{Json\+Writer}}
-\subsubsection{init()}
+\subsubsection{\texorpdfstring{init()}{init()}}
 {\footnotesize\ttfamily void Json\+Writer\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Reset the writer, clearing all data. 
 
-You do not need to call \doxyref{init()}{p.}{class_json_writer_ad7dea044e659a5e1d368ff4628e9eea6} as it\textquotesingle{}s called from the two constructors. You can call it again if you want to reset the writer and reuse it, such as when you use \doxyref{Json\+Writer\+Static}{p.}{class_json_writer_static} in a global variable. 
+You do not need to call \hyperlink{class_json_writer_ad7dea044e659a5e1d368ff4628e9eea6}{init()} as it\textquotesingle{}s called from the two constructors. You can call it again if you want to reset the writer and reuse it, such as when you use \hyperlink{class_json_writer_static}{Json\+Writer\+Static} in a global variable. 
 
 Definition at line 667 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
@@ -269,24 +234,10 @@ References context, context\+Index, Json\+Writer\+Context\+::is\+First, Json\+Bu
 
 Referenced by Json\+Writer(), Json\+Modifier\+::start\+Append(), and Json\+Modifier\+::start\+Modify().
 
-
-\begin{DoxyCode}
-667                       \{
-668     \textcolor{comment}{// Save start of insertion point for later}
-669     offset = 0;
-670 
-671     contextIndex = 0;
-672     context[contextIndex].isFirst = \textcolor{keyword}{true};
-673     context[contextIndex].terminator = 0;
-674 
-675     truncated = \textcolor{keyword}{false};
-676 
-677 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a25d0c8b482f4a9a9dac6c0f339b3595f}} 
+\mbox{\Hypertarget{class_json_writer_a25d0c8b482f4a9a9dac6c0f339b3595f}\label{class_json_writer_a25d0c8b482f4a9a9dac6c0f339b3595f}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Array@{insert\+Array}}
 \index{insert\+Array@{insert\+Array}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Array()}
+\subsubsection{\texorpdfstring{insert\+Array()}{insertArray()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
 void Json\+Writer\+::insert\+Array (\begin{DoxyParamCaption}\item[{T $\ast$}]{p\+Array,  }\item[{size\+\_\+t}]{num\+Elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -294,22 +245,14 @@ void Json\+Writer\+::insert\+Array (\begin{DoxyParamCaption}\item[{T $\ast$}]{p\
 
 Inserts an array of values into an array. 
 
-Uses templates so you can pass any type object that\textquotesingle{}s supported by \doxyref{insert\+Value()}{p.}{class_json_writer_ac58734c238ba7be066838591b0cc7743} overloads, for example\+: bool, int, float, double, const char $\ast$. 
+Uses templates so you can pass any type object that\textquotesingle{}s supported by \hyperlink{class_json_writer_ac58734c238ba7be066838591b0cc7743}{insert\+Value()} overloads, for example\+: bool, int, float, double, const char $\ast$. 
 
 Definition at line 1091 of file Json\+Parser\+Generator\+R\+K.\+h.
 
-
-\begin{DoxyCode}
-1091                                                 \{
-1092         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} ii = 0; ii < numElem; ii++) \{
-1093             insertArrayValue(pArray[ii]);
-1094         \}
-1095     \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}} 
+\mbox{\Hypertarget{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}\label{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Array\+Value@{insert\+Array\+Value}}
 \index{insert\+Array\+Value@{insert\+Array\+Value}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Array\+Value()}
+\subsubsection{\texorpdfstring{insert\+Array\+Value()}{insertArrayValue()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
 void Json\+Writer\+::insert\+Array\+Value (\begin{DoxyParamCaption}\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -317,7 +260,7 @@ void Json\+Writer\+::insert\+Array\+Value (\begin{DoxyParamCaption}\item[{T}]{va
 
 Inserts a value into an array. 
 
-Uses templates so you can pass any type object that\textquotesingle{}s supported by \doxyref{insert\+Value()}{p.}{class_json_writer_ac58734c238ba7be066838591b0cc7743} overloads, for example\+: bool, int, float, double, const char $\ast$. 
+Uses templates so you can pass any type object that\textquotesingle{}s supported by \hyperlink{class_json_writer_ac58734c238ba7be066838591b0cc7743}{insert\+Value()} overloads, for example\+: bool, int, float, double, const char $\ast$. 
 
 Definition at line 1079 of file Json\+Parser\+Generator\+R\+K.\+h.
 
@@ -325,28 +268,17 @@ Definition at line 1079 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 References insert\+Check\+Separator().
 
-
-
-Referenced by main().
-
-
-\begin{DoxyCode}
-1079                                    \{
-1080         insertCheckSeparator();
-1081         insertValue(value);
-1082     \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_ad286fab5e961490da5e17816f277f23c}} 
+\mbox{\Hypertarget{class_json_writer_ad286fab5e961490da5e17816f277f23c}\label{class_json_writer_ad286fab5e961490da5e17816f277f23c}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Char@{insert\+Char}}
 \index{insert\+Char@{insert\+Char}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Char()}
+\subsubsection{\texorpdfstring{insert\+Char()}{insertChar()}}
 {\footnotesize\ttfamily void Json\+Writer\+::insert\+Char (\begin{DoxyParamCaption}\item[{char}]{ch }\end{DoxyParamCaption})}
 
 
 
 Used internally to insert a character. 
 
-Used internally. You should use \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} or \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057} with a string instead. 
+Used internally. You should use \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} or \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()} with a string instead. 
 
 Definition at line 712 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
@@ -358,28 +290,17 @@ References Json\+Buffer\+::buffer, Json\+Buffer\+::buffer\+Len, Json\+Buffer\+::
 
 Referenced by finish\+Object\+Or\+Array(), insert\+Check\+Separator(), insert\+Key\+Array(), insert\+Key\+Object(), insert\+Key\+Value(), insert\+String(), and start\+Object\+Or\+Array().
 
-
-\begin{DoxyCode}
-712                                    \{
-713     \textcolor{keywordflow}{if} (offset < bufferLen) \{
-714         buffer[offset++] = ch;
-715     \}
-716     \textcolor{keywordflow}{else} \{
-717         truncated = \textcolor{keyword}{true};
-718     \}
-719 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_ab773cf0a021f402f2cef3c14694f18da}} 
+\mbox{\Hypertarget{class_json_writer_ab773cf0a021f402f2cef3c14694f18da}\label{class_json_writer_ab773cf0a021f402f2cef3c14694f18da}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Check\+Separator@{insert\+Check\+Separator}}
 \index{insert\+Check\+Separator@{insert\+Check\+Separator}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Check\+Separator()}
+\subsubsection{\texorpdfstring{insert\+Check\+Separator()}{insertCheckSeparator()}}
 {\footnotesize\ttfamily void Json\+Writer\+::insert\+Check\+Separator (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
 Check to see if a separator needs to be inserted. Used internally. 
 
-You normally don\textquotesingle{}t need to use this as it\textquotesingle{}s called by \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} and \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}. 
+You normally don\textquotesingle{}t need to use this as it\textquotesingle{}s called by \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} and \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()}. 
 
 Definition at line 823 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
@@ -391,26 +312,15 @@ References context, context\+Index, insert\+Char(), and Json\+Writer\+Context\+:
 
 Referenced by insert\+Array\+Value(), insert\+Key\+Array(), insert\+Key\+Object(), insert\+Key\+Value(), main(), and start\+Object\+Or\+Array().
 
-
-\begin{DoxyCode}
-823                                       \{
-824     \textcolor{keywordflow}{if} (context[contextIndex].isFirst) \{
-825         context[contextIndex].isFirst = \textcolor{keyword}{false};
-826     \}
-827     \textcolor{keywordflow}{else} \{
-828         insertChar(\textcolor{charliteral}{','});
-829     \}
-830 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_ab051477eb92a5c565ea943b8d15e1779}} 
+\mbox{\Hypertarget{class_json_writer_ab051477eb92a5c565ea943b8d15e1779}\label{class_json_writer_ab051477eb92a5c565ea943b8d15e1779}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Key\+Array@{insert\+Key\+Array}}
 \index{insert\+Key\+Array@{insert\+Key\+Array}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Key\+Array()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{insert\+Key\+Array()}{insertKeyArray()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily void Json\+Writer\+::insert\+Key\+Array (\begin{DoxyParamCaption}\item[{const char $\ast$}]{key }\end{DoxyParamCaption})}
 
 
 
-Inserts a new key and empty array. You must close the object using \doxyref{finish\+Object\+Or\+Array()}{p.}{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}! 
+Inserts a new key and empty array. You must close the object using \hyperlink{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}{finish\+Object\+Or\+Array()}! 
 
 
 \begin{DoxyParams}{Parameters}
@@ -429,20 +339,10 @@ References insert\+Char(), insert\+Check\+Separator(), insert\+Value(), set\+Is\
 
 Referenced by insert\+Key\+Array(), insert\+Key\+Vector(), and main().
 
-
-\begin{DoxyCode}
-867                                                \{
-868     insertCheckSeparator();
-869     insertValue(key);
-870     insertChar(\textcolor{charliteral}{':'});
-871     setIsFirst();
-872     startArray();
-873 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a8e0dbff82335aab801d541583fe6c48c}} 
+\mbox{\Hypertarget{class_json_writer_a8e0dbff82335aab801d541583fe6c48c}\label{class_json_writer_a8e0dbff82335aab801d541583fe6c48c}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Key\+Array@{insert\+Key\+Array}}
 \index{insert\+Key\+Array@{insert\+Key\+Array}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Key\+Array()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{insert\+Key\+Array()}{insertKeyArray()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
 void Json\+Writer\+::insert\+Key\+Array (\begin{DoxyParamCaption}\item[{const char $\ast$}]{key,  }\item[{T $\ast$}]{p\+Array,  }\item[{size\+\_\+t}]{num\+Elem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -465,27 +365,15 @@ Definition at line 1105 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 References finish\+Object\+Or\+Array(), and insert\+Key\+Array().
 
-
-
-Referenced by main().
-
-
-\begin{DoxyCode}
-1105                                                                     \{
-1106         insertKeyArray(key);
-1107         insertArray(pArray, numElem);
-1108         finishObjectOrArray();
-1109     \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a338c3e07d0a6a2334da66684c8ae02a3}} 
+\mbox{\Hypertarget{class_json_writer_a338c3e07d0a6a2334da66684c8ae02a3}\label{class_json_writer_a338c3e07d0a6a2334da66684c8ae02a3}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Key\+Object@{insert\+Key\+Object}}
 \index{insert\+Key\+Object@{insert\+Key\+Object}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Key\+Object()}
+\subsubsection{\texorpdfstring{insert\+Key\+Object()}{insertKeyObject()}}
 {\footnotesize\ttfamily void Json\+Writer\+::insert\+Key\+Object (\begin{DoxyParamCaption}\item[{const char $\ast$}]{key }\end{DoxyParamCaption})}
 
 
 
-Inserts a new key and empty object. You must close the object using \doxyref{finish\+Object\+Or\+Array()}{p.}{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}! 
+Inserts a new key and empty object. You must close the object using \hyperlink{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}{finish\+Object\+Or\+Array()}! 
 
 
 \begin{DoxyParams}{Parameters}
@@ -500,24 +388,10 @@ Definition at line 859 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 References insert\+Char(), insert\+Check\+Separator(), insert\+Value(), set\+Is\+First(), and start\+Object().
 
-
-
-Referenced by main().
-
-
-\begin{DoxyCode}
-859                                                 \{
-860     insertCheckSeparator();
-861     insertValue(key);
-862     insertChar(\textcolor{charliteral}{':'});
-863     setIsFirst();
-864     startObject();
-865 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}} 
+\mbox{\Hypertarget{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}\label{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Key\+Value@{insert\+Key\+Value}}
 \index{insert\+Key\+Value@{insert\+Key\+Value}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Key\+Value()}
+\subsubsection{\texorpdfstring{insert\+Key\+Value()}{insertKeyValue()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
 void Json\+Writer\+::insert\+Key\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{key,  }\item[{T}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -525,7 +399,7 @@ void Json\+Writer\+::insert\+Key\+Value (\begin{DoxyParamCaption}\item[{const ch
 
 Inserts a key/value pair into an object. 
 
-Uses templates so you can pass any type object that\textquotesingle{}s supported by \doxyref{insert\+Value()}{p.}{class_json_writer_ac58734c238ba7be066838591b0cc7743} overloads, for example\+: bool, int, float, double, const char $\ast$. 
+Uses templates so you can pass any type object that\textquotesingle{}s supported by \hyperlink{class_json_writer_ac58734c238ba7be066838591b0cc7743}{insert\+Value()} overloads, for example\+: bool, int, float, double, const char $\ast$. 
 
 Definition at line 1065 of file Json\+Parser\+Generator\+R\+K.\+h.
 
@@ -533,23 +407,10 @@ Definition at line 1065 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 References insert\+Char(), insert\+Check\+Separator(), and insert\+Value().
 
-
-
-Referenced by main(), and run\+Test().
-
-
-\begin{DoxyCode}
-1065                                                   \{
-1066         insertCheckSeparator();
-1067         insertValue(key);
-1068         insertChar(\textcolor{charliteral}{':'});
-1069         insertValue(value);
-1070     \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a14774145a0fa9b1328c1797f76316d82}} 
+\mbox{\Hypertarget{class_json_writer_a14774145a0fa9b1328c1797f76316d82}\label{class_json_writer_a14774145a0fa9b1328c1797f76316d82}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Key\+Vector@{insert\+Key\+Vector}}
 \index{insert\+Key\+Vector@{insert\+Key\+Vector}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Key\+Vector()}
+\subsubsection{\texorpdfstring{insert\+Key\+Vector()}{insertKeyVector()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
 void Json\+Writer\+::insert\+Key\+Vector (\begin{DoxyParamCaption}\item[{const char $\ast$}]{key,  }\item[{std\+::vector$<$ T $>$}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -572,29 +433,17 @@ Definition at line 1132 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 References finish\+Object\+Or\+Array(), and insert\+Key\+Array().
 
-
-
-Referenced by main().
-
-
-\begin{DoxyCode}
-1132                                                             \{
-1133         insertKeyArray(key);
-1134         insertVector(vec);
-1135         finishObjectOrArray();
-1136     \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a8a584941a871018cd09315276b8bf7ca}} 
+\mbox{\Hypertarget{class_json_writer_a8a584941a871018cd09315276b8bf7ca}\label{class_json_writer_a8a584941a871018cd09315276b8bf7ca}} 
 \index{Json\+Writer@{Json\+Writer}!insertsprintf@{insertsprintf}}
 \index{insertsprintf@{insertsprintf}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insertsprintf()}
+\subsubsection{\texorpdfstring{insertsprintf()}{insertsprintf()}}
 {\footnotesize\ttfamily void Json\+Writer\+::insertsprintf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{}]{... }\end{DoxyParamCaption})}
 
 
 
 Used internally to insert using snprintf formatting. 
 
-Used internally. You should use \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} or \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057} with a string, float, or double instead.
+Used internally. You should use \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} or \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()} with a string, float, or double instead.
 
 This method does not quote or escape the string -\/ it\textquotesingle{}s used mainly for formatting numbers. 
 
@@ -602,137 +451,41 @@ Definition at line 802 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 
 
-References insertvsprintf().
+Referenced by insert\+Value().
 
-
-
-Referenced by insert\+String(), insert\+Value(), and main().
-
-
-\begin{DoxyCode}
-802                                                    \{
-803     va\_list ap;
-804     va\_start(ap, fmt);
-805     insertvsprintf(fmt, ap);
-806     va\_end(ap);
-807 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_acf5ad9145b651c78873a71abbe372c9b}} 
+\mbox{\Hypertarget{class_json_writer_acf5ad9145b651c78873a71abbe372c9b}\label{class_json_writer_acf5ad9145b651c78873a71abbe372c9b}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+String@{insert\+String}}
 \index{insert\+String@{insert\+String}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+String()}
+\subsubsection{\texorpdfstring{insert\+String()}{insertString()}}
 {\footnotesize\ttfamily void Json\+Writer\+::insert\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{s,  }\item[{bool}]{quoted = {\ttfamily false} }\end{DoxyParamCaption})}
 
 
 
 Used internally to insert a string, quoted or not. 
 
-Used internally. You should use \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} or \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057} with a string instead. 
+Used internally. You should use \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} or \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()} with a string instead. 
 
 Definition at line 721 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 
 
-References Json\+Buffer\+::buffer\+Len, insert\+Char(), insertsprintf(), and Json\+Buffer\+::offset.
+References Json\+Buffer\+::buffer\+Len, insert\+Char(), and Json\+Buffer\+::offset.
 
 
 
 Referenced by insert\+Value(), and main().
 
-
-\begin{DoxyCode}
-721                                                         \{
-722     \textcolor{comment}{// 0x00000000 - 0x0000007F:}
-723 
-724     \textcolor{comment}{// 0x00000080 - 0x000007FF:}
-725     \textcolor{comment}{// 110xxxxx 10xxxxxx}
-726 
-727     \textcolor{comment}{// 0x00000800 - 0x0000FFFF:}
-728     \textcolor{comment}{// 1110xxxx 10xxxxxx 10xxxxxx}
-729 
-730     \textcolor{keywordflow}{if} (quoted) \{
-731         insertChar(\textcolor{charliteral}{'"'});
-732     \}
-733 
-734     \textcolor{keywordflow}{for}(\textcolor{keywordtype}{size\_t} ii = 0; s[ii] && offset < bufferLen; ii++) \{
-735         \textcolor{keywordflow}{if} (s[ii] & 0x80) \{
-736             \textcolor{comment}{// High bit set: convert UTF-8 to JSON Unicode escape}
-737             \textcolor{keywordflow}{if} (((s[ii] & 0b11110000) == 0b11100000) && ((s[ii+1] & 0b11000000) == 0b10000000) && ((s[ii+2]
-       & 0b11000000) == 0b10000000)) \{
-738                 \textcolor{comment}{// 3-byte}
-739                 uint16\_t utf16 = ((s[ii] & 0b1111) << 12) | ((s[ii+1] & 0b111111) << 6) | (s[ii+2] & 0
-      b111111);
-740                 insertsprintf(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)u%04X"}, utf16);
-741                 ii += 2; \textcolor{comment}{// plus one more in loop increment}
-742             \}
-743             \textcolor{keywordflow}{else}
-744             \textcolor{keywordflow}{if} (((s[ii] & 0b11100000) == 0b11000000) && ((s[ii+1] & 0b11000000) == 0b10000000)) \{
-745                 \textcolor{comment}{// 2-byte}
-746                 uint16\_t utf16 = ((s[ii] & 0b11111) << 6) | (s[ii+1] & 0b111111);
-747                 insertsprintf(\textcolor{stringliteral}{"\(\backslash\)\(\backslash\)u%04X"}, utf16);
-748                 ii++; \textcolor{comment}{// plus one more in loop increment}
-749             \}
-750             \textcolor{keywordflow}{else} \{
-751                 \textcolor{comment}{// Not valid unicode, just pass characters through}
-752                 insertChar(s[ii]);
-753             \}
-754         \}
-755         \textcolor{keywordflow}{else} \{
-756             \textcolor{keywordflow}{switch}(s[ii]) \{
-757             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)b'}:
-758                 insertChar(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});
-759                 insertChar(\textcolor{charliteral}{'b'});
-760                 \textcolor{keywordflow}{break};
-761 
-762             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)f'}:
-763                 insertChar(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});
-764                 insertChar(\textcolor{charliteral}{'f'});
-765                 \textcolor{keywordflow}{break};
-766 
-767             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)n'}:
-768                 insertChar(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});
-769                 insertChar(\textcolor{charliteral}{'n'});
-770                 \textcolor{keywordflow}{break};
-771 
-772             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)r'}:
-773                 insertChar(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});
-774                 insertChar(\textcolor{charliteral}{'r'});
-775                 \textcolor{keywordflow}{break};
-776 
-777             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)t'}:
-778                 insertChar(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});
-779                 insertChar(\textcolor{charliteral}{'t'});
-780                 \textcolor{keywordflow}{break};
-781 
-782             \textcolor{keywordflow}{case} \textcolor{charliteral}{'"'}:
-783             \textcolor{keywordflow}{case} \textcolor{charliteral}{'\(\backslash\)\(\backslash\)'}:
-784                 insertChar(\textcolor{charliteral}{'\(\backslash\)\(\backslash\)'});
-785                 insertChar(s[ii]);
-786                 \textcolor{keywordflow}{break};
-787 
-788             \textcolor{keywordflow}{default}:
-789                 insertChar(s[ii]);
-790                 \textcolor{keywordflow}{break};
-791             \}
-792         \}
-793     \}
-794     \textcolor{keywordflow}{if} (quoted) \{
-795         insertChar(\textcolor{charliteral}{'"'});
-796     \}
-797 
-798 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_ac58734c238ba7be066838591b0cc7743}} 
+\mbox{\Hypertarget{class_json_writer_ac58734c238ba7be066838591b0cc7743}\label{class_json_writer_ac58734c238ba7be066838591b0cc7743}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Value@{insert\+Value}}
 \index{insert\+Value@{insert\+Value}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
+\subsubsection{\texorpdfstring{insert\+Value()}{insertValue()}\hspace{0.1cm}{\footnotesize\ttfamily [1/9]}}
 {\footnotesize\ttfamily void Json\+Writer\+::insert\+Value (\begin{DoxyParamCaption}\item[{bool}]{value }\end{DoxyParamCaption})}
 
 
 
 Inserts a boolean value (\char`\"{}true\char`\"{} or \char`\"{}false\char`\"{}). 
 
-You would normally use \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} or \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057} instead of calling this directly as those functions take care of inserting the separtators between items. 
+You would normally use \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} or \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()} instead of calling this directly as those functions take care of inserting the separtators between items. 
 
 Definition at line 832 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
@@ -740,28 +493,17 @@ Definition at line 832 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 References insert\+String().
 
-
-\begin{DoxyCode}
-832                                        \{
-833     \textcolor{keywordflow}{if} (value) \{
-834         insertString(\textcolor{stringliteral}{"true"});
-835     \}
-836     \textcolor{keywordflow}{else} \{
-837         insertString(\textcolor{stringliteral}{"false"});
-838     \}
-839 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a69da120fb595f2820dd73f0c9339e093}} 
+\mbox{\Hypertarget{class_json_writer_a69da120fb595f2820dd73f0c9339e093}\label{class_json_writer_a69da120fb595f2820dd73f0c9339e093}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Value@{insert\+Value}}
 \index{insert\+Value@{insert\+Value}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
+\subsubsection{\texorpdfstring{insert\+Value()}{insertValue()}\hspace{0.1cm}{\footnotesize\ttfamily [2/9]}}
 {\footnotesize\ttfamily void Json\+Writer\+::insert\+Value (\begin{DoxyParamCaption}\item[{int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Inserts an integer value. 
 
-You would normally use \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} or \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057} instead of calling this directly as those functions take care of inserting the separators between items. 
+You would normally use \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} or \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()} instead of calling this directly as those functions take care of inserting the separators between items. 
 
 Definition at line 979 of file Json\+Parser\+Generator\+R\+K.\+h.
 
@@ -773,21 +515,17 @@ References insertsprintf().
 
 Referenced by main().
 
-
-\begin{DoxyCode}
-979 \{ insertsprintf(\textcolor{stringliteral}{"%d"}, value); \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a296c63529260115c9fa0aced54960903}} 
+\mbox{\Hypertarget{class_json_writer_a296c63529260115c9fa0aced54960903}\label{class_json_writer_a296c63529260115c9fa0aced54960903}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Value@{insert\+Value}}
 \index{insert\+Value@{insert\+Value}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
+\subsubsection{\texorpdfstring{insert\+Value()}{insertValue()}\hspace{0.1cm}{\footnotesize\ttfamily [3/9]}}
 {\footnotesize\ttfamily void Json\+Writer\+::insert\+Value (\begin{DoxyParamCaption}\item[{unsigned int}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Inserts an unsigned integer value. 
 
-You would normally use \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} or \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057} instead of calling this directly as those functions take care of inserting the separators between items. 
+You would normally use \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} or \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()} instead of calling this directly as those functions take care of inserting the separators between items. 
 
 Definition at line 987 of file Json\+Parser\+Generator\+R\+K.\+h.
 
@@ -795,21 +533,17 @@ Definition at line 987 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 References insertsprintf().
 
-
-\begin{DoxyCode}
-987 \{ insertsprintf(\textcolor{stringliteral}{"%u"}, value); \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a069e3c244a8a320eaa9dd5625874d98e}} 
+\mbox{\Hypertarget{class_json_writer_a069e3c244a8a320eaa9dd5625874d98e}\label{class_json_writer_a069e3c244a8a320eaa9dd5625874d98e}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Value@{insert\+Value}}
 \index{insert\+Value@{insert\+Value}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
+\subsubsection{\texorpdfstring{insert\+Value()}{insertValue()}\hspace{0.1cm}{\footnotesize\ttfamily [4/9]}}
 {\footnotesize\ttfamily void Json\+Writer\+::insert\+Value (\begin{DoxyParamCaption}\item[{long}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Inserts a long integer value. 
 
-You would normally use \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} or \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057} instead of calling this directly as those functions take care of inserting the separators between items. 
+You would normally use \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} or \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()} instead of calling this directly as those functions take care of inserting the separators between items. 
 
 Definition at line 995 of file Json\+Parser\+Generator\+R\+K.\+h.
 
@@ -817,21 +551,17 @@ Definition at line 995 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 References insertsprintf().
 
-
-\begin{DoxyCode}
-995 \{ insertsprintf(\textcolor{stringliteral}{"%ld"}, value); \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a69d2d9ed9023105c3f84ce645919502b}} 
+\mbox{\Hypertarget{class_json_writer_a69d2d9ed9023105c3f84ce645919502b}\label{class_json_writer_a69d2d9ed9023105c3f84ce645919502b}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Value@{insert\+Value}}
 \index{insert\+Value@{insert\+Value}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
+\subsubsection{\texorpdfstring{insert\+Value()}{insertValue()}\hspace{0.1cm}{\footnotesize\ttfamily [5/9]}}
 {\footnotesize\ttfamily void Json\+Writer\+::insert\+Value (\begin{DoxyParamCaption}\item[{unsigned long}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Inserts an unsigned long integer value. 
 
-You would normally use \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} or \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057} instead of calling this directly as those functions take care of inserting the separators between items. 
+You would normally use \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} or \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()} instead of calling this directly as those functions take care of inserting the separators between items. 
 
 Definition at line 1003 of file Json\+Parser\+Generator\+R\+K.\+h.
 
@@ -839,23 +569,19 @@ Definition at line 1003 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 References insertsprintf().
 
-
-\begin{DoxyCode}
-1003 \{ insertsprintf(\textcolor{stringliteral}{"%lu"}, value); \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a5651b6c191da0397dab40c5ad51af1ec}} 
+\mbox{\Hypertarget{class_json_writer_a5651b6c191da0397dab40c5ad51af1ec}\label{class_json_writer_a5651b6c191da0397dab40c5ad51af1ec}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Value@{insert\+Value}}
 \index{insert\+Value@{insert\+Value}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
+\subsubsection{\texorpdfstring{insert\+Value()}{insertValue()}\hspace{0.1cm}{\footnotesize\ttfamily [6/9]}}
 {\footnotesize\ttfamily void Json\+Writer\+::insert\+Value (\begin{DoxyParamCaption}\item[{float}]{value }\end{DoxyParamCaption})}
 
 
 
 Inserts a floating point value. 
 
-Use \doxyref{set\+Float\+Places()}{p.}{class_json_writer_aecd4d984a49fe59b0c4d892fe6d1e791} to set the number of decimal places to include.
+Use \hyperlink{class_json_writer_aecd4d984a49fe59b0c4d892fe6d1e791}{set\+Float\+Places()} to set the number of decimal places to include.
 
-You would normally use \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} or \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057} instead of calling this directly as those functions take care of inserting the separtators between items. 
+You would normally use \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} or \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()} instead of calling this directly as those functions take care of inserting the separtators between items. 
 
 Definition at line 841 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
@@ -863,30 +589,19 @@ Definition at line 841 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 References float\+Places, and insertsprintf().
 
-
-\begin{DoxyCode}
-841                                         \{
-842     \textcolor{keywordflow}{if} (floatPlaces >= 0) \{
-843         insertsprintf(\textcolor{stringliteral}{"%.*f"}, floatPlaces, value);
-844     \}
-845     \textcolor{keywordflow}{else} \{
-846         insertsprintf(\textcolor{stringliteral}{"%f"}, value);
-847     \}
-848 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a5ccac7627d96f545498118340f7e5f75}} 
+\mbox{\Hypertarget{class_json_writer_a5ccac7627d96f545498118340f7e5f75}\label{class_json_writer_a5ccac7627d96f545498118340f7e5f75}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Value@{insert\+Value}}
 \index{insert\+Value@{insert\+Value}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
+\subsubsection{\texorpdfstring{insert\+Value()}{insertValue()}\hspace{0.1cm}{\footnotesize\ttfamily [7/9]}}
 {\footnotesize\ttfamily void Json\+Writer\+::insert\+Value (\begin{DoxyParamCaption}\item[{double}]{value }\end{DoxyParamCaption})}
 
 
 
 Inserts a floating point double value. 
 
-Use \doxyref{set\+Float\+Places()}{p.}{class_json_writer_aecd4d984a49fe59b0c4d892fe6d1e791} to set the number of decimal places to include.
+Use \hyperlink{class_json_writer_aecd4d984a49fe59b0c4d892fe6d1e791}{set\+Float\+Places()} to set the number of decimal places to include.
 
-You would normally use \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} or \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057} instead of calling this directly as those functions take care of inserting the separtators between items. 
+You would normally use \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} or \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()} instead of calling this directly as those functions take care of inserting the separtators between items. 
 
 Definition at line 849 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
@@ -898,28 +613,17 @@ References float\+Places, and insertsprintf().
 
 Referenced by main().
 
-
-\begin{DoxyCode}
-849                                          \{
-850     \textcolor{keywordflow}{if} (floatPlaces >= 0) \{
-851         insertsprintf(\textcolor{stringliteral}{"%.*lf"}, floatPlaces, value);
-852     \}
-853     \textcolor{keywordflow}{else} \{
-854         insertsprintf(\textcolor{stringliteral}{"%lf"}, value);
-855     \}
-856 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_aeac7ad2b336bb15c05a6094a59a42126}} 
+\mbox{\Hypertarget{class_json_writer_aeac7ad2b336bb15c05a6094a59a42126}\label{class_json_writer_aeac7ad2b336bb15c05a6094a59a42126}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Value@{insert\+Value}}
 \index{insert\+Value@{insert\+Value}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
+\subsubsection{\texorpdfstring{insert\+Value()}{insertValue()}\hspace{0.1cm}{\footnotesize\ttfamily [8/9]}}
 {\footnotesize\ttfamily void Json\+Writer\+::insert\+Value (\begin{DoxyParamCaption}\item[{const char $\ast$}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 Inserts a quoted string value. This escapes special characters and encodes utf-\/8. 
 
-You would normally use \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} or \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057} instead of calling this directly as those functions take care of inserting the separtators between items. 
+You would normally use \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} or \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()} instead of calling this directly as those functions take care of inserting the separtators between items. 
 
 Definition at line 1031 of file Json\+Parser\+Generator\+R\+K.\+h.
 
@@ -931,15 +635,11 @@ References insert\+String().
 
 Referenced by insert\+Key\+Array(), insert\+Key\+Object(), and insert\+Key\+Value().
 
-
-\begin{DoxyCode}
-1031 \{ insertString(value, \textcolor{keyword}{true}); \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a6f8a280756ada908ab7e643f6dd1faa9}} 
+\mbox{\Hypertarget{class_json_writer_a6f8a280756ada908ab7e643f6dd1faa9}\label{class_json_writer_a6f8a280756ada908ab7e643f6dd1faa9}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Value@{insert\+Value}}
 \index{insert\+Value@{insert\+Value}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Value()\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
-{\footnotesize\ttfamily void Json\+Writer\+::insert\+Value (\begin{DoxyParamCaption}\item[{const \textbf{ String} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\subsubsection{\texorpdfstring{insert\+Value()}{insertValue()}\hspace{0.1cm}{\footnotesize\ttfamily [9/9]}}
+{\footnotesize\ttfamily void Json\+Writer\+::insert\+Value (\begin{DoxyParamCaption}\item[{const \hyperlink{class_string}{String} \&}]{value }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
@@ -947,22 +647,14 @@ Inserts a quoted string value.
 
 This escapes special characters and encodes utf-\/8. See also the version that takes a plain const char $\ast$.
 
-You would normally use \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} or \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057} instead of calling this directly as those functions take care of inserting the separtators between items. 
+You would normally use \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} or \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()} instead of calling this directly as those functions take care of inserting the separtators between items. 
 
 Definition at line 1042 of file Json\+Parser\+Generator\+R\+K.\+h.
 
-
-
-References String\+::c\+\_\+str(), and insert\+String().
-
-
-\begin{DoxyCode}
-1042 \{ insertString(value.c_str(), \textcolor{keyword}{true}); \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a6c1f223b7ef6538ef9135fe0a8b66aab}} 
+\mbox{\Hypertarget{class_json_writer_a6c1f223b7ef6538ef9135fe0a8b66aab}\label{class_json_writer_a6c1f223b7ef6538ef9135fe0a8b66aab}} 
 \index{Json\+Writer@{Json\+Writer}!insert\+Vector@{insert\+Vector}}
 \index{insert\+Vector@{insert\+Vector}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insert\+Vector()}
+\subsubsection{\texorpdfstring{insert\+Vector()}{insertVector()}}
 {\footnotesize\ttfamily template$<$class T $>$ \\
 void Json\+Writer\+::insert\+Vector (\begin{DoxyParamCaption}\item[{std\+::vector$<$ T $>$}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
@@ -970,29 +662,21 @@ void Json\+Writer\+::insert\+Vector (\begin{DoxyParamCaption}\item[{std\+::vecto
 
 Inserts an array of values into an array. 
 
-Uses templates so you can pass any type object that\textquotesingle{}s supported by \doxyref{insert\+Value()}{p.}{class_json_writer_ac58734c238ba7be066838591b0cc7743} overloads, for example\+: bool, int, float, double, const char $\ast$. 
+Uses templates so you can pass any type object that\textquotesingle{}s supported by \hyperlink{class_json_writer_ac58734c238ba7be066838591b0cc7743}{insert\+Value()} overloads, for example\+: bool, int, float, double, const char $\ast$. 
 
 Definition at line 1118 of file Json\+Parser\+Generator\+R\+K.\+h.
 
-
-\begin{DoxyCode}
-1118                                         \{
-1119         \textcolor{keywordflow}{for} (\textcolor{keyword}{auto} it = vec.begin(); it != vec.end(); ++it) \{
-1120             insertArrayValue(*it);
-1121         \}
-1122     \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_ab737d9527845638e08bd71034d419e49}} 
+\mbox{\Hypertarget{class_json_writer_ab737d9527845638e08bd71034d419e49}\label{class_json_writer_ab737d9527845638e08bd71034d419e49}} 
 \index{Json\+Writer@{Json\+Writer}!insertvsprintf@{insertvsprintf}}
 \index{insertvsprintf@{insertvsprintf}!Json\+Writer@{Json\+Writer}}
-\subsubsection{insertvsprintf()}
+\subsubsection{\texorpdfstring{insertvsprintf()}{insertvsprintf()}}
 {\footnotesize\ttfamily void Json\+Writer\+::insertvsprintf (\begin{DoxyParamCaption}\item[{const char $\ast$}]{fmt,  }\item[{va\+\_\+list}]{ap }\end{DoxyParamCaption})}
 
 
 
 Used internally to insert using snprintf formatting with a va\+\_\+list. 
 
-Used internally. You should use \doxyref{insert\+Key\+Value()}{p.}{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf} or \doxyref{insert\+Array\+Value()}{p.}{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057} with a string, float, or double instead.
+Used internally. You should use \hyperlink{class_json_writer_ac2de627389b59ce2c8ed95e10ea213bf}{insert\+Key\+Value()} or \hyperlink{class_json_writer_a8b4dc6726b66b4f277c7674e60c8a057}{insert\+Array\+Value()} with a string, float, or double instead.
 
 This method does not quote or escape the string -\/ it\textquotesingle{}s used mainly for formatting numbers. 
 
@@ -1000,32 +684,12 @@ Definition at line 809 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 
 
-References Json\+Buffer\+::buffer, Json\+Buffer\+::buffer\+Len, Json\+Buffer\+::offset, and truncated.
+References Json\+Buffer\+::buffer\+Len, Json\+Buffer\+::offset, and truncated.
 
-
-
-Referenced by insertsprintf().
-
-
-\begin{DoxyCode}
-809                                                            \{
-810     \textcolor{keywordtype}{size\_t} spaceAvailable = bufferLen - offset;
-811 
-812     \textcolor{keywordtype}{size\_t} count = vsnprintf(&buffer[offset], spaceAvailable, fmt, ap);
-813     \textcolor{keywordflow}{if} (count <= spaceAvailable) \{
-814         offset += count;
-815     \}
-816     \textcolor{keywordflow}{else} \{
-817         \textcolor{comment}{// Truncated, no more space left}
-818         offset = bufferLen;
-819         truncated = \textcolor{keyword}{true};
-820     \}
-821 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a815f77b2db3315bfd40dfb61f68b0ed4}} 
+\mbox{\Hypertarget{class_json_writer_a815f77b2db3315bfd40dfb61f68b0ed4}\label{class_json_writer_a815f77b2db3315bfd40dfb61f68b0ed4}} 
 \index{Json\+Writer@{Json\+Writer}!is\+Truncated@{is\+Truncated}}
 \index{is\+Truncated@{is\+Truncated}!Json\+Writer@{Json\+Writer}}
-\subsubsection{is\+Truncated()}
+\subsubsection{\texorpdfstring{is\+Truncated()}{isTruncated()}}
 {\footnotesize\ttfamily bool Json\+Writer\+::is\+Truncated (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 If you try to insert more data than will fit in the buffer, the is\+Truncated flag will be set, and the buffer will likely not be valid J\+S\+ON and should not be used. 
@@ -1036,14 +700,10 @@ Definition at line 1142 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 References truncated.
 
-
-\begin{DoxyCode}
-1142 \{ \textcolor{keywordflow}{return} truncated; \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_aecd4d984a49fe59b0c4d892fe6d1e791}} 
+\mbox{\Hypertarget{class_json_writer_aecd4d984a49fe59b0c4d892fe6d1e791}\label{class_json_writer_aecd4d984a49fe59b0c4d892fe6d1e791}} 
 \index{Json\+Writer@{Json\+Writer}!set\+Float\+Places@{set\+Float\+Places}}
 \index{set\+Float\+Places@{set\+Float\+Places}!Json\+Writer@{Json\+Writer}}
-\subsubsection{set\+Float\+Places()}
+\subsubsection{\texorpdfstring{set\+Float\+Places()}{setFloatPlaces()}}
 {\footnotesize\ttfamily void Json\+Writer\+::set\+Float\+Places (\begin{DoxyParamCaption}\item[{int}]{float\+Places }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -1063,18 +723,10 @@ Definition at line 1150 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 References float\+Places.
 
-
-
-Referenced by main().
-
-
-\begin{DoxyCode}
-1150 \{ this->floatPlaces = floatPlaces; \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_afc30ff673c866c7a2366a8c064b5a565}} 
+\mbox{\Hypertarget{class_json_writer_afc30ff673c866c7a2366a8c064b5a565}\label{class_json_writer_afc30ff673c866c7a2366a8c064b5a565}} 
 \index{Json\+Writer@{Json\+Writer}!set\+Is\+First@{set\+Is\+First}}
 \index{set\+Is\+First@{set\+Is\+First}!Json\+Writer@{Json\+Writer}}
-\subsubsection{set\+Is\+First()}
+\subsubsection{\texorpdfstring{set\+Is\+First()}{setIsFirst()}}
 {\footnotesize\ttfamily void Json\+Writer\+::set\+Is\+First (\begin{DoxyParamCaption}\item[{bool}]{is\+First = {\ttfamily true} }\end{DoxyParamCaption})}
 
 
@@ -1093,21 +745,15 @@ References context, context\+Index, and Json\+Writer\+Context\+::is\+First.
 
 Referenced by insert\+Key\+Array(), insert\+Key\+Object(), and Json\+Modifier\+::start\+Append().
 
-
-\begin{DoxyCode}
-875                                           \{
-876     context[contextIndex].isFirst = isFirst;
-877 \}
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a7ccfcbf66a8ed9a2728e6f6ae4b705ec}} 
+\mbox{\Hypertarget{class_json_writer_a7ccfcbf66a8ed9a2728e6f6ae4b705ec}\label{class_json_writer_a7ccfcbf66a8ed9a2728e6f6ae4b705ec}} 
 \index{Json\+Writer@{Json\+Writer}!start\+Array@{start\+Array}}
 \index{start\+Array@{start\+Array}!Json\+Writer@{Json\+Writer}}
-\subsubsection{start\+Array()}
+\subsubsection{\texorpdfstring{start\+Array()}{startArray()}}
 {\footnotesize\ttfamily bool Json\+Writer\+::start\+Array (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Start a new J\+S\+ON array. Make sure you finish it with \doxyref{finish\+Object\+Or\+Array()}{p.}{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0} 
+Start a new J\+S\+ON array. Make sure you finish it with \hyperlink{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}{finish\+Object\+Or\+Array()} 
 
 
 
@@ -1119,21 +765,17 @@ References start\+Object\+Or\+Array().
 
 
 
-Referenced by insert\+Key\+Array(), Json\+Writer\+Auto\+Array\+::\+Json\+Writer\+Auto\+Array(), and main().
+Referenced by insert\+Key\+Array(), and Json\+Writer\+Auto\+Array\+::\+Json\+Writer\+Auto\+Array().
 
-
-\begin{DoxyCode}
-958 \{ \textcolor{keywordflow}{return} startObjectOrArray(\textcolor{charliteral}{'['}, \textcolor{charliteral}{']'}); \};
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a43d1a78bf211a2f12cfe9253462717ae}} 
+\mbox{\Hypertarget{class_json_writer_a43d1a78bf211a2f12cfe9253462717ae}\label{class_json_writer_a43d1a78bf211a2f12cfe9253462717ae}} 
 \index{Json\+Writer@{Json\+Writer}!start\+Object@{start\+Object}}
 \index{start\+Object@{start\+Object}!Json\+Writer@{Json\+Writer}}
-\subsubsection{start\+Object()}
+\subsubsection{\texorpdfstring{start\+Object()}{startObject()}}
 {\footnotesize\ttfamily bool Json\+Writer\+::start\+Object (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Start a new J\+S\+ON object. Make sure you finish it with \doxyref{finish\+Object\+Or\+Array()}{p.}{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0} 
+Start a new J\+S\+ON object. Make sure you finish it with \hyperlink{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}{finish\+Object\+Or\+Array()} 
 
 
 
@@ -1147,21 +789,17 @@ References start\+Object\+Or\+Array().
 
 Referenced by insert\+Key\+Object(), Json\+Writer\+Auto\+Object\+::\+Json\+Writer\+Auto\+Object(), and main().
 
-
-\begin{DoxyCode}
-953 \{ \textcolor{keywordflow}{return} startObjectOrArray(\textcolor{charliteral}{'\{'}, \textcolor{charliteral}{'\}'}); \};
-\end{DoxyCode}
-\mbox{\label{class_json_writer_a468e6c475bec83a7ec8cd7048cdbb31b}} 
+\mbox{\Hypertarget{class_json_writer_a468e6c475bec83a7ec8cd7048cdbb31b}\label{class_json_writer_a468e6c475bec83a7ec8cd7048cdbb31b}} 
 \index{Json\+Writer@{Json\+Writer}!start\+Object\+Or\+Array@{start\+Object\+Or\+Array}}
 \index{start\+Object\+Or\+Array@{start\+Object\+Or\+Array}!Json\+Writer@{Json\+Writer}}
-\subsubsection{start\+Object\+Or\+Array()}
+\subsubsection{\texorpdfstring{start\+Object\+Or\+Array()}{startObjectOrArray()}}
 {\footnotesize\ttfamily bool Json\+Writer\+::start\+Object\+Or\+Array (\begin{DoxyParamCaption}\item[{char}]{start\+Char,  }\item[{char}]{end\+Char }\end{DoxyParamCaption})}
 
 
 
 Used internally to start an object or array. 
 
-Used internally; you should use \doxyref{start\+Object()}{p.}{class_json_writer_a43d1a78bf211a2f12cfe9253462717ae} or \doxyref{start\+Array()}{p.}{class_json_writer_a7ccfcbf66a8ed9a2728e6f6ae4b705ec} instead. Make sure you finish any started object or array using \doxyref{finish\+Object\+Or\+Array()}{p.}{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}. 
+Used internally; you should use \hyperlink{class_json_writer_a43d1a78bf211a2f12cfe9253462717ae}{start\+Object()} or \hyperlink{class_json_writer_a7ccfcbf66a8ed9a2728e6f6ae4b705ec}{start\+Array()} instead. Make sure you finish any started object or array using \hyperlink{class_json_writer_adbd96b46b0679bea3a066c0e62bd86b0}{finish\+Object\+Or\+Array()}. 
 
 Definition at line 679 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
@@ -1174,30 +812,13 @@ References context, context\+Index, insert\+Char(), insert\+Check\+Separator(), 
 Referenced by start\+Array(), and start\+Object().
 
 
-\begin{DoxyCode}
-679                                                                 \{
-680     \textcolor{keywordflow}{if} ((contextIndex + 1) >= MAX_NESTED_CONTEXT) \{
-681         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-682     \}
-683     insertCheckSeparator();
-684 
-685     contextIndex++;
-686 
-687     context[contextIndex].isFirst = \textcolor{keyword}{true};
-688     context[contextIndex].terminator = endChar;
-689 
-690     insertChar(startChar);
-691     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-692 \}
-\end{DoxyCode}
-
 
 \subsection{Member Data Documentation}
-\mbox{\label{class_json_writer_a2311bf4f11136f55acd23fb13b4b1344}} 
+\mbox{\Hypertarget{class_json_writer_a2311bf4f11136f55acd23fb13b4b1344}\label{class_json_writer_a2311bf4f11136f55acd23fb13b4b1344}} 
 \index{Json\+Writer@{Json\+Writer}!context@{context}}
 \index{context@{context}!Json\+Writer@{Json\+Writer}}
-\subsubsection{context}
-{\footnotesize\ttfamily \textbf{ Json\+Writer\+Context} Json\+Writer\+::context[\textbf{ M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT}]\hspace{0.3cm}{\ttfamily [protected]}}
+\subsubsection{\texorpdfstring{context}{context}}
+{\footnotesize\ttfamily \hyperlink{struct_json_writer_context}{Json\+Writer\+Context} Json\+Writer\+::context\mbox{[}\hyperlink{class_json_writer_a7d1daa126e962c611373f65d1e83e4ee}{M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT}\mbox{]}\hspace{0.3cm}{\ttfamily [protected]}}
 
 
 
@@ -1211,10 +832,10 @@ Definition at line 1217 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 Referenced by finish\+Object\+Or\+Array(), init(), insert\+Check\+Separator(), set\+Is\+First(), and start\+Object\+Or\+Array().
 
-\mbox{\label{class_json_writer_a28554227000e3a49b446e5db77f0505e}} 
+\mbox{\Hypertarget{class_json_writer_a28554227000e3a49b446e5db77f0505e}\label{class_json_writer_a28554227000e3a49b446e5db77f0505e}} 
 \index{Json\+Writer@{Json\+Writer}!context\+Index@{context\+Index}}
 \index{context\+Index@{context\+Index}!Json\+Writer@{Json\+Writer}}
-\subsubsection{context\+Index}
+\subsubsection{\texorpdfstring{context\+Index}{contextIndex}}
 {\footnotesize\ttfamily size\+\_\+t Json\+Writer\+::context\+Index\hspace{0.3cm}{\ttfamily [protected]}}
 
 
@@ -1229,10 +850,10 @@ Definition at line 1216 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 Referenced by finish\+Object\+Or\+Array(), init(), insert\+Check\+Separator(), set\+Is\+First(), and start\+Object\+Or\+Array().
 
-\mbox{\label{class_json_writer_ab0c979f74ad01b6e9970ffed5b39cb29}} 
+\mbox{\Hypertarget{class_json_writer_ab0c979f74ad01b6e9970ffed5b39cb29}\label{class_json_writer_ab0c979f74ad01b6e9970ffed5b39cb29}} 
 \index{Json\+Writer@{Json\+Writer}!float\+Places@{float\+Places}}
 \index{float\+Places@{float\+Places}!Json\+Writer@{Json\+Writer}}
-\subsubsection{float\+Places}
+\subsubsection{\texorpdfstring{float\+Places}{floatPlaces}}
 {\footnotesize\ttfamily int Json\+Writer\+::float\+Places\hspace{0.3cm}{\ttfamily [protected]}}
 
 
@@ -1247,10 +868,10 @@ Definition at line 1219 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 Referenced by insert\+Value(), Json\+Writer(), and set\+Float\+Places().
 
-\mbox{\label{class_json_writer_a7d1daa126e962c611373f65d1e83e4ee}} 
+\mbox{\Hypertarget{class_json_writer_a7d1daa126e962c611373f65d1e83e4ee}\label{class_json_writer_a7d1daa126e962c611373f65d1e83e4ee}} 
 \index{Json\+Writer@{Json\+Writer}!M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT@{M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT}}
 \index{M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT@{M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT}!Json\+Writer@{Json\+Writer}}
-\subsubsection{M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT}
+\subsubsection{\texorpdfstring{M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT}{MAX\_NESTED\_CONTEXT}}
 {\footnotesize\ttfamily const size\+\_\+t Json\+Writer\+::\+M\+A\+X\+\_\+\+N\+E\+S\+T\+E\+D\+\_\+\+C\+O\+N\+T\+E\+XT = 9\hspace{0.3cm}{\ttfamily [static]}}
 
 This constant is the maximum number of nested objects that are supported; the actual number is one less than this so when set to 9 you can have eight objects nested in each other.
@@ -1263,10 +884,10 @@ Definition at line 1213 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 Referenced by start\+Object\+Or\+Array().
 
-\mbox{\label{class_json_writer_a30b9462bee5d300841630e64b660fe43}} 
+\mbox{\Hypertarget{class_json_writer_a30b9462bee5d300841630e64b660fe43}\label{class_json_writer_a30b9462bee5d300841630e64b660fe43}} 
 \index{Json\+Writer@{Json\+Writer}!truncated@{truncated}}
 \index{truncated@{truncated}!Json\+Writer@{Json\+Writer}}
-\subsubsection{truncated}
+\subsubsection{\texorpdfstring{truncated}{truncated}}
 {\footnotesize\ttfamily bool Json\+Writer\+::truncated\hspace{0.3cm}{\ttfamily [protected]}}
 
 
@@ -1285,5 +906,5 @@ Referenced by init(), insert\+Char(), insertvsprintf(), and is\+Truncated().
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-lib/\+Json\+Parser\+Generator\+R\+K/src/\textbf{ Json\+Parser\+Generator\+R\+K.\+h}\item 
-lib/\+Json\+Parser\+Generator\+R\+K/src/\textbf{ Json\+Parser\+Generator\+R\+K.\+cpp}\end{DoxyCompactItemize}
+lib/\+Json\+Parser\+Generator\+R\+K/src/\hyperlink{_json_parser_generator_r_k_8h}{Json\+Parser\+Generator\+R\+K.\+h}\item 
+lib/\+Json\+Parser\+Generator\+R\+K/src/\hyperlink{_json_parser_generator_r_k_8cpp}{Json\+Parser\+Generator\+R\+K.\+cpp}\end{DoxyCompactItemize}

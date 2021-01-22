@@ -1,15 +1,17 @@
-\section{lib/\+Json\+Parser\+Generator\+R\+K/src/\+Json\+Parser\+Generator\+RK.h File Reference}
+\hypertarget{_json_parser_generator_r_k_8h}{}\section{lib/\+Json\+Parser\+Generator\+R\+K/src/\+Json\+Parser\+Generator\+RK.h File Reference}
 \label{_json_parser_generator_r_k_8h}\index{lib/\+Json\+Parser\+Generator\+R\+K/src/\+Json\+Parser\+Generator\+R\+K.\+h@{lib/\+Json\+Parser\+Generator\+R\+K/src/\+Json\+Parser\+Generator\+R\+K.\+h}}
 {\ttfamily \#include \char`\"{}Particle.\+h\char`\"{}}\newline
 {\ttfamily \#include $<$vector$>$}\newline
-Include dependency graph for Json\+Parser\+Generator\+R\+K.\+h\+:\nopagebreak
+Include dependency graph for Json\+Parser\+Generator\+R\+K.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{_json_parser_generator_r_k_8h__incl}
+\includegraphics[width=231pt]{_json_parser_generator_r_k_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,58 +21,58 @@ This graph shows which files directly or indirectly include this file\+:\nopageb
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}
+struct \hyperlink{struct_json_parser_generator_r_k_1_1jsmntok__t}{Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t}
 \begin{DoxyCompactList}\small\item\em J\+S\+ON token description. \end{DoxyCompactList}\item 
-struct \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parser}
+struct \hyperlink{struct_json_parser_generator_r_k_1_1jsmn__parser}{Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parser}
 \begin{DoxyCompactList}\small\item\em J\+S\+ON parser. \end{DoxyCompactList}\item 
-class \textbf{ Json\+Parser\+String}
+class \hyperlink{class_json_parser_string}{Json\+Parser\+String}
 \begin{DoxyCompactList}\small\item\em Class used internally for writing to strings. \end{DoxyCompactList}\item 
-class \textbf{ Json\+Buffer}
-\begin{DoxyCompactList}\small\item\em Base class for managing a static or dynamic buffer, used by both \doxyref{Json\+Parser}{p.}{class_json_parser} and \doxyref{Json\+Writer}{p.}{class_json_writer}. \end{DoxyCompactList}\item 
-class \textbf{ Json\+Parser}
-\begin{DoxyCompactList}\small\item\em A\+PI to the \doxyref{Json\+Parser}{p.}{class_json_parser}. \end{DoxyCompactList}\item 
-class \textbf{ Json\+Parser\+Static$<$ B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E, M\+A\+X\+\_\+\+T\+O\+K\+E\+N\+S $>$}
-\begin{DoxyCompactList}\small\item\em Creates a \doxyref{Json\+Parser}{p.}{class_json_parser} with a static buffer. \end{DoxyCompactList}\item 
-class \textbf{ Json\+Reference}
+class \hyperlink{class_json_buffer}{Json\+Buffer}
+\begin{DoxyCompactList}\small\item\em Base class for managing a static or dynamic buffer, used by both \hyperlink{class_json_parser}{Json\+Parser} and \hyperlink{class_json_writer}{Json\+Writer}. \end{DoxyCompactList}\item 
+class \hyperlink{class_json_parser}{Json\+Parser}
+\begin{DoxyCompactList}\small\item\em A\+PI to the \hyperlink{class_json_parser}{Json\+Parser}. \end{DoxyCompactList}\item 
+class \hyperlink{class_json_parser_static}{Json\+Parser\+Static$<$ B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E, M\+A\+X\+\_\+\+T\+O\+K\+E\+N\+S $>$}
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_json_parser}{Json\+Parser} with a static buffer. \end{DoxyCompactList}\item 
+class \hyperlink{class_json_reference}{Json\+Reference}
 \begin{DoxyCompactList}\small\item\em This class provides a fluent-\/style A\+PI for easily traversing a tree of J\+S\+ON objects to find a value. \end{DoxyCompactList}\item 
-struct \textbf{ Json\+Writer\+Context}
-\begin{DoxyCompactList}\small\item\em Used internally by \doxyref{Json\+Writer}{p.}{class_json_writer}. \end{DoxyCompactList}\item 
-class \textbf{ Json\+Writer}
+struct \hyperlink{struct_json_writer_context}{Json\+Writer\+Context}
+\begin{DoxyCompactList}\small\item\em Used internally by \hyperlink{class_json_writer}{Json\+Writer}. \end{DoxyCompactList}\item 
+class \hyperlink{class_json_writer}{Json\+Writer}
 \begin{DoxyCompactList}\small\item\em Class for building a J\+S\+ON string. \end{DoxyCompactList}\item 
-class \textbf{ Json\+Writer\+Static$<$ B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E $>$}
-\begin{DoxyCompactList}\small\item\em Creates a \doxyref{Json\+Writer}{p.}{class_json_writer} with a statically allocated buffer. \end{DoxyCompactList}\item 
-class \textbf{ Json\+Writer\+Auto\+Object}
-\begin{DoxyCompactList}\small\item\em Class for creating a J\+S\+ON object with \doxyref{Json\+Writer}{p.}{class_json_writer}. \end{DoxyCompactList}\item 
-class \textbf{ Json\+Writer\+Auto\+Array}
-\begin{DoxyCompactList}\small\item\em Class for creating a J\+S\+ON array with \doxyref{Json\+Writer}{p.}{class_json_writer}. \end{DoxyCompactList}\item 
-class \textbf{ Json\+Modifier}
+class \hyperlink{class_json_writer_static}{Json\+Writer\+Static$<$ B\+U\+F\+F\+E\+R\+\_\+\+S\+I\+Z\+E $>$}
+\begin{DoxyCompactList}\small\item\em Creates a \hyperlink{class_json_writer}{Json\+Writer} with a statically allocated buffer. \end{DoxyCompactList}\item 
+class \hyperlink{class_json_writer_auto_object}{Json\+Writer\+Auto\+Object}
+\begin{DoxyCompactList}\small\item\em Class for creating a J\+S\+ON object with \hyperlink{class_json_writer}{Json\+Writer}. \end{DoxyCompactList}\item 
+class \hyperlink{class_json_writer_auto_array}{Json\+Writer\+Auto\+Array}
+\begin{DoxyCompactList}\small\item\em Class for creating a J\+S\+ON array with \hyperlink{class_json_writer}{Json\+Writer}. \end{DoxyCompactList}\item 
+class \hyperlink{class_json_modifier}{Json\+Modifier}
 \begin{DoxyCompactList}\small\item\em Class for modifying a J\+S\+ON object in place, without needing to make a copy of it. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
- \textbf{ Json\+Parser\+Generator\+RK}
+ \hyperlink{namespace_json_parser_generator_r_k}{Json\+Parser\+Generator\+RK}
 \end{DoxyCompactItemize}
 \subsection*{Enumerations}
 \begin{DoxyCompactItemize}
 \item 
-enum \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmntype\+\_\+t} \{ \newline
-\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED} = 0, 
-\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT} = 1, 
-\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+A\+R\+R\+AY} = 2, 
-\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG} = 3, 
+enum \hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3}{Json\+Parser\+Generator\+R\+K\+::jsmntype\+\_\+t} \{ \newline
+\hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3af38a3f5a9af2aaf83f0fd6b38e6d80c5}{Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+U\+N\+D\+E\+F\+I\+N\+ED} = 0, 
+\hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a821e92d4b14438ba747826d5b889fe48}{Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+O\+B\+J\+E\+CT} = 1, 
+\hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a4f5a3b6dbf7ce0e6419264e11a7848c0}{Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+A\+R\+R\+AY} = 2, 
+\hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3a672e86ca38a72245272a29ecdbe74a1a}{Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+S\+T\+R\+I\+NG} = 3, 
 \newline
-\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE} = 4
+\hyperlink{namespace_json_parser_generator_r_k_a45d8af9d310679633d258ed9b2caeeb3af36fefddaeac9a91bc69c938c8924568}{Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+P\+R\+I\+M\+I\+T\+I\+VE} = 4
  \}\begin{DoxyCompactList}\small\item\em J\+S\+ON type identifier (object, array, string, primitive) \end{DoxyCompactList}
 \item 
-enum \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmnerr} \{ \textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM} = -\/1, 
-\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL} = -\/2, 
-\textbf{ Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT} = -\/3
+enum \hyperlink{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edf}{Json\+Parser\+Generator\+R\+K\+::jsmnerr} \{ \hyperlink{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfa629aaaf36d145f6b4968cb4a9ac9e2b1}{Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+N\+O\+M\+EM} = -\/1, 
+\hyperlink{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfa266cf322392ed180b57e6cd7ed6b77a6}{Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+I\+N\+V\+AL} = -\/2, 
+\hyperlink{namespace_json_parser_generator_r_k_ab03a941ba316b9487a16636e6db43edfafa021fb93449c243135e6158e1effa25}{Json\+Parser\+Generator\+R\+K\+::\+J\+S\+M\+N\+\_\+\+E\+R\+R\+O\+R\+\_\+\+P\+A\+RT} = -\/3
  \}\begin{DoxyCompactList}\small\item\em J\+S\+MN error codes. \end{DoxyCompactList}
 \end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+init} (jsmn\+\_\+parser $\ast$parser)
+void \hyperlink{namespace_json_parser_generator_r_k_adb1f5ae92d1df7b0b95f5caefbe0d55b}{Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+init} (jsmn\+\_\+parser $\ast$parser)
 \begin{DoxyCompactList}\small\item\em Create J\+S\+ON parser over an array of tokens. \end{DoxyCompactList}\item 
-int \textbf{ Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parse} (jsmn\+\_\+parser $\ast$parser, const char $\ast$js, size\+\_\+t len, jsmntok\+\_\+t $\ast$tokens, unsigned int num\+\_\+tokens)
+int \hyperlink{namespace_json_parser_generator_r_k_acb71a39877526380a034824e99e59b75}{Json\+Parser\+Generator\+R\+K\+::jsmn\+\_\+parse} (jsmn\+\_\+parser $\ast$parser, const char $\ast$js, size\+\_\+t len, jsmntok\+\_\+t $\ast$tokens, unsigned int num\+\_\+tokens)
 \begin{DoxyCompactList}\small\item\em Run J\+S\+ON parser. \end{DoxyCompactList}\end{DoxyCompactItemize}

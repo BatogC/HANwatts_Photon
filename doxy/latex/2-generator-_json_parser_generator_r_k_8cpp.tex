@@ -1,37 +1,38 @@
-\section{lib/\+Json\+Parser\+Generator\+R\+K/examples/2-\/generator/2-\/generator-\/\+Json\+Parser\+Generator\+RK.cpp File Reference}
+\hypertarget{2-generator-_json_parser_generator_r_k_8cpp}{}\section{lib/\+Json\+Parser\+Generator\+R\+K/examples/2-\/generator/2-\/generator-\/\+Json\+Parser\+Generator\+RK.cpp File Reference}
 \label{2-generator-_json_parser_generator_r_k_8cpp}\index{lib/\+Json\+Parser\+Generator\+R\+K/examples/2-\/generator/2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{lib/\+Json\+Parser\+Generator\+R\+K/examples/2-\/generator/2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
 {\ttfamily \#include \char`\"{}Particle.\+h\char`\"{}}\newline
 {\ttfamily \#include \char`\"{}Json\+Parser\+Generator\+R\+K.\+h\char`\"{}}\newline
-Include dependency graph for 2-\/generator-\/\+Json\+Parser\+Generator\+RK.cpp\+:\nopagebreak
+Include dependency graph for 2-\/generator-\/\+Json\+Parser\+Generator\+RK.cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{2-generator-_json_parser_generator_r_k_8cpp__incl}
+\includegraphics[width=287pt]{2-generator-_json_parser_generator_r_k_8cpp__incl}
 \end{center}
 \end{figure}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
-void \textbf{ run\+Test} ()
+void \hyperlink{2-generator-_json_parser_generator_r_k_8cpp_a822f652c6fc2f163c182a6e5fe922c23}{run\+Test} ()
 \item 
-void \textbf{ setup} ()
+void \hyperlink{2-generator-_json_parser_generator_r_k_8cpp_a4fc01d736fe50cf5b977f755b675f11d}{setup} ()
 \item 
-void \textbf{ loop} ()
+void \hyperlink{2-generator-_json_parser_generator_r_k_8cpp_afe461d27b9c48d5921c00d521181f12f}{loop} ()
 \end{DoxyCompactItemize}
 \subsection*{Variables}
 \begin{DoxyCompactItemize}
 \item 
-const unsigned long \textbf{ T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS} = 10000
+const unsigned long \hyperlink{2-generator-_json_parser_generator_r_k_8cpp_a0aa12824a9c1a44e8d9f2499e0ba2698}{T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS} = 10000
 \item 
-unsigned long \textbf{ last\+Run} = 0
+unsigned long \hyperlink{2-generator-_json_parser_generator_r_k_8cpp_a5082951a06f690a0623ea99ed4228392}{last\+Run} = 0
 \end{DoxyCompactItemize}
 
 
 \subsection{Function Documentation}
-\mbox{\label{2-generator-_json_parser_generator_r_k_8cpp_afe461d27b9c48d5921c00d521181f12f}} 
+\mbox{\Hypertarget{2-generator-_json_parser_generator_r_k_8cpp_afe461d27b9c48d5921c00d521181f12f}\label{2-generator-_json_parser_generator_r_k_8cpp_afe461d27b9c48d5921c00d521181f12f}} 
 \index{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}!loop@{loop}}
 \index{loop@{loop}!2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
-\subsubsection{loop()}
+\subsubsection{\texorpdfstring{loop()}{loop()}}
 {\footnotesize\ttfamily void loop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -42,19 +43,10 @@ Definition at line 15 of file 2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+
 
 References run\+Test().
 
-
-\begin{DoxyCode}
-15             \{
-16     \textcolor{keywordflow}{if} (millis() - lastRun >= TEST_RUN_PERIOD_MS) \{
-17         lastRun = millis();
-18         runTest();
-19     \}
-20 \}
-\end{DoxyCode}
-\mbox{\label{2-generator-_json_parser_generator_r_k_8cpp_a822f652c6fc2f163c182a6e5fe922c23}} 
+\mbox{\Hypertarget{2-generator-_json_parser_generator_r_k_8cpp_a822f652c6fc2f163c182a6e5fe922c23}\label{2-generator-_json_parser_generator_r_k_8cpp_a822f652c6fc2f163c182a6e5fe922c23}} 
 \index{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}!run\+Test@{run\+Test}}
 \index{run\+Test@{run\+Test}!2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
-\subsubsection{run\+Test()}
+\subsubsection{\texorpdfstring{run\+Test()}{runTest()}}
 {\footnotesize\ttfamily void run\+Test (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -63,46 +55,12 @@ Definition at line 22 of file 2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+
 
 
 
-References Json\+Buffer\+::get\+Buffer(), Json\+Writer\+::insert\+Key\+Value(), and Json\+Writer\+Auto\+Object\+::\+Json\+Writer\+Auto\+Object().
-
-
-
 Referenced by loop().
 
-
-\begin{DoxyCode}
-22                \{
-23     \textcolor{comment}{// This creates a buffer to hold up to 256 bytes of JSON data (good for Particle.publish)}
-24     JsonWriterStatic<256> jw;
-25 
-26     \textcolor{comment}{// Creating a scope like this in \{\} with a JsonWriterAutoObject in it creates an object,}
-27     \textcolor{comment}{// and automatically closes the object when leaving the scope. This is necessary because}
-28     \textcolor{comment}{// all JSON values must be in either an object or an array to be valid, and JsonWriter}
-29     \textcolor{comment}{// requires all startObject to be balanced with a finishObjectOrArray and JsonWriterAutoObject}
-30     \textcolor{comment}{// takes care of doing that automatically.}
-31     \{
-32         JsonWriterAutoObject obj(&jw);
-33 
-34         \textcolor{comment}{// Add various types of data}
-35         jw.insertKeyValue(\textcolor{stringliteral}{"a"}, \textcolor{keyword}{true});
-36         jw.insertKeyValue(\textcolor{stringliteral}{"b"}, 1234);
-37         jw.insertKeyValue(\textcolor{stringliteral}{"c"}, \textcolor{stringliteral}{"test"});
-38     \}
-39 
-40     \textcolor{comment}{// Verify the results}
-41     \textcolor{keywordflow}{if} (strcmp(jw.getBuffer(), \textcolor{stringliteral}{"\{\(\backslash\)"a\(\backslash\)":true,\(\backslash\)"b\(\backslash\)":1234,\(\backslash\)"c\(\backslash\)":\(\backslash\)"test\(\backslash\)"\}"})) \{
-42         Serial.printlnf(\textcolor{stringliteral}{"test mismatch got %s"}, jw.getBuffer());
-43         \textcolor{keywordflow}{return};
-44     \}
-45 
-46 
-47     Serial.println(\textcolor{stringliteral}{"test passed!"});
-48 \}
-\end{DoxyCode}
-\mbox{\label{2-generator-_json_parser_generator_r_k_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
+\mbox{\Hypertarget{2-generator-_json_parser_generator_r_k_8cpp_a4fc01d736fe50cf5b977f755b675f11d}\label{2-generator-_json_parser_generator_r_k_8cpp_a4fc01d736fe50cf5b977f755b675f11d}} 
 \index{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}!setup@{setup}}
 \index{setup@{setup}!2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
-\subsubsection{setup()}
+\subsubsection{\texorpdfstring{setup()}{setup()}}
 {\footnotesize\ttfamily void setup (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -110,28 +68,22 @@ Referenced by loop().
 Definition at line 11 of file 2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp.
 
 
-\begin{DoxyCode}
-11              \{
-12     Serial.begin(9600);
-13 \}
-\end{DoxyCode}
-
 
 \subsection{Variable Documentation}
-\mbox{\label{2-generator-_json_parser_generator_r_k_8cpp_a5082951a06f690a0623ea99ed4228392}} 
+\mbox{\Hypertarget{2-generator-_json_parser_generator_r_k_8cpp_a5082951a06f690a0623ea99ed4228392}\label{2-generator-_json_parser_generator_r_k_8cpp_a5082951a06f690a0623ea99ed4228392}} 
 \index{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}!last\+Run@{last\+Run}}
 \index{last\+Run@{last\+Run}!2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
-\subsubsection{last\+Run}
+\subsubsection{\texorpdfstring{last\+Run}{lastRun}}
 {\footnotesize\ttfamily unsigned long last\+Run = 0}
 
 
 
 Definition at line 6 of file 2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp.
 
-\mbox{\label{2-generator-_json_parser_generator_r_k_8cpp_a0aa12824a9c1a44e8d9f2499e0ba2698}} 
+\mbox{\Hypertarget{2-generator-_json_parser_generator_r_k_8cpp_a0aa12824a9c1a44e8d9f2499e0ba2698}\label{2-generator-_json_parser_generator_r_k_8cpp_a0aa12824a9c1a44e8d9f2499e0ba2698}} 
 \index{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}!T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS@{T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}}
 \index{T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS@{T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}!2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp@{2-\/generator-\/\+Json\+Parser\+Generator\+R\+K.\+cpp}}
-\subsubsection{T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}
+\subsubsection{\texorpdfstring{T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS}{TEST\_RUN\_PERIOD\_MS}}
 {\footnotesize\ttfamily const unsigned long T\+E\+S\+T\+\_\+\+R\+U\+N\+\_\+\+P\+E\+R\+I\+O\+D\+\_\+\+MS = 10000}
 
 

@@ -29,6 +29,5 @@ var searchData=
   ['getvaluetokenbycolrow',['getValueTokenByColRow',['../class_json_parser.html#a4fc494206dd45eba5959ffc2df444a21',1,'JsonParser']]],
   ['getvaluetokenbyindex',['getValueTokenByIndex',['../class_json_parser.html#a680846b3e3e3e1d40c27bbb71e080048',1,'JsonParser']]],
   ['getvaluetokenbykey',['getValueTokenByKey',['../class_json_parser.html#a39d613e94d0d6beafe908159f86bc067',1,'JsonParser']]],
-  ['getwriteerror',['getWriteError',['../class_print.html#a88a4a829fb5d589efb43955ad0cbddcc',1,'Print::getWriteError()'],['../class_print.html#a88a4a829fb5d589efb43955ad0cbddcc',1,'Print::getWriteError()']]],
   ['gsnreg',['GsNReg',['../class_m_f_r_c522.html#ae3b374c61bf50256289349fdb78fe181a2f81aa5f433fa51bb4b41cd8955de794',1,'MFRC522']]]
 ];

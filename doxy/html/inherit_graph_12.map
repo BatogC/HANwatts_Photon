@@ -1,5 +1,4 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$class_print.html" title="Class for printing to a stream or file. " alt="" coords="5,31,55,57"/>
-<area shape="rect" id="node2" href="$class_stream.html" title="Stream" alt="" coords="143,5,207,32"/>
-<area shape="rect" id="node3" href="$class_string_printable_helper.html" title="StringPrintableHelper" alt="" coords="103,56,248,83"/>
+<area shape="rect" id="node1" href="$class_string.html" title="Wiring String: A class to hold and manipulate a dynamically allocated string. " alt="" coords="5,5,61,32"/>
+<area shape="rect" id="node2" href="$class_string_sum_helper.html" title="Class used when appending mutiple String and other values using +. " alt="" coords="109,5,231,32"/>
 </map>

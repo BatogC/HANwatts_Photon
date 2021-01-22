@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['bin',['BIN',['../test_2gcclib_2spark__wiring__print_8h.html#aee179d58d1b76a9b42397af886f2f9a4',1,'BIN():&#160;spark_wiring_print.h'],['../docs_2src_2spark__wiring__print_8h.html#aee179d58d1b76a9b42397af886f2f9a4',1,'BIN():&#160;spark_wiring_print.h']]],
   ['bitframingreg',['BitFramingReg',['../class_m_f_r_c522.html#ae3b374c61bf50256289349fdb78fe181aaf8beb5a739cd8bf94b8b5c8d2d109ce',1,'MFRC522']]],
   ['blinkrfidled',['blinkRFIDled',['../2020__photon__code_8cpp.html#acd7da18abdd273f892ec13cb726810b6',1,'2020_photon_code.cpp']]],
   ['buf',['buf',['../class_json_parser_string.html#a3ffd87df1aff38ff4142fad32e1e3de0',1,'JsonParserString']]],

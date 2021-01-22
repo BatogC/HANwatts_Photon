@@ -1,8 +1,8 @@
-\section{Json\+Buffer Class Reference}
+\hypertarget{class_json_buffer}{}\section{Json\+Buffer Class Reference}
 \label{class_json_buffer}\index{Json\+Buffer@{Json\+Buffer}}
 
 
-Base class for managing a static or dynamic buffer, used by both \doxyref{Json\+Parser}{p.}{class_json_parser} and \doxyref{Json\+Writer}{p.}{class_json_writer}.  
+Base class for managing a static or dynamic buffer, used by both \hyperlink{class_json_parser}{Json\+Parser} and \hyperlink{class_json_writer}{Json\+Writer}.  
 
 
 
@@ -11,7 +11,8 @@ Base class for managing a static or dynamic buffer, used by both \doxyref{Json\+
 
 
 
-Inheritance diagram for Json\+Buffer\+:\nopagebreak
+Inheritance diagram for Json\+Buffer\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,62 +22,62 @@ Inheritance diagram for Json\+Buffer\+:\nopagebreak
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\textbf{ Json\+Buffer} ()
-\begin{DoxyCompactList}\small\item\em Construct a \doxyref{Json\+Buffer}{p.}{class_json_buffer} object with no external buffer specified. \end{DoxyCompactList}\item 
-virtual \textbf{ $\sim$\+Json\+Buffer} ()
+\hyperlink{class_json_buffer_a7198fe2dc430c6ebbc2374698c86f932}{Json\+Buffer} ()
+\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{class_json_buffer}{Json\+Buffer} object with no external buffer specified. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_json_buffer_a634ecf551d2d738b7a80b513e2c5a468}{$\sim$\+Json\+Buffer} ()
 \begin{DoxyCompactList}\small\item\em Destructor. Destroying the object does not delete any underlying buffer! \end{DoxyCompactList}\item 
-\textbf{ Json\+Buffer} (char $\ast$\textbf{ buffer}, size\+\_\+t \textbf{ buffer\+Len})
-\begin{DoxyCompactList}\small\item\em Construct a \doxyref{Json\+Buffer}{p.}{class_json_buffer} with an external buffer of a given size. \end{DoxyCompactList}\item 
-void \textbf{ set\+Buffer} (char $\ast$\textbf{ buffer}, size\+\_\+t \textbf{ buffer\+Len})
+\hyperlink{class_json_buffer_a645819ad48ee172c01a482bef9c1f765}{Json\+Buffer} (char $\ast$\hyperlink{class_json_buffer_aaee27fe51d12d68bd6031df3bc78b6b5}{buffer}, size\+\_\+t \hyperlink{class_json_buffer_af06130f43f71623ea6afe049c846e52b}{buffer\+Len})
+\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{class_json_buffer}{Json\+Buffer} with an external buffer of a given size. \end{DoxyCompactList}\item 
+void \hyperlink{class_json_buffer_a6721ab2b50d9b0bfc64d51c84c295230}{set\+Buffer} (char $\ast$\hyperlink{class_json_buffer_aaee27fe51d12d68bd6031df3bc78b6b5}{buffer}, size\+\_\+t \hyperlink{class_json_buffer_af06130f43f71623ea6afe049c846e52b}{buffer\+Len})
 \begin{DoxyCompactList}\small\item\em Sets the buffers to the specified buffer and length. \end{DoxyCompactList}\item 
-bool \textbf{ allocate} (size\+\_\+t len)
+bool \hyperlink{class_json_buffer_a1eb9d0cae3ef9a9ac56b8580bc70fe2e}{allocate} (size\+\_\+t len)
 \begin{DoxyCompactList}\small\item\em Allocate the buffer using malloc/realloc. \end{DoxyCompactList}\item 
-bool \textbf{ add\+String} (const char $\ast$data)
+bool \hyperlink{class_json_buffer_a61bf30ac6e1bd460f1e809d02a7d5ba4}{add\+String} (const char $\ast$data)
 \begin{DoxyCompactList}\small\item\em Add a c-\/string to the end of the buffer. \end{DoxyCompactList}\item 
-bool \textbf{ add\+Data} (const char $\ast$data, size\+\_\+t data\+Len)
+bool \hyperlink{class_json_buffer_a760cb5be42ed2d2ca9306b1109e76af3}{add\+Data} (const char $\ast$data, size\+\_\+t data\+Len)
 \begin{DoxyCompactList}\small\item\em Add a string to the end of the buffer. \end{DoxyCompactList}\item 
-char $\ast$ \textbf{ get\+Buffer} () const
+char $\ast$ \hyperlink{class_json_buffer_af8ca5014e0275487273f94c6b9223acf}{get\+Buffer} () const
 \begin{DoxyCompactList}\small\item\em Gets a pointer to the internal buffer. \end{DoxyCompactList}\item 
-size\+\_\+t \textbf{ get\+Offset} () const
+size\+\_\+t \hyperlink{class_json_buffer_adedc049fc02ef5bad2b3f8e7a1ba17b6}{get\+Offset} () const
 \begin{DoxyCompactList}\small\item\em Gets the current offset for writing. \end{DoxyCompactList}\item 
-void \textbf{ set\+Offset} (size\+\_\+t \textbf{ offset})
+void \hyperlink{class_json_buffer_a0043413c56e23d83f3b4dbe508a35315}{set\+Offset} (size\+\_\+t \hyperlink{class_json_buffer_aeb1ab3291108f351834f2e8c6784538c}{offset})
 \begin{DoxyCompactList}\small\item\em swets the current offset for writing \end{DoxyCompactList}\item 
-size\+\_\+t \textbf{ get\+Buffer\+Len} () const
+size\+\_\+t \hyperlink{class_json_buffer_a486352be5658e94b9b9bd13563801e68}{get\+Buffer\+Len} () const
 \begin{DoxyCompactList}\small\item\em Gets the current length of the buffer. \end{DoxyCompactList}\item 
-void \textbf{ clear} ()
+void \hyperlink{class_json_buffer_a70969847d857815a9ded6450378e0e53}{clear} ()
 \begin{DoxyCompactList}\small\item\em Clears the current buffer for writing. \end{DoxyCompactList}\item 
-void \textbf{ null\+Terminate} ()
+void \hyperlink{class_json_buffer_a9f649ceeed76bb798c0bf9792b56d743}{null\+Terminate} ()
 \begin{DoxyCompactList}\small\item\em Null terminates the buffer. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-char $\ast$ \textbf{ buffer}
+char $\ast$ \hyperlink{class_json_buffer_aaee27fe51d12d68bd6031df3bc78b6b5}{buffer}
 \begin{DoxyCompactList}\small\item\em The buffer to to read from or write to. This is not null-\/terminated. \end{DoxyCompactList}\item 
-size\+\_\+t \textbf{ buffer\+Len}
+size\+\_\+t \hyperlink{class_json_buffer_af06130f43f71623ea6afe049c846e52b}{buffer\+Len}
 \begin{DoxyCompactList}\small\item\em The length of the buffer in bytes,. \end{DoxyCompactList}\item 
-size\+\_\+t \textbf{ offset}
+size\+\_\+t \hyperlink{class_json_buffer_aeb1ab3291108f351834f2e8c6784538c}{offset}
 \begin{DoxyCompactList}\small\item\em The read or write offset. \end{DoxyCompactList}\item 
-bool \textbf{ static\+Buffers}
+bool \hyperlink{class_json_buffer_a729845e25c624d1dcb1da9712afbcdf7}{static\+Buffers}
 \begin{DoxyCompactList}\small\item\em True if the buffers were passed in and should not freed or reallocated. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
-Base class for managing a static or dynamic buffer, used by both \doxyref{Json\+Parser}{p.}{class_json_parser} and \doxyref{Json\+Writer}{p.}{class_json_writer}. 
+Base class for managing a static or dynamic buffer, used by both \hyperlink{class_json_parser}{Json\+Parser} and \hyperlink{class_json_writer}{Json\+Writer}. 
 
 Definition at line 146 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\label{class_json_buffer_a7198fe2dc430c6ebbc2374698c86f932}} 
+\mbox{\Hypertarget{class_json_buffer_a7198fe2dc430c6ebbc2374698c86f932}\label{class_json_buffer_a7198fe2dc430c6ebbc2374698c86f932}} 
 \index{Json\+Buffer@{Json\+Buffer}!Json\+Buffer@{Json\+Buffer}}
 \index{Json\+Buffer@{Json\+Buffer}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{Json\+Buffer()\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+\subsubsection{\texorpdfstring{Json\+Buffer()}{JsonBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily Json\+Buffer\+::\+Json\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
 
-Construct a \doxyref{Json\+Buffer}{p.}{class_json_buffer} object with no external buffer specified. 
+Construct a \hyperlink{class_json_buffer}{Json\+Buffer} object with no external buffer specified. 
 
 
 
@@ -90,16 +91,10 @@ References buffer, buffer\+Len, offset, and static\+Buffers.
 
 Referenced by Json\+Parser\+::\+Json\+Parser(), and Json\+Writer\+::\+Json\+Writer().
 
-
-\begin{DoxyCode}
-6                         : buffer(0), bufferLen(0), offset(0), staticBuffers(\textcolor{keyword}{false}) \{
-7 
-8 \}
-\end{DoxyCode}
-\mbox{\label{class_json_buffer_a634ecf551d2d738b7a80b513e2c5a468}} 
+\mbox{\Hypertarget{class_json_buffer_a634ecf551d2d738b7a80b513e2c5a468}\label{class_json_buffer_a634ecf551d2d738b7a80b513e2c5a468}} 
 \index{Json\+Buffer@{Json\+Buffer}!````~Json\+Buffer@{$\sim$\+Json\+Buffer}}
 \index{````~Json\+Buffer@{$\sim$\+Json\+Buffer}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{$\sim$\+Json\+Buffer()}
+\subsubsection{\texorpdfstring{$\sim$\+Json\+Buffer()}{~JsonBuffer()}}
 {\footnotesize\ttfamily Json\+Buffer\+::$\sim$\+Json\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
 
 
@@ -114,23 +109,15 @@ Definition at line 9 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 References buffer, and static\+Buffers.
 
-
-\begin{DoxyCode}
-9                         \{
-10     \textcolor{keywordflow}{if} (!staticBuffers && buffer) \{
-11         free(buffer);
-12     \}
-13 \}
-\end{DoxyCode}
-\mbox{\label{class_json_buffer_a645819ad48ee172c01a482bef9c1f765}} 
+\mbox{\Hypertarget{class_json_buffer_a645819ad48ee172c01a482bef9c1f765}\label{class_json_buffer_a645819ad48ee172c01a482bef9c1f765}} 
 \index{Json\+Buffer@{Json\+Buffer}!Json\+Buffer@{Json\+Buffer}}
 \index{Json\+Buffer@{Json\+Buffer}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{Json\+Buffer()\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+\subsubsection{\texorpdfstring{Json\+Buffer()}{JsonBuffer()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily Json\+Buffer\+::\+Json\+Buffer (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{buffer\+Len }\end{DoxyParamCaption})}
 
 
 
-Construct a \doxyref{Json\+Buffer}{p.}{class_json_buffer} with an external buffer of a given size. 
+Construct a \hyperlink{class_json_buffer}{Json\+Buffer} with an external buffer of a given size. 
 
 
 \begin{DoxyParams}{Parameters}
@@ -152,19 +139,12 @@ References buffer, buffer\+Len, offset, and static\+Buffers.
 Referenced by Json\+Parser\+::\+Json\+Parser(), and Json\+Writer\+::\+Json\+Writer().
 
 
-\begin{DoxyCode}
-15                                                       : buffer(buffer), 
-      bufferLen(bufferLen), offset(0), staticBuffers(\textcolor{keyword}{true}) \{
-16 
-17 \}
-\end{DoxyCode}
-
 
 \subsection{Member Function Documentation}
-\mbox{\label{class_json_buffer_a760cb5be42ed2d2ca9306b1109e76af3}} 
+\mbox{\Hypertarget{class_json_buffer_a760cb5be42ed2d2ca9306b1109e76af3}\label{class_json_buffer_a760cb5be42ed2d2ca9306b1109e76af3}} 
 \index{Json\+Buffer@{Json\+Buffer}!add\+Data@{add\+Data}}
 \index{add\+Data@{add\+Data}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{add\+Data()}
+\subsubsection{\texorpdfstring{add\+Data()}{addData()}}
 {\footnotesize\ttfamily bool Json\+Buffer\+::add\+Data (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data,  }\item[{size\+\_\+t}]{data\+Len }\end{DoxyParamCaption})}
 
 
@@ -188,28 +168,12 @@ References allocate(), buffer, buffer\+Len, and offset.
 
 
 
-Referenced by add\+String(), and main().
+Referenced by main().
 
-
-\begin{DoxyCode}
-48                                                          \{
-49     \textcolor{keywordflow}{if} (!buffer || (offset + dataLen) > bufferLen) \{
-50         \textcolor{comment}{// Need to allocate more space for data}
-51         \textcolor{keywordflow}{if} (!allocate(offset + dataLen)) \{
-52             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-53         \}
-54     \}
-55 
-56     memcpy(&buffer[offset], data, dataLen);
-57     offset += dataLen;
-58 
-59     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-60 \}
-\end{DoxyCode}
-\mbox{\label{class_json_buffer_a61bf30ac6e1bd460f1e809d02a7d5ba4}} 
+\mbox{\Hypertarget{class_json_buffer_a61bf30ac6e1bd460f1e809d02a7d5ba4}\label{class_json_buffer_a61bf30ac6e1bd460f1e809d02a7d5ba4}} 
 \index{Json\+Buffer@{Json\+Buffer}!add\+String@{add\+String}}
 \index{add\+String@{add\+String}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{add\+String()}
+\subsubsection{\texorpdfstring{add\+String()}{addString()}}
 {\footnotesize\ttfamily bool Json\+Buffer\+::add\+String (\begin{DoxyParamCaption}\item[{const char $\ast$}]{data }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -227,20 +191,12 @@ Definition at line 197 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 
 
-References add\+Data().
+Referenced by main().
 
-
-
-Referenced by main(), run\+Test(), and subscription\+Handler().
-
-
-\begin{DoxyCode}
-197 \{ \textcolor{keywordflow}{return} addData(data, strlen(data)); \}
-\end{DoxyCode}
-\mbox{\label{class_json_buffer_a1eb9d0cae3ef9a9ac56b8580bc70fe2e}} 
+\mbox{\Hypertarget{class_json_buffer_a1eb9d0cae3ef9a9ac56b8580bc70fe2e}\label{class_json_buffer_a1eb9d0cae3ef9a9ac56b8580bc70fe2e}} 
 \index{Json\+Buffer@{Json\+Buffer}!allocate@{allocate}}
 \index{allocate@{allocate}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{allocate()}
+\subsubsection{\texorpdfstring{allocate()}{allocate()}}
 {\footnotesize\ttfamily bool Json\+Buffer\+::allocate (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{len }\end{DoxyParamCaption})}
 
 
@@ -267,35 +223,10 @@ References buffer, buffer\+Len, and static\+Buffers.
 
 Referenced by add\+Data(), and main().
 
-
-\begin{DoxyCode}
-25                                     \{
-26     \textcolor{keywordflow}{if} (!staticBuffers) \{
-27         \textcolor{keywordtype}{char} *newBuffer;
-28         \textcolor{keywordflow}{if} (buffer) \{
-29             newBuffer = (\textcolor{keywordtype}{char} *) realloc(buffer, len);
-30         \}
-31         \textcolor{keywordflow}{else} \{
-32             newBuffer = (\textcolor{keywordtype}{char} *) malloc(len);
-33         \}
-34         \textcolor{keywordflow}{if} (newBuffer) \{
-35             buffer = newBuffer;
-36             bufferLen = len;
-37             \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-38         \}
-39         \textcolor{keywordflow}{else} \{
-40             \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-41         \}
-42     \}
-43     \textcolor{keywordflow}{else} \{
-44         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-45     \}
-46 \}
-\end{DoxyCode}
-\mbox{\label{class_json_buffer_a70969847d857815a9ded6450378e0e53}} 
+\mbox{\Hypertarget{class_json_buffer_a70969847d857815a9ded6450378e0e53}\label{class_json_buffer_a70969847d857815a9ded6450378e0e53}} 
 \index{Json\+Buffer@{Json\+Buffer}!clear@{clear}}
 \index{clear@{clear}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{clear()}
+\subsubsection{\texorpdfstring{clear()}{clear()}}
 {\footnotesize\ttfamily void Json\+Buffer\+::clear (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -310,20 +241,10 @@ Definition at line 62 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 References offset.
 
-
-
-Referenced by get\+Measure\+\_\+callback(), run\+Test(), and subscription\+Handler().
-
-
-\begin{DoxyCode}
-62                        \{
-63     offset = 0;
-64 \}
-\end{DoxyCode}
-\mbox{\label{class_json_buffer_af8ca5014e0275487273f94c6b9223acf}} 
+\mbox{\Hypertarget{class_json_buffer_af8ca5014e0275487273f94c6b9223acf}\label{class_json_buffer_af8ca5014e0275487273f94c6b9223acf}} 
 \index{Json\+Buffer@{Json\+Buffer}!get\+Buffer@{get\+Buffer}}
 \index{get\+Buffer@{get\+Buffer}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{get\+Buffer()}
+\subsubsection{\texorpdfstring{get\+Buffer()}{getBuffer()}}
 {\footnotesize\ttfamily char$\ast$ Json\+Buffer\+::get\+Buffer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -340,16 +261,12 @@ References buffer.
 
 
 
-Referenced by \+\_\+assert\+Json\+Parser\+Buffer(), \+\_\+assert\+Json\+Writer\+Buffer(), Json\+Modifier\+::find\+Left\+Comma(), Json\+Modifier\+::find\+Right\+Comma(), Json\+Modifier\+::finish(), print\+Json\+Inner(), print\+Token(), Json\+Modifier\+::remove\+Array\+Index(), Json\+Modifier\+::remove\+Key\+Value(), run\+Test(), Json\+Modifier\+::start\+Append(), and Json\+Modifier\+::start\+Modify().
+Referenced by Json\+Modifier\+::find\+Left\+Comma(), Json\+Modifier\+::find\+Right\+Comma(), Json\+Modifier\+::start\+Append(), and Json\+Modifier\+::start\+Modify().
 
-
-\begin{DoxyCode}
-213 \{ \textcolor{keywordflow}{return} buffer; \}
-\end{DoxyCode}
-\mbox{\label{class_json_buffer_a486352be5658e94b9b9bd13563801e68}} 
+\mbox{\Hypertarget{class_json_buffer_a486352be5658e94b9b9bd13563801e68}\label{class_json_buffer_a486352be5658e94b9b9bd13563801e68}} 
 \index{Json\+Buffer@{Json\+Buffer}!get\+Buffer\+Len@{get\+Buffer\+Len}}
 \index{get\+Buffer\+Len@{get\+Buffer\+Len}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{get\+Buffer\+Len()}
+\subsubsection{\texorpdfstring{get\+Buffer\+Len()}{getBufferLen()}}
 {\footnotesize\ttfamily size\+\_\+t Json\+Buffer\+::get\+Buffer\+Len (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -368,14 +285,10 @@ References buffer\+Len.
 
 Referenced by Json\+Modifier\+::start\+Append(), and Json\+Modifier\+::start\+Modify().
 
-
-\begin{DoxyCode}
-231 \{ \textcolor{keywordflow}{return} bufferLen; \}
-\end{DoxyCode}
-\mbox{\label{class_json_buffer_adedc049fc02ef5bad2b3f8e7a1ba17b6}} 
+\mbox{\Hypertarget{class_json_buffer_adedc049fc02ef5bad2b3f8e7a1ba17b6}\label{class_json_buffer_adedc049fc02ef5bad2b3f8e7a1ba17b6}} 
 \index{Json\+Buffer@{Json\+Buffer}!get\+Offset@{get\+Offset}}
 \index{get\+Offset@{get\+Offset}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{get\+Offset()}
+\subsubsection{\texorpdfstring{get\+Offset()}{getOffset()}}
 {\footnotesize\ttfamily size\+\_\+t Json\+Buffer\+::get\+Offset (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -394,14 +307,10 @@ References offset.
 
 Referenced by \+\_\+assert\+Json\+Parser\+Buffer(), \+\_\+assert\+Json\+Writer\+Buffer(), Json\+Modifier\+::find\+Right\+Comma(), Json\+Modifier\+::finish(), Json\+Modifier\+::remove\+Array\+Index(), Json\+Modifier\+::remove\+Key\+Value(), Json\+Modifier\+::start\+Append(), and Json\+Modifier\+::start\+Modify().
 
-
-\begin{DoxyCode}
-218 \{ \textcolor{keywordflow}{return} offset; \}
-\end{DoxyCode}
-\mbox{\label{class_json_buffer_a9f649ceeed76bb798c0bf9792b56d743}} 
+\mbox{\Hypertarget{class_json_buffer_a9f649ceeed76bb798c0bf9792b56d743}\label{class_json_buffer_a9f649ceeed76bb798c0bf9792b56d743}} 
 \index{Json\+Buffer@{Json\+Buffer}!null\+Terminate@{null\+Terminate}}
 \index{null\+Terminate@{null\+Terminate}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{null\+Terminate()}
+\subsubsection{\texorpdfstring{null\+Terminate()}{nullTerminate()}}
 {\footnotesize\ttfamily void Json\+Buffer\+::null\+Terminate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
 
 
@@ -416,23 +325,10 @@ Definition at line 66 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 References buffer, buffer\+Len, and offset.
 
-
-\begin{DoxyCode}
-66                                \{
-67     \textcolor{keywordflow}{if} (buffer) \{
-68         \textcolor{keywordflow}{if} (offset < bufferLen) \{
-69             buffer[offset] = 0;
-70         \}
-71         \textcolor{keywordflow}{else} \{
-72             buffer[bufferLen - 1] = 0;
-73         \}
-74     \}
-75 \}
-\end{DoxyCode}
-\mbox{\label{class_json_buffer_a6721ab2b50d9b0bfc64d51c84c295230}} 
+\mbox{\Hypertarget{class_json_buffer_a6721ab2b50d9b0bfc64d51c84c295230}\label{class_json_buffer_a6721ab2b50d9b0bfc64d51c84c295230}} 
 \index{Json\+Buffer@{Json\+Buffer}!set\+Buffer@{set\+Buffer}}
 \index{set\+Buffer@{set\+Buffer}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{set\+Buffer()}
+\subsubsection{\texorpdfstring{set\+Buffer()}{setBuffer()}}
 {\footnotesize\ttfamily void Json\+Buffer\+::set\+Buffer (\begin{DoxyParamCaption}\item[{char $\ast$}]{buffer,  }\item[{size\+\_\+t}]{buffer\+Len }\end{DoxyParamCaption})}
 
 
@@ -458,18 +354,10 @@ References buffer, buffer\+Len, and static\+Buffers.
 
 Referenced by Json\+Modifier\+::start\+Append(), and Json\+Modifier\+::start\+Modify().
 
-
-\begin{DoxyCode}
-19                                                          \{
-20     this->buffer = buffer;
-21     this->bufferLen = bufferLen;
-22     this->staticBuffers = \textcolor{keyword}{true};
-23 \}
-\end{DoxyCode}
-\mbox{\label{class_json_buffer_a0043413c56e23d83f3b4dbe508a35315}} 
+\mbox{\Hypertarget{class_json_buffer_a0043413c56e23d83f3b4dbe508a35315}\label{class_json_buffer_a0043413c56e23d83f3b4dbe508a35315}} 
 \index{Json\+Buffer@{Json\+Buffer}!set\+Offset@{set\+Offset}}
 \index{set\+Offset@{set\+Offset}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{set\+Offset()}
+\subsubsection{\texorpdfstring{set\+Offset()}{setOffset()}}
 {\footnotesize\ttfamily void Json\+Buffer\+::set\+Offset (\begin{DoxyParamCaption}\item[{size\+\_\+t}]{offset }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
@@ -489,16 +377,12 @@ References offset.
 Referenced by Json\+Modifier\+::finish(), Json\+Modifier\+::remove\+Array\+Index(), and Json\+Modifier\+::remove\+Key\+Value().
 
 
-\begin{DoxyCode}
-223 \{ this->offset = offset; \};
-\end{DoxyCode}
-
 
 \subsection{Member Data Documentation}
-\mbox{\label{class_json_buffer_aaee27fe51d12d68bd6031df3bc78b6b5}} 
+\mbox{\Hypertarget{class_json_buffer_aaee27fe51d12d68bd6031df3bc78b6b5}\label{class_json_buffer_aaee27fe51d12d68bd6031df3bc78b6b5}} 
 \index{Json\+Buffer@{Json\+Buffer}!buffer@{buffer}}
 \index{buffer@{buffer}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{buffer}
+\subsubsection{\texorpdfstring{buffer}{buffer}}
 {\footnotesize\ttfamily char$\ast$ Json\+Buffer\+::buffer\hspace{0.3cm}{\ttfamily [protected]}}
 
 
@@ -511,12 +395,12 @@ Definition at line 246 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 
 
-Referenced by add\+Data(), allocate(), Json\+Parser\+::allocate\+Tokens(), Json\+Parser\+::copy\+Token\+Value(), Json\+Writer\+::finish\+Object\+Or\+Array(), get\+Buffer(), Json\+Parser\+::get\+Token\+Json\+String(), Json\+Parser\+::get\+Token\+Value(), Json\+Writer\+::insert\+Char(), Json\+Writer\+::insertvsprintf(), Json\+Buffer(), null\+Terminate(), Json\+Parser\+::parse(), set\+Buffer(), and $\sim$\+Json\+Buffer().
+Referenced by add\+Data(), allocate(), Json\+Parser\+::copy\+Token\+Value(), Json\+Writer\+::finish\+Object\+Or\+Array(), get\+Buffer(), Json\+Parser\+::get\+Token\+Json\+String(), Json\+Parser\+::get\+Token\+Value(), Json\+Writer\+::insert\+Char(), Json\+Buffer(), null\+Terminate(), Json\+Parser\+::parse(), set\+Buffer(), and $\sim$\+Json\+Buffer().
 
-\mbox{\label{class_json_buffer_af06130f43f71623ea6afe049c846e52b}} 
+\mbox{\Hypertarget{class_json_buffer_af06130f43f71623ea6afe049c846e52b}\label{class_json_buffer_af06130f43f71623ea6afe049c846e52b}} 
 \index{Json\+Buffer@{Json\+Buffer}!buffer\+Len@{buffer\+Len}}
 \index{buffer\+Len@{buffer\+Len}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{buffer\+Len}
+\subsubsection{\texorpdfstring{buffer\+Len}{bufferLen}}
 {\footnotesize\ttfamily size\+\_\+t Json\+Buffer\+::buffer\+Len\hspace{0.3cm}{\ttfamily [protected]}}
 
 
@@ -531,10 +415,10 @@ Definition at line 247 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 Referenced by add\+Data(), allocate(), Json\+Writer\+::finish\+Object\+Or\+Array(), get\+Buffer\+Len(), Json\+Writer\+::insert\+Char(), Json\+Writer\+::insert\+String(), Json\+Writer\+::insertvsprintf(), Json\+Buffer(), null\+Terminate(), and set\+Buffer().
 
-\mbox{\label{class_json_buffer_aeb1ab3291108f351834f2e8c6784538c}} 
+\mbox{\Hypertarget{class_json_buffer_aeb1ab3291108f351834f2e8c6784538c}\label{class_json_buffer_aeb1ab3291108f351834f2e8c6784538c}} 
 \index{Json\+Buffer@{Json\+Buffer}!offset@{offset}}
 \index{offset@{offset}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{offset}
+\subsubsection{\texorpdfstring{offset}{offset}}
 {\footnotesize\ttfamily size\+\_\+t Json\+Buffer\+::offset\hspace{0.3cm}{\ttfamily [protected]}}
 
 
@@ -549,10 +433,10 @@ Definition at line 248 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 Referenced by add\+Data(), clear(), Json\+Writer\+::finish\+Object\+Or\+Array(), get\+Offset(), Json\+Writer\+::init(), Json\+Writer\+::insert\+Char(), Json\+Writer\+::insert\+String(), Json\+Writer\+::insertvsprintf(), Json\+Buffer(), null\+Terminate(), Json\+Parser\+::parse(), and set\+Offset().
 
-\mbox{\label{class_json_buffer_a729845e25c624d1dcb1da9712afbcdf7}} 
+\mbox{\Hypertarget{class_json_buffer_a729845e25c624d1dcb1da9712afbcdf7}\label{class_json_buffer_a729845e25c624d1dcb1da9712afbcdf7}} 
 \index{Json\+Buffer@{Json\+Buffer}!static\+Buffers@{static\+Buffers}}
 \index{static\+Buffers@{static\+Buffers}!Json\+Buffer@{Json\+Buffer}}
-\subsubsection{static\+Buffers}
+\subsubsection{\texorpdfstring{static\+Buffers}{staticBuffers}}
 {\footnotesize\ttfamily bool Json\+Buffer\+::static\+Buffers\hspace{0.3cm}{\ttfamily [protected]}}
 
 
@@ -571,5 +455,5 @@ Referenced by allocate(), Json\+Parser\+::allocate\+Tokens(), Json\+Buffer(), Js
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-lib/\+Json\+Parser\+Generator\+R\+K/src/\textbf{ Json\+Parser\+Generator\+R\+K.\+h}\item 
-lib/\+Json\+Parser\+Generator\+R\+K/src/\textbf{ Json\+Parser\+Generator\+R\+K.\+cpp}\end{DoxyCompactItemize}
+lib/\+Json\+Parser\+Generator\+R\+K/src/\hyperlink{_json_parser_generator_r_k_8h}{Json\+Parser\+Generator\+R\+K.\+h}\item 
+lib/\+Json\+Parser\+Generator\+R\+K/src/\hyperlink{_json_parser_generator_r_k_8cpp}{Json\+Parser\+Generator\+R\+K.\+cpp}\end{DoxyCompactItemize}
