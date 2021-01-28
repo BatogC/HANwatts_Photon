@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['sizeofuserlist',['SIZEOFUSERLIST',['../2020__photon__code_8cpp.html#aa62b9ad8e9fe9cb8780b8f27c509baaf',1,'2020_photon_code.cpp']]],
-  ['ss_5fpin_5fcharger1',['SS_PIN_CHARGER1',['../2020__photon__code_8cpp.html#a1e87c855c31041a5f4bca41f110ecb23',1,'2020_photon_code.cpp']]],
-  ['ss_5fpin_5fcharger2',['SS_PIN_CHARGER2',['../2020__photon__code_8cpp.html#a5cb1ec604593003ff86b9e36162aeb1a',1,'2020_photon_code.cpp']]]
+  ['reset_5folimex',['RESET_OLIMEX',['../2020__photon__code_8cpp.html#ac12b65d6887bad87a0b5a519bba88dbe',1,'2020_photon_code.cpp']]],
+  ['rst_5fpin',['RST_PIN',['../2020__photon__code_8cpp.html#a36932b0e869e0114f32e255f61306d6b',1,'2020_photon_code.cpp']]],
+  ['rsttimeout',['RSTTIMEOUT',['../_commandparser_8h.html#ae6f3a1996e8ab3a0b1f9a5354e41db0f',1,'Commandparser.h']]]
 ];

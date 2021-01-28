@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['chargeroffset',['CHARGEROFFSET',['../2020__photon__code_8cpp.html#aff16429df21a43a886f66fdbc1e850a1',1,'2020_photon_code.cpp']]]
+  ['bufsize',['BUFSIZE',['../_commandparser_8h.html#aeca034f67218340ecb2261a22c2f3dcd',1,'Commandparser.h']]]
 ];

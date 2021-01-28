@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['uid',['Uid',['../struct_m_f_r_c522_1_1_uid.html',1,'MFRC522']]]
+  ['stream',['Stream',['../class_stream.html',1,'']]],
+  ['string',['String',['../class_string.html',1,'']]],
+  ['stringprintablehelper',['StringPrintableHelper',['../class_string_printable_helper.html',1,'']]],
+  ['stringsumhelper',['StringSumHelper',['../class_string_sum_helper.html',1,'']]]
 ];

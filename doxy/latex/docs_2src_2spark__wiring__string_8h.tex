@@ -1,0 +1,69 @@
+\hypertarget{docs_2src_2spark__wiring__string_8h}{}\section{lib/\+Json\+Parser\+Generator\+R\+K/docs/src/spark\+\_\+wiring\+\_\+string.h File Reference}
+\label{docs_2src_2spark__wiring__string_8h}\index{lib/\+Json\+Parser\+Generator\+R\+K/docs/src/spark\+\_\+wiring\+\_\+string.\+h@{lib/\+Json\+Parser\+Generator\+R\+K/docs/src/spark\+\_\+wiring\+\_\+string.\+h}}
+{\ttfamily \#include $<$stdarg.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}spark\+\_\+wiring\+\_\+print.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}spark\+\_\+wiring\+\_\+printable.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ostream$>$}\newline
+Include dependency graph for spark\+\_\+wiring\+\_\+string.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{docs_2src_2spark__wiring__string_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{docs_2src_2spark__wiring__string_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \hyperlink{class_string}{String}
+\begin{DoxyCompactList}\small\item\em Wiring \hyperlink{class_string}{String}\+: A class to hold and manipulate a dynamically allocated string. \end{DoxyCompactList}\item 
+class \hyperlink{class_string_sum_helper}{String\+Sum\+Helper}
+\begin{DoxyCompactList}\small\item\em Class used when appending mutiple \hyperlink{class_string}{String} and other values using +. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{docs_2src_2spark__wiring__string_8h_a2ec9e0c82a2cc5b0eb0bc8158cc7d64c}{F}(X)~(X)
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{docs_2src_2spark__wiring__string_8h_a75a6c2170b59dd7dc4b91f73f77d8e00}{operator$<$$<$} (std\+::ostream \&os, const \hyperlink{class_string}{String} \&value)
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\mbox{\Hypertarget{docs_2src_2spark__wiring__string_8h_a2ec9e0c82a2cc5b0eb0bc8158cc7d64c}\label{docs_2src_2spark__wiring__string_8h_a2ec9e0c82a2cc5b0eb0bc8158cc7d64c}} 
+\index{docs/src/spark\+\_\+wiring\+\_\+string.\+h@{docs/src/spark\+\_\+wiring\+\_\+string.\+h}!F@{F}}
+\index{F@{F}!docs/src/spark\+\_\+wiring\+\_\+string.\+h@{docs/src/spark\+\_\+wiring\+\_\+string.\+h}}
+\subsubsection{\texorpdfstring{F}{F}}
+{\footnotesize\ttfamily \#define F(\begin{DoxyParamCaption}\item[{}]{X }\end{DoxyParamCaption})~(X)}
+
+
+
+Definition at line 44 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{docs_2src_2spark__wiring__string_8h_a75a6c2170b59dd7dc4b91f73f77d8e00}\label{docs_2src_2spark__wiring__string_8h_a75a6c2170b59dd7dc4b91f73f77d8e00}} 
+\index{docs/src/spark\+\_\+wiring\+\_\+string.\+h@{docs/src/spark\+\_\+wiring\+\_\+string.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!docs/src/spark\+\_\+wiring\+\_\+string.\+h@{docs/src/spark\+\_\+wiring\+\_\+string.\+h}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}}
+{\footnotesize\ttfamily std\+::ostream\& operator$<$$<$ (\begin{DoxyParamCaption}\item[{std\+::ostream \&}]{os,  }\item[{const \hyperlink{class_string}{String} \&}]{value }\end{DoxyParamCaption})}
+
+
+
+Definition at line 807 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References String\+::c\+\_\+str().
+

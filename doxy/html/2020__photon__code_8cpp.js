@@ -49,6 +49,8 @@ var 2020__photon__code_8cpp =
     [ "Frequency", "2020__photon__code_8cpp.html#ad8ee7ca82dcb110d2d5e32d73116b001", null ],
     [ "handledCharger", "2020__photon__code_8cpp.html#a9e450e39c6f4d83b30ab1c7baf55b308", null ],
     [ "LatestStartTime", "2020__photon__code_8cpp.html#ad9f162f714be8b69815d0a235c95c099", null ],
+    [ "latestUID1", "2020__photon__code_8cpp.html#aa30c831d7117c1442287526570a90c20", null ],
+    [ "latestUID2", "2020__photon__code_8cpp.html#a4183b3a07abe46eb609ddd3bbc39ce3c", null ],
     [ "LineVoltage", "2020__photon__code_8cpp.html#a97cf7b62d84c77183146053465157cdc", null ],
     [ "mfrc522_Charger1", "2020__photon__code_8cpp.html#a1777032818666232368a054cc7cc76f8", null ],
     [ "mfrc522_Charger2", "2020__photon__code_8cpp.html#a3dfbf949915a0daa4ff676106f605085", null ],

@@ -1,5 +1,7 @@
 <map id="lib/MFRC522" name="lib/MFRC522">
-<area shape="rect" id="node2" href="dir_a6a85200a0d867b4aa73915ee03329b1.html" title="src" alt="" coords="37,63,109,111"/>
-<area shape="rect" id="clust2" href="dir_b84635bd1be13c70485f5058d1d66f98.html" alt="" coords="27,52,227,121"/>
-<area shape="rect" id="clust1" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html" title="lib" alt="" coords="16,16,237,132"/>
+<area shape="rect" id="node2" href="dir_a6a85200a0d867b4aa73915ee03329b1.html" title="src" alt="" coords="51,63,123,111"/>
+<area shape="rect" id="node3" href="dir_5a67b15dd7d4ea74c0455493ec289812.html" title="JsonParserGeneratorRK" alt="" coords="5,159,169,207"/>
+<area shape="rect" id="edge1-headlabel" href="dir_000012_000001.html" title="1" alt="" coords="92,133,100,147"/>
+<area shape="rect" id="clust2" href="dir_b84635bd1be13c70485f5058d1d66f98.html" alt="" coords="41,52,241,121"/>
+<area shape="rect" id="clust1" href="dir_97aefd0d527b934f1d99a682da8fe6a9.html" title="lib" alt="" coords="30,16,251,132"/>
 </map>

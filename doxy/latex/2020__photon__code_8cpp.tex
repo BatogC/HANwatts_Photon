@@ -118,10 +118,14 @@ float \hyperlink{2020__photon__code_8cpp_acd950d6d9d76947b74823343a5f4a25d}{Curr
 \item 
 int \hyperlink{2020__photon__code_8cpp_ab804d1dfcf90d1a4adf1b6417583e014}{number\+Of\+Zero\+Readings} \mbox{[}2\mbox{]}
 \item 
+\hyperlink{class_string}{String} \hyperlink{2020__photon__code_8cpp_aa30c831d7117c1442287526570a90c20}{latest\+U\+I\+D1} =\char`\"{}No ID\char`\"{}
+\begin{DoxyCompactList}\small\item\em var to hold last swiped R\+F\+ID tag at first socket \end{DoxyCompactList}\item 
+\hyperlink{class_string}{String} \hyperlink{2020__photon__code_8cpp_a4183b3a07abe46eb609ddd3bbc39ce3c}{latest\+U\+I\+D2} =\char`\"{}No ID\char`\"{}
+\begin{DoxyCompactList}\small\item\em var to hold last swiped R\+F\+ID tag at second socket \end{DoxyCompactList}\item 
 \hyperlink{class_string}{String} \hyperlink{2020__photon__code_8cpp_ad7696488afa62029edaf7487c0c32979}{U\+I\+Dtag\+Charger1} =\char`\"{}No ID\char`\"{}
-\begin{DoxyCompactList}\small\item\em var to hold swiped R\+F\+ID tag at first socket \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em var to hold valid R\+F\+ID tag at first socket (used for Measurements) \end{DoxyCompactList}\item 
 \hyperlink{class_string}{String} \hyperlink{2020__photon__code_8cpp_ae42c45149b41b8f8cee744bb45a607ea}{U\+I\+Dtag\+Charger2} =\char`\"{}No ID\char`\"{}
-\begin{DoxyCompactList}\small\item\em var to hold swiped R\+F\+ID tag at second socket \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em var to hold valid R\+F\+ID tag at second socket (used for Measurements) \end{DoxyCompactList}\item 
 \hyperlink{class_m_q_t_t}{M\+Q\+TT} \hyperlink{2020__photon__code_8cpp_adb31c248dea8d23a099aa0dad886c3a5}{client} (\char`\"{}broker.\+hivemq.\+com\char`\"{}, 1883, M\+Q\+T\+T\+\_\+\+D\+E\+F\+A\+U\+L\+T\+\_\+\+K\+E\+E\+P\+A\+L\+I\+VE, \hyperlink{2020__photon__code_8cpp_ac3a129f66dc859e2b7279565f4e1de78}{callback}, 512)
 \begin{DoxyCompactList}\small\item\em \hyperlink{class_m_q_t_t}{M\+Q\+TT} client details; do not set last number to over 512! \end{DoxyCompactList}\item 
 \hyperlink{class_string}{String} \hyperlink{2020__photon__code_8cpp_a3f4173fd4828d1d948935a30e1841263}{test} = \char`\"{}0\char`\"{}
@@ -157,7 +161,7 @@ unsigned int \hyperlink{2020__photon__code_8cpp_a4e589466e8ba636e450e90122ed5918
 
 
 
-Definition at line 76 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 81 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a2a2d5c06c6e46098cf951476de493799}\label{2020__photon__code_8cpp_a2a2d5c06c6e46098cf951476de493799}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R2@{A\+U\+T\+H\+E\+N\+T\+I\+C\+A\+T\+I\+O\+N\+\_\+\+C\+A\+R2}}
@@ -167,7 +171,7 @@ Definition at line 76 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 77 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 82 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_aff16429df21a43a886f66fdbc1e850a1}\label{2020__photon__code_8cpp_aff16429df21a43a886f66fdbc1e850a1}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!C\+H\+A\+R\+G\+E\+R\+O\+F\+F\+S\+ET@{C\+H\+A\+R\+G\+E\+R\+O\+F\+F\+S\+ET}}
@@ -181,7 +185,7 @@ constant that sets for which Photon this program is intended
 
 For Photon 1 set it to 0, for Photon 2 set to 2. Any more and program would need to be edited. 
 
-Definition at line 59 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 64 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_acbc24b500df51b97ae92c398a78f2257}\label{2020__photon__code_8cpp_acbc24b500df51b97ae92c398a78f2257}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!D\+E\+B\+U\+G\+P\+O\+RT@{D\+E\+B\+U\+G\+P\+O\+RT}}
@@ -191,7 +195,7 @@ Definition at line 59 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 60 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 65 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_af4d98da13b92f926914c4a759759b393}\label{2020__photon__code_8cpp_af4d98da13b92f926914c4a759759b393}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!E\+X\+T\+RA@{E\+X\+T\+RA}}
@@ -201,7 +205,7 @@ Definition at line 60 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 78 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 83 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a7466c8664394caedeaf8797c447f296a}\label{2020__photon__code_8cpp_a7466c8664394caedeaf8797c447f296a}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+1@{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+1}}
@@ -211,7 +215,7 @@ Definition at line 78 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 69 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 74 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a9ef1c29e6e7bcbc882a9516aa991450c}\label{2020__photon__code_8cpp_a9ef1c29e6e7bcbc882a9516aa991450c}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+2@{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+2}}
@@ -221,7 +225,7 @@ Definition at line 69 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 70 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 75 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a43dce6a6e56f62f028f06dffd7731dbd}\label{2020__photon__code_8cpp_a43dce6a6e56f62f028f06dffd7731dbd}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+3@{E\+X\+T\+R\+A\+\_\+\+D\+I\+G\+I\+T\+A\+L\+\_\+\+B\+R\+E\+A\+K\+O\+U\+T\+\_\+3}}
@@ -231,7 +235,7 @@ Definition at line 70 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 71 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 76 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a17398a9ea4c977d65d45016629ac4b62}\label{2020__photon__code_8cpp_a17398a9ea4c977d65d45016629ac4b62}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+1@{P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+1}}
@@ -241,7 +245,7 @@ Definition at line 71 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 74 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 79 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a5f0a51ff733ab3850f902312bc66e821}\label{2020__photon__code_8cpp_a5f0a51ff733ab3850f902312bc66e821}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+2@{P\+I\+L\+O\+T\+\_\+\+F\+E\+E\+D\+B\+A\+C\+K\+\_\+\+C\+A\+R\+\_\+2}}
@@ -251,7 +255,7 @@ Definition at line 74 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 75 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 80 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_ac12b65d6887bad87a0b5a519bba88dbe}\label{2020__photon__code_8cpp_ac12b65d6887bad87a0b5a519bba88dbe}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!R\+E\+S\+E\+T\+\_\+\+O\+L\+I\+M\+EX@{R\+E\+S\+E\+T\+\_\+\+O\+L\+I\+M\+EX}}
@@ -261,7 +265,7 @@ Definition at line 75 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 73 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 78 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a36932b0e869e0114f32e255f61306d6b}\label{2020__photon__code_8cpp_a36932b0e869e0114f32e255f61306d6b}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!R\+S\+T\+\_\+\+P\+IN@{R\+S\+T\+\_\+\+P\+IN}}
@@ -271,7 +275,7 @@ Definition at line 73 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 67 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 72 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_aa62b9ad8e9fe9cb8780b8f27c509baaf}\label{2020__photon__code_8cpp_aa62b9ad8e9fe9cb8780b8f27c509baaf}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!S\+I\+Z\+E\+O\+F\+U\+S\+E\+R\+L\+I\+ST@{S\+I\+Z\+E\+O\+F\+U\+S\+E\+R\+L\+I\+ST}}
@@ -281,7 +285,7 @@ Definition at line 67 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 61 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 66 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a1e87c855c31041a5f4bca41f110ecb23}\label{2020__photon__code_8cpp_a1e87c855c31041a5f4bca41f110ecb23}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R1@{S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R1}}
@@ -291,7 +295,7 @@ Definition at line 61 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 65 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 70 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a5cb1ec604593003ff86b9e36162aeb1a}\label{2020__photon__code_8cpp_a5cb1ec604593003ff86b9e36162aeb1a}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R2@{S\+S\+\_\+\+P\+I\+N\+\_\+\+C\+H\+A\+R\+G\+E\+R2}}
@@ -301,7 +305,7 @@ Definition at line 65 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 66 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 71 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a67e476f839a040379490a06939ebac31}\label{2020__photon__code_8cpp_a67e476f839a040379490a06939ebac31}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!W\+A\+K\+E\+U\+P\+\_\+\+O\+L\+I\+M\+EX@{W\+A\+K\+E\+U\+P\+\_\+\+O\+L\+I\+M\+EX}}
@@ -311,7 +315,7 @@ Definition at line 66 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 72 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 77 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -328,7 +332,7 @@ Return 1 if socket 1 is used, 2 if socket 2 is used, and 3 if both are in use.
 
 
 
-Definition at line 195 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 200 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -346,7 +350,7 @@ Function ran for each socket every 30s in main loop to send measurements through
 
 
 
-Definition at line 510 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 519 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a3019b040c98717baa7b6048ac7a35dd7}\label{2020__photon__code_8cpp_a3019b040c98717baa7b6048ac7a35dd7}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!allow\+User\+\_\+callback@{allow\+User\+\_\+callback}}
@@ -360,11 +364,11 @@ Callback function to process and execute approval or denial to charge from Pi, t
 
 
 
-Definition at line 438 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 443 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-References client, String\+::concat(), String\+::operator=(), Pianswer, M\+Q\+T\+T\+::publish(), U\+I\+Dtag\+Charger1, and U\+I\+Dtag\+Charger2.
+References client, String\+::concat(), latest\+U\+I\+D1, latest\+U\+I\+D2, String\+::operator=(), Pianswer, U\+I\+Dtag\+Charger1, and U\+I\+Dtag\+Charger2.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_acd7da18abdd273f892ec13cb726810b6}\label{2020__photon__code_8cpp_acd7da18abdd273f892ec13cb726810b6}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!blink\+R\+F\+I\+Dled@{blink\+R\+F\+I\+Dled}}
@@ -378,7 +382,7 @@ unused function to blink the Photon L\+ED
 
 
 
-Definition at line 179 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 184 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_ac3a129f66dc859e2b7279565f4e1de78}\label{2020__photon__code_8cpp_ac3a129f66dc859e2b7279565f4e1de78}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!callback@{callback}}
@@ -392,11 +396,11 @@ Main function for \hyperlink{class_m_q_t_t}{M\+Q\+TT} client to check for new me
 
 
 
-Definition at line 671 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 683 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-References max\+Current\+C1(), max\+Current\+C2(), String\+::operator=(), reset\+Olimex(), reset\+Particle(), switch\+Test(), and test.
+References max\+Current\+C1(), max\+Current\+C2(), String\+::operator=(), reset\+Olimex(), reset\+Particle(), switch\+Test(), test, and T\+E\+S\+T\+C\+A\+SE.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a4c5d5ea4f6d4b65954431d96e299d9bf}\label{2020__photon__code_8cpp_a4c5d5ea4f6d4b65954431d96e299d9bf}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!char\+To\+String@{char\+To\+String}}
@@ -410,7 +414,7 @@ Deprecated function to convert char to \hyperlink{class_string}{String} -\/ the 
 
 
 
-Definition at line 140 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 145 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -428,11 +432,11 @@ Callback function to automatically set max Currents from \hyperlink{class_m_q_t_
 
 
 
-Definition at line 316 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 321 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-References max\+Current\+C1\+\_\+test(), and max\+Current\+C2\+\_\+test().
+References Json\+Buffer\+::clear(), max\+Current\+C1\+\_\+test(), max\+Current\+C2\+\_\+test(), and Json\+Parser\+::parse().
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a9e8e91d801c5f9812d2862fcc94153b3}\label{2020__photon__code_8cpp_a9e8e91d801c5f9812d2862fcc94153b3}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!get\+User\+Id\+At\+Socket@{get\+User\+Id\+At\+Socket}}
@@ -446,7 +450,7 @@ Returns R\+F\+ID tag at the asked socket.
 
 
 
-Definition at line 307 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 312 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -464,7 +468,7 @@ Initialises R\+F\+ID reader.
 
 
 
-Definition at line 558 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 567 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -482,11 +486,11 @@ Main running function that executes all other functions; runs over 5times/second
 
 
 
-Definition at line 879 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 891 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-References client, handled\+Charger, M\+Q\+T\+T\+::is\+Connected(), Latest\+Start\+Time, M\+Q\+T\+T\+::loop(), String\+::operator=(), read\+R\+F\+I\+D\+Card(), read\+Serial\+Olimex(), reconnect(), U\+I\+Dtag\+Charger1, and U\+I\+Dtag\+Charger2.
+References client, handled\+Charger, Latest\+Start\+Time, String\+::operator!=(), String\+::operator=(), read\+R\+F\+I\+D\+Card(), read\+Serial\+Olimex(), reconnect(), U\+I\+Dtag\+Charger1, and U\+I\+Dtag\+Charger2.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_aa95a87dbf10d08c2472e2060115a786d}\label{2020__photon__code_8cpp_aa95a87dbf10d08c2472e2060115a786d}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!max\+Current\+C1@{max\+Current\+C1}}
@@ -500,7 +504,7 @@ Sets max Current output at socket 1 in manual mode.
 
 
 
-Definition at line 229 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 234 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -522,11 +526,11 @@ Sets max Current output at socket 1/3 in renewable mode and publishes new setpoi
 
 
 
-Definition at line 257 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 262 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-References client, String\+::concat(), M\+Q\+T\+T\+::publish(), String\+::\+String(), and T\+E\+S\+T\+C\+A\+SE.
+References client, String\+::concat(), String\+::\+String(), and T\+E\+S\+T\+C\+A\+SE.
 
 
 
@@ -544,7 +548,7 @@ Sets max Current output at socket 2 in manual mode.
 
 
 
-Definition at line 243 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 248 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -566,11 +570,11 @@ Sets max Current output at socket 2/4 in renewable mode and publishes new setpoi
 
 
 
-Definition at line 273 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 278 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-References client, String\+::concat(), M\+Q\+T\+T\+::publish(), String\+::\+String(), and T\+E\+S\+T\+C\+A\+SE.
+References client, String\+::concat(), String\+::\+String(), and T\+E\+S\+T\+C\+A\+SE.
 
 
 
@@ -588,7 +592,7 @@ Sets Olimex into programming mode.
 
 
 
-Definition at line 169 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 174 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -606,11 +610,11 @@ Checks and reads R\+F\+ID tag at the asked socket, then \hyperlink{class_m_q_t_t
 
 
 
-Definition at line 581 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 590 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-References Pianswer, String\+::substring(), U\+I\+Dtag\+Charger1, and U\+I\+Dtag\+Charger2.
+References latest\+U\+I\+D1, latest\+U\+I\+D2, Pianswer, and String\+::substring().
 
 
 
@@ -624,7 +628,7 @@ Referenced by loop().
 
 Function to read from Olimex serial port and run \hyperlink{_commandparser_8h_a5f5ebe01157b79c2f4383d42a3787168}{string\+Parse()} Returns the last charger socket it received data from. 
 
-Definition at line 271 of file Commandparser.\+h.
+Definition at line 273 of file Commandparser.\+h.
 
 
 
@@ -646,11 +650,11 @@ Function to reconnect to \hyperlink{class_m_q_t_t}{M\+Q\+TT} server if not conne
 
 
 
-Definition at line 785 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 797 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-References client, M\+Q\+T\+T\+::connect(), M\+Q\+T\+T\+::is\+Connected(), and M\+Q\+T\+T\+::subscribe().
+References client.
 
 
 
@@ -668,7 +672,7 @@ Sends reset signal to EV charger controller.
 
 
 
-Definition at line 151 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 156 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -686,7 +690,7 @@ Resets Photon.
 
 
 
-Definition at line 164 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 169 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -704,7 +708,7 @@ Inital setup for pin assignments and serial links start.
 
 
 
-Definition at line 830 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 842 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -728,7 +732,7 @@ Switches between renewable mode (-\/input \char`\"{}true\char`\"{}) and manual s
 
 
 
-Definition at line 215 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 220 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -750,7 +754,7 @@ Return wifi strength.
 
 
 
-Definition at line 159 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 164 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -777,7 +781,7 @@ Referenced by allow\+User\+\_\+callback(), loop(), max\+Current\+C1\+\_\+test(),
 
 
 
-Definition at line 96 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 101 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_ac7a5502c6bab0b1b7f3e1bd58546eb1e}\label{2020__photon__code_8cpp_ac7a5502c6bab0b1b7f3e1bd58546eb1e}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Current@{Current}}
@@ -815,7 +819,7 @@ Referenced by string\+Parse().
 
 
 
-Definition at line 135 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 140 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_aee63a73e17fd417c7562f2e5d7c81cb8}\label{2020__photon__code_8cpp_aee63a73e17fd417c7562f2e5d7c81cb8}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Energy@{Energy}}
@@ -857,7 +861,7 @@ Holds last handled socket (0 for first socket)
 
 
 
-Definition at line 102 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 107 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -875,11 +879,47 @@ Holds latest start of new charge if charger is in use.
 
 
 
-Definition at line 100 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 105 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
 Referenced by loop().
+
+\mbox{\Hypertarget{2020__photon__code_8cpp_aa30c831d7117c1442287526570a90c20}\label{2020__photon__code_8cpp_aa30c831d7117c1442287526570a90c20}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!latest\+U\+I\+D1@{latest\+U\+I\+D1}}
+\index{latest\+U\+I\+D1@{latest\+U\+I\+D1}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{\texorpdfstring{latest\+U\+I\+D1}{latestUID1}}
+{\footnotesize\ttfamily \hyperlink{class_string}{String} latest\+U\+I\+D1 =\char`\"{}No ID\char`\"{}}
+
+
+
+var to hold last swiped R\+F\+ID tag at first socket 
+
+
+
+Definition at line 52 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+Referenced by allow\+User\+\_\+callback(), and read\+R\+F\+I\+D\+Card().
+
+\mbox{\Hypertarget{2020__photon__code_8cpp_a4183b3a07abe46eb609ddd3bbc39ce3c}\label{2020__photon__code_8cpp_a4183b3a07abe46eb609ddd3bbc39ce3c}} 
+\index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!latest\+U\+I\+D2@{latest\+U\+I\+D2}}
+\index{latest\+U\+I\+D2@{latest\+U\+I\+D2}!2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}}
+\subsubsection{\texorpdfstring{latest\+U\+I\+D2}{latestUID2}}
+{\footnotesize\ttfamily \hyperlink{class_string}{String} latest\+U\+I\+D2 =\char`\"{}No ID\char`\"{}}
+
+
+
+var to hold last swiped R\+F\+ID tag at second socket 
+
+
+
+Definition at line 54 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+
+
+
+Referenced by allow\+User\+\_\+callback(), and read\+R\+F\+I\+D\+Card().
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a97cf7b62d84c77183146053465157cdc}\label{2020__photon__code_8cpp_a97cf7b62d84c77183146053465157cdc}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!Line\+Voltage@{Line\+Voltage}}
@@ -919,7 +959,7 @@ Next timestamp to publish measurements in ms.
 
 
 
-Definition at line 137 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 142 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_ab804d1dfcf90d1a4adf1b6417583e014}\label{2020__photon__code_8cpp_ab804d1dfcf90d1a4adf1b6417583e014}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!number\+Of\+Zero\+Readings@{number\+Of\+Zero\+Readings}}
@@ -961,7 +1001,7 @@ var that holds answer from Pi but is unused now
 
 
 
-Definition at line 110 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 115 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -989,7 +1029,7 @@ Referenced by string\+Parse().
 
 
 
-Definition at line 103 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 108 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_a3f4173fd4828d1d948935a30e1841263}\label{2020__photon__code_8cpp_a3f4173fd4828d1d948935a30e1841263}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!test@{test}}
@@ -999,7 +1039,7 @@ Definition at line 103 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Definition at line 93 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 98 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
@@ -1017,11 +1057,11 @@ var that holds the charging mode (T\+R\+UE = renewable)
 
 
 
-Definition at line 107 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 112 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Referenced by max\+Current\+C1(), max\+Current\+C1\+\_\+test(), max\+Current\+C2(), max\+Current\+C2\+\_\+test(), and switch\+Test().
+Referenced by callback(), max\+Current\+C1(), max\+Current\+C1\+\_\+test(), max\+Current\+C2(), max\+Current\+C2\+\_\+test(), and switch\+Test().
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_ad7696488afa62029edaf7487c0c32979}\label{2020__photon__code_8cpp_ad7696488afa62029edaf7487c0c32979}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!U\+I\+Dtag\+Charger1@{U\+I\+Dtag\+Charger1}}
@@ -1031,15 +1071,15 @@ Referenced by max\+Current\+C1(), max\+Current\+C1\+\_\+test(), max\+Current\+C2
 
 
 
-var to hold swiped R\+F\+ID tag at first socket 
+var to hold valid R\+F\+ID tag at first socket (used for Measurements) 
 
 
 
-Definition at line 51 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 56 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Referenced by allow\+User\+\_\+callback(), get\+User\+Id\+At\+Socket(), loop(), and read\+R\+F\+I\+D\+Card().
+Referenced by allow\+User\+\_\+callback(), get\+User\+Id\+At\+Socket(), and loop().
 
 \mbox{\Hypertarget{2020__photon__code_8cpp_ae42c45149b41b8f8cee744bb45a607ea}\label{2020__photon__code_8cpp_ae42c45149b41b8f8cee744bb45a607ea}} 
 \index{2020\+\_\+photon\+\_\+code.\+cpp@{2020\+\_\+photon\+\_\+code.\+cpp}!U\+I\+Dtag\+Charger2@{U\+I\+Dtag\+Charger2}}
@@ -1049,13 +1089,13 @@ Referenced by allow\+User\+\_\+callback(), get\+User\+Id\+At\+Socket(), loop(), 
 
 
 
-var to hold swiped R\+F\+ID tag at second socket 
+var to hold valid R\+F\+ID tag at second socket (used for Measurements) 
 
 
 
-Definition at line 53 of file 2020\+\_\+photon\+\_\+code.\+cpp.
+Definition at line 58 of file 2020\+\_\+photon\+\_\+code.\+cpp.
 
 
 
-Referenced by allow\+User\+\_\+callback(), get\+User\+Id\+At\+Socket(), loop(), and read\+R\+F\+I\+D\+Card().
+Referenced by allow\+User\+\_\+callback(), get\+User\+Id\+At\+Socket(), and loop().
 

@@ -10,5 +10,6 @@ var searchData=
   ['allowuser_5fcallback',['allowUser_callback',['../2020__photon__code_8cpp.html#a3019b040c98717baa7b6048ac7a35dd7',1,'2020_photon_code.cpp']]],
   ['append',['append',['../class_json_parser_string.html#a7a8f809096c291c4cd7717df4a6534cf',1,'JsonParserString::append(char ch)'],['../class_json_parser_string.html#a28e2858fe1481e20fa8bc40054378c9f',1,'JsonParserString::append(const char *str, size_t len)']]],
   ['appendarrayvalue',['appendArrayValue',['../class_json_modifier.html#ac492f5945ef4e4bc003fea5af5b9c504',1,'JsonModifier']]],
-  ['appendutf8',['appendUtf8',['../class_json_parser.html#a498dcdec7949c88dfc454d052e25ff69',1,'JsonParser']]]
+  ['appendutf8',['appendUtf8',['../class_json_parser.html#a498dcdec7949c88dfc454d052e25ff69',1,'JsonParser']]],
+  ['available',['available',['../class_stream.html#a747aa1d8db334a7b735a48dbc135478c',1,'Stream::available()'],['../class_stream.html#a9c98a763395005c08ce95afb2f06c7b1',1,'Stream::available()=0']]]
 ];

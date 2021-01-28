@@ -1,0 +1,62 @@
+\hypertarget{class_printable}{}\section{Printable Class Reference}
+\label{class_printable}\index{Printable@{Printable}}
+
+
+The \hyperlink{class_printable}{Printable} class provides a way for new classes to allow themselves to be printed.  
+
+
+
+
+{\ttfamily \#include $<$spark\+\_\+wiring\+\_\+printable.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual size\+\_\+t \hyperlink{class_printable_a2c5776bc55c0a3a5675bba9d4d8e3681}{print\+To} (\hyperlink{class_print}{Print} \&p) const =0
+\item 
+virtual size\+\_\+t \hyperlink{class_printable_a2c5776bc55c0a3a5675bba9d4d8e3681}{print\+To} (\hyperlink{class_print}{Print} \&p) const =0
+\begin{DoxyCompactList}\small\item\em \hyperlink{class_print}{Print} a textual representation of the class to a \hyperlink{class_print}{Print} object. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+The \hyperlink{class_printable}{Printable} class provides a way for new classes to allow themselves to be printed. 
+
+The \hyperlink{class_printable}{Printable} class provides a way for new classes to allow themselves to be printed. By deriving from \hyperlink{class_printable}{Printable} and implementing the print\+To method, it will then be possible for users to print out instances of this class by passing them into the usual \hyperlink{class_print_acfe80773011eb17dfb52c2fba517a093}{Print\+::print} and \hyperlink{class_print_ad337ce3f7977411b7d34d47a51e5737e}{Print\+::println} methods.
+
+By deriving from \hyperlink{class_printable}{Printable} and implementing the print\+To method, it will then be possible for users to print out instances of this class by passing them into the usual \hyperlink{class_print_acfe80773011eb17dfb52c2fba517a093}{Print\+::print} and \hyperlink{class_print_ad337ce3f7977411b7d34d47a51e5737e}{Print\+::println} methods. 
+
+Definition at line 40 of file spark\+\_\+wiring\+\_\+printable.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_printable_a2c5776bc55c0a3a5675bba9d4d8e3681}\label{class_printable_a2c5776bc55c0a3a5675bba9d4d8e3681}} 
+\index{Printable@{Printable}!print\+To@{print\+To}}
+\index{print\+To@{print\+To}!Printable@{Printable}}
+\subsubsection{\texorpdfstring{print\+To()}{printTo()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily virtual size\+\_\+t Printable\+::print\+To (\begin{DoxyParamCaption}\item[{\hyperlink{class_print}{Print} \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\mbox{\Hypertarget{class_printable_a2c5776bc55c0a3a5675bba9d4d8e3681}\label{class_printable_a2c5776bc55c0a3a5675bba9d4d8e3681}} 
+\index{Printable@{Printable}!print\+To@{print\+To}}
+\index{print\+To@{print\+To}!Printable@{Printable}}
+\subsubsection{\texorpdfstring{print\+To()}{printTo()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily virtual size\+\_\+t Printable\+::print\+To (\begin{DoxyParamCaption}\item[{\hyperlink{class_print}{Print} \&}]{p }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+\hyperlink{class_print}{Print} a textual representation of the class to a \hyperlink{class_print}{Print} object. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p} & The \hyperlink{class_print}{Print} object to print to \\
+\hline
+\end{DoxyParams}
+
+
+Referenced by Print\+::print(), and String\+::\+String().
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+lib/\+Json\+Parser\+Generator\+R\+K/test/gcclib/\hyperlink{test_2gcclib_2spark__wiring__printable_8h}{spark\+\_\+wiring\+\_\+printable.\+h}\end{DoxyCompactItemize}

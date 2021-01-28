@@ -19,6 +19,11 @@ var hierarchy =
     [ "MFRC522", "class_m_f_r_c522.html", null ],
     [ "MFRC522::MIFARE_Key", "struct_m_f_r_c522_1_1_m_i_f_a_r_e___key.html", null ],
     [ "MQTT", "class_m_q_t_t.html", null ],
+    [ "Print", "class_print.html", [
+      [ "Stream", "class_stream.html", null ],
+      [ "StringPrintableHelper", "class_string_printable_helper.html", null ]
+    ] ],
+    [ "Printable", "class_printable.html", null ],
     [ "String", "class_string.html", [
       [ "StringSumHelper", "class_string_sum_helper.html", null ]
     ] ],

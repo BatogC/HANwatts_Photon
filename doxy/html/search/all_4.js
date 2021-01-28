@@ -16,5 +16,6 @@ var searchData=
   ['assertjsonwriterbuffer',['assertJsonWriterBuffer',['../_json_test_8cpp.html#a576bc9d27a740d45bb60fe2bef06cf97',1,'JsonTest.cpp']]],
   ['authentication_5fcar1',['AUTHENTICATION_CAR1',['../2020__photon__code_8cpp.html#ad9c4f7d10f64d91b939705d74023b303',1,'2020_photon_code.cpp']]],
   ['authentication_5fcar2',['AUTHENTICATION_CAR2',['../2020__photon__code_8cpp.html#a2a2d5c06c6e46098cf951476de493799',1,'2020_photon_code.cpp']]],
-  ['autotestreg',['AutoTestReg',['../class_m_f_r_c522.html#ae3b374c61bf50256289349fdb78fe181a9583618ad17a8a20b7a735c7677c8e56',1,'MFRC522']]]
+  ['autotestreg',['AutoTestReg',['../class_m_f_r_c522.html#ae3b374c61bf50256289349fdb78fe181a9583618ad17a8a20b7a735c7677c8e56',1,'MFRC522']]],
+  ['available',['available',['../class_stream.html#a747aa1d8db334a7b735a48dbc135478c',1,'Stream::available()'],['../class_stream.html#a9c98a763395005c08ce95afb2f06c7b1',1,'Stream::available()=0']]]
 ];

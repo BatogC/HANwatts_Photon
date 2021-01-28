@@ -11,8 +11,7 @@ Class used internally for writing to strings.
 
 
 
-Collaboration diagram for Json\+Parser\+String\+:
-\nopagebreak
+Collaboration diagram for Json\+Parser\+String\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -80,7 +79,11 @@ Definition at line 623 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 
 
-References buf, buf\+Len, and length.
+References buf, buf\+Len, length, and str.
+
+
+
+Referenced by Json\+Parser\+::get\+Token\+Json\+String(), and Json\+Parser\+::get\+Token\+Value().
 
 \mbox{\Hypertarget{class_json_parser_string_ae0f9e3309682685ed259ad1370eb448f}\label{class_json_parser_string_ae0f9e3309682685ed259ad1370eb448f}} 
 \index{Json\+Parser\+String@{Json\+Parser\+String}!Json\+Parser\+String@{Json\+Parser\+String}}
@@ -105,7 +108,7 @@ Definition at line 626 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 
 
-References buf, buf\+Len, and length.
+References buf, buf\+Len, length, and str.
 
 
 
@@ -135,7 +138,7 @@ Definition at line 632 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 
 
-References buf, buf\+Len, and length.
+References buf, buf\+Len, String\+::concat(), length, and str.
 
 
 
@@ -265,6 +268,10 @@ When writing to a \hyperlink{class_string}{String}, the \hyperlink{class_string}
 
 
 Definition at line 137 of file Json\+Parser\+Generator\+R\+K.\+h.
+
+
+
+Referenced by append(), and Json\+Parser\+String().
 
 
 

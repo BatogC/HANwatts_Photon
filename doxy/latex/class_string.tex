@@ -11,8 +11,7 @@ Wiring \hyperlink{class_string}{String}\+: A class to hold and manipulate a dyna
 
 
 
-Inheritance diagram for String\+:
-\nopagebreak
+Inheritance diagram for String\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -30,8 +29,8 @@ Inheritance diagram for String\+:
 \begin{DoxyCompactList}\small\item\em Construct a \hyperlink{class_string}{String} object as a copy of another string. \end{DoxyCompactList}\item 
 \hyperlink{class_string_a8c89c89e3cb69407bf55443c3d9dce0c}{String} (const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$pstr)
 \item 
-\hyperlink{class_string_ad61d0ac2a1ff6e81fc7da8097be3c4dd}{String} (const Printable \&printable)
-\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{class_string}{String} object from any Printable object. \end{DoxyCompactList}\item 
+\hyperlink{class_string_ad61d0ac2a1ff6e81fc7da8097be3c4dd}{String} (const \hyperlink{class_printable}{Printable} \&printable)
+\begin{DoxyCompactList}\small\item\em Construct a \hyperlink{class_string}{String} object from any \hyperlink{class_printable}{Printable} object. \end{DoxyCompactList}\item 
 \hyperlink{class_string_a1fdfe981d2c5e0075c1669dd94553082}{String} (char c)
 \begin{DoxyCompactList}\small\item\em Construct a \hyperlink{class_string}{String} containing a single character. \end{DoxyCompactList}\item 
 \hyperlink{class_string_adb05525482f5991815322239e5504539}{String} (unsigned char b, unsigned char base=10)
@@ -54,9 +53,9 @@ unsigned char \hyperlink{class_string_a138edcc762cb87649d81757d1e4ab419}{reserve
 \begin{DoxyCompactList}\small\item\em Reserves a buffer of size. \end{DoxyCompactList}\item 
 unsigned int \hyperlink{class_string_a21691d4bac5ec852977018fef6fb9c8a}{length} (void) const
 \begin{DoxyCompactList}\small\item\em Returns the length of the string in bytes. \end{DoxyCompactList}\item 
-\hyperlink{class_string}{String} \& \hyperlink{class_string_aeb3b38d9acd37e511d82c9f4dc7565a3}{operator=} (const \hyperlink{class_string}{String} \&rhs)
+\hyperlink{class_string}{String} \& \hyperlink{class_string_a70b3aba8ac7a57e3bb48a52a5d64a88b}{operator=} (const \hyperlink{class_string}{String} \&rhs)
 \begin{DoxyCompactList}\small\item\em Assigns this string to have a copy of \hyperlink{class_string}{String} rhs. \end{DoxyCompactList}\item 
-\hyperlink{class_string}{String} \& \hyperlink{class_string_ab7151855d8e95ab3703f0284298d9ac1}{operator=} (const char $\ast$cstr)
+\hyperlink{class_string}{String} \& \hyperlink{class_string_a0138caa55ac6d8b5bcd1fa7bb484a831}{operator=} (const char $\ast$cstr)
 \begin{DoxyCompactList}\small\item\em Assigns this string to have a copy of c-\/string (null-\/terminated) cstr. \end{DoxyCompactList}\item 
 \hyperlink{class_string}{String} \& \hyperlink{class_string_a965951ee729f850adb40d3c0997922bb}{operator=} (const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$pstr)
 \item 
@@ -138,7 +137,7 @@ void \hyperlink{class_string_a000b7c7b89bbd326a9b966a79bc838e8}{set\+Char\+At} (
 \begin{DoxyCompactList}\small\item\em Set the character at offset index. \end{DoxyCompactList}\item 
 char \hyperlink{class_string_a277d6b29f7f152a03c81700b12e43e55}{operator\mbox{[}$\,$\mbox{]}} (unsigned int index) const
 \begin{DoxyCompactList}\small\item\em Gets the character at offset index. \end{DoxyCompactList}\item 
-char \& \hyperlink{class_string_a0c9922e5854f82cd9952fcb4d6006059}{operator\mbox{[}$\,$\mbox{]}} (unsigned int index)
+char \& \hyperlink{class_string_a92a0681d0031d7e99c12c245cc22367e}{operator\mbox{[}$\,$\mbox{]}} (unsigned int index)
 \begin{DoxyCompactList}\small\item\em Set the character at offset index. \end{DoxyCompactList}\item 
 void \hyperlink{class_string_a507250e2de463e60e8df8fb5089f8dae}{get\+Bytes} (unsigned char $\ast$buf, unsigned int bufsize, unsigned int index=0) const
 \begin{DoxyCompactList}\small\item\em Copy the data out of this \hyperlink{class_string}{String} into another buffer. \end{DoxyCompactList}\item 
@@ -166,19 +165,19 @@ int \hyperlink{class_string_a08e7c60202cc42fe4731b52c0c5cd80f}{last\+Index\+Of} 
 \begin{DoxyCompactList}\small\item\em Returns a \hyperlink{class_string}{String} object with a copy of the characters starting at begin\+Index through the end of the string. \end{DoxyCompactList}\item 
 \hyperlink{class_string}{String} \hyperlink{class_string_ad04cc1c85089951dc3a182b4397a9f40}{substring} (unsigned int begin\+Index, unsigned int end\+Index) const
 \begin{DoxyCompactList}\small\item\em Returns a \hyperlink{class_string}{String} object with a copy of the characters in the specified range. \end{DoxyCompactList}\item 
-\hyperlink{class_string}{String} \& \hyperlink{class_string_a3452044f5ec9ffba3dcc3c2b355b769f}{replace} (char find, char replace)
+\hyperlink{class_string}{String} \& \hyperlink{class_string_a06f5fff85fe14f6369811383d915ca1a}{replace} (char find, char replace)
 \begin{DoxyCompactList}\small\item\em Replaces every occurrence of a character in the string with another character, modifying it in place. \end{DoxyCompactList}\item 
-\hyperlink{class_string}{String} \& \hyperlink{class_string_a6b91a0ceae7dd3f86b952ce2cebf783c}{replace} (const \hyperlink{class_string}{String} \&find, const \hyperlink{class_string}{String} \&replace)
+\hyperlink{class_string}{String} \& \hyperlink{class_string_ad87b4e7c4d06d6fee95c5caa21b6ca83}{replace} (const \hyperlink{class_string}{String} \&find, const \hyperlink{class_string}{String} \&replace)
 \begin{DoxyCompactList}\small\item\em Replaces every occurrence of a \hyperlink{class_string}{String} with another \hyperlink{class_string}{String}, modifying it in place. \end{DoxyCompactList}\item 
-\hyperlink{class_string}{String} \& \hyperlink{class_string_ae65cdfb8e1bf70458d3d699c27754a9b}{remove} (unsigned int index)
+\hyperlink{class_string}{String} \& \hyperlink{class_string_a01ab28577facf21ffc183a59983b259e}{remove} (unsigned int index)
 \begin{DoxyCompactList}\small\item\em Removes characters from the \hyperlink{class_string}{String}, modifying it in place. \end{DoxyCompactList}\item 
-\hyperlink{class_string}{String} \& \hyperlink{class_string_ab27df1671530a95f2d8308fe179729e0}{remove} (unsigned int index, unsigned int count)
+\hyperlink{class_string}{String} \& \hyperlink{class_string_a0c7e2c4875de0d99ad462aeac6da7ef9}{remove} (unsigned int index, unsigned int count)
 \begin{DoxyCompactList}\small\item\em Removes characters from the \hyperlink{class_string}{String}, modifying it in place. \end{DoxyCompactList}\item 
-\hyperlink{class_string}{String} \& \hyperlink{class_string_ab281c09b3379e2ab74fa35f619f1d7ad}{to\+Lower\+Case} (void)
+\hyperlink{class_string}{String} \& \hyperlink{class_string_a9754260e421ad64409d2fe5817dc243f}{to\+Lower\+Case} (void)
 \begin{DoxyCompactList}\small\item\em Converts this \hyperlink{class_string}{String} to lower case, modifying it in place. \end{DoxyCompactList}\item 
-\hyperlink{class_string}{String} \& \hyperlink{class_string_ad911fa09bbf609765ed4a0c8eecbe96f}{to\+Upper\+Case} (void)
+\hyperlink{class_string}{String} \& \hyperlink{class_string_a5384fd869d047a68429cbcc6d26d94fa}{to\+Upper\+Case} (void)
 \begin{DoxyCompactList}\small\item\em Converts this \hyperlink{class_string}{String} to upper case, modifying it in place. \end{DoxyCompactList}\item 
-\hyperlink{class_string}{String} \& \hyperlink{class_string_ab479206db8365accc3ee40108798f8dc}{trim} (void)
+\hyperlink{class_string}{String} \& \hyperlink{class_string_a7b9ef1226bef45dac72045042afc16e8}{trim} (void)
 \begin{DoxyCompactList}\small\item\em Removes leading an trailing white spaces from this string, modifying it in place. \end{DoxyCompactList}\item 
 long \hyperlink{class_string_a2dc5a9a787f8ff266d1130594ec65237}{to\+Int} (void) const
 \begin{DoxyCompactList}\small\item\em Converts this string to a signed integer (32-\/bit) \end{DoxyCompactList}\item 
@@ -187,7 +186,7 @@ float \hyperlink{class_string_ac501497ce1ba7679e80152eaa71c9986}{to\+Float} (voi
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static \hyperlink{class_string}{String} \hyperlink{class_string_a735dfb188ddcaaddbcb42cc3a9e59afc}{format} (const char $\ast$format,...)
+static \hyperlink{class_string}{String} \hyperlink{class_string_a0d717afd6f0ea29cc70175886b56fbd8}{format} (const char $\ast$format,...)
 \begin{DoxyCompactList}\small\item\em Uses sprintf-\/style formatting to build a \hyperlink{class_string}{String} object \mbox{[}static\mbox{]}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
@@ -200,7 +199,7 @@ unsigned char \hyperlink{class_string_aea30ddc42b0dd5434d23606c39580e5d}{change\
 \item 
 unsigned char \hyperlink{class_string_aba57d3370c8e6abc90b359d62ecb6be6}{concat} (const char $\ast$cstr, unsigned int \hyperlink{class_string_a21691d4bac5ec852977018fef6fb9c8a}{length})
 \item 
-\hyperlink{class_string}{String} \& \hyperlink{class_string_a0ef9e2f459577668c16326054d8220c8}{copy} (const char $\ast$cstr, unsigned int \hyperlink{class_string_a21691d4bac5ec852977018fef6fb9c8a}{length})
+\hyperlink{class_string}{String} \& \hyperlink{class_string_af425a88dd132c147a97d8eca4df2be35}{copy} (const char $\ast$cstr, unsigned int \hyperlink{class_string_a21691d4bac5ec852977018fef6fb9c8a}{length})
 \item 
 \hyperlink{class_string}{String} \& \hyperlink{class_string_a8d349a2f3cf3c8cde32f8665660aec20}{copy} (const \+\_\+\+\_\+\+Flash\+String\+Helper $\ast$pstr, unsigned int \hyperlink{class_string_a21691d4bac5ec852977018fef6fb9c8a}{length})
 \end{DoxyCompactItemize}
@@ -290,6 +289,14 @@ Construct a \hyperlink{class_string}{String} object from a c-\/string (null-\/te
 \end{DoxyParams}
 
 
+Definition at line 69 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References copy(), and init().
+
+
+
 Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
 
 \mbox{\Hypertarget{class_string_a20cfefac6f5b37f40dcb35826b563a5a}\label{class_string_a20cfefac6f5b37f40dcb35826b563a5a}} 
@@ -326,6 +333,14 @@ Construct a \hyperlink{class_string}{String} object as a copy of another string.
 \end{DoxyParams}
 
 
+Definition at line 75 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), and operator=().
+
+
+
 Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
 
 \mbox{\Hypertarget{class_string_a8c89c89e3cb69407bf55443c3d9dce0c}\label{class_string_a8c89c89e3cb69407bf55443c3d9dce0c}} 
@@ -338,18 +353,26 @@ Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
 \index{String@{String}!String@{String}}
 \index{String@{String}!String@{String}}
 \subsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [5/13]}}
-{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{const Printable \&}]{printable }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily String\+::\+String (\begin{DoxyParamCaption}\item[{const \hyperlink{class_printable}{Printable} \&}]{printable }\end{DoxyParamCaption})}
 
 
 
-Construct a \hyperlink{class_string}{String} object from any Printable object. 
+Construct a \hyperlink{class_string}{String} object from any \hyperlink{class_printable}{Printable} object. 
 
 
 \begin{DoxyParams}{Parameters}
-{\em printable} & The Printable object. The to\+Print() method will be called on it to print to this \hyperlink{class_string}{String} the textual representation of the object.\\
+{\em printable} & The \hyperlink{class_printable}{Printable} object. The to\+Print() method will be called on it to print to this \hyperlink{class_string}{String} the textual representation of the object.\\
 \hline
 \end{DoxyParams}
-For example, I\+P\+Address is printable, so you can pass an I\+P\+Address to this constructor and this string will contain a textual representation of the I\+P\+Address (dotted quad). \mbox{\Hypertarget{class_string_a1fdfe981d2c5e0075c1669dd94553082}\label{class_string_a1fdfe981d2c5e0075c1669dd94553082}} 
+For example, I\+P\+Address is printable, so you can pass an I\+P\+Address to this constructor and this string will contain a textual representation of the I\+P\+Address (dotted quad). 
+
+Definition at line 780 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), Printable\+::print\+To(), and String\+Printable\+Helper\+::\+String\+Printable\+Helper().
+
+\mbox{\Hypertarget{class_string_a1fdfe981d2c5e0075c1669dd94553082}\label{class_string_a1fdfe981d2c5e0075c1669dd94553082}} 
 \index{String@{String}!String@{String}}
 \index{String@{String}!String@{String}}
 \subsubsection{\texorpdfstring{String()}{String()}\hspace{0.1cm}{\footnotesize\ttfamily [6/13]}}
@@ -364,6 +387,14 @@ Construct a \hyperlink{class_string}{String} containing a single character.
 {\em c} & The character to set the \hyperlink{class_string}{String} to \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 94 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), and operator=().
+
 
 
 Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
@@ -387,6 +418,14 @@ Construct a \hyperlink{class_string}{String} from a unsigned char (uint8\+\_\+t)
 \end{DoxyParams}
 
 
+Definition at line 103 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), operator=(), and utoa().
+
+
+
 Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
 
 \mbox{\Hypertarget{class_string_a5528e1c6d322a9ee21f155c291ea67d1}\label{class_string_a5528e1c6d322a9ee21f155c291ea67d1}} 
@@ -406,6 +445,14 @@ Construct a \hyperlink{class_string}{String} from a int (32 bit signed integer) 
 {\em base} & The number base, default is 10 (decimal). Other values include 8 (octal) and 16 (hexadecimal). \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 111 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), itoa(), and operator=().
+
 
 
 Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
@@ -429,6 +476,14 @@ Construct a \hyperlink{class_string}{String} from a unsigned int (32 bit unsigne
 \end{DoxyParams}
 
 
+Definition at line 119 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), operator=(), and utoa().
+
+
+
 Referenced by max\+Current\+C1\+\_\+test(), max\+Current\+C2\+\_\+test(), and String\+Sum\+Helper\+::\+String\+Sum\+Helper().
 
 \mbox{\Hypertarget{class_string_a868687056546919b7109c0801d75ec83}\label{class_string_a868687056546919b7109c0801d75ec83}} 
@@ -448,6 +503,14 @@ Construct a \hyperlink{class_string}{String} from a long (32 bit signed integer)
 {\em base} & The number base, default is 10 (decimal). Other values include 8 (octal) and 16 (hexadecimal). \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 127 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), ltoa(), and operator=().
+
 
 
 Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
@@ -471,6 +534,14 @@ Construct a \hyperlink{class_string}{String} from a unsigned long (32 bit unsign
 \end{DoxyParams}
 
 
+Definition at line 135 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References init(), operator=(), and ultoa().
+
+
+
 Referenced by String\+Sum\+Helper\+::\+String\+Sum\+Helper().
 
 \mbox{\Hypertarget{class_string_adef4f199739444a78803c4043ad3e228}\label{class_string_adef4f199739444a78803c4043ad3e228}} 
@@ -490,6 +561,14 @@ Construct a \hyperlink{class_string}{String} from a float (32 bit single precisi
 {\em decimal\+Places} & The number of decimal places to show. Default = 6. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 143 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References dtoa(), init(), and operator=().
+
 \mbox{\Hypertarget{class_string_a46e13b4608fbe763b4fc5bf22362078e}\label{class_string_a46e13b4608fbe763b4fc5bf22362078e}} 
 \index{String@{String}!String@{String}}
 \index{String@{String}!String@{String}}
@@ -507,6 +586,14 @@ Construct a \hyperlink{class_string}{String} from a double (64 bit double precis
 {\em decimal\+Places} & The number of decimal places to show. Default = 6. \\
 \hline
 \end{DoxyParams}
+
+
+Definition at line 151 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References dtoa(), init(), and operator=().
+
 \mbox{\Hypertarget{class_string_ab4027f1abc8f8c0134f6098126de71e5}\label{class_string_ab4027f1abc8f8c0134f6098126de71e5}} 
 \index{String@{String}!````~String@{$\sim$\+String}}
 \index{````~String@{$\sim$\+String}!String@{String}}
@@ -516,6 +603,14 @@ Construct a \hyperlink{class_string}{String} from a double (64 bit double precis
 
 
 Destructor. Also deletes the underlying dynamically allocated string. 
+
+
+
+Definition at line 158 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer.
 
 
 
@@ -559,13 +654,25 @@ References buffer.
 
 
 
-Referenced by operator const char $\ast$().
+Referenced by Json\+Writer\+::insert\+Value(), main(), operator const char $\ast$(), and operator$<$$<$().
 
 \mbox{\Hypertarget{class_string_aea30ddc42b0dd5434d23606c39580e5d}\label{class_string_aea30ddc42b0dd5434d23606c39580e5d}} 
 \index{String@{String}!change\+Buffer@{change\+Buffer}}
 \index{change\+Buffer@{change\+Buffer}!String@{String}}
 \subsubsection{\texorpdfstring{change\+Buffer()}{changeBuffer()}}
 {\footnotesize\ttfamily unsigned char String\+::change\+Buffer (\begin{DoxyParamCaption}\item[{unsigned int}]{max\+Str\+Len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 192 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and capacity.
+
+
+
+Referenced by replace(), and reserve().
 
 \mbox{\Hypertarget{class_string_aee512943b0a68596e1f946fcfda757af}\label{class_string_aee512943b0a68596e1f946fcfda757af}} 
 \index{String@{String}!char\+At@{char\+At}}
@@ -585,6 +692,14 @@ Gets the character at offset index.
 \begin{DoxyReturn}{Returns}
 The character is 0 if the index is larger than the length of the string. 
 \end{DoxyReturn}
+
+
+Definition at line 509 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References operator\mbox{[}$\,$\mbox{]}().
+
 \mbox{\Hypertarget{class_string_ab95c64acc3d5105efdc9709a4cc31e76}\label{class_string_ab95c64acc3d5105efdc9709a4cc31e76}} 
 \index{String@{String}!compare\+To@{compare\+To}}
 \index{compare\+To@{compare\+To}!String@{String}}
@@ -603,7 +718,19 @@ Compares this string to another string using strcmp (case-\/sensitive)
 \begin{DoxyReturn}{Returns}
 $<$ 0 if s is less than this, == 0 is s equals this, or $>$ 0 if s is greater than this
 \end{DoxyReturn}
-Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. \mbox{\Hypertarget{class_string_a63f64f8a3da37d4570ce7b2ceec5bd2b}\label{class_string_a63f64f8a3da37d4570ce7b2ceec5bd2b}} 
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 432 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by equals(), operator$<$(), operator$<$=(), operator$>$(), and operator$>$=().
+
+\mbox{\Hypertarget{class_string_a63f64f8a3da37d4570ce7b2ceec5bd2b}\label{class_string_a63f64f8a3da37d4570ce7b2ceec5bd2b}} 
 \index{String@{String}!concat@{concat}}
 \index{concat@{concat}!String@{String}}
 \subsubsection{\texorpdfstring{concat()}{concat()}\hspace{0.1cm}{\footnotesize\ttfamily [1/12]}}
@@ -621,6 +748,14 @@ Append (concatenate) a \hyperlink{class_string}{String} object to the end of thi
 \begin{DoxyReturn}{Returns}
 true if the append succeeded or false if there was not enough memory or the parameter was invalid. 
 \end{DoxyReturn}
+
+
+Definition at line 276 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, concat(), and len.
+
 
 
 Referenced by operator+=().
@@ -643,6 +778,14 @@ Append (concatenate) a c-\/string (null-\/terminated) to the end of this \hyperl
 \begin{DoxyReturn}{Returns}
 true if the append succeeded or false if there was not enough memory or the parameter was invalid. 
 \end{DoxyReturn}
+
+
+Definition at line 292 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat().
+
 
 
 Referenced by operator+=().
@@ -673,7 +816,15 @@ true if the append succeeded or false if there was not enough memory.
 \end{DoxyReturn}
 
 
-Referenced by operator+=().
+Definition at line 298 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat().
+
+
+
+Referenced by Json\+Parser\+String\+::append(), operator+(), operator+=(), and String\+Printable\+Helper\+::write().
 
 \mbox{\Hypertarget{class_string_a1c02b2de34a3245d16c5430951789f7d}\label{class_string_a1c02b2de34a3245d16c5430951789f7d}} 
 \index{String@{String}!concat@{concat}}
@@ -695,7 +846,15 @@ true if the append succeeded or false if there was not enough memory.
 \end{DoxyReturn}
 
 
-Referenced by operator+=().
+Definition at line 306 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), and itoa().
+
+
+
+Referenced by operator+(), and operator+=().
 
 \mbox{\Hypertarget{class_string_a6d437a7312b591848b5457705fee5549}\label{class_string_a6d437a7312b591848b5457705fee5549}} 
 \index{String@{String}!concat@{concat}}
@@ -717,7 +876,15 @@ true if the append succeeded or false if there was not enough memory.
 \end{DoxyReturn}
 
 
-Referenced by allow\+User\+\_\+callback(), max\+Current\+C1\+\_\+test(), max\+Current\+C2\+\_\+test(), and operator+=().
+Definition at line 313 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), and itoa().
+
+
+
+Referenced by allow\+User\+\_\+callback(), max\+Current\+C1\+\_\+test(), max\+Current\+C2\+\_\+test(), operator+(), and operator+=().
 
 \mbox{\Hypertarget{class_string_af9c20f944d8a4687808017388047d155}\label{class_string_af9c20f944d8a4687808017388047d155}} 
 \index{String@{String}!concat@{concat}}
@@ -739,7 +906,15 @@ true if the append succeeded or false if there was not enough memory.
 \end{DoxyReturn}
 
 
-Referenced by operator+=().
+Definition at line 320 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), and utoa().
+
+
+
+Referenced by operator+(), and operator+=().
 
 \mbox{\Hypertarget{class_string_a92a456f8679a19d2221ec43841238ead}\label{class_string_a92a456f8679a19d2221ec43841238ead}} 
 \index{String@{String}!concat@{concat}}
@@ -761,7 +936,15 @@ true if the append succeeded or false if there was not enough memory.
 \end{DoxyReturn}
 
 
-Referenced by operator+=().
+Definition at line 327 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), and ltoa().
+
+
+
+Referenced by operator+(), and operator+=().
 
 \mbox{\Hypertarget{class_string_ad502777b7549182fe9b1a14879acf307}\label{class_string_ad502777b7549182fe9b1a14879acf307}} 
 \index{String@{String}!concat@{concat}}
@@ -783,7 +966,15 @@ true if the append succeeded or false if there was not enough memory.
 \end{DoxyReturn}
 
 
-Referenced by operator+=().
+Definition at line 334 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), D\+EC, and ultoa().
+
+
+
+Referenced by operator+(), and operator+=().
 
 \mbox{\Hypertarget{class_string_af6029b556adb9a23d82d1f276ce4f8ee}\label{class_string_af6029b556adb9a23d82d1f276ce4f8ee}} 
 \index{String@{String}!concat@{concat}}
@@ -803,6 +994,18 @@ Append (concatenate) the float n to the end of this \hyperlink{class_string}{Str
 \begin{DoxyReturn}{Returns}
 true if the append succeeded or false if there was not enough memory. 
 \end{DoxyReturn}
+
+
+Definition at line 341 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), and dtoa().
+
+
+
+Referenced by operator+().
+
 \mbox{\Hypertarget{class_string_ab1e52143c6057122a71db07ed1c7fb0e}\label{class_string_ab1e52143c6057122a71db07ed1c7fb0e}} 
 \index{String@{String}!concat@{concat}}
 \index{concat@{concat}!String@{String}}
@@ -821,17 +1024,53 @@ Append (concatenate) the double precision float n to the end of this \hyperlink{
 \begin{DoxyReturn}{Returns}
 true if the append succeeded or false if there was not enough memory. 
 \end{DoxyReturn}
+
+
+Definition at line 348 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References concat(), and dtoa().
+
+
+
+Referenced by operator+().
+
 \mbox{\Hypertarget{class_string_aba57d3370c8e6abc90b359d62ecb6be6}\label{class_string_aba57d3370c8e6abc90b359d62ecb6be6}} 
 \index{String@{String}!concat@{concat}}
 \index{concat@{concat}!String@{String}}
 \subsubsection{\texorpdfstring{concat()}{concat()}\hspace{0.1cm}{\footnotesize\ttfamily [12/12]}}
 {\footnotesize\ttfamily unsigned char String\+::concat (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
 
-\mbox{\Hypertarget{class_string_a0ef9e2f459577668c16326054d8220c8}\label{class_string_a0ef9e2f459577668c16326054d8220c8}} 
+
+
+Definition at line 281 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, len, and reserve().
+
+
+
+Referenced by concat(), operator+(), and String\+Printable\+Helper\+::write().
+
+\mbox{\Hypertarget{class_string_af425a88dd132c147a97d8eca4df2be35}\label{class_string_af425a88dd132c147a97d8eca4df2be35}} 
 \index{String@{String}!copy@{copy}}
 \index{copy@{copy}!String@{String}}
 \subsubsection{\texorpdfstring{copy()}{copy()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \hyperlink{class_string}{String}\& String\+::copy (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily \hyperlink{class_string}{String} \& String\+::copy (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr,  }\item[{unsigned int}]{length }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 207 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, invalidate(), len, and reserve().
+
+
+
+Referenced by operator=(), and String().
 
 \mbox{\Hypertarget{class_string_a8d349a2f3cf3c8cde32f8665660aec20}\label{class_string_a8d349a2f3cf3c8cde32f8665660aec20}} 
 \index{String@{String}!copy@{copy}}
@@ -854,7 +1093,15 @@ Returns true if this string ends with suffix (case-\/sensitive)
 {\em suffix} & the string containing the suffix to test\\
 \hline
 \end{DoxyParams}
-Uses the C standard library function strcmp which is case-\/sensitive and may not work properly with U\+T\+F-\/8 characters. \mbox{\Hypertarget{class_string_a1f8b83b7dfd47de4062abc3d57e4c351}\label{class_string_a1f8b83b7dfd47de4062abc3d57e4c351}} 
+Uses the C standard library function strcmp which is case-\/sensitive and may not work properly with U\+T\+F-\/8 characters. 
+
+Definition at line 499 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+\mbox{\Hypertarget{class_string_a1f8b83b7dfd47de4062abc3d57e4c351}\label{class_string_a1f8b83b7dfd47de4062abc3d57e4c351}} 
 \index{String@{String}!equals@{equals}}
 \index{equals@{equals}!String@{String}}
 \subsubsection{\texorpdfstring{equals()}{equals()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -873,6 +1120,14 @@ Returns true if this string is equal to another string (case-\/sensitive)
 true if the other string is equal to this string.
 \end{DoxyReturn}
 Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 442 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References compare\+To(), and len.
+
+
 
 Referenced by operator!=(), and operator==().
 
@@ -896,6 +1151,14 @@ true if the other string is equal to this string.
 \end{DoxyReturn}
 Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
 
+Definition at line 447 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
 Referenced by operator!=(), and operator==().
 
 \mbox{\Hypertarget{class_string_a3b8832687edda189ae43632d70157b94}\label{class_string_a3b8832687edda189ae43632d70157b94}} 
@@ -916,11 +1179,19 @@ Returns true if this string equals another string (case-\/insensitive)
 \begin{DoxyReturn}{Returns}
 true if equal, false if not
 \end{DoxyReturn}
-Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. \mbox{\Hypertarget{class_string_a735dfb188ddcaaddbcb42cc3a9e59afc}\label{class_string_a735dfb188ddcaaddbcb42cc3a9e59afc}} 
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 474 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+\mbox{\Hypertarget{class_string_a0d717afd6f0ea29cc70175886b56fbd8}\label{class_string_a0d717afd6f0ea29cc70175886b56fbd8}} 
 \index{String@{String}!format@{format}}
 \index{format@{format}!String@{String}}
 \subsubsection{\texorpdfstring{format()}{format()}}
-{\footnotesize\ttfamily static \hyperlink{class_string}{String} String\+::format (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+{\footnotesize\ttfamily \hyperlink{class_string}{String} String\+::format (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
 
 
 
@@ -936,6 +1207,14 @@ Uses sprintf-\/style formatting to build a \hyperlink{class_string}{String} obje
 \begin{DoxyReturn}{Returns}
 Returns a \hyperlink{class_string}{String} object formatted as specified 
 \end{DoxyReturn}
+
+
+Definition at line 787 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, len, and reserve().
+
 \mbox{\Hypertarget{class_string_a507250e2de463e60e8df8fb5089f8dae}\label{class_string_a507250e2de463e60e8df8fb5089f8dae}} 
 \index{String@{String}!get\+Bytes@{get\+Bytes}}
 \index{get\+Bytes@{get\+Bytes}!String@{String}}
@@ -957,6 +1236,14 @@ Copy the data out of this \hyperlink{class_string}{String} into another buffer.
 \end{DoxyParams}
 If bufsize is smaller than the string the string will be truncated and still null-\/terminated. If the string is truncated and U\+T\+F-\/8, it may break a multi-\/byte character sequence in the middle, resulting in invalid U\+T\+F-\/8. 
 
+Definition at line 535 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
 Referenced by to\+Char\+Array().
 
 \mbox{\Hypertarget{class_string_aaf945bda436edaba02fccffbdf3936c1}\label{class_string_aaf945bda436edaba02fccffbdf3936c1}} 
@@ -977,7 +1264,15 @@ Search this string for a given character.
 \begin{DoxyReturn}{Returns}
 index of the character or -\/1 if not found. 0 = the first character.
 \end{DoxyReturn}
-This uses the C standard library function strchr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. \mbox{\Hypertarget{class_string_a0a9cb3d76e6e9b7cd1d8666cc84149ea}\label{class_string_a0a9cb3d76e6e9b7cd1d8666cc84149ea}} 
+This uses the C standard library function strchr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. 
+
+Definition at line 552 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References index\+Of().
+
+\mbox{\Hypertarget{class_string_a0a9cb3d76e6e9b7cd1d8666cc84149ea}\label{class_string_a0a9cb3d76e6e9b7cd1d8666cc84149ea}} 
 \index{String@{String}!index\+Of@{index\+Of}}
 \index{index\+Of@{index\+Of}!String@{String}}
 \subsubsection{\texorpdfstring{index\+Of()}{indexOf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
@@ -997,7 +1292,19 @@ Search this string for a given character starting at an offset.
 \begin{DoxyReturn}{Returns}
 index of the character or -\/1 if not found. 0 = the first character.
 \end{DoxyReturn}
-This uses the C standard library function strchr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. \mbox{\Hypertarget{class_string_ab2fac51c5e56215d0b92a70cce39d966}\label{class_string_ab2fac51c5e56215d0b92a70cce39d966}} 
+This uses the C standard library function strchr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. 
+
+Definition at line 557 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by index\+Of().
+
+\mbox{\Hypertarget{class_string_ab2fac51c5e56215d0b92a70cce39d966}\label{class_string_ab2fac51c5e56215d0b92a70cce39d966}} 
 \index{String@{String}!index\+Of@{index\+Of}}
 \index{index\+Of@{index\+Of}!String@{String}}
 \subsubsection{\texorpdfstring{index\+Of()}{indexOf()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
@@ -1015,7 +1322,15 @@ Search this string for a given \hyperlink{class_string}{String}.
 \begin{DoxyReturn}{Returns}
 index of the string or -\/1 if not found. 0 = the first character.
 \end{DoxyReturn}
-This uses the C standard library function strstr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. It is case-\/sensitive. \mbox{\Hypertarget{class_string_aecbe2471a60329e53d31bd85c24c38a9}\label{class_string_aecbe2471a60329e53d31bd85c24c38a9}} 
+This uses the C standard library function strstr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. It is case-\/sensitive. 
+
+Definition at line 565 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References index\+Of().
+
+\mbox{\Hypertarget{class_string_aecbe2471a60329e53d31bd85c24c38a9}\label{class_string_aecbe2471a60329e53d31bd85c24c38a9}} 
 \index{String@{String}!index\+Of@{index\+Of}}
 \index{index\+Of@{index\+Of}!String@{String}}
 \subsubsection{\texorpdfstring{index\+Of()}{indexOf()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
@@ -1035,17 +1350,53 @@ Search this string for a given \hyperlink{class_string}{String} starting at an o
 \begin{DoxyReturn}{Returns}
 index of the string or -\/1 if not found. 0 = the first character.
 \end{DoxyReturn}
-This uses the C standard library function strstr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. It is case-\/sensitive. \mbox{\Hypertarget{class_string_af597f6dc5a6a96d14d5409b48254b8fb}\label{class_string_af597f6dc5a6a96d14d5409b48254b8fb}} 
+This uses the C standard library function strstr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. It is case-\/sensitive. 
+
+Definition at line 570 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by index\+Of().
+
+\mbox{\Hypertarget{class_string_af597f6dc5a6a96d14d5409b48254b8fb}\label{class_string_af597f6dc5a6a96d14d5409b48254b8fb}} 
 \index{String@{String}!init@{init}}
 \index{init@{init}!String@{String}}
 \subsubsection{\texorpdfstring{init()}{init()}}
-{\footnotesize\ttfamily void String\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+{\footnotesize\ttfamily void String\+::init (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Definition at line 167 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, capacity, flags, and len.
+
+
+
+Referenced by String().
 
 \mbox{\Hypertarget{class_string_a9bee9137075d66b2af742969cb7549d9}\label{class_string_a9bee9137075d66b2af742969cb7549d9}} 
 \index{String@{String}!invalidate@{invalidate}}
 \index{invalidate@{invalidate}!String@{String}}
 \subsubsection{\texorpdfstring{invalidate()}{invalidate()}}
 {\footnotesize\ttfamily void String\+::invalidate (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+Definition at line 175 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, capacity, and len.
+
+
+
+Referenced by copy(), operator+(), and operator=().
 
 \mbox{\Hypertarget{class_string_a63a465c7d1e67129b04cf4693b756e5b}\label{class_string_a63a465c7d1e67129b04cf4693b756e5b}} 
 \index{String@{String}!last\+Index\+Of@{last\+Index\+Of}}
@@ -1065,7 +1416,15 @@ Search this string for a given character, starting at the end.
 \begin{DoxyReturn}{Returns}
 index of the character or -\/1 if not found. 0 = the first character.
 \end{DoxyReturn}
-This uses the C standard library function strrchr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. \mbox{\Hypertarget{class_string_af9b32bb5cf68844c04792b4368f69883}\label{class_string_af9b32bb5cf68844c04792b4368f69883}} 
+This uses the C standard library function strrchr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. 
+
+Definition at line 578 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References last\+Index\+Of(), and len.
+
+\mbox{\Hypertarget{class_string_af9b32bb5cf68844c04792b4368f69883}\label{class_string_af9b32bb5cf68844c04792b4368f69883}} 
 \index{String@{String}!last\+Index\+Of@{last\+Index\+Of}}
 \index{last\+Index\+Of@{last\+Index\+Of}!String@{String}}
 \subsubsection{\texorpdfstring{last\+Index\+Of()}{lastIndexOf()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
@@ -1085,7 +1444,19 @@ Search this string for a given character, starting at the from\+Index and going 
 \begin{DoxyReturn}{Returns}
 index of the character or -\/1 if not found. 0 = the first character.
 \end{DoxyReturn}
-This uses the C standard library function strrchr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. \mbox{\Hypertarget{class_string_aa696010f90d06e0caceeb847ab3ce689}\label{class_string_aa696010f90d06e0caceeb847ab3ce689}} 
+This uses the C standard library function strrchr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. 
+
+Definition at line 583 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by last\+Index\+Of().
+
+\mbox{\Hypertarget{class_string_aa696010f90d06e0caceeb847ab3ce689}\label{class_string_aa696010f90d06e0caceeb847ab3ce689}} 
 \index{String@{String}!last\+Index\+Of@{last\+Index\+Of}}
 \index{last\+Index\+Of@{last\+Index\+Of}!String@{String}}
 \subsubsection{\texorpdfstring{last\+Index\+Of()}{lastIndexOf()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
@@ -1103,7 +1474,15 @@ Search this string for a last occurrence of str.
 \begin{DoxyReturn}{Returns}
 index of the start of the string or -\/1 if not found. 0 = the first character.
 \end{DoxyReturn}
-This uses the C standard library function strstr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. It is case-\/sensitive. \mbox{\Hypertarget{class_string_a08e7c60202cc42fe4731b52c0c5cd80f}\label{class_string_a08e7c60202cc42fe4731b52c0c5cd80f}} 
+This uses the C standard library function strstr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. It is case-\/sensitive. 
+
+Definition at line 594 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References last\+Index\+Of(), and len.
+
+\mbox{\Hypertarget{class_string_a08e7c60202cc42fe4731b52c0c5cd80f}\label{class_string_a08e7c60202cc42fe4731b52c0c5cd80f}} 
 \index{String@{String}!last\+Index\+Of@{last\+Index\+Of}}
 \index{last\+Index\+Of@{last\+Index\+Of}!String@{String}}
 \subsubsection{\texorpdfstring{last\+Index\+Of()}{lastIndexOf()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
@@ -1123,7 +1502,19 @@ Search this string for a last occurrence of str starting at from\+Index.
 \begin{DoxyReturn}{Returns}
 index of the start of the string or -\/1 if not found. 0 = the first character.
 \end{DoxyReturn}
-This uses the C standard library function strstr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. It is case-\/sensitive. \mbox{\Hypertarget{class_string_a21691d4bac5ec852977018fef6fb9c8a}\label{class_string_a21691d4bac5ec852977018fef6fb9c8a}} 
+This uses the C standard library function strstr and is only compatible with A\+S\+C\+II characters. It can return invalid results for U\+T\+F-\/8 strings. It is case-\/sensitive. 
+
+Definition at line 599 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by last\+Index\+Of(), and replace().
+
+\mbox{\Hypertarget{class_string_a21691d4bac5ec852977018fef6fb9c8a}\label{class_string_a21691d4bac5ec852977018fef6fb9c8a}} 
 \index{String@{String}!length@{length}}
 \index{length@{length}!String@{String}}
 \subsubsection{\texorpdfstring{length()}{length()}}
@@ -1140,6 +1531,10 @@ Definition at line 208 of file spark\+\_\+wiring\+\_\+string.\+h.
 
 
 References len.
+
+
+
+Referenced by String\+Printable\+Helper\+::write().
 
 \mbox{\Hypertarget{class_string_a9a12caedc885ac44c86d104a8cb60f82}\label{class_string_a9a12caedc885ac44c86d104a8cb60f82}} 
 \index{String@{String}!operator const char $\ast$@{operator const char $\ast$}}
@@ -1224,6 +1619,10 @@ Definition at line 622 of file spark\+\_\+wiring\+\_\+string.\+h.
 
 
 References equals().
+
+
+
+Referenced by loop(), and run\+Test().
 
 \mbox{\Hypertarget{class_string_a5a3f29c49cc46fb598fc41767a83dabc}\label{class_string_a5a3f29c49cc46fb598fc41767a83dabc}} 
 \index{String@{String}!operator+=@{operator+=}}
@@ -1451,7 +1850,15 @@ Returns true if this string is less than to another string (case-\/sensitive)
 \begin{DoxyReturn}{Returns}
 true if the other string is less than this string.
 \end{DoxyReturn}
-Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. \mbox{\Hypertarget{class_string_a111fa1bc3ab1c20223cc8940cd122278}\label{class_string_a111fa1bc3ab1c20223cc8940cd122278}} 
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 454 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References compare\+To().
+
+\mbox{\Hypertarget{class_string_a111fa1bc3ab1c20223cc8940cd122278}\label{class_string_a111fa1bc3ab1c20223cc8940cd122278}} 
 \index{String@{String}!operator$<$=@{operator$<$=}}
 \index{operator$<$=@{operator$<$=}!String@{String}}
 \subsubsection{\texorpdfstring{operator$<$=()}{operator<=()}}
@@ -1469,11 +1876,19 @@ Returns true if this string is less than or equal to another string (case-\/sens
 \begin{DoxyReturn}{Returns}
 true if the other string is less than or equal to this string.
 \end{DoxyReturn}
-Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. \mbox{\Hypertarget{class_string_aeb3b38d9acd37e511d82c9f4dc7565a3}\label{class_string_aeb3b38d9acd37e511d82c9f4dc7565a3}} 
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 464 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References compare\+To().
+
+\mbox{\Hypertarget{class_string_a70b3aba8ac7a57e3bb48a52a5d64a88b}\label{class_string_a70b3aba8ac7a57e3bb48a52a5d64a88b}} 
 \index{String@{String}!operator=@{operator=}}
 \index{operator=@{operator=}!String@{String}}
 \subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily \hyperlink{class_string}{String}\& String\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_string}{String} \&}]{rhs }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{class_string}{String} \& String\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{class_string}{String} \&}]{rhs }\end{DoxyParamCaption})}
 
 
 
@@ -1484,11 +1899,23 @@ Assigns this string to have a copy of \hyperlink{class_string}{String} rhs.
 {\em rhs} & The string to copy from. \\
 \hline
 \end{DoxyParams}
-\mbox{\Hypertarget{class_string_ab7151855d8e95ab3703f0284298d9ac1}\label{class_string_ab7151855d8e95ab3703f0284298d9ac1}} 
+
+
+Definition at line 240 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, copy(), invalidate(), and len.
+
+
+
+Referenced by allow\+User\+\_\+callback(), and String().
+
+\mbox{\Hypertarget{class_string_a0138caa55ac6d8b5bcd1fa7bb484a831}\label{class_string_a0138caa55ac6d8b5bcd1fa7bb484a831}} 
 \index{String@{String}!operator=@{operator=}}
 \index{operator=@{operator=}!String@{String}}
 \subsubsection{\texorpdfstring{operator=()}{operator=()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily \hyperlink{class_string}{String}\& String\+::operator= (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{class_string}{String} \& String\+::operator= (\begin{DoxyParamCaption}\item[{const char $\ast$}]{cstr }\end{DoxyParamCaption})}
 
 
 
@@ -1501,7 +1928,15 @@ Assigns this string to have a copy of c-\/string (null-\/terminated) cstr.
 \end{DoxyParams}
 
 
-Referenced by allow\+User\+\_\+callback(), callback(), char\+To\+String(), M\+Q\+T\+T\+::initialize(), loop(), and M\+Q\+T\+T\+::set\+Broker().
+Definition at line 264 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References copy(), and invalidate().
+
+
+
+Referenced by allow\+User\+\_\+callback(), callback(), char\+To\+String(), Json\+Parser\+::get\+Token\+Json\+String(), Json\+Parser\+::get\+Token\+Value(), M\+Q\+T\+T\+::initialize(), loop(), M\+Q\+T\+T\+::set\+Broker(), String(), and substring().
 
 \mbox{\Hypertarget{class_string_a965951ee729f850adb40d3c0997922bb}\label{class_string_a965951ee729f850adb40d3c0997922bb}} 
 \index{String@{String}!operator=@{operator=}}
@@ -1563,7 +1998,7 @@ References equals().
 
 
 
-Referenced by switch\+Test().
+Referenced by Json\+Parser\+::get\+Value\+Token\+By\+Key(), main(), and switch\+Test().
 
 \mbox{\Hypertarget{class_string_a25bbbdda663b6b0eb3ed3458e80fc66e}\label{class_string_a25bbbdda663b6b0eb3ed3458e80fc66e}} 
 \index{String@{String}!operator$>$@{operator$>$}}
@@ -1583,7 +2018,15 @@ Returns true if this string is greater than to another string (case-\/sensitive)
 \begin{DoxyReturn}{Returns}
 true if the other string is greater than this string.
 \end{DoxyReturn}
-Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. \mbox{\Hypertarget{class_string_ad55ec344221bba8a7447226bde7b00dc}\label{class_string_ad55ec344221bba8a7447226bde7b00dc}} 
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 459 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References compare\+To().
+
+\mbox{\Hypertarget{class_string_ad55ec344221bba8a7447226bde7b00dc}\label{class_string_ad55ec344221bba8a7447226bde7b00dc}} 
 \index{String@{String}!operator$>$=@{operator$>$=}}
 \index{operator$>$=@{operator$>$=}!String@{String}}
 \subsubsection{\texorpdfstring{operator$>$=()}{operator>=()}}
@@ -1601,7 +2044,15 @@ Returns true if this string is greater than or equal to another string (case-\/s
 \begin{DoxyReturn}{Returns}
 true if the other string is greater than or equal to this string.
 \end{DoxyReturn}
-Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. \mbox{\Hypertarget{class_string_a277d6b29f7f152a03c81700b12e43e55}\label{class_string_a277d6b29f7f152a03c81700b12e43e55}} 
+Uses the C standard library function strcmp which is case-\/sensitive and does not correctly compare U\+T\+F-\/8 characters. 
+
+Definition at line 469 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References compare\+To().
+
+\mbox{\Hypertarget{class_string_a277d6b29f7f152a03c81700b12e43e55}\label{class_string_a277d6b29f7f152a03c81700b12e43e55}} 
 \index{String@{String}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!String@{String}}
 \subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -1619,11 +2070,23 @@ Gets the character at offset index.
 \begin{DoxyReturn}{Returns}
 The character is 0 if the index is larger than the length of the string. 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_string_a0c9922e5854f82cd9952fcb4d6006059}\label{class_string_a0c9922e5854f82cd9952fcb4d6006059}} 
+
+
+Definition at line 529 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by char\+At().
+
+\mbox{\Hypertarget{class_string_a92a0681d0031d7e99c12c245cc22367e}\label{class_string_a92a0681d0031d7e99c12c245cc22367e}} 
 \index{String@{String}!operator\mbox{[}\mbox{]}@{operator[]}}
 \index{operator\mbox{[}\mbox{]}@{operator[]}!String@{String}}
 \subsubsection{\texorpdfstring{operator[]()}{operator[]()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily char\& String\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily char \& String\+::operator\mbox{[}$\,$\mbox{]} (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
 
 
 
@@ -1637,11 +2100,19 @@ Set the character at offset index.
 \begin{DoxyReturn}{Returns}
 A reference to set.
 \end{DoxyReturn}
-If index is greater than the length of the string, a dummy reference is returned instead. This allows operation to execute without error, but also discards the change. In other words, you cannot use this to append to the string, only modify an existing character. \mbox{\Hypertarget{class_string_ae65cdfb8e1bf70458d3d699c27754a9b}\label{class_string_ae65cdfb8e1bf70458d3d699c27754a9b}} 
+If index is greater than the length of the string, a dummy reference is returned instead. This allows operation to execute without error, but also discards the change. In other words, you cannot use this to append to the string, only modify an existing character. 
+
+Definition at line 519 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+\mbox{\Hypertarget{class_string_a01ab28577facf21ffc183a59983b259e}\label{class_string_a01ab28577facf21ffc183a59983b259e}} 
 \index{String@{String}!remove@{remove}}
 \index{remove@{remove}!String@{String}}
 \subsubsection{\texorpdfstring{remove()}{remove()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \hyperlink{class_string}{String}\& String\+::remove (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{class_string}{String} \& String\+::remove (\begin{DoxyParamCaption}\item[{unsigned int}]{index }\end{DoxyParamCaption})}
 
 
 
@@ -1655,11 +2126,19 @@ Removes characters from the \hyperlink{class_string}{String}, modifying it in pl
 \begin{DoxyReturn}{Returns}
 this \hyperlink{class_string}{String}, so you can chain multiple operations 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_string_ab27df1671530a95f2d8308fe179729e0}\label{class_string_ab27df1671530a95f2d8308fe179729e0}} 
+
+
+Definition at line 691 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References len, and remove().
+
+\mbox{\Hypertarget{class_string_a0c7e2c4875de0d99ad462aeac6da7ef9}\label{class_string_a0c7e2c4875de0d99ad462aeac6da7ef9}} 
 \index{String@{String}!remove@{remove}}
 \index{remove@{remove}!String@{String}}
 \subsubsection{\texorpdfstring{remove()}{remove()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \hyperlink{class_string}{String}\& String\+::remove (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{unsigned int}]{count }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{class_string}{String} \& String\+::remove (\begin{DoxyParamCaption}\item[{unsigned int}]{index,  }\item[{unsigned int}]{count }\end{DoxyParamCaption})}
 
 
 
@@ -1675,11 +2154,23 @@ Removes characters from the \hyperlink{class_string}{String}, modifying it in pl
 \begin{DoxyReturn}{Returns}
 this \hyperlink{class_string}{String}, so you can chain multiple operations 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_string_a3452044f5ec9ffba3dcc3c2b355b769f}\label{class_string_a3452044f5ec9ffba3dcc3c2b355b769f}} 
+
+
+Definition at line 696 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by remove().
+
+\mbox{\Hypertarget{class_string_a06f5fff85fe14f6369811383d915ca1a}\label{class_string_a06f5fff85fe14f6369811383d915ca1a}} 
 \index{String@{String}!replace@{replace}}
 \index{replace@{replace}!String@{String}}
 \subsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily \hyperlink{class_string}{String}\& String\+::replace (\begin{DoxyParamCaption}\item[{char}]{find,  }\item[{char}]{replace }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{class_string}{String} \& String\+::replace (\begin{DoxyParamCaption}\item[{char}]{find,  }\item[{char}]{replace }\end{DoxyParamCaption})}
 
 
 
@@ -1695,11 +2186,19 @@ Replaces every occurrence of a character in the string with another character, m
 \begin{DoxyReturn}{Returns}
 this \hyperlink{class_string}{String}, so you can chain multiple operations 
 \end{DoxyReturn}
-\mbox{\Hypertarget{class_string_a6b91a0ceae7dd3f86b952ce2cebf783c}\label{class_string_a6b91a0ceae7dd3f86b952ce2cebf783c}} 
+
+
+Definition at line 638 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer.
+
+\mbox{\Hypertarget{class_string_ad87b4e7c4d06d6fee95c5caa21b6ca83}\label{class_string_ad87b4e7c4d06d6fee95c5caa21b6ca83}} 
 \index{String@{String}!replace@{replace}}
 \index{replace@{replace}!String@{String}}
 \subsubsection{\texorpdfstring{replace()}{replace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily \hyperlink{class_string}{String}\& String\+::replace (\begin{DoxyParamCaption}\item[{const \hyperlink{class_string}{String} \&}]{find,  }\item[{const \hyperlink{class_string}{String} \&}]{replace }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{class_string}{String} \& String\+::replace (\begin{DoxyParamCaption}\item[{const \hyperlink{class_string}{String} \&}]{find,  }\item[{const \hyperlink{class_string}{String} \&}]{replace }\end{DoxyParamCaption})}
 
 
 
@@ -1715,6 +2214,14 @@ Replaces every occurrence of a \hyperlink{class_string}{String} with another \hy
 \begin{DoxyReturn}{Returns}
 this \hyperlink{class_string}{String}, so you can chain multiple operations 
 \end{DoxyReturn}
+
+
+Definition at line 647 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, capacity, change\+Buffer(), last\+Index\+Of(), and len.
+
 \mbox{\Hypertarget{class_string_a138edcc762cb87649d81757d1e4ab419}\label{class_string_a138edcc762cb87649d81757d1e4ab419}} 
 \index{String@{String}!reserve@{reserve}}
 \index{reserve@{reserve}!String@{String}}
@@ -1727,7 +2234,19 @@ Reserves a buffer of size.
 
 This can improve the efficiency if you know approximately how big your string will be. Otherwise, the string is made larger in increments, which is much less efficient.
 
-If, for example you reserve 100 bytes in a new empty string, the length will still be 0 until you append characters to it. It just will be able to append 100 bytes until it has to expand the internal dynamically allocated buffer. \mbox{\Hypertarget{class_string_a000b7c7b89bbd326a9b966a79bc838e8}\label{class_string_a000b7c7b89bbd326a9b966a79bc838e8}} 
+If, for example you reserve 100 bytes in a new empty string, the length will still be 0 until you append characters to it. It just will be able to append 100 bytes until it has to expand the internal dynamically allocated buffer. 
+
+Definition at line 182 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, capacity, change\+Buffer(), and len.
+
+
+
+Referenced by concat(), copy(), format(), Json\+Parser\+::get\+Token\+Json\+String(), Json\+Parser\+::get\+Token\+Value(), and String\+Printable\+Helper\+::\+String\+Printable\+Helper().
+
+\mbox{\Hypertarget{class_string_a000b7c7b89bbd326a9b966a79bc838e8}\label{class_string_a000b7c7b89bbd326a9b966a79bc838e8}} 
 \index{String@{String}!set\+Char\+At@{set\+Char\+At}}
 \index{set\+Char\+At@{set\+Char\+At}!String@{String}}
 \subsubsection{\texorpdfstring{set\+Char\+At()}{setCharAt()}}
@@ -1744,7 +2263,15 @@ Set the character at offset index.
 {\em c} & The value to set the character to.\\
 \hline
 \end{DoxyParams}
-If index is greater than the length of the string, nothing is done. In other words, you cannot use this to append to the string, only modify an existing character. \mbox{\Hypertarget{class_string_aa63267cdf821b619ffb0a103510ae6ff}\label{class_string_aa63267cdf821b619ffb0a103510ae6ff}} 
+If index is greater than the length of the string, nothing is done. In other words, you cannot use this to append to the string, only modify an existing character. 
+
+Definition at line 514 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+\mbox{\Hypertarget{class_string_aa63267cdf821b619ffb0a103510ae6ff}\label{class_string_aa63267cdf821b619ffb0a103510ae6ff}} 
 \index{String@{String}!starts\+With@{starts\+With}}
 \index{starts\+With@{starts\+With}!String@{String}}
 \subsubsection{\texorpdfstring{starts\+With()}{startsWith()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
@@ -1759,7 +2286,15 @@ Returns true if this string starts with prefix (case-\/sensitive)
 {\em prefix} & the string containing the string to test against\\
 \hline
 \end{DoxyParams}
-Uses the C standard library function strcmp which is case-\/sensitive and may not work properly with U\+T\+F-\/8 characters. \mbox{\Hypertarget{class_string_a2ea4d98b45263f59c9eb1f842b04b3af}\label{class_string_a2ea4d98b45263f59c9eb1f842b04b3af}} 
+Uses the C standard library function strcmp which is case-\/sensitive and may not work properly with U\+T\+F-\/8 characters. 
+
+Definition at line 487 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References len, and starts\+With().
+
+\mbox{\Hypertarget{class_string_a2ea4d98b45263f59c9eb1f842b04b3af}\label{class_string_a2ea4d98b45263f59c9eb1f842b04b3af}} 
 \index{String@{String}!starts\+With@{starts\+With}}
 \index{starts\+With@{starts\+With}!String@{String}}
 \subsubsection{\texorpdfstring{starts\+With()}{startsWith()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
@@ -1776,7 +2311,19 @@ Returns true if this string contains prefix at specified offset (case-\/sensitiv
 {\em offset} & the offset to check at (0 = first characters)\\
 \hline
 \end{DoxyParams}
-Uses the C standard library function strcmp which is case-\/sensitive and may not work properly with U\+T\+F-\/8 characters. \mbox{\Hypertarget{class_string_a7587eade7e0df22dca2c424df32198de}\label{class_string_a7587eade7e0df22dca2c424df32198de}} 
+Uses the C standard library function strcmp which is case-\/sensitive and may not work properly with U\+T\+F-\/8 characters. 
+
+Definition at line 493 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
+
+Referenced by starts\+With().
+
+\mbox{\Hypertarget{class_string_a7587eade7e0df22dca2c424df32198de}\label{class_string_a7587eade7e0df22dca2c424df32198de}} 
 \index{String@{String}!String\+If\+Helper@{String\+If\+Helper}}
 \index{String\+If\+Helper@{String\+If\+Helper}!String@{String}}
 \subsubsection{\texorpdfstring{String\+If\+Helper()}{StringIfHelper()}}
@@ -1810,6 +2357,14 @@ A copy of the specified substring
 \end{DoxyReturn}
 Note\+: If the \hyperlink{class_string}{String} contains U\+T\+F-\/8 characters, begin\+Index and end\+Index are in bytes, not characters! It does not prevent splitting a U\+T\+F-\/8 multi-\/byte sequence. 
 
+Definition at line 612 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References len, and substring().
+
+
+
 Referenced by read\+R\+F\+I\+D\+Card().
 
 \mbox{\Hypertarget{class_string_ad04cc1c85089951dc3a182b4397a9f40}\label{class_string_ad04cc1c85089951dc3a182b4397a9f40}} 
@@ -1832,7 +2387,19 @@ Returns a \hyperlink{class_string}{String} object with a copy of the characters 
 \begin{DoxyReturn}{Returns}
 A copy of the specified substring
 \end{DoxyReturn}
-Note\+: If the \hyperlink{class_string}{String} contains U\+T\+F-\/8 characters, begin\+Index and end\+Index are in bytes, not characters! It does not prevent splitting a U\+T\+F-\/8 multi-\/byte sequence. \mbox{\Hypertarget{class_string_ac090329c1967d6265d63cc0a5b850e23}\label{class_string_ac090329c1967d6265d63cc0a5b850e23}} 
+Note\+: If the \hyperlink{class_string}{String} contains U\+T\+F-\/8 characters, begin\+Index and end\+Index are in bytes, not characters! It does not prevent splitting a U\+T\+F-\/8 multi-\/byte sequence. 
+
+Definition at line 617 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, len, and operator=().
+
+
+
+Referenced by substring().
+
+\mbox{\Hypertarget{class_string_ac090329c1967d6265d63cc0a5b850e23}\label{class_string_ac090329c1967d6265d63cc0a5b850e23}} 
 \index{String@{String}!to\+Char\+Array@{to\+Char\+Array}}
 \index{to\+Char\+Array@{to\+Char\+Array}!String@{String}}
 \subsubsection{\texorpdfstring{to\+Char\+Array()}{toCharArray()}}
@@ -1872,6 +2439,14 @@ Converts this string to a float (single precision floating point value)
 \begin{DoxyReturn}{Returns}
 a float value or 0.\+0 if a parsing error occurs (not a float). 
 \end{DoxyReturn}
+
+
+Definition at line 751 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer.
+
 \mbox{\Hypertarget{class_string_a2dc5a9a787f8ff266d1130594ec65237}\label{class_string_a2dc5a9a787f8ff266d1130594ec65237}} 
 \index{String@{String}!to\+Int@{to\+Int}}
 \index{to\+Int@{to\+Int}!String@{String}}
@@ -1887,13 +2462,21 @@ An integer value or 0 if a parsing error occurs (not an integer).
 \end{DoxyReturn}
 
 
+Definition at line 744 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer.
+
+
+
 Referenced by max\+Current\+C1(), and max\+Current\+C2().
 
-\mbox{\Hypertarget{class_string_ab281c09b3379e2ab74fa35f619f1d7ad}\label{class_string_ab281c09b3379e2ab74fa35f619f1d7ad}} 
+\mbox{\Hypertarget{class_string_a9754260e421ad64409d2fe5817dc243f}\label{class_string_a9754260e421ad64409d2fe5817dc243f}} 
 \index{String@{String}!to\+Lower\+Case@{to\+Lower\+Case}}
 \index{to\+Lower\+Case@{to\+Lower\+Case}!String@{String}}
 \subsubsection{\texorpdfstring{to\+Lower\+Case()}{toLowerCase()}}
-{\footnotesize\ttfamily \hyperlink{class_string}{String}\& String\+::to\+Lower\+Case (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{class_string}{String} \& String\+::to\+Lower\+Case (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -1902,11 +2485,19 @@ Converts this \hyperlink{class_string}{String} to lower case, modifying it in pl
 \begin{DoxyReturn}{Returns}
 this \hyperlink{class_string}{String}, so you can chain multiple operations
 \end{DoxyReturn}
-This is done using the C standard library function tolower() on each character. It only works with 7-\/bit A\+S\+C\+II characters and will corrupt U\+T\+F-\/8 data. \mbox{\Hypertarget{class_string_ad911fa09bbf609765ed4a0c8eecbe96f}\label{class_string_ad911fa09bbf609765ed4a0c8eecbe96f}} 
+This is done using the C standard library function tolower() on each character. It only works with 7-\/bit A\+S\+C\+II characters and will corrupt U\+T\+F-\/8 data. 
+
+Definition at line 707 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer.
+
+\mbox{\Hypertarget{class_string_a5384fd869d047a68429cbcc6d26d94fa}\label{class_string_a5384fd869d047a68429cbcc6d26d94fa}} 
 \index{String@{String}!to\+Upper\+Case@{to\+Upper\+Case}}
 \index{to\+Upper\+Case@{to\+Upper\+Case}!String@{String}}
 \subsubsection{\texorpdfstring{to\+Upper\+Case()}{toUpperCase()}}
-{\footnotesize\ttfamily \hyperlink{class_string}{String}\& String\+::to\+Upper\+Case (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{class_string}{String} \& String\+::to\+Upper\+Case (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -1915,11 +2506,19 @@ Converts this \hyperlink{class_string}{String} to upper case, modifying it in pl
 \begin{DoxyReturn}{Returns}
 this \hyperlink{class_string}{String}, so you can chain multiple operations
 \end{DoxyReturn}
-This is done using the C standard library function toupper() on each character. It only works with 7-\/bit A\+S\+C\+II characters and will corrupt U\+T\+F-\/8 data. \mbox{\Hypertarget{class_string_ab479206db8365accc3ee40108798f8dc}\label{class_string_ab479206db8365accc3ee40108798f8dc}} 
+This is done using the C standard library function toupper() on each character. It only works with 7-\/bit A\+S\+C\+II characters and will corrupt U\+T\+F-\/8 data. 
+
+Definition at line 717 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer.
+
+\mbox{\Hypertarget{class_string_a7b9ef1226bef45dac72045042afc16e8}\label{class_string_a7b9ef1226bef45dac72045042afc16e8}} 
 \index{String@{String}!trim@{trim}}
 \index{trim@{trim}!String@{String}}
 \subsubsection{\texorpdfstring{trim()}{trim()}}
-{\footnotesize\ttfamily \hyperlink{class_string}{String}\& String\+::trim (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+{\footnotesize\ttfamily \hyperlink{class_string}{String} \& String\+::trim (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
 
 
 
@@ -1929,6 +2528,14 @@ Removes leading an trailing white spaces from this string, modifying it in place
 this \hyperlink{class_string}{String}, so you can chain multiple operations
 \end{DoxyReturn}
 Whitespace is determined by the C standard library function isspace(). 
+
+Definition at line 727 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
+
+
+References buffer, and len.
+
+
 
 \subsection{Friends And Related Function Documentation}
 \mbox{\Hypertarget{class_string_a2fb327465c18d4346465237d8a38938c}\label{class_string_a2fb327465c18d4346465237d8a38938c}} 
@@ -1951,6 +2558,10 @@ Append (concatenate) a \hyperlink{class_string}{String} to the end of lhs.
 \begin{DoxyReturn}{Returns}
 the combined string 
 \end{DoxyReturn}
+
+
+Definition at line 359 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
 \mbox{\Hypertarget{class_string_aa0fe70fca3cf4c9c3c1e77d2465a9bd9}\label{class_string_aa0fe70fca3cf4c9c3c1e77d2465a9bd9}} 
 \index{String@{String}!operator+@{operator+}}
 \index{operator+@{operator+}!String@{String}}
@@ -1971,6 +2582,10 @@ Append (concatenate) a c-\/string (null-\/terminated) to the end of lhs.
 \begin{DoxyReturn}{Returns}
 the combined string 
 \end{DoxyReturn}
+
+
+Definition at line 366 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
 \mbox{\Hypertarget{class_string_a15c2c0bbe928e2bbf5278c8537bcfda4}\label{class_string_a15c2c0bbe928e2bbf5278c8537bcfda4}} 
 \index{String@{String}!operator+@{operator+}}
 \index{operator+@{operator+}!String@{String}}
@@ -1991,6 +2606,10 @@ Append (concatenate) the character c the end of lhs a.
 \begin{DoxyReturn}{Returns}
 the combined string 
 \end{DoxyReturn}
+
+
+Definition at line 373 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
 \mbox{\Hypertarget{class_string_a8b0c50963eaaf2366de418e1fba34cf1}\label{class_string_a8b0c50963eaaf2366de418e1fba34cf1}} 
 \index{String@{String}!operator+@{operator+}}
 \index{operator+@{operator+}!String@{String}}
@@ -2011,6 +2630,10 @@ Append (concatenate) the unsigned char num to the end of lhs as a decimal number
 \begin{DoxyReturn}{Returns}
 the combined string 
 \end{DoxyReturn}
+
+
+Definition at line 380 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
 \mbox{\Hypertarget{class_string_a0c7b23137b894e0e6d7607d8386a9285}\label{class_string_a0c7b23137b894e0e6d7607d8386a9285}} 
 \index{String@{String}!operator+@{operator+}}
 \index{operator+@{operator+}!String@{String}}
@@ -2031,6 +2654,10 @@ Append (concatenate) the signed int num to the end of lhs as a decimal number (b
 \begin{DoxyReturn}{Returns}
 the combined string 
 \end{DoxyReturn}
+
+
+Definition at line 387 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
 \mbox{\Hypertarget{class_string_a20c7726a6ea2c053044c19f40e5c91aa}\label{class_string_a20c7726a6ea2c053044c19f40e5c91aa}} 
 \index{String@{String}!operator+@{operator+}}
 \index{operator+@{operator+}!String@{String}}
@@ -2051,6 +2678,10 @@ Append (concatenate) the unsigned int num to the end of lhs as a decimal number 
 \begin{DoxyReturn}{Returns}
 the combined string 
 \end{DoxyReturn}
+
+
+Definition at line 394 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
 \mbox{\Hypertarget{class_string_a50aa43ee66fafd4a7e03c453a62aaac1}\label{class_string_a50aa43ee66fafd4a7e03c453a62aaac1}} 
 \index{String@{String}!operator+@{operator+}}
 \index{operator+@{operator+}!String@{String}}
@@ -2071,6 +2702,10 @@ Append (concatenate) the long integer num to the end of lhs as a decimal number 
 \begin{DoxyReturn}{Returns}
 the combined string 
 \end{DoxyReturn}
+
+
+Definition at line 401 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
 \mbox{\Hypertarget{class_string_a61625af689cfcbe9206851903b1144a2}\label{class_string_a61625af689cfcbe9206851903b1144a2}} 
 \index{String@{String}!operator+@{operator+}}
 \index{operator+@{operator+}!String@{String}}
@@ -2091,6 +2726,10 @@ Append (concatenate) the unsigned long integer to the end of lhs as a decimal nu
 \begin{DoxyReturn}{Returns}
 the combined string 
 \end{DoxyReturn}
+
+
+Definition at line 408 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
 \mbox{\Hypertarget{class_string_a9a2cbb5207527b7dabf2ea13c48f9833}\label{class_string_a9a2cbb5207527b7dabf2ea13c48f9833}} 
 \index{String@{String}!operator+@{operator+}}
 \index{operator+@{operator+}!String@{String}}
@@ -2111,6 +2750,10 @@ Append (concatenate) the float num to the end of lhs as a decimal number (base 1
 \begin{DoxyReturn}{Returns}
 the combined string 
 \end{DoxyReturn}
+
+
+Definition at line 415 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
 \mbox{\Hypertarget{class_string_ad7f8cc6402796f520aa6ddc33953f7fc}\label{class_string_ad7f8cc6402796f520aa6ddc33953f7fc}} 
 \index{String@{String}!operator+@{operator+}}
 \index{operator+@{operator+}!String@{String}}
@@ -2131,11 +2774,15 @@ Append (concatenate) the double precision float num to the end of lhs as a decim
 \begin{DoxyReturn}{Returns}
 the combined string 
 \end{DoxyReturn}
+
+
+Definition at line 422 of file spark\+\_\+wiring\+\_\+string.\+cpp.
+
 \mbox{\Hypertarget{class_string_a5e68bdc5e2e049ec2703293759e6049a}\label{class_string_a5e68bdc5e2e049ec2703293759e6049a}} 
 \index{String@{String}!String\+Printable\+Helper@{String\+Printable\+Helper}}
 \index{String\+Printable\+Helper@{String\+Printable\+Helper}!String@{String}}
 \subsubsection{\texorpdfstring{String\+Printable\+Helper}{StringPrintableHelper}}
-{\footnotesize\ttfamily friend class String\+Printable\+Helper\hspace{0.3cm}{\ttfamily [friend]}}
+{\footnotesize\ttfamily friend class \hyperlink{class_string_printable_helper}{String\+Printable\+Helper}\hspace{0.3cm}{\ttfamily [friend]}}
 
 
 
@@ -2160,7 +2807,7 @@ Definition at line 1058 of file spark\+\_\+wiring\+\_\+string.\+h.
 
 
 
-Referenced by c\+\_\+str(), and operator String\+If\+Helper\+Type().
+Referenced by c\+\_\+str(), change\+Buffer(), compare\+To(), concat(), copy(), ends\+With(), equals(), equals\+Ignore\+Case(), format(), get\+Bytes(), index\+Of(), init(), invalidate(), last\+Index\+Of(), operator String\+If\+Helper\+Type(), operator+(), operator=(), operator\mbox{[}$\,$\mbox{]}(), remove(), replace(), reserve(), set\+Char\+At(), starts\+With(), substring(), to\+Float(), to\+Int(), to\+Lower\+Case(), to\+Upper\+Case(), trim(), and $\sim$\+String().
 
 \mbox{\Hypertarget{class_string_af78d6ba64d194d5571319316ee2c41d4}\label{class_string_af78d6ba64d194d5571319316ee2c41d4}} 
 \index{String@{String}!capacity@{capacity}}
@@ -2176,6 +2823,10 @@ The capacity of the buffer. The longest string is one byte less than this.
 
 Definition at line 1059 of file spark\+\_\+wiring\+\_\+string.\+h.
 
+
+
+Referenced by change\+Buffer(), init(), invalidate(), replace(), and reserve().
+
 \mbox{\Hypertarget{class_string_a46d9dadfcefa61aa12563806c477657b}\label{class_string_a46d9dadfcefa61aa12563806c477657b}} 
 \index{String@{String}!flags@{flags}}
 \index{flags@{flags}!String@{String}}
@@ -2189,6 +2840,10 @@ Unused, for future features.
 
 
 Definition at line 1061 of file spark\+\_\+wiring\+\_\+string.\+h.
+
+
+
+Referenced by init().
 
 \mbox{\Hypertarget{class_string_add7c3370b556b8fd8c669b8c6b40043a}\label{class_string_add7c3370b556b8fd8c669b8c6b40043a}} 
 \index{String@{String}!len@{len}}
@@ -2206,10 +2861,11 @@ Definition at line 1060 of file spark\+\_\+wiring\+\_\+string.\+h.
 
 
 
-Referenced by length().
+Referenced by compare\+To(), concat(), copy(), ends\+With(), equals(), equals\+Ignore\+Case(), format(), get\+Bytes(), index\+Of(), init(), invalidate(), last\+Index\+Of(), length(), operator+(), operator=(), operator\mbox{[}$\,$\mbox{]}(), remove(), replace(), reserve(), set\+Char\+At(), starts\+With(), substring(), and trim().
 
 
 
-The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-lib/\+Json\+Parser\+Generator\+R\+K/docs/src/\hyperlink{spark__wiring__string_8h}{spark\+\_\+wiring\+\_\+string.\+h}\end{DoxyCompactItemize}
+lib/\+Json\+Parser\+Generator\+R\+K/docs/src/\hyperlink{docs_2src_2spark__wiring__string_8h}{spark\+\_\+wiring\+\_\+string.\+h}\item 
+lib/\+Json\+Parser\+Generator\+R\+K/test/gcclib/\hyperlink{spark__wiring__string_8cpp}{spark\+\_\+wiring\+\_\+string.\+cpp}\end{DoxyCompactItemize}

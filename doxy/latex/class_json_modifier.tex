@@ -11,8 +11,7 @@ Class for modifying a J\+S\+ON object in place, without needing to make a copy o
 
 
 
-Inheritance diagram for Json\+Modifier\+:
-\nopagebreak
+Inheritance diagram for Json\+Modifier\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -21,8 +20,7 @@ Inheritance diagram for Json\+Modifier\+:
 \end{figure}
 
 
-Collaboration diagram for Json\+Modifier\+:
-\nopagebreak
+Collaboration diagram for Json\+Modifier\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -100,6 +98,10 @@ Definition at line 881 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 References jp.
 
+
+
+Referenced by main().
+
 \mbox{\Hypertarget{class_json_modifier_a68e9b6a5b88ad4316fd1cb443cc0b11e}\label{class_json_modifier_a68e9b6a5b88ad4316fd1cb443cc0b11e}} 
 \index{Json\+Modifier@{Json\+Modifier}!````~Json\+Modifier@{$\sim$\+Json\+Modifier}}
 \index{````~Json\+Modifier@{$\sim$\+Json\+Modifier}!Json\+Modifier@{Json\+Modifier}}
@@ -136,6 +138,10 @@ Definition at line 1363 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 References finish(), and start\+Append().
 
+
+
+Referenced by main().
+
 \mbox{\Hypertarget{class_json_modifier_a5b67ce1041b0e40e467639de1eeeca1e}\label{class_json_modifier_a5b67ce1041b0e40e467639de1eeeca1e}} 
 \index{Json\+Modifier@{Json\+Modifier}!find\+Left\+Comma@{find\+Left\+Comma}}
 \index{find\+Left\+Comma@{find\+Left\+Comma}!Json\+Modifier@{Json\+Modifier}}
@@ -156,7 +162,7 @@ References Json\+Buffer\+::get\+Buffer(), jp, Json\+Parser\+Generator\+R\+K\+::j
 
 
 
-Referenced by remove\+Array\+Index(), and remove\+Key\+Value().
+Referenced by main(), remove\+Array\+Index(), and remove\+Key\+Value().
 
 \mbox{\Hypertarget{class_json_modifier_a24fac4c2257f932aff41792214de35ca}\label{class_json_modifier_a24fac4c2257f932aff41792214de35ca}} 
 \index{Json\+Modifier@{Json\+Modifier}!find\+Right\+Comma@{find\+Right\+Comma}}
@@ -178,7 +184,7 @@ References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, Json\+Buffer\
 
 
 
-Referenced by remove\+Array\+Index(), and remove\+Key\+Value().
+Referenced by main(), remove\+Array\+Index(), and remove\+Key\+Value().
 
 \mbox{\Hypertarget{class_json_modifier_ae531232fa98f72eea8ea6ba07c065497}\label{class_json_modifier_ae531232fa98f72eea8ea6ba07c065497}} 
 \index{Json\+Modifier@{Json\+Modifier}!finish@{finish}}
@@ -200,7 +206,7 @@ Definition at line 1033 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 
 
-References Json\+Buffer\+::get\+Offset(), jp, orig\+After, Json\+Parser\+::parse(), Json\+Buffer\+::set\+Offset(), and start.
+References Json\+Buffer\+::get\+Buffer(), Json\+Buffer\+::get\+Offset(), jp, orig\+After, Json\+Parser\+::parse(), save\+Loc, Json\+Buffer\+::set\+Offset(), and start.
 
 
 
@@ -229,6 +235,10 @@ Definition at line 1340 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 References finish(), remove\+Key\+Value(), and start\+Append().
 
+
+
+Referenced by main().
+
 \mbox{\Hypertarget{class_json_modifier_aba45c4fe467fa70b837f190986cf190b}\label{class_json_modifier_aba45c4fe467fa70b837f190986cf190b}} 
 \index{Json\+Modifier@{Json\+Modifier}!remove\+Array\+Index@{remove\+Array\+Index}}
 \index{remove\+Array\+Index@{remove\+Array\+Index}!Json\+Modifier@{Json\+Modifier}}
@@ -245,7 +255,7 @@ Definition at line 944 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 
 
-References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, find\+Left\+Comma(), find\+Right\+Comma(), Json\+Buffer\+::get\+Offset(), Json\+Parser\+::get\+Token\+By\+Index(), jp, orig\+After, Json\+Parser\+::parse(), Json\+Buffer\+::set\+Offset(), Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start, and token\+With\+Quotes().
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, find\+Left\+Comma(), find\+Right\+Comma(), Json\+Buffer\+::get\+Buffer(), Json\+Buffer\+::get\+Offset(), Json\+Parser\+::get\+Token\+By\+Index(), jp, orig\+After, Json\+Parser\+::parse(), Json\+Buffer\+::set\+Offset(), Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start, and token\+With\+Quotes().
 
 
 
@@ -267,11 +277,11 @@ Definition at line 890 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 
 
-References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, find\+Left\+Comma(), find\+Right\+Comma(), Json\+Buffer\+::get\+Offset(), Json\+Parser\+::get\+Value\+Token\+By\+Key(), jp, orig\+After, Json\+Parser\+::parse(), Json\+Buffer\+::set\+Offset(), Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start, and token\+With\+Quotes().
+References Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::end, find\+Left\+Comma(), find\+Right\+Comma(), Json\+Buffer\+::get\+Buffer(), Json\+Buffer\+::get\+Offset(), Json\+Parser\+::get\+Value\+Token\+By\+Key(), jp, orig\+After, Json\+Parser\+::parse(), Json\+Buffer\+::set\+Offset(), Json\+Parser\+Generator\+R\+K\+::jsmntok\+\_\+t\+::start, and token\+With\+Quotes().
 
 
 
-Referenced by insert\+Or\+Update\+Key\+Value().
+Referenced by insert\+Or\+Update\+Key\+Value(), and main().
 
 \mbox{\Hypertarget{class_json_modifier_ab5bf356377a71120588413a4be998607}\label{class_json_modifier_ab5bf356377a71120588413a4be998607}} 
 \index{Json\+Modifier@{Json\+Modifier}!start\+Append@{start\+Append}}
@@ -406,7 +416,7 @@ Definition at line 1450 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 
 
-Referenced by start\+Append(), and start\+Modify().
+Referenced by finish(), start\+Append(), and start\+Modify().
 
 \mbox{\Hypertarget{class_json_modifier_abd83b67763dc4ce55562bbdd5cea1e20}\label{class_json_modifier_abd83b67763dc4ce55562bbdd5cea1e20}} 
 \index{Json\+Modifier@{Json\+Modifier}!start@{start}}

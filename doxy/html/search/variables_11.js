@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['s',['s',['../class_string_printable_helper.html#ac8273d5d460215114d9db27d7c7cab2e',1,'StringPrintableHelper']]],
   ['sak',['sak',['../struct_m_f_r_c522_1_1_uid.html#a90aa2fd57a03011252148c2ccdc8875b',1,'MFRC522::Uid']]],
   ['saveloc',['saveLoc',['../class_json_modifier.html#a7ea53418d660ce7cdec0964cca76015b',1,'JsonModifier']]],
   ['sharevar',['ShareVar',['../2020__photon__code_8cpp.html#abc87df2ac47aa12b30692fd38255d367',1,'2020_photon_code.cpp']]],

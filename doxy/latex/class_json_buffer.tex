@@ -11,8 +11,7 @@ Base class for managing a static or dynamic buffer, used by both \hyperlink{clas
 
 
 
-Inheritance diagram for Json\+Buffer\+:
-\nopagebreak
+Inheritance diagram for Json\+Buffer\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -168,7 +167,7 @@ References allocate(), buffer, buffer\+Len, and offset.
 
 
 
-Referenced by main().
+Referenced by add\+String(), and main().
 
 \mbox{\Hypertarget{class_json_buffer_a61bf30ac6e1bd460f1e809d02a7d5ba4}\label{class_json_buffer_a61bf30ac6e1bd460f1e809d02a7d5ba4}} 
 \index{Json\+Buffer@{Json\+Buffer}!add\+String@{add\+String}}
@@ -191,7 +190,11 @@ Definition at line 197 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 
 
-Referenced by main().
+References add\+Data().
+
+
+
+Referenced by main(), run\+Test(), and subscription\+Handler().
 
 \mbox{\Hypertarget{class_json_buffer_a1eb9d0cae3ef9a9ac56b8580bc70fe2e}\label{class_json_buffer_a1eb9d0cae3ef9a9ac56b8580bc70fe2e}} 
 \index{Json\+Buffer@{Json\+Buffer}!allocate@{allocate}}
@@ -241,6 +244,10 @@ Definition at line 62 of file Json\+Parser\+Generator\+R\+K.\+cpp.
 
 References offset.
 
+
+
+Referenced by get\+Measure\+\_\+callback(), run\+Test(), and subscription\+Handler().
+
 \mbox{\Hypertarget{class_json_buffer_af8ca5014e0275487273f94c6b9223acf}\label{class_json_buffer_af8ca5014e0275487273f94c6b9223acf}} 
 \index{Json\+Buffer@{Json\+Buffer}!get\+Buffer@{get\+Buffer}}
 \index{get\+Buffer@{get\+Buffer}!Json\+Buffer@{Json\+Buffer}}
@@ -261,7 +268,7 @@ References buffer.
 
 
 
-Referenced by Json\+Modifier\+::find\+Left\+Comma(), Json\+Modifier\+::find\+Right\+Comma(), Json\+Modifier\+::start\+Append(), and Json\+Modifier\+::start\+Modify().
+Referenced by \+\_\+assert\+Json\+Parser\+Buffer(), \+\_\+assert\+Json\+Writer\+Buffer(), Json\+Modifier\+::find\+Left\+Comma(), Json\+Modifier\+::find\+Right\+Comma(), Json\+Modifier\+::finish(), print\+Json\+Inner(), print\+Token(), Json\+Modifier\+::remove\+Array\+Index(), Json\+Modifier\+::remove\+Key\+Value(), run\+Test(), Json\+Modifier\+::start\+Append(), and Json\+Modifier\+::start\+Modify().
 
 \mbox{\Hypertarget{class_json_buffer_a486352be5658e94b9b9bd13563801e68}\label{class_json_buffer_a486352be5658e94b9b9bd13563801e68}} 
 \index{Json\+Buffer@{Json\+Buffer}!get\+Buffer\+Len@{get\+Buffer\+Len}}
@@ -395,7 +402,7 @@ Definition at line 246 of file Json\+Parser\+Generator\+R\+K.\+h.
 
 
 
-Referenced by add\+Data(), allocate(), Json\+Parser\+::copy\+Token\+Value(), Json\+Writer\+::finish\+Object\+Or\+Array(), get\+Buffer(), Json\+Parser\+::get\+Token\+Json\+String(), Json\+Parser\+::get\+Token\+Value(), Json\+Writer\+::insert\+Char(), Json\+Buffer(), null\+Terminate(), Json\+Parser\+::parse(), set\+Buffer(), and $\sim$\+Json\+Buffer().
+Referenced by add\+Data(), allocate(), Json\+Parser\+::allocate\+Tokens(), Json\+Parser\+::copy\+Token\+Value(), Json\+Writer\+::finish\+Object\+Or\+Array(), get\+Buffer(), Json\+Parser\+::get\+Token\+Json\+String(), Json\+Parser\+::get\+Token\+Value(), Json\+Writer\+::insert\+Char(), Json\+Writer\+::insertvsprintf(), Json\+Buffer(), null\+Terminate(), Json\+Parser\+::parse(), set\+Buffer(), and $\sim$\+Json\+Buffer().
 
 \mbox{\Hypertarget{class_json_buffer_af06130f43f71623ea6afe049c846e52b}\label{class_json_buffer_af06130f43f71623ea6afe049c846e52b}} 
 \index{Json\+Buffer@{Json\+Buffer}!buffer\+Len@{buffer\+Len}}
