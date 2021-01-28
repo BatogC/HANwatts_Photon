@@ -137,7 +137,9 @@ int stringParse(char * buf, int buflen){
                 //Current[Charger-1] = (CurrentArr[0]+CurrentArr[1]+CurrentArr[2])/3;  
                 for(int i=0;i<3;i++)
                 {
-                    PhaseVoltage[Charger-1][i]=VoltageArr[i];
+                  if (VoltageArr[i] < 1.0) //sometimes one received V phase is 0.00
+                    continue;
+                  PhaseVoltage[Charger-1][i]=VoltageArr[i];
                 }
                 //Voltage[Charger-1] = {VoltageArr[0],VoltageArr[1],VoltageArr[2]};
               }
@@ -163,7 +165,7 @@ int stringParse(char * buf, int buflen){
               DEBUGPORT.print(Current[Charger-1][0],4);DEBUGPORT.print(" ");
               DEBUGPORT.print(Current[Charger-1][1],4);DEBUGPORT.print(" ");
               DEBUGPORT.println(Current[Charger-1][2],4);
-              if((Current[Charger-1][0]+Current[Charger-1][1]+Current[Charger-1][2])<1)
+              if((Current[Charger-1][0]+Current[Charger-1][1]+Current[Charger-1][2]) < 1.0)
               {
                 numberOfZeroReadings[Charger-1]++;
               }

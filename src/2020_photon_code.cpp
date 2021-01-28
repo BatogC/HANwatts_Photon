@@ -4,7 +4,6 @@
 
 #include "Particle.h"
 #line 1 "d:/UNI_S5/new_particle_code/2020_photon_code/src/2020_photon_code.ino"
-
 #include <MQTT.h>
 
 #include <MFRC522.h>
@@ -14,6 +13,7 @@
 #include <JsonParserGeneratorRK.h>
 //#include "RFIDfunctions.h"
 //extern void setupread();
+#line 10 "d:/UNI_S5/new_particle_code/2020_photon_code/src/2020_photon_code.ino"
 int resetOlimex(String input);
 int WifiSignal(String input);
 int resetParticle(String input);
@@ -31,7 +31,7 @@ int initRFID(String input);
 bool readRFIDCard(int Charger);
 void setup();
 void loop();
-#line 11 "d:/UNI_S5/new_particle_code/2020_photon_code/src/2020_photon_code.ino"
+
 extern int readSerialOlimex();
 extern bool readRFIDCard(int Charger);
 extern float Current[2][3];
@@ -42,14 +42,19 @@ extern float Energy[2];
 extern float Frequency[2];
 extern float CurrentList[20];
 extern int numberOfZeroReadings[2];
+
 void reconnect(void);
 void callback(char* topic, byte* payload, unsigned int length);
 void charToString(const char in[], String &out);
 void getMeasure_callback(byte* payload, unsigned int length);
 
-//! var to hold swiped RFID tag at first socket
+//! var to hold last swiped RFID tag at first socket
+String latestUID1="No ID";
+//! var to hold last swiped RFID tag at second socket
+String latestUID2="No ID";
+//! var to hold valid RFID tag at first socket (used for Measurements)
 String UIDtagCharger1="No ID";
-//! var to hold swiped RFID tag at second socket
+//! var to hold valid RFID tag at second socket (used for Measurements)
 String UIDtagCharger2="No ID";
 
 //! constant that sets for which Photon this program is intended
@@ -195,14 +200,14 @@ void blinkRFIDled(int charger,int action) {
 int activeCharger() {
     int number = 0;
     for (int i=0; i<3; i++) {
-        if (Current[0][i] != 0.0) {
+        if (Current[0][i] > 0.10) {
             number += 1;
             break;
         }
     }
     
     for (int i=0; i<3; i++) {
-        if (Current[1][i] != 0.0) {
+        if (Current[1][i] > 0.10) {
             number += 2;
             break;
         }
@@ -471,6 +476,10 @@ void allowUser_callback(byte* payload, unsigned int length) {
         case 1:
             digitalWrite(port, HIGH);
             LatestStartTime[socketNr] = Time.now();
+            if (socketNr == 0)
+                UIDtagCharger1=latestUID1;
+            else if (socketNr == 1)
+                UIDtagCharger2=latestUID2;
             client.publish(topic_str, "successful start new charge");
             break;
         case 2:
@@ -609,12 +618,13 @@ bool readRFIDCard(int Charger) {
         JsonWriterStatic<512> jsonMessage;
 
         //Authorized=testUser(content,Charger);
-        UIDtagCharger1=content.substring(1); //??? why does it start at 1?
+        //UIDtagCharger1=content.substring(1); //??? why does it start at 1?
+        latestUID1=content.substring(1);
 
         {
 		JsonWriterAutoObject obj(&jsonMessage);
 
-		jsonMessage.insertKeyValue("UserId", UIDtagCharger1);
+		jsonMessage.insertKeyValue("UserId", latestUID1);
         jsonMessage.insertKeyValue("Charger", Charger);
 		jsonMessage.insertKeyValue("StartTime", Time.now());
 	    }
@@ -646,13 +656,15 @@ bool readRFIDCard(int Charger) {
             content.concat(String(mfrc522_Charger2.uid.uidByte[i], HEX));
         }
         //Authorized=testUser(content,Charger);
-        UIDtagCharger2=content.substring(1);
+        //UIDtagCharger2=content.substring(1);
+        latestUID2=content.substring(1);
+
         JsonWriterStatic<512> jsonMessage;
 
         {
 		JsonWriterAutoObject obj(&jsonMessage);
 		
-		jsonMessage.insertKeyValue("UserId", UIDtagCharger2);
+		jsonMessage.insertKeyValue("UserId", latestUID2);
         jsonMessage.insertKeyValue("Charger", Charger);
 		jsonMessage.insertKeyValue("StartTime", Time.now());
 	    }
@@ -896,7 +908,7 @@ void loop() {
     //int Charger =1; //+
     
     //Read measurements from Olimex and save for which socket
-    int Charger = readSerialOlimex() + CHARGEROFFSET; //+
+    int Charger = readSerialOlimex() + CHARGEROFFSET;
     Particle.process();
     // !!!! This runs multiple times a second for some reason (serial) 
     // if(counter>10){
@@ -907,7 +919,7 @@ void loop() {
     // counter++;
 
     // store new measurement value if it is received correctly from energymeter (via the Olimex).
-    if(millis()>nextTime[handledCharger] && (Charger==1+CHARGEROFFSET || Charger==2+CHARGEROFFSET)) //+ all the if{}
+    if(millis()>nextTime[handledCharger] && (Charger==1+CHARGEROFFSET || Charger==2+CHARGEROFFSET))
     {
         Particle.process();
         //getUserIdAtSocket(Charger)
@@ -942,12 +954,26 @@ void loop() {
     //if (((numberOfZeroReadings[0]>10 && (LatestStartTime[0] + 60 < Time.now()))|| ((Time.now()<LatestStartTime[0] + 70)&&(LatestStartTime[0] + 60 < Time.now()))) && (Current[0][0]+ Current[0][1]+ Current[0][2]) < 1)
     
     // if 10+ Zero current readings have been taken or last start of new charge was over 1min ago and total Current is under 1A for first socket stop charge and reset StartTIme var
-    if( ((numberOfZeroReadings[0]>10)||(LatestStartTime[0] + 70 > Time.now()) )&& (LatestStartTime[0] + 60 < Time.now()) && (Current[0][0]+ Current[0][1]+ Current[0][2]) < 1)
+    if( (numberOfZeroReadings[0]>10) && (LatestStartTime[0] + 60 < Time.now()) )
     {   
         //timeout with current almost zero
         DEBUGPORT.println("Timeout charger"+String(CHARGEROFFSET+1));
         digitalWrite(AUTHENTICATION_CAR1,LOW);
-        LatestStartTime[0]=2147483548;
+        LatestStartTime[0]=0;
+        if (UIDtagCharger1!="No ID"){
+            JsonWriterStatic<512> jsonMessage;
+    
+            {
+    		JsonWriterAutoObject obj(&jsonMessage);
+    		
+    		jsonMessage.insertKeyValue("UserId", UIDtagCharger1);
+            jsonMessage.insertKeyValue("Charger", (1 + CHARGEROFFSET));
+    		jsonMessage.insertKeyValue("StartTime", Time.now());
+    	    }
+            client.publish("HANevse/updateUser", jsonMessage.getBuffer());
+    
+            UIDtagCharger1="No ID";    
+        }
     }
     //DEBUGPORT.println(Current[1][0]+ Current[1][1]+ Current[1][2],4);
     //DEBUGPORT.println(String(LatestStartTime[1]+60));
@@ -955,50 +981,65 @@ void loop() {
     //DEBUGPORT.println((LatestStartTime[1] + 60 < Time.now()),DEC);
     
     // if 10+ Zero current readings have been taken or last start of new charge was over 1min ago and total Current is under 1A for second socket stop charge and reset StartTIme var
-    if( ((numberOfZeroReadings[1]>10)||(LatestStartTime[1] + 70 > Time.now()) )&& (LatestStartTime[1] + 60 < Time.now()) && (Current[1][0]+ Current[1][1]+ Current[1][2]) < 1)
+    if( (numberOfZeroReadings[1]>10) && (LatestStartTime[1] + 60 < Time.now()) )
     {
         //timeout with current almost zero
         DEBUGPORT.println("Timeout charger"+String(CHARGEROFFSET+2));
         digitalWrite(AUTHENTICATION_CAR2,LOW);
         //digitalWrite(D7,LOW);
-        LatestStartTime[1]=2147483548;
+        LatestStartTime[1]=0;
+        if (UIDtagCharger2!="No ID"){
+            JsonWriterStatic<512> jsonMessage;
+    
+            {
+    		JsonWriterAutoObject obj(&jsonMessage);
+    		
+    		jsonMessage.insertKeyValue("UserId", UIDtagCharger2);
+            jsonMessage.insertKeyValue("Charger", (2 + CHARGEROFFSET));
+    		jsonMessage.insertKeyValue("StartTime", Time.now());
+    	    }
+            client.publish("HANevse/updateUser", jsonMessage.getBuffer());
+    
+            UIDtagCharger2="No ID";
+            }
+        
     }
     delay(100);
 
 
-    //Reset the UIDtag if there is no car charging and last wsipe was over 1min ago at first socket
-    if ((activeCharger()!=1)&&(activeCharger()!=3)&&(UIDtagCharger1!="No ID")&& (LatestStartTime[0] + 60 < Time.now()) ){
+    //Reset the UIDtag if there is no car charging and last swipe was over 1min ago at first socket
+//     if ((numberOfZeroReadings[0]>10) && (UIDtagCharger1!="No ID") && (LatestStartTime[0] + 60 < Time.now()) ){
         
-        JsonWriterStatic<512> jsonMessage;
+//         JsonWriterStatic<512> jsonMessage;
 
-        {
-		JsonWriterAutoObject obj(&jsonMessage);
+//         {
+// 		JsonWriterAutoObject obj(&jsonMessage);
 		
-		jsonMessage.insertKeyValue("UserId", UIDtagCharger1);
-        jsonMessage.insertKeyValue("Charger", (1 + CHARGEROFFSET));
-		jsonMessage.insertKeyValue("StartTime", Time.now());
-	    }
-        client.publish("HANevse/updateUser", jsonMessage.getBuffer());
+// 		jsonMessage.insertKeyValue("UserId", UIDtagCharger1);
+//         jsonMessage.insertKeyValue("Charger", (1 + CHARGEROFFSET));
+// 		jsonMessage.insertKeyValue("StartTime", Time.now());
+// 	    }
+//         client.publish("HANevse/updateUser", jsonMessage.getBuffer());
 
-        UIDtagCharger1="No ID";
-    }
+//         UIDtagCharger1="No ID";
+//     }
 
         
-    if ((activeCharger()!=2)&&(activeCharger()!=3)&&(UIDtagCharger2!="No ID")&& (LatestStartTime[1] + 60 < Time.now()) ){
+//     if ((numberOfZeroReadings[0]>10) && (UIDtagCharger2!="No ID") && (LatestStartTime[1] + 60 < Time.now()) ){
         
-        JsonWriterStatic<512> jsonMessage;
+//         JsonWriterStatic<512> jsonMessage;
 
-        {
-		JsonWriterAutoObject obj(&jsonMessage);
+//         {
+// 		JsonWriterAutoObject obj(&jsonMessage);
 		
-		jsonMessage.insertKeyValue("UserId", UIDtagCharger2);
-        jsonMessage.insertKeyValue("Charger", (2 + CHARGEROFFSET));
-		jsonMessage.insertKeyValue("StartTime", Time.now());
-	    }
-        client.publish("HANevse/updateUser", jsonMessage.getBuffer());
+// 		jsonMessage.insertKeyValue("UserId", UIDtagCharger2);
+//         jsonMessage.insertKeyValue("Charger", (2 + CHARGEROFFSET));
+// 		jsonMessage.insertKeyValue("StartTime", Time.now());
+// 	    }
+//         client.publish("HANevse/updateUser", jsonMessage.getBuffer());
 
-        UIDtagCharger2="No ID";
-    }
+//         UIDtagCharger2="No ID";
+//     }
             
     handledCharger = !handledCharger;
 }

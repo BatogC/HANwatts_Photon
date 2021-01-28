@@ -1,4 +1,3 @@
-
 #include <MQTT.h>
 
 #include <MFRC522.h>
@@ -8,6 +7,24 @@
 #include <JsonParserGeneratorRK.h>
 //#include "RFIDfunctions.h"
 //extern void setupread();
+int resetOlimex(String input);
+int WifiSignal(String input);
+int resetParticle(String input);
+int progModeOlmx(String input);
+void blinkRFIDled(int charger,int action);
+int activeCharger();
+int switchTest(String valueString);
+int maxCurrentC1(String setPointStr);
+int maxCurrentC2(String setPointStr);
+int maxCurrentC1_test(unsigned int setPoint);
+int maxCurrentC2_test(unsigned int setPoint);
+String getUserIdAtSocket(int socket);
+void allowUser_callback(byte* payload, unsigned int length);
+int initRFID(String input);
+bool readRFIDCard(int Charger);
+void setup();
+void loop();
+
 extern int readSerialOlimex();
 extern bool readRFIDCard(int Charger);
 extern float Current[2][3];
@@ -18,21 +35,29 @@ extern float Energy[2];
 extern float Frequency[2];
 extern float CurrentList[20];
 extern int numberOfZeroReadings[2];
+
 void reconnect(void);
 void callback(char* topic, byte* payload, unsigned int length);
 void charToString(const char in[], String &out);
 void getMeasure_callback(byte* payload, unsigned int length);
 
-//! var to hold swiped RFID tag at first socket
+//! var to hold last swiped RFID tag at first socket
+String latestUID1="No ID";
+//! var to hold last swiped RFID tag at second socket
+String latestUID2="No ID";
+//! var to hold valid RFID tag at first socket (used for Measurements)
 String UIDtagCharger1="No ID";
-//! var to hold swiped RFID tag at second socket
+//! var to hold valid RFID tag at second socket (used for Measurements)
 String UIDtagCharger2="No ID";
 
-//! 
+//! constant that sets for which Photon this program is intended
+/*!
+	For Photon 1 set it to 0, for Photon 2 set to 2. Any more and program would need to be edited.
+*/
 #define CHARGEROFFSET 0 //use 0 for socket 1&2, or 2 for socket 3&4, etc.
 #define DEBUGPORT Serial
 #define SIZEOFUSERLIST 2
-#define NUMBEROFMETERS 5
+//#define NUMBEROFMETERS 5
 //SYSTEM_MODE(SEMI_AUTOMATIC);
 
 #define SS_PIN_CHARGER1 A1
@@ -58,6 +83,8 @@ STARTUP(WiFi.selectAntenna(ANT_EXTERNAL)); // selects the u.FL antenna //+
 //MQTT setting
 //byte server[] = {192,168,43,249};
 //MQTT client(server, 1883, callback);
+
+//! MQTT client details; do not set last number to over 512!
 MQTT client("broker.hivemq.com", 1883, MQTT_DEFAULT_KEEPALIVE, callback, 512);
 //char ID[] = "11111";
 
@@ -67,12 +94,17 @@ String test = "0";
 int counter=1;
 MFRC522 mfrc522_Charger1(SS_PIN_CHARGER1, RST_PIN);   // Create MFRC522 instance.
 MFRC522 mfrc522_Charger2(SS_PIN_CHARGER2, RST_PIN);   // Create MFRC522 instance.
+//! Holds latest start of new charge if charger is in use
 unsigned long LatestStartTime[2]={0,0};
+//! Holds last handled socket (0 for first socket)
 bool handledCharger=0;
 String ShareVar;
 //String Current_Str="0";
+
+//! var that holds the charging mode (TRUE = renewable)
 bool TESTCASE = false;
 
+//! var that holds answer from Pi but is unused now
 ushort Pianswer=0;
 
 //struct EMeter {
@@ -99,8 +131,10 @@ ushort Pianswer=0;
 //EMeter EMeterData;
 //``String EVListStr="";
 String currentStr="";
-unsigned int nextTime[2] = {30000,30000};    // Next time to contact the server
+//! Next timestamp to publish measurements in ms
+unsigned int nextTime[2] = {30000,30000};    // Next time to pub measurements
 
+//! Deprecated function to convert char to String - the String class already has one
 void charToString(const char in[], String &out) {
     byte index = 0;
     const char *pointer = in;
@@ -111,6 +145,7 @@ void charToString(const char in[], String &out) {
       }
 }
 
+//! Sends reset signal to EV charger controller
 int resetOlimex(String input) {
     digitalWrite(RESET_OLIMEX, LOW);
     delay(500);
@@ -118,14 +153,17 @@ int resetOlimex(String input) {
     return 1;
 }
 
+//! Return wifi strength
 int WifiSignal(String input) {
     return WiFi.RSSI();
 }
 
+//! Resets Photon
 int resetParticle(String input) {
     System.reset();
 }
 
+//! Sets Olimex into programming mode
 int progModeOlmx(String input) {
     digitalWrite(WAKEUP_OLIMEX, HIGH);
     delay(500);
@@ -135,6 +173,7 @@ int progModeOlmx(String input) {
     return 1;
 }
 
+//! unused function to blink the Photon LED
 void blinkRFIDled(int charger,int action) {
     //action=1  succesfull start new charge (charger is free and last stoped session > 20 sec ago)
     //action=2  charger is free, but you allready swiped the card in the last 20 sec (second swipe within 20sec)
@@ -150,17 +189,18 @@ void blinkRFIDled(int charger,int action) {
     return;
 }
 
+//! Return 1 if socket 1 is used, 2 if socket 2 is used, and 3 if both are in use
 int activeCharger() {
     int number = 0;
     for (int i=0; i<3; i++) {
-        if (Current[0][i] != 0.0) {
+        if (Current[0][i] > 0.10) {
             number += 1;
             break;
         }
     }
     
     for (int i=0; i<3; i++) {
-        if (Current[1][i] != 0.0) {
+        if (Current[1][i] > 0.10) {
             number += 2;
             break;
         }
@@ -169,6 +209,7 @@ int activeCharger() {
     return number;
 }
 
+//! Switches between renewable mode (-input "true") and manual setpoint mode
 int switchTest(String valueString) {
     if (valueString == "true") {
         TESTCASE = true;
@@ -182,6 +223,7 @@ int switchTest(String valueString) {
     }
 }
 
+//! Sets max Current output at socket 1 in manual mode
 int maxCurrentC1(String setPointStr) {
     unsigned int setPoint = setPointStr.toInt();
     if (setPoint < 7)
@@ -195,6 +237,7 @@ int maxCurrentC1(String setPointStr) {
     return 1;
 }
 
+//! Sets max Current output at socket 2 in manual mode
 int maxCurrentC2(String setPointStr) {
     unsigned int setPoint = setPointStr.toInt();
     if (setPoint < 7)
@@ -208,6 +251,7 @@ int maxCurrentC2(String setPointStr) {
     return 1;
 }
 
+//! Sets max Current output at socket 1/3 in renewable mode and publishes new setpoint at "HANevse/photonMaxC1" or C3
 int maxCurrentC1_test(unsigned int setPoint) {
     if (setPoint < 7)
         setPoint = 6;
@@ -223,6 +267,7 @@ int maxCurrentC1_test(unsigned int setPoint) {
     return 1;
 }
 
+//! Sets max Current output at socket 2/4 in renewable mode and publishes new setpoint at "HANevse/photonMaxC2" or C4
 int maxCurrentC2_test(unsigned int setPoint) {
     if (setPoint < 7)
         setPoint = 6;
@@ -256,6 +301,7 @@ int AuthPinsLow(String input)
     return 1;
 }*/
 
+//! Returns RFID tag at the asked socket
 String getUserIdAtSocket(int socket) {
     if (socket == 1+CHARGEROFFSET)
         return UIDtagCharger1;
@@ -264,7 +310,7 @@ String getUserIdAtSocket(int socket) {
     return "00";
 }
 
-
+//! Callback function to automatically set max Currents from MQTT message if in renewable mode
 void getMeasure_callback(byte* payload, unsigned int length) {
 
     //int sockets = 1;
@@ -386,7 +432,7 @@ void getMeasure_callback(byte* payload, unsigned int length) {
 //     }
 // }
 
-
+//! Callback function to process and execute approval or denial to charge from Pi, then MQTT publish reason to website GUI
 void allowUser_callback(byte* payload, unsigned int length) {
     char payl[length+1];
     char *endchar;
@@ -423,6 +469,10 @@ void allowUser_callback(byte* payload, unsigned int length) {
         case 1:
             digitalWrite(port, HIGH);
             LatestStartTime[socketNr] = Time.now();
+            if (socketNr == 0)
+                UIDtagCharger1=latestUID1;
+            else if (socketNr == 1)
+                UIDtagCharger2=latestUID2;
             client.publish(topic_str, "successful start new charge");
             break;
         case 2:
@@ -458,15 +508,17 @@ void allowUser_callback(byte* payload, unsigned int length) {
     
 }
 
+//! Function ran for each socket every 30s in main loop to send measurements through MQTT
 void add_Measurement(float phaseVoltageL1, float phaseVoltageL2, float phaseVoltageL3, float currentL1, float currentL2, float currentL3, /* float Power, float Energy,*/ float Frequency, unsigned long Timestamp, int socketId=0, String userId="00") {
 	
+	//< Filter to skip if current values are impossibly high or under 0.1A
     //if ((currentL1 > 50.0)||(currentL2 > 50.0)||(currentL3 > 50.0)) 
     //    return;
     //if ((currentL1 < 0.1)&&(currentL2 < 0.1)&&(currentL3 < 0.1) )
     //    return;
 
     //This rounds floats to 3 decimal places
-    /// float newvar = (float)(((int)(oldvar * 1000 + .5)) / 1000); 
+    // float newvar = (float)(((int)(oldvar * 1000 + .5)) / 1000); 
     
     // phaseVoltageL1 = (float)(((int)(phaseVoltageL1 * 1000 + .5)) / 1000);
     // phaseVoltageL2 = (float)(((int)(phaseVoltageL2 * 1000 + .5)) / 1000);
@@ -504,6 +556,7 @@ void add_Measurement(float phaseVoltageL1, float phaseVoltageL2, float phaseVolt
 	}
 }
 
+//! Initialises RFID reader
 int initRFID(String input) {
     //additional config for debugging RFID readers
     pinMode(SS_PIN_CHARGER1, OUTPUT);
@@ -517,7 +570,7 @@ int initRFID(String input) {
     mfrc522_Charger1.PCD_Init();   // Initiate MFRC522
     delay(500);
     mfrc522_Charger2.PCD_Init();   // Initiate MFRC522
-    ////mfrc522_Charger1.PCD_SetAntennaGain(mfrc522.RxGain_max);
+    //mfrc522_Charger1.PCD_SetAntennaGain(mfrc522.RxGain_max);
     mfrc522_Charger1.PCD_SetAntennaGain(mfrc522_Charger1.RxGain_max);
     mfrc522_Charger2.PCD_SetAntennaGain(mfrc522_Charger2.RxGain_max);
     
@@ -526,6 +579,7 @@ int initRFID(String input) {
     return 1;
 }
 
+//! Checks and reads RFID tag at the asked socket, then MQTT publishes it for Pi
 bool readRFIDCard(int Charger) {
    // DEBUGPORT.print("readCard>\t");
     bool Authorized = true;
@@ -557,12 +611,13 @@ bool readRFIDCard(int Charger) {
         JsonWriterStatic<512> jsonMessage;
 
         //Authorized=testUser(content,Charger);
-        UIDtagCharger1=content.substring(1); //??? why does it start at 1?
+        //UIDtagCharger1=content.substring(1); //??? why does it start at 1?
+        latestUID1=content.substring(1);
 
         {
 		JsonWriterAutoObject obj(&jsonMessage);
 
-		jsonMessage.insertKeyValue("UserId", UIDtagCharger1);
+		jsonMessage.insertKeyValue("UserId", latestUID1);
         jsonMessage.insertKeyValue("Charger", Charger);
 		jsonMessage.insertKeyValue("StartTime", Time.now());
 	    }
@@ -594,13 +649,15 @@ bool readRFIDCard(int Charger) {
             content.concat(String(mfrc522_Charger2.uid.uidByte[i], HEX));
         }
         //Authorized=testUser(content,Charger);
-        UIDtagCharger2=content.substring(1);
+        //UIDtagCharger2=content.substring(1);
+        latestUID2=content.substring(1);
+
         JsonWriterStatic<512> jsonMessage;
 
         {
 		JsonWriterAutoObject obj(&jsonMessage);
 		
-		jsonMessage.insertKeyValue("UserId", UIDtagCharger2);
+		jsonMessage.insertKeyValue("UserId", latestUID2);
         jsonMessage.insertKeyValue("Charger", Charger);
 		jsonMessage.insertKeyValue("StartTime", Time.now());
 	    }
@@ -615,6 +672,7 @@ bool readRFIDCard(int Charger) {
      return Authorized;
 }
 
+//! Main function for MQTT client to check for new messages and execute callback functions
 void callback(char* topic, byte* payload, unsigned int length) {
     test = "99";
 	time_t time = Time.now();
@@ -728,6 +786,7 @@ void callback(char* topic, byte* payload, unsigned int length) {
     }
 }
 
+//! Function to reconnect to MQTT server if not connected and subscribe to needed topics
 void reconnect(void) {
     while (!client.isConnected()) {
         DEBUGPORT.print("MQTT>\tConnecting to MQTT broker...");
@@ -772,6 +831,7 @@ void reconnect(void) {
     }
 }
 
+//! Inital setup for pin assignments and serial links start
 void setup() {
     DEBUGPORT.begin(115200); 
     Serial1.begin(9600);
@@ -820,12 +880,13 @@ void setup() {
     Time.zone(1); //Dutch time zone
 }
 
+//! Main running function that executes all other functions; runs over 5times/second
 void loop() {
-    //Check the connection to the MQTT broker
+    //Check the connection to the Particle server
     if (Particle.connected() == false) {
         Particle.connect();
     }
-
+	//Check the connection to the MQTT broker and let client take care of messages in buffers
     if (client.isConnected()) {
         client.loop();
     }
@@ -838,9 +899,11 @@ void loop() {
     //currentStr = String(CurrentList[0],1)+" "+String(CurrentList[1],1)+" "+String(CurrentList[2],1)+" "+String(CurrentList[3],1)+" "+String(CurrentList[4],1)+" "+String(CurrentList[5],1)+" "+String(CurrentList[6],1)+" "+String(CurrentList[7],1)+" "+String(CurrentList[8],1)+" "+String(CurrentList[9],1)+" "+String(CurrentList[10],1)+" "+String(CurrentList[11],1)+" "+String(CurrentList[12],1)+" "+String(CurrentList[13],1)+" "+String(CurrentList[14],1)+" "+String(CurrentList[15],1)+" "+String(CurrentList[16],1)+" "+String(CurrentList[17],1)+" "+String(CurrentList[18],1)+" "+String(CurrentList[19],1);
     
     //int Charger =1; //+
-    int Charger = readSerialOlimex() + CHARGEROFFSET; //+
+    
+    //Read measurements from Olimex and save for which socket
+    int Charger = readSerialOlimex() + CHARGEROFFSET;
     Particle.process();
-    //// !!!! This runs multiple times a second for some reason (serial) 
+    // !!!! This runs multiple times a second for some reason (serial) 
     // if(counter>10){
 	// 	counter = 0;
 	// !!!!	DEBUGPORT.println("LatestStartTime>\t"+String(LatestStartTime[0])+", "+String(LatestStartTime[1]));
@@ -849,7 +912,7 @@ void loop() {
     // counter++;
 
     // store new measurement value if it is received correctly from energymeter (via the Olimex).
-    if(millis()>nextTime[handledCharger] && (Charger==1+CHARGEROFFSET || Charger==2+CHARGEROFFSET)) //+ all the if{}
+    if(millis()>nextTime[handledCharger] && (Charger==1+CHARGEROFFSET || Charger==2+CHARGEROFFSET))
     {
         Particle.process();
         //getUserIdAtSocket(Charger)
@@ -882,62 +945,94 @@ void loop() {
     //DEBUGPORT.println((LatestStartTime[0] + 60 < Time.now()),DEC);
     //if ((LatestStartTime[0] + 60 < Time.now()) && (Current[0][0]+ Current[0][1]+ Current[0][2]) < 1)
     //if (((numberOfZeroReadings[0]>10 && (LatestStartTime[0] + 60 < Time.now()))|| ((Time.now()<LatestStartTime[0] + 70)&&(LatestStartTime[0] + 60 < Time.now()))) && (Current[0][0]+ Current[0][1]+ Current[0][2]) < 1)
-    if( ((numberOfZeroReadings[0]>10)||(LatestStartTime[0] + 70 > Time.now()) )&& (LatestStartTime[0] + 60 < Time.now()) && (Current[0][0]+ Current[0][1]+ Current[0][2]) < 1)
+    
+    // if 10+ Zero current readings have been taken or last start of new charge was over 1min ago and total Current is under 1A for first socket stop charge and reset StartTIme var
+    if( (numberOfZeroReadings[0]>10) && (LatestStartTime[0] + 60 < Time.now()) )
     {   
         //timeout with current almost zero
         DEBUGPORT.println("Timeout charger"+String(CHARGEROFFSET+1));
         digitalWrite(AUTHENTICATION_CAR1,LOW);
-        LatestStartTime[0]=2147483548;
+        LatestStartTime[0]=0;
+        if (UIDtagCharger1!="No ID"){
+            JsonWriterStatic<512> jsonMessage;
+    
+            {
+    		JsonWriterAutoObject obj(&jsonMessage);
+    		
+    		jsonMessage.insertKeyValue("UserId", UIDtagCharger1);
+            jsonMessage.insertKeyValue("Charger", (1 + CHARGEROFFSET));
+    		jsonMessage.insertKeyValue("StartTime", Time.now());
+    	    }
+            client.publish("HANevse/updateUser", jsonMessage.getBuffer());
+    
+            UIDtagCharger1="No ID";    
+        }
     }
     //DEBUGPORT.println(Current[1][0]+ Current[1][1]+ Current[1][2],4);
     //DEBUGPORT.println(String(LatestStartTime[1]+60));
     //DEBUGPORT.println(String(Time.now()));
     //DEBUGPORT.println((LatestStartTime[1] + 60 < Time.now()),DEC);
-    if( ((numberOfZeroReadings[1]>10)||(LatestStartTime[1] + 70 > Time.now()) )&& (LatestStartTime[1] + 60 < Time.now()) && (Current[1][0]+ Current[1][1]+ Current[1][2]) < 1)
+    
+    // if 10+ Zero current readings have been taken or last start of new charge was over 1min ago and total Current is under 1A for second socket stop charge and reset StartTIme var
+    if( (numberOfZeroReadings[1]>10) && (LatestStartTime[1] + 60 < Time.now()) )
     {
         //timeout with current almost zero
         DEBUGPORT.println("Timeout charger"+String(CHARGEROFFSET+2));
         digitalWrite(AUTHENTICATION_CAR2,LOW);
         //digitalWrite(D7,LOW);
-        LatestStartTime[1]=2147483548;
+        LatestStartTime[1]=0;
+        if (UIDtagCharger2!="No ID"){
+            JsonWriterStatic<512> jsonMessage;
+    
+            {
+    		JsonWriterAutoObject obj(&jsonMessage);
+    		
+    		jsonMessage.insertKeyValue("UserId", UIDtagCharger2);
+            jsonMessage.insertKeyValue("Charger", (2 + CHARGEROFFSET));
+    		jsonMessage.insertKeyValue("StartTime", Time.now());
+    	    }
+            client.publish("HANevse/updateUser", jsonMessage.getBuffer());
+    
+            UIDtagCharger2="No ID";
+            }
+        
     }
     delay(100);
 
 
-    /////!!!! Check how often these run 
-    //Reset the UIDtag if there is no car charging and last wsipe was over 1min ago
-    if ((activeCharger()!=1)&&(activeCharger()!=3)&&(UIDtagCharger1!="No ID")&& (LatestStartTime[0] + 60 < Time.now()) ){
+    //Reset the UIDtag if there is no car charging and last swipe was over 1min ago at first socket
+//     if ((numberOfZeroReadings[0]>10) && (UIDtagCharger1!="No ID") && (LatestStartTime[0] + 60 < Time.now()) ){
         
-        JsonWriterStatic<512> jsonMessage;
+//         JsonWriterStatic<512> jsonMessage;
 
-        {
-		JsonWriterAutoObject obj(&jsonMessage);
+//         {
+// 		JsonWriterAutoObject obj(&jsonMessage);
 		
-		jsonMessage.insertKeyValue("UserId", UIDtagCharger1);
-        jsonMessage.insertKeyValue("Charger", (1 + CHARGEROFFSET));
-		jsonMessage.insertKeyValue("StartTime", Time.now());
-	    }
-        client.publish("HANevse/updateUser", jsonMessage.getBuffer());
+// 		jsonMessage.insertKeyValue("UserId", UIDtagCharger1);
+//         jsonMessage.insertKeyValue("Charger", (1 + CHARGEROFFSET));
+// 		jsonMessage.insertKeyValue("StartTime", Time.now());
+// 	    }
+//         client.publish("HANevse/updateUser", jsonMessage.getBuffer());
 
-        UIDtagCharger1="No ID";
-    }
+//         UIDtagCharger1="No ID";
+//     }
 
         
-    if ((activeCharger()!=2)&&(activeCharger()!=3)&&(UIDtagCharger2!="No ID")&& (LatestStartTime[1] + 60 < Time.now()) ){
+//     if ((numberOfZeroReadings[0]>10) && (UIDtagCharger2!="No ID") && (LatestStartTime[1] + 60 < Time.now()) ){
         
-        JsonWriterStatic<512> jsonMessage;
+//         JsonWriterStatic<512> jsonMessage;
 
-        {
-		JsonWriterAutoObject obj(&jsonMessage);
+//         {
+// 		JsonWriterAutoObject obj(&jsonMessage);
 		
-		jsonMessage.insertKeyValue("UserId", UIDtagCharger2);
-        jsonMessage.insertKeyValue("Charger", (2 + CHARGEROFFSET));
-		jsonMessage.insertKeyValue("StartTime", Time.now());
-	    }
-        client.publish("HANevse/updateUser", jsonMessage.getBuffer());
+// 		jsonMessage.insertKeyValue("UserId", UIDtagCharger2);
+//         jsonMessage.insertKeyValue("Charger", (2 + CHARGEROFFSET));
+// 		jsonMessage.insertKeyValue("StartTime", Time.now());
+// 	    }
+//         client.publish("HANevse/updateUser", jsonMessage.getBuffer());
 
-        UIDtagCharger2="No ID";
-    }
+//         UIDtagCharger2="No ID";
+//     }
             
     handledCharger = !handledCharger;
 }
